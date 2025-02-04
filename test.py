@@ -19,6 +19,6 @@ t2 = test2()
 
 t1.connect(t2,ignoreMisMatch=True)
 
-bp = sml.bluePrint(t1,removeNoConnections=True)
+bp = sml.bluePrint(t1)#,removeNoConnections=True)
 bp.compile()
 input()

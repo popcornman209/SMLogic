@@ -10,7 +10,9 @@ class base:
     outputCons = [] #list of output gates to connect to something elses inputs
     connections = [] #list of objects connected to
     connectionsFrom = [] #list of objects that are connceted to this
+    forceKeep = False
     important = False #display in simulator, to see values for debugging or just general testing.
+    partType = "container"
     partID = None
 
     def connect(self, reciever, ignoreMisMatch=False):
@@ -31,64 +33,50 @@ class base:
         for part in self.connectionsFrom: part.identify(bp)
 
     def identify(self,bp):
-        if self.partID == None:
+        if self.partType == "container": l = bp.containerList
+        else: l = bp.partList
+
+        if self not in l:
+            l.append(self)
             self.identifyRelationships(bp)
-            self.partID = -1
-    
-    def genNetworkDict(self): raise RuntimeError("part has no genNetworkDict method!, only gates and timers can compile")
 
 class gate(base):
     def __init__(self,type="and",color="222222",pos=None):
         if type not in ["and","or","xor","xnor","nor","nand"]: raise TypeError(f"logic gate type cannot be {type}!")
-
+        
         self.color = color
         self.type = type
         self.pos = pos
 
         self.inputCons = [self] #list of gates inside contraption to connect to
         self.outputCons = [self] #list of output gates to connect to something elses inputs
-
-    def identify(self,bp):
-        if self.partID == None:
-            for part in self.connections: part.identify(bp)
-            self.partID = bp.currentId
-            bp.currentId += 1
-            bp.partList.append(self)
-    
-    def genNetworkDict(self):
-        return {
-            "part": ids['gate'],
-            "type": self.type,
-            "color": self.color,
-            "connections": [part.partID for part in self.connections],
-            "connectionsFrom": [part.partID for part in self.connectionsFrom],
-            "pos": self.pos
-        }
+        self.partType = "gate"
 
 class bluePrint:
     def __init__(self,mainPart: base, removeNoConnections=False):
-        self.currentId = 1
         self.partList = []
+        self.containerList = []
         self.mainPart = mainPart
-        self.network = {}
+
         self.removeNoConnections = removeNoConnections
+
+        self.inputs = self.mainPart.inputCons
+        self.outputs = self.mainPart.outputCons
+        for out in self.outputs:
+            if type(out) == list: raise TypeError("there cant be mutlible logic gates per output bit on the main part!")
+            out.forceKeep = True
+        for inp in self.inputs:
+            if type(inp) == list: raise TypeError("there cant be mutlible logic gates per input bit on the main part!")
+            inp.forceKeep = True
     
     def compile(self):
         self.mainPart.identify(self)
-        self.generateNetwork()
-    
-    def exportJson(self,file):
-        with open(file,"w") as f: json.dump(self.network,f)
-    
-    def removeNoConnection(self,part):
-        if len(self.network[part]["connections"]) == 0:
-            for parent in self.network[part]["connectionsFrom"]:
-                self.removeNoConnection(parent)
-            self.network.pop(part)
-
-    def generateNetwork(self):
-        for part in self.partList:
-            self.network[part.partID] = part.genNetworkDict()
         if self.removeNoConnections:
-            partsToRemove = [(part if val["connections"] == 0 else None) for part,val in self.network.items()]
-            #self.removeNoConnection(part)
+            for part in self.partList.copy(): self.removeNoConnection(part)
+    
+    def removeNoConnection(self,part: base):
+        if part.connections == [] and not part.forceKeep:
+            for parent in part.connectionsFrom:
+                parent.connections.remove(part)
+                self.removeNoConnection(parent)
+            self.partList.remove(part)
