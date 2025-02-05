@@ -1,4 +1,4 @@
-import json, datetime, time, threading
+import json, datetime, time, threading, math
 
 ids = {
     'gate': '9f0f56e8-2c31-4d83-996c-d00a9b296c3f',
@@ -30,20 +30,20 @@ class base:
                     for inpCon in (inp if type(inp) == list else [inp]):
                         if outCon != self: outCon.connect(inpCon)
         else: raise IndexError("outputs dont match inputs! add ignoreMisMatch = True to connect to ignore.")
-
-    def identifyRelationships(self, bp):
-        for part in self.inputCons: part.identify(bp)
-        for part in self.outputCons: part.identify(bp)
-        for part in self.connections: part.identify(bp)
-        for part in self.connectionsFrom: part.identify(bp)
+        
 
     def identify(self,bp):
+        bp.recursion -= 1
         if self.partType == "container": l = bp.containerList
         else: l = bp.partList
 
-        if self not in l:
+        if self not in l and bp.recursion > 0:
             l.append(self)
-            self.identifyRelationships(bp)
+            for part in self.inputCons: part.identify(bp)
+            for part in self.outputCons: part.identify(bp)
+            for part in self.connections: part.identify(bp)
+            for part in self.connectionsFrom: part.identify(bp)
+        bp.recursion += 1
     
     def dumpDict(self):
         raise RuntimeError("cant dump container dictoinary!")
@@ -85,6 +85,16 @@ class gate(base):
             elif self.mode == 0 or self.mode == 3: self.active = sum(self.sInputs) % 2 == 1
             if self.mode >= 3: self.active = not self.active
 
+class simThread: # TODO
+    def __init__(partList):
+        self.t = threading.Thread()
+        self.partList = partList
+    
+    def simulateMidFrame(self):
+        for part in parts: part.simulate(True)
+    def simulateFullFrame(self):
+        for part in parts: part.simulate(True)
+
 class bluePrint:
     def __init__(self,mainPart: base, removeDeadEnds=True):
         self.partList = []
@@ -107,7 +117,9 @@ class bluePrint:
     # def getPartId(self,part): return self.partList.index(part)
 
     def compile(self):
+        self.recursion = 900
         self.mainPart.identify(self)
+        self.threadPartLists = self.partList
         if self.removeDeadEnds:
             for part in self.partList.copy(): self.removeNoConnection(part)
 
@@ -117,13 +129,19 @@ class bluePrint:
                 parent.connections.remove(part)
                 self.removeNoConnection(parent)
             self.partList.remove(part)
+    
+    def splitThreads(self,threads):
+        alreadyAssigned = 0
+        self.threadPartLists = []
+        for i in range(threads):
+            partsInThread = math.ceil(len(self.partList[alreadyAssigned:])/(threads-i))
+            self.threadPartLists.append(self.partList[alreadyAssigned:partsInThread+alreadyAssigned])
+            alreadyAssigned += partsInThread
         
     def simThread(self,parts,midFrame):
         for part in parts: part.simulate(midFrame)
     
-    def simulate(self,threads):
-        oldTime = time.time()
-        for i in range(40000):
-            self.simThread(self.partList,True)
-            self.simThread(self.partList,False)
-        print(time.time()-oldTime)
+    def simulateFrame(self):
+        for thread in self.threadPartLists:
+            t = threading.Thread(target=lambda: self.simThread(thread,True))
+            t.start()

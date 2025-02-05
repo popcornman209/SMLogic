@@ -19,7 +19,7 @@ t2 = test2()
 
 t1.connect(t2,ignoreMisMatch=True)
 
-bp = sml.bluePrint(t1)#,removeNoConnections=True)
+bp = sml.bluePrint(t1,removeDeadEnds=False)
 bp.compile()
-bp.simulate(1)
+bp.splitThreads(2)
 input()
