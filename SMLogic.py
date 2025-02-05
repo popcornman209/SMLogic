@@ -1,4 +1,4 @@
-import json, datetime
+import json, datetime, time, threading
 
 ids = {
     'gate': '9f0f56e8-2c31-4d83-996c-d00a9b296c3f',
@@ -18,7 +18,7 @@ class base:
     forceKeep = False
     important = False #display in simulator, to see values for debugging or just general testing.
     partType = "container"
-    partID = None
+    active = False
 
     def connect(self, reciever, ignoreMisMatch=False):
         if len(self.outputCons) == len(reciever.inputCons) or ignoreMisMatch: # TODO work on missmatch, also spell correctly
@@ -44,18 +44,46 @@ class base:
         if self not in l:
             l.append(self)
             self.identifyRelationships(bp)
+    
+    def dumpDict(self):
+        raise RuntimeError("cant dump container dictoinary!")
+
+    def simulate(self,midFrame): raise RuntimeError("cant simulate an entire container, if your making a part add a simulate method!")
 
 class gate(base):
-    def __init__(self,type="and",color="222222",pos=None):
-        if type not in ["and","or","xor","xnor","nor","nand"]: raise TypeError(f"logic gate type cannot be {type}!")
+    modes = ["and","or","xor","nand","nor","xnor"]
+    partType = "gate"
+
+    def __init__(self,mode=0,color="222222",pos=None):
+        if mode not in self.modes and mode > 5 and mode < 0: raise TypeError(f"logic gate mode cannot be {mode}!")
         
         self.color = color
-        self.type = type
+        if type(mode) == int: self.mode = mode
+        else: self.mode = self.modes.index(mode)
         self.pos = pos
 
         self.inputCons = [self] #list of gates inside contraption to connect to
         self.outputCons = [self] #list of output gates to connect to something elses inputs
-        self.partType = "gate"
+    
+    # def dumpDict(self, bp):
+    #     return {
+    #         "part": ids["gate"],
+    #         "color": self.color,
+    #         "pos": self.pos,
+    #         "mode": self.mode,
+    #         "connections": [bp.getPartId(part) for part in self.connections],
+    #         "connectionsFrom": [bp.getPartId(part) for part in self.connectionsFrom],
+    #         "important": self.important
+    #     }
+    
+    def simulate(self,midFrmae):
+        if midFrmae:
+            self.sInputs = [part.active for part in self.connectionsFrom]
+        else:
+            if self.mode == 0 or self.mode == 3: self.active = all(self.sInputs)
+            elif self.mode == 0 or self.mode == 3: self.active = any(self.sInputs)
+            elif self.mode == 0 or self.mode == 3: self.active = sum(self.sInputs) % 2 == 1
+            if self.mode >= 3: self.active = not self.active
 
 class bluePrint:
     def __init__(self,mainPart: base, removeDeadEnds=True):
@@ -74,6 +102,10 @@ class bluePrint:
             if type(inp) == list: raise TypeError("there cant be mutlible logic gates per input bit on the main part!")
             inp.forceKeep = True
 
+    # def getNetwork(self): return [part.dumpDict(self) for part in self.partList]
+
+    # def getPartId(self,part): return self.partList.index(part)
+
     def compile(self):
         self.mainPart.identify(self)
         if self.removeDeadEnds:
@@ -85,3 +117,13 @@ class bluePrint:
                 parent.connections.remove(part)
                 self.removeNoConnection(parent)
             self.partList.remove(part)
+        
+    def simThread(self,parts,midFrame):
+        for part in parts: part.simulate(midFrame)
+    
+    def simulate(self,threads):
+        oldTime = time.time()
+        for i in range(40000):
+            self.simThread(self.partList,True)
+            self.simThread(self.partList,False)
+        print(time.time()-oldTime)
