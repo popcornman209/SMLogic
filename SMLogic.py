@@ -1,9 +1,14 @@
-import json
+import json, datetime
 
 ids = {
     'gate': '9f0f56e8-2c31-4d83-996c-d00a9b296c3f',
     'timer': '8f7fd0e7-c46e-4944-a414-7ce2437bb30f'
 }
+
+log = False
+def log(string): #basic log function
+    time = datetime.now()
+    print("{}:{}:{} ; {}".format(time.hour,time.minute,time.second,string))
 
 class base:
     inputCons = [] #list of gates inside contraption to connect to
@@ -53,12 +58,12 @@ class gate(base):
         self.partType = "gate"
 
 class bluePrint:
-    def __init__(self,mainPart: base, removeNoConnections=False):
+    def __init__(self,mainPart: base, removeDeadEnds=True):
         self.partList = []
         self.containerList = []
         self.mainPart = mainPart
 
-        self.removeNoConnections = removeNoConnections
+        self.removeDeadEnds = removeDeadEnds
 
         self.inputs = self.mainPart.inputCons
         self.outputs = self.mainPart.outputCons
@@ -68,12 +73,12 @@ class bluePrint:
         for inp in self.inputs:
             if type(inp) == list: raise TypeError("there cant be mutlible logic gates per input bit on the main part!")
             inp.forceKeep = True
-    
+
     def compile(self):
         self.mainPart.identify(self)
-        if self.removeNoConnections:
+        if self.removeDeadEnds:
             for part in self.partList.copy(): self.removeNoConnection(part)
-    
+
     def removeNoConnection(self,part: base):
         if part.connections == [] and not part.forceKeep:
             for parent in part.connectionsFrom:
