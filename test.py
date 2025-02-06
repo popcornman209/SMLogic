@@ -21,5 +21,4 @@ t1.connect(t2,ignoreMisMatch=True)
 
 bp = sml.bluePrint(t1,removeDeadEnds=False)
 bp.compile()
-bp.splitThreads(2)
 input()
