@@ -9,13 +9,14 @@ class gate(sml.base): #logic gate
     modes = ["and","or","xor","nand","nor","xnor"]  #all possible modes
     partType = "gate"                               #part type to gate, its not a container
 
-    def __init__(self,mode ,color="222222",pos=None): #initialise function
+    def __init__(self,mode ,color="222222",pos=None, axis=(1,-2)): #initialise function
         if mode not in self.modes and mode > 5 and mode < 0: raise TypeError(f"logic gate mode cannot be {mode}!") # if its a valid mode for the gate to be in
         
         self.color = color #set the color
         if type(mode) == int: self.mode = mode      #set the mode if number provided
         else: self.mode = self.modes.index(mode)    #otherwise turn the string into a number
         self.pos = pos #set the pos
+        self.axis = axis
 
         self.inputCons = [self]     #list of gates inside contraption to connect to
         self.outputCons = [self]    #list of output gates to connect to something elses inputs
@@ -26,6 +27,7 @@ class gate(sml.base): #logic gate
             "id": bp.getPartId(self),       #id
             "color": self.color,            #color
             "pos": self.pos,                #color
+            "axis": self.axis,              #rotation, formated (xaxis, zaxis)
             "mode": self.mode,              #gate mode, and or etc
             "important": self.important,    #wether its importatnt or not
             "connections": [bp.getPartId(part) for part in self.connections],           #things its connected to
@@ -33,7 +35,7 @@ class gate(sml.base): #logic gate
             
         }
     
-def genSMOutput(self,gateDict):
+def gateExport(self,gateDict):
     return {
         "color": gateDict["color"],
         "controller":{
@@ -41,10 +43,10 @@ def genSMOutput(self,gateDict):
             "controllers":gateDict["connections"],
             "id": gateDict["id"],
             "joints":None,
-            "mode":type                                 #TODO
+            "mode": gateDict["mode"]
         },
-        "pos":{"x":pos[0],"y":pos[1],"z":pos[2]},
+        "pos":{"x":gateDict["pos"][0],"y":gateDict["pos"][1],"z":gateDict["pos"][2]},
         "shapeId": gateDict["part"],
-        "xaxis":1,
-        "zaxis":-2
+        "xaxis":gateDict["axis"][0],
+        "zaxis":gateDict["axis"][1]
     }
