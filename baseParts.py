@@ -6,27 +6,28 @@ ids = { #part ids
 }
 
 class gate(sml.base): #logic gate
-    modes = ["and","or","xor","nand","nor","xnor"] #all possible modes
-    partType = "gate" #part type to gate, its not a container
+    modes = ["and","or","xor","nand","nor","xnor"]  #all possible modes
+    partType = "gate"                               #part type to gate, its not a container
 
     def __init__(self,mode ,color="222222",pos=None): #initialise function
         if mode not in self.modes and mode > 5 and mode < 0: raise TypeError(f"logic gate mode cannot be {mode}!") # if its a valid mode for the gate to be in
         
         self.color = color #set the color
-        if type(mode) == int: self.mode = mode #set the mode if number provided
-        else: self.mode = self.modes.index(mode) #otherwise turn the string into a number
+        if type(mode) == int: self.mode = mode      #set the mode if number provided
+        else: self.mode = self.modes.index(mode)    #otherwise turn the string into a number
         self.pos = pos #set the pos
 
-        self.inputCons = [self] #list of gates inside contraption to connect to
-        self.outputCons = [self] #list of output gates to connect to something elses inputs
+        self.inputCons = [self]     #list of gates inside contraption to connect to
+        self.outputCons = [self]    #list of output gates to connect to something elses inputs
     
     def dumpDict(self, bp: sml.bluePrint): #dictionary that it returns
         return {
-            "part": ids["gate"], #sets part id to the gates
-            "color": self.color, #color
-            "pos": self.pos, #color
-            "mode": self.mode, #gate mode, and or etc
-            "connections": [bp.getPartId(part) for part in self.connections], #things its connected to
-            "connectionsFrom": [bp.getPartId(part) for part in self.connectionsFrom], #things connected to it
-            "important": self.important #wether its importatnt or not
+            "part": ids["gate"],            #sets part id to the gates
+            "color": self.color,            #color
+            "pos": self.pos,                #color
+            "mode": self.mode,              #gate mode, and or etc
+            "important": self.important,    #wether its importatnt or not
+            "connections": [bp.getPartId(part) for part in self.connections],           #things its connected to
+            "connectionsFrom": [bp.getPartId(part) for part in self.connectionsFrom]   #things connected to it
+            
         }
