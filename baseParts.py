@@ -23,6 +23,7 @@ class gate(sml.base): #logic gate
     def dumpDict(self, bp: sml.bluePrint): #dictionary that it returns
         return {
             "part": ids["gate"],            #sets part id to the gates
+            "id": bp.getPartId(self),       #id
             "color": self.color,            #color
             "pos": self.pos,                #color
             "mode": self.mode,              #gate mode, and or etc
@@ -31,3 +32,19 @@ class gate(sml.base): #logic gate
             "connectionsFrom": [bp.getPartId(part) for part in self.connectionsFrom]   #things connected to it
             
         }
+    
+def genSMOutput(self,gateDict):
+    return {
+        "color": gateDict["color"],
+        "controller":{
+            "active": False,
+            "controllers":gateDict["connections"],
+            "id": gateDict["id"],
+            "joints":None,
+            "mode":type                                 #TODO
+        },
+        "pos":{"x":pos[0],"y":pos[1],"z":pos[2]},
+        "shapeId": gateDict["part"],
+        "xaxis":1,
+        "zaxis":-2
+    }

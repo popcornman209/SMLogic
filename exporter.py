@@ -3,7 +3,7 @@ import os, json, uuid, shutil
 if os.name == "nt":
     userFolder = os.environ['APPDATA']+"/Axolot Games/Scrap Mechanic/User/"
 else:
-    userFolder = "~/.steam/steam/steamapps/compatdata/387990/pfx/drive_c/users/steamuser/Application Data/Axolot Games/Scrap Mechanic/User/"
+    userFolder = os.path.expanduser("~")+"/.steam/steam/steamapps/compatdata/387990/pfx/drive_c/users/steamuser/Application Data/Axolot Games/Scrap Mechanic/User/"
     if not os.path.isdir(userFolder): userFolder = None
 
 bpFolder = None
@@ -11,12 +11,14 @@ if userFolder:
     users = os.listdir(userFolder)
     if len(users) == 1: bpFolder = userFolder+users[0]+"/Blueprints/"
 
+
 def getIdFromName(name, folder=bpFolder):
     if folder:
         blueprints = os.listdir(folder)
         for blueprint in blueprints:
-            with open(bpFolder+blueprint+"/description.json","r") as f:
-                if json.load(f)["name"] == name: return blueprint, bpFolder+blueprint
+            if os.path.isdir(bpFolder+blueprint):
+                with open(bpFolder+blueprint+"/description.json","r") as f:
+                    if json.load(f)["name"] == name: return blueprint, bpFolder+blueprint
         return False
     else: raise FileNotFoundError("bp folder not provided or found automatically! set exporter.bpFolder to your blueprints folder.")
 
@@ -35,6 +37,16 @@ def createBluePrint(name,description='#{STEAM_WORKSHOP_NO_DESCRIPTION}',localId=
             "type" : "Blueprint",
             "version" : 0
         },f)
+
+    return bluePrint(path)
+
+def overWriteBluePrint(id,bpFolder=bpFolder,byName=True):
+    if byName: id = getIdFromName(id,folder=bpFolder)
+    if id:
+        if os.path.isdir(bpFolder+id):
+            return bluePrint(bpFolder+id)
+    return False
+
 
 class bluePrint:
     def __init__(self,path):
