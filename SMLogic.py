@@ -7,13 +7,14 @@ def log(string):    #basic log function
         print("{}:{}:{} ; {}".format(time.hour,time.minute,time.second,string))
 
 class base:
-    inputCons = []          #list of gates inside contraption to connect to
-    outputCons = []         #list of output gates to connect to something elses inputs
-    connections = []        #list of objects connected to
-    connectionsFrom = []    #list of objects that are connceted to this
-    forceKeep = False       #wether to forcefully keep part, bypasses remove dead ends
-    important = False       #display in simulator or seperate in exporter, to see values for debugging or just general testing, or as inputs or outputs
-    partType = "container"  #type of object, if isnt "container" it will be added to part list and exported. dont change unless you have a dump dict method
+    def __init__(self):
+        self.inputCons = []          #list of gates inside contraption to connect to
+        self.outputCons = []         #list of output gates to connect to something elses inputs
+        self.connections = []        #list of objects connected to
+        self.connectionsFrom = []    #list of objects that are connceted to this
+        self.forceKeep = False       #wether to forcefully keep part, bypasses remove dead ends
+        self.important = False       #display in simulator or seperate in exporter, to see values for debugging or just general testing, or as inputs or outputs
+        self.partType = "container"  #type of object, if isnt "container" it will be added to part list and exported. dont change unless you have a dump dict method
 
     def connect(self, reciever, ignoreMisMatch=False):
         if len(self.outputCons) == len(reciever.inputCons) or ignoreMisMatch: #if connections match, or it doesnt matter
@@ -22,10 +23,11 @@ class base:
             self.connections += reciever.inputCons[:conLength]      #adds connections to list of things connected to
             reciever.connectionsFrom += self.outputCons[:conLength] #adds connections from a part, aka the parent connected to it. used for identifying all parts and simulating faster
 
-            for out, inp in zip(self.outputCons[:conLength],self.connections[:conLength]):      #for each output and input
-                for outCon in (out if type(out) == list else [out]):                            #go through each gate of one parts outputs
-                    for inpCon in (inp if type(inp) == list else [inp]):                        #go through each gate of the others inputs
-                        if outCon != self: outCon.connect(inpCon)                               #connect them to each other
+            if self.outputCons != [self]:
+                for out, inp in zip(self.outputCons[:conLength],self.connections[:conLength]):      #for each output and input
+                    for outCon in (out if type(out) == list else [out]):                            #go through each gate of one parts outputs
+                        for inpCon in (inp if type(inp) == list else [inp]):                        #go through each gate of the others inputs
+                            if outCon != self: outCon.connect(inpCon)                               #connect them to each other
         else: raise IndexError("outputs dont match inputs! add ignoreMisMatch = True to connect to ignore.") #if there are more inputs than outputs and vice versa
         
     def identify(self,bp): #for indentifying the part and saving it to the blueprint
@@ -48,13 +50,13 @@ class base:
 
 
 class bluePrint:
-    maxRecursion = 900      #max depth for recursion,
-    partList = []           #list of parts, empty until compiled
-    containerList = []      #list of containers, not used for much except knowing which containers have been checked
-
     def __init__(self,mainPart: base, removeDeadEnds=True):
         self.mainPart = mainPart                #main part, this will be used for the inputs and outputs of a object
         self.removeDeadEnds = removeDeadEnds    #wether to remove dead ends, paths that lead nowhere and dont effect the output
+
+        self.maxRecursion = 900      #max depth for recursion,
+        self.partList = []           #list of parts, empty until compiled
+        self.containerList = []      #list of containers, not used for much except knowing which containers have been checked
 
         for out in self.mainPart.outputCons:
             if type(out) == list: raise TypeError("there cant be mutlible logic gates per output bit on the main part!") #if one output bit has multible gates assigned to it
@@ -68,7 +70,7 @@ class bluePrint:
     def getNetwork(self): return [part.dumpDict(self) for part in self.partList]    #get network dictionary, for simulating and exporting to sm
     def jsonDumps(self): return json.dumps(self.getNetwork())                       #dump dictionary to a json string
     def jsonDump(self,f): json.dump(self.getNetwork(),f)                            #dump dictionary to a file
-    
+
     def getPartId(self,part): return self.partList.index(part)                      #get a parts id, just where it is in a list. is subject to change if partlist changes.
 
     def compile(self): #identifies all parts, should be run after the entire part is made and assembled

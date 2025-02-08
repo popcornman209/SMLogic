@@ -12,7 +12,7 @@ if userFolder:
     if len(users) == 1: bpFolder = userFolder+users[0]+"/Blueprints/"
 
 class positioning:
-    def zeroZero(self, partDict, bp, important, init=False):
+    def zeroZero(partDict, bp, important, init=False):
         if init:
             bp.importantCounter = 0
             return
@@ -22,7 +22,7 @@ class positioning:
             bp.importantCounter += 1
         else:
             partDict["pos"] = (0,0,0)
-    def line(self, partDict, bp, important, init=False):
+    def line(partDict, bp, important, init=False):
         if init:
             bp.importantCounter = 0
             bp.unImportantCounter = 0
@@ -34,7 +34,6 @@ class positioning:
         else:
             partDict["pos"] = (bp.unImportantCounter,0,0)
             bp.unImportantCounter += 1
-
 
 
 def getIdFromName(name, folder=bpFolder):
@@ -69,42 +68,48 @@ def createBluePrint(name,description='#{STEAM_WORKSHOP_NO_DESCRIPTION}',localId=
 
 def overWriteBluePrint(id,bpFolder=bpFolder,byName=True):
     if bpFolder:
-        if byName: id = getIdFromName(id,folder=bpFolder)
+        if byName: id, path = getIdFromName(id,folder=bpFolder)
         if id:
-            if os.path.isdir(bpFolder+id):
-                return bluePrint(bpFolder+id)
+            if os.path.isdir(path):
+                return bluePrint(path)
         return False
     else: raise FileNotFoundError("bp folder not provided or found automatically! set exporter.bpFolder to your blueprints folder.")
 
 
 class bluePrint:
-    partList = []
-    partExportFunctions = {
-        baseParts.ids["gate"]: baseParts.gateExport
-    }
-
-    positioningMethod = positioning.zeroZero
-    overwritePositioning = False
-    ignoreUnknownParts = False
-    seperateImportant = True
-
     def __init__(self, path):
         self.path = path
+
+        self.partList = []
+        self.partExportFunctions = {
+            baseParts.ids["gate"]: baseParts.gateExport
+        }
+
+        self.positioningMethod = positioning.zeroZero
+        self.overwritePositioning = False
+        self.ignoreUnknownParts = False
+        self.seperateImportant = True
     
-    def loadPartList(self,partList): self.partList = partList
-    def jsonLoadsPartList(self,string): self.partList = json.loads(string)
-    def jsonLoadPartList(self,file): self.partList = json.load(file)
+    def loadNetwork(self,partList): self.partList = partList
+    def jsonLoadsNetwork(self,string): self.partList = json.loads(string)
+    def jsonLoadNetwork(self,file): self.partList = json.load(file)
 
     def genOutputDict(self):
         outputChildsList = []
-        self.positioningMethod(None,None,None,init=True)
-        for part in partList:
+        self.positioningMethod(None,self,None,init=True)
+        for part in self.partList:
             if part["pos"] == None or self.overwritePositioning:
                 self.positioningMethod(part, self, part["important"] and self.seperateImportant)
-                # TODO
+                if part["part"] in self.partExportFunctions:
+                    outputChildsList.append(self.partExportFunctions[part["part"]](part))
+                elif self.ignoreUnknownParts == False: raise RuntimeError(f"part {part["part"]} not in partExportFunctions, cant export")
         return {
             "bodies":[
                 {"childs":outputChildsList}
             ],
             "version":4
         }
+    
+    def export(self):
+        with open(self.path+"/blueprint.json","w") as f:
+            json.dump(self.genOutputDict(),f)

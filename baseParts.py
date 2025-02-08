@@ -6,10 +6,11 @@ ids = { #part ids
 }
 
 class gate(sml.base): #logic gate
-    modes = ["and","or","xor","nand","nor","xnor"]  #all possible modes
-    partType = "gate"                               #part type to gate, its not a container
-
     def __init__(self,mode ,color="222222",pos=None, axis=(1,-2)): #initialise function
+        super().__init__()
+        self.modes = ["and","or","xor","nand","nor","xnor"]  #all possible modes
+        self.partType = "gate"                               #part type to gate, its not a container
+
         if mode not in self.modes and mode > 5 and mode < 0: raise TypeError(f"logic gate mode cannot be {mode}!") # if its a valid mode for the gate to be in
         
         self.color = color #set the color
@@ -20,8 +21,10 @@ class gate(sml.base): #logic gate
 
         self.inputCons = [self]     #list of gates inside contraption to connect to
         self.outputCons = [self]    #list of output gates to connect to something elses inputs
+        
     
     def dumpDict(self, bp: sml.bluePrint): #dictionary that it returns
+        if len(self.connectionsFrom) > 255: raise RuntimeError("gates can only have up to 255 connections! (sad ik)")
         return {
             "part": ids["gate"],            #sets part id to the gates
             "id": bp.getPartId(self),       #id
@@ -35,12 +38,12 @@ class gate(sml.base): #logic gate
             
         }
     
-def gateExport(self,gateDict):
+def gateExport(gateDict):
     return {
         "color": gateDict["color"],
         "controller":{
             "active": False,
-            "controllers":gateDict["connections"],
+            "controllers":[{"id":id} for id in gateDict["connections"]],
             "id": gateDict["id"],
             "joints":None,
             "mode": gateDict["mode"]
