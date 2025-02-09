@@ -1,0 +1,7 @@
+[
+    {"mode": 0, "connections": [1,2,3], "connections_from": []},
+    {"mode": 3, "connections": [3,4], "connections_from": [0]},
+    {"mode": 3, "connections": [4], "connections_from": [0]},
+    {"mode": 5, "connections": [], "connections_from": [0,1]},
+    {"mode": 5, "connections": [], "connections_from": [1,2]}
+]

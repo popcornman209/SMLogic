@@ -34,7 +34,7 @@ class gate(sml.base): #logic gate
             "mode": self.mode,              #gate mode, and or etc
             "important": self.important,    #wether its importatnt or not
             "connections": [bp.getPartId(part) for part in self.connections],           #things its connected to
-            "connectionsFrom": [bp.getPartId(part) for part in self.connectionsFrom]   #things connected to it
+            "connections_from": [bp.getPartId(part) for part in self.connectionsFrom]   #things connected to it
             
         }
     
