@@ -17,18 +17,17 @@ class positioning: #class that stores different positioning methods
         if init: #if initializing
             bp.importantCounter = 0 #x value for important gates
             return
-
         if important: #if the gate is important
             partDict["pos"] = (bp.importantCounter,-1,0) #put it on the "important line"
             bp.importantCounter += 1 #move the next important gate over
         else: #if its not important
             partDict["pos"] = (0,0,0) #put it at zero zero
+
     def line(partDict, bp, important, init=False): #line of gates
         if init:
             bp.importantCounter = 0 #line of important gates
             bp.unImportantCounter = 0 #line of unimportant gates
             return
-
         if important:
             partDict["pos"] = (bp.importantCounter,-1,0) #position important gates
             bp.importantCounter += 1
