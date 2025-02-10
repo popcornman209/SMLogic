@@ -1,6 +1,8 @@
 # SMLogic
 python library for generating scrap mechanic logic contraptions
 
-blank for now, still working on the project. if this isnt gone in a few weeks i got bored of it lol.
+blank for now, still working on the project.
 
-update: its mostly done besides the simulator, which is gpu accelerated and made in rust, but i gotta get better at rust before making it usable. right now its half chatgpt have copy pasted bs that isnt useful for really anything.
+update: gave up on simulator for now, even using rust+opencl for gpu acceleration it was still slower than just in game with mt fast logic mod. 
+
+todo list: more positioning functions, and maybe a simulator thats actually fast or atleast more useful than in game debugging.

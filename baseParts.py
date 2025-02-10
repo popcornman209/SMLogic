@@ -1,4 +1,5 @@
 import SMLogic as sml
+import math
 
 ids = { #part ids
     'gate': '9f0f56e8-2c31-4d83-996c-d00a9b296c3f',
@@ -17,7 +18,7 @@ class gate(sml.base): #logic gate
         if type(mode) == int: self.mode = mode      #set the mode if number provided
         else: self.mode = self.modes.index(mode)    #otherwise turn the string into a number
         self.pos = pos #set the pos
-        self.axis = axis
+        self.axis = axis #rotation
 
         self.inputCons = [self]     #list of gates inside contraption to connect to
         self.outputCons = [self]    #list of output gates to connect to something elses inputs
@@ -29,13 +30,12 @@ class gate(sml.base): #logic gate
             "part": ids["gate"],            #sets part id to the gates
             "id": bp.getPartId(self),       #id
             "color": self.color,            #color
-            "pos": self.pos,                #color
+            "pos": self.pos,                #position
             "axis": self.axis,              #rotation, formated (xaxis, zaxis)
             "mode": self.mode,              #gate mode, and or etc
             "important": self.important,    #wether its importatnt or not
             "connections": [bp.getPartId(part) for part in self.connections],           #things its connected to
             "connections_from": [bp.getPartId(part) for part in self.connectionsFrom]   #things connected to it
-            
         }
     
 def gateExport(gateDict):
@@ -52,4 +52,51 @@ def gateExport(gateDict):
         "shapeId": gateDict["part"],
         "xaxis":gateDict["axis"][0],
         "zaxis":gateDict["axis"][1]
+    }
+
+class timer(sml.base): #logic gate
+    def __init__(self, ticks:int, seconds=0,color="222222",pos=None, axis=(1,-2)): #initialise function
+        super().__init__()
+        self.partType = "timer"#part type to gate, its not a container
+
+        self.ticks = ticks #timer ticks
+        self.seconds = seconds #timer seconds
+        
+        self.color = color #set the color
+        self.pos = pos #set the pos
+        self.axis = axis #rotation
+
+        self.inputCons = [self]     #list of gates inside contraption to connect to
+        self.outputCons = [self]    #list of output gates to connect to something elses inputs
+    
+    def dumpDict(self, bp: sml.bluePrint): #dictionary that it returns
+        if len(self.connectionsFrom) > 1: raise RuntimeError("timers can only have 1 connection!")
+        return {
+            "part": ids["timer"],           #sets part id to the gates
+            "id": bp.getPartId(self),       #id
+            "color": self.color,            #color
+            "pos": self.pos,                #position
+            "axis": self.axis,              #rotation, formated (xaxis, zaxis)
+            "seconds": self.seconds,        #amount of seconds for the timer
+            "ticks": self.ticks,            #amount of ticks for the timer
+            "important": self.important,    #wether its importatnt or not
+            "connections": [bp.getPartId(part) for part in self.connections],           #things its connected to
+            "connections_from": [bp.getPartId(part) for part in self.connectionsFrom]   #things connected to it
+        }
+
+def timerExport(timerDict):
+    return {
+        "color": timerDict["color"],
+        "controller":{
+            "active": False,
+            "controllers":None,
+            "id": timerDict["id"],
+            "joints":None,
+            "seconds":timerDict["seconds"],
+            "ticks":timerDict["ticks"]
+        },
+        "pos":{"x":timerDict["pos"][0],"y":timerDict["pos"][1],"z":timerDict["pos"][2]},
+        "shapeId": timerDict["part"],
+        "xaxis":timerDict["axis"][0],
+        "zaxis":timerDict["axis"][1]
     }
