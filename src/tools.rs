@@ -28,13 +28,13 @@ pub fn tool_label(tool: Option<Tool>) -> &'static str {
 impl AppState {
     pub fn handle_tool(&mut self, pos: Pos2) {
         match self.active_tool {
+            None => {}
             Some(Tool::PlacePart(part_type)) => {
-                println!("{}", Part::new(part_type, &mut self.canvas_snapshot, pos));
+                Part::new(part_type, &mut self.canvas_snapshot, pos, self.snap_to_grid);
             }
-            Some(Tool::PlaceModule(id)) => {}
+            Some(Tool::PlaceModule(path)) => {}
             Some(Tool::Paint) => {}
             Some(Tool::Connector) => {}
-            None => {}
         }
     }
 }

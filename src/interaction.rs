@@ -3,7 +3,8 @@ use crate::state::{AppState, InteractionState};
 use crate::tools::Tool;
 
 impl AppState {
-    pub fn handle_input(&mut self, ctx: &Context, canvas_rect: Rect) {
+    pub fn handle_input(&mut self, ctx: &Context, response: &egui::Response) {
+        let canvas_rect = response.rect;
         let pointer_pos = ctx.input(|i| i.pointer.hover_pos());
         let in_canvas = pointer_pos.is_some_and(|p| canvas_rect.contains(p));
 

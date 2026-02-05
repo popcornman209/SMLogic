@@ -27,9 +27,11 @@ fn main() -> eframe::Result<()> {
 
 impl eframe::App for AppState {
     fn update(&mut self, ctx: &egui::Context, _frame: &mut eframe::Frame) {
+        self.draw_sidebar(ctx);
+        self.draw_settings(ctx);
         egui::CentralPanel::default().show(ctx, |ui| {
             let response = self.draw_canvas(ui, ctx);
-            self.handle_input(ctx, response.rect);
+            self.handle_input(ctx, &response);
         });
     }
 }

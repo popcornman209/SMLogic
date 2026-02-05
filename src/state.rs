@@ -18,11 +18,13 @@ impl Default for InteractionState {
     }
 }
 
+#[derive(Clone)]
 pub struct CanvasSnapshot {
     pub parts: HashMap<u64, Part>,
     pub next_id: u64,
 }
 
+#[derive(Clone)]
 pub struct AppState {
     pub config: Config,
     pub interaction_state: InteractionState,

@@ -1,3 +1,6 @@
+use crate::AppState;
+use crate::colors::DEFAULT_GATE_COLOR;
+use crate::part_render::GATE_SIZE;
 use crate::state::CanvasSnapshot;
 use egui::{Color32, Pos2, Vec2};
 use serde::{Deserialize, Serialize};
@@ -69,7 +72,7 @@ impl PartType {
     }
 }
 
-#[derive(Clone)]
+#[derive(Clone, Copy)]
 pub enum GateType {
     And,
     Or,
@@ -103,13 +106,14 @@ impl GateType {
     }
 }
 
+#[derive(Clone)]
 pub struct Gate {
-    gate_type: GateType,
-    powered: bool,
-    powered_next: bool,
+    pub gate_type: GateType,
+    pub powered: bool,
+    pub powered_next: bool,
 }
 impl Gate {
-    pub fn new(gate_type: GateType) -> (PartData, String) {
+    pub fn new(gate_type: GateType) -> (PartData, String, Vec2) {
         (
             PartData::Gate(Self {
                 gate_type: gate_type.clone(),
@@ -117,17 +121,19 @@ impl Gate {
                 powered_next: false,
             }),
             gate_type.to_label(),
+            -GATE_SIZE / 2.0,
         )
     }
 }
 
+#[derive(Clone)]
 pub struct Timer {
-    buffer: Vec<bool>,
-    secs: u8,
-    ticks: u8,
+    pub buffer: Vec<bool>,
+    pub secs: u8,
+    pub ticks: u8,
 }
 impl Timer {
-    pub fn new() -> (PartData, String) {
+    pub fn new() -> (PartData, String, Vec2) {
         (
             PartData::Timer(Self {
                 buffer: Vec::new(),
@@ -135,20 +141,23 @@ impl Timer {
                 ticks: 0,
             }),
             "Timer".to_string(),
+            -GATE_SIZE / 2.0,
         )
     }
 }
 
+#[derive(Clone)]
 pub struct Module {
-    path: &'static str,
-    inputs: Vec<u64>,
-    outputs: Vec<u64>,
-    canvas: CanvasSnapshot,
-    size: Vec2,
+    pub path: &'static str,
+    pub inputs: Vec<u64>,
+    pub outputs: Vec<u64>,
+    pub canvas: CanvasSnapshot,
+    pub size: Vec2,
 }
 impl Module {
-    pub fn new(path: &'static str) -> (PartData, String) {
+    pub fn new(path: &'static str) -> (PartData, String, Vec2) {
         //TODO make actually load module instead of... this
+        let size = Vec2::new(0.0, 0.0);
         (
             PartData::Module(Self {
                 path: path,
@@ -158,55 +167,62 @@ impl Module {
                     parts: HashMap::new(),
                     next_id: 0,
                 },
-                size: Vec2::new(0.0, 0.0),
+                size: size,
             }),
             "template label".to_string(),
+            -size / 2.0,
         )
     }
 }
 
+#[derive(Clone, Copy)]
 pub struct IO {
-    input: bool,
+    pub input: bool,
 }
 impl IO {
-    pub fn new(input: bool) -> (PartData, String) {
+    pub fn new(input: bool) -> (PartData, String, Vec2) {
         (
             PartData::IO(Self { input: input }),
             if input { "Input" } else { "Output" }.to_string(),
+            -GATE_SIZE / 2.0,
         )
     }
 }
 
+#[derive(Clone)]
 pub struct Switch {
-    toggle: bool,
-    powered: bool,
+    pub toggle: bool,
+    pub powered: bool,
 }
 impl Switch {
-    pub fn new(toggle: bool) -> (PartData, String) {
+    pub fn new(toggle: bool) -> (PartData, String, Vec2) {
         (
             PartData::Switch(Self {
                 toggle: toggle,
                 powered: false,
             }),
             "Switch".to_string(),
+            -GATE_SIZE / 2.0,
         )
     }
 }
 
+#[derive(Clone)]
 pub struct Label {
-    size: Vec2,
+    pub size: Vec2,
 }
 impl Label {
-    pub fn new() -> (PartData, String) {
+    pub fn new() -> (PartData, String, Vec2) {
+        let size = Vec2::new(100.0, 25.0);
         (
-            PartData::Label(Self {
-                size: Vec2::new(100.0, 25.0),
-            }),
+            PartData::Label(Self { size: size }),
             "Label".to_string(),
+            -size / 2.0,
         )
     }
 }
 
+#[derive(Clone)]
 pub enum PartData {
     Gate(Gate),
     Timer(Timer),
@@ -216,32 +232,48 @@ pub enum PartData {
     Label(Label),
 }
 
+#[derive(Clone)]
 pub struct Part {
-    id: u64,
-    part_data: PartData,
-    pos: Pos2,
-    label: String,
+    pub id: u64,
+    pub part_data: PartData,
+    pub pos: Pos2,
+    pub label: String,
+    pub color: Color32,
 }
 impl Part {
-    pub fn new(part: PartType, snapshot: &mut CanvasSnapshot, pos: Pos2) -> u64 {
-        let (part_data, label): (PartData, String) = match part.clone() {
+    pub fn new(
+        part: PartType,
+        snapshot: &mut CanvasSnapshot,
+        pos: Pos2,
+        snap_to_grid: bool,
+    ) -> u64 {
+        let (part_data, label, pos_offset): (PartData, String, Vec2) = match part.clone() {
             PartType::Timer => Timer::new(),
-            // PartType::Input => {}
-            // PartType::Output => {}
+            PartType::Input | PartType::Output => IO::new(part == PartType::Input),
             PartType::Button | PartType::Switch => Switch::new(part == PartType::Switch),
-            // PartType::Label => {}
+            PartType::Label => Label::new(),
             _ => Gate::new(GateType::from_part_type(part)),
         };
+        let id = snapshot.next_id;
         snapshot.next_id += 1;
-        snapshot.parts.insert(
-            snapshot.next_id,
-            Self {
-                id: snapshot.next_id,
-                part_data: part_data,
-                pos: pos,
-                label: label,
-            },
-        );
-        snapshot.next_id
+        let mut part = Self {
+            id: id,
+            part_data: part_data,
+            pos: pos + pos_offset,
+            label: label,
+            color: DEFAULT_GATE_COLOR,
+        };
+        if snap_to_grid {
+            part.snap_pos();
+        }
+        snapshot.parts.insert(id, part);
+        id
+    }
+
+    pub fn snap_pos(&mut self) {
+        self.pos = Pos2::new(
+            (self.pos.x / 20.0).round() * 20.0,
+            (self.pos.y / 20.0).round() * 20.0,
+        )
     }
 }

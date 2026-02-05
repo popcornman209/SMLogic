@@ -18,21 +18,22 @@ impl AppState {
         if self.show_grid {
             self.draw_grid(&painter, canvas_rect);
         }
-        self.draw_sidebar(ctx);
+        self.draw_parts(painter);
+        //self.draw_sidebar(ctx);
         self.draw_footer(ctx);
-        self.draw_settings(ctx);
+        //self.draw_settings(ctx);
 
         response
     }
 
-    fn apply_color_pallet(&self, ctx: &egui::Context) {
+    pub fn apply_color_pallet(&self, ctx: &egui::Context) {
         ctx.set_visuals(egui::Visuals {
             override_text_color: Some(Color32::from_rgb(0, 0, 255)),
             ..Default::default()
         });
     }
 
-    fn draw_grid(&self, painter: &Painter, canvas_rect: Rect) {
+    pub fn draw_grid(&self, painter: &Painter, canvas_rect: Rect) {
         let grid_spacing = 20.0_f32;
         let grid_stroke = Stroke::new(0.5, self.color_pallet.grid_lines);
 
@@ -67,7 +68,7 @@ impl AppState {
         }
     }
 
-    fn draw_sidebar(&mut self, ctx: &egui::Context) {
+    pub fn draw_sidebar(&mut self, ctx: &egui::Context) {
         egui::SidePanel::left("toolbar")
             .resizable(false)
             .exact_width(160.0)
@@ -137,9 +138,9 @@ impl AppState {
             });
     }
 
-    fn draw_footer(&mut self, ctx: &egui::Context) {}
+    pub fn draw_footer(&mut self, ctx: &egui::Context) {}
 
-    fn draw_settings(&mut self, ctx: &egui::Context) {
+    pub fn draw_settings(&mut self, ctx: &egui::Context) {
         let mut open = self.settings_open;
         egui::Window::new("Settings")
             .open(&mut open)
