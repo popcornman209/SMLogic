@@ -3,6 +3,7 @@ use crate::config::Config;
 use crate::egui::{Pos2, Vec2};
 use crate::parts::Part;
 use crate::tools::Tool;
+use std::collections::HashMap;
 
 //operation being completed, ie box selecting, resizing, etc
 #[derive(Debug, Clone, Copy, PartialEq)]
@@ -18,7 +19,7 @@ impl Default for InteractionState {
 }
 
 pub struct CanvasSnapshot {
-    pub gates: Vec<Part>,
+    pub parts: HashMap<u64, Part>,
     pub next_id: u64,
 }
 
@@ -49,7 +50,7 @@ impl AppState {
             pan_offset: Vec2::ZERO,
             zoom: 1.0,
             canvas_snapshot: CanvasSnapshot {
-                gates: Vec::new(),
+                parts: HashMap::new(),
                 next_id: 0,
             },
             show_arrows: config.show_arrows,

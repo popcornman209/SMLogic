@@ -1,6 +1,7 @@
 use crate::state::CanvasSnapshot;
 use egui::{Color32, Pos2, Vec2};
 use serde::{Deserialize, Serialize};
+use std::collections::HashMap;
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Hash, Serialize, Deserialize)]
 pub enum PartType {
@@ -92,7 +93,6 @@ impl GateType {
 
     pub fn from_part_type(part: PartType) -> Self {
         match part {
-            PartType::And => Self::And,
             PartType::Or => Self::Or,
             PartType::Xor => Self::Xor,
             PartType::Nand => Self::Nand,
@@ -140,20 +140,80 @@ impl Timer {
 }
 
 pub struct Module {
-    inputs: Vec<String>,
-    outputs: Vec<String>,
+    path: &'static str,
+    inputs: Vec<u64>,
+    outputs: Vec<u64>,
+    canvas: CanvasSnapshot,
     size: Vec2,
 }
+impl Module {
+    pub fn new(path: &'static str) -> (PartData, String) {
+        //TODO make actually load module instead of... this
+        (
+            PartData::Module(Self {
+                path: path,
+                inputs: Vec::new(),
+                outputs: Vec::new(),
+                canvas: CanvasSnapshot {
+                    parts: HashMap::new(),
+                    next_id: 0,
+                },
+                size: Vec2::new(0.0, 0.0),
+            }),
+            "template label".to_string(),
+        )
+    }
+}
+
+pub struct IO {
+    input: bool,
+}
+impl IO {
+    pub fn new(input: bool) -> (PartData, String) {
+        (
+            PartData::IO(Self { input: input }),
+            if input { "Input" } else { "Output" }.to_string(),
+        )
+    }
+}
+
 pub struct Switch {
     toggle: bool,
     powered: bool,
+}
+impl Switch {
+    pub fn new(toggle: bool) -> (PartData, String) {
+        (
+            PartData::Switch(Self {
+                toggle: toggle,
+                powered: false,
+            }),
+            "Switch".to_string(),
+        )
+    }
+}
+
+pub struct Label {
+    size: Vec2,
+}
+impl Label {
+    pub fn new() -> (PartData, String) {
+        (
+            PartData::Label(Self {
+                size: Vec2::new(100.0, 25.0),
+            }),
+            "Label".to_string(),
+        )
+    }
 }
 
 pub enum PartData {
     Gate(Gate),
     Timer(Timer),
     Module(Module),
+    IO(IO),
     Switch(Switch),
+    Label(Label),
 }
 
 pub struct Part {
@@ -166,20 +226,22 @@ impl Part {
     pub fn new(part: PartType, snapshot: &mut CanvasSnapshot, pos: Pos2) -> u64 {
         let (part_data, label): (PartData, String) = match part.clone() {
             PartType::Timer => Timer::new(),
-            // PartType::Module => {}
             // PartType::Input => {}
             // PartType::Output => {}
-            // PartType::Button | PartType::Switch => {}
+            PartType::Button | PartType::Switch => Switch::new(part == PartType::Switch),
             // PartType::Label => {}
             _ => Gate::new(GateType::from_part_type(part)),
         };
         snapshot.next_id += 1;
-        snapshot.gates.push(Self {
-            id: snapshot.next_id,
-            part_data: part_data,
-            pos: pos,
-            label: label,
-        });
+        snapshot.parts.insert(
+            snapshot.next_id,
+            Self {
+                id: snapshot.next_id,
+                part_data: part_data,
+                pos: pos,
+                label: label,
+            },
+        );
         snapshot.next_id
     }
 }

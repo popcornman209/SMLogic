@@ -2,6 +2,7 @@ mod canvas;
 mod colors;
 mod config;
 mod interaction;
+mod part_render;
 mod parts;
 mod state;
 mod tools;

@@ -213,5 +213,5 @@ pub const SM_PALETTE: [[Color32; 4]; 10] = [
     ],
 ];
 
-const POWERED_COLOR: Color32 = Color32::from_rgb(0x2C, 0xE6, 0xE6);
-const UNPOWERED_COLOR: Color32 = Color32::from_rgb(80, 80, 80);
+pub const POWERED_COLOR: Color32 = Color32::from_gray(35);
+pub const UNPOWERED_COLOR: Color32 = Color32::from_rgb(0, 149, 255);

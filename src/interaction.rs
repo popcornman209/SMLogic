@@ -68,15 +68,7 @@ impl AppState {
         if ctx.input(|i| i.pointer.button_pressed(PointerButton::Primary)) {
             let shift = ctx.input(|i| i.modifiers.shift);
 
-            match self.active_tool {
-                Some(Tool::PlacePart(part_type)) => {
-                    println!("greg");
-                }
-                Some(Tool::PlaceModule(id)) => {}
-                Some(Tool::Paint) => {}
-                Some(Tool::Connector) => {}
-                None => {}
-            }
+            self.handle_tool(world_pos);
         }
     }
 }
