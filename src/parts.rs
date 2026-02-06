@@ -1,10 +1,11 @@
 use crate::AppState;
 use crate::colors::DEFAULT_GATE_COLOR;
-use crate::part_render::GATE_SIZE;
 use crate::state::CanvasSnapshot;
 use egui::{Color32, Pos2, Vec2};
 use serde::{Deserialize, Serialize};
 use std::collections::HashMap;
+
+pub const GATE_SIZE: Vec2 = Vec2::new(80.0, 60.0);
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Hash, Serialize, Deserialize)]
 pub enum PartType {
@@ -178,11 +179,17 @@ impl Module {
 #[derive(Clone, Copy)]
 pub struct IO {
     pub input: bool,
+    pub powered: bool,
+    pub powered_next: bool,
 }
 impl IO {
     pub fn new(input: bool) -> (PartData, String, Vec2) {
         (
-            PartData::IO(Self { input: input }),
+            PartData::IO(Self {
+                input: input,
+                powered: false,
+                powered_next: false,
+            }),
             if input { "Input" } else { "Output" }.to_string(),
             -GATE_SIZE / 2.0,
         )

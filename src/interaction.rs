@@ -38,7 +38,9 @@ impl AppState {
             }
         }
 
-        let screen_pos = pointer_pos.unwrap();
+        let Some(screen_pos) = pointer_pos else {
+            return;
+        };
         let world_pos = self.screen_to_world(screen_pos);
 
         match self.interaction_state {
