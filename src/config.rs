@@ -8,6 +8,7 @@ pub struct Config {
     pub show_grid: bool,
     pub show_connection_count: bool,
     pub snap_to_grid: bool,
+    pub show_fps: bool,
     pub color_pallet: ColorPallet,
 }
 
@@ -47,6 +48,7 @@ impl Default for Config {
             show_grid: true,
             show_connection_count: true,
             snap_to_grid: true,
+            show_fps: false,
             color_pallet: ColorPallet::DEFAULT_PALLET,
         }
     }

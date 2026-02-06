@@ -34,11 +34,13 @@ pub struct AppState {
     pub pan_offset: Vec2,
     pub zoom: f32,
     pub canvas_snapshot: CanvasSnapshot,
+    pub fps_idle: bool,
     // settings
     pub show_arrows: bool,
     pub show_grid: bool,
     pub show_connection_count: bool,
     pub snap_to_grid: bool,
+    pub show_fps: bool,
     pub color_pallet: ColorPallet,
 }
 
@@ -55,10 +57,12 @@ impl AppState {
                 parts: HashMap::new(),
                 next_id: 0,
             },
+            fps_idle: false,
             show_arrows: config.show_arrows,
             show_grid: config.show_grid,
             snap_to_grid: config.snap_to_grid,
             show_connection_count: config.show_connection_count,
+            show_fps: config.show_fps,
             color_pallet: config.color_pallet.clone(),
             config: config,
         };

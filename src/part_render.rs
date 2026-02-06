@@ -13,6 +13,7 @@ impl AppState {
         for part in self.canvas_snapshot.parts.values() {
             match &part.part_data {
                 PartData::Gate(gate) => gate.draw(part, &painter, self),
+                PartData::Timer(timer) => timer.draw(part, &painter, self),
                 _ => {}
             }
         }
@@ -72,6 +73,16 @@ pub fn draw_part_base(
 
 impl Gate {
     pub fn draw(&self, part: &Part, painter: &Painter, app_state: &AppState) {
+        // skip rendering if off-screen
+        let screen_rect = Rect::from_min_max(
+            app_state.world_to_screen(part.pos),
+            app_state.world_to_screen(part.pos + GATE_SIZE),
+        );
+        if !painter.clip_rect().intersects(screen_rect) {
+            return;
+        }
+
+        //draw main base & outline
         draw_part_base(
             painter,
             part.pos,
@@ -83,6 +94,7 @@ impl Gate {
             false,
             app_state,
         );
+
         let stroke = Stroke::new(1.5 * app_state.zoom, Color32::WHITE);
         let mut center: Pos2 =
             app_state.world_to_screen(part.pos - Vec2::new(0.0, ICON_Y_SHIFT) + GATE_SIZE / 2.0);
@@ -110,7 +122,7 @@ impl Gate {
 
         match self.gate_type {
             GateType::And | GateType::Nand => {
-                // D-shape body
+                // D shaped body
                 let mut points = vec![Pos2::new(left, top), Pos2::new(center.x, top)];
 
                 let segments = 16;
@@ -122,11 +134,12 @@ impl Gate {
                         center.y + (ICON_HEIGHT / 2.0 * angle.sin() * app_state.zoom),
                     ));
                 }
+
                 points.push(Pos2::new(left, bottom));
                 painter.add(PathShape::closed_line(points, stroke));
             }
             _ => {
-                // OR/NOR/XOR/XNOR gate body - curved shape with pointed front
+                // OR/NOR/XOR/XNOR gate body, curved pointy shape )>
                 let r = (ICON_HEIGHT / 2.0) * app_state.zoom;
                 let segments = 16;
                 let back_depth = r * 0.45;
@@ -134,7 +147,7 @@ impl Gate {
 
                 let mut points = Vec::new();
 
-                // Back curve - shield shape but scaled to back_depth
+                // back curve
                 let arc_scale = 0.9;
                 let start_angle = std::f32::consts::PI * (-0.5) * arc_scale;
                 let end_angle = std::f32::consts::PI * 0.5 * arc_scale;
@@ -142,7 +155,6 @@ impl Gate {
                 let back_start = Pos2::new(left + back_depth * start_angle.cos(), top);
                 let back_end = Pos2::new(left + back_depth * end_angle.cos(), bottom);
 
-                // Back curve - y linear from top to bottom, x uses cos for shield shape
                 for i in 0..=segments {
                     let t = i as f32 / segments as f32;
                     let angle = std::f32::consts::PI * (t - 0.5) * arc_scale;
@@ -152,7 +164,7 @@ impl Gate {
                     ));
                 }
 
-                // Bottom curve from back_end to right point
+                // bottom curve from back_end to right point
                 for i in 1..=segments {
                     let t = i as f32 / segments as f32;
                     let x = back_end.x + (right_x - back_end.x) * t;
@@ -160,7 +172,7 @@ impl Gate {
                     points.push(Pos2::new(x, y));
                 }
 
-                // Top curve from right point back to back_start
+                // top curve from right point back to back_start
                 for i in 1..segments {
                     let t = i as f32 / segments as f32;
                     let x = right_x + (back_start.x - right_x) * t;
@@ -171,6 +183,7 @@ impl Gate {
 
                 painter.add(PathShape::closed_line(points, stroke));
 
+                // xor/ xnor "shield" thing, like ))>
                 if matches!(self.gate_type, GateType::Xor | GateType::Xnor) {
                     let r = (ICON_HEIGHT / 2.0) * app_state.zoom * 0.9;
                     let segments = 12;
@@ -190,5 +203,60 @@ impl Gate {
                 }
             }
         }
+    }
+}
+
+impl Timer {
+    pub fn draw(&self, part: &Part, painter: &Painter, app_state: &AppState) {
+        // skip rendering if off-screen
+        let screen_rect = Rect::from_min_max(
+            app_state.world_to_screen(part.pos),
+            app_state.world_to_screen(part.pos + GATE_SIZE),
+        );
+        if !painter.clip_rect().intersects(screen_rect) {
+            return;
+        }
+
+        //draw main base & outline
+        draw_part_base(
+            painter,
+            part.pos,
+            GATE_SIZE,
+            part.color,
+            part.label.clone(),
+            13.0,
+            *self.buffer.last().unwrap_or(&false),
+            false,
+            app_state,
+        );
+
+        let stroke = Stroke::new(1.5 * app_state.zoom, Color32::WHITE);
+        let center: Pos2 =
+            app_state.world_to_screen(part.pos - Vec2::new(0.0, ICON_Y_SHIFT) + GATE_SIZE / 2.0);
+
+        let top = center.y - (ICON_HEIGHT / 2.0 * app_state.zoom);
+        let bottom = center.y + (ICON_HEIGHT / 2.0 * app_state.zoom);
+        let half_width = (ICON_HEIGHT / 2.0 * 0.7) * app_state.zoom;
+
+        // hourglass shape
+        let top_left = Pos2::new(center.x - half_width, top);
+        let top_right = Pos2::new(center.x + half_width, top);
+        let bottom_left = Pos2::new(center.x - half_width, bottom);
+        let bottom_right = Pos2::new(center.x + half_width, bottom);
+
+        let points = vec![
+            top_left,
+            top_right,
+            center,
+            bottom_right,
+            bottom_left,
+            center,
+            top_left,
+        ];
+        painter.add(PathShape::line(points, stroke));
+
+        // Top and bottom caps
+        painter.line_segment([top_left, top_right], stroke);
+        painter.line_segment([bottom_left, bottom_right], stroke);
     }
 }

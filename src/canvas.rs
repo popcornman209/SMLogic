@@ -23,6 +23,12 @@ impl AppState {
         self.draw_footer(ctx);
         //self.draw_settings(ctx);
 
+        if self.show_fps {
+            self.draw_fps(ctx);
+        } else {
+            ctx.request_repaint_after(std::time::Duration::from_secs(1));
+        }
+
         response
     }
 
@@ -140,6 +146,21 @@ impl AppState {
 
     pub fn draw_footer(&mut self, ctx: &egui::Context) {}
 
+    pub fn draw_fps(&mut self, ctx: &egui::Context) {
+        let dt = ctx.input(|i| i.unstable_dt);
+        let idle = dt > 0.1;
+        let fps = if idle { 0 } else { (1.0 / dt).round() as u32 };
+
+        ctx.request_repaint_after(std::time::Duration::from_millis(if idle { 1000 } else { 150 }));
+
+        egui::Area::new(egui::Id::new("fps_overlay"))
+            .anchor(egui::Align2::RIGHT_TOP, egui::vec2(-8.0, 8.0))
+            .show(ctx, |ui: &mut egui::Ui| {
+                ui.set_min_width(55.0);
+                ui.label(format!("{} FPS", fps));
+            });
+    }
+
     pub fn draw_settings(&mut self, ctx: &egui::Context) {
         let mut open = self.settings_open;
         egui::Window::new("Settings")
@@ -175,6 +196,10 @@ impl AppState {
                     .changed()
                 {
                     self.config.show_connection_count = self.show_connection_count;
+                    self.config.save();
+                }
+                if ui.checkbox(&mut self.show_fps, "Show FPS").changed() {
+                    self.config.show_fps = self.show_fps;
                     self.config.save();
                 }
 
