@@ -11,15 +11,15 @@ const ICON_WIDTH: f32 = ICON_HEIGHT * 1.5;
 const ICON_Y_SHIFT: f32 = 10.0;
 
 impl AppState {
-    pub fn draw_parts(&self, painter: Painter) {
+    pub fn draw_parts(&self, painter: &Painter) {
         for part in self.canvas_snapshot.parts.values() {
             match &part.part_data {
-                PartData::Gate(gate) => gate.draw(part, &painter, self),
-                PartData::Timer(timer) => timer.draw(part, &painter, self),
-                PartData::Module(module) => module.draw(part, &painter, self),
-                PartData::IO(io) => io.draw(part, &painter, self),
-                PartData::Switch(switch) => switch.draw(part, &painter, self),
-                PartData::Label(label) => label.draw(part, &painter, self),
+                PartData::Gate(gate) => gate.draw(part, painter, self),
+                PartData::Timer(timer) => timer.draw(part, painter, self),
+                PartData::Module(module) => module.draw(part, painter, self),
+                PartData::IO(io) => io.draw(part, painter, self),
+                PartData::Switch(switch) => switch.draw(part, painter, self),
+                PartData::Label(label) => label.draw(part, painter, self),
             }
         }
     }

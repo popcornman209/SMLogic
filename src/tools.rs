@@ -7,7 +7,6 @@ use crate::parts::{Part, PartType};
 #[derive(Debug, Clone, Copy, PartialEq)]
 pub enum Tool {
     PlacePart(PartType),
-    PlaceModule(&'static str),
     Paint,
     Connector,
 }
@@ -29,11 +28,7 @@ impl AppState {
     pub fn handle_tool(&mut self, world_pos: Pos2, shift_held: bool) {
         match self.active_tool {
             None => {
-                if let Some(part) = self.part_at_pos(world_pos) {
-                    self.handle_selection(part.id, shift_held);
-                } else if !shift_held {
-                    self.selection.clear()
-                }
+                self.box_select_start = Some(world_pos);
             }
             Some(Tool::PlacePart(part_type)) => match self.part_at_pos(world_pos) {
                 None => {
@@ -43,17 +38,16 @@ impl AppState {
                         world_pos,
                         self.snap_to_grid,
                     );
-                    self.handle_selection(part_id, shift_held);
+                    self.select_part(part_id, shift_held);
                 }
-                Some(part) => self.handle_selection(part.id, shift_held),
+                Some(part) => self.select_part(part.id, shift_held),
             },
-            Some(Tool::PlaceModule(path)) => {}
             Some(Tool::Paint) => {}
             Some(Tool::Connector) => {}
         }
     }
 
-    fn handle_selection(&mut self, part_id: u64, shift_held: bool) {
+    pub fn select_part(&mut self, part_id: u64, shift_held: bool) {
         if !shift_held {
             self.selection.clear();
         }

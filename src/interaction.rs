@@ -57,6 +57,9 @@ impl AppState {
                     self.interaction_state = InteractionState::Idle;
                 }
             }
+            InteractionState::BoxSelecting => {
+                println!("box selecting!!")
+            }
         }
     }
 
@@ -67,10 +70,28 @@ impl AppState {
             self.interaction_state = InteractionState::Panning;
             return;
         }
+        let shift_held = ctx.input(|i| i.modifiers.shift);
         if ctx.input(|i| i.pointer.button_pressed(PointerButton::Primary)) {
-            let shift_held = ctx.input(|i| i.modifiers.shift);
-
             self.handle_tool(world_pos, shift_held);
+        } else if ctx.input(|i| i.pointer.button_released(PointerButton::Primary)) {
+            if self.box_select_start == Some(world_pos) {
+                if let Some(part) = self.part_at_pos(world_pos) {
+                    self.select_part(part.id, shift_held);
+                } else if !shift_held {
+                    // if clicked on nothing & shift isnt held
+                    self.selection.clear()
+                }
+            } else if let Some(start) = self.box_select_start {
+                // box selecting
+                if !shift_held {
+                    self.selection.clear()
+                }
+                let parts = self.parts_in_rect(Rect::from_two_pos(start, world_pos));
+                for part in parts {
+                    self.selection.push(part);
+                }
+            }
+            self.box_select_start = None;
         }
     }
 }

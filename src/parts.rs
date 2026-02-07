@@ -17,7 +17,7 @@ pub enum PartType {
     Nor,
     Xnor,
     Timer,
-    Module,
+    Module(&'static str),
     Input,
     Output,
     Button,
@@ -65,7 +65,7 @@ impl PartType {
             PartType::Nor => "NOR",
             PartType::Xnor => "XNOR",
             PartType::Timer => "Timer",
-            PartType::Module => "Module",
+            PartType::Module(_) => "Module",
             PartType::Input => "Input",
             PartType::Output => "Output",
             PartType::Button => "Button",
@@ -273,6 +273,7 @@ impl Part {
             PartType::Input | PartType::Output => IO::new(part == PartType::Input),
             PartType::Button | PartType::Switch => Switch::new(part == PartType::Switch),
             PartType::Label => Label::new(),
+            PartType::Module(path) => Module::new(path),
             _ => Gate::new(GateType::from_part_type(part)),
         };
         let id = snapshot.next_id;

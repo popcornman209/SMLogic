@@ -10,6 +10,7 @@ use std::collections::HashMap;
 pub enum InteractionState {
     Idle,
     Panning,
+    BoxSelecting,
 }
 
 impl Default for InteractionState {
@@ -35,6 +36,7 @@ pub struct AppState {
     pub zoom: f32,
     pub canvas_snapshot: CanvasSnapshot,
     pub selection: Vec<u64>,
+    pub box_select_start: Option<Pos2>,
     pub fps_idle: bool,
     // settings
     pub show_arrows: bool,
@@ -59,6 +61,7 @@ impl AppState {
                 next_id: 0,
             },
             selection: Vec::new(),
+            box_select_start: None,
             fps_idle: false,
             show_arrows: config.show_arrows,
             show_grid: config.show_grid,
@@ -97,5 +100,17 @@ impl AppState {
             }
         }
         None
+    }
+
+    pub fn parts_in_rect(&self, rect: Rect) -> Vec<u64> {
+        self.canvas_snapshot
+            .parts
+            .values()
+            .filter(|part| {
+                let size = part.part_data.size();
+                Rect::from_min_size(part.pos, size).intersects(rect)
+            })
+            .map(|part| part.id)
+            .collect()
     }
 }

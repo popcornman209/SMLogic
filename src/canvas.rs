@@ -18,7 +18,8 @@ impl AppState {
         if self.show_grid {
             self.draw_grid(&painter, canvas_rect);
         }
-        self.draw_parts(painter);
+        self.draw_parts(&painter);
+        self.draw_box_selection(&painter, ctx);
         //self.draw_sidebar(ctx);
         self.draw_footer(ctx);
         //self.draw_settings(ctx);
@@ -64,6 +65,21 @@ impl AppState {
                 ],
                 grid_stroke,
             );
+        }
+    }
+
+    pub fn draw_box_selection(&self, painter: &Painter, ctx: &egui::Context) {
+        if let Some(selection) = self.box_select_start {
+            let pointer_pos = ctx.input(|i| i.pointer.hover_pos());
+            if let Some(pointer) = pointer_pos {
+                let mut color = self.color_pallet.selection;
+                color = Color32::from_rgba_unmultiplied(color.r(), color.g(), color.b(), 80);
+                painter.rect_filled(
+                    Rect::from_two_pos(self.world_to_screen(selection), pointer),
+                    0.0,
+                    color,
+                );
+            }
         }
     }
 
