@@ -1,6 +1,6 @@
 use crate::colors::ColorPallet;
 use crate::config::Config;
-use crate::egui::{Pos2, Vec2};
+use crate::egui::{Pos2, Rect, Vec2};
 use crate::parts::Part;
 use crate::tools::Tool;
 use std::collections::HashMap;
@@ -34,6 +34,7 @@ pub struct AppState {
     pub pan_offset: Vec2,
     pub zoom: f32,
     pub canvas_snapshot: CanvasSnapshot,
+    pub selection: Vec<u64>,
     pub fps_idle: bool,
     // settings
     pub show_arrows: bool,
@@ -57,6 +58,7 @@ impl AppState {
                 parts: HashMap::new(),
                 next_id: 0,
             },
+            selection: Vec::new(),
             fps_idle: false,
             show_arrows: config.show_arrows,
             show_grid: config.show_grid,
@@ -82,5 +84,18 @@ impl AppState {
             (world_pos.x - self.pan_offset.x) * self.zoom,
             (world_pos.y - self.pan_offset.y) * self.zoom,
         )
+    }
+
+    pub fn part_at_pos(&self, world_pos: Pos2) -> Option<&Part> {
+        for part in self.canvas_snapshot.parts.values() {
+            let size = part.part_data.size();
+
+            let rect = Rect::from_min_size(part.pos, size);
+
+            if rect.contains(world_pos) {
+                return Some(part);
+            }
+        }
+        None
     }
 }

@@ -240,6 +240,18 @@ pub enum PartData {
     Switch(Switch),
     Label(Label),
 }
+impl PartData {
+    pub fn size(&self) -> Vec2 {
+        match self {
+            PartData::Gate(_) => GATE_SIZE,
+            PartData::Timer(_) => GATE_SIZE,
+            PartData::Module(module) => module.size,
+            PartData::IO(_) => GATE_SIZE,
+            PartData::Switch(_) => SWITCH_SIZE,
+            PartData::Label(label) => label.size,
+        }
+    }
+}
 
 #[derive(Clone)]
 pub struct Part {

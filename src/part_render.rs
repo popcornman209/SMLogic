@@ -119,11 +119,15 @@ impl Gate {
             painter,
             part.pos,
             GATE_SIZE,
-            part.color,
+            if app_state.selection.contains(&part.id) {
+                app_state.color_pallet.selection
+            } else {
+                part.color
+            },
             part.label.clone(),
             13.0,
             self.powered,
-            true,
+            false,
             app_state,
         );
 
@@ -364,7 +368,7 @@ impl Switch {
             part.color,
             part.label.clone(),
             0.0,
-            false,
+            self.powered,
             false,
             app_state,
         );
