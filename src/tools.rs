@@ -26,7 +26,7 @@ pub fn tool_label(tool: Option<Tool>) -> &'static str {
 }
 
 impl AppState {
-    pub fn handle_tool(&mut self, pos: Pos2) {
+    pub fn handle_tool(&mut self, pos: Pos2, shift_held: bool) {
         match self.active_tool {
             None => {}
             Some(Tool::PlacePart(part_type)) => {

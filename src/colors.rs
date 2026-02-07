@@ -1,5 +1,4 @@
 use crate::egui::{Color32, epaint, style};
-use crate::state::AppState;
 use serde::{Deserialize, Serialize};
 use std::borrow::Cow;
 

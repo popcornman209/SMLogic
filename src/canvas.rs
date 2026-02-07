@@ -32,13 +32,6 @@ impl AppState {
         response
     }
 
-    pub fn apply_color_pallet(&self, ctx: &egui::Context) {
-        ctx.set_visuals(egui::Visuals {
-            override_text_color: Some(Color32::from_rgb(0, 0, 255)),
-            ..Default::default()
-        });
-    }
-
     pub fn draw_grid(&self, painter: &Painter, canvas_rect: Rect) {
         let grid_spacing = 20.0_f32;
         let grid_stroke = Stroke::new(0.5, self.color_pallet.grid_lines);
@@ -149,9 +142,13 @@ impl AppState {
     pub fn draw_fps(&mut self, ctx: &egui::Context) {
         let dt = ctx.input(|i| i.unstable_dt);
         let idle = dt > 0.1;
-        let fps = if idle { 0 } else { (1.0 / dt).round() as u32 };
+        let fps = if idle { 0 } else { (1.0 / dt).round() as u16 };
 
-        ctx.request_repaint_after(std::time::Duration::from_millis(if idle { 1000 } else { 150 }));
+        ctx.request_repaint_after(std::time::Duration::from_millis(if idle {
+            1000
+        } else {
+            150
+        }));
 
         egui::Area::new(egui::Id::new("fps_overlay"))
             .anchor(egui::Align2::RIGHT_TOP, egui::vec2(-8.0, 8.0))

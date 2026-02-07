@@ -6,6 +6,7 @@ use serde::{Deserialize, Serialize};
 use std::collections::HashMap;
 
 pub const GATE_SIZE: Vec2 = Vec2::new(80.0, 60.0);
+pub const SWITCH_SIZE: Vec2 = Vec2::new(60.0, 60.0);
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Hash, Serialize, Deserialize)]
 pub enum PartType {
@@ -52,6 +53,7 @@ impl PartType {
         PartType::Output,
         PartType::Button,
         PartType::Switch,
+        PartType::Label,
     ];
 
     pub fn label(&self) -> &'static str {
@@ -150,15 +152,15 @@ impl Timer {
 #[derive(Clone)]
 pub struct Module {
     pub path: &'static str,
-    pub inputs: Vec<u64>,
-    pub outputs: Vec<u64>,
+    pub inputs: Vec<(u64, &'static str)>,
+    pub outputs: Vec<(u64, &'static str)>,
     pub canvas: CanvasSnapshot,
     pub size: Vec2,
 }
 impl Module {
     pub fn new(path: &'static str) -> (PartData, String, Vec2) {
         //TODO make actually load module instead of... this
-        let size = Vec2::new(0.0, 0.0);
+        let size = Vec2::new(120.0, 100.0);
         (
             PartData::Module(Self {
                 path: path,
@@ -208,7 +210,7 @@ impl Switch {
                 toggle: toggle,
                 powered: false,
             }),
-            "Switch".to_string(),
+            if toggle { "Switch" } else { "Button" }.to_string(),
             -GATE_SIZE / 2.0,
         )
     }
@@ -220,7 +222,7 @@ pub struct Label {
 }
 impl Label {
     pub fn new() -> (PartData, String, Vec2) {
-        let size = Vec2::new(100.0, 25.0);
+        let size = Vec2::new(100.0, 20.0);
         (
             PartData::Label(Self { size: size }),
             "Label".to_string(),

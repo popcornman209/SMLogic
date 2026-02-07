@@ -1,6 +1,8 @@
 use crate::AppState;
 use crate::colors::{POWERED_COLOR, UNPOWERED_COLOR};
-use crate::parts::{GATE_SIZE, Gate, GateType, IO, Label, Module, Part, PartData, Switch, Timer};
+use crate::parts::{
+    GATE_SIZE, Gate, GateType, IO, Label, Module, Part, PartData, SWITCH_SIZE, Switch, Timer,
+};
 use eframe::epaint::PathShape;
 use egui::{Color32, Context, Painter, Pos2, Rect, Stroke, StrokeKind, Vec2};
 
@@ -14,7 +16,10 @@ impl AppState {
             match &part.part_data {
                 PartData::Gate(gate) => gate.draw(part, &painter, self),
                 PartData::Timer(timer) => timer.draw(part, &painter, self),
-                _ => {}
+                PartData::Module(module) => module.draw(part, &painter, self),
+                PartData::IO(io) => io.draw(part, &painter, self),
+                PartData::Switch(switch) => switch.draw(part, &painter, self),
+                PartData::Label(label) => label.draw(part, &painter, self),
             }
         }
     }
@@ -69,6 +74,33 @@ pub fn draw_part_base(
         egui::FontId::proportional(12.0 * app_state.zoom),
         Color32::WHITE,
     );
+
+    if resizable {
+        let handle_size = 8.0 * app_state.zoom;
+        let br = screen_rect.right_bottom();
+        let grip_stroke = Stroke::new(1.5 * app_state.zoom, Color32::from_gray(160));
+        painter.line_segment(
+            [
+                Pos2::new(br.x - handle_size * 0.3, br.y),
+                Pos2::new(br.x, br.y - handle_size * 0.3),
+            ],
+            grip_stroke,
+        );
+        painter.line_segment(
+            [
+                Pos2::new(br.x - handle_size * 0.65, br.y),
+                Pos2::new(br.x, br.y - handle_size * 0.65),
+            ],
+            grip_stroke,
+        );
+        painter.line_segment(
+            [
+                Pos2::new(br.x - handle_size, br.y),
+                Pos2::new(br.x, br.y - handle_size),
+            ],
+            grip_stroke,
+        );
+    }
 }
 
 impl Gate {
@@ -91,7 +123,7 @@ impl Gate {
             part.label.clone(),
             13.0,
             self.powered,
-            false,
+            true,
             app_state,
         );
 
@@ -258,5 +290,109 @@ impl Timer {
         // Top and bottom caps
         painter.line_segment([top_left, top_right], stroke);
         painter.line_segment([bottom_left, bottom_right], stroke);
+    }
+}
+
+impl Module {
+    pub fn draw(&self, part: &Part, painter: &Painter, app_state: &AppState) {
+        // skip rendering if off-screen
+        let screen_rect = Rect::from_min_max(
+            app_state.world_to_screen(part.pos),
+            app_state.world_to_screen(part.pos + GATE_SIZE),
+        );
+        if !painter.clip_rect().intersects(screen_rect) {
+            return;
+        }
+
+        //draw main base & outline
+        draw_part_base(
+            painter,
+            part.pos,
+            self.size,
+            part.color,
+            part.label.clone(),
+            0.0,
+            false,
+            true,
+            app_state,
+        );
+    }
+}
+
+impl IO {
+    pub fn draw(&self, part: &Part, painter: &Painter, app_state: &AppState) {
+        // skip rendering if off-screen
+        let screen_rect = Rect::from_min_max(
+            app_state.world_to_screen(part.pos),
+            app_state.world_to_screen(part.pos + GATE_SIZE),
+        );
+        if !painter.clip_rect().intersects(screen_rect) {
+            return;
+        }
+
+        //draw main base & outline
+        draw_part_base(
+            painter,
+            part.pos,
+            GATE_SIZE,
+            part.color,
+            part.label.clone(),
+            0.0,
+            false,
+            false,
+            app_state,
+        );
+    }
+}
+
+impl Switch {
+    pub fn draw(&self, part: &Part, painter: &Painter, app_state: &AppState) {
+        // skip rendering if off-screen
+        let screen_rect = Rect::from_min_max(
+            app_state.world_to_screen(part.pos),
+            app_state.world_to_screen(part.pos + GATE_SIZE),
+        );
+        if !painter.clip_rect().intersects(screen_rect) {
+            return;
+        }
+
+        //draw main base & outline
+        draw_part_base(
+            painter,
+            part.pos,
+            SWITCH_SIZE,
+            part.color,
+            part.label.clone(),
+            0.0,
+            false,
+            false,
+            app_state,
+        );
+    }
+}
+
+impl Label {
+    pub fn draw(&self, part: &Part, painter: &Painter, app_state: &AppState) {
+        // skip rendering if off-screen
+        let screen_rect = Rect::from_min_max(
+            app_state.world_to_screen(part.pos),
+            app_state.world_to_screen(part.pos + GATE_SIZE),
+        );
+        if !painter.clip_rect().intersects(screen_rect) {
+            return;
+        }
+
+        //draw main base & outline
+        draw_part_base(
+            painter,
+            part.pos,
+            self.size,
+            part.color,
+            part.label.clone(),
+            0.0,
+            false,
+            true,
+            app_state,
+        );
     }
 }

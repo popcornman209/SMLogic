@@ -68,9 +68,9 @@ impl AppState {
             return;
         }
         if ctx.input(|i| i.pointer.button_pressed(PointerButton::Primary)) {
-            let shift = ctx.input(|i| i.modifiers.shift);
+            let shift_held = ctx.input(|i| i.modifiers.shift);
 
-            self.handle_tool(world_pos);
+            self.handle_tool(world_pos, shift_held);
         }
     }
 }
