@@ -7,7 +7,11 @@ use crate::state::AppState;
 use crate::tools::{Tool, tool_label};
 
 impl AppState {
-    pub fn draw_canvas(&mut self, ui: &mut Ui, ctx: &egui::Context) -> egui::Response {
+    pub fn draw_canvas(
+        &mut self,
+        ui: &mut Ui,
+        ctx: &egui::Context,
+    ) -> (egui::Response, egui::Painter) {
         let available = ui.available_size();
         let (response, painter) =
             ui.allocate_painter(available, Sense::click_and_drag() | Sense::hover());
@@ -19,18 +23,17 @@ impl AppState {
             self.draw_grid(&painter, canvas_rect);
         }
         self.draw_parts(&painter);
-        self.draw_box_selection(&painter, ctx);
         //self.draw_sidebar(ctx);
         self.draw_footer(ctx);
         //self.draw_settings(ctx);
 
         if self.show_fps {
             self.draw_fps(ctx);
-        } else {
-            ctx.request_repaint_after(std::time::Duration::from_secs(1));
-        }
+        } //else {
+        ctx.request_repaint_after(std::time::Duration::from_millis(100));
+        // }
 
-        response
+        (response, painter)
     }
 
     pub fn draw_grid(&self, painter: &Painter, canvas_rect: Rect) {
@@ -160,11 +163,11 @@ impl AppState {
         let idle = dt > 0.1;
         let fps = if idle { 0 } else { (1.0 / dt).round() as u16 };
 
-        ctx.request_repaint_after(std::time::Duration::from_millis(if idle {
-            1000
-        } else {
-            150
-        }));
+        // ctx.request_repaint_after(std::time::Duration::from_millis(if idle {
+        //     500
+        // } else {
+        //     150
+        // }));
 
         egui::Area::new(egui::Id::new("fps_overlay"))
             .anchor(egui::Align2::RIGHT_TOP, egui::vec2(-8.0, 8.0))

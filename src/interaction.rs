@@ -1,10 +1,8 @@
-use crate::egui::{Context, Key, PointerButton, Pos2, Rect, Vec2};
+use crate::egui::{Context, Key, Painter, PointerButton, Pos2, Rect, Vec2};
 use crate::state::{AppState, InteractionState};
-use crate::tools::Tool;
 
 impl AppState {
-    pub fn handle_input(&mut self, ctx: &Context, response: &egui::Response) {
-        let canvas_rect = response.rect;
+    pub fn handle_input(&mut self, ctx: &Context, painter: &Painter, response: &egui::Response) {
         let pointer_pos = ctx.input(|i| i.pointer.hover_pos());
         let in_canvas = response.hovered();
         // escape key
@@ -42,10 +40,34 @@ impl AppState {
             return;
         };
         let world_pos = self.screen_to_world(screen_pos);
+        let shift_held = ctx.input(|i| i.modifiers.shift);
 
         match self.interaction_state {
             InteractionState::Idle => {
-                self.handle_idle(ctx, screen_pos, world_pos);
+                if ctx.input(|i| i.pointer.button_pressed(PointerButton::Middle))
+                    || ctx.input(|i| i.pointer.button_pressed(PointerButton::Secondary))
+                {
+                    self.interaction_state = InteractionState::Panning;
+                    return;
+                }
+
+                if ctx.input(|i| i.pointer.button_pressed(PointerButton::Primary)) {
+                    let selected_port = self.port_at_pos(world_pos);
+                    let selected_part = self.part_at_pos(world_pos).map(|p| p.id);
+
+                    if selected_port.is_some() {
+                        self.connect_start = selected_port;
+                        self.interaction_state = InteractionState::Connecting;
+                    } else if let Some(part) = selected_part {
+                        self.select_part(part, shift_held);
+                        self.interaction_state = InteractionState::Dragging;
+                    } else if self.active_tool.is_none() {
+                        self.box_select_start = Some(world_pos);
+                        self.interaction_state = InteractionState::BoxSelecting;
+                    } else {
+                        self.handle_tool(world_pos, shift_held);
+                    }
+                }
             }
             InteractionState::Panning => {
                 let delta = ctx.input(|i| i.pointer.delta());
@@ -58,40 +80,45 @@ impl AppState {
                 }
             }
             InteractionState::BoxSelecting => {
-                println!("box selecting!!")
+                if let Some(start_pos) = self.box_select_start {
+                    self.draw_box_selection(painter, ctx);
+                    if ctx.input(|i| i.pointer.button_released(PointerButton::Primary)) {
+                        if !shift_held {
+                            self.selection.clear();
+                        }
+                        let parts = self.parts_in_rect(Rect::from_two_pos(start_pos, world_pos));
+                        for part in parts {
+                            self.selection.push(part); // select all parts in box
+                        }
+                        self.interaction_state = InteractionState::Idle;
+                    }
+                }
             }
-        }
-    }
+            InteractionState::Dragging => {
+                let delta = ctx.input(|i| i.pointer.delta()) / self.zoom;
 
-    fn handle_idle(&mut self, ctx: &Context, screen_pos: Pos2, world_pos: Pos2) {
-        if ctx.input(|i| i.pointer.button_pressed(PointerButton::Middle))
-            || ctx.input(|i| i.pointer.button_pressed(PointerButton::Secondary))
-        {
-            self.interaction_state = InteractionState::Panning;
-            return;
-        }
-        let shift_held = ctx.input(|i| i.modifiers.shift);
-        if ctx.input(|i| i.pointer.button_pressed(PointerButton::Primary)) {
-            self.handle_tool(world_pos, shift_held);
-        } else if ctx.input(|i| i.pointer.button_released(PointerButton::Primary)) {
-            if self.box_select_start == Some(world_pos) {
-                if let Some(part) = self.part_at_pos(world_pos) {
-                    self.select_part(part.id, shift_held);
-                } else if !shift_held {
-                    // if clicked on nothing & shift isnt held
-                    self.selection.clear()
+                for part_id in &self.selection {
+                    if let Some(part) = self.canvas_snapshot.parts.get_mut(part_id) {
+                        part.pos += delta;
+                    }
                 }
-            } else if let Some(start) = self.box_select_start {
-                // box selecting
-                if !shift_held {
-                    self.selection.clear()
-                }
-                let parts = self.parts_in_rect(Rect::from_two_pos(start, world_pos));
-                for part in parts {
-                    self.selection.push(part);
+
+                if ctx.input(|i| i.pointer.button_released(PointerButton::Primary)) {
+                    if self.snap_to_grid {
+                        for part in &self.selection {
+                            if let Some(part) = self.canvas_snapshot.parts.get_mut(&part) {
+                                part.snap_pos();
+                            }
+                        }
+                    }
+                    self.interaction_state = InteractionState::Idle;
                 }
             }
-            self.box_select_start = None;
+            InteractionState::Connecting => {
+                if ctx.input(|i| i.pointer.button_released(PointerButton::Primary)) {
+                    self.interaction_state = InteractionState::Idle;
+                }
+            }
         }
     }
 }

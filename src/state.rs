@@ -1,8 +1,10 @@
 use crate::colors::ColorPallet;
 use crate::config::Config;
+use crate::connections::Connection;
 use crate::egui::{Pos2, Rect, Vec2};
-use crate::parts::Part;
+use crate::parts::{PORT_SIZE, Part, Port};
 use crate::tools::Tool;
+use serde::{Deserialize, Serialize};
 use std::collections::HashMap;
 
 //operation being completed, ie box selecting, resizing, etc
@@ -11,6 +13,8 @@ pub enum InteractionState {
     Idle,
     Panning,
     BoxSelecting,
+    Dragging,
+    Connecting,
 }
 
 impl Default for InteractionState {
@@ -19,9 +23,10 @@ impl Default for InteractionState {
     }
 }
 
-#[derive(Clone)]
+#[derive(Clone, Deserialize, Serialize)]
 pub struct CanvasSnapshot {
     pub parts: HashMap<u64, Part>,
+    pub connections: Vec<Connection>,
     pub next_id: u64,
 }
 
@@ -37,7 +42,7 @@ pub struct AppState {
     pub canvas_snapshot: CanvasSnapshot,
     pub selection: Vec<u64>,
     pub box_select_start: Option<Pos2>,
-    pub fps_idle: bool,
+    pub connect_start: Option<Port>,
     // settings
     pub show_arrows: bool,
     pub show_grid: bool,
@@ -58,11 +63,12 @@ impl AppState {
             zoom: 1.0,
             canvas_snapshot: CanvasSnapshot {
                 parts: HashMap::new(),
+                connections: Vec::new(),
                 next_id: 0,
             },
             selection: Vec::new(),
             box_select_start: None,
-            fps_idle: false,
+            connect_start: None,
             show_arrows: config.show_arrows,
             show_grid: config.show_grid,
             snap_to_grid: config.snap_to_grid,
@@ -87,6 +93,21 @@ impl AppState {
             (world_pos.x - self.pan_offset.x) * self.zoom,
             (world_pos.y - self.pan_offset.y) * self.zoom,
         )
+    }
+
+    pub fn port_at_pos(&self, world_pos: Pos2) -> Option<Port> {
+        for part in self.canvas_snapshot.parts.values() {
+            for (port_pos, input, port_id) in part.connections_pos_with_id() {
+                if world_pos.distance_sq(port_pos) <= PORT_SIZE * PORT_SIZE {
+                    return Some(Port {
+                        part: part.id,
+                        input: input,
+                        port_id: port_id,
+                    });
+                }
+            }
+        }
+        None
     }
 
     pub fn part_at_pos(&self, world_pos: Pos2) -> Option<&Part> {

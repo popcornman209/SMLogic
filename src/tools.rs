@@ -27,21 +27,16 @@ pub fn tool_label(tool: Option<Tool>) -> &'static str {
 impl AppState {
     pub fn handle_tool(&mut self, world_pos: Pos2, shift_held: bool) {
         match self.active_tool {
-            None => {
-                self.box_select_start = Some(world_pos);
+            None => {}
+            Some(Tool::PlacePart(part_type)) => {
+                let part_id = Part::new(
+                    part_type,
+                    &mut self.canvas_snapshot,
+                    world_pos,
+                    self.snap_to_grid,
+                );
+                self.select_part(part_id, shift_held);
             }
-            Some(Tool::PlacePart(part_type)) => match self.part_at_pos(world_pos) {
-                None => {
-                    let part_id = Part::new(
-                        part_type,
-                        &mut self.canvas_snapshot,
-                        world_pos,
-                        self.snap_to_grid,
-                    );
-                    self.select_part(part_id, shift_held);
-                }
-                Some(part) => self.select_part(part.id, shift_held),
-            },
             Some(Tool::Paint) => {}
             Some(Tool::Connector) => {}
         }
@@ -51,6 +46,8 @@ impl AppState {
         if !shift_held {
             self.selection.clear();
         }
-        self.selection.push(part_id);
+        if !self.selection.contains(&part_id) {
+            self.selection.push(part_id);
+        }
     }
 }

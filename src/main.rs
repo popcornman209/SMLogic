@@ -1,6 +1,7 @@
 mod canvas;
 mod colors;
 mod config;
+mod connections;
 mod interaction;
 mod part_render;
 mod parts;
@@ -30,8 +31,8 @@ impl eframe::App for AppState {
         self.draw_sidebar(ctx);
         self.draw_settings(ctx);
         egui::CentralPanel::default().show(ctx, |ui| {
-            let response = self.draw_canvas(ui, ctx);
-            self.handle_input(ctx, &response);
+            let (response, painter) = self.draw_canvas(ui, ctx);
+            self.handle_input(ctx, &painter, &response);
         });
     }
 }

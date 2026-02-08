@@ -1,10 +1,11 @@
 use crate::AppState;
 use crate::colors::{POWERED_COLOR, UNPOWERED_COLOR};
 use crate::parts::{
-    GATE_SIZE, Gate, GateType, IO, Label, Module, Part, PartData, SWITCH_SIZE, Switch, Timer,
+    GATE_SIZE, Gate, GateType, IO, Label, Module, PORT_SIZE, Part, PartData, SWITCH_SIZE, Switch,
+    Timer,
 };
 use eframe::epaint::PathShape;
-use egui::{Color32, Context, Painter, Pos2, Rect, Stroke, StrokeKind, Vec2};
+use egui::{Color32, Painter, Pos2, Rect, Stroke, StrokeKind, Vec2};
 
 const ICON_HEIGHT: f32 = 20.0;
 const ICON_WIDTH: f32 = ICON_HEIGHT * 1.5;
@@ -34,6 +35,7 @@ pub fn draw_part_base(
     label_offset: f32,
     powered: bool,
     resizable: bool,
+    ports: Vec<Pos2>,
     app_state: &AppState,
 ) {
     let rounding = 6.0 * app_state.zoom;
@@ -101,6 +103,14 @@ pub fn draw_part_base(
             grip_stroke,
         );
     }
+
+    for port in ports {
+        painter.circle_filled(
+            app_state.world_to_screen(port),
+            PORT_SIZE * app_state.zoom,
+            Color32::from_gray(150),
+        );
+    }
 }
 
 impl Gate {
@@ -128,6 +138,7 @@ impl Gate {
             13.0,
             self.powered,
             false,
+            part.connections_pos(),
             app_state,
         );
 
@@ -258,11 +269,16 @@ impl Timer {
             painter,
             part.pos,
             GATE_SIZE,
-            part.color,
+            if app_state.selection.contains(&part.id) {
+                app_state.color_pallet.selection
+            } else {
+                part.color
+            },
             part.label.clone(),
             13.0,
             *self.buffer.last().unwrap_or(&false),
             false,
+            part.connections_pos(),
             app_state,
         );
 
@@ -313,11 +329,16 @@ impl Module {
             painter,
             part.pos,
             self.size,
-            part.color,
+            if app_state.selection.contains(&part.id) {
+                app_state.color_pallet.selection
+            } else {
+                part.color
+            },
             part.label.clone(),
             0.0,
             false,
             true,
+            part.connections_pos(),
             app_state,
         );
     }
@@ -339,11 +360,16 @@ impl IO {
             painter,
             part.pos,
             GATE_SIZE,
-            part.color,
+            if app_state.selection.contains(&part.id) {
+                app_state.color_pallet.selection
+            } else {
+                part.color
+            },
             part.label.clone(),
             0.0,
             false,
             false,
+            part.connections_pos(),
             app_state,
         );
     }
@@ -365,11 +391,16 @@ impl Switch {
             painter,
             part.pos,
             SWITCH_SIZE,
-            part.color,
+            if app_state.selection.contains(&part.id) {
+                app_state.color_pallet.selection
+            } else {
+                part.color
+            },
             part.label.clone(),
             0.0,
             self.powered,
             false,
+            part.connections_pos(),
             app_state,
         );
     }
@@ -391,11 +422,16 @@ impl Label {
             painter,
             part.pos,
             self.size,
-            part.color,
+            if app_state.selection.contains(&part.id) {
+                app_state.color_pallet.selection
+            } else {
+                part.color
+            },
             part.label.clone(),
             0.0,
             false,
             true,
+            Vec::new(),
             app_state,
         );
     }

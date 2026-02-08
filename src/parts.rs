@@ -7,6 +7,7 @@ use std::collections::HashMap;
 
 pub const GATE_SIZE: Vec2 = Vec2::new(80.0, 60.0);
 pub const SWITCH_SIZE: Vec2 = Vec2::new(60.0, 60.0);
+pub const PORT_SIZE: f32 = 5.0;
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Hash, Serialize, Deserialize)]
 pub enum PartType {
@@ -75,7 +76,7 @@ impl PartType {
     }
 }
 
-#[derive(Clone, Copy)]
+#[derive(Clone, Deserialize, Serialize)]
 pub enum GateType {
     And,
     Or,
@@ -109,7 +110,7 @@ impl GateType {
     }
 }
 
-#[derive(Clone)]
+#[derive(Clone, Deserialize, Serialize)]
 pub struct Gate {
     pub gate_type: GateType,
     pub powered: bool,
@@ -129,7 +130,7 @@ impl Gate {
     }
 }
 
-#[derive(Clone)]
+#[derive(Clone, Deserialize, Serialize)]
 pub struct Timer {
     pub buffer: Vec<bool>,
     pub secs: u8,
@@ -149,25 +150,26 @@ impl Timer {
     }
 }
 
-#[derive(Clone)]
+#[derive(Clone, Deserialize, Serialize)]
 pub struct Module {
-    pub path: &'static str,
-    pub inputs: Vec<(u64, &'static str)>,
-    pub outputs: Vec<(u64, &'static str)>,
+    pub path: String,
+    pub inputs: Vec<(u64, String)>,
+    pub outputs: Vec<(u64, String)>,
     pub canvas: CanvasSnapshot,
     pub size: Vec2,
 }
 impl Module {
-    pub fn new(path: &'static str) -> (PartData, String, Vec2) {
+    pub fn new(path: &str) -> (PartData, String, Vec2) {
         //TODO make actually load module instead of... this
         let size = Vec2::new(120.0, 100.0);
         (
             PartData::Module(Self {
-                path: path,
+                path: path.to_string(),
                 inputs: Vec::new(),
                 outputs: Vec::new(),
                 canvas: CanvasSnapshot {
                     parts: HashMap::new(),
+                    connections: Vec::new(),
                     next_id: 0,
                 },
                 size: size,
@@ -178,27 +180,21 @@ impl Module {
     }
 }
 
-#[derive(Clone, Copy)]
+#[derive(Clone, Deserialize, Serialize)]
 pub struct IO {
     pub input: bool,
-    pub powered: bool,
-    pub powered_next: bool,
 }
 impl IO {
     pub fn new(input: bool) -> (PartData, String, Vec2) {
         (
-            PartData::IO(Self {
-                input: input,
-                powered: false,
-                powered_next: false,
-            }),
+            PartData::IO(Self { input: input }),
             if input { "Input" } else { "Output" }.to_string(),
             -GATE_SIZE / 2.0,
         )
     }
 }
 
-#[derive(Clone)]
+#[derive(Clone, Deserialize, Serialize)]
 pub struct Switch {
     pub toggle: bool,
     pub powered: bool,
@@ -216,7 +212,7 @@ impl Switch {
     }
 }
 
-#[derive(Clone)]
+#[derive(Clone, Deserialize, Serialize)]
 pub struct Label {
     pub size: Vec2,
 }
@@ -231,7 +227,7 @@ impl Label {
     }
 }
 
-#[derive(Clone)]
+#[derive(Clone, Deserialize, Serialize)]
 pub enum PartData {
     Gate(Gate),
     Timer(Timer),
@@ -254,6 +250,13 @@ impl PartData {
 }
 
 #[derive(Clone)]
+pub struct Port {
+    pub part: u64,
+    pub input: bool,
+    pub port_id: Option<u64>,
+}
+
+#[derive(Clone, Deserialize, Serialize)]
 pub struct Part {
     pub id: u64,
     pub part_data: PartData,
@@ -297,5 +300,100 @@ impl Part {
             (self.pos.x / 20.0).round() * 20.0,
             (self.pos.y / 20.0).round() * 20.0,
         )
+    }
+
+    pub fn input_pos(&self, port_id: Option<u64>) -> Option<Pos2> {
+        match &self.part_data {
+            PartData::Gate(_) | PartData::Timer(_) => {
+                Some(Pos2::new(self.pos.x, self.pos.y + GATE_SIZE.y / 2.0))
+            }
+            PartData::Switch(_) | PartData::Label(_) => None,
+            PartData::IO(io) => {
+                if io.input {
+                    None
+                } else {
+                    Some(Pos2::new(self.pos.x, self.pos.y + GATE_SIZE.y / 2.0))
+                }
+            }
+            PartData::Module(module) => None, // FIX THIS!!
+        }
+    }
+
+    pub fn output_pos(&self, port_id: Option<u64>) -> Option<Pos2> {
+        match &self.part_data {
+            PartData::Gate(_) | PartData::Timer(_) | PartData::Switch(_) => Some(Pos2::new(
+                self.pos.x + self.part_data.size().x,
+                self.pos.y + self.part_data.size().y / 2.0,
+            )),
+            PartData::Label(_) => None,
+            PartData::IO(io) => {
+                if io.input {
+                    Some(Pos2::new(
+                        self.pos.x + GATE_SIZE.x,
+                        self.pos.y + GATE_SIZE.y / 2.0,
+                    ))
+                } else {
+                    None
+                }
+            }
+            PartData::Module(_) => None, // FIX THIS!!
+        }
+    }
+
+    pub fn connections_pos(&self) -> Vec<Pos2> {
+        match &self.part_data {
+            PartData::Gate(_) | PartData::Timer(_) => vec![
+                Pos2::new(
+                    self.pos.x + self.part_data.size().x,
+                    self.pos.y + self.part_data.size().y / 2.0,
+                ),
+                Pos2::new(self.pos.x, self.pos.y + GATE_SIZE.y / 2.0),
+            ],
+            PartData::Switch(_) => vec![Pos2::new(
+                self.pos.x + SWITCH_SIZE.x,
+                self.pos.y + SWITCH_SIZE.y / 2.0,
+            )],
+            PartData::IO(io) => vec![Pos2::new(
+                self.pos.x + if io.input { GATE_SIZE.x } else { 0.0 },
+                self.pos.y + GATE_SIZE.y / 2.0,
+            )],
+            PartData::Module(module) => Vec::new(),
+            PartData::Label(_) => Vec::new(),
+        }
+    }
+
+    pub fn connections_pos_with_id(&self) -> Vec<(Pos2, bool, Option<u64>)> {
+        match &self.part_data {
+            PartData::Gate(_) | PartData::Timer(_) => vec![
+                (
+                    Pos2::new(
+                        self.pos.x + self.part_data.size().x,
+                        self.pos.y + self.part_data.size().y / 2.0,
+                    ),
+                    false,
+                    None,
+                ),
+                (
+                    Pos2::new(self.pos.x, self.pos.y + GATE_SIZE.y / 2.0),
+                    true,
+                    None,
+                ),
+            ],
+            PartData::Switch(_) => vec![(
+                Pos2::new(self.pos.x + SWITCH_SIZE.x, self.pos.y + SWITCH_SIZE.y / 2.0),
+                false,
+                None,
+            )],
+            PartData::IO(io) => vec![(
+                Pos2::new(
+                    self.pos.x + if io.input { GATE_SIZE.x } else { 0.0 },
+                    self.pos.y + GATE_SIZE.y / 2.0,
+                ),
+                io.input,
+                None,
+            )],
+            PartData::Module(module) => Vec::new(),
+            PartData::Label(_) => Vec::new(),
+        }
     }
 }
