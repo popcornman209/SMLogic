@@ -98,9 +98,9 @@ impl AppState {
                 // main parts
                 ui.heading("Parts");
                 ui.separator();
-                for &part in PartType::MAIN_PARTS {
+                for part in PartType::MAIN_PARTS {
                     // loop through all main parts
-                    let selected = self.active_tool == Some(Tool::PlacePart(part)); // if its
+                    let selected = self.active_tool == Some(Tool::PlacePart(part.clone())); // if its
                     // selected
                     let label = format!("{}", part.label()); // label, will add keybind later
                     if ui.selectable_label(selected, &label).clicked() {
@@ -108,7 +108,7 @@ impl AppState {
                         if selected {
                             self.active_tool = None; // go back to selecting if toggled off
                         } else {
-                            self.active_tool = Some(Tool::PlacePart(part)); // switch to part if
+                            self.active_tool = Some(Tool::PlacePart(part.clone())); // switch to part if
                             // selected
                         }
                     }
@@ -117,16 +117,16 @@ impl AppState {
                 // io parts
                 ui.heading("I/O Parts");
                 ui.separator();
-                for &part in PartType::IO_PARTS {
+                for part in PartType::IO_PARTS {
                     // loop through all main parts
-                    let selected = self.active_tool == Some(Tool::PlacePart(part));
+                    let selected = self.active_tool == Some(Tool::PlacePart(part.clone()));
                     let label = format!("{}", part.label()); // label, will add keybind later
                     if ui.selectable_label(selected, &label).clicked() {
                         //if clicked
                         if selected {
                             self.active_tool = None;
                         } else {
-                            self.active_tool = Some(Tool::PlacePart(part));
+                            self.active_tool = Some(Tool::PlacePart(part.clone()));
                         }
                     }
                 }
@@ -134,14 +134,14 @@ impl AppState {
                 // tools
                 ui.heading("Tools");
                 ui.separator();
-                for &tool in Tool::TOOLS {
-                    let selected = self.active_tool == tool;
-                    let label = format!("{}", tool_label(tool)); // TODO add keybind
+                for tool in Tool::TOOLS {
+                    let selected = self.active_tool == tool.clone();
+                    let label = format!("{}", tool_label(&tool)); // TODO add keybind
                     if ui.selectable_label(selected, &label).clicked() {
                         if selected {
                             self.active_tool = None;
                         } else {
-                            self.active_tool = tool;
+                            self.active_tool = tool.clone();
                         }
                     }
                 }

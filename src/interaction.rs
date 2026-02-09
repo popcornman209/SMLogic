@@ -118,13 +118,24 @@ impl AppState {
             InteractionState::Connecting => {
                 if let Some(connect_start) = self.connect_start.clone() {
                     if let Some(start_pos) = connect_start.pos(self) {
-                        draw_connection(self, start_pos, world_pos, painter);
+                        if connect_start.input {
+                            draw_connection(self, world_pos, start_pos, painter);
+                        } else {
+                            draw_connection(self, start_pos, world_pos, painter);
+                        }
                         if ctx.input(|i| i.pointer.button_released(PointerButton::Primary)) {
                             if let Some(port) = self.port_at_pos(world_pos) {
-                                self.canvas_snapshot.connections.push(Connection {
-                                    start: connect_start,
-                                    end: port,
-                                })
+                                if !connect_start.input && port.input {
+                                    self.canvas_snapshot.connections.push(Connection {
+                                        start: connect_start,
+                                        end: port,
+                                    })
+                                } else if connect_start.input && !port.input {
+                                    self.canvas_snapshot.connections.push(Connection {
+                                        start: port,
+                                        end: connect_start,
+                                    })
+                                }
                             }
                             self.interaction_state = InteractionState::Idle;
                         }

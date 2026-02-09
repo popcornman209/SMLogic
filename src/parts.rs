@@ -4,12 +4,15 @@ use crate::state::CanvasSnapshot;
 use egui::{Color32, Pos2, Vec2};
 use serde::{Deserialize, Serialize};
 use std::collections::HashMap;
+use std::path::PathBuf;
 
 pub const GATE_SIZE: Vec2 = Vec2::new(80.0, 60.0);
 pub const SWITCH_SIZE: Vec2 = Vec2::new(60.0, 60.0);
 pub const PORT_SIZE: f32 = 5.0;
+pub const PORT_GAP: f32 = 15.0;
+pub const MIN_MODULE_WIDTH: f32 = 80.0;
 
-#[derive(Debug, Clone, Copy, PartialEq, Eq, Hash, Serialize, Deserialize)]
+#[derive(Debug, Clone, PartialEq, Eq, Hash, Serialize, Deserialize)]
 pub enum PartType {
     And,
     Or,
@@ -18,7 +21,7 @@ pub enum PartType {
     Nor,
     Xnor,
     Timer,
-    Module(&'static str),
+    Module(PathBuf),
     Input,
     Output,
     Button,
@@ -152,30 +155,55 @@ impl Timer {
 
 #[derive(Clone, Deserialize, Serialize)]
 pub struct Module {
-    pub path: String,
+    pub path: PathBuf,
     pub inputs: Vec<(u64, String)>,
     pub outputs: Vec<(u64, String)>,
-    pub canvas: CanvasSnapshot,
+    pub canvas_snapshot: CanvasSnapshot,
+    pub min_size: Vec2,
     pub size: Vec2,
 }
 impl Module {
-    pub fn new(path: &str) -> (PartData, String, Vec2) {
-        //TODO make actually load module instead of... this
-        let size = Vec2::new(120.0, 100.0);
+    pub fn reload(&mut self) {
+        self.canvas_snapshot = CanvasSnapshot::load(&self.path);
+
+        // load inputs/outputs
+        self.inputs = Vec::new();
+        self.outputs = Vec::new();
+        for part in self.canvas_snapshot.parts.values() {
+            if let PartData::IO(io) = &part.part_data {
+                if io.input {
+                    self.inputs.push((part.id, part.label.clone()))
+                } else {
+                    self.outputs.push((part.id, part.label.clone()))
+                }
+            }
+        }
+
+        // make sure height is tall enough
+        let max_len = self.inputs.len().max(self.outputs.len()) as f32;
+        self.min_size.y = GATE_SIZE.y + (PORT_GAP * (max_len - 1.0));
+        if self.size.y <= self.min_size.y {
+            self.size.y = self.min_size.y
+        };
+    }
+    pub fn new(path: PathBuf) -> (PartData, String, Vec2) {
+        let mut module = Self {
+            path: path,
+            inputs: Vec::new(),
+            outputs: Vec::new(),
+            canvas_snapshot: CanvasSnapshot {
+                parts: HashMap::new(),
+                connections: Vec::new(),
+                next_id: 0,
+            },
+            min_size: Vec2::new(MIN_MODULE_WIDTH, 0.0),
+            size: Vec2::new(120.0, 0.0),
+        };
+        module.reload();
         (
-            PartData::Module(Self {
-                path: path.to_string(),
-                inputs: Vec::new(),
-                outputs: Vec::new(),
-                canvas: CanvasSnapshot {
-                    parts: HashMap::new(),
-                    connections: Vec::new(),
-                    next_id: 0,
-                },
-                size: size,
-            }),
+            PartData::Module(module.clone()),
             "template label".to_string(),
-            -size / 2.0,
+            -module.size / 2.0,
         )
     }
 }

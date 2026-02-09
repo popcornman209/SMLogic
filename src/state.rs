@@ -1,8 +1,8 @@
 use crate::colors::ColorPallet;
-use crate::config::Config;
 use crate::connections::Connection;
 use crate::egui::{Pos2, Rect, Vec2};
 use crate::parts::{PORT_SIZE, Part, Port};
+use crate::saveload::Config;
 use crate::tools::Tool;
 use serde::{Deserialize, Serialize};
 use std::collections::HashMap;

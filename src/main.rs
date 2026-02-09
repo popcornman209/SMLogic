@@ -1,14 +1,16 @@
 mod canvas;
 mod colors;
-mod config;
 mod connections;
 mod interaction;
 mod part_render;
 mod parts;
+mod saveload;
 mod state;
 mod tools;
 
 use eframe::egui::{self};
+use std::path::PathBuf;
+use std::str::FromStr;
 
 use state::AppState;
 
@@ -33,6 +35,8 @@ impl eframe::App for AppState {
         egui::CentralPanel::default().show(ctx, |ui| {
             let (response, painter) = self.draw_canvas(ui, ctx);
             self.handle_input(ctx, &painter, &response);
+            self.canvas_snapshot
+                .save(PathBuf::from_str("/home/leo/test.json").expect("reg"));
         });
     }
 }
