@@ -29,12 +29,7 @@ impl AppState {
         match &self.active_tool {
             None => {}
             Some(Tool::PlacePart(part_type)) => {
-                let part_id = Part::new(
-                    part_type.clone(),
-                    &mut self.canvas_snapshot,
-                    world_pos,
-                    self.snap_to_grid,
-                );
+                let part_id = Part::new(part_type.clone(), self, world_pos);
                 self.select_part(part_id, shift_held);
             }
             Some(Tool::Paint) => {}

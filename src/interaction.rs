@@ -129,11 +129,13 @@ impl AppState {
                                     self.canvas_snapshot.connections.push(Connection {
                                         start: connect_start,
                                         end: port,
+                                        powered: false,
                                     })
                                 } else if connect_start.input && !port.input {
                                     self.canvas_snapshot.connections.push(Connection {
                                         start: port,
                                         end: connect_start,
+                                        powered: false,
                                     })
                                 }
                             }

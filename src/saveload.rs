@@ -1,7 +1,10 @@
+use crate::AppState;
 use crate::colors::ColorPallet;
 use crate::parts::PartData;
 use crate::state::CanvasSnapshot;
 use serde::{Deserialize, Serialize};
+use std::collections::HashMap;
+use std::fs;
 use std::path::PathBuf;
 
 // config file
@@ -63,11 +66,6 @@ impl CanvasSnapshot {
     pub fn save(&self, path: PathBuf) {
         if let Ok(mut json) = serde_json::to_value(self) {
             if let Some(obj) = json.as_object_mut() {
-                // Add your custom fields here
-                obj.insert("version".to_string(), serde_json::json!(1));
-                obj.insert("other_thing".to_string(), serde_json::json!("whatever"));
-
-                // Clear module canvas_snapshots
                 if let Some(parts) = obj.get_mut("parts").and_then(|p| p.as_object_mut()) {
                     for (_id, part) in parts.iter_mut() {
                         if let Some(module) = part
@@ -75,7 +73,14 @@ impl CanvasSnapshot {
                             .and_then(|pd| pd.get_mut("Module"))
                             .and_then(|m| m.as_object_mut())
                         {
-                            module.insert("canvas_snapshot".to_string(), serde_json::json!({}));
+                            module.insert(
+                                "canvas_snapshot".to_string(),
+                                serde_json::json!(CanvasSnapshot {
+                                    connections: Vec::new(),
+                                    parts: HashMap::new(),
+                                    next_id: 0,
+                                }),
+                            );
                         }
                     }
                 }
@@ -85,24 +90,48 @@ impl CanvasSnapshot {
         }
     }
 
-    pub fn load(path: &PathBuf) -> Self {
-        let contents = std::fs::read_to_string(path).expect("failed to read file");
-        let json: serde_json::Value =
-            serde_json::from_str(&contents).expect("failed to parse json");
+    pub fn load(
+        path: PathBuf,
+        project_path: Option<PathBuf>,
+    ) -> Result<Self, Box<dyn std::error::Error>> {
+        let contents = std::fs::read_to_string(path)?;
+        let json: serde_json::Value = serde_json::from_str(&contents)?;
 
-        // Check version if needed
-        if let Some(version) = json.get("version").and_then(|v| v.as_i64()) {
-            println!("Loading file version {}", version);
-        }
-
-        // Deserialize the rest into Self
         let mut canvas_snapshot: Self =
             serde_json::from_value(json).expect("failed to parse json obj");
         for part in canvas_snapshot.parts.values_mut() {
             if let PartData::Module(data) = &mut part.part_data {
-                data.canvas_snapshot = Self::load(&data.path);
+                data.canvas_snapshot = Self::load(
+                    if let Some(path) = &project_path {
+                        path.join(&data.path)
+                    } else {
+                        { data.path.clone() }
+                    },
+                    project_path.clone(),
+                )?;
             }
         }
-        canvas_snapshot
+        Ok(canvas_snapshot)
+    }
+}
+
+impl AppState {
+    pub fn reload_project(&mut self) {
+        if let Some(project_folder) = &self.project_folder {
+            let folder_to_read = if let Some(sub_folder) = &self.project_sub_folder {
+                project_folder.join(sub_folder)
+            } else {
+                project_folder.clone()
+            };
+
+            let mut entries: Vec<PathBuf> = fs::read_dir(folder_to_read)
+                .expect("failed to load folder")
+                .filter_map(|e| e.ok())
+                .map(|e| e.path())
+                .collect();
+
+            entries.sort_by_key(|p| !p.is_dir());
+            self.current_folder_files = entries;
+        }
     }
 }

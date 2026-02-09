@@ -117,7 +117,6 @@ impl GateType {
 pub struct Gate {
     pub gate_type: GateType,
     pub powered: bool,
-    pub powered_next: bool,
 }
 impl Gate {
     pub fn new(gate_type: GateType) -> (PartData, String, Vec2) {
@@ -125,7 +124,6 @@ impl Gate {
             PartData::Gate(Self {
                 gate_type: gate_type.clone(),
                 powered: false,
-                powered_next: false,
             }),
             gate_type.to_label(),
             -GATE_SIZE / 2.0,
@@ -163,8 +161,16 @@ pub struct Module {
     pub size: Vec2,
 }
 impl Module {
-    pub fn reload(&mut self) {
-        self.canvas_snapshot = CanvasSnapshot::load(&self.path);
+    pub fn reload(&mut self, app_state: AppState) {
+        let full_path = if let Some(ref proj) = app_state.project_folder {
+            proj.join(&self.path)
+        } else {
+            self.path.clone()
+        };
+        match CanvasSnapshot::load(full_path, app_state.project_folder) {
+            Ok(snapshot) => self.canvas_snapshot = snapshot,
+            Err(e) => eprintln!("Failed to load canvas snapshot: {}", e),
+        }
 
         // load inputs/outputs
         self.inputs = Vec::new();
@@ -186,9 +192,16 @@ impl Module {
             self.size.y = self.min_size.y
         };
     }
-    pub fn new(path: PathBuf) -> (PartData, String, Vec2) {
+    pub fn new(path: PathBuf, app_state: AppState) -> (PartData, String, Vec2) {
+        let final_path = if let Some(project_folder) = &app_state.project_folder {
+            path.strip_prefix(project_folder)
+                .expect("error :(")
+                .to_path_buf()
+        } else {
+            path
+        };
         let mut module = Self {
-            path: path.clone(),
+            path: final_path.clone(),
             inputs: Vec::new(),
             outputs: Vec::new(),
             canvas_snapshot: CanvasSnapshot {
@@ -199,10 +212,11 @@ impl Module {
             min_size: Vec2::new(MIN_MODULE_WIDTH, 0.0),
             size: Vec2::new(120.0, 0.0),
         };
-        module.reload();
+        module.reload(app_state);
         (
             PartData::Module(module.clone()),
-            path.file_stem()
+            final_path
+                .file_stem()
                 .and_then(|s| s.to_str())
                 .unwrap_or("")
                 .to_string(),
@@ -305,22 +319,17 @@ pub struct Part {
     pub color: Color32,
 }
 impl Part {
-    pub fn new(
-        part: PartType,
-        snapshot: &mut CanvasSnapshot,
-        pos: Pos2,
-        snap_to_grid: bool,
-    ) -> u64 {
+    pub fn new(part: PartType, app_state: &mut AppState, pos: Pos2) -> u64 {
         let (part_data, label, pos_offset): (PartData, String, Vec2) = match part.clone() {
             PartType::Timer => Timer::new(),
             PartType::Input | PartType::Output => IO::new(part == PartType::Input),
             PartType::Button | PartType::Switch => Switch::new(part == PartType::Switch),
             PartType::Label => Label::new(),
-            PartType::Module(path) => Module::new(path),
+            PartType::Module(path) => Module::new(path, app_state.clone()),
             _ => Gate::new(GateType::from_part_type(part)),
         };
-        let id = snapshot.next_id;
-        snapshot.next_id += 1;
+        let id = app_state.canvas_snapshot.next_id;
+        app_state.canvas_snapshot.next_id += 1;
         let mut part = Self {
             id: id,
             part_data: part_data,
@@ -328,10 +337,10 @@ impl Part {
             label: label,
             color: DEFAULT_GATE_COLOR,
         };
-        if snap_to_grid {
+        if app_state.snap_to_grid {
             part.snap_pos();
         }
-        snapshot.parts.insert(id, part);
+        app_state.canvas_snapshot.parts.insert(id, part);
         id
     }
 

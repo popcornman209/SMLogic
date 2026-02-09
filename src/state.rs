@@ -7,6 +7,7 @@ use crate::tools::Tool;
 use serde::{Deserialize, Serialize};
 use std::collections::HashMap;
 use std::path::PathBuf;
+use std::time::Instant;
 
 //operation being completed, ie box selecting, resizing, etc
 #[derive(Debug, Clone, Copy, PartialEq)]
@@ -39,6 +40,8 @@ pub struct AppState {
     pub settings_open: bool,
     //project
     pub project_folder: Option<PathBuf>,
+    pub project_sub_folder: Option<PathBuf>,
+    pub current_folder_files: Vec<PathBuf>,
     pub current_module_path: Option<PathBuf>,
     // other live info
     pub pan_offset: Vec2,
@@ -47,6 +50,7 @@ pub struct AppState {
     pub selection: Vec<u64>,
     pub box_select_start: Option<Pos2>,
     pub connect_start: Option<Port>,
+    pub last_project_reload: Instant,
     // settings
     pub show_arrows: bool,
     pub show_grid: bool,
@@ -64,6 +68,8 @@ impl AppState {
             active_tool: None,
             settings_open: false,
             project_folder: None,
+            project_sub_folder: None,
+            current_folder_files: Vec::new(),
             current_module_path: None,
             pan_offset: Vec2::ZERO,
             zoom: 1.0,
@@ -75,6 +81,7 @@ impl AppState {
             selection: Vec::new(),
             box_select_start: None,
             connect_start: None,
+            last_project_reload: Instant::now(),
             show_arrows: config.show_arrows,
             show_grid: config.show_grid,
             snap_to_grid: config.snap_to_grid,

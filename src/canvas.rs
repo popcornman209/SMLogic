@@ -28,8 +28,9 @@ impl AppState {
 
         if self.show_fps {
             self.draw_fps(ctx);
+        } else {
+            ctx.request_repaint_after(std::time::Duration::from_millis(1000));
         }
-        ctx.request_repaint_after(std::time::Duration::from_millis(100));
 
         (response, painter)
     }
@@ -176,6 +177,8 @@ impl AppState {
                         let folder = rfd::FileDialog::new().pick_folder();
                         if folder.is_some() {
                             self.project_folder = folder;
+                            self.project_sub_folder = None;
+                            self.reload_project();
                         }
                     }
 
@@ -205,11 +208,9 @@ impl AppState {
                         }
                     }
                     if ui.button("Import...").clicked() {
-                        let mut dialog = rfd::FileDialog::new().add_filter("SM Logic", &["sml"]);
-                        if let Some(project_folder) = &self.project_folder {
-                            dialog = dialog.set_directory(project_folder);
-                        }
-                        let file = dialog.pick_file();
+                        let file = rfd::FileDialog::new()
+                            .add_filter("SM Logic", &["sml"])
+                            .pick_file();
                         if let Some(path) = file {
                             self.active_tool = Some(Tool::PlacePart(PartType::Module(path)));
                         }
@@ -226,7 +227,56 @@ impl AppState {
                         };
                         ui.label(format!("Editing: {}", display_path));
                     }
-                })
+                });
+                ui.separator();
+
+                if self.project_folder.is_none() {
+                    ui.label("Set a project folder to browse modules.");
+                } else if self.current_folder_files.is_empty() {
+                    ui.label("No modules found. Save a module to see it here.");
+                } else {
+                    if let Some(path) = &self.project_sub_folder {
+                        if let Some(project_path) = &self.project_folder {
+                            ui.label(
+                                path.strip_prefix(project_path)
+                                    .map(|p| p.to_string_lossy().to_string())
+                                    .unwrap_or_else(|_| path.to_string_lossy().to_string()),
+                            );
+                        }
+                    }
+
+                    egui::ScrollArea::horizontal().show(ui, |ui| {
+                        ui.horizontal(|ui| {
+                            // ".." button to go up
+                            if let Some(sub_folder) = self.project_sub_folder.as_mut() {
+                                if ui.button("..").clicked() {
+                                    sub_folder.pop();
+                                }
+                            }
+                            if let Some(project_folder) = &self.project_folder {
+                                for path in &self.current_folder_files {
+                                    if ui
+                                        .selectable_label(
+                                            self.active_tool
+                                                == Some(Tool::PlacePart(PartType::Module(
+                                                    path.clone(),
+                                                ))),
+                                            path.strip_prefix(project_folder)
+                                                .map(|p| p.to_string_lossy().to_string())
+                                                .unwrap_or_else(|_| {
+                                                    path.to_string_lossy().to_string()
+                                                }),
+                                        )
+                                        .clicked()
+                                    {
+                                        self.active_tool =
+                                            Some(Tool::PlacePart(PartType::Module(path.clone())));
+                                    }
+                                }
+                            }
+                        });
+                    });
+                }
             });
     }
 
@@ -235,11 +285,11 @@ impl AppState {
         let idle = dt > 0.1;
         let fps = if idle { 0 } else { (1.0 / dt).round() as u16 };
 
-        // ctx.request_repaint_after(std::time::Duration::from_millis(if idle {
-        //     500
-        // } else {
-        //     150
-        // }));
+        ctx.request_repaint_after(std::time::Duration::from_millis(if idle {
+            1000
+        } else {
+            150
+        }));
 
         egui::Area::new(egui::Id::new("fps_overlay"))
             .anchor(egui::Align2::RIGHT_TOP, egui::vec2(-8.0, 8.0))

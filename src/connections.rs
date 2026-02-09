@@ -8,6 +8,7 @@ use serde::{Deserialize, Serialize};
 pub struct Connection {
     pub start: Port,
     pub end: Port,
+    pub powered: bool,
 }
 
 pub fn compute_wire_route(start: Pos2, end: Pos2, zoom: f32) -> Vec<Pos2> {

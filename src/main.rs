@@ -9,8 +9,7 @@ mod state;
 mod tools;
 
 use eframe::egui::{self};
-use std::path::PathBuf;
-use std::str::FromStr;
+use std::time::Instant;
 
 use state::AppState;
 
@@ -30,14 +29,17 @@ fn main() -> eframe::Result<()> {
 
 impl eframe::App for AppState {
     fn update(&mut self, ctx: &egui::Context, _frame: &mut eframe::Frame) {
+        if self.last_project_reload.elapsed().as_secs() >= 3 {
+            self.reload_project();
+            self.last_project_reload = Instant::now();
+        }
+
         self.draw_sidebar(ctx);
         self.draw_settings(ctx);
         self.draw_footer(ctx);
         egui::CentralPanel::default().show(ctx, |ui| {
             let (response, painter) = self.draw_canvas(ui, ctx);
             self.handle_input(ctx, &painter, &response);
-            self.canvas_snapshot
-                .save(PathBuf::from_str("/home/leo/test.json").expect("reg"));
         });
     }
 }
