@@ -1,9 +1,10 @@
 use eframe::egui::{self, Color32, Painter, Pos2, Rect, Sense, Stroke, Ui};
 use std::borrow::Cow;
+use std::collections::HashMap;
 
 use crate::colors::ColorPallet;
 use crate::parts::PartType;
-use crate::state::AppState;
+use crate::state::{AppState, CanvasSnapshot};
 use crate::tools::{Tool, tool_label};
 
 impl AppState {
@@ -24,7 +25,6 @@ impl AppState {
         }
         self.draw_parts(&painter);
         self.draw_connections(&painter);
-        self.draw_footer(ctx);
 
         if self.show_fps {
             self.draw_fps(ctx);
@@ -154,7 +154,81 @@ impl AppState {
             });
     }
 
-    pub fn draw_footer(&mut self, ctx: &egui::Context) {}
+    pub fn draw_footer(&mut self, ctx: &egui::Context) {
+        egui::TopBottomPanel::bottom("module_browser")
+            .resizable(false)
+            .min_height(64.0)
+            .show(ctx, |ui| {
+                // Top row: project info + actions
+                ui.horizontal(|ui| {
+                    if let Some(folder) = &self.project_folder {
+                        ui.label(format!(
+                            "Project: {}",
+                            folder
+                                .file_name()
+                                .map(|n| n.to_string_lossy().to_string())
+                                .unwrap_or_else(|| folder.to_string_lossy().to_string())
+                        ));
+                    } else {
+                        ui.label("No project folder");
+                    }
+                    if ui.button("Change...").clicked() {
+                        let folder = rfd::FileDialog::new().pick_folder();
+                        if folder.is_some() {
+                            self.project_folder = folder;
+                        }
+                    }
+
+                    ui.separator();
+                    if ui.button("New Module").clicked() {
+                        self.canvas_snapshot = CanvasSnapshot {
+                            connections: Vec::new(),
+                            parts: HashMap::new(),
+                            next_id: 0,
+                        };
+                    }
+                    if let Some(path) = self.current_module_path.clone() {
+                        if ui.button("Save").clicked() {
+                            self.canvas_snapshot.save(path);
+                        }
+                    }
+                    if ui.button("Save As...").clicked() {
+                        let mut dialog = rfd::FileDialog::new()
+                            .add_filter("SM Logic", &["sml"])
+                            .set_file_name("module.sml");
+                        if let Some(project_folder) = &self.project_folder {
+                            dialog = dialog.set_directory(project_folder);
+                        }
+                        let file = dialog.save_file();
+                        if let Some(path) = file {
+                            self.canvas_snapshot.save(path);
+                        }
+                    }
+                    if ui.button("Import...").clicked() {
+                        let mut dialog = rfd::FileDialog::new().add_filter("SM Logic", &["sml"]);
+                        if let Some(project_folder) = &self.project_folder {
+                            dialog = dialog.set_directory(project_folder);
+                        }
+                        let file = dialog.pick_file();
+                        if let Some(path) = file {
+                            self.active_tool = Some(Tool::PlacePart(PartType::Module(path)));
+                        }
+                    }
+
+                    if let Some(path) = &self.current_module_path {
+                        ui.separator();
+                        let display_path = if let Some(folder) = &self.project_folder {
+                            path.strip_prefix(folder)
+                                .map(|p| p.to_string_lossy().to_string())
+                                .unwrap_or_else(|_| path.to_string_lossy().to_string())
+                        } else {
+                            path.to_string_lossy().to_string()
+                        };
+                        ui.label(format!("Editing: {}", display_path));
+                    }
+                })
+            });
+    }
 
     pub fn draw_fps(&mut self, ctx: &egui::Context) {
         let dt = ctx.input(|i| i.unstable_dt);

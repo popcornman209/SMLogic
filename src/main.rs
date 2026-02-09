@@ -32,6 +32,7 @@ impl eframe::App for AppState {
     fn update(&mut self, ctx: &egui::Context, _frame: &mut eframe::Frame) {
         self.draw_sidebar(ctx);
         self.draw_settings(ctx);
+        self.draw_footer(ctx);
         egui::CentralPanel::default().show(ctx, |ui| {
             let (response, painter) = self.draw_canvas(ui, ctx);
             self.handle_input(ctx, &painter, &response);

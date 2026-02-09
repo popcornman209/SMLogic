@@ -9,7 +9,7 @@ use std::path::PathBuf;
 pub const GATE_SIZE: Vec2 = Vec2::new(80.0, 60.0);
 pub const SWITCH_SIZE: Vec2 = Vec2::new(60.0, 60.0);
 pub const PORT_SIZE: f32 = 5.0;
-pub const PORT_GAP: f32 = 15.0;
+pub const PORT_GAP: f32 = 20.0;
 pub const MIN_MODULE_WIDTH: f32 = 80.0;
 
 #[derive(Debug, Clone, PartialEq, Eq, Hash, Serialize, Deserialize)]
@@ -188,7 +188,7 @@ impl Module {
     }
     pub fn new(path: PathBuf) -> (PartData, String, Vec2) {
         let mut module = Self {
-            path: path,
+            path: path.clone(),
             inputs: Vec::new(),
             outputs: Vec::new(),
             canvas_snapshot: CanvasSnapshot {
@@ -202,7 +202,10 @@ impl Module {
         module.reload();
         (
             PartData::Module(module.clone()),
-            "template label".to_string(),
+            path.file_stem()
+                .and_then(|s| s.to_str())
+                .unwrap_or("")
+                .to_string(),
             -module.size / 2.0,
         )
     }
@@ -352,7 +355,17 @@ impl Part {
                     Some(Pos2::new(self.pos.x, self.pos.y + GATE_SIZE.y / 2.0))
                 }
             }
-            PartData::Module(module) => None, // FIX THIS!!
+            PartData::Module(module) => {
+                if let Some(port) = port_id {
+                    if let Some(index) = module.inputs.iter().position(|(id, _)| *id == port) {
+                        return Some(Pos2::new(
+                            self.pos.x,
+                            GATE_SIZE.y / 2.0 + PORT_GAP * index as f32 + self.pos.y,
+                        ));
+                    };
+                };
+                None
+            }
         }
     }
 
@@ -373,7 +386,17 @@ impl Part {
                     None
                 }
             }
-            PartData::Module(_) => None, // FIX THIS!!
+            PartData::Module(module) => {
+                if let Some(port) = port_id {
+                    if let Some(index) = module.outputs.iter().position(|(id, _)| *id == port) {
+                        return Some(Pos2::new(
+                            self.pos.x + module.size.x,
+                            GATE_SIZE.y / 2.0 + PORT_GAP * index as f32 + self.pos.y,
+                        ));
+                    };
+                };
+                None
+            } // FIX THIS!!
         }
     }
 
@@ -394,7 +417,22 @@ impl Part {
                 self.pos.x + if io.input { GATE_SIZE.x } else { 0.0 },
                 self.pos.y + GATE_SIZE.y / 2.0,
             )],
-            PartData::Module(module) => Vec::new(),
+            PartData::Module(module) => {
+                let mut result = Vec::new();
+                for i in 0..module.inputs.len() {
+                    result.push(Pos2::new(
+                        self.pos.x,
+                        GATE_SIZE.y / 2.0 + PORT_GAP * i as f32 + self.pos.y,
+                    ));
+                }
+                for i in 0..module.outputs.len() {
+                    result.push(Pos2::new(
+                        self.pos.x + module.size.x,
+                        GATE_SIZE.y / 2.0 + PORT_GAP * i as f32 + self.pos.y,
+                    ));
+                }
+                result
+            }
             PartData::Label(_) => Vec::new(),
         }
     }
@@ -426,10 +464,33 @@ impl Part {
                     self.pos.x + if io.input { GATE_SIZE.x } else { 0.0 },
                     self.pos.y + GATE_SIZE.y / 2.0,
                 ),
-                io.input,
+                !io.input,
                 None,
             )],
-            PartData::Module(module) => Vec::new(),
+            PartData::Module(module) => {
+                let mut result = Vec::new();
+                for (i, port) in module.inputs.iter().enumerate() {
+                    result.push((
+                        Pos2::new(
+                            self.pos.x,
+                            GATE_SIZE.y / 2.0 + PORT_GAP * i as f32 + self.pos.y,
+                        ),
+                        true,
+                        Some(port.0),
+                    ));
+                }
+                for (i, port) in module.outputs.iter().enumerate() {
+                    result.push((
+                        Pos2::new(
+                            self.pos.x + module.size.x,
+                            GATE_SIZE.y / 2.0 + PORT_GAP * i as f32 + self.pos.y,
+                        ),
+                        false,
+                        Some(port.0),
+                    ));
+                }
+                result
+            }
             PartData::Label(_) => Vec::new(),
         }
     }

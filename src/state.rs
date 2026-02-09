@@ -6,6 +6,7 @@ use crate::saveload::Config;
 use crate::tools::Tool;
 use serde::{Deserialize, Serialize};
 use std::collections::HashMap;
+use std::path::PathBuf;
 
 //operation being completed, ie box selecting, resizing, etc
 #[derive(Debug, Clone, Copy, PartialEq)]
@@ -36,6 +37,9 @@ pub struct AppState {
     pub interaction_state: InteractionState,
     pub active_tool: Option<Tool>,
     pub settings_open: bool,
+    //project
+    pub project_folder: Option<PathBuf>,
+    pub current_module_path: Option<PathBuf>,
     // other live info
     pub pan_offset: Vec2,
     pub zoom: f32,
@@ -59,6 +63,8 @@ impl AppState {
             interaction_state: InteractionState::Idle,
             active_tool: None,
             settings_open: false,
+            project_folder: None,
+            current_module_path: None,
             pan_offset: Vec2::ZERO,
             zoom: 1.0,
             canvas_snapshot: CanvasSnapshot {
