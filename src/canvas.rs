@@ -23,15 +23,13 @@ impl AppState {
             self.draw_grid(&painter, canvas_rect);
         }
         self.draw_parts(&painter);
-        //self.draw_sidebar(ctx);
+        self.draw_connections(&painter);
         self.draw_footer(ctx);
-        //self.draw_settings(ctx);
 
         if self.show_fps {
             self.draw_fps(ctx);
-        } //else {
+        }
         ctx.request_repaint_after(std::time::Duration::from_millis(100));
-        // }
 
         (response, painter)
     }

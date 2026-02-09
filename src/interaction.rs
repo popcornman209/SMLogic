@@ -1,3 +1,4 @@
+use crate::connections::{Connection, draw_connection};
 use crate::egui::{Context, Key, Painter, PointerButton, Pos2, Rect, Vec2};
 use crate::state::{AppState, InteractionState};
 
@@ -115,8 +116,19 @@ impl AppState {
                 }
             }
             InteractionState::Connecting => {
-                if ctx.input(|i| i.pointer.button_released(PointerButton::Primary)) {
-                    self.interaction_state = InteractionState::Idle;
+                if let Some(connect_start) = self.connect_start.clone() {
+                    if let Some(start_pos) = connect_start.pos(self) {
+                        draw_connection(self, start_pos, world_pos, painter);
+                        if ctx.input(|i| i.pointer.button_released(PointerButton::Primary)) {
+                            if let Some(port) = self.port_at_pos(world_pos) {
+                                self.canvas_snapshot.connections.push(Connection {
+                                    start: connect_start,
+                                    end: port,
+                                })
+                            }
+                            self.interaction_state = InteractionState::Idle;
+                        }
+                    }
                 }
             }
         }

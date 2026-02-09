@@ -249,11 +249,20 @@ impl PartData {
     }
 }
 
-#[derive(Clone)]
+#[derive(Clone, Deserialize, Serialize)]
 pub struct Port {
     pub part: u64,
     pub input: bool,
     pub port_id: Option<u64>,
+}
+impl Port {
+    pub fn pos(&self, app_state: &AppState) -> Option<Pos2> {
+        if self.input {
+            app_state.canvas_snapshot.parts[&self.part].input_pos(self.port_id)
+        } else {
+            app_state.canvas_snapshot.parts[&self.part].output_pos(self.port_id)
+        }
+    }
 }
 
 #[derive(Clone, Deserialize, Serialize)]
