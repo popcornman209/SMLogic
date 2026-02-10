@@ -30,7 +30,7 @@ fn main() -> eframe::Result<()> {
 impl eframe::App for AppState {
     fn update(&mut self, ctx: &egui::Context, _frame: &mut eframe::Frame) {
         if self.last_project_reload.elapsed().as_secs() >= 3 {
-            self.reload_project();
+            self.reload_project_folder();
             self.last_project_reload = Instant::now();
         }
 

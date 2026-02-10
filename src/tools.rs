@@ -1,7 +1,7 @@
 use eframe::egui::{Color32, Pos2};
 
-use crate::AppState;
 use crate::parts::{Part, PartType};
+use crate::state::{AppState, Selection};
 
 //current tool being used
 #[derive(Debug, Clone, PartialEq)]
@@ -41,8 +41,8 @@ impl AppState {
         if !shift_held {
             self.selection.clear();
         }
-        if !self.selection.contains(&part_id) {
-            self.selection.push(part_id);
+        if !self.selection.contains(&Selection::Part(part_id)) {
+            self.selection.push(Selection::Part(part_id));
         }
     }
 }

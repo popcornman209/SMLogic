@@ -24,7 +24,13 @@ impl AppState {
             self.draw_grid(&painter, canvas_rect);
         }
         self.draw_parts(&painter);
-        self.draw_connections(&painter);
+        if self.draw_connections(&painter) {
+            for (i, connection) in self.canvas_snapshot.connections.clone().iter().enumerate() {
+                if connection.start.pos(self).is_none() | connection.end.pos(self).is_none() {
+                    self.canvas_snapshot.connections.remove(i);
+                }
+            }
+        }
 
         if self.show_fps {
             self.draw_fps(ctx);
@@ -178,7 +184,7 @@ impl AppState {
                         if folder.is_some() {
                             self.project_folder = folder;
                             self.project_sub_folder = None;
-                            self.reload_project();
+                            self.reload_project_folder();
                         }
                     }
 
@@ -189,6 +195,7 @@ impl AppState {
                             parts: HashMap::new(),
                             next_id: 0,
                         };
+                        self.current_module_path = None;
                     }
                     if let Some(path) = self.current_module_path.clone() {
                         if ui.button("Save").clicked() {
@@ -204,7 +211,8 @@ impl AppState {
                         }
                         let file = dialog.save_file();
                         if let Some(path) = file {
-                            self.canvas_snapshot.save(path);
+                            self.canvas_snapshot.save(path.clone());
+                            self.current_module_path = Some(path);
                         }
                     }
                     if ui.button("Import...").clicked() {
@@ -232,7 +240,8 @@ impl AppState {
 
                 if self.project_folder.is_none() {
                     ui.label("Set a project folder to browse modules.");
-                } else if self.current_folder_files.is_empty() {
+                } else if self.current_folder_files.is_empty() && self.project_sub_folder.is_none()
+                {
                     ui.label("No modules found. Save a module to see it here.");
                 } else {
                     if let Some(path) = &self.project_sub_folder {
@@ -249,28 +258,45 @@ impl AppState {
                         ui.horizontal(|ui| {
                             // ".." button to go up
                             if let Some(sub_folder) = self.project_sub_folder.as_mut() {
-                                if ui.button("..").clicked() {
+                                if ui.button("../").clicked() {
                                     sub_folder.pop();
+                                    self.reload_project_folder();
                                 }
                             }
-                            if let Some(project_folder) = &self.project_folder {
-                                for path in &self.current_folder_files {
+                            if let Some(project_folder) = self.project_folder.clone() {
+                                for path in self.current_folder_files.clone() {
+                                    let mut label = path
+                                        .strip_prefix(&project_folder)
+                                        .map(|p| p.to_string_lossy().to_string())
+                                        .unwrap_or_else(|_| path.to_string_lossy().to_string());
+
+                                    // Add a trailing slash if it's a directory
+                                    if path.is_dir() {
+                                        label.push('/');
+                                    }
+
                                     if ui
                                         .selectable_label(
                                             self.active_tool
                                                 == Some(Tool::PlacePart(PartType::Module(
                                                     path.clone(),
                                                 ))),
-                                            path.strip_prefix(project_folder)
-                                                .map(|p| p.to_string_lossy().to_string())
-                                                .unwrap_or_else(|_| {
-                                                    path.to_string_lossy().to_string()
-                                                }),
+                                            label,
                                         )
                                         .clicked()
                                     {
-                                        self.active_tool =
-                                            Some(Tool::PlacePart(PartType::Module(path.clone())));
+                                        if path.is_dir() {
+                                            self.project_sub_folder = Some(
+                                                path.strip_prefix(&project_folder)
+                                                    .expect("path not under project folder")
+                                                    .to_path_buf(),
+                                            );
+                                            self.reload_project_folder();
+                                        } else if path.is_file() {
+                                            self.active_tool = Some(Tool::PlacePart(
+                                                PartType::Module(path.clone()),
+                                            ));
+                                        }
                                     }
                                 }
                             }

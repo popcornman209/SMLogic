@@ -1,6 +1,6 @@
 use crate::connections::{Connection, draw_connection};
 use crate::egui::{Context, Key, Painter, PointerButton, Pos2, Rect, Vec2};
-use crate::state::{AppState, InteractionState};
+use crate::state::{AppState, InteractionState, Selection};
 
 impl AppState {
     pub fn handle_input(&mut self, ctx: &Context, painter: &Painter, response: &egui::Response) {
@@ -10,7 +10,20 @@ impl AppState {
         if ctx.input(|i| i.key_pressed(Key::Escape)) {
             self.active_tool = None;
             self.interaction_state = InteractionState::Idle;
-            return;
+        }
+
+        if ctx.input(|i| i.key_pressed(Key::Backspace)) {
+            for selection in self.selection.clone() {
+                match selection {
+                    Selection::Part(part_id) => {
+                        self.canvas_snapshot.parts.remove(&part_id);
+                    }
+                    Selection::Connection(connection) => {
+                        self.canvas_snapshot.connections.remove(connection);
+                    }
+                };
+            }
+            self.selection.clear();
         }
 
         if !in_canvas {
@@ -89,7 +102,7 @@ impl AppState {
                         }
                         let parts = self.parts_in_rect(Rect::from_two_pos(start_pos, world_pos));
                         for part in parts {
-                            self.selection.push(part); // select all parts in box
+                            self.selection.push(Selection::Part(part)); // select all parts in box
                         }
                         self.interaction_state = InteractionState::Idle;
                     }
@@ -98,17 +111,21 @@ impl AppState {
             InteractionState::Dragging => {
                 let delta = ctx.input(|i| i.pointer.delta()) / self.zoom;
 
-                for part_id in &self.selection {
-                    if let Some(part) = self.canvas_snapshot.parts.get_mut(part_id) {
-                        part.pos += delta;
+                for selection in &self.selection {
+                    if let Selection::Part(part_id) = selection {
+                        if let Some(part) = self.canvas_snapshot.parts.get_mut(part_id) {
+                            part.pos += delta;
+                        }
                     }
                 }
 
                 if ctx.input(|i| i.pointer.button_released(PointerButton::Primary)) {
                     if self.snap_to_grid {
-                        for part in &self.selection {
-                            if let Some(part) = self.canvas_snapshot.parts.get_mut(&part) {
-                                part.snap_pos();
+                        for selection in &self.selection {
+                            if let Selection::Part(part_id) = selection {
+                                if let Some(part) = self.canvas_snapshot.parts.get_mut(part_id) {
+                                    part.snap_pos();
+                                }
                             }
                         }
                     }

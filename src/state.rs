@@ -19,6 +19,12 @@ pub enum InteractionState {
     Connecting,
 }
 
+#[derive(Clone, PartialEq)]
+pub enum Selection {
+    Part(u64),
+    Connection(usize),
+}
+
 impl Default for InteractionState {
     fn default() -> Self {
         InteractionState::Idle
@@ -47,7 +53,7 @@ pub struct AppState {
     pub pan_offset: Vec2,
     pub zoom: f32,
     pub canvas_snapshot: CanvasSnapshot,
-    pub selection: Vec<u64>,
+    pub selection: Vec<Selection>,
     pub box_select_start: Option<Pos2>,
     pub connect_start: Option<Port>,
     pub last_project_reload: Instant,

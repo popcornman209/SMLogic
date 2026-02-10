@@ -1,9 +1,9 @@
-use crate::AppState;
 use crate::colors::{POWERED_COLOR, UNPOWERED_COLOR};
 use crate::parts::{
     GATE_SIZE, Gate, GateType, IO, Label, Module, PORT_SIZE, Part, PartData, SWITCH_SIZE, Switch,
     Timer,
 };
+use crate::state::{AppState, Selection};
 use eframe::epaint::PathShape;
 use egui::{Color32, Painter, Pos2, Rect, Stroke, StrokeKind, Vec2};
 
@@ -129,7 +129,7 @@ impl Gate {
             painter,
             part.pos,
             GATE_SIZE,
-            if app_state.selection.contains(&part.id) {
+            if app_state.selection.contains(&Selection::Part(part.id)) {
                 app_state.color_pallet.selection
             } else {
                 part.color
@@ -269,7 +269,7 @@ impl Timer {
             painter,
             part.pos,
             GATE_SIZE,
-            if app_state.selection.contains(&part.id) {
+            if app_state.selection.contains(&Selection::Part(part.id)) {
                 app_state.color_pallet.selection
             } else {
                 part.color
@@ -329,7 +329,7 @@ impl Module {
             painter,
             part.pos,
             self.size,
-            if app_state.selection.contains(&part.id) {
+            if app_state.selection.contains(&Selection::Part(part.id)) {
                 app_state.color_pallet.selection
             } else {
                 part.color
@@ -360,7 +360,7 @@ impl IO {
             painter,
             part.pos,
             GATE_SIZE,
-            if app_state.selection.contains(&part.id) {
+            if app_state.selection.contains(&Selection::Part(part.id)) {
                 app_state.color_pallet.selection
             } else {
                 part.color
@@ -391,7 +391,7 @@ impl Switch {
             painter,
             part.pos,
             SWITCH_SIZE,
-            if app_state.selection.contains(&part.id) {
+            if app_state.selection.contains(&Selection::Part(part.id)) {
                 app_state.color_pallet.selection
             } else {
                 part.color
@@ -422,7 +422,7 @@ impl Label {
             painter,
             part.pos,
             self.size,
-            if app_state.selection.contains(&part.id) {
+            if app_state.selection.contains(&Selection::Part(part.id)) {
                 app_state.color_pallet.selection
             } else {
                 part.color

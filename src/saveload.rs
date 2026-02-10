@@ -97,8 +97,7 @@ impl CanvasSnapshot {
         let contents = std::fs::read_to_string(path)?;
         let json: serde_json::Value = serde_json::from_str(&contents)?;
 
-        let mut canvas_snapshot: Self =
-            serde_json::from_value(json).expect("failed to parse json obj");
+        let mut canvas_snapshot: Self = serde_json::from_value(json)?;
         for part in canvas_snapshot.parts.values_mut() {
             if let PartData::Module(data) = &mut part.part_data {
                 data.canvas_snapshot = Self::load(
@@ -116,8 +115,13 @@ impl CanvasSnapshot {
 }
 
 impl AppState {
-    pub fn reload_project(&mut self) {
+    pub fn reload_project_folder(&mut self) {
         if let Some(project_folder) = &self.project_folder {
+            if let Some(sub_folder) = &self.project_sub_folder {
+                if sub_folder.as_os_str().is_empty() {
+                    self.project_sub_folder = None;
+                };
+            };
             let folder_to_read = if let Some(sub_folder) = &self.project_sub_folder {
                 project_folder.join(sub_folder)
             } else {

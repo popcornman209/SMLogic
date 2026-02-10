@@ -8,7 +8,7 @@ use std::path::PathBuf;
 
 pub const GATE_SIZE: Vec2 = Vec2::new(80.0, 60.0);
 pub const SWITCH_SIZE: Vec2 = Vec2::new(60.0, 60.0);
-pub const PORT_SIZE: f32 = 5.0;
+pub const PORT_SIZE: f32 = 6.0;
 pub const PORT_GAP: f32 = 20.0;
 pub const MIN_MODULE_WIDTH: f32 = 80.0;
 
@@ -302,10 +302,14 @@ pub struct Port {
 }
 impl Port {
     pub fn pos(&self, app_state: &AppState) -> Option<Pos2> {
-        if self.input {
-            app_state.canvas_snapshot.parts[&self.part].input_pos(self.port_id)
+        if let Some(part) = app_state.canvas_snapshot.parts.get(&self.part) {
+            if self.input {
+                part.input_pos(self.port_id)
+            } else {
+                part.output_pos(self.port_id)
+            }
         } else {
-            app_state.canvas_snapshot.parts[&self.part].output_pos(self.port_id)
+            None
         }
     }
 }
