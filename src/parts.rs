@@ -161,13 +161,13 @@ pub struct Module {
     pub size: Vec2,
 }
 impl Module {
-    pub fn reload(&mut self, app_state: AppState) {
-        let full_path = if let Some(ref proj) = app_state.project_folder {
+    pub fn reload(&mut self, project_path: Option<PathBuf>) {
+        let full_path = if let Some(ref proj) = project_path {
             proj.join(&self.path)
         } else {
             self.path.clone()
         };
-        match CanvasSnapshot::load(full_path, app_state.project_folder) {
+        match CanvasSnapshot::load(full_path, project_path) {
             Ok(snapshot) => self.canvas_snapshot = snapshot,
             Err(e) => eprintln!("Failed to load canvas snapshot: {}", e),
         }
@@ -212,7 +212,7 @@ impl Module {
             min_size: Vec2::new(MIN_MODULE_WIDTH, 0.0),
             size: Vec2::new(120.0, 0.0),
         };
-        module.reload(app_state);
+        module.reload(app_state.project_folder);
         (
             PartData::Module(module.clone()),
             final_path

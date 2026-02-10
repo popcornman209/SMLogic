@@ -1,6 +1,6 @@
 use crate::AppState;
 use crate::colors::ColorPallet;
-use crate::parts::PartData;
+use crate::parts::{Module, PartData};
 use crate::state::CanvasSnapshot;
 use serde::{Deserialize, Serialize};
 use std::collections::HashMap;
@@ -64,27 +64,7 @@ impl Default for Config {
 // saving/loading modules
 impl CanvasSnapshot {
     pub fn save(&self, path: PathBuf) {
-        if let Ok(mut json) = serde_json::to_value(self) {
-            if let Some(obj) = json.as_object_mut() {
-                if let Some(parts) = obj.get_mut("parts").and_then(|p| p.as_object_mut()) {
-                    for (_id, part) in parts.iter_mut() {
-                        if let Some(module) = part
-                            .get_mut("part_data")
-                            .and_then(|pd| pd.get_mut("Module"))
-                            .and_then(|m| m.as_object_mut())
-                        {
-                            module.insert(
-                                "canvas_snapshot".to_string(),
-                                serde_json::json!(CanvasSnapshot {
-                                    connections: Vec::new(),
-                                    parts: HashMap::new(),
-                                    next_id: 0,
-                                }),
-                            );
-                        }
-                    }
-                }
-            }
+        if let Ok(json) = serde_json::to_value(self) {
             let pretty = serde_json::to_string_pretty(&json).unwrap();
             std::fs::write(path, pretty).expect("failed to save json");
         }
@@ -98,42 +78,41 @@ impl CanvasSnapshot {
         let json: serde_json::Value = serde_json::from_str(&contents)?;
 
         let mut canvas_snapshot: Self = serde_json::from_value(json)?;
-        for part in canvas_snapshot.parts.values_mut() {
+        canvas_snapshot.reload_modules(project_path);
+        Ok(canvas_snapshot)
+    }
+
+    pub fn reload_modules(&mut self, project_path: Option<PathBuf>) {
+        for part in self.parts.values_mut() {
             if let PartData::Module(data) = &mut part.part_data {
-                data.canvas_snapshot = Self::load(
-                    if let Some(path) = &project_path {
-                        path.join(&data.path)
-                    } else {
-                        { data.path.clone() }
-                    },
-                    project_path.clone(),
-                )?;
+                data.reload(project_path.clone());
             }
         }
-        Ok(canvas_snapshot)
     }
 }
 
 impl AppState {
     pub fn reload_project_folder(&mut self) {
         if let Some(project_folder) = &self.project_folder {
+            // clear subfolder if you arent in one
             if let Some(sub_folder) = &self.project_sub_folder {
                 if sub_folder.as_os_str().is_empty() {
                     self.project_sub_folder = None;
                 };
             };
+            // get the folder to read
             let folder_to_read = if let Some(sub_folder) = &self.project_sub_folder {
                 project_folder.join(sub_folder)
             } else {
                 project_folder.clone()
             };
-
+            //load all entries
             let mut entries: Vec<PathBuf> = fs::read_dir(folder_to_read)
                 .expect("failed to load folder")
                 .filter_map(|e| e.ok())
                 .map(|e| e.path())
                 .collect();
-
+            // sort and apply all entries
             entries.sort_by_key(|p| !p.is_dir());
             self.current_folder_files = entries;
         }

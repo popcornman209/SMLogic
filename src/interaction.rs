@@ -6,24 +6,39 @@ impl AppState {
     pub fn handle_input(&mut self, ctx: &Context, painter: &Painter, response: &egui::Response) {
         let pointer_pos = ctx.input(|i| i.pointer.hover_pos());
         let in_canvas = response.hovered();
+        let ctrl_held = ctx.input(|i| i.modifiers.ctrl);
+        let shift_held = ctx.input(|i| i.modifiers.shift);
+
         // escape key
         if ctx.input(|i| i.key_pressed(Key::Escape)) {
             self.active_tool = None;
             self.interaction_state = InteractionState::Idle;
         }
 
+        // backspace
         if ctx.input(|i| i.key_pressed(Key::Backspace)) {
-            for selection in self.selection.clone() {
-                match selection {
-                    Selection::Part(part_id) => {
-                        self.canvas_snapshot.parts.remove(&part_id);
-                    }
-                    Selection::Connection(connection) => {
-                        self.canvas_snapshot.connections.remove(connection);
-                    }
-                };
+            if self.selection.len() > 0 {
+                self.push_undo();
+                for selection in self.selection.clone() {
+                    match selection {
+                        Selection::Part(part_id) => {
+                            self.canvas_snapshot.parts.remove(&part_id);
+                        }
+                        Selection::Connection(connection) => {
+                            self.canvas_snapshot.connections.remove(connection);
+                        }
+                    };
+                }
+                self.selection.clear();
             }
-            self.selection.clear();
+        }
+
+        if ctx.input(|i| i.key_pressed(Key::Z)) {
+            if ctrl_held && shift_held {
+                self.redo()
+            } else if ctrl_held {
+                self.undo()
+            }
         }
 
         if !in_canvas {
@@ -54,7 +69,6 @@ impl AppState {
             return;
         };
         let world_pos = self.screen_to_world(screen_pos);
-        let shift_held = ctx.input(|i| i.modifiers.shift);
 
         match self.interaction_state {
             InteractionState::Idle => {
@@ -72,9 +86,11 @@ impl AppState {
                     if selected_port.is_some() {
                         self.connect_start = selected_port;
                         self.interaction_state = InteractionState::Connecting;
+                        self.push_undo();
                     } else if let Some(part) = selected_part {
                         self.select_part(part, shift_held);
                         self.interaction_state = InteractionState::Dragging;
+                        self.push_undo();
                     } else if self.active_tool.is_none() {
                         self.box_select_start = Some(world_pos);
                         self.interaction_state = InteractionState::BoxSelecting;
@@ -121,9 +137,9 @@ impl AppState {
 
                 if ctx.input(|i| i.pointer.button_released(PointerButton::Primary)) {
                     if self.snap_to_grid {
-                        for selection in &self.selection {
+                        for selection in self.selection.clone() {
                             if let Selection::Part(part_id) = selection {
-                                if let Some(part) = self.canvas_snapshot.parts.get_mut(part_id) {
+                                if let Some(part) = self.canvas_snapshot.parts.get_mut(&part_id) {
                                     part.snap_pos();
                                 }
                             }
@@ -154,7 +170,11 @@ impl AppState {
                                         end: connect_start,
                                         powered: false,
                                     })
+                                } else {
+                                    self.undo_stack.pop();
                                 }
+                            } else {
+                                self.undo_stack.pop();
                             }
                             self.interaction_state = InteractionState::Idle;
                         }

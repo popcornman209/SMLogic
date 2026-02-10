@@ -1,4 +1,5 @@
-reloading project
-sub paths for project
+copy/paste
+select connections
+properties in left bar
 
 * simulator

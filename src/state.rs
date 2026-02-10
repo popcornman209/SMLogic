@@ -49,6 +49,8 @@ pub struct AppState {
     pub project_sub_folder: Option<PathBuf>,
     pub current_folder_files: Vec<PathBuf>,
     pub current_module_path: Option<PathBuf>,
+    pub undo_stack: Vec<CanvasSnapshot>,
+    pub redo_stack: Vec<CanvasSnapshot>,
     // other live info
     pub pan_offset: Vec2,
     pub zoom: f32,
@@ -84,6 +86,8 @@ impl AppState {
                 connections: Vec::new(),
                 next_id: 0,
             },
+            undo_stack: Vec::new(),
+            redo_stack: Vec::new(),
             selection: Vec::new(),
             box_select_start: None,
             connect_start: None,
@@ -152,5 +156,24 @@ impl AppState {
             })
             .map(|part| part.id)
             .collect()
+    }
+
+    pub fn push_undo(&mut self) {
+        self.redo_stack.clear();
+        self.undo_stack.push(self.canvas_snapshot.clone());
+    }
+    pub fn undo(&mut self) {
+        if let Some(snapshot) = self.undo_stack.pop() {
+            self.redo_stack.push(self.canvas_snapshot.clone());
+            self.canvas_snapshot = snapshot;
+            self.selection.clear();
+        }
+    }
+    pub fn redo(&mut self) {
+        if let Some(snapshot) = self.redo_stack.pop() {
+            self.undo_stack.push(self.canvas_snapshot.clone());
+            self.canvas_snapshot = snapshot;
+            self.selection.clear();
+        }
     }
 }

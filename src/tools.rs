@@ -26,10 +26,11 @@ pub fn tool_label(tool: &Option<Tool>) -> &'static str {
 
 impl AppState {
     pub fn handle_tool(&mut self, world_pos: Pos2, shift_held: bool) {
-        match &self.active_tool {
+        match self.active_tool.clone() {
             None => {}
             Some(Tool::PlacePart(part_type)) => {
-                let part_id = Part::new(part_type.clone(), self, world_pos);
+                self.push_undo();
+                let part_id = Part::new(part_type, self, world_pos);
                 self.select_part(part_id, shift_held);
             }
             Some(Tool::Paint) => {}
