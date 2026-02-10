@@ -275,16 +275,9 @@ impl AppState {
                                         label.push('/');
                                     }
 
-                                    if ui
-                                        .selectable_label(
-                                            self.active_tool
-                                                == Some(Tool::PlacePart(PartType::Module(
-                                                    path.clone(),
-                                                ))),
-                                            label,
-                                        )
-                                        .clicked()
-                                    {
+                                    let active = self.active_tool
+                                        == Some(Tool::PlacePart(PartType::Module(path.clone())));
+                                    if ui.selectable_label(active, label).clicked() {
                                         if path.is_dir() {
                                             self.project_sub_folder = Some(
                                                 path.strip_prefix(&project_folder)
@@ -293,9 +286,24 @@ impl AppState {
                                             );
                                             self.reload_project_folder();
                                         } else if path.is_file() {
-                                            self.active_tool = Some(Tool::PlacePart(
-                                                PartType::Module(path.clone()),
-                                            ));
+                                            if active {
+                                                let new_snapshot = CanvasSnapshot::load(
+                                                    path,
+                                                    self.project_folder.clone(),
+                                                );
+                                                match new_snapshot {
+                                                    Ok(snapshot) => self.canvas_snapshot = snapshot,
+                                                    Err(e) => eprintln!(
+                                                        "Failed to load canvas snapshot: {}",
+                                                        e
+                                                    ),
+                                                }
+                                                self.current_module_path = None;
+                                            } else {
+                                                self.active_tool = Some(Tool::PlacePart(
+                                                    PartType::Module(path.clone()),
+                                                ));
+                                            }
                                         }
                                     }
                                 }
