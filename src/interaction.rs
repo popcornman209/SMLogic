@@ -17,22 +17,34 @@ impl AppState {
 
         // backspace
         if ctx.input(|i| i.key_pressed(Key::Backspace)) {
-            if self.selection.len() > 0 {
+            if !self.selection.is_empty() {
                 self.push_undo();
-                for selection in self.selection.clone() {
-                    match selection {
-                        Selection::Part(part_id) => {
-                            self.canvas_snapshot.parts.remove(&part_id);
-                        }
-                        Selection::Connection(connection) => {
-                            self.canvas_snapshot.connections.remove(connection);
-                        }
-                    };
+                for selection in &self.selection {
+                    if let Selection::Part(part_id) = selection {
+                        self.canvas_snapshot.parts.remove(part_id);
+                    }
                 }
+                let mut connections_to_remove: Vec<usize> = self
+                    .selection
+                    .iter()
+                    .filter_map(|s| {
+                        if let Selection::Connection(i) = s {
+                            Some(*i)
+                        } else {
+                            None
+                        }
+                    })
+                    .collect();
+                connections_to_remove.sort_unstable_by(|a, b| b.cmp(a));
+                for i in connections_to_remove {
+                    self.canvas_snapshot.connections.remove(i);
+                }
+
                 self.selection.clear();
             }
         }
 
+        // undo/redo
         if ctx.input(|i| i.key_pressed(Key::Z)) {
             if ctrl_held && shift_held {
                 self.redo()
@@ -41,6 +53,7 @@ impl AppState {
             }
         }
 
+        // if mouse not in canvas do nothing else
         if !in_canvas {
             return;
         }
@@ -81,12 +94,15 @@ impl AppState {
 
                 if ctx.input(|i| i.pointer.button_pressed(PointerButton::Primary)) {
                     let selected_port = self.port_at_pos(world_pos);
+                    let selected_connection = self.connection_at_pos(world_pos);
                     let selected_part = self.part_at_pos(world_pos).map(|p| p.id);
 
                     if selected_port.is_some() {
                         self.connect_start = selected_port;
                         self.interaction_state = InteractionState::Connecting;
                         self.push_undo();
+                    } else if let Some(connection) = selected_connection {
+                        self.select_connection(connection, shift_held);
                     } else if let Some(part) = selected_part {
                         self.select_part(part, shift_held);
                         self.interaction_state = InteractionState::Dragging;
@@ -116,9 +132,14 @@ impl AppState {
                         if !shift_held {
                             self.selection.clear();
                         }
-                        let parts = self.parts_in_rect(Rect::from_two_pos(start_pos, world_pos));
+                        let rect: Rect = Rect::from_two_pos(start_pos, world_pos);
+                        let parts = self.parts_in_rect(rect);
                         for part in parts {
                             self.selection.push(Selection::Part(part)); // select all parts in box
+                        }
+                        let connections = self.connections_in_rect(rect);
+                        for connection in connections {
+                            self.selection.push(Selection::Connection(connection))
                         }
                         self.interaction_state = InteractionState::Idle;
                     }
@@ -152,9 +173,9 @@ impl AppState {
                 if let Some(connect_start) = self.connect_start.clone() {
                     if let Some(start_pos) = connect_start.pos(self) {
                         if connect_start.input {
-                            draw_connection(self, world_pos, start_pos, painter);
+                            draw_connection(self, world_pos, start_pos, painter, false);
                         } else {
-                            draw_connection(self, start_pos, world_pos, painter);
+                            draw_connection(self, start_pos, world_pos, painter, false);
                         }
                         if ctx.input(|i| i.pointer.button_released(PointerButton::Primary)) {
                             if let Some(port) = self.port_at_pos(world_pos) {

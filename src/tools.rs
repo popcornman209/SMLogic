@@ -46,4 +46,15 @@ impl AppState {
             self.selection.push(Selection::Part(part_id));
         }
     }
+    pub fn select_connection(&mut self, connection_id: usize, shift_held: bool) {
+        if !shift_held {
+            self.selection.clear();
+        }
+        if !self
+            .selection
+            .contains(&Selection::Connection(connection_id))
+        {
+            self.selection.push(Selection::Connection(connection_id));
+        }
+    }
 }

@@ -1,5 +1,8 @@
 copy/paste
 select connections
 properties in left bar
+paint tool
+fast connect tool
+connection counts at ports
 
 * simulator

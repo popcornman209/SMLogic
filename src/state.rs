@@ -1,5 +1,7 @@
 use crate::colors::ColorPallet;
-use crate::connections::Connection;
+use crate::connections::{
+    Connection, WIRE_WIDTH, closest_point_to_rect, compute_wire_route, dist_point_to_segment,
+};
 use crate::egui::{Pos2, Rect, Vec2};
 use crate::parts::{PORT_SIZE, Part, Port};
 use crate::saveload::Config;
@@ -131,6 +133,50 @@ impl AppState {
             }
         }
         None
+    }
+
+    pub fn connection_at_pos(&self, world_pos: Pos2) -> Option<usize> {
+        let half_width = WIRE_WIDTH * 0.5;
+
+        for (i, connection) in self.canvas_snapshot.connections.iter().enumerate() {
+            if let (Some(start), Some(end)) = (connection.start.pos(self), connection.end.pos(self))
+            {
+                let points = compute_wire_route(start, end);
+
+                for seg in points.windows(2) {
+                    if dist_point_to_segment(world_pos, seg[0], seg[1]) <= half_width {
+                        return Some(i);
+                    }
+                }
+            }
+        }
+        None
+    }
+
+    pub fn connections_in_rect(&self, rect: Rect) -> Vec<usize> {
+        let half_width = WIRE_WIDTH / 2.0;
+
+        self.canvas_snapshot
+            .connections
+            .iter()
+            .enumerate()
+            .filter(|(_i, connection)| {
+                if let (Some(start), Some(end)) =
+                    (connection.start.pos(self), connection.end.pos(self))
+                {
+                    let points = compute_wire_route(start, end);
+
+                    points.windows(2).any(|seg| {
+                        rect.contains(seg[0])
+                            || rect.contains(seg[1])
+                            || closest_point_to_rect(rect, seg[0]).distance(seg[0]) <= half_width
+                    })
+                } else {
+                    false
+                }
+            })
+            .map(|(i, _c)| i)
+            .collect()
     }
 
     pub fn part_at_pos(&self, world_pos: Pos2) -> Option<&Part> {
