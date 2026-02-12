@@ -1,15 +1,18 @@
 use crate::colors::{POWERED_COLOR, UNPOWERED_COLOR};
 use crate::parts::{
-    GATE_SIZE, Gate, GateType, IO, Label, Module, PORT_SIZE, Part, PartData, SWITCH_SIZE, Switch,
-    Timer,
+    GATE_SIZE, Gate, GateType, IO, Label, Module, PORT_SIZE, Part, PartData, Port, SWITCH_SIZE,
+    Switch, Timer,
 };
 use crate::state::{AppState, Selection};
 use eframe::epaint::PathShape;
-use egui::{Color32, Painter, Pos2, Rect, Stroke, StrokeKind, Vec2};
+use egui::{Align2, Color32, FontId, Painter, Pos2, Rect, Stroke, StrokeKind, TextEdit, Ui, Vec2};
 
 const ICON_HEIGHT: f32 = 20.0;
 const ICON_WIDTH: f32 = ICON_HEIGHT * 1.5;
 const ICON_Y_SHIFT: f32 = 10.0;
+
+const CONNECTION_COUNT_SHIFT: Vec2 = Vec2::new(8.0, 0.0);
+const CONNECTION_COUNT_SIZE: f32 = 10.0;
 
 impl AppState {
     pub fn draw_parts(&self, painter: &Painter) {
@@ -35,7 +38,7 @@ pub fn draw_part_base(
     label_offset: f32,
     powered: bool,
     resizable: bool,
-    ports: Vec<Pos2>,
+    ports: Vec<Port>,
     app_state: &AppState,
 ) {
     let rounding = 6.0 * app_state.zoom;
@@ -105,11 +108,38 @@ pub fn draw_part_base(
     }
 
     for port in ports {
-        painter.circle_filled(
-            app_state.world_to_screen(port),
-            PORT_SIZE * app_state.zoom,
-            Color32::from_gray(150),
-        );
+        if let Some(pos) = port.pos(app_state) {
+            painter.circle_filled(
+                app_state.world_to_screen(pos),
+                PORT_SIZE * app_state.zoom,
+                Color32::from_gray(150),
+            );
+            if let Some(connection_count) = app_state.connection_counts.get(&port) {
+                if port.input {
+                    painter.text(
+                        app_state.world_to_screen(pos + CONNECTION_COUNT_SHIFT),
+                        Align2::LEFT_CENTER,
+                        connection_count,
+                        FontId::new(
+                            CONNECTION_COUNT_SIZE * app_state.zoom,
+                            egui::FontFamily::Proportional,
+                        ),
+                        Color32::WHITE,
+                    );
+                } else {
+                    painter.text(
+                        app_state.world_to_screen(pos - CONNECTION_COUNT_SHIFT),
+                        Align2::RIGHT_CENTER,
+                        connection_count,
+                        FontId::new(
+                            CONNECTION_COUNT_SIZE * app_state.zoom,
+                            egui::FontFamily::Proportional,
+                        ),
+                        Color32::WHITE,
+                    );
+                }
+            }
+        }
     }
 }
 
@@ -138,7 +168,7 @@ impl Gate {
             13.0,
             self.powered,
             false,
-            part.connections_pos(),
+            part.get_ports(),
             app_state,
         );
 
@@ -251,6 +281,27 @@ impl Gate {
             }
         }
     }
+
+    pub fn draw_properties(&mut self, ui: &mut Ui, app_state: &mut AppState, label: &mut String) {
+        egui::ComboBox::from_label("Type")
+            .selected_text(self.gate_type.to_label())
+            .show_ui(ui, |ui| {
+                for lgt in GateType::TYPES {
+                    if ui
+                        .selectable_label(lgt.clone() == self.gate_type, lgt.to_label())
+                        .clicked()
+                    {
+                        if lgt.clone() != self.gate_type {
+                            app_state.push_undo();
+                            if *label == self.gate_type.to_label() {
+                                *label = lgt.to_label();
+                            }
+                            self.gate_type = lgt.clone();
+                        }
+                    }
+                }
+            });
+    }
 }
 
 impl Timer {
@@ -278,7 +329,7 @@ impl Timer {
             13.0,
             *self.buffer.last().unwrap_or(&false),
             false,
-            part.connections_pos(),
+            part.get_ports(),
             app_state,
         );
 
@@ -311,6 +362,30 @@ impl Timer {
         painter.line_segment([top_left, top_right], stroke);
         painter.line_segment([bottom_left, bottom_right], stroke);
     }
+
+    pub fn draw_properties(&mut self, ui: &mut Ui, app_state: &mut AppState) {
+        let mut secs = self.secs;
+        let mut ticks = self.ticks;
+
+        ui.horizontal(|ui| {
+            ui.label("Seconds:");
+            ui.add(egui::DragValue::new(&mut secs).range(0..=59));
+        });
+        ui.horizontal(|ui| {
+            ui.label("Ticks:");
+            ui.add(egui::DragValue::new(&mut ticks).range(0..=40));
+        });
+
+        if secs != self.secs || ticks != self.ticks {
+            app_state.push_undo();
+            self.secs = secs;
+            self.ticks = ticks;
+        }
+
+        let total_ticks = secs as u32 * 40 + ticks as u32;
+        let total_secs = secs as f64 + ticks as f64 * 0.025;
+        ui.label(format!("Total: {:.3}s ({}t)", total_secs, total_ticks));
+    }
 }
 
 impl Module {
@@ -338,7 +413,7 @@ impl Module {
             0.0,
             false,
             true,
-            part.connections_pos(),
+            part.get_ports(),
             app_state,
         );
     }
@@ -369,7 +444,7 @@ impl IO {
             0.0,
             false,
             false,
-            part.connections_pos(),
+            part.get_ports(),
             app_state,
         );
     }
@@ -400,7 +475,7 @@ impl Switch {
             0.0,
             self.powered,
             false,
-            part.connections_pos(),
+            part.get_ports(),
             app_state,
         );
     }
@@ -434,5 +509,23 @@ impl Label {
             Vec::new(),
             app_state,
         );
+    }
+}
+
+impl Part {
+    pub fn draw_properties(&mut self, ui: &mut Ui, app_state: &mut AppState) {
+        match &mut self.part_data {
+            PartData::Gate(gate) => gate.draw_properties(ui, app_state, &mut self.label),
+            PartData::Timer(timer) => timer.draw_properties(ui, app_state),
+            _ => {}
+        }
+        ui.horizontal(|ui| {
+            ui.label(if matches!(self.part_data, PartData::Label(_)) {
+                "Text:"
+            } else {
+                "Label:"
+            });
+            ui.add(TextEdit::singleline(&mut self.label).desired_width(100.0));
+        });
     }
 }

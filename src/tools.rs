@@ -31,6 +31,7 @@ impl AppState {
             Some(Tool::PlacePart(part_type)) => {
                 self.push_undo();
                 let part_id = Part::new(part_type, self, world_pos);
+                self.reload_connection_counts();
                 self.select_part(part_id, shift_held);
             }
             Some(Tool::Paint) => {}

@@ -3,8 +3,8 @@ use std::borrow::Cow;
 use std::collections::HashMap;
 
 use crate::colors::ColorPallet;
-use crate::parts::PartType;
-use crate::state::{AppState, CanvasSnapshot};
+use crate::parts::{Part, PartType};
+use crate::state::{AppState, CanvasSnapshot, Selection};
 use crate::tools::{Tool, tool_label};
 
 impl AppState {
@@ -157,6 +157,18 @@ impl AppState {
                 ui.separator();
                 if ui.button("Settings").clicked() {
                     self.settings_open = !self.settings_open;
+                }
+
+                // properties
+                if self.selection.len() == 1 {
+                    ui.heading("Properties");
+                    ui.separator();
+                    if let Selection::Part(part_id) = self.selection[0] {
+                        if let Some(mut part) = self.canvas_snapshot.parts.remove(&part_id) {
+                            part.draw_properties(ui, self);
+                            self.canvas_snapshot.parts.insert(part_id, part);
+                        }
+                    }
                 }
             });
     }

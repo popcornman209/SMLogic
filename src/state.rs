@@ -53,6 +53,7 @@ pub struct AppState {
     pub current_module_path: Option<PathBuf>,
     pub undo_stack: Vec<CanvasSnapshot>,
     pub redo_stack: Vec<CanvasSnapshot>,
+    pub connection_counts: HashMap<Port, u64>,
     // other live info
     pub pan_offset: Vec2,
     pub zoom: f32,
@@ -90,6 +91,7 @@ impl AppState {
             },
             undo_stack: Vec::new(),
             redo_stack: Vec::new(),
+            connection_counts: HashMap::new(),
             selection: Vec::new(),
             box_select_start: None,
             connect_start: None,
@@ -220,6 +222,25 @@ impl AppState {
             self.undo_stack.push(self.canvas_snapshot.clone());
             self.canvas_snapshot = snapshot;
             self.selection.clear();
+        }
+    }
+
+    pub fn reload_connection_counts(&mut self) {
+        self.connection_counts.clear();
+        for connection in &self.canvas_snapshot.connections {
+            let start_count = self
+                .connection_counts
+                .entry(connection.start.clone())
+                .or_insert(0);
+
+            *start_count += 1;
+
+            let end_count = self
+                .connection_counts
+                .entry(connection.end.clone())
+                .or_insert(0);
+
+            *end_count += 1;
         }
     }
 }

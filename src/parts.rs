@@ -79,7 +79,7 @@ impl PartType {
     }
 }
 
-#[derive(Clone, Deserialize, Serialize)]
+#[derive(Clone, Deserialize, Serialize, PartialEq)]
 pub enum GateType {
     And,
     Or,
@@ -111,6 +111,14 @@ impl GateType {
             _ => Self::And,
         }
     }
+    pub const TYPES: &[Self] = &[
+        Self::And,
+        Self::Or,
+        Self::Xor,
+        Self::Nand,
+        Self::Nor,
+        Self::Xnor,
+    ];
 }
 
 #[derive(Clone, Deserialize, Serialize)]
@@ -154,8 +162,8 @@ impl Timer {
 #[derive(Clone, Deserialize, Serialize)]
 pub struct Module {
     pub path: PathBuf,
-    pub inputs: Vec<(u64, String)>,
-    pub outputs: Vec<(u64, String)>,
+    pub inputs: HashMap<u64, String>,
+    pub outputs: HashMap<u64, String>,
     pub canvas_snapshot: CanvasSnapshot,
     pub min_size: Vec2,
     pub size: Vec2,
@@ -173,14 +181,14 @@ impl Module {
         }
 
         // load inputs/outputs
-        self.inputs = Vec::new();
-        self.outputs = Vec::new();
+        self.inputs = HashMap::new();
+        self.outputs = HashMap::new();
         for part in self.canvas_snapshot.parts.values() {
             if let PartData::IO(io) = &part.part_data {
                 if io.input {
-                    self.inputs.push((part.id, part.label.clone()))
+                    self.inputs.insert(part.id, part.label.clone());
                 } else {
-                    self.outputs.push((part.id, part.label.clone()))
+                    self.outputs.insert(part.id, part.label.clone());
                 }
             }
         }
@@ -202,8 +210,8 @@ impl Module {
         };
         let mut module = Self {
             path: final_path.clone(),
-            inputs: Vec::new(),
-            outputs: Vec::new(),
+            inputs: HashMap::new(),
+            outputs: HashMap::new(),
             canvas_snapshot: CanvasSnapshot {
                 parts: HashMap::new(),
                 connections: Vec::new(),
@@ -294,7 +302,7 @@ impl PartData {
     }
 }
 
-#[derive(Clone, Deserialize, Serialize)]
+#[derive(Clone, Deserialize, Serialize, PartialEq, Eq, Hash)]
 pub struct Port {
     pub part: u64,
     pub input: bool,
@@ -413,36 +421,45 @@ impl Part {
         }
     }
 
-    pub fn connections_pos(&self) -> Vec<Pos2> {
+    pub fn get_ports(&self) -> Vec<Port> {
         match &self.part_data {
             PartData::Gate(_) | PartData::Timer(_) => vec![
-                Pos2::new(
-                    self.pos.x + self.part_data.size().x,
-                    self.pos.y + self.part_data.size().y / 2.0,
-                ),
-                Pos2::new(self.pos.x, self.pos.y + GATE_SIZE.y / 2.0),
+                Port {
+                    part: self.id,
+                    port_id: None,
+                    input: true,
+                },
+                Port {
+                    part: self.id,
+                    port_id: None,
+                    input: false,
+                },
             ],
-            PartData::Switch(_) => vec![Pos2::new(
-                self.pos.x + SWITCH_SIZE.x,
-                self.pos.y + SWITCH_SIZE.y / 2.0,
-            )],
-            PartData::IO(io) => vec![Pos2::new(
-                self.pos.x + if io.input { GATE_SIZE.x } else { 0.0 },
-                self.pos.y + GATE_SIZE.y / 2.0,
-            )],
+            PartData::Switch(_) => vec![Port {
+                part: self.id,
+                port_id: None,
+                input: false,
+            }],
+            PartData::IO(io) => vec![Port {
+                part: self.id,
+                port_id: None,
+                input: !io.input,
+            }],
             PartData::Module(module) => {
                 let mut result = Vec::new();
-                for i in 0..module.inputs.len() {
-                    result.push(Pos2::new(
-                        self.pos.x,
-                        GATE_SIZE.y / 2.0 + PORT_GAP * i as f32 + self.pos.y,
-                    ));
+                for id in module.inputs.keys() {
+                    result.push(Port {
+                        part: self.id,
+                        port_id: Some(id.clone()),
+                        input: true,
+                    });
                 }
-                for i in 0..module.outputs.len() {
-                    result.push(Pos2::new(
-                        self.pos.x + module.size.x,
-                        GATE_SIZE.y / 2.0 + PORT_GAP * i as f32 + self.pos.y,
-                    ));
+                for id in module.outputs.keys() {
+                    result.push(Port {
+                        part: self.id,
+                        port_id: Some(id.clone()),
+                        input: false,
+                    });
                 }
                 result
             }
@@ -482,24 +499,24 @@ impl Part {
             )],
             PartData::Module(module) => {
                 let mut result = Vec::new();
-                for (i, port) in module.inputs.iter().enumerate() {
+                for (i, id) in module.inputs.keys().enumerate() {
                     result.push((
                         Pos2::new(
                             self.pos.x,
                             GATE_SIZE.y / 2.0 + PORT_GAP * i as f32 + self.pos.y,
                         ),
                         true,
-                        Some(port.0),
+                        Some(id.clone()),
                     ));
                 }
-                for (i, port) in module.outputs.iter().enumerate() {
+                for (i, id) in module.outputs.keys().enumerate() {
                     result.push((
                         Pos2::new(
                             self.pos.x + module.size.x,
                             GATE_SIZE.y / 2.0 + PORT_GAP * i as f32 + self.pos.y,
                         ),
                         false,
-                        Some(port.0),
+                        Some(id.clone()),
                     ));
                 }
                 result

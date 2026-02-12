@@ -16,7 +16,10 @@ impl AppState {
         }
 
         // backspace
-        if ctx.input(|i| i.key_pressed(Key::Backspace)) {
+        if (ctx.input(|i| i.key_pressed(Key::Backspace))
+            | ctx.input(|i| i.key_pressed(Key::Delete)))
+            && !ctx.wants_keyboard_input()
+        {
             if !self.selection.is_empty() {
                 self.push_undo();
                 for selection in &self.selection {
@@ -41,6 +44,7 @@ impl AppState {
                 }
 
                 self.selection.clear();
+                self.reload_connection_counts();
             }
         }
 
@@ -184,13 +188,15 @@ impl AppState {
                                         start: connect_start,
                                         end: port,
                                         powered: false,
-                                    })
+                                    });
+                                    self.reload_connection_counts();
                                 } else if connect_start.input && !port.input {
                                     self.canvas_snapshot.connections.push(Connection {
                                         start: port,
                                         end: connect_start,
                                         powered: false,
-                                    })
+                                    });
+                                    self.reload_connection_counts();
                                 } else {
                                     self.undo_stack.pop();
                                 }
