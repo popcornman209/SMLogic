@@ -1,5 +1,6 @@
 use crate::connections::{Connection, draw_connection};
 use crate::egui::{Context, Key, Painter, PointerButton, Pos2, Rect, Vec2};
+use crate::parts::PartData;
 use crate::state::{AppState, InteractionState, Selection};
 
 impl AppState {
@@ -183,20 +184,26 @@ impl AppState {
                         }
                         if ctx.input(|i| i.pointer.button_released(PointerButton::Primary)) {
                             if let Some(port) = self.port_at_pos(world_pos) {
-                                if !connect_start.input && port.input {
-                                    self.canvas_snapshot.connections.push(Connection {
-                                        start: connect_start,
-                                        end: port,
-                                        powered: false,
-                                    });
-                                    self.reload_connection_counts();
-                                } else if connect_start.input && !port.input {
-                                    self.canvas_snapshot.connections.push(Connection {
-                                        start: port,
-                                        end: connect_start,
-                                        powered: false,
-                                    });
-                                    self.reload_connection_counts();
+                                let (start_port, end_port) = if connect_start.input {
+                                    (port, connect_start)
+                                } else {
+                                    (connect_start, port)
+                                };
+                                if start_port.input != end_port.input {
+                                    let count =
+                                        self.connection_counts.get(&end_port).copied().unwrap_or(0);
+                                    if let Some(end_part) =
+                                        self.canvas_snapshot.parts.get(&end_port.part)
+                                    {
+                                        if count < end_part.part_data.max_connections() {
+                                            self.canvas_snapshot.connections.push(Connection {
+                                                start: start_port,
+                                                end: end_port,
+                                                powered: false,
+                                            });
+                                            self.reload_connection_counts();
+                                        }
+                                    }
                                 } else {
                                     self.undo_stack.pop();
                                 }

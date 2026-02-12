@@ -300,6 +300,12 @@ impl PartData {
             PartData::Label(label) => label.size,
         }
     }
+    pub fn max_connections(&self) -> u64 {
+        match self {
+            PartData::Gate(_) => 255,
+            _ => 1,
+        }
+    }
 }
 
 #[derive(Clone, Deserialize, Serialize, PartialEq, Eq, Hash)]
