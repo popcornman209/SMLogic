@@ -34,6 +34,12 @@ impl eframe::App for AppState {
             self.last_project_reload = Instant::now();
         }
 
+        if ctx.input(|i| i.events.iter().any(|e| matches!(e, egui::Event::Copy))) {
+            self.to_clipboard();
+        } else if ctx.input(|i| i.events.iter().any(|e| matches!(e, egui::Event::Paste(_)))) {
+            self.load_clipboard();
+        }
+
         self.draw_sidebar(ctx);
         self.draw_settings(ctx);
         self.draw_footer(ctx);

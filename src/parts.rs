@@ -200,7 +200,7 @@ impl Module {
             self.size.y = self.min_size.y
         };
     }
-    pub fn new(path: PathBuf, app_state: AppState) -> (PartData, String, Vec2) {
+    pub fn new(path: PathBuf, app_state: &mut AppState) -> (PartData, String, Vec2) {
         let final_path = if let Some(project_folder) = &app_state.project_folder {
             path.strip_prefix(project_folder)
                 .expect("error :(")
@@ -220,7 +220,7 @@ impl Module {
             min_size: Vec2::new(MIN_MODULE_WIDTH, 0.0),
             size: Vec2::new(120.0, 0.0),
         };
-        module.reload(app_state.project_folder);
+        module.reload(app_state.project_folder.clone());
         (
             PartData::Module(module.clone()),
             final_path
@@ -343,7 +343,7 @@ impl Part {
             PartType::Input | PartType::Output => IO::new(part == PartType::Input),
             PartType::Button | PartType::Switch => Switch::new(part == PartType::Switch),
             PartType::Label => Label::new(),
-            PartType::Module(path) => Module::new(path, app_state.clone()),
+            PartType::Module(path) => Module::new(path, app_state),
             _ => Gate::new(GateType::from_part_type(part)),
         };
         let id = app_state.canvas_snapshot.next_id;

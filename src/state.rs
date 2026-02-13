@@ -4,7 +4,7 @@ use crate::connections::{
 };
 use crate::egui::{Pos2, Rect, Vec2};
 use crate::parts::{PORT_SIZE, Part, Port};
-use crate::saveload::Config;
+use crate::saveload::{ClipboardData, Config};
 use crate::tools::Tool;
 use serde::{Deserialize, Serialize};
 use std::collections::HashMap;
@@ -40,12 +40,12 @@ pub struct CanvasSnapshot {
     pub next_id: u64,
 }
 
-#[derive(Clone)]
 pub struct AppState {
     pub config: Config,
     pub interaction_state: InteractionState,
     pub active_tool: Option<Tool>,
     pub settings_open: bool,
+    pub clipboard_data: Option<ClipboardData>,
     //project
     pub project_folder: Option<PathBuf>,
     pub project_sub_folder: Option<PathBuf>,
@@ -78,6 +78,7 @@ impl AppState {
             interaction_state: InteractionState::Idle,
             active_tool: None,
             settings_open: false,
+            clipboard_data: None,
             project_folder: None,
             project_sub_folder: None,
             current_folder_files: Vec::new(),
