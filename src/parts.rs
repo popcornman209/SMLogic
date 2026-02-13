@@ -3,7 +3,7 @@ use crate::colors::DEFAULT_GATE_COLOR;
 use crate::state::CanvasSnapshot;
 use egui::{Color32, Pos2, Vec2};
 use serde::{Deserialize, Serialize};
-use std::collections::HashMap;
+use std::collections::{BTreeMap, HashMap};
 use std::path::PathBuf;
 
 pub const GATE_SIZE: Vec2 = Vec2::new(80.0, 60.0);
@@ -162,8 +162,8 @@ impl Timer {
 #[derive(Clone, Deserialize, Serialize)]
 pub struct Module {
     pub path: PathBuf,
-    pub inputs: HashMap<u64, String>,
-    pub outputs: HashMap<u64, String>,
+    pub inputs: BTreeMap<u64, String>,
+    pub outputs: BTreeMap<u64, String>,
     pub canvas_snapshot: CanvasSnapshot,
     pub min_size: Vec2,
     pub size: Vec2,
@@ -181,8 +181,8 @@ impl Module {
         }
 
         // load inputs/outputs
-        self.inputs = HashMap::new();
-        self.outputs = HashMap::new();
+        self.inputs = BTreeMap::new();
+        self.outputs = BTreeMap::new();
         for part in self.canvas_snapshot.parts.values() {
             if let PartData::IO(io) = &part.part_data {
                 if io.input {
@@ -210,8 +210,8 @@ impl Module {
         };
         let mut module = Self {
             path: final_path.clone(),
-            inputs: HashMap::new(),
-            outputs: HashMap::new(),
+            inputs: BTreeMap::new(),
+            outputs: BTreeMap::new(),
             canvas_snapshot: CanvasSnapshot {
                 parts: HashMap::new(),
                 connections: Vec::new(),

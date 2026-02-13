@@ -3,13 +3,11 @@ use crate::colors::ColorPallet;
 use crate::connections::Connection;
 use crate::parts::{Part, PartData, Port};
 use crate::state::{CanvasSnapshot, Selection};
-use egui::Vec2;
+use egui::{Pos2, Vec2};
 use serde::{Deserialize, Serialize};
 use std::collections::HashMap;
 use std::fs;
 use std::path::PathBuf;
-
-pub const PASTED_PART_OFFSET: Vec2 = Vec2::new(10.0, 10.0);
 
 // config file
 
@@ -99,6 +97,7 @@ impl CanvasSnapshot {
 pub struct ClipboardData {
     parts: Vec<Part>,
     connections: Vec<Connection>,
+    mouse_pos: Pos2,
 }
 
 impl AppState {
@@ -128,10 +127,11 @@ impl AppState {
         }
     }
 
-    pub fn to_clipboard(&mut self) {
+    pub fn to_clipboard(&mut self, world_pos: Pos2) {
         let mut output = ClipboardData {
             parts: Vec::new(),
             connections: Vec::new(),
+            mouse_pos: world_pos,
         };
         for selection in &self.selection {
             match selection {
@@ -149,7 +149,7 @@ impl AppState {
         }
         self.clipboard_data = Some(output);
     }
-    pub fn load_clipboard(&mut self) {
+    pub fn load_clipboard(&mut self, world_pos: Pos2) {
         {
             if let Some(value) = self.clipboard_data.clone() {
                 if value.parts.len() > 0 {
@@ -162,7 +162,7 @@ impl AppState {
                         id_remap.insert(part.id, id);
                         let mut new_part = part.clone();
                         new_part.id = id;
-                        new_part.pos += PASTED_PART_OFFSET;
+                        new_part.pos += world_pos - value.mouse_pos;
                         self.canvas_snapshot.parts.insert(id, new_part);
                         self.selection.push(Selection::Part(id));
                     }

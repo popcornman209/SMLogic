@@ -417,6 +417,29 @@ impl Module {
             app_state,
         );
     }
+    pub fn draw_properties(&mut self, ui: &mut Ui, app_state: &mut AppState) {
+        let display_path = if let Some(folder) = &app_state.project_folder {
+            self.path
+                .strip_prefix(folder)
+                .map(|p| p.to_string_lossy().to_string())
+                .unwrap_or_else(|_| self.path.to_string_lossy().to_string())
+        } else {
+            self.path.to_string_lossy().to_string()
+        };
+        ui.label(format!("File Path: {}", display_path));
+        if ui.button("Change File").clicked() {
+            let file = rfd::FileDialog::new()
+                .add_filter("SM Logic", &["sml"])
+                .pick_file();
+            if let Some(path) = file {
+                self.path = path;
+            }
+            self.reload(app_state.project_folder.clone());
+        }
+        if ui.button("Reload File").clicked() {
+            self.reload(app_state.project_folder.clone());
+        }
+    }
 }
 
 impl IO {
@@ -517,6 +540,7 @@ impl Part {
         match &mut self.part_data {
             PartData::Gate(gate) => gate.draw_properties(ui, app_state, &mut self.label),
             PartData::Timer(timer) => timer.draw_properties(ui, app_state),
+            PartData::Module(module) => module.draw_properties(ui, app_state),
             _ => {}
         }
         ui.horizontal(|ui| {

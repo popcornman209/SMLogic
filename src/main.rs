@@ -35,9 +35,15 @@ impl eframe::App for AppState {
         }
 
         if ctx.input(|i| i.events.iter().any(|e| matches!(e, egui::Event::Copy))) {
-            self.to_clipboard();
+            if let Some(pos) = ctx.input(|i| i.pointer.hover_pos()) {
+                let world_pos = self.screen_to_world(pos);
+                self.to_clipboard(world_pos);
+            }
         } else if ctx.input(|i| i.events.iter().any(|e| matches!(e, egui::Event::Paste(_)))) {
-            self.load_clipboard();
+            if let Some(pos) = ctx.input(|i| i.pointer.hover_pos()) {
+                let world_pos = self.screen_to_world(pos);
+                self.load_clipboard(world_pos);
+            }
         }
 
         self.draw_sidebar(ctx);

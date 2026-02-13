@@ -214,7 +214,7 @@ impl AppState {
                             self.canvas_snapshot.save(path);
                         }
                     }
-                    if ui.button("Save As...").clicked() {
+                    if ui.button("Save As").clicked() {
                         let mut dialog = rfd::FileDialog::new()
                             .add_filter("SM Logic", &["sml"])
                             .set_file_name("module.sml");
@@ -227,12 +227,20 @@ impl AppState {
                             self.current_module_path = Some(path);
                         }
                     }
-                    if ui.button("Import...").clicked() {
+                    if ui.button("Import").clicked() {
                         let file = rfd::FileDialog::new()
                             .add_filter("SM Logic", &["sml"])
                             .pick_file();
                         if let Some(path) = file {
                             self.active_tool = Some(Tool::PlacePart(PartType::Module(path)));
+                        }
+                    }
+                    if ui.button("Open").clicked() {
+                        let file = rfd::FileDialog::new()
+                            .add_filter("SM Logic", &["sml"])
+                            .pick_file();
+                        if let Some(path) = file {
+                            self.open_file(path);
                         }
                     }
 
@@ -282,7 +290,6 @@ impl AppState {
                                         .map(|p| p.to_string_lossy().to_string())
                                         .unwrap_or_else(|_| path.to_string_lossy().to_string());
 
-                                    // Add a trailing slash if it's a directory
                                     if path.is_dir() {
                                         label.push('/');
                                     }
@@ -299,18 +306,7 @@ impl AppState {
                                             self.reload_project_folder();
                                         } else if path.is_file() {
                                             if active {
-                                                let new_snapshot = CanvasSnapshot::load(
-                                                    path,
-                                                    self.project_folder.clone(),
-                                                );
-                                                match new_snapshot {
-                                                    Ok(snapshot) => self.canvas_snapshot = snapshot,
-                                                    Err(e) => eprintln!(
-                                                        "Failed to load canvas snapshot: {}",
-                                                        e
-                                                    ),
-                                                }
-                                                self.current_module_path = None;
+                                                self.open_file(path);
                                             } else {
                                                 self.active_tool = Some(Tool::PlacePart(
                                                     PartType::Module(path.clone()),

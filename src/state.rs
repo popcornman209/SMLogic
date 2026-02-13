@@ -244,4 +244,15 @@ impl AppState {
             *end_count += 1;
         }
     }
+    pub fn open_file(&mut self, path: PathBuf) {
+        let new_snapshot = CanvasSnapshot::load(path.clone(), self.project_folder.clone());
+        match new_snapshot {
+            Ok(snapshot) => {
+                self.canvas_snapshot = snapshot;
+                self.current_module_path = Some(path);
+                self.reload_connection_counts();
+            }
+            Err(e) => eprintln!("Failed to load canvas snapshot: {}", e),
+        }
+    }
 }
