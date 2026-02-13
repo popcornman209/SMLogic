@@ -165,6 +165,9 @@ impl AppState {
                         let mut new_part = part.clone();
                         new_part.id = id;
                         new_part.pos += world_pos - value.mouse_pos;
+                        if self.snap_to_grid {
+                            new_part.snap_pos();
+                        }
                         self.canvas_snapshot.parts.insert(id, new_part);
                         self.selection.push(Selection::Part(id));
                     }

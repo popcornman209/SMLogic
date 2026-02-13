@@ -1,6 +1,7 @@
-properties in left bar
 resizing parts
 paint tool
 fast connect tool
 
 * simulator
+
+* sm exporter
