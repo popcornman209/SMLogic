@@ -58,6 +58,47 @@ impl AppState {
             }
         }
 
+        // save/save as
+        if ctx.input(|i| i.key_pressed(Key::S)) && ctrl_held {
+            if shift_held {
+                let mut dialog = rfd::FileDialog::new()
+                    .add_filter("SM Logic", &["sml"])
+                    .set_file_name("module.sml");
+                if let Some(project_folder) = &self.project_folder {
+                    dialog = dialog.set_directory(project_folder);
+                }
+                let file = dialog.save_file();
+                if let Some(path) = file {
+                    self.canvas_snapshot.save(path.clone());
+                    self.current_module_path = Some(path.clone());
+                    self.toasts.success(format!(
+                        "Saved: {}",
+                        if let Some(folder) = &self.project_folder {
+                            path.strip_prefix(folder)
+                                .map(|p| p.to_string_lossy().to_string())
+                                .unwrap_or_else(|_| path.to_string_lossy().to_string())
+                        } else {
+                            path.to_string_lossy().to_string()
+                        }
+                    ));
+                }
+            } else {
+                if let Some(path) = self.current_module_path.clone() {
+                    self.canvas_snapshot.save(path.clone());
+                    self.toasts.success(format!(
+                        "Saved: {}",
+                        if let Some(folder) = &self.project_folder {
+                            path.strip_prefix(folder)
+                                .map(|p| p.to_string_lossy().to_string())
+                                .unwrap_or_else(|_| path.to_string_lossy().to_string())
+                        } else {
+                            path.to_string_lossy().to_string()
+                        }
+                    ));
+                }
+            }
+        }
+
         // if mouse not in canvas do nothing else
         if !in_canvas {
             return;

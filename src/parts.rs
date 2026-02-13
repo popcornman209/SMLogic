@@ -180,6 +180,7 @@ impl Module {
             Ok(snapshot) => self.canvas_snapshot = snapshot,
             Err(e) => {
                 toasts.error(format!("Failed to load file: {}", e));
+                return;
             }
         }
 
@@ -202,6 +203,7 @@ impl Module {
         if self.size.y <= self.min_size.y {
             self.size.y = self.min_size.y
         };
+        toasts.success(format!("Loaded module: {}", self.path.to_string_lossy()));
     }
     pub fn new(path: PathBuf, app_state: &mut AppState) -> (PartData, String, Vec2) {
         let final_path = if let Some(project_folder) = &app_state.project_folder {

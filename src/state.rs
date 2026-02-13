@@ -278,8 +278,12 @@ impl AppState {
         match new_snapshot {
             Ok(snapshot) => {
                 self.canvas_snapshot = snapshot;
-                self.current_module_path = Some(path);
+                self.current_module_path = Some(path.clone());
                 self.reload_connection_counts();
+                self.toasts.success(format!(
+                    "Opened file: {}",
+                    path.file_name().unwrap().to_string_lossy()
+                ));
             }
             Err(e) => {
                 self.toasts.error(format!("Failed to load file: {}", e));
