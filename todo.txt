@@ -1,5 +1,5 @@
 properties in left bar
-module input/output labels
+resizing parts
 paint tool
 fast connect tool
 

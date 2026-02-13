@@ -1,6 +1,6 @@
 use crate::AppState;
 use crate::colors::DEFAULT_GATE_COLOR;
-use crate::state::CanvasSnapshot;
+use crate::state::{CanvasSnapshot, path_to_string};
 use egui::{Color32, Pos2, Vec2};
 use egui_notify::Toasts;
 use serde::{Deserialize, Serialize};
@@ -40,16 +40,6 @@ impl PartType {
         PartType::Nor,
         PartType::Xnor,
         PartType::Timer,
-    ];
-
-    /// purely logic gate parts, not sure if this will be used for anything so might remove.
-    pub const GATES: &[PartType] = &[
-        PartType::And,
-        PartType::Or,
-        PartType::Xor,
-        PartType::Nand,
-        PartType::Nor,
-        PartType::Xnor,
     ];
 
     /// hows up in the io secction of the menu on the left
@@ -176,7 +166,7 @@ impl Module {
         } else {
             self.path.clone()
         };
-        match CanvasSnapshot::load(full_path, project_path, toasts) {
+        match CanvasSnapshot::load(full_path, project_path.clone(), toasts) {
             Ok(snapshot) => self.canvas_snapshot = snapshot,
             Err(e) => {
                 toasts.error(format!("Failed to load file: {}", e));
@@ -203,7 +193,10 @@ impl Module {
         if self.size.y <= self.min_size.y {
             self.size.y = self.min_size.y
         };
-        toasts.success(format!("Loaded module: {}", self.path.to_string_lossy()));
+        toasts.success(format!(
+            "Loaded module: {}",
+            path_to_string(self.path.clone(), project_path)
+        ));
     }
     pub fn new(path: PathBuf, app_state: &mut AppState) -> (PartData, String, Vec2) {
         let final_path = if let Some(project_folder) = &app_state.project_folder {

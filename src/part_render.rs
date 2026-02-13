@@ -14,6 +14,9 @@ const ICON_Y_SHIFT: f32 = 10.0;
 const CONNECTION_COUNT_SHIFT: Vec2 = Vec2::new(8.0, 0.0);
 const CONNECTION_COUNT_SIZE: f32 = 10.0;
 
+const CONNECTION_LABEL_SHIFT: Vec2 = Vec2::new(8.0, 7.0);
+const CONNECTION_LABEL_SIZE: f32 = 7.0;
+
 impl AppState {
     pub fn draw_parts(&self, painter: &Painter) {
         for part in self.canvas_snapshot.parts.values() {
@@ -416,6 +419,41 @@ impl Module {
             part.get_ports(),
             app_state,
         );
+
+        let ports = part.connections_pos_with_id();
+        for (pos, _, port_id) in ports {
+            if let Some(port) = port_id {
+                if let Some(label) = self.inputs.get(&port) {
+                    painter.text(
+                        app_state.world_to_screen(Pos2::new(
+                            pos.x + CONNECTION_LABEL_SHIFT.x,
+                            pos.y + CONNECTION_LABEL_SHIFT.y,
+                        )),
+                        Align2::LEFT_CENTER,
+                        label,
+                        FontId::new(
+                            CONNECTION_LABEL_SIZE * app_state.zoom,
+                            egui::FontFamily::Proportional,
+                        ),
+                        Color32::WHITE,
+                    );
+                } else if let Some(label) = self.outputs.get(&port) {
+                    painter.text(
+                        app_state.world_to_screen(Pos2::new(
+                            pos.x - CONNECTION_LABEL_SHIFT.x,
+                            pos.y + CONNECTION_LABEL_SHIFT.y,
+                        )),
+                        Align2::RIGHT_CENTER,
+                        label,
+                        FontId::new(
+                            CONNECTION_LABEL_SIZE * app_state.zoom,
+                            egui::FontFamily::Proportional,
+                        ),
+                        Color32::WHITE,
+                    );
+                }
+            }
+        }
     }
     pub fn draw_properties(&mut self, ui: &mut Ui, app_state: &mut AppState) {
         let display_path = if let Some(folder) = &app_state.project_folder {

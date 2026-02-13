@@ -3,7 +3,7 @@ use crate::colors::ColorPallet;
 use crate::connections::Connection;
 use crate::parts::{Part, PartData, Port};
 use crate::state::{CanvasSnapshot, Selection};
-use egui::{Pos2, Vec2};
+use egui::Pos2;
 use egui_notify::Toasts;
 use serde::{Deserialize, Serialize};
 use std::collections::HashMap;

@@ -1,6 +1,5 @@
 use crate::connections::{Connection, draw_connection};
-use crate::egui::{Context, Key, Painter, PointerButton, Pos2, Rect, Vec2};
-use crate::parts::PartData;
+use crate::egui::{Context, Key, Painter, PointerButton, Rect, Vec2};
 use crate::state::{AppState, InteractionState, Selection};
 
 impl AppState {

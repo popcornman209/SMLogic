@@ -1,4 +1,4 @@
-use eframe::egui::{Color32, Pos2};
+use eframe::egui::Pos2;
 
 use crate::parts::{Part, PartType};
 use crate::state::{AppState, Selection};

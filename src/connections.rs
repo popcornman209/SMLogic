@@ -1,7 +1,7 @@
 use crate::parts::Port;
 use crate::state::{AppState, Selection};
 use eframe::epaint::PathShape;
-use egui::{Color32, Painter, Pos2, Rect, Stroke};
+use egui::{Color32, Painter, Pos2, Stroke};
 use serde::{Deserialize, Serialize};
 
 pub const WIRE_WIDTH: f32 = 2.0;
@@ -20,11 +20,6 @@ pub fn dist_point_to_segment(p: Pos2, a: Pos2, b: Pos2) -> f32 {
     let t = (ap.dot(ab) / ab.dot(ab)).clamp(0.0, 1.0);
     let closest = a + ab * t;
     p.distance(closest)
-}
-pub fn closest_point_to_rect(rect: Rect, point: Pos2) -> Pos2 {
-    let x = point.x.clamp(rect.left(), rect.right());
-    let y = point.y.clamp(rect.top(), rect.bottom());
-    Pos2::new(x, y)
 }
 
 pub fn compute_wire_route(start: Pos2, end: Pos2) -> Vec<Pos2> {

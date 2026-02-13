@@ -1,7 +1,5 @@
 use crate::colors::ColorPallet;
-use crate::connections::{
-    Connection, WIRE_WIDTH, closest_point_to_rect, compute_wire_route, dist_point_to_segment,
-};
+use crate::connections::{Connection, WIRE_WIDTH, compute_wire_route, dist_point_to_segment};
 use crate::egui::{Pos2, Rect, Vec2};
 use crate::parts::{PORT_SIZE, Part, Port};
 use crate::saveload::{ClipboardData, Config};
@@ -11,6 +9,33 @@ use serde::{Deserialize, Serialize};
 use std::collections::HashMap;
 use std::path::PathBuf;
 use std::time::Instant;
+
+const MAX_PATH_LEN: usize = 20;
+
+pub fn path_to_string(path: PathBuf, project_folder: Option<PathBuf>) -> String {
+    let out = if let Some(folder) = project_folder {
+        path.strip_prefix(folder)
+            .map(|p| p.to_string_lossy().to_string())
+            .unwrap_or_else(|_| path.to_string_lossy().to_string())
+    } else {
+        path.to_string_lossy().to_string()
+    };
+
+    if out.chars().count() <= MAX_PATH_LEN {
+        out
+    } else {
+        format!(
+            "...{}",
+            out.chars()
+                .rev()
+                .take(MAX_PATH_LEN)
+                .collect::<String>()
+                .chars()
+                .rev()
+                .collect::<String>()
+        )
+    }
+}
 
 //operation being completed, ie box selecting, resizing, etc
 #[derive(Debug, Clone, Copy, PartialEq)]
@@ -282,7 +307,7 @@ impl AppState {
                 self.reload_connection_counts();
                 self.toasts.success(format!(
                     "Opened file: {}",
-                    path.file_name().unwrap().to_string_lossy()
+                    path_to_string(path, self.project_folder.clone())
                 ));
             }
             Err(e) => {

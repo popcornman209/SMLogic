@@ -1,10 +1,10 @@
-use eframe::egui::{self, Color32, Context, Painter, Pos2, Rect, Sense, Stroke, Ui};
+use eframe::egui::{self, Color32, Painter, Pos2, Rect, Sense, Stroke, Ui};
 use std::borrow::Cow;
 use std::collections::HashMap;
 
 use crate::colors::ColorPallet;
-use crate::parts::{Part, PartType};
-use crate::state::{AppState, CanvasSnapshot, Selection};
+use crate::parts::PartType;
+use crate::state::{AppState, CanvasSnapshot, Selection, path_to_string};
 use crate::tools::{Tool, tool_label};
 
 impl AppState {
@@ -221,13 +221,7 @@ impl AppState {
                             self.canvas_snapshot.save(path.clone());
                             self.toasts.success(format!(
                                 "Saved: {}",
-                                if let Some(folder) = &self.project_folder {
-                                    path.strip_prefix(folder)
-                                        .map(|p| p.to_string_lossy().to_string())
-                                        .unwrap_or_else(|_| path.to_string_lossy().to_string())
-                                } else {
-                                    path.to_string_lossy().to_string()
-                                }
+                                path_to_string(path, self.project_folder.clone())
                             ));
                         }
                     }
@@ -244,13 +238,7 @@ impl AppState {
                             self.current_module_path = Some(path.clone());
                             self.toasts.success(format!(
                                 "Saved: {}",
-                                if let Some(folder) = &self.project_folder {
-                                    path.strip_prefix(folder)
-                                        .map(|p| p.to_string_lossy().to_string())
-                                        .unwrap_or_else(|_| path.to_string_lossy().to_string())
-                                } else {
-                                    path.to_string_lossy().to_string()
-                                }
+                                path_to_string(path, self.project_folder.clone())
                             ));
                         }
                     }
@@ -271,16 +259,12 @@ impl AppState {
                         }
                     }
 
-                    if let Some(path) = &self.current_module_path {
+                    if let Some(path) = self.current_module_path.clone() {
                         ui.separator();
-                        let display_path = if let Some(folder) = &self.project_folder {
-                            path.strip_prefix(folder)
-                                .map(|p| p.to_string_lossy().to_string())
-                                .unwrap_or_else(|_| path.to_string_lossy().to_string())
-                        } else {
-                            path.to_string_lossy().to_string()
-                        };
-                        ui.label(format!("Editing: {}", display_path));
+                        ui.label(format!(
+                            "Editing: {}",
+                            path_to_string(path, self.project_folder.clone())
+                        ));
                     }
                 });
                 ui.separator();
