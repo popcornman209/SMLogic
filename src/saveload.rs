@@ -4,6 +4,7 @@ use crate::connections::Connection;
 use crate::parts::{Part, PartData, Port};
 use crate::state::{CanvasSnapshot, Selection};
 use egui::{Pos2, Vec2};
+use egui_notify::Toasts;
 use serde::{Deserialize, Serialize};
 use std::collections::HashMap;
 use std::fs;
@@ -75,19 +76,20 @@ impl CanvasSnapshot {
     pub fn load(
         path: PathBuf,
         project_path: Option<PathBuf>,
+        toasts: &mut Toasts,
     ) -> Result<Self, Box<dyn std::error::Error>> {
         let contents = std::fs::read_to_string(path)?;
         let json: serde_json::Value = serde_json::from_str(&contents)?;
 
         let mut canvas_snapshot: Self = serde_json::from_value(json)?;
-        canvas_snapshot.reload_modules(project_path);
+        canvas_snapshot.reload_modules(project_path, toasts);
         Ok(canvas_snapshot)
     }
 
-    pub fn reload_modules(&mut self, project_path: Option<PathBuf>) {
+    pub fn reload_modules(&mut self, project_path: Option<PathBuf>, toasts: &mut Toasts) {
         for part in self.parts.values_mut() {
             if let PartData::Module(data) = &mut part.part_data {
-                data.reload(project_path.clone());
+                data.reload(project_path.clone(), toasts);
             }
         }
     }

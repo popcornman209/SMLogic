@@ -1,4 +1,4 @@
-use eframe::egui::{self, Color32, Painter, Pos2, Rect, Sense, Stroke, Ui};
+use eframe::egui::{self, Color32, Context, Painter, Pos2, Rect, Sense, Stroke, Ui};
 use std::borrow::Cow;
 use std::collections::HashMap;
 
@@ -25,11 +25,16 @@ impl AppState {
         }
         self.draw_parts(&painter);
         if self.draw_connections(&painter) {
-            for (i, connection) in self.canvas_snapshot.connections.clone().iter().enumerate() {
-                if connection.start.pos(self).is_none() | connection.end.pos(self).is_none() {
+            for i in (0..self.canvas_snapshot.connections.len()).rev() {
+                let remove = {
+                    let connection = &self.canvas_snapshot.connections[i];
+                    connection.start.pos(self).is_none() || connection.end.pos(self).is_none()
+                };
+                if remove {
                     self.canvas_snapshot.connections.remove(i);
                 }
             }
+            self.reload_connection_counts();
         }
 
         if self.show_fps {
@@ -38,6 +43,7 @@ impl AppState {
             ctx.request_repaint_after(std::time::Duration::from_millis(1000));
         }
 
+        self.toasts.show(ctx);
         (response, painter)
     }
 
@@ -208,10 +214,21 @@ impl AppState {
                             next_id: 0,
                         };
                         self.current_module_path = None;
+                        self.toasts.success("Cleared canvas");
                     }
                     if let Some(path) = self.current_module_path.clone() {
                         if ui.button("Save").clicked() {
-                            self.canvas_snapshot.save(path);
+                            self.canvas_snapshot.save(path.clone());
+                            self.toasts.success(format!(
+                                "Saved: {}",
+                                if let Some(folder) = &self.project_folder {
+                                    path.strip_prefix(folder)
+                                        .map(|p| p.to_string_lossy().to_string())
+                                        .unwrap_or_else(|_| path.to_string_lossy().to_string())
+                                } else {
+                                    path.to_string_lossy().to_string()
+                                }
+                            ));
                         }
                     }
                     if ui.button("Save As").clicked() {
@@ -224,7 +241,17 @@ impl AppState {
                         let file = dialog.save_file();
                         if let Some(path) = file {
                             self.canvas_snapshot.save(path.clone());
-                            self.current_module_path = Some(path);
+                            self.current_module_path = Some(path.clone());
+                            self.toasts.success(format!(
+                                "Saved: {}",
+                                if let Some(folder) = &self.project_folder {
+                                    path.strip_prefix(folder)
+                                        .map(|p| p.to_string_lossy().to_string())
+                                        .unwrap_or_else(|_| path.to_string_lossy().to_string())
+                                } else {
+                                    path.to_string_lossy().to_string()
+                                }
+                            ));
                         }
                     }
                     if ui.button("Import").clicked() {
@@ -440,6 +467,8 @@ impl AppState {
                     if changed {
                         self.config.color_pallet = self.color_pallet.clone();
                         self.config.save();
+                        self.color_pallet.apply_theme(ctx);
+
                     }
                 }
             });

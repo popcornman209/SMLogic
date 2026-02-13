@@ -306,7 +306,7 @@ impl Gate {
 
 impl Timer {
     pub fn draw(&self, part: &Part, painter: &Painter, app_state: &AppState) {
-        // skip rendering if off-screen
+        // skip rendering if off screen
         let screen_rect = Rect::from_min_max(
             app_state.world_to_screen(part.pos),
             app_state.world_to_screen(part.pos + GATE_SIZE),
@@ -428,16 +428,18 @@ impl Module {
         };
         ui.label(format!("File Path: {}", display_path));
         if ui.button("Change File").clicked() {
+            app_state.push_undo();
             let file = rfd::FileDialog::new()
                 .add_filter("SM Logic", &["sml"])
                 .pick_file();
             if let Some(path) = file {
                 self.path = path;
             }
-            self.reload(app_state.project_folder.clone());
+            self.reload(app_state.project_folder.clone(), &mut app_state.toasts);
         }
+        app_state.push_undo();
         if ui.button("Reload File").clicked() {
-            self.reload(app_state.project_folder.clone());
+            self.reload(app_state.project_folder.clone(), &mut app_state.toasts);
         }
     }
 }

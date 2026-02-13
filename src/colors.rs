@@ -87,7 +87,7 @@ impl ColorPallet {
         }
     }
 
-    pub fn visuals(&self, old: egui::Visuals) -> egui::Visuals {
+    fn visuals(&self, old: egui::Visuals) -> egui::Visuals {
         // let shadow_color = if is_latte {
         //     egui::Color32::from_black_alpha(25)
         // } else {
@@ -138,7 +138,7 @@ impl Default for ColorPallet {
 
 pub const DEFAULT_GATE_COLOR: Color32 = Color32::from_rgb(0xDF, 0x7F, 0x01);
 
-/// Scrap Mechanic paint tool palette: 10 base colors × 4 shades.
+/// paint tool palette; 10 base colors × 4 shades.
 pub const SM_PALETTE: [[Color32; 4]; 10] = [
     // Gray
     [

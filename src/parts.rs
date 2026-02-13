@@ -2,6 +2,7 @@ use crate::AppState;
 use crate::colors::DEFAULT_GATE_COLOR;
 use crate::state::CanvasSnapshot;
 use egui::{Color32, Pos2, Vec2};
+use egui_notify::Toasts;
 use serde::{Deserialize, Serialize};
 use std::collections::{BTreeMap, HashMap};
 use std::path::PathBuf;
@@ -169,15 +170,17 @@ pub struct Module {
     pub size: Vec2,
 }
 impl Module {
-    pub fn reload(&mut self, project_path: Option<PathBuf>) {
+    pub fn reload(&mut self, project_path: Option<PathBuf>, toasts: &mut Toasts) {
         let full_path = if let Some(ref proj) = project_path {
             proj.join(&self.path)
         } else {
             self.path.clone()
         };
-        match CanvasSnapshot::load(full_path, project_path) {
+        match CanvasSnapshot::load(full_path, project_path, toasts) {
             Ok(snapshot) => self.canvas_snapshot = snapshot,
-            Err(e) => eprintln!("Failed to load canvas snapshot: {}", e),
+            Err(e) => {
+                toasts.error(format!("Failed to load file: {}", e));
+            }
         }
 
         // load inputs/outputs
@@ -220,7 +223,7 @@ impl Module {
             min_size: Vec2::new(MIN_MODULE_WIDTH, 0.0),
             size: Vec2::new(120.0, 0.0),
         };
-        module.reload(app_state.project_folder.clone());
+        module.reload(app_state.project_folder.clone(), &mut app_state.toasts);
         (
             PartData::Module(module.clone()),
             final_path

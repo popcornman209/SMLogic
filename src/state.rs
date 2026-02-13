@@ -6,6 +6,7 @@ use crate::egui::{Pos2, Rect, Vec2};
 use crate::parts::{PORT_SIZE, Part, Port};
 use crate::saveload::{ClipboardData, Config};
 use crate::tools::Tool;
+use egui_notify::Toasts;
 use serde::{Deserialize, Serialize};
 use std::collections::HashMap;
 use std::path::PathBuf;
@@ -46,6 +47,7 @@ pub struct AppState {
     pub active_tool: Option<Tool>,
     pub settings_open: bool,
     pub clipboard_data: Option<ClipboardData>,
+    pub toasts: Toasts,
     //project
     pub project_folder: Option<PathBuf>,
     pub project_sub_folder: Option<PathBuf>,
@@ -79,6 +81,7 @@ impl AppState {
             active_tool: None,
             settings_open: false,
             clipboard_data: None,
+            toasts: Toasts::default(),
             project_folder: None,
             project_sub_folder: None,
             current_folder_files: Vec::new(),
@@ -158,6 +161,7 @@ impl AppState {
 
     pub fn connections_in_rect(&self, rect: Rect) -> Vec<usize> {
         let half_width = WIRE_WIDTH / 2.0;
+        let expanded = rect.expand(half_width);
 
         self.canvas_snapshot
             .connections
@@ -170,15 +174,39 @@ impl AppState {
                     let points = compute_wire_route(start, end);
 
                     points.windows(2).any(|seg| {
-                        rect.contains(seg[0])
-                            || rect.contains(seg[1])
-                            || closest_point_to_rect(rect, seg[0]).distance(seg[0]) <= half_width
+                        let a = seg[0];
+                        let b = seg[1];
+
+                        // horizontal
+                        if (a.y - b.y).abs() < f32::EPSILON {
+                            let y = a.y;
+                            let min_x = a.x.min(b.x);
+                            let max_x = a.x.max(b.x);
+
+                            expanded.top() <= y
+                                && y <= expanded.bottom()
+                                && max_x >= expanded.left()
+                                && min_x <= expanded.right()
+                        }
+                        //vertical
+                        else if (a.x - b.x).abs() < f32::EPSILON {
+                            let x = a.x;
+                            let min_y = a.y.min(b.y);
+                            let max_y = a.y.max(b.y);
+
+                            expanded.left() <= x
+                                && x <= expanded.right()
+                                && max_y >= expanded.top()
+                                && min_y <= expanded.bottom()
+                        } else {
+                            false
+                        }
                     })
                 } else {
                     false
                 }
             })
-            .map(|(i, _c)| i)
+            .map(|(i, _)| i)
             .collect()
     }
 
@@ -245,14 +273,17 @@ impl AppState {
         }
     }
     pub fn open_file(&mut self, path: PathBuf) {
-        let new_snapshot = CanvasSnapshot::load(path.clone(), self.project_folder.clone());
+        let new_snapshot =
+            CanvasSnapshot::load(path.clone(), self.project_folder.clone(), &mut self.toasts);
         match new_snapshot {
             Ok(snapshot) => {
                 self.canvas_snapshot = snapshot;
                 self.current_module_path = Some(path);
                 self.reload_connection_counts();
             }
-            Err(e) => eprintln!("Failed to load canvas snapshot: {}", e),
+            Err(e) => {
+                self.toasts.error(format!("Failed to load file: {}", e));
+            }
         }
     }
 }
