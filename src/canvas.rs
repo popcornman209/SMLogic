@@ -4,7 +4,7 @@ use std::collections::HashMap;
 
 use crate::colors::ColorPallet;
 use crate::parts::PartType;
-use crate::state::{AppState, CanvasSnapshot, Selection, path_to_string};
+use crate::state::{AppState, CanvasSnapshot, InteractionState, Selection, path_to_string};
 use crate::tools::{Tool, tool_label};
 
 impl AppState {
@@ -83,7 +83,7 @@ impl AppState {
     }
 
     pub fn draw_box_selection(&self, painter: &Painter, ctx: &egui::Context) {
-        if let Some(selection) = self.box_select_start {
+        if let InteractionState::BoxSelecting(selection) = self.interaction_state {
             let pointer_pos = ctx.input(|i| i.pointer.hover_pos());
             if let Some(pointer) = pointer_pos {
                 let mut color = self.color_pallet.selection;

@@ -3,7 +3,7 @@ use crate::parts::{
     GATE_SIZE, Gate, GateType, IO, Label, Module, PORT_SIZE, Part, PartData, Port, SWITCH_SIZE,
     Switch, Timer,
 };
-use crate::state::{AppState, Selection};
+use crate::state::{AppState, Selection, path_to_string};
 use eframe::epaint::PathShape;
 use egui::{Align2, Color32, FontId, Painter, Pos2, Rect, Stroke, StrokeKind, TextEdit, Ui, Vec2};
 
@@ -456,15 +456,10 @@ impl Module {
         }
     }
     pub fn draw_properties(&mut self, ui: &mut Ui, app_state: &mut AppState) {
-        let display_path = if let Some(folder) = &app_state.project_folder {
-            self.path
-                .strip_prefix(folder)
-                .map(|p| p.to_string_lossy().to_string())
-                .unwrap_or_else(|_| self.path.to_string_lossy().to_string())
-        } else {
-            self.path.to_string_lossy().to_string()
-        };
-        ui.label(format!("File Path: {}", display_path));
+        ui.label(format!(
+            "File Path: {}",
+            path_to_string(self.path.clone(), app_state.project_folder.clone())
+        ));
         if ui.button("Change File").clicked() {
             app_state.push_undo();
             let file = rfd::FileDialog::new()
@@ -584,12 +579,17 @@ impl Part {
             _ => {}
         }
         ui.horizontal(|ui| {
-            ui.label(if matches!(self.part_data, PartData::Label(_)) {
-                "Text:"
+            if matches!(self.part_data, PartData::Label(_)) {
+                ui.label("Text:");
+                ui.add(
+                    egui::TextEdit::multiline(&mut self.label)
+                        .desired_width(100.0)
+                        .desired_rows(4),
+                );
             } else {
-                "Label:"
-            });
-            ui.add(TextEdit::singleline(&mut self.label).desired_width(100.0));
+                ui.label("Label:");
+                ui.add(TextEdit::singleline(&mut self.label).desired_width(100.0));
+            }
         });
     }
 }

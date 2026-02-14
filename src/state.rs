@@ -1,7 +1,7 @@
 use crate::colors::ColorPallet;
 use crate::connections::{Connection, WIRE_WIDTH, compute_wire_route, dist_point_to_segment};
 use crate::egui::{Pos2, Rect, Vec2};
-use crate::parts::{PORT_SIZE, Part, Port};
+use crate::parts::{PORT_SIZE, Part, PartData, Port};
 use crate::saveload::{ClipboardData, Config};
 use crate::tools::Tool;
 use egui_notify::Toasts;
@@ -11,6 +11,7 @@ use std::path::PathBuf;
 use std::time::Instant;
 
 const MAX_PATH_LEN: usize = 20;
+const RESIZE_HITBOX: Vec2 = Vec2::new(-12.0, -12.0);
 
 pub fn path_to_string(path: PathBuf, project_folder: Option<PathBuf>) -> String {
     let out = if let Some(folder) = project_folder {
@@ -38,13 +39,14 @@ pub fn path_to_string(path: PathBuf, project_folder: Option<PathBuf>) -> String 
 }
 
 //operation being completed, ie box selecting, resizing, etc
-#[derive(Debug, Clone, Copy, PartialEq)]
+#[derive(Clone, PartialEq)]
 pub enum InteractionState {
     Idle,
     Panning,
-    BoxSelecting,
+    BoxSelecting(Pos2),
     Dragging,
-    Connecting,
+    Connecting(Port),
+    Resizing(u64),
 }
 
 #[derive(Clone, PartialEq)]
@@ -59,7 +61,7 @@ impl Default for InteractionState {
     }
 }
 
-#[derive(Clone, Deserialize, Serialize)]
+#[derive(Clone, Deserialize, Serialize, PartialEq)]
 pub struct CanvasSnapshot {
     pub parts: HashMap<u64, Part>,
     pub connections: Vec<Connection>,
@@ -86,8 +88,6 @@ pub struct AppState {
     pub zoom: f32,
     pub canvas_snapshot: CanvasSnapshot,
     pub selection: Vec<Selection>,
-    pub box_select_start: Option<Pos2>,
-    pub connect_start: Option<Port>,
     pub last_project_reload: Instant,
     // settings
     pub show_arrows: bool,
@@ -122,8 +122,6 @@ impl AppState {
             redo_stack: Vec::new(),
             connection_counts: HashMap::new(),
             selection: Vec::new(),
-            box_select_start: None,
-            connect_start: None,
             last_project_reload: Instant::now(),
             show_arrows: config.show_arrows,
             show_grid: config.show_grid,
@@ -258,6 +256,21 @@ impl AppState {
             })
             .map(|part| part.id)
             .collect()
+    }
+
+    pub fn resize_at_pos(&self, world_pos: Pos2) -> Option<&Part> {
+        for part in self.canvas_snapshot.parts.values() {
+            if part.part_data.resizable() {
+                let size = part.part_data.size();
+
+                let rect = Rect::from_two_pos(part.pos + size, part.pos + size + RESIZE_HITBOX);
+
+                if rect.contains(world_pos) {
+                    return Some(part);
+                }
+            }
+        }
+        None
     }
 
     pub fn push_undo(&mut self) {

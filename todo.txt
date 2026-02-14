@@ -1,4 +1,3 @@
-resizing parts
 paint tool
 fast connect tool
 

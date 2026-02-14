@@ -6,7 +6,7 @@ use serde::{Deserialize, Serialize};
 
 pub const WIRE_WIDTH: f32 = 2.0;
 
-#[derive(Clone, Deserialize, Serialize)]
+#[derive(Clone, Deserialize, Serialize, PartialEq)]
 pub struct Connection {
     pub start: Port,
     pub end: Port,

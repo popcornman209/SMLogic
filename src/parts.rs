@@ -11,7 +11,7 @@ pub const GATE_SIZE: Vec2 = Vec2::new(80.0, 60.0);
 pub const SWITCH_SIZE: Vec2 = Vec2::new(60.0, 60.0);
 pub const PORT_SIZE: f32 = 6.0;
 pub const PORT_GAP: f32 = 20.0;
-pub const MIN_MODULE_WIDTH: f32 = 80.0;
+pub const MIN_MODULE_WIDTH: f32 = 120.0;
 
 #[derive(Debug, Clone, PartialEq, Eq, Hash, Serialize, Deserialize)]
 pub enum PartType {
@@ -112,7 +112,7 @@ impl GateType {
     ];
 }
 
-#[derive(Clone, Deserialize, Serialize)]
+#[derive(Clone, Deserialize, Serialize, PartialEq)]
 pub struct Gate {
     pub gate_type: GateType,
     pub powered: bool,
@@ -130,7 +130,7 @@ impl Gate {
     }
 }
 
-#[derive(Clone, Deserialize, Serialize)]
+#[derive(Clone, Deserialize, Serialize, PartialEq)]
 pub struct Timer {
     pub buffer: Vec<bool>,
     pub secs: u8,
@@ -150,7 +150,7 @@ impl Timer {
     }
 }
 
-#[derive(Clone, Deserialize, Serialize)]
+#[derive(Clone, Deserialize, Serialize, PartialEq)]
 pub struct Module {
     pub path: PathBuf,
     pub inputs: BTreeMap<u64, String>,
@@ -231,7 +231,7 @@ impl Module {
     }
 }
 
-#[derive(Clone, Deserialize, Serialize)]
+#[derive(Clone, Deserialize, Serialize, PartialEq)]
 pub struct IO {
     pub input: bool,
 }
@@ -245,7 +245,7 @@ impl IO {
     }
 }
 
-#[derive(Clone, Deserialize, Serialize)]
+#[derive(Clone, Deserialize, Serialize, PartialEq)]
 pub struct Switch {
     pub toggle: bool,
     pub powered: bool,
@@ -263,7 +263,7 @@ impl Switch {
     }
 }
 
-#[derive(Clone, Deserialize, Serialize)]
+#[derive(Clone, Deserialize, Serialize, PartialEq)]
 pub struct Label {
     pub size: Vec2,
 }
@@ -278,7 +278,7 @@ impl Label {
     }
 }
 
-#[derive(Clone, Deserialize, Serialize)]
+#[derive(Clone, Deserialize, Serialize, PartialEq)]
 pub enum PartData {
     Gate(Gate),
     Timer(Timer),
@@ -304,6 +304,12 @@ impl PartData {
             _ => 1,
         }
     }
+    pub fn resizable(&self) -> bool {
+        match self {
+            Self::Module(_) | Self::Label(_) => true,
+            _ => false,
+        }
+    }
 }
 
 #[derive(Clone, Deserialize, Serialize, PartialEq, Eq, Hash)]
@@ -326,7 +332,7 @@ impl Port {
     }
 }
 
-#[derive(Clone, Deserialize, Serialize)]
+#[derive(Clone, Deserialize, Serialize, PartialEq)]
 pub struct Part {
     pub id: u64,
     pub part_data: PartData,

@@ -1,5 +1,6 @@
 use crate::connections::{Connection, draw_connection};
 use crate::egui::{Context, Key, Painter, PointerButton, Rect, Vec2};
+use crate::parts::PartData;
 use crate::state::{AppState, InteractionState, Selection};
 
 impl AppState {
@@ -128,7 +129,7 @@ impl AppState {
         };
         let world_pos = self.screen_to_world(screen_pos);
 
-        match self.interaction_state {
+        match &self.interaction_state {
             InteractionState::Idle => {
                 if ctx.input(|i| i.pointer.button_pressed(PointerButton::Middle))
                     || ctx.input(|i| i.pointer.button_pressed(PointerButton::Secondary))
@@ -138,14 +139,15 @@ impl AppState {
                 }
 
                 if ctx.input(|i| i.pointer.button_pressed(PointerButton::Primary)) {
+                    let selected_resize = self.resize_at_pos(world_pos);
                     let selected_port = self.port_at_pos(world_pos);
                     let selected_connection = self.connection_at_pos(world_pos);
                     let selected_part = self.part_at_pos(world_pos).map(|p| p.id);
 
-                    if selected_port.is_some() {
-                        self.connect_start = selected_port;
-                        self.interaction_state = InteractionState::Connecting;
-                        self.push_undo();
+                    if let Some(port) = selected_port {
+                        self.interaction_state = InteractionState::Connecting(port);
+                    } else if let Some(part) = selected_resize {
+                        self.interaction_state = InteractionState::Resizing(part.id);
                     } else if let Some(connection) = selected_connection {
                         self.select_connection(connection, shift_held);
                     } else if let Some(part) = selected_part {
@@ -153,8 +155,7 @@ impl AppState {
                         self.interaction_state = InteractionState::Dragging;
                         self.push_undo();
                     } else if self.active_tool.is_none() {
-                        self.box_select_start = Some(world_pos);
-                        self.interaction_state = InteractionState::BoxSelecting;
+                        self.interaction_state = InteractionState::BoxSelecting(world_pos);
                     } else {
                         self.handle_tool(world_pos, shift_held);
                     }
@@ -170,24 +171,22 @@ impl AppState {
                     self.interaction_state = InteractionState::Idle;
                 }
             }
-            InteractionState::BoxSelecting => {
-                if let Some(start_pos) = self.box_select_start {
-                    self.draw_box_selection(painter, ctx);
-                    if ctx.input(|i| i.pointer.button_released(PointerButton::Primary)) {
-                        if !shift_held {
-                            self.selection.clear();
-                        }
-                        let rect: Rect = Rect::from_two_pos(start_pos, world_pos);
-                        let parts = self.parts_in_rect(rect);
-                        for part in parts {
-                            self.selection.push(Selection::Part(part)); // select all parts in box
-                        }
-                        let connections = self.connections_in_rect(rect);
-                        for connection in connections {
-                            self.selection.push(Selection::Connection(connection))
-                        }
-                        self.interaction_state = InteractionState::Idle;
+            InteractionState::BoxSelecting(start_pos) => {
+                self.draw_box_selection(painter, ctx);
+                if ctx.input(|i| i.pointer.button_released(PointerButton::Primary)) {
+                    if !shift_held {
+                        self.selection.clear();
                     }
+                    let rect: Rect = Rect::from_two_pos(start_pos.clone(), world_pos);
+                    let parts = self.parts_in_rect(rect);
+                    for part in parts {
+                        self.selection.push(Selection::Part(part)); // select all parts in box
+                    }
+                    let connections = self.connections_in_rect(rect);
+                    for connection in connections {
+                        self.selection.push(Selection::Connection(connection))
+                    }
+                    self.interaction_state = InteractionState::Idle;
                 }
             }
             InteractionState::Dragging => {
@@ -214,44 +213,86 @@ impl AppState {
                     self.interaction_state = InteractionState::Idle;
                 }
             }
-            InteractionState::Connecting => {
-                if let Some(connect_start) = self.connect_start.clone() {
-                    if let Some(start_pos) = connect_start.pos(self) {
-                        if connect_start.input {
-                            draw_connection(self, world_pos, start_pos, painter, false);
-                        } else {
-                            draw_connection(self, start_pos, world_pos, painter, false);
+            InteractionState::Resizing(part_id) => {
+                let delta = ctx.input(|i| i.pointer.delta()) / self.zoom;
+
+                if let Some(part) = self.canvas_snapshot.parts.get_mut(&part_id) {
+                    match &mut part.part_data {
+                        PartData::Module(module) => module.size += delta,
+                        PartData::Label(label) => label.size += delta,
+                        _ => {}
+                    }
+                }
+                if ctx.input(|i| i.pointer.button_released(PointerButton::Primary)) {
+                    if let Some(part) = self.canvas_snapshot.parts.get_mut(&part_id) {
+                        if self.snap_to_grid {
+                            match &mut part.part_data {
+                                PartData::Module(module) => {
+                                    module.size = Vec2::new(
+                                        (module.size.x / 20.0).round() * 20.0,
+                                        (module.size.y / 20.0).round() * 20.0,
+                                    )
+                                }
+                                PartData::Label(label) => {
+                                    label.size = Vec2::new(
+                                        (label.size.x / 20.0).round() * 20.0,
+                                        (label.size.y / 20.0).round() * 20.0,
+                                    )
+                                }
+                                _ => {}
+                            }
                         }
-                        if ctx.input(|i| i.pointer.button_released(PointerButton::Primary)) {
-                            if let Some(port) = self.port_at_pos(world_pos) {
-                                let (start_port, end_port) = if connect_start.input {
-                                    (port, connect_start)
-                                } else {
-                                    (connect_start, port)
+                        match &mut part.part_data {
+                            PartData::Module(module) => {
+                                if module.size.x < module.min_size.x {
+                                    module.size.x = module.min_size.x
                                 };
-                                if start_port.input != end_port.input {
-                                    let count =
-                                        self.connection_counts.get(&end_port).copied().unwrap_or(0);
-                                    if let Some(end_part) =
-                                        self.canvas_snapshot.parts.get(&end_port.part)
-                                    {
-                                        if count < end_part.part_data.max_connections() {
-                                            self.canvas_snapshot.connections.push(Connection {
-                                                start: start_port,
-                                                end: end_port,
-                                                powered: false,
-                                            });
-                                            self.reload_connection_counts();
-                                        }
+                                if module.size.y < module.min_size.y {
+                                    module.size.y = module.min_size.y
+                                };
+                            }
+                            _ => {}
+                        }
+                    }
+                    self.interaction_state = InteractionState::Idle;
+                }
+            }
+            InteractionState::Connecting(connect_start) => {
+                if let Some(start_pos) = connect_start.pos(self) {
+                    if connect_start.input {
+                        draw_connection(self, world_pos, start_pos, painter, false);
+                    } else {
+                        draw_connection(self, start_pos, world_pos, painter, false);
+                    }
+                    if ctx.input(|i| i.pointer.button_released(PointerButton::Primary)) {
+                        if let Some(port) = self.port_at_pos(world_pos) {
+                            let (start_port, end_port) = if connect_start.input {
+                                (port, connect_start)
+                            } else {
+                                (connect_start.clone(), &port)
+                            };
+                            if start_port.input != end_port.input {
+                                let count =
+                                    self.connection_counts.get(&end_port).copied().unwrap_or(0);
+                                if let Some(end_part) =
+                                    self.canvas_snapshot.parts.get(&end_port.part)
+                                {
+                                    if count < end_part.part_data.max_connections() {
+                                        self.canvas_snapshot.connections.push(Connection {
+                                            start: start_port,
+                                            end: end_port.clone(),
+                                            powered: false,
+                                        });
+                                        self.reload_connection_counts();
                                     }
-                                } else {
-                                    self.undo_stack.pop();
                                 }
                             } else {
                                 self.undo_stack.pop();
                             }
-                            self.interaction_state = InteractionState::Idle;
+                        } else {
+                            self.undo_stack.pop();
                         }
+                        self.interaction_state = InteractionState::Idle;
                     }
                 }
             }
