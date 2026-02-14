@@ -2,6 +2,7 @@ use crate::connections::{Connection, draw_connection};
 use crate::egui::{Context, Key, Painter, PointerButton, Rect, Vec2};
 use crate::parts::PartData;
 use crate::state::{AppState, InteractionState, Selection};
+use crate::tools::Tool;
 
 impl AppState {
     pub fn handle_input(&mut self, ctx: &Context, painter: &Painter, response: &egui::Response) {
@@ -145,18 +146,30 @@ impl AppState {
                     let selected_part = self.part_at_pos(world_pos).map(|p| p.id);
 
                     if let Some(port) = selected_port {
+                        // connecting
                         self.interaction_state = InteractionState::Connecting(port);
                     } else if let Some(part) = selected_resize {
+                        // resizing
                         self.interaction_state = InteractionState::Resizing(part.id);
                     } else if let Some(connection) = selected_connection {
+                        // selected wire
                         self.select_connection(connection, shift_held);
                     } else if let Some(part) = selected_part {
+                        // selected part
                         self.select_part(part, shift_held);
-                        self.interaction_state = InteractionState::Dragging;
                         self.push_undo();
-                    } else if self.active_tool.is_none() {
+                        if self.active_tool == Some(Tool::Paint) {
+                            self.handle_tool(world_pos, shift_held);
+                        } else {
+                            self.interaction_state = InteractionState::Dragging;
+                        }
+                    } else if self.active_tool.is_none()
+                        | matches!(self.active_tool, Some(Tool::Paint))
+                    {
+                        // clicked on nothing & just idle
                         self.interaction_state = InteractionState::BoxSelecting(world_pos);
                     } else {
+                        // is using tool
                         self.handle_tool(world_pos, shift_held);
                     }
                 }

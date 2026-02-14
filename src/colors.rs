@@ -140,70 +140,70 @@ pub const DEFAULT_GATE_COLOR: Color32 = Color32::from_rgb(0xDF, 0x7F, 0x01);
 
 /// paint tool palette; 10 base colors × 4 shades.
 pub const SM_PALETTE: [[Color32; 4]; 10] = [
-    // Gray
+    // gray
     [
         Color32::from_rgb(0xEE, 0xEE, 0xEE),
         Color32::from_rgb(0x7F, 0x7F, 0x7F),
         Color32::from_rgb(0x4A, 0x4A, 0x4A),
         Color32::from_rgb(0x22, 0x22, 0x22),
     ],
-    // Yellow
+    // yellow
     [
         Color32::from_rgb(0xF5, 0xF0, 0x71),
         Color32::from_rgb(0xE2, 0xDB, 0x13),
         Color32::from_rgb(0x81, 0x7C, 0x00),
         Color32::from_rgb(0x32, 0x30, 0x00),
     ],
-    // Lime
+    // lime
     [
         Color32::from_rgb(0xCB, 0xF6, 0x6F),
         Color32::from_rgb(0xA0, 0xEA, 0x00),
         Color32::from_rgb(0x57, 0x7D, 0x07),
         Color32::from_rgb(0x37, 0x50, 0x00),
     ],
-    // Green
+    // green
     [
         Color32::from_rgb(0x68, 0xFF, 0x88),
         Color32::from_rgb(0x19, 0xE7, 0x53),
         Color32::from_rgb(0x0E, 0x80, 0x31),
         Color32::from_rgb(0x06, 0x40, 0x23),
     ],
-    // Cyan
+    // cyan
     [
         Color32::from_rgb(0x7E, 0xED, 0xED),
         Color32::from_rgb(0x2C, 0xE6, 0xE6),
         Color32::from_rgb(0x11, 0x87, 0x87),
         Color32::from_rgb(0x0A, 0x44, 0x44),
     ],
-    // Blue
+    // blue
     [
         Color32::from_rgb(0x4C, 0x6F, 0xE3),
         Color32::from_rgb(0x0A, 0x3E, 0xE2),
         Color32::from_rgb(0x0F, 0x2E, 0x91),
         Color32::from_rgb(0x0A, 0x1D, 0x5A),
     ],
-    // Violet
+    // violet
     [
         Color32::from_rgb(0xAE, 0x79, 0xF0),
         Color32::from_rgb(0x75, 0x14, 0xED),
         Color32::from_rgb(0x50, 0x0A, 0xA6),
         Color32::from_rgb(0x35, 0x08, 0x6C),
     ],
-    // Magenta
+    // magenta
     [
         Color32::from_rgb(0xEE, 0x7B, 0xF0),
         Color32::from_rgb(0xCF, 0x11, 0xD2),
         Color32::from_rgb(0x72, 0x0A, 0x74),
         Color32::from_rgb(0x52, 0x06, 0x53),
     ],
-    // Red
+    // red
     [
         Color32::from_rgb(0xF0, 0x67, 0x67),
         Color32::from_rgb(0xD0, 0x25, 0x25),
         Color32::from_rgb(0x7C, 0x00, 0x00),
         Color32::from_rgb(0x56, 0x02, 0x02),
     ],
-    // Orange
+    // orange
     [
         Color32::from_rgb(0xEE, 0xAF, 0x5C),
         Color32::from_rgb(0xDF, 0x7F, 0x00),

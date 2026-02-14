@@ -1,7 +1,7 @@
-use crate::colors::ColorPallet;
+use crate::colors::{ColorPallet, DEFAULT_GATE_COLOR};
 use crate::connections::{Connection, WIRE_WIDTH, compute_wire_route, dist_point_to_segment};
-use crate::egui::{Pos2, Rect, Vec2};
-use crate::parts::{PORT_SIZE, Part, PartData, Port};
+use crate::egui::{Color32, Pos2, Rect, Vec2};
+use crate::parts::{PORT_SIZE, Part, Port};
 use crate::saveload::{ClipboardData, Config};
 use crate::tools::Tool;
 use egui_notify::Toasts;
@@ -83,6 +83,7 @@ pub struct AppState {
     pub undo_stack: Vec<CanvasSnapshot>,
     pub redo_stack: Vec<CanvasSnapshot>,
     pub connection_counts: HashMap<Port, u64>,
+    pub current_paint_color: Color32,
     // other live info
     pub pan_offset: Vec2,
     pub zoom: f32,
@@ -121,6 +122,7 @@ impl AppState {
             undo_stack: Vec::new(),
             redo_stack: Vec::new(),
             connection_counts: HashMap::new(),
+            current_paint_color: DEFAULT_GATE_COLOR,
             selection: Vec::new(),
             last_project_reload: Instant::now(),
             show_arrows: config.show_arrows,

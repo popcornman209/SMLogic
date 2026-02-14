@@ -1,7 +1,7 @@
-use eframe::egui::Pos2;
-
+use crate::colors::{DEFAULT_GATE_COLOR, SM_PALETTE};
 use crate::parts::{Part, PartType};
 use crate::state::{AppState, Selection};
+use eframe::egui::Pos2;
 
 //current tool being used
 #[derive(Debug, Clone, PartialEq)]
@@ -34,7 +34,16 @@ impl AppState {
                 self.reload_connection_counts();
                 self.select_part(part_id, shift_held);
             }
-            Some(Tool::Paint) => {}
+            Some(Tool::Paint) => {
+                for selection in self.selection.clone() {
+                    if let Selection::Part(part_id) = selection {
+                        if let Some(part) = self.canvas_snapshot.parts.get_mut(&part_id) {
+                            part.color = self.current_paint_color.clone();
+                        }
+                    }
+                }
+                self.selection.clear();
+            }
             Some(Tool::Connector) => {}
         }
     }
