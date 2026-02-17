@@ -238,10 +238,12 @@ impl AppState {
                     }
                     if ui.button("Change...").clicked() {
                         let folder = rfd::FileDialog::new().pick_folder();
-                        if folder.is_some() {
+                        if let Some(folder_option) = folder.clone() {
                             self.project_folder = folder;
                             self.project_sub_folder = None;
                             self.reload_project_folder();
+                            self.config.last_project = Some(folder_option);
+                            self.config.save();
                         }
                     }
 
@@ -491,7 +493,6 @@ impl AppState {
                         self.config.color_pallet = self.color_pallet.clone();
                         self.config.save();
                         self.color_pallet.apply_theme(ctx);
-
                     }
                 }
             });

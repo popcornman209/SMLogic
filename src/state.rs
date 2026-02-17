@@ -84,6 +84,8 @@ pub struct AppState {
     pub redo_stack: Vec<CanvasSnapshot>,
     pub connection_counts: HashMap<Port, u64>,
     pub current_paint_color: Color32,
+    pub current_input_selection: Vec<u64>,
+    pub current_output_selection: Vec<u64>,
     // other live info
     pub pan_offset: Vec2,
     pub zoom: f32,
@@ -102,13 +104,13 @@ pub struct AppState {
 impl AppState {
     pub fn new(ctx: &egui::Context) -> Self {
         let config = Config::load();
-        let result = Self {
+        let mut result = Self {
             interaction_state: InteractionState::Idle,
             active_tool: None,
             settings_open: false,
             clipboard_data: None,
             toasts: Toasts::default(),
-            project_folder: None,
+            project_folder: config.last_project.clone(),
             project_sub_folder: None,
             current_folder_files: Vec::new(),
             current_module_path: None,
@@ -123,6 +125,8 @@ impl AppState {
             redo_stack: Vec::new(),
             connection_counts: HashMap::new(),
             current_paint_color: DEFAULT_GATE_COLOR,
+            current_input_selection: Vec::new(),
+            current_output_selection: Vec::new(),
             selection: Vec::new(),
             last_project_reload: Instant::now(),
             show_arrows: config.show_arrows,
@@ -134,6 +138,7 @@ impl AppState {
             config: config,
         };
         result.color_pallet.apply_theme(ctx);
+        result.reload_project_folder();
         result
     }
 
