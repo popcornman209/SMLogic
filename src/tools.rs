@@ -1,25 +1,46 @@
-use crate::colors::{DEFAULT_GATE_COLOR, SM_PALETTE};
-use crate::parts::{Part, PartType};
+use crate::parts::{Part, PartType, Port};
 use crate::state::{AppState, Selection};
 use eframe::egui::Pos2;
 
+#[derive(Clone, PartialEq)]
+pub enum ConnectorMode {
+    AllToAll,
+}
+
+#[derive(Clone, PartialEq)]
+pub struct ConnectorData {
+    pub selecting_inputs: bool,
+    pub selected_inputs: Vec<Port>,
+    pub selected_outputs: Vec<Port>,
+    pub mode: ConnectorMode,
+}
+
 //current tool being used
-#[derive(Debug, Clone, PartialEq)]
+#[derive(Clone, PartialEq)]
 pub enum Tool {
     PlacePart(PartType),
     Paint,
-    Connector,
+    Connector(ConnectorData),
 }
 
 impl Tool {
-    pub const TOOLS: &[Option<Tool>] = &[None, Some(Tool::Paint), Some(Tool::Connector)];
+    pub const TOOLS: &[Option<Tool>] = &[
+        None,
+        Some(Tool::Paint),
+        Some(Tool::Connector(ConnectorData {
+            selecting_inputs: true,
+            selected_inputs: Vec::new(),
+            selected_outputs: Vec::new(),
+            mode: ConnectorMode::AllToAll,
+        })),
+    ];
 }
 
 pub fn tool_label(tool: &Option<Tool>) -> &'static str {
     match tool {
         None => "Select",
         Some(Tool::Paint) => "Paint Tool",
-        Some(Tool::Connector) => "Connnector",
+        Some(Tool::Connector(_)) => "Connnector",
         _ => "???",
     }
 }
@@ -27,7 +48,7 @@ pub fn tool_label(tool: &Option<Tool>) -> &'static str {
 impl AppState {
     pub fn handle_tool(&mut self, world_pos: Pos2, shift_held: bool) {
         match self.active_tool.clone() {
-            None => {}
+            None | Some(Tool::Connector(_)) => {}
             Some(Tool::PlacePart(part_type)) => {
                 self.push_undo();
                 let part_id = Part::new(part_type, self, world_pos);
@@ -44,7 +65,6 @@ impl AppState {
                 }
                 self.selection.clear();
             }
-            Some(Tool::Connector) => {}
         }
     }
 

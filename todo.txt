@@ -1,4 +1,6 @@
 fast connect tool
+render switches/buttons
+ban loading module loops (modules cant reference each other in a infinite circle)
 
 * simulator
 

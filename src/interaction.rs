@@ -147,7 +147,11 @@ impl AppState {
 
                     if let Some(port) = selected_port {
                         // connecting
-                        self.interaction_state = InteractionState::Connecting(port);
+                        if let Some(Tool::Connector(ref mut connector_data)) = self.active_tool {
+                            if port.input == connector_data.selecting_inputs {}
+                        } else {
+                            self.interaction_state = InteractionState::Connecting(port);
+                        }
                     } else if let Some(part) = selected_resize {
                         // resizing
                         self.interaction_state = InteractionState::Resizing(part.id);
@@ -163,10 +167,11 @@ impl AppState {
                         } else {
                             self.interaction_state = InteractionState::Dragging;
                         }
-                    } else if self.active_tool.is_none()
-                        | matches!(self.active_tool, Some(Tool::Paint))
-                    {
-                        // clicked on nothing & just idle
+                    } else if matches!(
+                        self.active_tool,
+                        None | Some(Tool::Paint) | Some(Tool::Connector(_))
+                    ) {
+                        // clicked on nothing & the tool uses box selection in some way
                         self.interaction_state = InteractionState::BoxSelecting(world_pos);
                     } else {
                         // is using tool
