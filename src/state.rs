@@ -91,7 +91,6 @@ pub struct AppState {
     pub selection: Vec<Selection>,
     pub last_project_reload: Instant,
     // settings
-    pub show_arrows: bool,
     pub show_grid: bool,
     pub show_connection_count: bool,
     pub snap_to_grid: bool,
@@ -125,7 +124,6 @@ impl AppState {
             current_paint_color: DEFAULT_GATE_COLOR,
             selection: Vec::new(),
             last_project_reload: Instant::now(),
-            show_arrows: config.show_arrows,
             show_grid: config.show_grid,
             snap_to_grid: config.snap_to_grid,
             show_connection_count: config.show_connection_count,

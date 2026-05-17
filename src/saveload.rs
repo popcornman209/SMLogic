@@ -14,7 +14,6 @@ use std::path::PathBuf;
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct Config {
-    pub show_arrows: bool,
     pub show_grid: bool,
     pub show_connection_count: bool,
     pub snap_to_grid: bool,
@@ -55,7 +54,6 @@ impl Config {
 impl Default for Config {
     fn default() -> Self {
         Self {
-            show_arrows: false,
             show_grid: true,
             show_connection_count: true,
             snap_to_grid: true,

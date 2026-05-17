@@ -200,6 +200,15 @@ impl AppState {
                                     ui.end_row();
                                 }
                             });
+                        ui.horizontal(|ui| {
+                            ui.label("Custom: ");
+                            let rgb = self.current_paint_color.to_srgba_unmultiplied();
+                            let mut rgb3 = [rgb[0], rgb[1], rgb[2]];
+                            if ui.color_edit_button_srgb(&mut rgb3).changed() {
+                                self.current_paint_color =
+                                    egui::Color32::from_rgb(rgb3[0], rgb3[1], rgb3[2]);
+                            }
+                        });
                     }
                     _ => {}
                 }
@@ -408,10 +417,6 @@ impl AppState {
                 //self.color_pallet.ui_apply(ui);
                 ui.heading("General");
                 ui.separator();
-                if ui.checkbox(&mut self.show_arrows, "Wire Arrows").changed() {
-                    self.config.show_arrows = self.show_arrows;
-                    self.config.save();
-                }
                 if ui.checkbox(&mut self.show_grid, "Grid").changed() {
                     self.config.show_grid = self.show_grid;
                     self.config.save();

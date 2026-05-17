@@ -286,24 +286,27 @@ impl Gate {
     }
 
     pub fn draw_properties(&mut self, ui: &mut Ui, app_state: &mut AppState, label: &mut String) {
-        egui::ComboBox::from_label("Type")
-            .selected_text(self.gate_type.to_label())
-            .show_ui(ui, |ui| {
-                for lgt in GateType::TYPES {
-                    if ui
-                        .selectable_label(lgt.clone() == self.gate_type, lgt.to_label())
-                        .clicked()
-                    {
-                        if lgt.clone() != self.gate_type {
-                            app_state.push_undo();
-                            if *label == self.gate_type.to_label() {
-                                *label = lgt.to_label();
+        ui.horizontal(|ui| {
+            ui.label("Type: ");
+            egui::ComboBox::from_id_salt("gate_type_combo")
+                .selected_text(self.gate_type.to_label())
+                .show_ui(ui, |ui| {
+                    for lgt in GateType::TYPES {
+                        if ui
+                            .selectable_label(lgt.clone() == self.gate_type, lgt.to_label())
+                            .clicked()
+                        {
+                            if lgt.clone() != self.gate_type {
+                                app_state.push_undo();
+                                if *label == self.gate_type.to_label() {
+                                    *label = lgt.to_label();
+                                }
+                                self.gate_type = lgt.clone();
                             }
-                            self.gate_type = lgt.clone();
                         }
                     }
-                }
-            });
+                });
+        });
     }
 }
 
