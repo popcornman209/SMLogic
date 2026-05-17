@@ -148,7 +148,7 @@ impl AppState {
                     if let Some(port) = selected_port {
                         // connecting
                         if let Some(Tool::Connector(ref mut connector_data)) = self.active_tool {
-                            if port.input == connector_data.selecting_inputs {}
+                            connector_data.toggle_select_port(port);
                         } else {
                             self.interaction_state = InteractionState::Connecting(port);
                         }
@@ -192,19 +192,27 @@ impl AppState {
             InteractionState::BoxSelecting(start_pos) => {
                 self.draw_box_selection(painter, ctx);
                 if ctx.input(|i| i.pointer.button_released(PointerButton::Primary)) {
-                    if !shift_held {
-                        self.selection.clear();
-                    }
                     let rect: Rect = Rect::from_two_pos(start_pos.clone(), world_pos);
-                    let parts = self.parts_in_rect(rect);
-                    for part in parts {
-                        self.selection.push(Selection::Part(part)); // select all parts in box
+                    let ports = self.ports_in_rect(rect);
+                    if let Some(Tool::Connector(ref mut connector_data)) = self.active_tool {
+                        for port in ports {
+                            connector_data.toggle_select_port(port);
+                        }
+                    } else {
+                        if !shift_held {
+                            self.selection.clear();
+                        }
+
+                        let parts = self.parts_in_rect(rect);
+                        for part in parts {
+                            self.select_part(part, true) // select all parts in box
+                        }
+                        let connections = self.connections_in_rect(rect);
+                        for connection in connections {
+                            self.select_connection(connection, true)
+                        }
+                        self.interaction_state = InteractionState::Idle;
                     }
-                    let connections = self.connections_in_rect(rect);
-                    for connection in connections {
-                        self.selection.push(Selection::Connection(connection))
-                    }
-                    self.interaction_state = InteractionState::Idle;
                 }
             }
             InteractionState::Dragging => {

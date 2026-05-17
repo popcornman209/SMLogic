@@ -167,6 +167,22 @@ impl AppState {
         None
     }
 
+    pub fn ports_in_rect(&self, rect: Rect) -> Vec<Port> {
+        let mut ports = Vec::new();
+        for part in self.canvas_snapshot.parts.values() {
+            for (port_pos, input, port_id) in part.connections_pos_with_id() {
+                if rect.contains(port_pos) {
+                    ports.push(Port {
+                        part: part.id,
+                        input,
+                        port_id,
+                    });
+                }
+            }
+        }
+        ports
+    }
+
     pub fn connection_at_pos(&self, world_pos: Pos2) -> Option<usize> {
         let half_width = WIRE_WIDTH * 0.5;
 

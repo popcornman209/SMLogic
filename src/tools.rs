@@ -9,10 +9,35 @@ pub enum ConnectorMode {
 
 #[derive(Clone, PartialEq)]
 pub struct ConnectorData {
-    pub selecting_inputs: bool,
-    pub selected_inputs: Vec<Port>,
-    pub selected_outputs: Vec<Port>,
+    pub selected_ports: Vec<Port>,
     pub mode: ConnectorMode,
+    pub previewing: bool,
+    pub inputs: usize,
+    pub outputs: usize,
+    pub total: usize,
+}
+impl ConnectorData {
+    pub fn calculate_totals(&mut self) {
+        self.inputs = 0;
+        self.outputs = 0;
+        for port in self.selected_ports.clone() {
+            if port.input {
+                self.inputs += 1;
+            } else {
+                self.outputs += 1;
+            }
+        }
+        self.total = self.inputs + self.outputs;
+    }
+
+    pub fn toggle_select_port(&mut self, port: Port) {
+        if let Some(pos) = self.selected_ports.iter().position(|x| *x == port) {
+            self.selected_ports.remove(pos);
+        } else {
+            self.selected_ports.push(port);
+        }
+        self.calculate_totals();
+    }
 }
 
 //current tool being used
@@ -28,10 +53,12 @@ impl Tool {
         None,
         Some(Tool::Paint),
         Some(Tool::Connector(ConnectorData {
-            selecting_inputs: true,
-            selected_inputs: Vec::new(),
-            selected_outputs: Vec::new(),
+            selected_ports: Vec::new(),
             mode: ConnectorMode::AllToAll,
+            previewing: false,
+            inputs: 0,
+            outputs: 0,
+            total: 0,
         })),
     ];
 }
