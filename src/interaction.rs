@@ -211,8 +211,8 @@ impl AppState {
                         for connection in connections {
                             self.select_connection(connection, true)
                         }
-                        self.interaction_state = InteractionState::Idle;
                     }
+                    self.interaction_state = InteractionState::Idle;
                 }
             }
             InteractionState::Dragging => {

@@ -4,6 +4,7 @@ use crate::parts::{
     Switch, Timer,
 };
 use crate::state::{AppState, Selection, path_to_string};
+use crate::tools::ConnectorData;
 use eframe::epaint::PathShape;
 use egui::{Align2, Color32, FontId, Painter, Pos2, Rect, Stroke, StrokeKind, TextEdit, Ui, Vec2};
 
@@ -16,6 +17,9 @@ const CONNECTION_COUNT_SIZE: f32 = 10.0;
 
 const CONNECTION_LABEL_SHIFT: Vec2 = Vec2::new(8.0, 7.0);
 const CONNECTION_LABEL_SIZE: f32 = 7.0;
+
+const OUTPUT_COLOR: Color32 = Color32::from_rgb(255, 0, 0);
+const INPUT_COLOR: Color32 = Color32::from_rgb(0, 255, 0);
 
 impl AppState {
     pub fn draw_parts(&self, painter: &Painter) {
@@ -594,5 +598,26 @@ impl Part {
                 ui.add(TextEdit::singleline(&mut self.label).desired_width(100.0));
             }
         });
+    }
+}
+
+impl AppState {
+    pub fn draw_selected_connections(&self, connector_data: ConnectorData, painter: &Painter) {
+        for port in connector_data.selected_ports {
+            if let Some(pos) = port.pos(self) {
+                painter.circle_stroke(
+                    self.world_to_screen(pos),
+                    10.0 * self.zoom,
+                    Stroke::new(
+                        2.0,
+                        if port.input {
+                            INPUT_COLOR
+                        } else {
+                            OUTPUT_COLOR
+                        },
+                    ),
+                );
+            }
+        }
     }
 }

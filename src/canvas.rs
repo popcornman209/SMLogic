@@ -39,6 +39,10 @@ impl AppState {
             self.reload_connection_counts();
         }
 
+        if let Some(Tool::Connector(connector_data)) = self.active_tool.clone() {
+            self.draw_selected_connections(connector_data, &painter);
+        }
+
         if self.show_fps {
             self.draw_fps(ctx);
         } else {
@@ -167,8 +171,8 @@ impl AppState {
                     self.settings_open = !self.settings_open;
                 }
 
-                // tool settings (just paint gun for now)
-                match self.active_tool {
+                // tool settings
+                match &self.active_tool {
                     Some(Tool::Paint) => {
                         ui.heading("Paint Tool");
                         egui::Grid::new("palette_grid")
@@ -209,6 +213,9 @@ impl AppState {
                                     egui::Color32::from_rgb(rgb3[0], rgb3[1], rgb3[2]);
                             }
                         });
+                    }
+                    Some(Tool::Connector(connector_data)) => {
+                        ui.heading("Connector Tool");
                     }
                     _ => {}
                 }
