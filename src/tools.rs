@@ -11,23 +11,14 @@ const PAINT_CELL_SIZE: Vec2 = egui::vec2(20.0, 20.0);
 pub enum ConnectorMode {
     AllToAll,
     OneToOne,
-    BinaryEncode,
-    BinaryDecode,
 }
 impl ConnectorMode {
-    pub const MODES: &[Self] = &[
-        Self::AllToAll,
-        Self::OneToOne,
-        Self::BinaryEncode,
-        Self::BinaryDecode,
-    ];
+    pub const MODES: &[Self] = &[Self::AllToAll, Self::OneToOne];
 
     pub fn to_label(&self) -> &'static str {
         match self {
             ConnectorMode::AllToAll => "All to all",
             ConnectorMode::OneToOne => "One to one",
-            ConnectorMode::BinaryEncode => "binary encode",
-            ConnectorMode::BinaryDecode => "binary decode",
         }
     }
 }
@@ -68,10 +59,15 @@ impl ConnectorData {
     }
 
     pub fn calculate_connections(&mut self, app_state: &AppState) -> Vec<Connection> {
-        self.calculate_totals();
+        self.calculate_totals(); // just incase something changed
+
+        if self.inputs == 0 || self.outputs == 0 {
+            self.status = "no selection".to_string();
+            return Vec::new();
+        }
 
         let (input_ports, output_ports): (Vec<Port>, Vec<Port>) =
-            self.selected_ports.iter().partition(|p| p.input);
+            self.selected_ports.iter().partition(|p| p.input); // seperate out the selection
 
         let mut output: Vec<Connection> = Vec::new();
 
@@ -86,7 +82,7 @@ impl ConnectorData {
                     }
                 }
             }
-            _ => self.status = "mode not implemented yet".to_string(),
+            _ => self.status = "mode not done :(".to_string(),
         }
         output
     }
@@ -185,7 +181,14 @@ impl AppState {
                     ui.label("Preview: ");
                     ui.checkbox(&mut connector_data.previewing, "");
                 });
-                if ui.button("Connect!").clicked() {
+                ui.label(format!("status: {}", connector_data.status));
+                if ui
+                    .add_enabled(
+                        connector_data.status == "ok".to_string(),
+                        egui::Button::new("Connect!"),
+                    )
+                    .clicked()
+                {
                     connect = true;
                 }
             }
