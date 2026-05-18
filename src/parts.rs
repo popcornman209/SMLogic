@@ -115,14 +115,12 @@ impl GateType {
 #[derive(Clone, Deserialize, Serialize, PartialEq)]
 pub struct Gate {
     pub gate_type: GateType,
-    pub powered: bool,
 }
 impl Gate {
     pub fn new(gate_type: GateType) -> (PartData, String, Vec2) {
         (
             PartData::Gate(Self {
                 gate_type: gate_type.clone(),
-                powered: false,
             }),
             gate_type.to_label(),
             -GATE_SIZE / 2.0,
@@ -132,18 +130,13 @@ impl Gate {
 
 #[derive(Clone, Deserialize, Serialize, PartialEq)]
 pub struct Timer {
-    pub buffer: Vec<bool>,
     pub secs: u8,
     pub ticks: u8,
 }
 impl Timer {
     pub fn new() -> (PartData, String, Vec2) {
         (
-            PartData::Timer(Self {
-                buffer: Vec::new(),
-                secs: 0,
-                ticks: 0,
-            }),
+            PartData::Timer(Self { secs: 0, ticks: 0 }),
             "Timer".to_string(),
             -GATE_SIZE / 2.0,
         )
@@ -248,15 +241,11 @@ impl IO {
 #[derive(Clone, Deserialize, Serialize, PartialEq)]
 pub struct Switch {
     pub toggle: bool,
-    pub powered: bool,
 }
 impl Switch {
     pub fn new(toggle: bool) -> (PartData, String, Vec2) {
         (
-            PartData::Switch(Self {
-                toggle: toggle,
-                powered: false,
-            }),
+            PartData::Switch(Self { toggle: toggle }),
             if toggle { "Switch" } else { "Button" }.to_string(),
             -GATE_SIZE / 2.0,
         )
@@ -312,7 +301,7 @@ impl PartData {
     }
 }
 
-#[derive(Clone, Deserialize, Serialize, PartialEq, Eq, Hash)]
+#[derive(Clone, Deserialize, Serialize, PartialEq, Eq, Hash, Copy)]
 pub struct Port {
     pub part: u64,
     pub input: bool,

@@ -186,7 +186,6 @@ impl AppState {
                                         port_id: connection.end.port_id,
                                         input: connection.end.input,
                                     },
-                                    powered: connection.powered,
                                 });
                             }
                         }

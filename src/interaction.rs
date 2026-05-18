@@ -307,7 +307,6 @@ impl AppState {
                                         self.canvas_snapshot.connections.push(Connection {
                                             start: start_port,
                                             end: end_port.clone(),
-                                            powered: false,
                                         });
                                         self.reload_connection_counts();
                                     }

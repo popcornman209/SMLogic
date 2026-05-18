@@ -1,4 +1,4 @@
-fast connect tool
+more fast connect tool modes
 render switches/buttons
 ban loading module loops (modules cant reference each other in a infinite circle)
 

@@ -1,10 +1,35 @@
+use crate::colors::SM_PALETTE;
+use crate::connections::Connection;
 use crate::parts::{Part, PartType, Port};
 use crate::state::{AppState, Selection};
 use eframe::egui::Pos2;
+use egui::{Stroke, Ui, Vec2};
+
+const PAINT_CELL_SIZE: Vec2 = egui::vec2(20.0, 20.0);
 
 #[derive(Clone, PartialEq)]
 pub enum ConnectorMode {
     AllToAll,
+    OneToOne,
+    BinaryEncode,
+    BinaryDecode,
+}
+impl ConnectorMode {
+    pub const MODES: &[Self] = &[
+        Self::AllToAll,
+        Self::OneToOne,
+        Self::BinaryEncode,
+        Self::BinaryDecode,
+    ];
+
+    pub fn to_label(&self) -> &'static str {
+        match self {
+            ConnectorMode::AllToAll => "All to all",
+            ConnectorMode::OneToOne => "One to one",
+            ConnectorMode::BinaryEncode => "binary encode",
+            ConnectorMode::BinaryDecode => "binary decode",
+        }
+    }
 }
 
 #[derive(Clone, PartialEq)]
@@ -15,6 +40,8 @@ pub struct ConnectorData {
     pub inputs: usize,
     pub outputs: usize,
     pub total: usize,
+    pub connection_preview: Vec<Connection>,
+    pub status: String,
 }
 impl ConnectorData {
     pub fn calculate_totals(&mut self) {
@@ -37,6 +64,31 @@ impl ConnectorData {
             self.selected_ports.push(port);
         }
         self.calculate_totals();
+        self.status = String::new();
+    }
+
+    pub fn calculate_connections(&mut self, app_state: &AppState) -> Vec<Connection> {
+        self.calculate_totals();
+
+        let (input_ports, output_ports): (Vec<Port>, Vec<Port>) =
+            self.selected_ports.iter().partition(|p| p.input);
+
+        let mut output: Vec<Connection> = Vec::new();
+
+        match self.mode {
+            ConnectorMode::AllToAll => {
+                for input_port in &input_ports {
+                    for output_port in &output_ports {
+                        output.push(Connection {
+                            start: *output_port,
+                            end: *input_port,
+                        })
+                    }
+                }
+            }
+            _ => self.status = "mode not implemented yet".to_string(),
+        }
+        output
     }
 }
 
@@ -59,8 +111,101 @@ impl Tool {
             inputs: 0,
             outputs: 0,
             total: 0,
+            connection_preview: Vec::new(),
+            status: String::new(),
         })),
     ];
+}
+
+impl AppState {
+    pub fn draw_sidebar_tool_properties(&mut self, ui: &mut Ui) {
+        let mut connect = false;
+        match &mut self.active_tool {
+            Some(Tool::Paint) => {
+                ui.heading("Paint Tool");
+                egui::Grid::new("palette_grid")
+                    .spacing(egui::vec2(4.0, 4.0))
+                    .min_col_width(0.0)
+                    .show(ui, |ui| {
+                        for row in SM_PALETTE.iter() {
+                            for color in row.iter().rev() {
+                                let (rect, response) =
+                                    ui.allocate_exact_size(PAINT_CELL_SIZE, egui::Sense::click());
+
+                                ui.painter().rect_filled(rect, 2.0, *color);
+
+                                if self.current_paint_color == *color {
+                                    ui.painter().rect_stroke(
+                                        rect,
+                                        2.0,
+                                        Stroke::new(2.0, egui::Color32::WHITE),
+                                        egui::StrokeKind::Outside,
+                                    );
+                                }
+
+                                if response.clicked() {
+                                    self.current_paint_color = *color;
+                                }
+                            }
+                            ui.end_row();
+                        }
+                    });
+                ui.horizontal(|ui| {
+                    ui.label("Custom: ");
+                    let rgb = self.current_paint_color.to_srgba_unmultiplied();
+                    let mut rgb3 = [rgb[0], rgb[1], rgb[2]];
+                    if ui.color_edit_button_srgb(&mut rgb3).changed() {
+                        self.current_paint_color =
+                            egui::Color32::from_rgb(rgb3[0], rgb3[1], rgb3[2]);
+                    }
+                });
+            }
+            Some(Tool::Connector(connector_data)) => {
+                ui.heading("Connector Tool");
+                ui.horizontal(|ui| {
+                    // mode selector combo box
+                    ui.label("Mode: ");
+                    egui::ComboBox::from_id_salt("connector_mode_combo")
+                        .selected_text(connector_data.mode.to_label())
+                        .show_ui(ui, |ui| {
+                            for mode in ConnectorMode::MODES {
+                                if ui
+                                    .selectable_label(&connector_data.mode == mode, mode.to_label())
+                                    .clicked()
+                                {
+                                    connector_data.mode = mode.clone()
+                                }
+                            }
+                        })
+                });
+                ui.label(format!("inputs: {}", connector_data.inputs));
+                ui.label(format!("outputs: {}", connector_data.outputs));
+                ui.label(format!("total: {}", connector_data.total));
+                ui.horizontal(|ui| {
+                    ui.label("Preview: ");
+                    ui.checkbox(&mut connector_data.previewing, "");
+                });
+                if ui.button("Connect!").clicked() {
+                    connect = true;
+                }
+            }
+            _ => {}
+        }
+        if connect {
+            if let Some(Tool::Connector(connector_data)) = &mut self.active_tool {
+                let new_connections: Vec<Connection> = connector_data
+                    .connection_preview
+                    .iter()
+                    .filter(|x| !self.canvas_snapshot.connections.contains(x))
+                    .cloned()
+                    .collect();
+                connector_data.selected_ports.clear();
+                connector_data.status = String::new();
+                self.push_undo();
+                self.canvas_snapshot.connections.extend(new_connections);
+            }
+        }
+    }
 }
 
 pub fn tool_label(tool: &Option<Tool>) -> &'static str {
@@ -75,7 +220,7 @@ pub fn tool_label(tool: &Option<Tool>) -> &'static str {
 impl AppState {
     pub fn handle_tool(&mut self, world_pos: Pos2, shift_held: bool) {
         match self.active_tool.clone() {
-            None | Some(Tool::Connector(_)) => {}
+            None | Some(Tool::Connector(_)) => self.selection.clear(),
             Some(Tool::PlacePart(part_type)) => {
                 self.push_undo();
                 let part_id = Part::new(part_type, self, world_pos);

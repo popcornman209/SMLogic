@@ -1,13 +1,12 @@
-use eframe::egui::{self, Color32, Painter, Pos2, Rect, Sense, Stroke, Ui, Vec2};
+use eframe::egui::{self, Color32, Painter, Pos2, Rect, Sense, Stroke, Ui};
 use std::borrow::Cow;
 use std::collections::HashMap;
 
-use crate::colors::{ColorPallet, SM_PALETTE};
+use crate::colors::ColorPallet;
+use crate::connections::draw_connection;
 use crate::parts::PartType;
 use crate::state::{AppState, CanvasSnapshot, InteractionState, Selection, path_to_string};
 use crate::tools::{Tool, tool_label};
-
-const PAINT_CELL_SIZE: Vec2 = egui::vec2(20.0, 20.0);
 
 impl AppState {
     pub fn draw_canvas(
@@ -39,8 +38,24 @@ impl AppState {
             self.reload_connection_counts();
         }
 
-        if let Some(Tool::Connector(connector_data)) = self.active_tool.clone() {
-            self.draw_selected_connections(connector_data, &painter);
+        if let Some(Tool::Connector(mut connector_data)) = self.active_tool.clone() {
+            self.draw_selected_connections(connector_data.clone(), &painter);
+            if connector_data.status == String::new() {
+                connector_data.connection_preview = connector_data.calculate_connections(self);
+                if connector_data.status == String::new() {
+                    connector_data.status = "ok".to_string();
+                }
+            }
+            if connector_data.previewing {
+                for connection in &connector_data.connection_preview {
+                    let start_pos = connection.start.pos(self);
+                    let end_pos = connection.end.pos(self);
+                    if let (Some(start), Some(end)) = (start_pos, end_pos) {
+                        draw_connection(self, start, end, &painter, true);
+                    }
+                }
+            }
+            self.active_tool = Some(Tool::Connector(connector_data));
         }
 
         if self.show_fps {
@@ -161,6 +176,9 @@ impl AppState {
                             self.active_tool = None;
                         } else {
                             self.active_tool = tool.clone();
+                            if matches!(tool, Some(Tool::Connector(_))) {
+                                self.selection.clear();
+                            }
                         }
                     }
                 }
@@ -172,53 +190,7 @@ impl AppState {
                 }
 
                 // tool settings
-                match &self.active_tool {
-                    Some(Tool::Paint) => {
-                        ui.heading("Paint Tool");
-                        egui::Grid::new("palette_grid")
-                            .spacing(egui::vec2(4.0, 4.0))
-                            .min_col_width(0.0)
-                            .show(ui, |ui| {
-                                for row in SM_PALETTE.iter() {
-                                    for color in row.iter().rev() {
-                                        let (rect, response) = ui.allocate_exact_size(
-                                            PAINT_CELL_SIZE,
-                                            egui::Sense::click(),
-                                        );
-
-                                        ui.painter().rect_filled(rect, 2.0, *color);
-
-                                        if self.current_paint_color == *color {
-                                            ui.painter().rect_stroke(
-                                                rect,
-                                                2.0,
-                                                Stroke::new(2.0, egui::Color32::WHITE),
-                                                egui::StrokeKind::Outside,
-                                            );
-                                        }
-
-                                        if response.clicked() {
-                                            self.current_paint_color = *color;
-                                        }
-                                    }
-                                    ui.end_row();
-                                }
-                            });
-                        ui.horizontal(|ui| {
-                            ui.label("Custom: ");
-                            let rgb = self.current_paint_color.to_srgba_unmultiplied();
-                            let mut rgb3 = [rgb[0], rgb[1], rgb[2]];
-                            if ui.color_edit_button_srgb(&mut rgb3).changed() {
-                                self.current_paint_color =
-                                    egui::Color32::from_rgb(rgb3[0], rgb3[1], rgb3[2]);
-                            }
-                        });
-                    }
-                    Some(Tool::Connector(connector_data)) => {
-                        ui.heading("Connector Tool");
-                    }
-                    _ => {}
-                }
+                self.draw_sidebar_tool_properties(ui);
 
                 // properties
                 if self.selection.len() == 1 {

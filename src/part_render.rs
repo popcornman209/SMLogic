@@ -173,7 +173,7 @@ impl Gate {
             },
             part.label.clone(),
             13.0,
-            self.powered,
+            false, // FIX LATER
             false,
             part.get_ports(),
             app_state,
@@ -337,7 +337,7 @@ impl Timer {
             },
             part.label.clone(),
             13.0,
-            *self.buffer.last().unwrap_or(&false),
+            false, //FIX LATER
             false,
             part.get_ports(),
             app_state,
@@ -538,7 +538,7 @@ impl Switch {
             },
             part.label.clone(),
             0.0,
-            self.powered,
+            false,
             false,
             part.get_ports(),
             app_state,

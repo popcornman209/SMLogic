@@ -10,7 +10,6 @@ pub const WIRE_WIDTH: f32 = 2.0;
 pub struct Connection {
     pub start: Port,
     pub end: Port,
-    pub powered: bool,
 }
 
 pub fn dist_point_to_segment(p: Pos2, a: Pos2, b: Pos2) -> f32 {
