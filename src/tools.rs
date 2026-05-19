@@ -10,15 +10,34 @@ const PAINT_CELL_SIZE: Vec2 = egui::vec2(20.0, 20.0);
 #[derive(Clone, PartialEq)]
 pub enum ConnectorMode {
     AllToAll,
-    OneToOne,
+    OneToOneSel,
+    OneToOnePos,
 }
 impl ConnectorMode {
-    pub const MODES: &[Self] = &[Self::AllToAll, Self::OneToOne];
+    pub const MODES: &[Self] = &[Self::AllToAll, Self::OneToOneSel, Self::OneToOnePos];
 
     pub fn to_label(&self) -> &'static str {
         match self {
             ConnectorMode::AllToAll => "All to all",
-            ConnectorMode::OneToOne => "One to one",
+            ConnectorMode::OneToOneSel => "One to one (selection order)",
+            ConnectorMode::OneToOnePos => "One to one (by pos)",
+        }
+    }
+}
+
+#[derive(Clone, PartialEq)]
+pub enum ConnectorSelection {
+    All,
+    Inputs,
+    Outputs,
+}
+impl ConnectorSelection {
+    pub const MODES: &[Self] = &[Self::All, Self::Inputs, Self::Outputs];
+    pub fn to_label(&self) -> &'static str {
+        match self {
+            ConnectorSelection::All => "All",
+            ConnectorSelection::Inputs => "Inputs",
+            ConnectorSelection::Outputs => "outputs",
         }
     }
 }
@@ -27,6 +46,7 @@ impl ConnectorMode {
 pub struct ConnectorData {
     pub selected_ports: Vec<Port>,
     pub mode: ConnectorMode,
+    pub selecting: ConnectorSelection,
     pub previewing: bool,
     pub inputs: usize,
     pub outputs: usize,
@@ -49,13 +69,17 @@ impl ConnectorData {
     }
 
     pub fn toggle_select_port(&mut self, port: Port) {
-        if let Some(pos) = self.selected_ports.iter().position(|x| *x == port) {
-            self.selected_ports.remove(pos);
-        } else {
-            self.selected_ports.push(port);
+        if self.selecting == ConnectorSelection::All
+            || ((self.selecting == ConnectorSelection::Inputs) == port.input)
+        {
+            if let Some(pos) = self.selected_ports.iter().position(|x| *x == port) {
+                self.selected_ports.remove(pos);
+            } else {
+                self.selected_ports.push(port);
+            }
+            self.calculate_totals();
+            self.status = String::new();
         }
-        self.calculate_totals();
-        self.status = String::new();
     }
 
     pub fn calculate_connections(&mut self, app_state: &AppState) -> Vec<Connection> {
@@ -82,6 +106,18 @@ impl ConnectorData {
                     }
                 }
             }
+            ConnectorMode::OneToOneSel => {
+                if self.inputs == self.outputs {
+                    for (input_port, output_port) in input_ports.iter().zip(output_ports.iter()) {
+                        output.push(Connection {
+                            start: *output_port,
+                            end: *input_port,
+                        })
+                    }
+                } else {
+                    self.status = "not an equal amount of inputs and outputs!".to_string()
+                }
+            }
             _ => self.status = "mode not done :(".to_string(),
         }
         output
@@ -103,6 +139,7 @@ impl Tool {
         Some(Tool::Connector(ConnectorData {
             selected_ports: Vec::new(),
             mode: ConnectorMode::AllToAll,
+            selecting: ConnectorSelection::All,
             previewing: false,
             inputs: 0,
             outputs: 0,
@@ -118,6 +155,7 @@ impl AppState {
         let mut connect = false;
         match &mut self.active_tool {
             Some(Tool::Paint) => {
+                ui.separator();
                 ui.heading("Paint Tool");
                 egui::Grid::new("palette_grid")
                     .spacing(egui::vec2(4.0, 4.0))
@@ -157,12 +195,21 @@ impl AppState {
                 });
             }
             Some(Tool::Connector(connector_data)) => {
+                ui.separator();
                 ui.heading("Connector Tool");
                 ui.horizontal(|ui| {
                     // mode selector combo box
                     ui.label("Mode: ");
                     egui::ComboBox::from_id_salt("connector_mode_combo")
-                        .selected_text(connector_data.mode.to_label())
+                        .width(10.0)
+                        .selected_text(
+                            connector_data
+                                .mode
+                                .to_label()
+                                .chars()
+                                .take(10)
+                                .collect::<String>(),
+                        )
                         .show_ui(ui, |ui| {
                             for mode in ConnectorMode::MODES {
                                 if ui
@@ -174,6 +221,34 @@ impl AppState {
                             }
                         })
                 });
+                ui.horizontal(|ui| {
+                    // selecting combo box
+                    ui.label("Select: ");
+                    egui::ComboBox::from_id_salt("connector_selecting_combo")
+                        .width(10.0)
+                        .selected_text(
+                            connector_data
+                                .selecting
+                                .to_label()
+                                .chars()
+                                .take(10)
+                                .collect::<String>(),
+                        )
+                        .show_ui(ui, |ui| {
+                            for selection in ConnectorSelection::MODES {
+                                if ui
+                                    .selectable_label(
+                                        &connector_data.selecting == selection,
+                                        selection.to_label(),
+                                    )
+                                    .clicked()
+                                {
+                                    connector_data.selecting = selection.clone()
+                                }
+                            }
+                        })
+                });
+
                 ui.label(format!("inputs: {}", connector_data.inputs));
                 ui.label(format!("outputs: {}", connector_data.outputs));
                 ui.label(format!("total: {}", connector_data.total));

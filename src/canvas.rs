@@ -169,7 +169,13 @@ impl AppState {
                 ui.heading("Tools");
                 ui.separator();
                 for tool in Tool::TOOLS {
-                    let selected = self.active_tool == tool.clone();
+                    let selected = match (&self.active_tool, tool) {
+                        (Some(a), Some(b)) => {
+                            std::mem::discriminant(a) == std::mem::discriminant(b)
+                        }
+                        (None, None) => true,
+                        _ => false,
+                    };
                     let label = format!("{}", tool_label(&tool)); // TODO add keybind
                     if ui.selectable_label(selected, &label).clicked() {
                         if selected {
