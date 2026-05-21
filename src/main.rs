@@ -5,6 +5,7 @@ mod interaction;
 mod part_render;
 mod parts;
 mod saveload;
+mod simulator;
 mod state;
 mod tools;
 

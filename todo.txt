@@ -1,6 +1,7 @@
 more fast connect tool modes
 render switches/buttons
 ban loading module loops (modules cant reference each other in a infinite circle)
+fast connector tool doesnt warn you if you have too many connections
 
 * simulator
 

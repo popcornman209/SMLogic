@@ -1,4 +1,4 @@
-use crate::parts::Port;
+use crate::parts::{PartData, Port};
 use crate::state::{AppState, Selection};
 use eframe::epaint::PathShape;
 use egui::{Color32, Painter, Pos2, Stroke};
@@ -93,5 +93,30 @@ impl AppState {
             }
         }
         repair
+    }
+
+    pub fn add_connection(&mut self, connection: Connection) -> bool {
+        if connection.start.input != connection.end.input {
+            let count = self
+                .connection_counts
+                .get(&connection.end)
+                .copied()
+                .unwrap_or(0);
+            if let Some(end_part) = self.canvas_snapshot.parts.get(&connection.end.part) {
+                if count < end_part.part_data.max_connections() {
+                    if let Some(start_part) = self.canvas_snapshot.parts.get(&connection.start.part)
+                    {
+                        if !(matches!(start_part.part_data, PartData::IO(_))
+                            && matches!(end_part.part_data, PartData::IO(_)))
+                        {
+                            self.canvas_snapshot.connections.push(connection);
+                            self.reload_connection_counts();
+                            return true;
+                        }
+                    }
+                }
+            }
+        }
+        false
     }
 }

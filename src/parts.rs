@@ -141,6 +141,9 @@ impl Timer {
             -GATE_SIZE / 2.0,
         )
     }
+    pub fn get_ticks(self) -> usize {
+        return (self.ticks + self.secs * 40).into();
+    }
 }
 
 #[derive(Clone, Deserialize, Serialize, PartialEq)]

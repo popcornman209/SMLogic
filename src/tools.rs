@@ -118,7 +118,22 @@ impl ConnectorData {
                     self.status = "not an equal amount of inputs and outputs!".to_string()
                 }
             }
-            _ => self.status = "mode not done :(".to_string(),
+            ConnectorMode::OneToOnePos => {
+                if self.inputs == self.outputs {
+                    let mut inputs = input_ports.clone();
+                    let mut outputs = output_ports.clone();
+                    sort_ports_by_position(&mut inputs, app_state);
+                    sort_ports_by_position(&mut outputs, app_state);
+                    for (input_port, output_port) in inputs.iter().zip(outputs.iter()) {
+                        output.push(Connection {
+                            start: *output_port,
+                            end: *input_port,
+                        })
+                    }
+                } else {
+                    self.status = "not an equal amount of inputs and outputs!".to_string()
+                }
+            }
         }
         output
     }
@@ -216,7 +231,8 @@ impl AppState {
                                     .selectable_label(&connector_data.mode == mode, mode.to_label())
                                     .clicked()
                                 {
-                                    connector_data.mode = mode.clone()
+                                    connector_data.mode = mode.clone();
+                                    connector_data.status = String::new();
                                 }
                             }
                         })
@@ -280,7 +296,9 @@ impl AppState {
                 connector_data.selected_ports.clear();
                 connector_data.status = String::new();
                 self.push_undo();
-                self.canvas_snapshot.connections.extend(new_connections);
+                for connection in new_connections {
+                    self.add_connection(connection);
+                }
             }
         }
     }
@@ -337,4 +355,37 @@ impl AppState {
             self.selection.push(Selection::Connection(connection_id));
         }
     }
+}
+
+fn sort_ports_by_position(ports: &mut Vec<Port>, app: &AppState) {
+    // this function was made by ai
+    // im too stupid to figure ts out
+
+    // figure out the spread on each axis
+    let positions: Vec<Pos2> = ports.iter().filter_map(|p| p.pos(app)).collect();
+
+    let x_spread = positions.iter().map(|p| p.x).fold(f32::MIN, f32::max)
+        - positions.iter().map(|p| p.x).fold(f32::MAX, f32::min);
+    let y_spread = positions.iter().map(|p| p.y).fold(f32::MIN, f32::max)
+        - positions.iter().map(|p| p.y).fold(f32::MAX, f32::min);
+
+    ports.sort_by(|a, b| {
+        let a_pos = a.pos(app).unwrap_or_default();
+        let b_pos = b.pos(app).unwrap_or_default();
+        if y_spread >= x_spread {
+            // primary: top to bottom, secondary: left to right
+            a_pos
+                .y
+                .partial_cmp(&b_pos.y)
+                .unwrap()
+                .then(a_pos.x.partial_cmp(&b_pos.x).unwrap())
+        } else {
+            // primary: left to right, secondary: top to bottom
+            a_pos
+                .x
+                .partial_cmp(&b_pos.x)
+                .unwrap()
+                .then(a_pos.y.partial_cmp(&b_pos.y).unwrap())
+        }
+    });
 }

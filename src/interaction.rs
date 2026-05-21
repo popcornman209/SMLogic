@@ -297,21 +297,11 @@ impl AppState {
                             } else {
                                 (connect_start.clone(), &port)
                             };
-                            if start_port.input != end_port.input {
-                                let count =
-                                    self.connection_counts.get(&end_port).copied().unwrap_or(0);
-                                if let Some(end_part) =
-                                    self.canvas_snapshot.parts.get(&end_port.part)
-                                {
-                                    if count < end_part.part_data.max_connections() {
-                                        self.canvas_snapshot.connections.push(Connection {
-                                            start: start_port,
-                                            end: end_port.clone(),
-                                        });
-                                        self.reload_connection_counts();
-                                    }
-                                }
-                            } else {
+                            if self.add_connection(Connection {
+                                start: start_port,
+                                end: *end_port,
+                            }) == false
+                            {
                                 self.undo_stack.pop();
                             }
                         } else {
