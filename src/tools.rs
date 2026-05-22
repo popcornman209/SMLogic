@@ -145,6 +145,7 @@ pub enum Tool {
     PlacePart(PartType),
     Paint,
     Connector(ConnectorData),
+    Simulator,
 }
 
 impl Tool {
@@ -162,6 +163,7 @@ impl Tool {
             connection_preview: Vec::new(),
             status: String::new(),
         })),
+        Some(Tool::Simulator),
     ];
 }
 
@@ -309,6 +311,7 @@ pub fn tool_label(tool: &Option<Tool>) -> &'static str {
         None => "Select",
         Some(Tool::Paint) => "Paint Tool",
         Some(Tool::Connector(_)) => "Connnector",
+        Some(Tool::Simulator) => "Simulator",
         _ => "???",
     }
 }
@@ -316,7 +319,7 @@ pub fn tool_label(tool: &Option<Tool>) -> &'static str {
 impl AppState {
     pub fn handle_tool(&mut self, world_pos: Pos2, shift_held: bool) {
         match self.active_tool.clone() {
-            None | Some(Tool::Connector(_)) => self.selection.clear(),
+            None | Some(Tool::Connector(_)) => {}
             Some(Tool::PlacePart(part_type)) => {
                 self.push_undo();
                 let part_id = Part::new(part_type, self, world_pos);
@@ -332,6 +335,16 @@ impl AppState {
                     }
                 }
                 self.selection.clear();
+            }
+            Some(Tool::Simulator) => {
+                if let Some(part) = self.part_at_pos(world_pos) {
+                    if let Some(new_i) = part.simulation_index {
+                        if let Some(sim_state) = &self.sim_state {
+                            let mut state = sim_state.lock().unwrap();
+                            state.part_outputs[new_i] = true // fix this one later :)
+                        }
+                    }
+                }
             }
         }
     }

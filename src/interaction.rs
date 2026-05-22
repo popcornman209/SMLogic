@@ -158,7 +158,12 @@ impl AppState {
                     } else if let Some(connection) = selected_connection {
                         // selected wire
                         self.select_connection(connection, shift_held);
-                    } else if let Some(part) = selected_part {
+                    } else if let Some(part) = selected_part
+                        && !matches!(
+                            self.active_tool,
+                            Some(Tool::Simulator) | Some(Tool::Connector(_))
+                        )
+                    {
                         // selected part
                         self.select_part(part, shift_held);
                         self.push_undo();

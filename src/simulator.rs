@@ -1,32 +1,32 @@
+use egui::Color32;
+
 use crate::parts::{GateType, PartData, Port};
-use crate::state::CanvasSnapshot;
+use crate::state::{AppState, CanvasSnapshot};
 use std::collections::{HashMap, VecDeque};
 use std::sync::{Arc, Mutex};
 use std::time::{Duration, Instant};
 
-enum PartType {
+#[derive(Clone)]
+pub enum PartType {
     And,
     Or,
     Xor,
     Nand,
     Nor,
     Xnor,
-    Timer {
-        length: usize,
-        buffer: VecDeque<bool>,
-    },
+    Timer(VecDeque<bool>),
     Switch,
 }
 
-struct SimState {
-    running: bool,
-    step: bool,
-    kill_thread: bool,
-    target_spt: Option<Duration>,
-    tick: u64,
-    part_types: Vec<PartType>,
-    part_outputs: Vec<bool>,
-    part_inputs: Vec<Vec<usize>>,
+pub struct SimState {
+    pub running: bool,
+    pub step: bool,
+    pub kill_thread: bool,
+    pub target_spt: Option<Duration>,
+    pub tick: u64,
+    pub part_types: Vec<PartType>,
+    pub part_outputs: Vec<bool>,
+    pub part_inputs: Vec<Vec<usize>>,
 }
 
 impl SimState {
@@ -57,7 +57,7 @@ impl SimState {
                     PartType::Xnor => {
                         self.part_outputs[i] = !inputs.iter().filter(|&&x| x).count() % 2 == 1;
                     }
-                    PartType::Timer { buffer, .. } => {
+                    PartType::Timer(buffer) => {
                         let input = inputs.first().copied().unwrap_or(false);
                         self.part_outputs[i] = buffer.pop_back().unwrap_or(false);
                         buffer.push_front(input);
@@ -68,8 +68,18 @@ impl SimState {
         }
     }
 
-    pub fn from_canvas_snapshot(canvas: CanvasSnapshot) -> Self {
-        let (part_types, connections, id_remap, _) = get_canvas_raw_data(canvas);
+    pub fn from_canvas_snapshot(canvas: &mut CanvasSnapshot) -> Self {
+        let (part_types, _, connections, id_remap, _) = get_canvas_raw_data(canvas.clone());
+        for (original_id, new_i) in id_remap {
+            if let Some(part) = canvas.parts.get_mut(&original_id) {
+                part.simulation_index = Some(new_i);
+            }
+        }
+
+        let mut part_inputs: Vec<Vec<usize>> = vec![Vec::new(); part_types.len()];
+        for connection in connections {
+            part_inputs[connection.1].push(connection.0);
+        }
 
         Self {
             running: false,
@@ -77,9 +87,9 @@ impl SimState {
             kill_thread: false,
             target_spt: Some(Duration::from_secs_f32(0.025)), // 40 tps
             tick: 0,
-            part_types: Vec::new(),
-            part_outputs: Vec::new(),
-            part_inputs: Vec::new(),
+            part_types: part_types.clone(),
+            part_outputs: vec![false; part_types.len()],
+            part_inputs: part_inputs,
         }
     }
 }
@@ -89,12 +99,14 @@ pub fn get_canvas_raw_data(
     canvas: CanvasSnapshot,
 ) -> (
     Vec<PartType>,
+    Vec<Color32>,
     Vec<(usize, usize)>,
     HashMap<u64, usize>,
     HashMap<u64, usize>,
 ) {
     let mut id_remap: HashMap<u64, usize> = HashMap::new();
     let mut part_output: Vec<PartType> = Vec::new();
+    let mut color_output: Vec<Color32> = Vec::new();
     let mut connection_output: Vec<(usize, usize)> = Vec::new();
     let mut tunnel_connections: HashMap<u64, usize> = HashMap::new();
     let mut sub_tunnel_connections: HashMap<u64, HashMap<u64, usize>> = HashMap::new();
@@ -111,27 +123,33 @@ pub fn get_canvas_raw_data(
                     GateType::Nor => PartType::Nor,
                     GateType::Xnor => PartType::Xnor,
                 });
+                color_output.push(part.color);
                 id_remap.insert(*part_id, new_i);
             }
             PartData::Timer(timer) => {
                 let new_i = part_output.len();
                 let ticks = timer.get_ticks();
-                part_output.push(PartType::Timer {
-                    length: ticks,
-                    buffer: VecDeque::from(vec![false; ticks]),
-                });
+                part_output.push(PartType::Timer(VecDeque::from(vec![false; ticks])));
+                color_output.push(part.color);
                 id_remap.insert(*part_id, new_i);
             }
             PartData::Switch(_switch) => {
                 let new_i = part_output.len();
                 part_output.push(PartType::Switch);
+                color_output.push(part.color);
                 id_remap.insert(*part_id, new_i);
             }
             PartData::Module(module) => {
-                let (module_parts, module_connections, _module_id_remap, module_tunnel_connections) =
-                    get_canvas_raw_data(module.canvas_snapshot);
+                let (
+                    module_parts,
+                    colors,
+                    module_connections,
+                    _module_id_remap,
+                    module_tunnel_connections,
+                ) = get_canvas_raw_data(module.canvas_snapshot);
                 let offset = part_output.len();
                 part_output.extend(module_parts);
+                color_output.extend(colors);
 
                 connection_output.extend(
                     module_connections
@@ -186,7 +204,13 @@ pub fn get_canvas_raw_data(
         }
     }
 
-    (part_output, connection_output, id_remap, tunnel_connections)
+    (
+        part_output,
+        color_output,
+        connection_output,
+        id_remap,
+        tunnel_connections,
+    )
 }
 
 pub fn main_loop(sim_state: Arc<Mutex<SimState>>) {
@@ -212,9 +236,15 @@ pub fn main_loop(sim_state: Arc<Mutex<SimState>>) {
     }
 }
 
-pub fn start_thread(canvas: CanvasSnapshot) -> Arc<Mutex<SimState>> {
+pub fn start_thread(canvas: &mut CanvasSnapshot) -> Arc<Mutex<SimState>> {
     let sim_state = Arc::new(Mutex::new(SimState::from_canvas_snapshot(canvas)));
     let sim_state_thread = Arc::clone(&sim_state);
     std::thread::spawn(move || main_loop(sim_state_thread));
     sim_state
+}
+
+impl AppState {
+    pub fn start_simulation(&mut self) {
+        self.sim_state = Some(start_thread(&mut self.canvas_snapshot));
+    }
 }

@@ -331,6 +331,7 @@ pub struct Part {
     pub pos: Pos2,
     pub label: String,
     pub color: Color32,
+    pub simulation_index: Option<usize>,
 }
 impl Part {
     pub fn new(part: PartType, app_state: &mut AppState, pos: Pos2) -> u64 {
@@ -350,6 +351,7 @@ impl Part {
             pos: pos + pos_offset,
             label: label,
             color: DEFAULT_GATE_COLOR,
+            simulation_index: None,
         };
         if app_state.snap_to_grid {
             part.snap_pos();

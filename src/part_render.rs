@@ -161,6 +161,18 @@ impl Gate {
             return;
         }
 
+        let powered = part
+            .simulation_index
+            .and_then(|i| {
+                app_state
+                    .sim_state_snapshot
+                    .as_ref()?
+                    .part_outputs
+                    .get(i)
+                    .copied()
+            })
+            .unwrap_or(false);
+
         //draw main base & outline
         draw_part_base(
             painter,
@@ -173,7 +185,7 @@ impl Gate {
             },
             part.label.clone(),
             13.0,
-            false, // FIX LATER
+            powered,
             false,
             part.get_ports(),
             app_state,
@@ -325,6 +337,18 @@ impl Timer {
             return;
         }
 
+        let powered = part
+            .simulation_index
+            .and_then(|i| {
+                app_state
+                    .sim_state_snapshot
+                    .as_ref()?
+                    .part_outputs
+                    .get(i)
+                    .copied()
+            })
+            .unwrap_or(false);
+
         //draw main base & outline
         draw_part_base(
             painter,
@@ -337,7 +361,7 @@ impl Timer {
             },
             part.label.clone(),
             13.0,
-            false, //FIX LATER
+            powered,
             false,
             part.get_ports(),
             app_state,

@@ -182,8 +182,11 @@ impl AppState {
                             self.active_tool = None;
                         } else {
                             self.active_tool = tool.clone();
-                            if matches!(tool, Some(Tool::Connector(_))) {
+                            if matches!(tool, Some(Tool::Connector(_)) | Some(Tool::Simulator)) {
                                 self.selection.clear();
+                            }
+                            if matches!(tool, Some(Tool::Simulator)) {
+                                self.start_simulation();
                             }
                         }
                     }
