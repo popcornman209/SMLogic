@@ -64,6 +64,10 @@ impl AppState {
             ctx.request_repaint_after(std::time::Duration::from_millis(1000));
         }
 
+        if self.sim_state.is_some() {
+            ctx.request_repaint();
+        }
+
         self.toasts.show(ctx);
         (response, painter)
     }
@@ -178,6 +182,9 @@ impl AppState {
                     };
                     let label = format!("{}", tool_label(&tool)); // TODO add keybind
                     if ui.selectable_label(selected, &label).clicked() {
+                        if self.active_tool == Some(Tool::Simulator) {
+                            self.end_simulation();
+                        }
                         if selected {
                             self.active_tool = None;
                         } else {
@@ -356,6 +363,7 @@ impl AppState {
                                         } else if path.is_file() {
                                             if active {
                                                 self.open_file(path);
+                                                self.active_tool = None;
                                             } else {
                                                 self.active_tool = Some(Tool::PlacePart(
                                                     PartType::Module(path.clone()),

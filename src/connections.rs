@@ -97,6 +97,7 @@ impl AppState {
 
     pub fn add_connection(&mut self, connection: Connection) -> bool {
         if connection.start.input != connection.end.input {
+            // cant connect two inputs or outputs
             let count = self
                 .connection_counts
                 .get(&connection.end)
@@ -104,14 +105,22 @@ impl AppState {
                 .unwrap_or(0);
             if let Some(end_part) = self.canvas_snapshot.parts.get(&connection.end.part) {
                 if count < end_part.part_data.max_connections() {
+                    // dont connect more than the max
                     if let Some(start_part) = self.canvas_snapshot.parts.get(&connection.start.part)
                     {
                         if !(matches!(start_part.part_data, PartData::IO(_))
                             && matches!(end_part.part_data, PartData::IO(_)))
                         {
-                            self.canvas_snapshot.connections.push(connection);
-                            self.reload_connection_counts();
-                            return true;
+                            // connecting a input directly to an output makes it too complicated
+                            if !self.canvas_snapshot.connections.iter().any(|c| {
+                                c.start.part == connection.end.part
+                                    && c.end.part == connection.start.part
+                            }) {
+                                // two gates cannot connect in a loop
+                                self.canvas_snapshot.connections.push(connection);
+                                self.reload_connection_counts();
+                                return true;
+                            }
                         }
                     }
                 }

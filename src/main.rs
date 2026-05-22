@@ -40,7 +40,8 @@ impl eframe::App for AppState {
                 let world_pos = self.screen_to_world(pos);
                 self.to_clipboard(world_pos);
             }
-        } else if ctx.input(|i| i.events.iter().any(|e| matches!(e, egui::Event::Paste(_)))) {
+        }
+        if ctx.input(|i| i.events.iter().any(|e| matches!(e, egui::Event::Paste(_)))) {
             if let Some(pos) = ctx.input(|i| i.pointer.hover_pos()) {
                 let world_pos = self.screen_to_world(pos);
                 self.load_clipboard(world_pos);

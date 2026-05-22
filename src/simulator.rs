@@ -6,6 +6,9 @@ use std::collections::{HashMap, VecDeque};
 use std::sync::{Arc, Mutex};
 use std::time::{Duration, Instant};
 
+const BATCH_SIZE: usize = 64; // how many operations are done per loop, so i dont have to lock the
+// variable as much. might change this to be dynamic later tho.
+
 #[derive(Clone)]
 pub enum PartType {
     And,
@@ -26,41 +29,56 @@ pub struct SimState {
     pub tick: u64,
     pub part_types: Vec<PartType>,
     pub part_outputs: Vec<bool>,
+    pub prev_outputs: Vec<bool>,
     pub part_inputs: Vec<Vec<usize>>,
 }
 
 impl SimState {
     pub fn tick(&mut self) {
-        let prev_outputs = self.part_outputs.clone();
+        self.tick += 1;
+        std::mem::swap(&mut self.part_outputs, &mut self.prev_outputs);
         for i in 0..self.part_types.len() {
             if self.part_inputs[i].len() != 0 {
-                let inputs: Vec<bool> = self.part_inputs[i]
-                    .iter()
-                    .map(|&idx| prev_outputs[idx])
-                    .collect();
+                let input_idxs = &self.part_inputs[i];
                 match &mut self.part_types[i] {
                     PartType::And => {
-                        self.part_outputs[i] = inputs.iter().all(|&x| x);
+                        self.part_outputs[i] = input_idxs.iter().all(|&idx| self.prev_outputs[idx]);
                     }
                     PartType::Or => {
-                        self.part_outputs[i] = inputs.iter().any(|&x| x);
+                        self.part_outputs[i] = input_idxs.iter().any(|&idx| self.prev_outputs[idx]);
                     }
                     PartType::Xor => {
-                        self.part_outputs[i] = inputs.iter().filter(|&&x| x).count() % 2 == 1;
+                        self.part_outputs[i] = input_idxs
+                            .iter()
+                            .filter(|&&idx| self.prev_outputs[idx])
+                            .count()
+                            % 2
+                            == 1;
                     }
                     PartType::Nand => {
-                        self.part_outputs[i] = !inputs.iter().all(|&x| x);
+                        self.part_outputs[i] =
+                            !input_idxs.iter().all(|&idx| self.prev_outputs[idx]);
                     }
                     PartType::Nor => {
-                        self.part_outputs[i] = !inputs.iter().any(|&x| x);
+                        self.part_outputs[i] =
+                            !input_idxs.iter().any(|&idx| self.prev_outputs[idx]);
                     }
                     PartType::Xnor => {
-                        self.part_outputs[i] = !inputs.iter().filter(|&&x| x).count() % 2 == 1;
+                        self.part_outputs[i] = !input_idxs
+                            .iter()
+                            .filter(|&&idx| self.prev_outputs[idx])
+                            .count()
+                            % 2
+                            == 1;
                     }
                     PartType::Timer(buffer) => {
-                        let input = inputs.first().copied().unwrap_or(false);
-                        self.part_outputs[i] = buffer.pop_back().unwrap_or(false);
+                        let input = input_idxs
+                            .first()
+                            .map(|&idx| self.prev_outputs[idx])
+                            .unwrap_or(false);
+                        let out = buffer.pop_back().unwrap_or(false);
                         buffer.push_front(input);
+                        self.part_outputs[i] = out;
                     }
                     _ => {}
                 }
@@ -89,6 +107,7 @@ impl SimState {
             tick: 0,
             part_types: part_types.clone(),
             part_outputs: vec![false; part_types.len()],
+            prev_outputs: vec![false; part_types.len()],
             part_inputs: part_inputs,
         }
     }
@@ -216,22 +235,38 @@ pub fn get_canvas_raw_data(
 pub fn main_loop(sim_state: Arc<Mutex<SimState>>) {
     let mut last_tick = Instant::now();
     loop {
-        let mut state = sim_state.lock().unwrap();
-        if state.running {
-            state.tick();
-            if let Some(spt) = state.target_spt {
+        let (running, step, spt, kill) = {
+            let mut state = sim_state.lock().unwrap();
+            if state.running {
+                for _ in 0..BATCH_SIZE {
+                    state.tick();
+                }
+            } else if state.step {
+                state.tick();
+                state.step = false;
+            }
+            (
+                state.running,
+                state.step,
+                state.target_spt,
+                state.kill_thread,
+            )
+        };
+
+        if kill {
+            break;
+        }
+
+        if running {
+            if let Some(spt) = spt {
                 let elapsed = last_tick.elapsed();
                 if elapsed < spt {
                     std::thread::sleep(spt - elapsed);
                 }
                 last_tick = Instant::now();
             }
-        } else if state.step {
-            state.tick();
-            state.step = false;
-        }
-        if state.kill_thread {
-            break;
+        } else if !running && !step {
+            std::thread::sleep(Duration::from_millis(1));
         }
     }
 }
@@ -246,5 +281,19 @@ pub fn start_thread(canvas: &mut CanvasSnapshot) -> Arc<Mutex<SimState>> {
 impl AppState {
     pub fn start_simulation(&mut self) {
         self.sim_state = Some(start_thread(&mut self.canvas_snapshot));
+        self.last_tick_count = 0;
+        self.last_tps_check = Instant::now();
+    }
+    pub fn end_simulation(&mut self) {
+        if let Some(sim_state) = &self.sim_state {
+            let mut state = sim_state.lock().unwrap();
+            state.kill_thread = true;
+            state.running = false;
+        }
+        self.sim_state = None;
+        self.sim_state_outputs_snapshot = None;
+        for part in self.canvas_snapshot.parts.values_mut() {
+            part.simulation_index = None;
+        }
     }
 }

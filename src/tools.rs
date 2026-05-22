@@ -4,6 +4,7 @@ use crate::parts::{Part, PartType, Port};
 use crate::state::{AppState, Selection};
 use eframe::egui::Pos2;
 use egui::{Stroke, Ui, Vec2};
+use std::time::{Duration, Instant};
 
 const PAINT_CELL_SIZE: Vec2 = egui::vec2(20.0, 20.0);
 
@@ -285,6 +286,80 @@ impl AppState {
                     connect = true;
                 }
             }
+            Some(Tool::Simulator) => {
+                ui.separator();
+                ui.heading("Connector Tool");
+                if let Some(sim_state) = &self.sim_state {
+                    // Snapshot just what we need, then drop the lock immediately so the
+                    // sim thread isn't blocked for the entire duration of UI rendering.
+                    let (running, tick, target_spt) = {
+                        let state = sim_state.lock().unwrap();
+                        self.sim_state_outputs_snapshot = Some(state.part_outputs.clone());
+                        (state.running, state.tick, state.target_spt)
+                    };
+
+                    // Render UI against the snapshot. Track any mutations to apply after.
+                    let mut new_running = running;
+                    let mut new_step = false;
+                    let mut new_target_spt = target_spt;
+                    let mut mutations = false;
+
+                    if ui
+                        .button(if running { "Stop" } else { "Start" })
+                        .clicked()
+                    {
+                        new_running = !running;
+                        mutations = true;
+                    }
+                    if !running {
+                        if ui.button("Tick Step").clicked() {
+                            new_step = true;
+                            mutations = true;
+                        }
+                    }
+                    let mut limit_tps = target_spt.is_some();
+                    ui.horizontal(|ui| {
+                        if ui.checkbox(&mut limit_tps, "Limit TPS").changed() {
+                            new_target_spt = if limit_tps {
+                                Some(Duration::from_secs_f32(1.0 / 40.0))
+                            } else {
+                                None
+                            };
+                            mutations = true;
+                        }
+                        if let Some(spt) = target_spt {
+                            let mut tps = 1.0 / spt.as_secs_f32();
+                            if ui
+                                .add(egui::DragValue::new(&mut tps).range(1.0..=100000.0))
+                                .changed()
+                            {
+                                new_target_spt = Some(Duration::from_secs_f32(1.0 / tps));
+                                mutations = true;
+                            }
+                        }
+                    });
+
+                    ui.label(format!("Tick: {}", format_with_commas(tick)));
+                    if self.last_tps_check.elapsed().as_secs_f64() >= 0.5 {
+                        self.current_tps = (tick - self.last_tick_count) as f64
+                            / self.last_tps_check.elapsed().as_secs_f64();
+                        self.last_tick_count = tick;
+                        self.last_tps_check = Instant::now();
+                    }
+                    ui.label(format!(
+                        "TPS: {}",
+                        format_with_commas(self.current_tps as u64)
+                    ));
+
+                    // Re-acquire lock briefly only if there's something to write back.
+                    if mutations {
+                        let mut state = sim_state.lock().unwrap();
+                        state.running = new_running;
+                        if new_step { state.step = true; }
+                        state.target_spt = new_target_spt;
+                    }
+                }
+            }
             _ => {}
         }
         if connect {
@@ -401,4 +476,22 @@ fn sort_ports_by_position(ports: &mut Vec<Port>, app: &AppState) {
                 .then(a_pos.y.partial_cmp(&b_pos.y).unwrap())
         }
     });
+}
+
+fn format_with_commas(n: u64) -> String {
+    let s = n.to_string();
+    s.chars()
+        .rev()
+        .enumerate()
+        .flat_map(|(i, c)| {
+            if i > 0 && i % 3 == 0 {
+                vec![',', c]
+            } else {
+                vec![c]
+            }
+        })
+        .collect::<String>()
+        .chars()
+        .rev()
+        .collect()
 }

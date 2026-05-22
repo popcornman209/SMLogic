@@ -13,6 +13,9 @@ impl AppState {
 
         // escape key
         if ctx.input(|i| i.key_pressed(Key::Escape)) {
+            if self.active_tool == Some(Tool::Simulator) {
+                self.end_simulation();
+            }
             self.active_tool = None;
             self.interaction_state = InteractionState::Idle;
         }

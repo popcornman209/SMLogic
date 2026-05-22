@@ -165,9 +165,8 @@ impl Gate {
             .simulation_index
             .and_then(|i| {
                 app_state
-                    .sim_state_snapshot
+                    .sim_state_outputs_snapshot
                     .as_ref()?
-                    .part_outputs
                     .get(i)
                     .copied()
             })
@@ -341,9 +340,8 @@ impl Timer {
             .simulation_index
             .and_then(|i| {
                 app_state
-                    .sim_state_snapshot
+                    .sim_state_outputs_snapshot
                     .as_ref()?
-                    .part_outputs
                     .get(i)
                     .copied()
             })
