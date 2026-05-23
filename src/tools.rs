@@ -289,25 +289,24 @@ impl AppState {
             Some(Tool::Simulator) => {
                 ui.separator();
                 ui.heading("Connector Tool");
-                if let Some(sim_state) = &self.sim_state {
-                    // Snapshot just what we need, then drop the lock immediately so the
-                    // sim thread isn't blocked for the entire duration of UI rendering.
-                    let (running, tick, target_spt) = {
-                        let state = sim_state.lock().unwrap();
-                        self.sim_state_outputs_snapshot = Some(state.part_outputs.clone());
-                        (state.running, state.tick, state.target_spt)
+                if let Some(sim_snapshot) = &self.sim_snapshot {
+                    let (running, tick, target_spt, part_count) = {
+                        let snapshot = sim_snapshot.lock();
+                        self.sim_state_outputs_snapshot = Some(snapshot.outputs.clone());
+                        (
+                            snapshot.running,
+                            snapshot.tick,
+                            snapshot.target_spt,
+                            snapshot.outputs.len(),
+                        )
                     };
 
-                    // Render UI against the snapshot. Track any mutations to apply after.
                     let mut new_running = running;
                     let mut new_step = false;
                     let mut new_target_spt = target_spt;
                     let mut mutations = false;
 
-                    if ui
-                        .button(if running { "Stop" } else { "Start" })
-                        .clicked()
-                    {
+                    if ui.button(if running { "Stop" } else { "Start" }).clicked() {
                         new_running = !running;
                         mutations = true;
                     }
@@ -350,13 +349,18 @@ impl AppState {
                         "TPS: {}",
                         format_with_commas(self.current_tps as u64)
                     ));
+                    ui.label(format!("Parts: {}", part_count));
 
-                    // Re-acquire lock briefly only if there's something to write back.
+                    // lock variables again if something has to be changed
                     if mutations {
-                        let mut state = sim_state.lock().unwrap();
-                        state.running = new_running;
-                        if new_step { state.step = true; }
-                        state.target_spt = new_target_spt;
+                        if let Some(sim_state) = &self.sim_state {
+                            let mut state = sim_state.lock();
+                            state.running = new_running;
+                            if new_step {
+                                state.step = true;
+                            }
+                            state.target_spt = new_target_spt;
+                        }
                     }
                 }
             }
@@ -415,8 +419,8 @@ impl AppState {
                 if let Some(part) = self.part_at_pos(world_pos) {
                     if let Some(new_i) = part.simulation_index {
                         if let Some(sim_state) = &self.sim_state {
-                            let mut state = sim_state.lock().unwrap();
-                            state.part_outputs[new_i] = true // fix this one later :)
+                            let mut state = sim_state.lock();
+                            state.part_outputs[new_i] = !state.part_outputs[new_i] // fix this one later :)
                         }
                     }
                 }

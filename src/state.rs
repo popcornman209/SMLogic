@@ -3,13 +3,14 @@ use crate::connections::{Connection, WIRE_WIDTH, compute_wire_route, dist_point_
 use crate::egui::{Color32, Pos2, Rect, Vec2};
 use crate::parts::{PORT_SIZE, Part, Port};
 use crate::saveload::{ClipboardData, Config};
-use crate::simulator::SimState;
+use crate::simulator::{SimSnapshot, SimState};
 use crate::tools::Tool;
 use egui_notify::Toasts;
+use parking_lot::Mutex;
 use serde::{Deserialize, Serialize};
 use std::collections::HashMap;
 use std::path::PathBuf;
-use std::sync::{Arc, Mutex};
+use std::sync::Arc;
 use std::time::Instant;
 
 const MAX_PATH_LEN: usize = 20;
@@ -93,6 +94,7 @@ pub struct AppState {
     pub selection: Vec<Selection>,
     pub last_project_reload: Instant,
     // simulation info
+    pub sim_snapshot: Option<Arc<Mutex<SimSnapshot>>>,
     pub sim_state_outputs_snapshot: Option<Vec<bool>>,
     pub sim_state: Option<Arc<Mutex<SimState>>>,
     pub last_tick_count: u64,
@@ -132,6 +134,7 @@ impl AppState {
             current_paint_color: DEFAULT_GATE_COLOR,
             selection: Vec::new(),
             last_project_reload: Instant::now(),
+            sim_snapshot: None,
             sim_state_outputs_snapshot: None,
             sim_state: None,
             last_tick_count: 0,

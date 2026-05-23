@@ -148,7 +148,9 @@ impl AppState {
                     let selected_connection = self.connection_at_pos(world_pos);
                     let selected_part = self.part_at_pos(world_pos).map(|p| p.id);
 
-                    if let Some(port) = selected_port {
+                    if let Some(port) = selected_port
+                        && self.active_tool != Some(Tool::Simulator)
+                    {
                         // connecting
                         if let Some(Tool::Connector(ref mut connector_data)) = self.active_tool {
                             connector_data.toggle_select_port(port);
@@ -158,7 +160,9 @@ impl AppState {
                     } else if let Some(part) = selected_resize {
                         // resizing
                         self.interaction_state = InteractionState::Resizing(part.id);
-                    } else if let Some(connection) = selected_connection {
+                    } else if let Some(connection) = selected_connection
+                        && self.active_tool != Some(Tool::Simulator)
+                    {
                         // selected wire
                         self.select_connection(connection, shift_held);
                     } else if let Some(part) = selected_part

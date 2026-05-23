@@ -6,7 +6,6 @@
         "part": 5,
         "port_id": null
       },
-      "powered": false,
       "start": {
         "input": false,
         "part": 2,
@@ -19,7 +18,6 @@
         "part": 6,
         "port_id": null
       },
-      "powered": false,
       "start": {
         "input": false,
         "part": 3,
@@ -32,7 +30,6 @@
         "part": 7,
         "port_id": null
       },
-      "powered": false,
       "start": {
         "input": false,
         "part": 4,
@@ -45,7 +42,6 @@
         "part": 2,
         "port_id": null
       },
-      "powered": false,
       "start": {
         "input": false,
         "part": 0,
@@ -58,7 +54,6 @@
         "part": 3,
         "port_id": null
       },
-      "powered": false,
       "start": {
         "input": false,
         "part": 0,
@@ -71,7 +66,6 @@
         "part": 4,
         "port_id": null
       },
-      "powered": false,
       "start": {
         "input": false,
         "part": 0,
@@ -84,7 +78,6 @@
         "part": 2,
         "port_id": null
       },
-      "powered": false,
       "start": {
         "input": false,
         "part": 1,
@@ -97,7 +90,6 @@
         "part": 3,
         "port_id": null
       },
-      "powered": false,
       "start": {
         "input": false,
         "part": 1,
@@ -110,7 +102,6 @@
         "part": 4,
         "port_id": null
       },
-      "powered": false,
       "start": {
         "input": false,
         "part": 1,
@@ -137,7 +128,8 @@
       "pos": {
         "x": 220.0,
         "y": 140.0
-      }
+      },
+      "simulation_index": null
     },
     "1": {
       "color": [
@@ -156,7 +148,8 @@
       "pos": {
         "x": 220.0,
         "y": 220.0
-      }
+      },
+      "simulation_index": null
     },
     "2": {
       "color": [
@@ -169,14 +162,14 @@
       "label": "AND",
       "part_data": {
         "Gate": {
-          "gate_type": "And",
-          "powered": false
+          "gate_type": "And"
         }
       },
       "pos": {
         "x": 400.0,
         "y": 100.0
-      }
+      },
+      "simulation_index": null
     },
     "3": {
       "color": [
@@ -186,17 +179,17 @@
         255
       ],
       "id": 3,
-      "label": "AND",
+      "label": "OR",
       "part_data": {
         "Gate": {
-          "gate_type": "And",
-          "powered": false
+          "gate_type": "Or"
         }
       },
       "pos": {
         "x": 400.0,
         "y": 180.0
-      }
+      },
+      "simulation_index": null
     },
     "4": {
       "color": [
@@ -206,17 +199,17 @@
         255
       ],
       "id": 4,
-      "label": "AND",
+      "label": "XOR",
       "part_data": {
         "Gate": {
-          "gate_type": "And",
-          "powered": false
+          "gate_type": "Xor"
         }
       },
       "pos": {
         "x": 400.0,
         "y": 260.0
-      }
+      },
+      "simulation_index": null
     },
     "5": {
       "color": [
@@ -235,7 +228,8 @@
       "pos": {
         "x": 600.0,
         "y": 120.0
-      }
+      },
+      "simulation_index": null
     },
     "6": {
       "color": [
@@ -254,7 +248,8 @@
       "pos": {
         "x": 600.0,
         "y": 180.0
-      }
+      },
+      "simulation_index": null
     },
     "7": {
       "color": [
@@ -273,7 +268,8 @@
       "pos": {
         "x": 600.0,
         "y": 240.0
-      }
+      },
+      "simulation_index": null
     }
   }
 }

@@ -2829,6 +2829,7 @@ dependencies = [
  "eframe",
  "egui",
  "egui-notify",
+ "parking_lot",
  "rfd",
  "serde",
  "serde_json",

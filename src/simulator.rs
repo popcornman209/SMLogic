@@ -2,11 +2,12 @@ use egui::Color32;
 
 use crate::parts::{GateType, PartData, Port};
 use crate::state::{AppState, CanvasSnapshot};
+use parking_lot::Mutex;
 use std::collections::{HashMap, VecDeque};
-use std::sync::{Arc, Mutex};
+use std::sync::Arc;
 use std::time::{Duration, Instant};
 
-const BATCH_SIZE: usize = 64; // how many operations are done per loop, so i dont have to lock the
+pub const BATCH_SIZE: usize = 64; // how many operations are done per loop, so i dont have to lock the
 // variable as much. might change this to be dynamic later tho.
 
 #[derive(Clone)]
@@ -21,11 +22,18 @@ pub enum PartType {
     Switch,
 }
 
+pub struct SimSnapshot {
+    pub outputs: Vec<bool>,
+    pub tick: u64,
+    pub running: bool,
+    pub target_spt: Option<Duration>,
+}
+
 pub struct SimState {
     pub running: bool,
     pub step: bool,
     pub kill_thread: bool,
-    pub target_spt: Option<Duration>,
+    pub target_spt: Option<Duration>, // 1 / tps
     pub tick: u64,
     pub part_types: Vec<PartType>,
     pub part_outputs: Vec<bool>,
@@ -232,19 +240,30 @@ pub fn get_canvas_raw_data(
     )
 }
 
-pub fn main_loop(sim_state: Arc<Mutex<SimState>>) {
+pub fn main_loop(sim_state: Arc<Mutex<SimState>>, sim_snapshot: Arc<Mutex<SimSnapshot>>) {
     let mut last_tick = Instant::now();
     loop {
         let (running, step, spt, kill) = {
-            let mut state = sim_state.lock().unwrap();
+            let mut state = sim_state.lock();
+            let batch = if state.target_spt.is_none() {
+                BATCH_SIZE
+            } else {
+                1
+            };
             if state.running {
-                for _ in 0..BATCH_SIZE {
+                for _ in 0..batch {
                     state.tick();
                 }
             } else if state.step {
                 state.tick();
                 state.step = false;
             }
+            let mut snap = sim_snapshot.lock();
+            snap.outputs.clone_from(&state.part_outputs);
+            snap.tick = state.tick;
+            snap.running = state.running;
+            snap.target_spt = state.target_spt;
+            drop(snap);
             (
                 state.running,
                 state.step,
@@ -252,6 +271,8 @@ pub fn main_loop(sim_state: Arc<Mutex<SimState>>) {
                 state.kill_thread,
             )
         };
+
+        std::thread::yield_now();
 
         if kill {
             break;
@@ -271,27 +292,38 @@ pub fn main_loop(sim_state: Arc<Mutex<SimState>>) {
     }
 }
 
-pub fn start_thread(canvas: &mut CanvasSnapshot) -> Arc<Mutex<SimState>> {
+pub fn start_thread(
+    canvas: &mut CanvasSnapshot,
+) -> (Arc<Mutex<SimState>>, Arc<Mutex<SimSnapshot>>) {
     let sim_state = Arc::new(Mutex::new(SimState::from_canvas_snapshot(canvas)));
     let sim_state_thread = Arc::clone(&sim_state);
-    std::thread::spawn(move || main_loop(sim_state_thread));
-    sim_state
+    let sim_snapshot = Arc::new(Mutex::new(SimSnapshot {
+        outputs: Vec::new(),
+        tick: 0,
+        running: false,
+        target_spt: None,
+    }));
+    let sim_snapshot_thread = Arc::clone(&sim_snapshot);
+    std::thread::spawn(move || main_loop(sim_state_thread, sim_snapshot_thread));
+    (sim_state, sim_snapshot)
 }
 
 impl AppState {
     pub fn start_simulation(&mut self) {
-        self.sim_state = Some(start_thread(&mut self.canvas_snapshot));
+        let (sim_state, sim_snapshot) = start_thread(&mut self.canvas_snapshot);
+        self.sim_state = Some(sim_state);
+        self.sim_snapshot = Some(sim_snapshot);
         self.last_tick_count = 0;
         self.last_tps_check = Instant::now();
     }
     pub fn end_simulation(&mut self) {
         if let Some(sim_state) = &self.sim_state {
-            let mut state = sim_state.lock().unwrap();
+            let mut state = sim_state.lock();
             state.kill_thread = true;
             state.running = false;
         }
         self.sim_state = None;
-        self.sim_state_outputs_snapshot = None;
+        self.sim_snapshot = None;
         for part in self.canvas_snapshot.parts.values_mut() {
             part.simulation_index = None;
         }
