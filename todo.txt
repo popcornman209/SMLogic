@@ -1,9 +1,15 @@
 more fast connect tool modes
-render switches/buttons
+
+render switches/buttons and make button interaction work properly
+
 ban loading module loops (modules cant reference each other in a infinite circle)
+
 fast connector tool doesnt warn you if connection is invalid
+
 dragable connections to sperate them out
 
-* simulator
+"dead end" detection, ability to remove gates that dont contribute to the output in any way
+
+more notification use
 
 * sm exporter

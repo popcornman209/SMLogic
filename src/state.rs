@@ -106,6 +106,7 @@ pub struct AppState {
     pub snap_to_grid: bool,
     pub show_fps: bool,
     pub color_pallet: ColorPallet,
+    pub bp_folder: Option<PathBuf>,
 }
 
 impl AppState {
@@ -145,6 +146,7 @@ impl AppState {
             show_connection_count: config.show_connection_count,
             show_fps: config.show_fps,
             color_pallet: config.color_pallet.clone(),
+            bp_folder: config.bp_folder.clone(),
             config: config,
         };
         result.color_pallet.apply_theme(ctx);

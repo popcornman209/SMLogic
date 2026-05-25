@@ -1,4 +1,4 @@
-use egui::Color32;
+use egui::{Color32, Pos2};
 
 use crate::parts::{GateType, PartData, Port};
 use crate::state::{AppState, CanvasSnapshot};
@@ -19,7 +19,6 @@ pub enum PartType {
     Nor,
     Xnor,
     Timer(VecDeque<bool>),
-    Switch,
 }
 
 pub struct SimSnapshot {
@@ -84,18 +83,30 @@ impl SimState {
                             .first()
                             .map(|&idx| self.prev_outputs[idx])
                             .unwrap_or(false);
-                        let out = buffer.pop_back().unwrap_or(false);
-                        buffer.push_front(input);
-                        self.part_outputs[i] = out;
+                        if buffer.is_empty() {
+                            // 0 tick timer doesnt need any buffer stuff, just pass it through
+                            self.part_outputs[i] = input;
+                        } else {
+                            let out = buffer.pop_back().unwrap_or(false);
+                            buffer.push_front(input);
+                            self.part_outputs[i] = out;
+                        }
                     }
-                    _ => {}
                 }
             }
         }
     }
 
     pub fn from_canvas_snapshot(canvas: &mut CanvasSnapshot) -> Self {
-        let (part_types, _, connections, id_remap, _) = get_canvas_raw_data(canvas.clone());
+        let (
+            part_types,
+            _colors,
+            _positions,
+            connections,
+            id_remap,
+            _tunnel_connections,
+            _io_parts,
+        ) = get_canvas_raw_data(canvas.clone(), true);
         for (original_id, new_i) in id_remap {
             if let Some(part) = canvas.parts.get_mut(&original_id) {
                 part.simulation_index = Some(new_i);
@@ -124,17 +135,25 @@ impl SimState {
 // this was fucking torture to make istg lost my mind
 pub fn get_canvas_raw_data(
     canvas: CanvasSnapshot,
+    top_level: bool, // wether it is the main canvas or not (not sub modules)
 ) -> (
-    Vec<PartType>,
-    Vec<Color32>,
-    Vec<(usize, usize)>,
-    HashMap<u64, usize>,
-    HashMap<u64, usize>,
+    Vec<PartType>,       // part_output
+    Vec<Color32>,        // color_output
+    Vec<Pos2>,           // pos_output
+    Vec<(usize, usize)>, // connection_output
+    HashMap<u64, usize>, // id remap
+    HashMap<u64, usize>, // tunnel connections
+    Vec<usize>,          // io parts (only should have stuff in it if top level)
 ) {
     let mut id_remap: HashMap<u64, usize> = HashMap::new();
     let mut part_output: Vec<PartType> = Vec::new();
     let mut color_output: Vec<Color32> = Vec::new();
+    let mut pos_output: Vec<Pos2> = Vec::new();
     let mut connection_output: Vec<(usize, usize)> = Vec::new();
+
+    // top level only
+    let mut io_parts: Vec<usize> = Vec::new();
+
     let mut tunnel_connections: HashMap<u64, usize> = HashMap::new();
     let mut sub_tunnel_connections: HashMap<u64, HashMap<u64, usize>> = HashMap::new();
 
@@ -151,6 +170,7 @@ pub fn get_canvas_raw_data(
                     GateType::Xnor => PartType::Xnor,
                 });
                 color_output.push(part.color);
+                pos_output.push(part.pos);
                 id_remap.insert(*part_id, new_i);
             }
             PartData::Timer(timer) => {
@@ -158,25 +178,23 @@ pub fn get_canvas_raw_data(
                 let ticks = timer.get_ticks();
                 part_output.push(PartType::Timer(VecDeque::from(vec![false; ticks])));
                 color_output.push(part.color);
-                id_remap.insert(*part_id, new_i);
-            }
-            PartData::Switch(_switch) => {
-                let new_i = part_output.len();
-                part_output.push(PartType::Switch);
-                color_output.push(part.color);
+                pos_output.push(part.pos);
                 id_remap.insert(*part_id, new_i);
             }
             PartData::Module(module) => {
                 let (
                     module_parts,
                     colors,
+                    positions,
                     module_connections,
                     _module_id_remap,
                     module_tunnel_connections,
-                ) = get_canvas_raw_data(module.canvas_snapshot);
+                    _io_parts, // should be empty anyway
+                ) = get_canvas_raw_data(module.canvas_snapshot, false);
                 let offset = part_output.len();
                 part_output.extend(module_parts);
                 color_output.extend(colors);
+                pos_output.extend(positions);
 
                 connection_output.extend(
                     module_connections
@@ -187,9 +205,19 @@ pub fn get_canvas_raw_data(
                 let remapped_tunnel_connections: HashMap<_, _> = module_tunnel_connections
                     .iter()
                     .map(|(&k, &v)| (k, v + offset))
-                    .collect(); // new indexes
+                    .collect();
 
                 sub_tunnel_connections.insert(*part_id, remapped_tunnel_connections);
+            }
+            PartData::IO(_io) => {
+                if top_level {
+                    let new_i = part_output.len();
+                    part_output.push(PartType::And);
+                    color_output.push(part.color);
+                    pos_output.push(part.pos);
+                    id_remap.insert(*part_id, new_i);
+                    io_parts.push(new_i);
+                }
             }
             _ => {}
         }
@@ -206,23 +234,26 @@ pub fn get_canvas_raw_data(
     };
 
     for connection in canvas.connections {
-        if canvas
+        let start_is_io = canvas
             .parts
             .get(&connection.start.part)
-            .map_or(false, |p| matches!(&p.part_data, PartData::IO(_)))
-        {
+            .map_or(false, |p| matches!(&p.part_data, PartData::IO(_)));
+        let end_is_io = canvas
+            .parts
+            .get(&connection.end.part)
+            .map_or(false, |p| matches!(&p.part_data, PartData::IO(_)));
+
+        if !top_level && start_is_io {
+            // sub-module IO: treat as a pass-through tunnel
             if let Some(new_id) = resolve(&connection.end) {
                 tunnel_connections.insert(connection.start.part, new_id);
             }
-        } else if canvas
-            .parts
-            .get(&connection.end.part)
-            .map_or(false, |p| matches!(&p.part_data, PartData::IO(_)))
-        {
+        } else if !top_level && end_is_io {
             if let Some(new_id) = resolve(&connection.start) {
                 tunnel_connections.insert(connection.end.part, new_id);
             }
         } else {
+            // top-level IO parts are real AND gates in id_remap, so resolve() finds them normally
             let start = resolve(&connection.start);
             let end = resolve(&connection.end);
             if let (Some(start_port), Some(end_port)) = (start, end) {
@@ -234,9 +265,11 @@ pub fn get_canvas_raw_data(
     (
         part_output,
         color_output,
+        pos_output,
         connection_output,
         id_remap,
         tunnel_connections,
+        io_parts,
     )
 }
 
@@ -271,8 +304,6 @@ pub fn main_loop(sim_state: Arc<Mutex<SimState>>, sim_snapshot: Arc<Mutex<SimSna
                 state.kill_thread,
             )
         };
-
-        std::thread::yield_now();
 
         if kill {
             break;

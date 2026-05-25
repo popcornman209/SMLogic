@@ -1,7 +1,6 @@
 use crate::colors::{POWERED_COLOR, UNPOWERED_COLOR};
 use crate::parts::{
-    GATE_SIZE, Gate, GateType, IO, Label, Module, PORT_SIZE, Part, PartData, Port, SWITCH_SIZE,
-    Switch, Timer,
+    GATE_SIZE, Gate, GateType, IO, Label, Module, PORT_SIZE, Part, PartData, Port, Timer,
 };
 use crate::state::{AppState, Selection, path_to_string};
 use crate::tools::ConnectorData;
@@ -29,7 +28,6 @@ impl AppState {
                 PartData::Timer(timer) => timer.draw(part, painter, self),
                 PartData::Module(module) => module.draw(part, painter, self),
                 PartData::IO(io) => io.draw(part, painter, self),
-                PartData::Switch(switch) => switch.draw(part, painter, self),
                 PartData::Label(label) => label.draw(part, painter, self),
             }
         }
@@ -390,7 +388,7 @@ impl Timer {
         ];
         painter.add(PathShape::line(points, stroke));
 
-        // Top and bottom caps
+        // top and bottom caps
         painter.line_segment([top_left, top_right], stroke);
         painter.line_segment([bottom_left, bottom_right], stroke);
     }
@@ -517,6 +515,17 @@ impl IO {
             return;
         }
 
+        let powered = part
+            .simulation_index
+            .and_then(|i| {
+                app_state
+                    .sim_state_outputs_snapshot
+                    .as_ref()?
+                    .get(i)
+                    .copied()
+            })
+            .unwrap_or(false);
+
         //draw main base & outline
         draw_part_base(
             painter,
@@ -529,38 +538,7 @@ impl IO {
             },
             part.label.clone(),
             0.0,
-            false,
-            false,
-            part.get_ports(),
-            app_state,
-        );
-    }
-}
-
-impl Switch {
-    pub fn draw(&self, part: &Part, painter: &Painter, app_state: &AppState) {
-        // skip rendering if off-screen
-        let screen_rect = Rect::from_min_max(
-            app_state.world_to_screen(part.pos),
-            app_state.world_to_screen(part.pos + GATE_SIZE),
-        );
-        if !painter.clip_rect().intersects(screen_rect) {
-            return;
-        }
-
-        //draw main base & outline
-        draw_part_base(
-            painter,
-            part.pos,
-            SWITCH_SIZE,
-            if app_state.selection.contains(&Selection::Part(part.id)) {
-                app_state.color_pallet.selection
-            } else {
-                part.color
-            },
-            part.label.clone(),
-            0.0,
-            false,
+            powered,
             false,
             part.get_ports(),
             app_state,

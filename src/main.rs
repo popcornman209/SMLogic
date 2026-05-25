@@ -1,6 +1,7 @@
 mod canvas;
 mod colors;
 mod connections;
+mod exporter;
 mod interaction;
 mod part_render;
 mod parts;

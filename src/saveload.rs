@@ -1,6 +1,7 @@
 use crate::AppState;
 use crate::colors::ColorPallet;
 use crate::connections::Connection;
+use crate::exporter::get_bp_folder;
 use crate::parts::{Part, PartData, Port};
 use crate::state::{CanvasSnapshot, Selection};
 use egui::Pos2;
@@ -20,6 +21,7 @@ pub struct Config {
     pub show_fps: bool,
     pub last_project: Option<PathBuf>,
     pub color_pallet: ColorPallet,
+    pub bp_folder: Option<PathBuf>,
 }
 
 impl Config {
@@ -60,6 +62,7 @@ impl Default for Config {
             show_fps: false,
             last_project: None,
             color_pallet: ColorPallet::DEFAULT_PALLET,
+            bp_folder: get_bp_folder(),
         }
     }
 }

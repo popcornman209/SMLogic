@@ -420,7 +420,9 @@ impl AppState {
                     if let Some(new_i) = part.simulation_index {
                         if let Some(sim_state) = &self.sim_state {
                             let mut state = sim_state.lock();
-                            state.part_outputs[new_i] = !state.part_outputs[new_i] // fix this one later :)
+                            let new_val = !state.part_outputs[new_i];
+                            state.part_outputs[new_i] = new_val;
+                            state.prev_outputs[new_i] = new_val;
                         }
                     }
                 }

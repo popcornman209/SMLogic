@@ -8,7 +8,6 @@ use std::collections::{BTreeMap, HashMap};
 use std::path::PathBuf;
 
 pub const GATE_SIZE: Vec2 = Vec2::new(80.0, 60.0);
-pub const SWITCH_SIZE: Vec2 = Vec2::new(60.0, 60.0);
 pub const PORT_SIZE: f32 = 6.0;
 pub const PORT_GAP: f32 = 20.0;
 pub const MIN_MODULE_WIDTH: f32 = 120.0;
@@ -25,8 +24,6 @@ pub enum PartType {
     Module(PathBuf),
     Input,
     Output,
-    Button,
-    Switch,
     Label,
 }
 
@@ -43,13 +40,7 @@ impl PartType {
     ];
 
     /// hows up in the io secction of the menu on the left
-    pub const IO_PARTS: &[PartType] = &[
-        PartType::Input,
-        PartType::Output,
-        PartType::Button,
-        PartType::Switch,
-        PartType::Label,
-    ];
+    pub const IO_PARTS: &[PartType] = &[PartType::Input, PartType::Output, PartType::Label];
 
     pub fn label(&self) -> &'static str {
         match self {
@@ -63,8 +54,6 @@ impl PartType {
             PartType::Module(_) => "Module",
             PartType::Input => "Input",
             PartType::Output => "Output",
-            PartType::Button => "Button",
-            PartType::Switch => "Swtich",
             PartType::Label => "Label",
         }
     }
@@ -242,20 +231,6 @@ impl IO {
 }
 
 #[derive(Clone, Deserialize, Serialize, PartialEq)]
-pub struct Switch {
-    pub toggle: bool,
-}
-impl Switch {
-    pub fn new(toggle: bool) -> (PartData, String, Vec2) {
-        (
-            PartData::Switch(Self { toggle: toggle }),
-            if toggle { "Switch" } else { "Button" }.to_string(),
-            -GATE_SIZE / 2.0,
-        )
-    }
-}
-
-#[derive(Clone, Deserialize, Serialize, PartialEq)]
 pub struct Label {
     pub size: Vec2,
 }
@@ -276,7 +251,6 @@ pub enum PartData {
     Timer(Timer),
     Module(Module),
     IO(IO),
-    Switch(Switch),
     Label(Label),
 }
 impl PartData {
@@ -286,7 +260,6 @@ impl PartData {
             PartData::Timer(_) => GATE_SIZE,
             PartData::Module(module) => module.size,
             PartData::IO(_) => GATE_SIZE,
-            PartData::Switch(_) => SWITCH_SIZE,
             PartData::Label(label) => label.size,
         }
     }
@@ -338,7 +311,6 @@ impl Part {
         let (part_data, label, pos_offset): (PartData, String, Vec2) = match part.clone() {
             PartType::Timer => Timer::new(),
             PartType::Input | PartType::Output => IO::new(part == PartType::Input),
-            PartType::Button | PartType::Switch => Switch::new(part == PartType::Switch),
             PartType::Label => Label::new(),
             PartType::Module(path) => Module::new(path, app_state),
             _ => Gate::new(GateType::from_part_type(part)),
@@ -372,7 +344,7 @@ impl Part {
             PartData::Gate(_) | PartData::Timer(_) => {
                 Some(Pos2::new(self.pos.x, self.pos.y + GATE_SIZE.y / 2.0))
             }
-            PartData::Switch(_) | PartData::Label(_) => None,
+            PartData::Label(_) => None,
             PartData::IO(io) => {
                 if io.input {
                     None
@@ -396,7 +368,7 @@ impl Part {
 
     pub fn output_pos(&self, port_id: Option<u64>) -> Option<Pos2> {
         match &self.part_data {
-            PartData::Gate(_) | PartData::Timer(_) | PartData::Switch(_) => Some(Pos2::new(
+            PartData::Gate(_) | PartData::Timer(_) => Some(Pos2::new(
                 self.pos.x + self.part_data.size().x,
                 self.pos.y + self.part_data.size().y / 2.0,
             )),
@@ -439,11 +411,6 @@ impl Part {
                     input: false,
                 },
             ],
-            PartData::Switch(_) => vec![Port {
-                part: self.id,
-                port_id: None,
-                input: false,
-            }],
             PartData::IO(io) => vec![Port {
                 part: self.id,
                 port_id: None,
@@ -488,11 +455,6 @@ impl Part {
                     None,
                 ),
             ],
-            PartData::Switch(_) => vec![(
-                Pos2::new(self.pos.x + SWITCH_SIZE.x, self.pos.y + SWITCH_SIZE.y / 2.0),
-                false,
-                None,
-            )],
             PartData::IO(io) => vec![(
                 Pos2::new(
                     self.pos.x + if io.input { GATE_SIZE.x } else { 0.0 },
