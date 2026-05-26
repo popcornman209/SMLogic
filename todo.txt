@@ -1,15 +1,15 @@
+change projects from .sml to .smlogic or better (currently github thinks its standard ml)
+
 allow "important" parts that can be seperated out
+
+dragable connections to sperate them out
+
+python library
+
+update checker
 
 more fast connect tool modes
 
 ban loading module loops (modules cant reference each other in a infinite circle)
 
-fast connector tool doesnt warn you if connection is invalid
-
-dragable connections to sperate them out
-
 "dead end" detection, ability to remove gates that dont contribute to the output in any way
-
-python library
-
-more notification use

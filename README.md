@@ -1,6 +1,6 @@
 # SMLogic
 A simple tool for designing complex Scrap Mechanic logic circuits :) \
-if you find this tool useful, have issues/recommendations or have anything else to say, feel free to reach out! (preferably discord)
+if you find this tool useful, have issues/recommendations or have anything else to say, feel free to reach out on discord! <sup><sub>(I like talking to ppl :3)</sub></sup>
 
 ### images
 ![img1](assets/img1.png)
