@@ -4,6 +4,7 @@ use std::collections::HashMap;
 
 use crate::colors::ColorPallet;
 use crate::connections::draw_connection;
+use crate::exporter::get_bp_folder;
 use crate::parts::PartType;
 use crate::state::{AppState, CanvasSnapshot, InteractionState, Selection, path_to_string};
 use crate::tools::{Tool, tool_label};
@@ -496,6 +497,37 @@ impl AppState {
                         self.color_pallet.apply_theme(ctx);
                     }
                 }
+                ui.heading("Exporting");
+                ui.separator();
+                ui.horizontal(|ui| {
+                    ui.label("Blueprint Folder:");
+                    let path_text = self.bp_folder
+                        .as_ref()
+                        .map(|p| {
+                            let s = p.to_string_lossy();
+                            if s.len() > 40 {
+                                format!("...{}", &s[s.len() - 40..])
+                            } else {
+                                s.to_string()
+                            }
+                        })
+                        .unwrap_or_else(|| "Not found".to_string());
+                    ui.label(path_text);
+                });
+                ui.horizontal(|ui| {
+                    if ui.button("Browse...").clicked() {
+                        if let Some(path) = rfd::FileDialog::new().pick_folder() {
+                            self.bp_folder = Some(path.clone());
+                            self.config.bp_folder = Some(path);
+                            self.config.save();
+                        }
+                    }
+                    if ui.button("Auto-detect").clicked() {
+                        self.bp_folder = get_bp_folder();
+                        self.config.bp_folder = self.bp_folder.clone();
+                        self.config.save();
+                    }
+                });
             });
         self.settings_open = open;
     }

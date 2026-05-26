@@ -1,5 +1,6 @@
 use crate::colors::SM_PALETTE;
 use crate::connections::Connection;
+use crate::exporter::{ExportType, ExporterSettings};
 use crate::parts::{Part, PartType, Port};
 use crate::state::{AppState, Selection};
 use eframe::egui::Pos2;
@@ -147,6 +148,7 @@ pub enum Tool {
     Paint,
     Connector(ConnectorData),
     Simulator,
+    Exporter(ExporterSettings),
 }
 
 impl Tool {
@@ -165,12 +167,26 @@ impl Tool {
             status: String::new(),
         })),
         Some(Tool::Simulator),
+        Some(Tool::Exporter(ExporterSettings {
+            maintain_io_position: false,
+            io_x_scale: 1.0 / 80.0,
+            io_y_scale: 1.0 / 60.0,
+            max_x: None,
+            max_y: None,
+            max_z: None,
+            export_type: ExportType::FromName,
+            identifier: None,
+            new_name: None,
+            new_desc: None,
+            new_icon: None,
+        })),
     ];
 }
 
 impl AppState {
     pub fn draw_sidebar_tool_properties(&mut self, ui: &mut Ui) {
         let mut connect = false;
+        let mut export = false;
         match &mut self.active_tool {
             Some(Tool::Paint) => {
                 ui.separator();
@@ -288,7 +304,7 @@ impl AppState {
             }
             Some(Tool::Simulator) => {
                 ui.separator();
-                ui.heading("Connector Tool");
+                ui.heading("Simulator");
                 if let Some(sim_snapshot) = &self.sim_snapshot {
                     let (running, tick, target_spt, part_count) = {
                         let snapshot = sim_snapshot.lock();
@@ -364,6 +380,196 @@ impl AppState {
                     }
                 }
             }
+            Some(Tool::Exporter(settings)) => {
+                ui.separator();
+                ui.heading("SM Exporter");
+                ui.checkbox(&mut settings.maintain_io_position, "Keep IO Position");
+                if settings.maintain_io_position {
+                    ui.horizontal(|ui| {
+                        ui.label("IO X scale: ");
+                        ui.add(egui::DragValue::new(&mut settings.io_x_scale).fixed_decimals(6))
+                    });
+                    ui.horizontal(|ui| {
+                        ui.label("IO Y scale: ");
+                        ui.add(egui::DragValue::new(&mut settings.io_y_scale).fixed_decimals(6))
+                    });
+                }
+                let mut limit_x = settings.max_x.is_some();
+                if ui.checkbox(&mut limit_x, "Limit X size").changed() {
+                    if limit_x {
+                        settings.max_x = Some(20)
+                    } else {
+                        settings.max_x = None
+                    }
+                };
+                if limit_x {
+                    let mut x_limit = settings.max_x.unwrap_or(20);
+                    ui.horizontal(|ui| {
+                        ui.label("X limit: ");
+                        if ui
+                            .add(egui::DragValue::new(&mut x_limit).fixed_decimals(0))
+                            .changed()
+                        {
+                            settings.max_x = Some(x_limit)
+                        }
+                    });
+                }
+
+                let mut limit_y = settings.max_y.is_some();
+                if ui.checkbox(&mut limit_y, "Limit Y size").changed() {
+                    if limit_y {
+                        settings.max_y = Some(20)
+                    } else {
+                        settings.max_y = None
+                    }
+                };
+                if limit_y {
+                    let mut y_limit = settings.max_y.unwrap_or(20);
+                    ui.horizontal(|ui| {
+                        ui.label("Y limit: ");
+                        if ui
+                            .add(egui::DragValue::new(&mut y_limit).fixed_decimals(0))
+                            .changed()
+                        {
+                            settings.max_y = Some(y_limit)
+                        }
+                    });
+                }
+
+                let mut limit_z = settings.max_z.is_some();
+                if ui.checkbox(&mut limit_z, "Limit Z size").changed() {
+                    if limit_z {
+                        settings.max_z = Some(20)
+                    } else {
+                        settings.max_z = None
+                    }
+                };
+                if limit_z {
+                    let mut z_limit = settings.max_z.unwrap_or(20);
+                    ui.horizontal(|ui| {
+                        ui.label("Z limit: ");
+                        if ui
+                            .add(egui::DragValue::new(&mut z_limit).fixed_decimals(0))
+                            .changed()
+                        {
+                            settings.max_z = Some(z_limit)
+                        }
+                    });
+                }
+
+                // so many settings ugh....
+                ui.horizontal(|ui| {
+                    ui.label("Type: ");
+                    egui::ComboBox::from_id_salt("exporter_type_combo")
+                        .width(10.0)
+                        .selected_text(
+                            settings
+                                .export_type
+                                .to_label()
+                                .chars()
+                                .take(10)
+                                .collect::<String>(),
+                        )
+                        .show_ui(ui, |ui| {
+                            for export_type in ExportType::TYPES {
+                                if ui
+                                    .selectable_label(
+                                        &settings.export_type == export_type,
+                                        export_type.to_label(),
+                                    )
+                                    .clicked()
+                                {
+                                    if export_type != &ExportType::New {
+                                        settings.new_name = None;
+                                    }
+                                    settings.export_type = export_type.clone()
+                                }
+                            }
+                        })
+                });
+
+                if settings.export_type != ExportType::New {
+                    let label = match settings.export_type {
+                        ExportType::FromName => "Blueprint name:",
+                        ExportType::FromUUID => "Blueprint UUID:",
+                        _ => "",
+                    };
+                    ui.horizontal(|ui| {
+                        ui.label(label);
+                        ui.text_edit_singleline(
+                            settings.identifier.get_or_insert_with(|| "smlogic output".to_string()),
+                        );
+                    });
+                }
+
+                // name, required for new, optional rename for others
+                if settings.export_type == ExportType::New {
+                    ui.horizontal(|ui| {
+                        ui.label("Name:");
+                        ui.text_edit_singleline(settings.new_name.get_or_insert_with(|| "smlogic output".to_string()));
+                    });
+                } else {
+                    let mut rename = settings.new_name.is_some();
+                    if ui.checkbox(&mut rename, "Rename").changed() {
+                        settings.new_name = if rename { Some(String::new()) } else { None };
+                    }
+                    if let Some(ref mut name) = settings.new_name {
+                        ui.horizontal(|ui| {
+                            ui.label("New name:");
+                            ui.text_edit_singleline(name);
+                        });
+                    }
+                }
+
+                // description, always optional
+                let mut change_desc = settings.new_desc.is_some();
+                if ui.checkbox(&mut change_desc, "Set description").changed() {
+                    settings.new_desc = if change_desc {
+                        Some(String::new())
+                    } else {
+                        None
+                    };
+                }
+                if let Some(ref mut desc) = settings.new_desc {
+                    ui.horizontal(|ui| {
+                        ui.label("Description:");
+                        ui.text_edit_singleline(desc);
+                    });
+                }
+
+                // icon, file picker, always optional
+                let mut change_icon = settings.new_icon.is_some();
+                if ui.checkbox(&mut change_icon, "Set icon").changed() {
+                    settings.new_icon = None;
+                }
+                if change_icon {
+                    ui.horizontal(|ui| {
+                        let icon_text = settings
+                            .new_icon
+                            .as_ref()
+                            .map(|p| {
+                                p.file_name()
+                                    .unwrap_or_default()
+                                    .to_string_lossy()
+                                    .to_string()
+                            })
+                            .unwrap_or_else(|| "None".to_string());
+                        ui.label(icon_text);
+                        if ui.button("Browse...").clicked() {
+                            if let Some(path) = rfd::FileDialog::new()
+                                .add_filter("PNG", &["png"])
+                                .pick_file()
+                            {
+                                settings.new_icon = Some(path);
+                            }
+                        }
+                    });
+                }
+
+                if ui.button("Export!").clicked() {
+                    export = true;
+                }
+            }
             _ => {}
         }
         if connect {
@@ -382,6 +588,11 @@ impl AppState {
                 }
             }
         }
+        if export {
+            if let Some(Tool::Exporter(settings)) = &self.active_tool {
+                self.export(settings.clone());
+            }
+        }
     }
 }
 
@@ -391,6 +602,7 @@ pub fn tool_label(tool: &Option<Tool>) -> &'static str {
         Some(Tool::Paint) => "Paint Tool",
         Some(Tool::Connector(_)) => "Connnector",
         Some(Tool::Simulator) => "Simulator",
+        Some(Tool::Exporter(_)) => "Exporter",
         _ => "???",
     }
 }
@@ -398,7 +610,6 @@ pub fn tool_label(tool: &Option<Tool>) -> &'static str {
 impl AppState {
     pub fn handle_tool(&mut self, world_pos: Pos2, shift_held: bool) {
         match self.active_tool.clone() {
-            None | Some(Tool::Connector(_)) => {}
             Some(Tool::PlacePart(part_type)) => {
                 self.push_undo();
                 let part_id = Part::new(part_type, self, world_pos);
@@ -427,6 +638,7 @@ impl AppState {
                     }
                 }
             }
+            _ => {}
         }
     }
 
