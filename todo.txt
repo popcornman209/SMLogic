@@ -1,15 +1,17 @@
+ban loading module loops (modules cant reference each other in a infinite circle)
+
 change projects from .sml to .smlogic or better (currently github thinks its standard ml)
 
 allow "important" parts that can be seperated out
 
 dragable connections to sperate them out
 
+label text wrapping
+
 python library
 
 update checker
 
 more fast connect tool modes
-
-ban loading module loops (modules cant reference each other in a infinite circle)
 
 "dead end" detection, ability to remove gates that dont contribute to the output in any way

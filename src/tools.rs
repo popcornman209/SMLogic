@@ -497,7 +497,9 @@ impl AppState {
                     ui.horizontal(|ui| {
                         ui.label(label);
                         ui.text_edit_singleline(
-                            settings.identifier.get_or_insert_with(|| "smlogic output".to_string()),
+                            settings
+                                .identifier
+                                .get_or_insert_with(|| "smlogic output".to_string()),
                         );
                     });
                 }
@@ -506,7 +508,11 @@ impl AppState {
                 if settings.export_type == ExportType::New {
                     ui.horizontal(|ui| {
                         ui.label("Name:");
-                        ui.text_edit_singleline(settings.new_name.get_or_insert_with(|| "smlogic output".to_string()));
+                        ui.text_edit_singleline(
+                            settings
+                                .new_name
+                                .get_or_insert_with(|| "smlogic output".to_string()),
+                        );
                     });
                 } else {
                     let mut rename = settings.new_name.is_some();
@@ -600,7 +606,7 @@ pub fn tool_label(tool: &Option<Tool>) -> &'static str {
     match tool {
         None => "Select",
         Some(Tool::Paint) => "Paint Tool",
-        Some(Tool::Connector(_)) => "Connnector",
+        Some(Tool::Connector(_)) => "Connector",
         Some(Tool::Simulator) => "Simulator",
         Some(Tool::Exporter(_)) => "Exporter",
         _ => "???",

@@ -317,6 +317,7 @@ impl AppState {
             self.redo_stack.push(self.canvas_snapshot.clone());
             self.canvas_snapshot = snapshot;
             self.selection.clear();
+            self.reload_connection_counts();
         }
     }
     pub fn redo(&mut self) {
@@ -324,6 +325,7 @@ impl AppState {
             self.undo_stack.push(self.canvas_snapshot.clone());
             self.canvas_snapshot = snapshot;
             self.selection.clear();
+            self.reload_connection_counts();
         }
     }
 

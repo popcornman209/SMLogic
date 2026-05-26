@@ -133,17 +133,18 @@ impl SimState {
 }
 
 // this was fucking torture to make istg lost my mind
+// also had alot of issues so i js made claude fix them (this function was too much for me lmao)
 pub fn get_canvas_raw_data(
     canvas: CanvasSnapshot,
     top_level: bool, // wether it is the main canvas or not (not sub modules)
 ) -> (
-    Vec<PartType>,       // part_output
-    Vec<Color32>,        // color_output
-    Vec<Pos2>,           // pos_output
-    Vec<(usize, usize)>, // connection_output
-    HashMap<u64, usize>, // id remap
-    HashMap<u64, usize>, // tunnel connections
-    Vec<usize>,          // io parts (only should have stuff in it if top level)
+    Vec<PartType>,            // part_output
+    Vec<Color32>,             // color_output
+    Vec<Pos2>,                // pos_output
+    Vec<(usize, usize)>,      // connection_output
+    HashMap<u64, usize>,      // id remap
+    HashMap<u64, Vec<usize>>, // tunnel connections
+    Vec<usize>,               // io parts (only should have stuff in it if top level)
 ) {
     let mut id_remap: HashMap<u64, usize> = HashMap::new();
     let mut part_output: Vec<PartType> = Vec::new();
@@ -154,8 +155,8 @@ pub fn get_canvas_raw_data(
     // top level only
     let mut io_parts: Vec<usize> = Vec::new();
 
-    let mut tunnel_connections: HashMap<u64, usize> = HashMap::new();
-    let mut sub_tunnel_connections: HashMap<u64, HashMap<u64, usize>> = HashMap::new();
+    let mut tunnel_connections: HashMap<u64, Vec<usize>> = HashMap::new();
+    let mut sub_tunnel_connections: HashMap<u64, HashMap<u64, Vec<usize>>> = HashMap::new();
 
     for (part_id, part) in &canvas.parts {
         match part.part_data.clone() {
@@ -204,7 +205,7 @@ pub fn get_canvas_raw_data(
 
                 let remapped_tunnel_connections: HashMap<_, _> = module_tunnel_connections
                     .iter()
-                    .map(|(&k, &v)| (k, v + offset))
+                    .map(|(&k, v)| (k, v.iter().map(|&x| x + offset).collect::<Vec<_>>()))
                     .collect();
 
                 sub_tunnel_connections.insert(*part_id, remapped_tunnel_connections);
@@ -223,13 +224,16 @@ pub fn get_canvas_raw_data(
         }
     }
 
-    let resolve = |port: &Port| -> Option<usize> {
+    let resolve = |port: &Port| -> Vec<usize> {
         if let Some(&new_id) = id_remap.get(&port.part) {
-            Some(new_id)
+            vec![new_id]
         } else if let Some(module) = sub_tunnel_connections.get(&port.part) {
-            port.port_id.and_then(|pid| module.get(&pid).copied())
+            port.port_id
+                .and_then(|pid| module.get(&pid))
+                .cloned()
+                .unwrap_or_default()
         } else {
-            None
+            vec![]
         }
     };
 
@@ -244,20 +248,28 @@ pub fn get_canvas_raw_data(
             .map_or(false, |p| matches!(&p.part_data, PartData::IO(_)));
 
         if !top_level && start_is_io {
-            // sub-module IO: treat as a pass-through tunnel
-            if let Some(new_id) = resolve(&connection.end) {
-                tunnel_connections.insert(connection.start.part, new_id);
+            // sub-module IO input fans out to multiple internal gates — collect all of them
+            for new_id in resolve(&connection.end) {
+                tunnel_connections
+                    .entry(connection.start.part)
+                    .or_default()
+                    .push(new_id);
             }
         } else if !top_level && end_is_io {
-            if let Some(new_id) = resolve(&connection.start) {
-                tunnel_connections.insert(connection.end.part, new_id);
+            for new_id in resolve(&connection.start) {
+                tunnel_connections
+                    .entry(connection.end.part)
+                    .or_default()
+                    .push(new_id);
             }
         } else {
             // top-level IO parts are real AND gates in id_remap, so resolve() finds them normally
-            let start = resolve(&connection.start);
-            let end = resolve(&connection.end);
-            if let (Some(start_port), Some(end_port)) = (start, end) {
-                connection_output.push((start_port, end_port));
+            let starts = resolve(&connection.start);
+            let ends = resolve(&connection.end);
+            for &start_port in &starts {
+                for &end_port in &ends {
+                    connection_output.push((start_port, end_port));
+                }
             }
         }
     }
