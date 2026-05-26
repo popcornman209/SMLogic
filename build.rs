@@ -1,5 +1,5 @@
 fn main() {
-    // Embed the icon into the .exe on Windows builds
+    // windows icon
     #[cfg(target_os = "windows")]
     {
         let mut res = winresource::WindowsResource::new();
