@@ -10,4 +10,6 @@ dragable connections to sperate them out
 
 "dead end" detection, ability to remove gates that dont contribute to the output in any way
 
+python library
+
 more notification use
