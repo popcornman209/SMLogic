@@ -1,10 +1,6 @@
-selecting part while on simulator doesnt shut simulator down
-
 allow "important" parts that can be seperated out
 
 more fast connect tool modes
-
-render switches/buttons and make button interaction work properly
 
 ban loading module loops (modules cant reference each other in a infinite circle)
 
@@ -15,7 +11,3 @@ dragable connections to sperate them out
 "dead end" detection, ability to remove gates that dont contribute to the output in any way
 
 more notification use
-
-app icon??
-
-* sm exporter

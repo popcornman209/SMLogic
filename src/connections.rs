@@ -120,9 +120,17 @@ impl AppState {
                                 self.canvas_snapshot.connections.push(connection);
                                 self.reload_connection_counts();
                                 return true;
+                            } else {
+                                self.toasts
+                                    .error("cant connect 2 gates in a loop! (not sure why)");
                             }
+                        } else {
+                            self.toasts
+                                .error("cant connect an input directly to an output!");
                         }
                     }
+                } else {
+                    self.toasts.error("part reached max connections!");
                 }
             }
         }

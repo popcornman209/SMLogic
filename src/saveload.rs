@@ -26,11 +26,9 @@ pub struct Config {
 
 impl Config {
     fn config_dir() -> PathBuf {
-        let home_dir = std::env::var("HOME")
-            .or_else(|_| std::env::var("USERPROFILE"))
-            .map(PathBuf::from)
-            .unwrap_or_else(|_| PathBuf::from("."));
-        home_dir.join(".smlogic")
+        dirs::config_dir()
+            .unwrap_or_else(|| PathBuf::from("."))
+            .join("smlogic")
     }
 
     fn config_path() -> PathBuf {

@@ -221,7 +221,7 @@ fn compute_positions(
 
 fn get_user_folder() -> Option<PathBuf> {
     #[cfg(target_os = "windows")]
-    let base = PathBuf::from(std::env::var("APPDATA").ok());
+    let base = PathBuf::from(std::env::var("APPDATA").ok()?);
 
     #[cfg(not(target_os = "windows"))]
     let base = dirs::home_dir()?.join(

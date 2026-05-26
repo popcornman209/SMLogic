@@ -150,6 +150,9 @@ impl AppState {
                             self.active_tool = Some(Tool::PlacePart(part.clone())); // switch to part if
                             // selected
                         }
+                        if self.active_tool == Some(Tool::Simulator) {
+                            self.end_simulation();
+                        }
                     }
                 }
 
@@ -166,6 +169,9 @@ impl AppState {
                             self.active_tool = None;
                         } else {
                             self.active_tool = Some(Tool::PlacePart(part.clone()));
+                        }
+                        if self.active_tool == Some(Tool::Simulator) {
+                            self.end_simulation();
                         }
                     }
                 }
@@ -188,6 +194,9 @@ impl AppState {
                         }
                         if selected {
                             self.active_tool = None;
+                            if self.active_tool == Some(Tool::Simulator) {
+                                self.end_simulation();
+                            }
                         } else {
                             self.active_tool = tool.clone();
                             if matches!(tool, Some(Tool::Connector(_)) | Some(Tool::Simulator)) {
@@ -195,6 +204,10 @@ impl AppState {
                             }
                             if matches!(tool, Some(Tool::Simulator)) {
                                 self.start_simulation();
+                            } else {
+                                if self.active_tool == Some(Tool::Simulator) {
+                                    self.end_simulation();
+                                }
                             }
                         }
                     }
@@ -501,7 +514,8 @@ impl AppState {
                 ui.separator();
                 ui.horizontal(|ui| {
                     ui.label("Blueprint Folder:");
-                    let path_text = self.bp_folder
+                    let path_text = self
+                        .bp_folder
                         .as_ref()
                         .map(|p| {
                             let s = p.to_string_lossy();
