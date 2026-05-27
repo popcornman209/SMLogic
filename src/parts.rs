@@ -104,12 +104,15 @@ impl GateType {
 #[derive(Clone, Deserialize, Serialize, PartialEq)]
 pub struct Gate {
     pub gate_type: GateType,
+    #[serde(default)]
+    pub important: bool,
 }
 impl Gate {
     pub fn new(gate_type: GateType) -> (PartData, String, Vec2) {
         (
             PartData::Gate(Self {
                 gate_type: gate_type.clone(),
+                important: false,
             }),
             gate_type.to_label(),
             -GATE_SIZE / 2.0,
@@ -145,17 +148,32 @@ pub struct Module {
     pub size: Vec2,
 }
 impl Module {
-    pub fn reload(&mut self, project_path: Option<PathBuf>, toasts: &mut Toasts) {
+    pub fn reload(
+        &mut self,
+        project_path: Option<PathBuf>,
+        toasts: &mut Toasts,
+        ancestors: Vec<PathBuf>,
+    ) {
         let full_path = if let Some(ref proj) = project_path {
             proj.join(&self.path)
         } else {
             self.path.clone()
         };
-        match CanvasSnapshot::load(full_path, project_path.clone(), toasts) {
-            Ok(snapshot) => self.canvas_snapshot = snapshot,
-            Err(e) => {
-                toasts.error(format!("Failed to load file: {}", e));
-                return;
+        if ancestors.contains(&full_path) {
+            toasts.error(format!(
+                "Cant put a module inside of itself! ({})",
+                self.path.to_string_lossy()
+            ));
+            return;
+        } else {
+            let mut new_ancestors = ancestors.clone();
+            new_ancestors.push(full_path.clone());
+            match CanvasSnapshot::load(full_path, project_path.clone(), toasts, new_ancestors) {
+                Ok(snapshot) => self.canvas_snapshot = snapshot,
+                Err(e) => {
+                    toasts.error(format!("Failed to load file: {}", e));
+                    return;
+                }
             }
         }
 
@@ -203,7 +221,11 @@ impl Module {
             min_size: Vec2::new(MIN_MODULE_WIDTH, 0.0),
             size: Vec2::new(120.0, 0.0),
         };
-        module.reload(app_state.project_folder.clone(), &mut app_state.toasts);
+        module.reload(
+            app_state.project_folder.clone(),
+            &mut app_state.toasts,
+            Vec::new(),
+        );
         (
             PartData::Module(module.clone()),
             final_path

@@ -1,7 +1,3 @@
-ban loading module loops (modules cant reference each other in a infinite circle)
-
-change projects from .sml to .smlogic or better (currently github thinks its standard ml)
-
 allow "important" parts that can be seperated out
 
 dragable connections to sperate them out
@@ -11,6 +7,8 @@ label text wrapping
 python library
 
 update checker
+
+windows has no icon on the file itself
 
 more fast connect tool modes
 

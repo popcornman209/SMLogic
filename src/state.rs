@@ -348,8 +348,12 @@ impl AppState {
         }
     }
     pub fn open_file(&mut self, path: PathBuf) {
-        let new_snapshot =
-            CanvasSnapshot::load(path.clone(), self.project_folder.clone(), &mut self.toasts);
+        let new_snapshot = CanvasSnapshot::load(
+            path.clone(),
+            self.project_folder.clone(),
+            &mut self.toasts,
+            Vec::new(),
+        );
         match new_snapshot {
             Ok(snapshot) => {
                 self.canvas_snapshot = snapshot;

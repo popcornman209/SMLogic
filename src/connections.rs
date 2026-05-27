@@ -112,10 +112,11 @@ impl AppState {
                             && matches!(end_part.part_data, PartData::IO(_)))
                         {
                             // connecting a input directly to an output makes it too complicated
-                            if !self.canvas_snapshot.connections.iter().any(|c| {
+                            if (!self.canvas_snapshot.connections.iter().any(|c| {
                                 c.start.part == connection.end.part
                                     && c.end.part == connection.start.part
-                            }) {
+                            })) | matches!(start_part.part_data, PartData::Module(_))
+                            {
                                 // two gates cannot connect in a loop
                                 self.canvas_snapshot.connections.push(connection);
                                 self.reload_connection_counts();

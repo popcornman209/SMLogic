@@ -320,6 +320,7 @@ impl Gate {
                     }
                 });
         });
+        ui.checkbox(&mut self.important, "Important");
     }
 }
 
@@ -495,11 +496,19 @@ impl Module {
             if let Some(path) = file {
                 self.path = path;
             }
-            self.reload(app_state.project_folder.clone(), &mut app_state.toasts);
+            self.reload(
+                app_state.project_folder.clone(),
+                &mut app_state.toasts,
+                Vec::new(),
+            );
         }
         app_state.push_undo();
         if ui.button("Reload File").clicked() {
-            self.reload(app_state.project_folder.clone(), &mut app_state.toasts);
+            self.reload(
+                app_state.project_folder.clone(),
+                &mut app_state.toasts,
+                Vec::new(),
+            );
         }
     }
 }

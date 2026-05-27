@@ -47,6 +47,13 @@ pub struct ExporterSettings {
 
 impl AppState {
     pub fn export(&mut self, exporter_settings: ExporterSettings) {
+        if (exporter_settings.max_x.unwrap_or(1) <= 0)
+            | (exporter_settings.max_y.unwrap_or(1) <= 0)
+            | (exporter_settings.max_x.unwrap_or(1) <= 0)
+        {
+            self.toasts.error("cant set max size <= 0!");
+            return;
+        }
         if let Some(bp_folder) = self.bp_folder.clone() {
             let mut blueprint: Option<BluePrint> = match exporter_settings.export_type {
                 ExportType::FromName => {
@@ -170,10 +177,22 @@ fn compute_positions(
         (Some(x), Some(y), None) => (x.max(1), y.max(1), ceil_div(n, (x * y) as f32).max(1)),
         (Some(x), None, Some(z)) => (x.max(1), ceil_div(n, (x * z) as f32).max(1), z.max(1)),
         (None, Some(y), Some(z)) => (ceil_div(n, (y * z) as f32).max(1), y.max(1), z.max(1)),
-        (Some(x), None, None) => { let s = (n / x as f32).ceil().sqrt().ceil() as usize; (x.max(1), s.max(1), s.max(1)) }
-        (None, Some(y), None) => { let s = (n / y as f32).ceil().sqrt().ceil() as usize; (s.max(1), y.max(1), s.max(1)) }
-        (None, None, Some(z)) => { let s = (n / z as f32).ceil().sqrt().ceil() as usize; (s.max(1), s.max(1), z.max(1)) }
-        (None, None, None)    => { let s = n.cbrt().ceil() as usize; (s.max(1), s.max(1), s.max(1)) }
+        (Some(x), None, None) => {
+            let s = (n / x as f32).ceil().sqrt().ceil() as usize;
+            (x.max(1), s.max(1), s.max(1))
+        }
+        (None, Some(y), None) => {
+            let s = (n / y as f32).ceil().sqrt().ceil() as usize;
+            (s.max(1), y.max(1), s.max(1))
+        }
+        (None, None, Some(z)) => {
+            let s = (n / z as f32).ceil().sqrt().ceil() as usize;
+            (s.max(1), s.max(1), z.max(1))
+        }
+        (None, None, None) => {
+            let s = n.cbrt().ceil() as usize;
+            (s.max(1), s.max(1), s.max(1))
+        }
     };
 
     let io_side = (io_count as f32).sqrt().ceil() as usize;
@@ -192,7 +211,11 @@ fn compute_positions(
                 )
             } else {
                 let side = io_side.max(1);
-                (-1, -((io_counter % side) as i32), -((io_counter / side) as i32))
+                (
+                    -1,
+                    -((io_counter % side) as i32),
+                    -((io_counter / side) as i32),
+                )
             };
             io_counter += 1;
             pos
@@ -207,8 +230,18 @@ fn compute_positions(
 
     // normalize IO parts so the corner lines up with y=1, z=0
     if let (Some(&min_y), Some(&min_z)) = (
-        io_indices.iter().map(|&i| out[i].1).collect::<Vec<_>>().iter().min(),
-        io_indices.iter().map(|&i| out[i].2).collect::<Vec<_>>().iter().min(),
+        io_indices
+            .iter()
+            .map(|&i| out[i].1)
+            .collect::<Vec<_>>()
+            .iter()
+            .min(),
+        io_indices
+            .iter()
+            .map(|&i| out[i].2)
+            .collect::<Vec<_>>()
+            .iter()
+            .min(),
     ) {
         for &i in io_indices {
             out[i].1 = out[i].1 - min_y + 1;
@@ -420,10 +453,26 @@ impl BluePrint {
 
         // glass backing behind IO parts
         if !io_parts.is_empty() {
-            let min_y = io_parts.iter().map(|&i| positioning[i].1).min().unwrap_or(0);
-            let min_z = io_parts.iter().map(|&i| positioning[i].2).min().unwrap_or(0);
-            let max_y = io_parts.iter().map(|&i| positioning[i].1).max().unwrap_or(0);
-            let max_z = io_parts.iter().map(|&i| positioning[i].2).max().unwrap_or(0);
+            let min_y = io_parts
+                .iter()
+                .map(|&i| positioning[i].1)
+                .min()
+                .unwrap_or(0);
+            let min_z = io_parts
+                .iter()
+                .map(|&i| positioning[i].2)
+                .min()
+                .unwrap_or(0);
+            let max_y = io_parts
+                .iter()
+                .map(|&i| positioning[i].1)
+                .max()
+                .unwrap_or(0);
+            let max_z = io_parts
+                .iter()
+                .map(|&i| positioning[i].2)
+                .max()
+                .unwrap_or(0);
             children.push(json!({
                 "bounds": { "x": 1, "y": max_y - min_y + 1, "z": max_z - min_z + 1 },
                 "color": "E4F8FF",

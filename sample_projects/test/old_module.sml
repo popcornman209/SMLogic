@@ -359,93 +359,9 @@
         "part": 20,
         "port_id": null
       }
-    },
-    {
-      "end": {
-        "input": true,
-        "part": 22,
-        "port_id": null
-      },
-      "start": {
-        "input": false,
-        "part": 6,
-        "port_id": null
-      }
-    },
-    {
-      "end": {
-        "input": true,
-        "part": 22,
-        "port_id": null
-      },
-      "start": {
-        "input": false,
-        "part": 9,
-        "port_id": null
-      }
-    },
-    {
-      "end": {
-        "input": true,
-        "part": 22,
-        "port_id": null
-      },
-      "start": {
-        "input": false,
-        "part": 5,
-        "port_id": null
-      }
-    },
-    {
-      "end": {
-        "input": true,
-        "part": 22,
-        "port_id": null
-      },
-      "start": {
-        "input": false,
-        "part": 7,
-        "port_id": null
-      }
-    },
-    {
-      "end": {
-        "input": true,
-        "part": 22,
-        "port_id": null
-      },
-      "start": {
-        "input": false,
-        "part": 4,
-        "port_id": null
-      }
-    },
-    {
-      "end": {
-        "input": true,
-        "part": 22,
-        "port_id": null
-      },
-      "start": {
-        "input": false,
-        "part": 8,
-        "port_id": null
-      }
-    },
-    {
-      "end": {
-        "input": true,
-        "part": 22,
-        "port_id": null
-      },
-      "start": {
-        "input": false,
-        "part": 10,
-        "port_id": null
-      }
     }
   ],
-  "next_id": 23,
+  "next_id": 22,
   "parts": {
     "0": {
       "color": [
@@ -478,8 +394,7 @@
       "label": "AND",
       "part_data": {
         "Gate": {
-          "gate_type": "And",
-          "important": false
+          "gate_type": "And"
         }
       },
       "pos": {
@@ -520,8 +435,7 @@
       "label": "AND",
       "part_data": {
         "Gate": {
-          "gate_type": "And",
-          "important": false
+          "gate_type": "And"
         }
       },
       "pos": {
@@ -541,8 +455,7 @@
       "label": "AND",
       "part_data": {
         "Gate": {
-          "gate_type": "And",
-          "important": false
+          "gate_type": "And"
         }
       },
       "pos": {
@@ -562,8 +475,7 @@
       "label": "NAND",
       "part_data": {
         "Gate": {
-          "gate_type": "Nand",
-          "important": false
+          "gate_type": "Nand"
         }
       },
       "pos": {
@@ -583,8 +495,7 @@
       "label": "AND",
       "part_data": {
         "Gate": {
-          "gate_type": "And",
-          "important": false
+          "gate_type": "And"
         }
       },
       "pos": {
@@ -645,8 +556,7 @@
       "label": "NAND",
       "part_data": {
         "Gate": {
-          "gate_type": "Nand",
-          "important": false
+          "gate_type": "Nand"
         }
       },
       "pos": {
@@ -696,27 +606,6 @@
       },
       "simulation_index": null
     },
-    "22": {
-      "color": [
-        238,
-        123,
-        240,
-        255
-      ],
-      "id": 22,
-      "label": "XOR",
-      "part_data": {
-        "Gate": {
-          "gate_type": "Xor",
-          "important": true
-        }
-      },
-      "pos": {
-        "x": 680.0,
-        "y": 0.0
-      },
-      "simulation_index": null
-    },
     "4": {
       "color": [
         207,
@@ -728,8 +617,7 @@
       "label": "AND",
       "part_data": {
         "Gate": {
-          "gate_type": "And",
-          "important": false
+          "gate_type": "And"
         }
       },
       "pos": {
@@ -749,8 +637,7 @@
       "label": "OR",
       "part_data": {
         "Gate": {
-          "gate_type": "Or",
-          "important": false
+          "gate_type": "Or"
         }
       },
       "pos": {
@@ -770,8 +657,7 @@
       "label": "XOR",
       "part_data": {
         "Gate": {
-          "gate_type": "Xor",
-          "important": false
+          "gate_type": "Xor"
         }
       },
       "pos": {
@@ -791,8 +677,7 @@
       "label": "NAND",
       "part_data": {
         "Gate": {
-          "gate_type": "Nand",
-          "important": false
+          "gate_type": "Nand"
         }
       },
       "pos": {
@@ -812,8 +697,7 @@
       "label": "NOR",
       "part_data": {
         "Gate": {
-          "gate_type": "Nor",
-          "important": false
+          "gate_type": "Nor"
         }
       },
       "pos": {
@@ -833,8 +717,7 @@
       "label": "XNOR",
       "part_data": {
         "Gate": {
-          "gate_type": "Xnor",
-          "important": false
+          "gate_type": "Xnor"
         }
       },
       "pos": {

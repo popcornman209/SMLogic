@@ -78,19 +78,25 @@ impl CanvasSnapshot {
         path: PathBuf,
         project_path: Option<PathBuf>,
         toasts: &mut Toasts,
+        ancestors: Vec<PathBuf>,
     ) -> Result<Self, Box<dyn std::error::Error>> {
         let contents = std::fs::read_to_string(path)?;
         let json: serde_json::Value = serde_json::from_str(&contents)?;
 
         let mut canvas_snapshot: Self = serde_json::from_value(json)?;
-        canvas_snapshot.reload_modules(project_path, toasts);
+        canvas_snapshot.reload_modules(project_path, toasts, ancestors);
         Ok(canvas_snapshot)
     }
 
-    pub fn reload_modules(&mut self, project_path: Option<PathBuf>, toasts: &mut Toasts) {
+    pub fn reload_modules(
+        &mut self,
+        project_path: Option<PathBuf>,
+        toasts: &mut Toasts,
+        ancestors: Vec<PathBuf>,
+    ) {
         for part in self.parts.values_mut() {
             if let PartData::Module(data) = &mut part.part_data {
-                data.reload(project_path.clone(), toasts);
+                data.reload(project_path.clone(), toasts, ancestors.clone());
             }
         }
     }
