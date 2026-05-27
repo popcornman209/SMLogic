@@ -1,5 +1,3 @@
-allow "important" parts that can be seperated out
-
 dragable connections to sperate them out
 
 label text wrapping

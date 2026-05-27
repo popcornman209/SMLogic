@@ -203,7 +203,7 @@ pub fn get_canvas_raw_data(
                 part_output.extend(module_parts);
                 color_output.extend(colors);
                 pos_output.extend(positions);
-                important_parts.extend(important);
+                important_parts.extend(important.iter().map(|a| a + offset));
 
                 connection_output.extend(
                     module_connections
