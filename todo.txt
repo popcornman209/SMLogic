@@ -1,4 +1,4 @@
-dragable connections to sperate them out
+connection rounded corners
 
 label text wrapping
 
@@ -9,5 +9,7 @@ update checker
 windows has no icon on the file itself
 
 more fast connect tool modes
+
+dragable connections to sperate them out
 
 "dead end" detection, ability to remove gates that dont contribute to the output in any way

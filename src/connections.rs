@@ -21,6 +21,42 @@ pub fn dist_point_to_segment(p: Pos2, a: Pos2, b: Pos2) -> f32 {
     p.distance(closest)
 }
 
+const CORNER_RADIUS: f32 = 10.0;
+
+// THE BELOW FUNCTION IS AI GENERATED (i dont know how to do the math behind that)
+/// Replaces each sharp corner with a small quadratic bezier curve (3 intermediate points).
+fn round_route(points: Vec<Pos2>) -> Vec<Pos2> {
+    if points.len() < 3 {
+        return points;
+    }
+    let mut out = Vec::with_capacity(points.len() + points.len() * 4);
+    out.push(points[0]);
+    for i in 1..points.len() - 1 {
+        let prev = points[i - 1];
+        let curr = points[i];
+        let next = points[i + 1];
+        let d1 = (curr - prev).normalized();
+        let d2 = (next - curr).normalized();
+        let r = CORNER_RADIUS
+            .min(curr.distance(prev) * 0.5)
+            .min(curr.distance(next) * 0.5);
+        let p1 = curr - d1 * r; // approach point
+        let p2 = curr + d2 * r; // exit point
+        out.push(p1);
+        for j in 1u8..=3 {
+            let t = j as f32 / 4.0;
+            let u = 1.0 - t;
+            out.push(Pos2::new(
+                u * u * p1.x + 2.0 * u * t * curr.x + t * t * p2.x,
+                u * u * p1.y + 2.0 * u * t * curr.y + t * t * p2.y,
+            ));
+        }
+        out.push(p2);
+    }
+    out.push(*points.last().unwrap());
+    out
+}
+
 pub fn compute_wire_route(start: Pos2, end: Pos2) -> Vec<Pos2> {
     if end.x > start.x + 30.0 {
         let mid_x = (start.x + end.x) / 2.0;
@@ -68,7 +104,11 @@ pub fn draw_connection(
         Color32::from_rgb(180, 180, 220)
     };
 
-    let mut route = compute_wire_route(start_pos, end_pos);
+    let mut route = if app_state.round_connections {
+        round_route(compute_wire_route(start_pos, end_pos))
+    } else {
+        compute_wire_route(start_pos, end_pos)
+    };
     route_world_to_screen(app_state, &mut route);
     let stroke = Stroke::new(WIRE_WIDTH * app_state.zoom, color);
     painter.add(PathShape::line(route, stroke));

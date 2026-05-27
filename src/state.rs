@@ -103,6 +103,7 @@ pub struct AppState {
     // settings
     pub show_grid: bool,
     pub show_connection_count: bool,
+    pub round_connections: bool,
     pub snap_to_grid: bool,
     pub show_fps: bool,
     pub color_pallet: ColorPallet,
@@ -144,6 +145,7 @@ impl AppState {
             show_grid: config.show_grid,
             snap_to_grid: config.snap_to_grid,
             show_connection_count: config.show_connection_count,
+            round_connections: config.round_connections,
             show_fps: config.show_fps,
             color_pallet: config.color_pallet.clone(),
             bp_folder: config.bp_folder.clone(),

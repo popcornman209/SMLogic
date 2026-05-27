@@ -15,14 +15,25 @@ use std::path::PathBuf;
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct Config {
+    #[serde(default = "default_true")]
     pub show_grid: bool,
+    #[serde(default = "default_true")]
     pub show_connection_count: bool,
+    #[serde(default)]
+    pub round_connections: bool,
+    #[serde(default = "default_true")]
     pub snap_to_grid: bool,
+    #[serde(default)]
     pub show_fps: bool,
+    #[serde(default)]
     pub last_project: Option<PathBuf>,
+    #[serde(default)]
     pub color_pallet: ColorPallet,
+    #[serde(default)]
     pub bp_folder: Option<PathBuf>,
 }
+
+fn default_true() -> bool { true }
 
 impl Config {
     fn config_dir() -> PathBuf {
@@ -56,6 +67,7 @@ impl Default for Config {
         Self {
             show_grid: true,
             show_connection_count: true,
+            round_connections: true,
             snap_to_grid: true,
             show_fps: false,
             last_project: None,

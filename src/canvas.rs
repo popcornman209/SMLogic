@@ -462,6 +462,13 @@ impl AppState {
                     self.config.show_connection_count = self.show_connection_count;
                     self.config.save();
                 }
+                if ui
+                    .checkbox(&mut self.round_connections, "Round connection corners")
+                    .changed()
+                {
+                    self.config.round_connections = self.round_connections;
+                    self.config.save();
+                }
                 if ui.checkbox(&mut self.show_fps, "Show FPS").changed() {
                     self.config.show_fps = self.show_fps;
                     self.config.save();
