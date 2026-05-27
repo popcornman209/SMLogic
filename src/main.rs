@@ -53,6 +53,18 @@ impl eframe::App for AppState {
             }
         }
 
+        // update checker
+        if let Some(rx) = &self.update_receiver {
+            if let Ok(new_version) = rx.try_recv() {
+                self.toasts.info(format!(
+                    "Update available! v{} -> v{}",
+                    env!("CARGO_PKG_VERSION"),
+                    new_version
+                ));
+                self.update_receiver = None; // done, stop polling
+            }
+        }
+
         self.draw_sidebar(ctx);
         self.draw_settings(ctx);
         self.draw_footer(ctx);

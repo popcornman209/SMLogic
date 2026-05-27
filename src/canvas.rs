@@ -38,6 +38,19 @@ impl AppState {
             }
             self.reload_connection_counts();
         }
+        if self.selection.len() == 1 {
+            if let Some(Selection::Part(part_id)) = self.selection.get(0) {
+                for connection in &self.canvas_snapshot.connections {
+                    if (&connection.start.part == part_id) | (&connection.end.part == part_id) {
+                        let start_pos = connection.start.pos(self);
+                        let end_pos = connection.end.pos(self);
+                        if let (Some(start), Some(end)) = (start_pos, end_pos) {
+                            draw_connection(self, start, end, &painter, true);
+                        }
+                    }
+                }
+            }
+        }
 
         if let Some(Tool::Connector(mut connector_data)) = self.active_tool.clone() {
             self.draw_selected_connections(connector_data.clone(), &painter);

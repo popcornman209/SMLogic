@@ -78,6 +78,7 @@ pub struct AppState {
     pub settings_open: bool,
     pub clipboard_data: Option<ClipboardData>,
     pub toasts: Toasts,
+    pub update_receiver: Option<std::sync::mpsc::Receiver<String>>,
     //project
     pub project_folder: Option<PathBuf>,
     pub project_sub_folder: Option<PathBuf>,
@@ -113,12 +114,19 @@ pub struct AppState {
 impl AppState {
     pub fn new(ctx: &egui::Context) -> Self {
         let config = Config::load();
+        let (tx, rx) = std::sync::mpsc::channel();
+        std::thread::spawn(move || {
+            if let Some(new_version) = check_for_update() {
+                let _ = tx.send(new_version);
+            }
+        });
         let mut result = Self {
             interaction_state: InteractionState::Idle,
             active_tool: None,
             settings_open: false,
             clipboard_data: None,
             toasts: Toasts::default(),
+            update_receiver: Some(rx),
             project_folder: config.last_project.clone(),
             project_sub_folder: None,
             current_folder_files: Vec::new(),
@@ -370,5 +378,28 @@ impl AppState {
                 self.toasts.error(format!("Failed to load file: {}", e));
             }
         }
+    }
+}
+
+fn check_for_update() -> Option<String> {
+    let response =
+        match ureq::get("https://api.github.com/repos/popcornman209/SMLogic/releases/latest")
+            .header("User-Agent", "smlogic")
+            .call()
+        {
+            Ok(r) => r,
+            Err(e) => {
+                println!("update check failed: {}", e);
+                return None;
+            }
+        };
+    let body = response.into_body().read_to_string().ok()?;
+    let json: serde_json::Value = serde_json::from_str(&body).ok()?;
+    let latest = json["tag_name"].as_str()?.trim_start_matches('v');
+    let current = env!("CARGO_PKG_VERSION");
+    if latest != current {
+        Some(latest.to_string())
+    } else {
+        None
     }
 }
