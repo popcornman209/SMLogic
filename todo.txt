@@ -1,4 +1,8 @@
+modules in folders include the folder in their name
+
 dragable connections to sperate them out
+
+more project controlls (delete, new folder, etc)
 
 label text wrapping
 

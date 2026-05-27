@@ -397,7 +397,7 @@ impl AppState {
                 let mut limit_x = settings.max_x.is_some();
                 if ui.checkbox(&mut limit_x, "Limit X size").changed() {
                     if limit_x {
-                        settings.max_x = Some(20)
+                        settings.max_x = Some(1)
                     } else {
                         settings.max_x = None
                     }
@@ -418,7 +418,7 @@ impl AppState {
                 let mut limit_y = settings.max_y.is_some();
                 if ui.checkbox(&mut limit_y, "Limit Y size").changed() {
                     if limit_y {
-                        settings.max_y = Some(20)
+                        settings.max_y = Some(1)
                     } else {
                         settings.max_y = None
                     }
@@ -439,7 +439,7 @@ impl AppState {
                 let mut limit_z = settings.max_z.is_some();
                 if ui.checkbox(&mut limit_z, "Limit Z size").changed() {
                     if limit_z {
-                        settings.max_z = Some(20)
+                        settings.max_z = Some(1)
                     } else {
                         settings.max_z = None
                     }
