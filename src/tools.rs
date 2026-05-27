@@ -5,6 +5,7 @@ use crate::parts::{Part, PartType, Port};
 use crate::state::{AppState, Selection};
 use eframe::egui::Pos2;
 use egui::{Stroke, Ui, Vec2};
+use std::path::PathBuf;
 use std::time::{Duration, Instant};
 
 const PAINT_CELL_SIZE: Vec2 = egui::vec2(20.0, 20.0);
@@ -378,12 +379,17 @@ impl AppState {
                             state.target_spt = new_target_spt;
                         }
                     }
+                } else {
+                    self.active_tool = None;
                 }
             }
             Some(Tool::Exporter(settings)) => {
                 ui.separator();
                 ui.heading("SM Exporter");
-                ui.checkbox(&mut settings.maintain_io_position, "Keep IO Position");
+                ui.checkbox(&mut settings.maintain_io_position, "Keep IO Position")
+                    .on_hover_text(
+                        "Places the IO and Important parts as they are positioned in the canvas",
+                    );
                 if settings.maintain_io_position {
                     ui.horizontal(|ui| {
                         ui.label("IO X scale: ");
@@ -546,7 +552,11 @@ impl AppState {
                 // icon, file picker, always optional
                 let mut change_icon = settings.new_icon.is_some();
                 if ui.checkbox(&mut change_icon, "Set icon").changed() {
-                    settings.new_icon = None;
+                    if change_icon {
+                        settings.new_icon = Some(PathBuf::new());
+                    } else {
+                        settings.new_icon = None;
+                    }
                 }
                 if change_icon {
                     ui.horizontal(|ui| {

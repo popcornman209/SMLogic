@@ -264,6 +264,20 @@ impl AppState {
                             self.config.save();
                         }
                     }
+                    if let Some(project_folder) = self.project_folder.clone() {
+                        let active_folder = if let Some(sub_folder) = &self.project_sub_folder {
+                            project_folder.join(sub_folder)
+                        } else {
+                            project_folder
+                        };
+                        if ui
+                            .button("Open folder")
+                            .on_hover_text("Opens folder in file explorer")
+                            .clicked()
+                        {
+                            let _ = open::that(&active_folder);
+                        }
+                    }
 
                     ui.separator();
                     if ui.button("New Module").clicked() {
@@ -274,6 +288,7 @@ impl AppState {
                         };
                         self.current_module_path = None;
                         self.toasts.success("Cleared canvas");
+                        self.end_simulation();
                     }
                     if let Some(path) = self.current_module_path.clone() {
                         if ui.button("Save").clicked() {
@@ -315,6 +330,7 @@ impl AppState {
                             .pick_file();
                         if let Some(path) = file {
                             self.open_file(path);
+                            self.end_simulation();
                         }
                     }
 
@@ -356,9 +372,9 @@ impl AppState {
                             if let Some(project_folder) = self.project_folder.clone() {
                                 for path in self.current_folder_files.clone() {
                                     let mut label = path
-                                        .strip_prefix(&project_folder)
-                                        .map(|p| p.to_string_lossy().to_string())
-                                        .unwrap_or_else(|_| path.to_string_lossy().to_string());
+                                        .file_name()
+                                        .map(|n| n.to_string_lossy().to_string())
+                                        .unwrap_or_else(|| path.to_string_lossy().to_string());
 
                                     if path.is_dir() {
                                         label.push('/');
@@ -378,6 +394,7 @@ impl AppState {
                                             if active {
                                                 self.open_file(path);
                                                 self.active_tool = None;
+                                                self.end_simulation();
                                             } else {
                                                 self.active_tool = Some(Tool::PlacePart(
                                                     PartType::Module(path.clone()),
