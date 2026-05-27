@@ -379,8 +379,18 @@ impl BluePrint {
         toasts: &mut Toasts,
         exporter_settings: ExporterSettings,
     ) {
-        let (parts, colors, positions, connections, _id_remap, _tunnels, io_parts) =
-            get_canvas_raw_data(canvas, true);
+        let (
+            parts,
+            colors,
+            positions,
+            connections,
+            _id_remap,
+            _tunnels,
+            mut io_parts,
+            important_parts,
+        ) = get_canvas_raw_data(canvas, true);
+
+        io_parts.extend(important_parts); // treat important parts as IO
 
         let mut out_connections: Vec<Vec<usize>> = vec![Vec::new(); parts.len()];
         for (from, to) in &connections {

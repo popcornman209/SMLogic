@@ -106,6 +106,7 @@ impl SimState {
             id_remap,
             _tunnel_connections,
             _io_parts,
+            _important_parts,
         ) = get_canvas_raw_data(canvas.clone(), true);
         for (original_id, new_i) in id_remap {
             if let Some(part) = canvas.parts.get_mut(&original_id) {
@@ -145,6 +146,7 @@ pub fn get_canvas_raw_data(
     HashMap<u64, usize>,      // id remap
     HashMap<u64, Vec<usize>>, // tunnel connections
     Vec<usize>,               // io parts (only should have stuff in it if top level)
+    Vec<usize>,               // important parts
 ) {
     let mut id_remap: HashMap<u64, usize> = HashMap::new();
     let mut part_output: Vec<PartType> = Vec::new();
@@ -155,6 +157,7 @@ pub fn get_canvas_raw_data(
     // top level only
     let mut io_parts: Vec<usize> = Vec::new();
 
+    let mut important_parts: Vec<usize> = Vec::new();
     let mut tunnel_connections: HashMap<u64, Vec<usize>> = HashMap::new();
     let mut sub_tunnel_connections: HashMap<u64, HashMap<u64, Vec<usize>>> = HashMap::new();
 
@@ -173,6 +176,9 @@ pub fn get_canvas_raw_data(
                 color_output.push(part.color);
                 pos_output.push(part.pos);
                 id_remap.insert(*part_id, new_i);
+                if gate.important {
+                    important_parts.push(new_i);
+                }
             }
             PartData::Timer(timer) => {
                 let new_i = part_output.len();
@@ -191,11 +197,13 @@ pub fn get_canvas_raw_data(
                     _module_id_remap,
                     module_tunnel_connections,
                     _io_parts, // should be empty anyway
+                    important,
                 ) = get_canvas_raw_data(module.canvas_snapshot, false);
                 let offset = part_output.len();
                 part_output.extend(module_parts);
                 color_output.extend(colors);
                 pos_output.extend(positions);
+                important_parts.extend(important);
 
                 connection_output.extend(
                     module_connections
@@ -282,6 +290,7 @@ pub fn get_canvas_raw_data(
         id_remap,
         tunnel_connections,
         io_parts,
+        important_parts,
     )
 }
 
