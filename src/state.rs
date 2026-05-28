@@ -94,6 +94,7 @@ pub struct AppState {
     pub canvas_snapshot: CanvasSnapshot,
     pub selection: Vec<Selection>,
     pub last_project_reload: Instant,
+    pub request_rename: bool,
     // simulation info
     pub sim_snapshot: Option<Arc<Mutex<SimSnapshot>>>,
     pub sim_state_outputs_snapshot: Option<Vec<bool>>,
@@ -144,6 +145,7 @@ impl AppState {
             current_paint_color: DEFAULT_GATE_COLOR,
             selection: Vec::new(),
             last_project_reload: Instant::now(),
+            request_rename: false,
             sim_snapshot: None,
             sim_state_outputs_snapshot: None,
             sim_state: None,

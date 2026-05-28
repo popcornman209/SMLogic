@@ -1,10 +1,12 @@
-label text wrapping
+lua scripting?
 
-python library
+keybind customizer
 
-update checker
+tab key for renaming or tick step doesnt get blocked
 
 windows has no icon on the file itself
+
+export circuit as png
 
 more fast connect tool modes
 

@@ -58,6 +58,18 @@ pub struct ConnectorData {
     pub status: String,
 }
 impl ConnectorData {
+    pub const NEW: ConnectorData = ConnectorData {
+        selected_ports: Vec::new(),
+        mode: ConnectorMode::AllToAll,
+        selecting: ConnectorSelection::All,
+        previewing: false,
+        inputs: 0,
+        outputs: 0,
+        total: 0,
+        connection_preview: Vec::new(),
+        status: String::new(),
+    };
+
     pub fn calculate_totals(&mut self) {
         self.inputs = 0;
         self.outputs = 0;
@@ -156,31 +168,9 @@ impl Tool {
     pub const TOOLS: &[Option<Tool>] = &[
         None,
         Some(Tool::Paint),
-        Some(Tool::Connector(ConnectorData {
-            selected_ports: Vec::new(),
-            mode: ConnectorMode::AllToAll,
-            selecting: ConnectorSelection::All,
-            previewing: false,
-            inputs: 0,
-            outputs: 0,
-            total: 0,
-            connection_preview: Vec::new(),
-            status: String::new(),
-        })),
+        Some(Tool::Connector(ConnectorData::NEW)),
         Some(Tool::Simulator),
-        Some(Tool::Exporter(ExporterSettings {
-            maintain_io_position: false,
-            io_x_scale: 1.0 / 80.0,
-            io_y_scale: 1.0 / 60.0,
-            max_x: None,
-            max_y: None,
-            max_z: None,
-            export_type: ExportType::FromName,
-            identifier: None,
-            new_name: None,
-            new_desc: None,
-            new_icon: None,
-        })),
+        Some(Tool::Exporter(ExporterSettings::NEW)),
     ];
 }
 
@@ -188,6 +178,11 @@ impl AppState {
     pub fn draw_sidebar_tool_properties(&mut self, ui: &mut Ui) {
         let mut connect = false;
         let mut export = false;
+        let exporter_before = if let Some(Tool::Exporter(s)) = &self.active_tool {
+            Some(s.clone())
+        } else {
+            None
+        };
         match &mut self.active_tool {
             Some(Tool::Paint) => {
                 ui.separator();
@@ -607,6 +602,14 @@ impl AppState {
         if export {
             if let Some(Tool::Exporter(settings)) = &self.active_tool {
                 self.export(settings.clone());
+            }
+        }
+        if let (Some(before), Some(Tool::Exporter(after))) =
+            (exporter_before, &self.active_tool)
+        {
+            if before != *after {
+                self.config.export_settings = after.clone();
+                self.config.save();
             }
         }
     }

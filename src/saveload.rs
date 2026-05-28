@@ -1,7 +1,7 @@
 use crate::AppState;
 use crate::colors::ColorPallet;
 use crate::connections::Connection;
-use crate::exporter::get_bp_folder;
+use crate::exporter::{ExporterSettings, get_bp_folder};
 use crate::parts::{Part, PartData, Port};
 use crate::state::{CanvasSnapshot, Selection};
 use egui::Pos2;
@@ -31,9 +31,13 @@ pub struct Config {
     pub color_pallet: ColorPallet,
     #[serde(default)]
     pub bp_folder: Option<PathBuf>,
+    #[serde(default)]
+    pub export_settings: ExporterSettings,
 }
 
-fn default_true() -> bool { true }
+fn default_true() -> bool {
+    true
+}
 
 impl Config {
     fn config_dir() -> PathBuf {
@@ -73,6 +77,7 @@ impl Default for Config {
             last_project: None,
             color_pallet: ColorPallet::DEFAULT_PALLET,
             bp_folder: get_bp_folder(),
+            export_settings: ExporterSettings::NEW,
         }
     }
 }

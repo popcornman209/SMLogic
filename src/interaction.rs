@@ -1,8 +1,9 @@
 use crate::connections::{Connection, draw_connection};
 use crate::egui::{Context, Key, Painter, PointerButton, Rect, Vec2};
 use crate::parts::PartData;
+use crate::parts::PartType;
 use crate::state::{AppState, InteractionState, Selection};
-use crate::tools::Tool;
+use crate::tools::{ConnectorData, Tool};
 
 impl AppState {
     pub fn handle_input(&mut self, ctx: &Context, painter: &Painter, response: &egui::Response) {
@@ -13,11 +14,58 @@ impl AppState {
 
         // escape key
         if ctx.input(|i| i.key_pressed(Key::Escape)) {
-            if self.active_tool == Some(Tool::Simulator) {
-                self.end_simulation();
+            self.switch_to_tool(None);
+        } else if ctx.wants_keyboard_input() {
+            // a text field is focused, skip all keybinds below
+        } else if ctx.input(|i| i.key_pressed(Key::Num1)) {
+            self.switch_to_tool(Some(Tool::Paint));
+        } else if ctx.input(|i| i.key_pressed(Key::Num2)) {
+            self.switch_to_tool(Some(Tool::Connector(ConnectorData::NEW)));
+        } else if ctx.input(|i| i.key_pressed(Key::Num3)) {
+            self.switch_to_tool(Some(Tool::Simulator));
+            self.start_simulation();
+        } else if ctx.input(|i| i.key_pressed(Key::Num4)) {
+            self.switch_to_tool(Some(Tool::Exporter(self.config.export_settings.clone())));
+        } else if ctx.input(|i| i.key_pressed(Key::Q)) {
+            self.switch_to_tool(Some(Tool::PlacePart(PartType::And)));
+        } else if ctx.input(|i| i.key_pressed(Key::W)) {
+            self.switch_to_tool(Some(Tool::PlacePart(PartType::Or)));
+        } else if ctx.input(|i| i.key_pressed(Key::E)) {
+            self.switch_to_tool(Some(Tool::PlacePart(PartType::Xor)));
+        } else if ctx.input(|i| i.key_pressed(Key::R)) {
+            self.switch_to_tool(Some(Tool::PlacePart(PartType::Input)));
+        } else if ctx.input(|i| i.key_pressed(Key::T)) {
+            self.switch_to_tool(Some(Tool::PlacePart(PartType::Timer)));
+        } else if ctx.input(|i| i.key_pressed(Key::A)) {
+            self.switch_to_tool(Some(Tool::PlacePart(PartType::Nand)));
+        } else if ctx.input(|i| i.key_pressed(Key::S)) {
+            self.switch_to_tool(Some(Tool::PlacePart(PartType::Nor)));
+        } else if ctx.input(|i| i.key_pressed(Key::D)) {
+            self.switch_to_tool(Some(Tool::PlacePart(PartType::Xnor)));
+        } else if ctx.input(|i| i.key_pressed(Key::F)) {
+            self.switch_to_tool(Some(Tool::PlacePart(PartType::Output)));
+        } else if ctx.input(|i| i.key_pressed(Key::G)) {
+            self.switch_to_tool(Some(Tool::PlacePart(PartType::Label)));
+        }
+
+        if self.active_tool == Some(Tool::Simulator) {
+            if ctx.input(|i| i.key_pressed(Key::Space)) {
+                if let Some(sim_state) = &self.sim_state {
+                    let mut state = sim_state.lock();
+                    state.running = !state.running;
+                }
+            } else if ctx.input(|i| i.key_pressed(Key::Tab)) {
+                if let Some(sim_state) = &self.sim_state {
+                    let mut state = sim_state.lock();
+                    state.step = true;
+                }
             }
-            self.active_tool = None;
-            self.interaction_state = InteractionState::Idle;
+        } else if (!matches!(self.active_tool, Some(Tool::Exporter(_))))
+            && ctx.input(|i| i.key_pressed(Key::Tab))
+        {
+            if self.selection.len() == 1 {
+                self.request_rename = true;
+            }
         }
 
         // backspace
@@ -135,11 +183,20 @@ impl AppState {
 
         match &self.interaction_state {
             InteractionState::Idle => {
-                if ctx.input(|i| i.pointer.button_pressed(PointerButton::Middle))
-                    || ctx.input(|i| i.pointer.button_pressed(PointerButton::Secondary))
-                {
+                if ctx.input(|i| i.pointer.button_pressed(PointerButton::Secondary)) {
                     self.interaction_state = InteractionState::Panning;
                     return;
+                }
+                if ctx.input(|i| i.pointer.button_pressed(PointerButton::Middle)) {
+                    if let Some(part_id) = self.part_at_pos(world_pos).map(|p| p.id) {
+                        self.push_undo();
+                        self.canvas_snapshot.parts.remove(&part_id);
+                        self.reload_connection_counts();
+                    } else if let Some(connection) = self.connection_at_pos(world_pos) {
+                        self.push_undo();
+                        self.canvas_snapshot.connections.remove(connection);
+                        self.reload_connection_counts();
+                    }
                 }
 
                 if ctx.input(|i| i.pointer.button_pressed(PointerButton::Primary)) {
@@ -324,5 +381,13 @@ impl AppState {
                 }
             }
         }
+    }
+
+    fn switch_to_tool(&mut self, tool: Option<Tool>) {
+        if self.active_tool == Some(Tool::Simulator) {
+            self.end_simulation();
+        }
+        self.active_tool = tool;
+        self.interaction_state = InteractionState::Idle;
     }
 }

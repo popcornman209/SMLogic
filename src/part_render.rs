@@ -597,14 +597,22 @@ impl Part {
         ui.horizontal(|ui| {
             if matches!(self.part_data, PartData::Label(_)) {
                 ui.label("Text:");
-                ui.add(
+                let response = ui.add(
                     egui::TextEdit::multiline(&mut self.label)
                         .desired_width(100.0)
                         .desired_rows(4),
                 );
+                if app_state.request_rename {
+                    response.request_focus();
+                    app_state.request_rename = false;
+                }
             } else {
                 ui.label("Label:");
-                ui.add(TextEdit::singleline(&mut self.label).desired_width(100.0));
+                let response = ui.add(TextEdit::singleline(&mut self.label).desired_width(100.0));
+                if app_state.request_rename {
+                    response.request_focus();
+                    app_state.request_rename = false
+                }
             }
         });
     }

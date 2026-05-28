@@ -211,7 +211,11 @@ impl AppState {
                                 self.end_simulation();
                             }
                         } else {
-                            self.active_tool = tool.clone();
+                            self.active_tool = if matches!(tool, Some(Tool::Exporter(_))) {
+                                Some(Tool::Exporter(self.config.export_settings.clone()))
+                            } else {
+                                tool.clone()
+                            };
                             if matches!(tool, Some(Tool::Connector(_)) | Some(Tool::Simulator)) {
                                 self.selection.clear();
                             }
@@ -293,7 +297,7 @@ impl AppState {
                     }
 
                     ui.separator();
-                    if ui.button("New Module").clicked() {
+                    if ui.button("Clear Canvas").clicked() {
                         self.canvas_snapshot = CanvasSnapshot {
                             connections: Vec::new(),
                             parts: HashMap::new(),

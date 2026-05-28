@@ -5,6 +5,7 @@ use crate::{
 
 use egui::Pos2;
 use egui_notify::Toasts;
+use serde::{Deserialize, Serialize};
 use serde_json::{Value, json};
 use std::fs;
 use std::path::{Path, PathBuf};
@@ -12,7 +13,7 @@ use uuid::Uuid;
 
 const DEFAULT_ICON: &[u8] = include_bytes!("../assets/default_icon.png");
 
-#[derive(Clone, PartialEq)]
+#[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
 pub enum ExportType {
     FromName,
     FromUUID,
@@ -30,7 +31,7 @@ impl ExportType {
     }
 }
 
-#[derive(Clone, PartialEq)]
+#[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
 pub struct ExporterSettings {
     pub maintain_io_position: bool,
     pub io_x_scale: f32, // if maintiain io position is true, scales down canvas positions to SM ones
@@ -43,6 +44,28 @@ pub struct ExporterSettings {
     pub new_name: Option<String>,
     pub new_desc: Option<String>,
     pub new_icon: Option<std::path::PathBuf>,
+}
+
+impl ExporterSettings {
+    pub const NEW: Self = Self {
+        maintain_io_position: false,
+        io_x_scale: 1.0 / 80.0,
+        io_y_scale: 1.0 / 60.0,
+        max_x: None,
+        max_y: None,
+        max_z: None,
+        export_type: ExportType::FromName,
+        identifier: None,
+        new_name: None,
+        new_desc: None,
+        new_icon: None,
+    };
+}
+
+impl Default for ExporterSettings {
+    fn default() -> Self {
+        Self::NEW
+    }
 }
 
 impl AppState {
@@ -146,7 +169,7 @@ impl AppState {
                 bp.export(
                     self.canvas_snapshot.clone(),
                     &mut self.toasts,
-                    exporter_settings,
+                    &exporter_settings,
                 );
             } else {
                 return;
@@ -377,7 +400,7 @@ impl BluePrint {
         &mut self,
         canvas: CanvasSnapshot,
         toasts: &mut Toasts,
-        exporter_settings: ExporterSettings,
+        exporter_settings: &ExporterSettings,
     ) {
         let (
             parts,
