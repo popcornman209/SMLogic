@@ -1,5 +1,4 @@
 use eframe::egui::{self, Color32, Painter, Pos2, Rect, Sense, Stroke, Ui};
-use egui::Button;
 use std::borrow::Cow;
 use std::collections::HashMap;
 
@@ -237,6 +236,7 @@ impl AppState {
                         self.lua_script = Some(LuaScript {
                             path: None,
                             data: String::new(),
+                            output: String::new(),
                         });
                     }
                 }

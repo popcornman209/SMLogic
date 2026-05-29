@@ -1,34 +1,45 @@
-use std::path::PathBuf;
-
 use crate::state::AppState;
-use eframe::egui::Ui;
 use egui_code_editor::{CodeEditor, ColorTheme, Syntax};
+use mlua::Lua;
+use std::path::PathBuf;
 
 pub struct LuaScript {
     pub path: Option<PathBuf>,
     pub data: String,
+    pub output: String,
 }
 
-// fn run_script(script: &str, app: &mut AppState) -> Result<(), mlua::Error> {
-//     let lua = Lua::new();
-//
-//     lua.globals().set(
-//         "add_part",
-//         lua.create_function(|_, (part_type, x, y): (String, f32, f32)| Ok(part_id))?,
-//     )?;
-//
-//     lua.globals().set(
-//         "add_connection",
-//         lua.create_function(|_, (from, to): (u64, u64)| Ok(()))?,
-//     )?;
-//
-//     lua.load(script).exec()
-// }
-
 impl AppState {
+    fn run_script(&mut self) {
+        if let Some(lua_script) = &mut self.lua_script {
+            lua_script.output.clear();
+            let script_data = lua_script.data.clone();
+            let lua = Lua::new();
+
+            let mut output = String::new();
+            let result = lua.scope(|scope| {
+                lua.globals().set(
+                    "print",
+                    scope.create_function_mut(|_, msg: String| {
+                        output.push_str(&msg);
+                        output.push('\n');
+                        Ok(())
+                    })?,
+                )?;
+                lua.load(&script_data).exec()
+            });
+
+            lua_script.output = output;
+            if let Err(e) = result {
+                lua_script.output.push_str(&format!("[error] {}\n", e));
+            }
+        }
+    }
+
     pub fn draw_lua_script(&mut self, ctx: &egui::Context) {
         let mut open = self.lua_script.is_some();
         let mut load_path: Option<PathBuf> = None;
+        let mut run = false;
         egui::Window::new("Lua Scripting")
             .open(&mut open)
             .resizable(true)
@@ -40,6 +51,13 @@ impl AppState {
             .show(ctx, |ui| {
                 if let Some(mut lua_script) = self.lua_script.take() {
                     ui.horizontal(|ui| {
+                        if ui.button("New script").clicked() {
+                            lua_script = LuaScript {
+                                path: None,
+                                data: String::new(),
+                                output: String::new(),
+                            }
+                        }
                         if ui.button("Save as").clicked() {
                             let mut dialog = rfd::FileDialog::new()
                                 .add_filter("lua", &["lua"])
@@ -79,12 +97,28 @@ impl AppState {
                         .with_syntax(Syntax::lua())
                         .with_numlines(true)
                         .show(ui, &mut lua_script.data);
+                    if ui.button("Run").clicked() { run = true; }
+                    egui::ScrollArea::vertical()
+                        .stick_to_bottom(true)
+                        .max_height(150.0)
+                        .show(ui, |ui| {
+                            for line in lua_script.output.lines() {
+                                if line.starts_with("[error]") {
+                                    ui.colored_label(egui::Color32::RED, line);
+                                } else {
+                                    ui.monospace(line);
+                                }
+                            }
+                        });
                     self.lua_script = Some(lua_script);
                 }
             });
+        if run {
+            self.run_script();
+        }
         if let Some(path) = load_path {
             self.load_lua(path);
-        } else if open == false {
+        } else if !open {
             self.lua_script = None;
         }
     }
@@ -95,6 +129,7 @@ impl AppState {
             self.lua_script = Some(LuaScript {
                 path: Some(path),
                 data: data,
+                output: String::new(),
             })
         } else if let Err(error) = contents {
             self.toasts
