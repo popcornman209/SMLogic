@@ -6,7 +6,7 @@ if you find this tool useful, have issues/recommendations or have anything else 
 ![img1](assets/img1.png)
 
 ## Some info
-if you want to generate modules that are very complex or annoying to make, [here](./python_library/info.md) is the information for the python library for generating modules
+if you want to generate modules that are very complex or annoying to make, there is lua scripting for generating complex parts and connections that would otherwise be too tedious. [documention](github_resources/lua_scripting.md)
 
 you save and load modules with the bottom bar, you are also able to import modules as their own part by clicking on them once with input and output parts inside it correlating to the parts IO.
 

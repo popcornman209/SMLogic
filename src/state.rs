@@ -1,6 +1,7 @@
 use crate::colors::{ColorPallet, DEFAULT_GATE_COLOR};
 use crate::connections::{Connection, WIRE_WIDTH, compute_wire_route, dist_point_to_segment};
 use crate::egui::{Color32, Pos2, Rect, Vec2};
+use crate::lua_scripting::LuaScript;
 use crate::parts::{PORT_SIZE, Part, Port};
 use crate::saveload::{ClipboardData, Config};
 use crate::simulator::{SimSnapshot, SimState};
@@ -95,6 +96,7 @@ pub struct AppState {
     pub selection: Vec<Selection>,
     pub last_project_reload: Instant,
     pub request_rename: bool,
+    pub lua_script: Option<LuaScript>,
     // simulation info
     pub sim_snapshot: Option<Arc<Mutex<SimSnapshot>>>,
     pub sim_state_outputs_snapshot: Option<Vec<bool>>,
@@ -146,6 +148,7 @@ impl AppState {
             selection: Vec::new(),
             last_project_reload: Instant::now(),
             request_rename: false,
+            lua_script: None,
             sim_snapshot: None,
             sim_state_outputs_snapshot: None,
             sim_state: None,

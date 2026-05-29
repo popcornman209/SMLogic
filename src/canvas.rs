@@ -1,10 +1,12 @@
 use eframe::egui::{self, Color32, Painter, Pos2, Rect, Sense, Stroke, Ui};
+use egui::Button;
 use std::borrow::Cow;
 use std::collections::HashMap;
 
 use crate::colors::ColorPallet;
 use crate::connections::draw_connection;
 use crate::exporter::get_bp_folder;
+use crate::lua_scripting::LuaScript;
 use crate::parts::PartType;
 use crate::state::{AppState, CanvasSnapshot, InteractionState, Selection, path_to_string};
 use crate::tools::{Tool, tool_label};
@@ -230,6 +232,15 @@ impl AppState {
                     }
                 }
 
+                if ui.button("Lua Scripting").clicked() {
+                    if self.lua_script.is_none() {
+                        self.lua_script = Some(LuaScript {
+                            path: None,
+                            data: String::new(),
+                        });
+                    }
+                }
+
                 // settings button
                 ui.separator();
                 if ui.button("Settings").clicked() {
@@ -408,14 +419,21 @@ impl AppState {
                                             );
                                             self.reload_project_folder();
                                         } else if path.is_file() {
-                                            if active {
-                                                self.open_file(path);
-                                                self.active_tool = None;
-                                                self.end_simulation();
-                                            } else {
-                                                self.active_tool = Some(Tool::PlacePart(
-                                                    PartType::Module(path.clone()),
-                                                ));
+                                            if path.extension().is_some_and(|ext| ext == "sml") {
+                                                if active {
+                                                    self.open_file(path);
+                                                    self.active_tool = None;
+                                                    self.end_simulation();
+                                                } else {
+                                                    self.active_tool = Some(Tool::PlacePart(
+                                                        PartType::Module(path.clone()),
+                                                    ));
+                                                }
+                                            } else if path
+                                                .extension()
+                                                .is_some_and(|ext| ext == "lua")
+                                            {
+                                                self.load_lua(path);
                                             }
                                         }
                                     }

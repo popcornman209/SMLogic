@@ -3,6 +3,7 @@ mod colors;
 mod connections;
 mod exporter;
 mod interaction;
+mod lua_scripting;
 mod part_render;
 mod parts;
 mod saveload;
@@ -67,6 +68,7 @@ impl eframe::App for AppState {
 
         self.draw_sidebar(ctx);
         self.draw_settings(ctx);
+        self.draw_lua_script(ctx);
         self.draw_footer(ctx);
         egui::CentralPanel::default().show(ctx, |ui| {
             let (response, painter) = self.draw_canvas(ui, ctx);
