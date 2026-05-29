@@ -1,6 +1,13 @@
-use crate::state::AppState;
+use crate::{
+    colors::DEFAULT_GATE_COLOR,
+    connections::{Connection},
+    parts::{Part, PartData, PartType, Port},
+    state::AppState,
+};
+use egui::{Color32, Pos2};
 use egui_code_editor::{CodeEditor, ColorTheme, Syntax};
 use mlua::Lua;
+use std::cell::RefCell;
 use std::path::PathBuf;
 
 pub struct LuaScript {
@@ -11,11 +18,22 @@ pub struct LuaScript {
 
 impl AppState {
     fn run_script(&mut self) {
-        if let Some(lua_script) = &mut self.lua_script {
+        if let Some(mut lua_script) = self.lua_script.take() {
             lua_script.output.clear();
             let script_data = lua_script.data.clone();
+            let project_folder = self.project_folder.clone();
             let lua = Lua::new();
 
+            let resolve = |path: String| -> std::path::PathBuf {
+                let p = std::path::PathBuf::from(&path);
+                if p.is_relative() {
+                    if let Some(ref base) = project_folder {
+                        return base.join(p);
+                    }
+                }
+                p
+            };
+            let app_cell = RefCell::new(&mut *self);
             let mut output = String::new();
             let result = lua.scope(|scope| {
                 lua.globals().set(
@@ -26,13 +44,79 @@ impl AppState {
                         Ok(())
                     })?,
                 )?;
+                lua.globals().set(
+                    "read_file",
+                    scope.create_function(|_, path: String| {
+                        std::fs::read_to_string(resolve(path)).map_err(mlua::Error::external)
+                    })?,
+                )?;
+
+                lua.globals().set(
+                    "read_bytes",
+                    scope.create_function(|_, path: String| {
+                        std::fs::read(resolve(path)).map_err(mlua::Error::external)
+                    })?,
+                )?;
+                lua.globals().set(
+                    "create_gate",
+                    scope.create_function_mut(
+                        |_, (gate_type, x, y, opts): (String, f32, f32, Option<mlua::Table>)| {
+                            let color = if let Some(hex) =
+                                opts.as_ref().and_then(|t| t.get::<String>("color").ok())
+                            {
+                                Color32::from_hex(&hex).map_err(|e| {
+                                    mlua::Error::runtime(format!("invalid color: {:?}", e))
+                                })?
+                            } else {
+                                DEFAULT_GATE_COLOR
+                            };
+                            let important = opts
+                                .as_ref()
+                                .and_then(|t| t.get::<bool>("important").ok())
+                                .unwrap_or(false);
+                            let part_type = match gate_type.to_lowercase().as_str() {
+                                "and" => PartType::And,
+                                "or" => PartType::Or,
+                                "xor" => PartType::Xor,
+                                "nand" => PartType::Nand,
+                                "nor" => PartType::Nor,
+                                "xnor" => PartType::Xnor,
+                                _ => return Err(mlua::Error::runtime("invalid gate type")),
+                            };
+                            let mut app = app_cell.borrow_mut();
+                            let id = Part::new(part_type, &mut **app, Pos2::new(x, y));
+                            if let Some(part) = app.canvas_snapshot.parts.get_mut(&id) {
+                                part.color = color;
+                                if let PartData::Gate(data) = &mut part.part_data {
+                                    data.important = important;
+                                }
+                            }
+                            Ok(id)
+                        },
+                    )?,
+                )?;
+                lua.globals().set(
+                    "add_connection",
+                    scope.create_function_mut(
+                        |_, (from_id, to_id): (u64, u64)| {
+                            let connection = Connection {
+                                start: Port { part: from_id, input: false, port_id: None },
+                                end: Port { part: to_id, input: true, port_id: None },
+                            };
+                            app_cell.borrow_mut().add_connection(connection);
+                            Ok(())
+                        },
+                    )?,
+                )?;
                 lua.load(&script_data).exec()
             });
+            drop(app_cell);
 
             lua_script.output = output;
             if let Err(e) = result {
                 lua_script.output.push_str(&format!("[error] {}\n", e));
             }
+            self.lua_script = Some(lua_script);
         }
     }
 
