@@ -3,7 +3,7 @@ A simple tool for designing complex Scrap Mechanic logic circuits :) \
 if you find this tool useful, have issues/recommendations or have anything else to say, feel free to reach out on discord! <sup><sub>(I like talking to ppl :3)</sub></sup>
 
 ### images
-![img1](assets/img1.png)
+![img1](github_resources/img1.png)
 
 ## Some info
 if you want to generate modules that are very complex or annoying to make, there is lua scripting for generating complex parts and connections that would otherwise be too tedious. [documention](github_resources/lua_scripting.md)

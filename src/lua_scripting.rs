@@ -97,7 +97,11 @@ impl AppState {
                         .with_syntax(Syntax::lua())
                         .with_numlines(true)
                         .show(ui, &mut lua_script.data);
+                    ui.horizontal(|ui| {
                     if ui.button("Run").clicked() { run = true; }
+                    if ui.button("Docs").clicked() {
+                        let _ = open::that("https://github.com/popcornman209/SMLogic/blob/main/github_resources/lua_scripting.md");
+                    }});
                     egui::ScrollArea::vertical()
                         .stick_to_bottom(true)
                         .max_height(150.0)
