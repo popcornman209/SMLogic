@@ -1,6 +1,6 @@
 use crate::{
     colors::DEFAULT_GATE_COLOR,
-    connections::{Connection},
+    connections::Connection,
     parts::{Part, PartData, PartType, Port},
     state::AppState,
 };
@@ -33,6 +33,7 @@ impl AppState {
                 }
                 p
             };
+            self.push_undo();
             let app_cell = RefCell::new(&mut *self);
             let mut output = String::new();
             let result = lua.scope(|scope| {
@@ -96,17 +97,59 @@ impl AppState {
                     )?,
                 )?;
                 lua.globals().set(
-                    "add_connection",
+                    "create_timer",
                     scope.create_function_mut(
-                        |_, (from_id, to_id): (u64, u64)| {
-                            let connection = Connection {
-                                start: Port { part: from_id, input: false, port_id: None },
-                                end: Port { part: to_id, input: true, port_id: None },
+                        |_, (secs, ticks, x, y, opts): (u8, u8, f32, f32, Option<mlua::Table>)| {
+                            let color = if let Some(hex) =
+                                opts.as_ref().and_then(|t| t.get::<String>("color").ok())
+                            {
+                                Color32::from_hex(&hex).map_err(|e| {
+                                    mlua::Error::runtime(format!("invalid color: {:?}", e))
+                                })?
+                            } else {
+                                DEFAULT_GATE_COLOR
                             };
-                            app_cell.borrow_mut().add_connection(connection);
-                            Ok(())
+                            let mut app = app_cell.borrow_mut();
+                            let id = Part::new(PartType::Timer, &mut **app, Pos2::new(x, y));
+                            if let Some(part) = app.canvas_snapshot.parts.get_mut(&id) {
+                                part.color = color;
+                                if let PartData::Timer(data) = &mut part.part_data {
+                                    data.secs = secs;
+                                    data.ticks = ticks;
+                                }
+                            }
+                            Ok(id)
                         },
                     )?,
+                )?;
+                lua.globals().set(
+                    "add_connection",
+                    scope.create_function_mut(|_, (from_id, to_id): (u64, u64)| {
+                        let connection = Connection {
+                            start: Port {
+                                part: from_id,
+                                input: false,
+                                port_id: None,
+                            },
+                            end: Port {
+                                part: to_id,
+                                input: true,
+                                port_id: None,
+                            },
+                        };
+                        app_cell.borrow_mut().add_connection(connection);
+                        Ok(())
+                    })?,
+                )?;
+                lua.globals().set(
+                    "get_part",
+                    scope.create_function_mut(|_, (id): (u64)| {
+                        if let Some(part) = app_cell.borrow().canvas_snapshot.parts.get(&id) {
+                            Ok(())
+                        } else {
+                            Err(mlua::Error::runtime(format!("unable to find part {}!", id)))
+                        }
+                    })?,
                 )?;
                 lua.load(&script_data).exec()
             });
@@ -126,6 +169,7 @@ impl AppState {
         let mut run = false;
         egui::Window::new("Lua Scripting")
             .open(&mut open)
+            .default_width(600.0)
             .resizable(true)
             .frame(
                 egui::Frame::new()

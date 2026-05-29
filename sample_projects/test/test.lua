@@ -11,15 +11,23 @@ for row = 0, 7 do
 		local byte_val = data[bit_index // 8 + 1]
 		local is_set = (byte_val >> (bit_index % 8)) & 1 == 1
 		local color = is_set and "#ffffff" or "#000000"
-		id = create_gate("nand", col * 80, row * 60 + 30, {color = color})
+		id = create_gate("nand", col * 80, row * 60 + 30, {color = color, important = true})
 		if is_set then
 			table.insert(white_gates, id)
 		end
 	end
 end
 
-other_gate = create_gate("and",-120,30)
+-- main clock
+timer = create_timer(0,18,-120,30)
+nand_gate = create_gate("nand", -120, 110)
+and_gate = create_gate("and", -240, 30)
 
+add_connection(timer, nand_gate)
+add_connection(nand_gate, and_gate)
+add_connection(and_gate, timer)
+
+-- connect clock to white gates to make them blink
 for _, white_gate in ipairs(white_gates) do
-    add_connection(other_gate, white_gate)
+    add_connection(timer, white_gate)
 end

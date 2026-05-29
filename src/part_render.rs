@@ -615,6 +615,7 @@ impl Part {
                 }
             }
         });
+        ui.label(format!("ID: {}", self.id));
     }
 }
 

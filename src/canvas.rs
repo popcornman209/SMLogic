@@ -252,10 +252,10 @@ impl AppState {
 
                 // properties
                 if self.selection.len() == 1 {
-                    ui.heading("Properties");
-                    ui.separator();
                     if let Selection::Part(part_id) = self.selection[0] {
                         if let Some(mut part) = self.canvas_snapshot.parts.remove(&part_id) {
+                            ui.heading("Properties");
+                            ui.separator();
                             part.draw_properties(ui, self);
                             self.canvas_snapshot.parts.insert(part_id, part);
                         }
