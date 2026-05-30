@@ -1,8 +1,8 @@
 use crate::{
     colors::DEFAULT_GATE_COLOR,
     connections::Connection,
-    parts::{Part, PartData, PartType, Port},
-    state::AppState,
+    parts::{GATE_SIZE, Part, PartData, PartType, Port},
+    state::{AppState, Selection},
 };
 use egui::{Color32, Pos2};
 use egui_code_editor::{CodeEditor, ColorTheme, Syntax};
@@ -14,6 +14,39 @@ pub struct LuaScript {
     pub path: Option<PathBuf>,
     pub data: String,
     pub output: String,
+}
+
+fn get_part(part: &Part, lua: &Lua) -> mlua::Result<mlua::Table> {
+    let t = lua.create_table()?;
+    t.set("id", part.id)?;
+    t.set("x", part.pos.x)?;
+    t.set("y", part.pos.y)?;
+    t.set("label", part.label.clone())?;
+    t.set("color", part.color.to_opaque().to_hex().strip_suffix("ff"))?;
+    match &part.part_data {
+        PartData::Gate(gate) => {
+            t.set("type", gate.gate_type.to_label())?;
+            t.set("important", gate.important)?;
+        }
+        PartData::Timer(timer) => {
+            t.set("type", "timer")?;
+            t.set("seconds", timer.secs)?;
+            t.set("ticks", timer.ticks)?;
+        }
+        PartData::IO(io) => {
+            t.set("type", "io")?;
+            t.set("input", io.input)?;
+        }
+        PartData::Module(_module) => {
+            t.set("type", "module")?;
+        }
+        PartData::Label(label) => {
+            t.set("type", "label")?;
+            t.set("xSize", label.size.x)?;
+            t.set("ySize", label.size.y)?;
+        }
+    }
+    Ok(t)
 }
 
 impl AppState {
@@ -84,10 +117,18 @@ impl AppState {
                                 "xnor" => PartType::Xnor,
                                 _ => return Err(mlua::Error::runtime("invalid gate type")),
                             };
+                            let label = opts.as_ref().and_then(|t| t.get::<String>("label").ok());
                             let mut app = app_cell.borrow_mut();
-                            let id = Part::new(part_type, &mut **app, Pos2::new(x, y));
+                            let id = Part::new(
+                                part_type,
+                                &mut **app,
+                                Pos2::new(x + GATE_SIZE.x / 2.0, y + GATE_SIZE.y / 2.0),
+                            );
                             if let Some(part) = app.canvas_snapshot.parts.get_mut(&id) {
                                 part.color = color;
+                                if let Some(l) = label {
+                                    part.label = l;
+                                }
                                 if let PartData::Gate(data) = &mut part.part_data {
                                     data.important = important;
                                 }
@@ -109,10 +150,18 @@ impl AppState {
                             } else {
                                 DEFAULT_GATE_COLOR
                             };
+                            let label = opts.as_ref().and_then(|t| t.get::<String>("label").ok());
                             let mut app = app_cell.borrow_mut();
-                            let id = Part::new(PartType::Timer, &mut **app, Pos2::new(x, y));
+                            let id = Part::new(
+                                PartType::Timer,
+                                &mut **app,
+                                Pos2::new(x + GATE_SIZE.x / 2.0, y + GATE_SIZE.y / 2.0),
+                            );
                             if let Some(part) = app.canvas_snapshot.parts.get_mut(&id) {
                                 part.color = color;
+                                if let Some(l) = label {
+                                    part.label = l;
+                                }
                                 if let PartData::Timer(data) = &mut part.part_data {
                                     data.secs = secs;
                                     data.ticks = ticks;
@@ -143,12 +192,60 @@ impl AppState {
                 )?;
                 lua.globals().set(
                     "get_part",
-                    scope.create_function_mut(|_, (id): (u64)| {
+                    scope.create_function_mut(|_, id: u64| {
                         if let Some(part) = app_cell.borrow().canvas_snapshot.parts.get(&id) {
-                            Ok(())
+                            get_part(part, &lua)
                         } else {
                             Err(mlua::Error::runtime(format!("unable to find part {}!", id)))
                         }
+                    })?,
+                )?;
+                lua.globals().set(
+                    "get_canvas",
+                    scope.create_function_mut(|_, ()| {
+                        let canvas_snapshot = app_cell.borrow().canvas_snapshot.clone();
+                        let parts = lua.create_table()?;
+                        for (id, part) in canvas_snapshot.parts {
+                            parts.set(id, get_part(&part, &lua)?)?;
+                        }
+                        let connections = lua.create_table()?;
+                        for (i, connection) in canvas_snapshot.connections.iter().enumerate() {
+                            let t = lua.create_table()?;
+                            t.set("from", connection.start.part)?;
+                            t.set("to", connection.end.part)?;
+                            connections.set(i + 1, t)?;
+                        }
+                        let t = lua.create_table()?;
+                        t.set("parts", parts)?;
+                        t.set("connections", connections)?;
+                        Ok(t)
+                    })?,
+                )?;
+                lua.globals().set(
+                    "get_selection",
+                    scope.create_function_mut(|_, ()| {
+                        let canvas_snapshot = app_cell.borrow().canvas_snapshot.clone();
+                        let selection = app_cell.borrow().selection.clone();
+                        let parts = lua.create_table()?;
+                        let connections = lua.create_table()?;
+                        for select in selection.iter() {
+                            if let Selection::Part(id) = select {
+                                if let Some(part) = canvas_snapshot.parts.get(id) {
+                                    parts.set(parts.raw_len() + 1, get_part(part, &lua)?)?;
+                                }
+                            } else if let Selection::Connection(id) = select {
+                                if let Some(connection) = canvas_snapshot.connections.get(*id) {
+                                    let t = lua.create_table()?;
+                                    t.set("from", connection.start.part)?;
+                                    t.set("to", connection.end.part)?;
+                                    connections.set(connections.raw_len() + 1, t)?;
+                                }
+                            }
+                        }
+                        let t = lua.create_table()?;
+                        t.set("parts", parts)?;
+                        t.set("connections", connections)?;
+                        Ok(t)
                     })?,
                 )?;
                 lua.load(&script_data).exec()

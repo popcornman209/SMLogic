@@ -4,7 +4,7 @@ This is a basic Lua55 intregration, with features to read files and create/modif
 # custom functions
 
 ### create_gate
-you can create a logic gate with the `create_gate` function, which takes the arguments `(type, x_position, y_position)` and optional arguments {color = hex} or {important = bool} and returns the parts ID.
+you can create a logic gate with the `create_gate` function, which takes the arguments `(type, x_position, y_position)` and optional arguments {color = hex}, {important = bool}, or {label = name} and returns the parts ID.
 ```lua
 -- basic xor gate at 0,0
 create_gate("xor", 0, 0)
@@ -15,7 +15,7 @@ id = create_gate("and", 100, 20, {color = "#ff0000", important = true})
 ```
 
 ### create_timer
-timers are created with the `create_timer` function. it takes the inputs of ()
+timers are created with the `create_timer` function. it takes the inputs of `(seconds, ticks, x, y)` and optional arguements of `{color = hex}` and `{label = name}`
 ```lua
 -- timer 10 seconds long at 0, 0
 create_timer(10, 0, 0, 0)
@@ -29,6 +29,65 @@ you can connect parts together with `add_connection`, inputs being `(from_part_i
 -- connects gate1 to gate2
 add_connection(gate1_id, gate2_id)
 ```
+
+### get_part
+takes an input of the part id, and returns any data about the part as well as extra data depending on part type.
+```lua
+-- base info
+{
+	"id" = id, 			 -- int
+	"x" = xpos, 		 -- float
+	"y" = ypos, 		 -- float
+	"label" = label, 	 -- string
+	"color" = hex color, -- string
+}
+-- gates
+{
+	"type": gate type ("and", "xnor", etc), -- string
+	"important": gate importance,			-- bool
+}
+-- timers
+{
+	"type" = "timer",		  -- string
+	"seconds" = # of seconds, -- int
+	"ticks" = # of ticks,	  -- int
+}
+-- io
+{
+	"type" = "io",						 -- string
+	"input" = wether is an input or not, -- bool
+}
+-- module
+{
+	"type" = "module", -- string
+	-- no other data included atm
+}
+-- label
+{
+	"type" = "label",  -- string
+	"xSize" = x scale, -- float
+	"ySize" = y scale, -- float
+}
+```
+
+### get_canvas
+returns a list of parts and connections, formatted as below and takes no arguments.
+```lua
+{
+	"parts" = {
+		-- list of parts with same formatting as get_part()
+	},
+	"connections" = {
+		{
+			"from": part id -- int
+			"to": part id 	-- int
+		}
+	}
+}
+```
+
+### get_selection
+returns all parts and connections selected, formatted the same as `get_canvas`, also takes no arguments.
 
 ### print
 a generic print function, prints any string to the output.
