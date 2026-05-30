@@ -23,7 +23,7 @@ for row = 0, 7 do
 		local byte_val = data[bit_index // 8 + 1]
 		local is_set = (byte_val >> (bit_index % 8)) & 1 == 1
 		local color = is_set and "#ffffff" or "#000000"
-		id = create_gate("nand", col * 80, row * 60, {color = color, important = true})
+		id = create_output(col * 80, row * 60, {color = color})
 		if is_set then
 			table.insert(white_gates, id)
 		end

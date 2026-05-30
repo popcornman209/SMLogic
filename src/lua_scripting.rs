@@ -16,6 +16,32 @@ pub struct LuaScript {
     pub output: String,
 }
 
+impl PartType {
+    fn gate_from_string(gate_type: String) -> mlua::Result<Self> {
+        match gate_type.to_lowercase().as_str() {
+            "and" => Ok(PartType::And),
+            "or" => Ok(PartType::Or),
+            "xor" => Ok(PartType::Xor),
+            "nand" => Ok(PartType::Nand),
+            "nor" => Ok(PartType::Nor),
+            "xnor" => Ok(PartType::Xnor),
+            _ => return Err(mlua::Error::runtime("invalid gate type")),
+        }
+    }
+}
+
+fn get_position(x: f32, y: f32) -> Pos2 {
+    Pos2::new(x + GATE_SIZE.x / 2.0, y + GATE_SIZE.y / 2.0)
+}
+
+fn get_color(opts: &Option<mlua::Table>) -> mlua::Result<Color32> {
+    return if let Some(hex) = opts.as_ref().and_then(|t| t.get::<String>("color").ok()) {
+        Color32::from_hex(&hex).map_err(|e| mlua::Error::runtime(format!("invalid color: {:?}", e)))
+    } else {
+        Ok(DEFAULT_GATE_COLOR)
+    };
+}
+
 fn get_part(part: &Part, lua: &Lua) -> mlua::Result<mlua::Table> {
     let t = lua.create_table()?;
     t.set("id", part.id)?;
@@ -79,6 +105,26 @@ impl AppState {
                     })?,
                 )?;
                 lua.globals().set(
+                    "list_dir",
+                    scope.create_function_mut(|_, dir: String| {
+                        let t = lua.create_table()?;
+                        let entries =
+                            std::fs::read_dir(resolve(dir)).map_err(mlua::Error::external)?;
+
+                        for entry in entries {
+                            t.set(
+                                t.raw_len() + 1,
+                                entry
+                                    .map_err(mlua::Error::external)?
+                                    .file_name()
+                                    .to_string_lossy()
+                                    .into_owned(),
+                            )?;
+                        }
+                        Ok(t)
+                    })?,
+                )?;
+                lua.globals().set(
                     "read_file",
                     scope.create_function(|_, path: String| {
                         std::fs::read_to_string(resolve(path)).map_err(mlua::Error::external)
@@ -95,35 +141,15 @@ impl AppState {
                     "create_gate",
                     scope.create_function_mut(
                         |_, (gate_type, x, y, opts): (String, f32, f32, Option<mlua::Table>)| {
-                            let color = if let Some(hex) =
-                                opts.as_ref().and_then(|t| t.get::<String>("color").ok())
-                            {
-                                Color32::from_hex(&hex).map_err(|e| {
-                                    mlua::Error::runtime(format!("invalid color: {:?}", e))
-                                })?
-                            } else {
-                                DEFAULT_GATE_COLOR
-                            };
+                            let color = get_color(&opts)?;
                             let important = opts
                                 .as_ref()
                                 .and_then(|t| t.get::<bool>("important").ok())
                                 .unwrap_or(false);
-                            let part_type = match gate_type.to_lowercase().as_str() {
-                                "and" => PartType::And,
-                                "or" => PartType::Or,
-                                "xor" => PartType::Xor,
-                                "nand" => PartType::Nand,
-                                "nor" => PartType::Nor,
-                                "xnor" => PartType::Xnor,
-                                _ => return Err(mlua::Error::runtime("invalid gate type")),
-                            };
+                            let part_type = PartType::gate_from_string(gate_type)?;
                             let label = opts.as_ref().and_then(|t| t.get::<String>("label").ok());
                             let mut app = app_cell.borrow_mut();
-                            let id = Part::new(
-                                part_type,
-                                &mut **app,
-                                Pos2::new(x + GATE_SIZE.x / 2.0, y + GATE_SIZE.y / 2.0),
-                            );
+                            let id = Part::new(part_type, &mut **app, get_position(x, y));
                             if let Some(part) = app.canvas_snapshot.parts.get_mut(&id) {
                                 part.color = color;
                                 if let Some(l) = label {
@@ -141,22 +167,10 @@ impl AppState {
                     "create_timer",
                     scope.create_function_mut(
                         |_, (secs, ticks, x, y, opts): (u8, u8, f32, f32, Option<mlua::Table>)| {
-                            let color = if let Some(hex) =
-                                opts.as_ref().and_then(|t| t.get::<String>("color").ok())
-                            {
-                                Color32::from_hex(&hex).map_err(|e| {
-                                    mlua::Error::runtime(format!("invalid color: {:?}", e))
-                                })?
-                            } else {
-                                DEFAULT_GATE_COLOR
-                            };
+                            let color = get_color(&opts)?;
                             let label = opts.as_ref().and_then(|t| t.get::<String>("label").ok());
                             let mut app = app_cell.borrow_mut();
-                            let id = Part::new(
-                                PartType::Timer,
-                                &mut **app,
-                                Pos2::new(x + GATE_SIZE.x / 2.0, y + GATE_SIZE.y / 2.0),
-                            );
+                            let id = Part::new(PartType::Timer, &mut **app, get_position(x, y));
                             if let Some(part) = app.canvas_snapshot.parts.get_mut(&id) {
                                 part.color = color;
                                 if let Some(l) = label {
@@ -166,6 +180,57 @@ impl AppState {
                                     data.secs = secs;
                                     data.ticks = ticks;
                                 }
+                            }
+                            Ok(id)
+                        },
+                    )?,
+                )?;
+                lua.globals().set(
+                    "create_input",
+                    scope.create_function_mut(
+                        |_, (x, y, opts): (f32, f32, Option<mlua::Table>)| {
+                            let color = get_color(&opts)?;
+                            let label = opts.as_ref().and_then(|t| t.get::<String>("label").ok());
+                            let mut app = app_cell.borrow_mut();
+                            let id = Part::new(PartType::Input, &mut **app, get_position(x, y));
+                            if let Some(part) = app.canvas_snapshot.parts.get_mut(&id) {
+                                part.color = color;
+                                if let Some(l) = label {
+                                    part.label = l;
+                                }
+                            }
+                            Ok(id)
+                        },
+                    )?,
+                )?;
+                lua.globals().set(
+                    "create_output",
+                    scope.create_function_mut(
+                        |_, (x, y, opts): (f32, f32, Option<mlua::Table>)| {
+                            let color = get_color(&opts)?;
+                            let label = opts.as_ref().and_then(|t| t.get::<String>("label").ok());
+                            let mut app = app_cell.borrow_mut();
+                            let id = Part::new(PartType::Output, &mut **app, get_position(x, y));
+                            if let Some(part) = app.canvas_snapshot.parts.get_mut(&id) {
+                                part.color = color;
+                                if let Some(l) = label {
+                                    part.label = l;
+                                }
+                            }
+                            Ok(id)
+                        },
+                    )?,
+                )?;
+                lua.globals().set(
+                    "create_label",
+                    scope.create_function_mut(
+                        |_, (label, x, y, opts): (String, f32, f32, Option<mlua::Table>)| {
+                            let color = get_color(&opts)?;
+                            let mut app = app_cell.borrow_mut();
+                            let id = Part::new(PartType::Label, &mut **app, get_position(x, y));
+                            if let Some(part) = app.canvas_snapshot.parts.get_mut(&id) {
+                                part.color = color;
+                                part.label = label
                             }
                             Ok(id)
                         },
