@@ -72,7 +72,7 @@ impl AppState {
     pub fn export(&mut self, exporter_settings: ExporterSettings) {
         if (exporter_settings.max_x.unwrap_or(1) <= 0)
             | (exporter_settings.max_y.unwrap_or(1) <= 0)
-            | (exporter_settings.max_x.unwrap_or(1) <= 0)
+            | (exporter_settings.max_z.unwrap_or(1) <= 0)
         {
             self.toasts.error("cant set max size <= 0!");
             return;

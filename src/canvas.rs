@@ -231,7 +231,10 @@ impl AppState {
                     }
                 }
 
-                if ui.button("Lua Scripting").clicked() {
+                // lua scripting
+                ui.heading("Lua Scripting");
+                ui.separator();
+                if ui.button("Open editor").clicked() {
                     if self.lua_script.is_none() {
                         self.lua_script = Some(LuaScript {
                             path: None,

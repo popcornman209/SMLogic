@@ -48,7 +48,7 @@ fn set_opts(opts: &Option<mlua::Table>, part: &mut Part) -> mlua::Result<()> {
     let pos_opt = if let Some(x) = x_opt
         && let Some(y) = y_opt
     {
-        Some(get_position(x, y))
+        Some(Pos2::new(x, y))
     } else {
         None
     };
@@ -79,7 +79,7 @@ fn get_part(part: &Part, lua: &Lua) -> mlua::Result<mlua::Table> {
     t.set("x", part.pos.x)?;
     t.set("y", part.pos.y)?;
     t.set("label", part.label.clone())?;
-    t.set("color", part.color.to_opaque().to_hex().strip_suffix("ff"))?;
+    t.set("color", part.color.to_opaque().to_hex().strip_suffix("ff").ok_or_else(|| mlua::Error::runtime("failed to convert color to hex"))?)?;
     match &part.part_data {
         PartData::Gate(gate) => {
             t.set("type", gate.gate_type.to_label())?;

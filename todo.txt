@@ -1,6 +1,8 @@
-lua scripting?
+pin lua scripts to toolbar
 
 keybind customizer
+
+tooltips on buttons and settings
 
 tab key for renaming or tick step doesnt get blocked
 
