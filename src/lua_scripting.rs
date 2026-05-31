@@ -1,7 +1,7 @@
 use crate::{
     colors::DEFAULT_GATE_COLOR,
     connections::Connection,
-    parts::{GATE_SIZE, Part, PartData, PartType, Port},
+    parts::{GATE_SIZE, GateType, Part, PartData, PartType, Port},
     state::{AppState, Selection},
 };
 use egui::{Color32, Pos2};
@@ -40,6 +40,37 @@ fn get_color(opts: &Option<mlua::Table>) -> mlua::Result<Color32> {
     } else {
         Ok(DEFAULT_GATE_COLOR)
     };
+}
+
+fn set_opts(opts: &Option<mlua::Table>, part: &mut Part) -> mlua::Result<()> {
+    let x_opt = opts.as_ref().and_then(|t| t.get::<f32>("x").ok());
+    let y_opt = opts.as_ref().and_then(|t| t.get::<f32>("y").ok());
+    let pos_opt = if let Some(x) = x_opt
+        && let Some(y) = y_opt
+    {
+        Some(get_position(x, y))
+    } else {
+        None
+    };
+    let color_opt = if let Some(hex) = opts.as_ref().and_then(|t| t.get::<String>("color").ok()) {
+        Some(
+            Color32::from_hex(&hex)
+                .map_err(|e| mlua::Error::runtime(format!("invalid color: {:?}", e)))?,
+        )
+    } else {
+        None
+    };
+    let label_opt = opts.as_ref().and_then(|t| t.get::<String>("label").ok());
+    if let Some(pos) = pos_opt {
+        part.pos = pos;
+    }
+    if let Some(label) = label_opt {
+        part.label = label;
+    }
+    if let Some(color) = color_opt {
+        part.color = color
+    }
+    Ok(())
 }
 
 fn get_part(part: &Part, lua: &Lua) -> mlua::Result<mlua::Table> {
@@ -164,6 +195,33 @@ impl AppState {
                     )?,
                 )?;
                 lua.globals().set(
+                    "modify_gate",
+                    scope.create_function_mut(|_, (id, opts): (u64, Option<mlua::Table>)| {
+                        let important_opt =
+                            opts.as_ref().and_then(|t| t.get::<bool>("important").ok());
+                        let type_opt = opts.as_ref().and_then(|t| t.get::<String>("type").ok());
+                        let mut app = app_cell.borrow_mut();
+                        if let Some(part) = app.canvas_snapshot.parts.get_mut(&id) {
+                            set_opts(&opts, part)?;
+                            if let PartData::Gate(data) = &mut part.part_data {
+                                if let Some(important) = important_opt {
+                                    data.important = important;
+                                }
+                                if let Some(gate_type) = type_opt {
+                                    data.gate_type = GateType::from_part_type(
+                                        PartType::gate_from_string(gate_type)?,
+                                    );
+                                }
+                            } else {
+                                return Err(mlua::Error::runtime("not a gate!"));
+                            }
+                        } else {
+                            return Err(mlua::Error::runtime("couldnt find part!"));
+                        }
+                        Ok(())
+                    })?,
+                )?;
+                lua.globals().set(
                     "create_timer",
                     scope.create_function_mut(
                         |_, (secs, ticks, x, y, opts): (u8, u8, f32, f32, Option<mlua::Table>)| {
@@ -184,6 +242,30 @@ impl AppState {
                             Ok(id)
                         },
                     )?,
+                )?;
+                lua.globals().set(
+                    "modify_timer",
+                    scope.create_function_mut(|_, (id, opts): (u64, Option<mlua::Table>)| {
+                        let secs_opt = opts.as_ref().and_then(|t| t.get::<u8>("seconds").ok());
+                        let ticks_opt = opts.as_ref().and_then(|t| t.get::<u8>("ticks").ok());
+                        let mut app = app_cell.borrow_mut();
+                        if let Some(part) = app.canvas_snapshot.parts.get_mut(&id) {
+                            set_opts(&opts, part)?;
+                            if let PartData::Timer(data) = &mut part.part_data {
+                                if let Some(secs) = secs_opt {
+                                    data.secs = secs;
+                                }
+                                if let Some(ticks) = ticks_opt {
+                                    data.ticks = ticks;
+                                }
+                            } else {
+                                return Err(mlua::Error::runtime("not a timer!"));
+                            }
+                        } else {
+                            return Err(mlua::Error::runtime("couldnt find part!"));
+                        }
+                        Ok(())
+                    })?,
                 )?;
                 lua.globals().set(
                     "create_input",
@@ -235,6 +317,18 @@ impl AppState {
                             Ok(id)
                         },
                     )?,
+                )?;
+                lua.globals().set(
+                    "modify_other",
+                    scope.create_function_mut(|_, (id, opts): (u64, Option<mlua::Table>)| {
+                        let mut app = app_cell.borrow_mut();
+                        if let Some(part) = app.canvas_snapshot.parts.get_mut(&id) {
+                            set_opts(&opts, part)?;
+                        } else {
+                            return Err(mlua::Error::runtime("couldnt find part!"));
+                        }
+                        Ok(())
+                    })?,
                 )?;
                 lua.globals().set(
                     "add_connection",

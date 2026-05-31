@@ -2,12 +2,14 @@ print(read_file("test.lua"))
 
 -- main clock
 timer = create_timer(0,18,-140,40, {color="#ff0000"})
-nand_gate = create_gate("nand", -140, 140)
+nand_gate = create_gate("and", -140, 140)
 and_gate = create_gate("and", -260, 60)
 
 add_connection(timer, nand_gate)
 add_connection(nand_gate, and_gate)
 add_connection(and_gate, timer)
+
+modify_gate(nand_gate, {type = "nand", color="#0000ff", label="NAND"})
 
 -- should be #ff0000
 print(get_part(timer)["color"])

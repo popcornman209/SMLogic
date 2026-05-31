@@ -4,7 +4,7 @@ This is a basic Lua55 intregration, with features to read files and create/modif
 # custom functions
 
 ### create_gate
-you can create a logic gate with the `create_gate` function, which takes the arguments `(type, x_position, y_position)` and optional arguments {color = hex}, {important = bool}, or {label = name} and returns the parts ID.
+you can create a logic gate with the `create_gate` function, which takes the arguments `(type, x_position, y_position, {opts})` and optional arguments {color = hex}, {important = bool}, or {label = name} and returns the parts ID.
 ```lua
 -- basic xor gate at 0,0
 create_gate("xor", 0, 0)
@@ -15,7 +15,7 @@ id = create_gate("and", 100, 20, {color = "#ff0000", important = true, label = "
 ```
 
 ### create_timer
-timers are created with the `create_timer` function. it takes the inputs of `(seconds, ticks, x, y)` and optional arguements of `{color = hex}` and `{label = name}`
+timers are created with the `create_timer` function. it takes the inputs of `(seconds, ticks, x, y, {opts})` and optional arguements of `{color = hex}` and `{label = name}`
 ```lua
 -- timer 10 seconds long at 0, 0
 create_timer(10, 0, 0, 0)
@@ -24,10 +24,19 @@ id = create_timer(0, 18, -120, 30, {color = "#0000ff", label = "test"})
 ```
 
 ### create_input/create_output
-both of these functions take the standard inputs of `(x, y)` and optional arguments of `{color = hex}` and `{label = name}`
+both of these functions take the standard inputs of `(x, y, {opts})` and optional arguments of `{color = hex}` and `{label = name}`
 
 ### create_label
-takes the inputs `(label, x, y)` and the same optional color input.
+takes the inputs `(label, x, y, {opts})` and the same optional color input.
+
+### modify_gate
+takes the inputs `(id, {opts})`, with the optional arugments being `x`, `y`, `color`, `label`, `important`, or `type`. the data inputted is the same as outputted by `get_part`
+
+### modify_timer
+similar to modify_gate but instead includes optional arguments of `x`, `y`, `color`, `label`, `seconds`, or `ticks`.
+
+### modify_other
+same as the two before it, but only includes the optional arguments `x`, `y`, `color`, or `label`. you can modify any part with this function, you only need to use part specific modification functions if you are modifying part specific variables.
 
 ### add_connection
 you can connect parts together with `add_connection`, inputs being `(from_part_id, to_part_id)`, where this will connect the `from_part` to the `to_part`. this currently does not support modules as they have multiple inputs. the id being used is the same as the part id returned from create_timer or create_gate and the one shown in properties on the left side bar.
@@ -122,12 +131,15 @@ this example creates a 8x8 grid of gates based on the bits in lua_test.bin. all 
 ```lua
 -- main clock
 timer = create_timer(0,18,-140,40, {color="#ff0000"})
-nand_gate = create_gate("nand", -140, 140)
+nand_gate = create_gate("and", -140, 140) -- wrong type so we can fix it later to test modify_gate
 and_gate = create_gate("and", -260, 60)
 
 add_connection(timer, nand_gate)
 add_connection(nand_gate, and_gate)
 add_connection(and_gate, timer)
+
+-- fix the nand gate
+modify_gate(nand_gate, {type = "nand", color="#0000ff", label="NAND"})
 
 -- should be #ff0000
 print(get_part(timer)["color"])
