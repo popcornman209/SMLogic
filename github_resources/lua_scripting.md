@@ -31,6 +31,11 @@ takes the inputs `(label, x, y, {opts})` and the same optional color input.
 
 ### modify_gate
 takes the inputs `(id, {opts})`, with the optional arugments being `x`, `y`, `color`, `label`, `important`, or `type`. the data inputted is the same as outputted by `get_part`
+```lua
+-- example for changing color and x position
+modify_gate(gate_id, { x = 20, color = "#ff00ff" })
+```
+note: if you change the gate type, the label doesnt change automatically to match. you need to change that yourself.
 
 ### modify_timer
 similar to modify_gate but instead includes optional arguments of `x`, `y`, `color`, `label`, `seconds`, or `ticks`.
@@ -38,12 +43,18 @@ similar to modify_gate but instead includes optional arguments of `x`, `y`, `col
 ### modify_other
 same as the two before it, but only includes the optional arguments `x`, `y`, `color`, or `label`. you can modify any part with this function, you only need to use part specific modification functions if you are modifying part specific variables.
 
+### remove_part
+takes in a part id, and if it exists removes the part from the canvas.
+
 ### add_connection
 you can connect parts together with `add_connection`, inputs being `(from_part_id, to_part_id)`, where this will connect the `from_part` to the `to_part`. this currently does not support modules as they have multiple inputs. the id being used is the same as the part id returned from create_timer or create_gate and the one shown in properties on the left side bar.
 ```lua
 -- connects gate1 to gate2
 add_connection(gate1_id, gate2_id)
 ```
+
+### remove_connection
+removes a connection based the arguments `(start, end)`, which are the start and end part id of the connection.
 
 ### get_part
 takes an input of the part id, and returns any data about the part as well as extra data depending on part type.
@@ -94,8 +105,8 @@ returns a list of parts and connections, formatted as below and takes no argumen
 	},
 	"connections" = {
 		{
-			"from": part id -- int
-			"to": part id 	-- int
+			"start": part id -- int
+			"end": part id 	-- int
 		}
 	}
 }

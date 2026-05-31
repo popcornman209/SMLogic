@@ -79,7 +79,14 @@ fn get_part(part: &Part, lua: &Lua) -> mlua::Result<mlua::Table> {
     t.set("x", part.pos.x)?;
     t.set("y", part.pos.y)?;
     t.set("label", part.label.clone())?;
-    t.set("color", part.color.to_opaque().to_hex().strip_suffix("ff").ok_or_else(|| mlua::Error::runtime("failed to convert color to hex"))?)?;
+    t.set(
+        "color",
+        part.color
+            .to_opaque()
+            .to_hex()
+            .strip_suffix("ff")
+            .ok_or_else(|| mlua::Error::runtime("failed to convert color to hex"))?,
+    )?;
     match &part.part_data {
         PartData::Gate(gate) => {
             t.set("type", gate.gate_type.to_label())?;
@@ -331,6 +338,13 @@ impl AppState {
                     })?,
                 )?;
                 lua.globals().set(
+                    "remove_part",
+                    scope.create_function_mut(|_, id: u64| {
+                        app_cell.borrow_mut().canvas_snapshot.parts.remove(&id);
+                        Ok(())
+                    })?,
+                )?;
+                lua.globals().set(
                     "add_connection",
                     scope.create_function_mut(|_, (from_id, to_id): (u64, u64)| {
                         let connection = Connection {
@@ -346,6 +360,17 @@ impl AppState {
                             },
                         };
                         app_cell.borrow_mut().add_connection(connection);
+                        Ok(())
+                    })?,
+                )?;
+                lua.globals().set(
+                    "remove_connection",
+                    scope.create_function_mut(|_, (start, end): (u64, u64)| {
+                        app_cell
+                            .borrow_mut()
+                            .canvas_snapshot
+                            .connections
+                            .retain(|c| !(c.start.part == start && c.end.part == end));
                         Ok(())
                     })?,
                 )?;
@@ -370,8 +395,8 @@ impl AppState {
                         let connections = lua.create_table()?;
                         for (i, connection) in canvas_snapshot.connections.iter().enumerate() {
                             let t = lua.create_table()?;
-                            t.set("from", connection.start.part)?;
-                            t.set("to", connection.end.part)?;
+                            t.set("start", connection.start.part)?;
+                            t.set("end", connection.end.part)?;
                             connections.set(i + 1, t)?;
                         }
                         let t = lua.create_table()?;
@@ -395,8 +420,8 @@ impl AppState {
                             } else if let Selection::Connection(id) = select {
                                 if let Some(connection) = canvas_snapshot.connections.get(*id) {
                                     let t = lua.create_table()?;
-                                    t.set("from", connection.start.part)?;
-                                    t.set("to", connection.end.part)?;
+                                    t.set("start", connection.start.part)?;
+                                    t.set("end", connection.end.part)?;
                                     connections.set(connections.raw_len() + 1, t)?;
                                 }
                             }
@@ -470,6 +495,22 @@ impl AppState {
                                 .add_filter("lua", &["lua"])
                                 .pick_file();
                             load_path = file;
+                        }
+                        if let Some(path) = &lua_script.path {
+                            let mut pinned = self.config.pinned_scripts.contains(&path);
+                            if ui.checkbox(&mut pinned, "Pin script").changed() {
+                                if pinned {
+                                    if self.config.pinned_scripts.len() < 10 {
+                                        self.config.pinned_scripts.push(path.clone());
+                                        self.config.save();
+                                    } else {
+                                        self.toasts.error("Max scripts pinned!");
+                                    }
+                                } else {
+                                    self.config.pinned_scripts.retain(|x| *x != *path);
+                                    self.config.save();
+                                }
+                            }
                         }
                     });
                     ui.heading("Lua Script");

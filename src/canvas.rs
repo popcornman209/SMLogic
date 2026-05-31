@@ -243,6 +243,21 @@ impl AppState {
                         });
                     }
                 }
+                for script in self.config.pinned_scripts.clone() {
+                    let selected = self
+                        .lua_script
+                        .as_ref()
+                        .is_some_and(|s| s.path.as_ref() == Some(&script));
+                    if ui
+                        .selectable_label(
+                            selected,
+                            script.file_name().and_then(|n| n.to_str()).unwrap_or("err"),
+                        )
+                        .clicked()
+                    {
+                        self.load_lua(script.clone());
+                    }
+                }
 
                 // settings button
                 ui.separator();

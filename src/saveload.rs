@@ -33,6 +33,8 @@ pub struct Config {
     pub bp_folder: Option<PathBuf>,
     #[serde(default)]
     pub export_settings: ExporterSettings,
+    #[serde[default]]
+    pub pinned_scripts: Vec<PathBuf>,
 }
 
 fn default_true() -> bool {
@@ -78,6 +80,7 @@ impl Default for Config {
             color_pallet: ColorPallet::DEFAULT_PALLET,
             bp_folder: get_bp_folder(),
             export_settings: ExporterSettings::NEW,
+            pinned_scripts: Vec::new(),
         }
     }
 }
