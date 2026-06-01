@@ -97,6 +97,7 @@ pub struct AppState {
     pub last_project_reload: Instant,
     pub request_rename: bool,
     pub lua_script: Option<LuaScript>,
+    pub rebinding: Option<String>,
     // simulation info
     pub sim_snapshot: Option<Arc<Mutex<SimSnapshot>>>,
     pub sim_state_outputs_snapshot: Option<Vec<bool>>,
@@ -149,6 +150,7 @@ impl AppState {
             last_project_reload: Instant::now(),
             request_rename: false,
             lua_script: None,
+            rebinding: None,
             sim_snapshot: None,
             sim_state_outputs_snapshot: None,
             sim_state: None,

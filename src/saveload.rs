@@ -4,7 +4,7 @@ use crate::connections::Connection;
 use crate::exporter::{ExporterSettings, get_bp_folder};
 use crate::parts::{Part, PartData, Port};
 use crate::state::{CanvasSnapshot, Selection};
-use egui::Pos2;
+use egui::{Key, Pos2};
 use egui_notify::Toasts;
 use serde::{Deserialize, Serialize};
 use std::collections::HashMap;
@@ -35,6 +35,8 @@ pub struct Config {
     pub export_settings: ExporterSettings,
     #[serde[default]]
     pub pinned_scripts: Vec<PathBuf>,
+    #[serde[default]]
+    pub keybinds: HashMap<String, Option<Key>>,
 }
 
 fn default_true() -> bool {
@@ -61,9 +63,25 @@ impl Config {
     pub fn load() -> Self {
         let path = Self::config_path();
         if let Ok(json) = std::fs::read_to_string(&path) {
-            serde_json::from_str(&json).unwrap_or_default()
+            let mut config: Config = serde_json::from_str(&json).unwrap_or_default();
+            config.normalize_keybinds();
+            config
         } else {
             Self::default()
+        }
+    }
+    // ai generated
+    pub fn normalize_keybinds(&mut self) {
+        let defaults = Config::default().keybinds;
+        let script_names: Vec<String> = self
+            .pinned_scripts
+            .iter()
+            .filter_map(|p| p.file_name()?.to_str().map(|s| s.to_string()))
+            .collect();
+        self.keybinds
+            .retain(|k, _| defaults.contains_key(k) || script_names.contains(k));
+        for (key, value) in defaults {
+            self.keybinds.entry(key).or_insert(value);
         }
     }
 }
@@ -81,6 +99,25 @@ impl Default for Config {
             bp_folder: get_bp_folder(),
             export_settings: ExporterSettings::NEW,
             pinned_scripts: Vec::new(),
+            keybinds: HashMap::from([
+                ("and".to_string(), Some(Key::Q)),
+                ("or".to_string(), Some(Key::W)),
+                ("xor".to_string(), Some(Key::E)),
+                ("nand".to_string(), Some(Key::A)),
+                ("nor".to_string(), Some(Key::S)),
+                ("xnor".to_string(), Some(Key::D)),
+                ("timer".to_string(), Some(Key::T)),
+                ("label".to_string(), Some(Key::G)),
+                ("input".to_string(), Some(Key::R)),
+                ("output".to_string(), Some(Key::F)),
+                ("paint".to_string(), Some(Key::Num1)),
+                ("connector".to_string(), Some(Key::Num2)),
+                ("simulator".to_string(), Some(Key::Num3)),
+                ("exporter".to_string(), Some(Key::Num4)),
+                ("simulator pause".to_string(), Some(Key::Space)),
+                ("simulator tick".to_string(), Some(Key::Tab)),
+                ("rename".to_string(), Some(Key::Backtick)),
+            ]),
         }
     }
 }

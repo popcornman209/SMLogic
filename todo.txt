@@ -1,4 +1,7 @@
-pin lua scripts to toolbar
+more lua functions
+	select, lets the user select stuff based off things.
+
+you can type in lua editor and use keybinds at same time
 
 keybind customizer
 

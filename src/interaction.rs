@@ -5,6 +5,15 @@ use crate::parts::PartType;
 use crate::state::{AppState, InteractionState, Selection};
 use crate::tools::{ConnectorData, Tool};
 
+fn get_input(ctx: &Context, key_opt: Option<Key>) -> bool {
+    if let Some(key) = key_opt {
+        if ctx.input(|i| i.key_pressed(key)) {
+            return true;
+        }
+    }
+    false
+}
+
 impl AppState {
     pub fn handle_input(&mut self, ctx: &Context, painter: &Painter, response: &egui::Response) {
         let pointer_pos = ctx.input(|i| i.pointer.hover_pos());
@@ -12,56 +21,110 @@ impl AppState {
         let ctrl_held = ctx.input(|i| i.modifiers.ctrl);
         let shift_held = ctx.input(|i| i.modifiers.shift);
 
+        if let Some(action) = &self.rebinding.clone() {
+            ctx.input(|i| {
+                for event in &i.events {
+                    if let egui::Event::Key {
+                        key, pressed: true, ..
+                    } = event
+                    {
+                        if *key == Key::Escape {
+                            self.config.keybinds.insert(action.clone(), None);
+                            self.rebinding = None;
+                        } else {
+                            self.config.keybinds.insert(action.clone(), Some(*key));
+                            self.rebinding = None;
+                        }
+                        self.config.save();
+                    }
+                }
+            });
+            return; // dont process normal keybinds while rebinding
+        }
+
         // escape key
         if ctx.input(|i| i.key_pressed(Key::Escape)) {
             self.switch_to_tool(None);
         } else if ctx.wants_keyboard_input() {
             // a text field is focused, skip all keybinds below
-        } else if ctx.input(|i| i.key_pressed(Key::Num1)) {
+        } else if get_input(ctx, self.config.keybinds.get("paint").copied().flatten()) {
             self.switch_to_tool(Some(Tool::Paint));
-        } else if ctx.input(|i| i.key_pressed(Key::Num2)) {
+        } else if get_input(
+            ctx,
+            self.config.keybinds.get("connector").copied().flatten(),
+        ) {
             self.switch_to_tool(Some(Tool::Connector(ConnectorData::NEW)));
-        } else if ctx.input(|i| i.key_pressed(Key::Num3)) {
+        } else if get_input(
+            ctx,
+            self.config.keybinds.get("simulator").copied().flatten(),
+        ) {
             self.switch_to_tool(Some(Tool::Simulator));
             self.start_simulation();
-        } else if ctx.input(|i| i.key_pressed(Key::Num4)) {
+        } else if get_input(ctx, self.config.keybinds.get("exporter").copied().flatten()) {
             self.switch_to_tool(Some(Tool::Exporter(self.config.export_settings.clone())));
-        } else if ctx.input(|i| i.key_pressed(Key::Q)) {
+        } else if get_input(ctx, self.config.keybinds.get("and").copied().flatten()) {
             self.switch_to_tool(Some(Tool::PlacePart(PartType::And)));
-        } else if ctx.input(|i| i.key_pressed(Key::W)) {
+        } else if get_input(ctx, self.config.keybinds.get("or").copied().flatten()) {
             self.switch_to_tool(Some(Tool::PlacePart(PartType::Or)));
-        } else if ctx.input(|i| i.key_pressed(Key::E)) {
+        } else if get_input(ctx, self.config.keybinds.get("xor").copied().flatten()) {
             self.switch_to_tool(Some(Tool::PlacePart(PartType::Xor)));
-        } else if ctx.input(|i| i.key_pressed(Key::R)) {
+        } else if get_input(ctx, self.config.keybinds.get("input").copied().flatten()) {
             self.switch_to_tool(Some(Tool::PlacePart(PartType::Input)));
-        } else if ctx.input(|i| i.key_pressed(Key::T)) {
+        } else if get_input(ctx, self.config.keybinds.get("timer").copied().flatten()) {
             self.switch_to_tool(Some(Tool::PlacePart(PartType::Timer)));
-        } else if ctx.input(|i| i.key_pressed(Key::A)) {
+        } else if get_input(ctx, self.config.keybinds.get("nand").copied().flatten()) {
             self.switch_to_tool(Some(Tool::PlacePart(PartType::Nand)));
-        } else if ctx.input(|i| i.key_pressed(Key::S)) {
+        } else if get_input(ctx, self.config.keybinds.get("nor").copied().flatten()) {
             self.switch_to_tool(Some(Tool::PlacePart(PartType::Nor)));
-        } else if ctx.input(|i| i.key_pressed(Key::D)) {
+        } else if get_input(ctx, self.config.keybinds.get("xnor").copied().flatten()) {
             self.switch_to_tool(Some(Tool::PlacePart(PartType::Xnor)));
-        } else if ctx.input(|i| i.key_pressed(Key::F)) {
+        } else if get_input(ctx, self.config.keybinds.get("output").copied().flatten()) {
             self.switch_to_tool(Some(Tool::PlacePart(PartType::Output)));
-        } else if ctx.input(|i| i.key_pressed(Key::G)) {
+        } else if get_input(ctx, self.config.keybinds.get("label").copied().flatten()) {
             self.switch_to_tool(Some(Tool::PlacePart(PartType::Label)));
+        } else {
+            for script in self.config.pinned_scripts.clone() {
+                if get_input(
+                    ctx,
+                    self.config
+                        .keybinds
+                        .get(script.file_name().and_then(|n| n.to_str()).unwrap_or(""))
+                        .copied()
+                        .flatten(),
+                ) {
+                    self.load_lua(script);
+                }
+            }
         }
 
         if self.active_tool == Some(Tool::Simulator) {
-            if ctx.input(|i| i.key_pressed(Key::Space)) {
+            if get_input(
+                ctx,
+                self.config
+                    .keybinds
+                    .get("simulator pause")
+                    .copied()
+                    .flatten(),
+            ) {
                 if let Some(sim_state) = &self.sim_state {
                     let mut state = sim_state.lock();
                     state.running = !state.running;
                 }
-            } else if ctx.input(|i| i.key_pressed(Key::Tab)) {
+            } else if get_input(
+                ctx,
+                self.config
+                    .keybinds
+                    .get("simulator tick")
+                    .copied()
+                    .flatten(),
+            ) {
                 if let Some(sim_state) = &self.sim_state {
                     let mut state = sim_state.lock();
                     state.step = true;
                 }
             }
         } else if (!matches!(self.active_tool, Some(Tool::Exporter(_))))
-            && ctx.input(|i| i.key_pressed(Key::Tab))
+            && get_input(ctx, self.config.keybinds.get("rename").copied().flatten())
         {
             if self.selection.len() == 1 {
                 self.request_rename = true;

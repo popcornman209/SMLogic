@@ -510,6 +510,7 @@ impl AppState {
                                     self.config.pinned_scripts.retain(|x| *x != *path);
                                     self.config.save();
                                 }
+                                self.config.normalize_keybinds();
                             }
                         }
                     });

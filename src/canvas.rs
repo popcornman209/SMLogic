@@ -10,6 +10,26 @@ use crate::parts::PartType;
 use crate::state::{AppState, CanvasSnapshot, InteractionState, Selection, path_to_string};
 use crate::tools::{Tool, tool_label};
 
+const BASE_KEYBINDS: &[&str] = &[
+    "and",
+    "or",
+    "xor",
+    "nand",
+    "nor",
+    "xnor",
+    "timer",
+    "label",
+    "input",
+    "output",
+    "paint",
+    "connector",
+    "simulator",
+    "exporter",
+    "simulator pause",
+    "simulator tick",
+    "rename",
+];
+
 impl AppState {
     pub fn draw_canvas(
         &mut self,
@@ -553,39 +573,38 @@ impl AppState {
                     });
                 // custom colorscheme options
                 if current_colorpallet == "Custom" {
-                    ui.heading("Custom Colors");
-                    ui.separator();
+                    ui.collapsing("Custom colors", |ui| {
+                        let mut changed = false;
 
-                    let mut changed = false;
+                        macro_rules! color_picker {
+                            ($label:expr, $color:expr) => {
+                                ui.horizontal(|ui| {
+                                    ui.label($label);
+                                    let mut color = $color;
+                                    if ui.color_edit_button_srgba(&mut color).changed() {
+                                        $color = color;
+                                        changed = true;
+                                    }
+                                });
+                            };
+                        }
 
-                    macro_rules! color_picker {
-                        ($label:expr, $color:expr) => {
-                            ui.horizontal(|ui| {
-                                ui.label($label);
-                                let mut color = $color;
-                                if ui.color_edit_button_srgba(&mut color).changed() {
-                                    $color = color;
-                                    changed = true;
-                                }
-                            });
-                        };
-                    }
+                        color_picker!("Grid", self.color_pallet.grid);
+                        color_picker!("Grid Lines", self.color_pallet.grid_lines);
+                        color_picker!("Text", self.color_pallet.text);
+                        color_picker!("Base", self.color_pallet.base);
+                        color_picker!("Button", self.color_pallet.button);
+                        color_picker!("Button Hover", self.color_pallet.button_hover);
+                        color_picker!("Button Pushed", self.color_pallet.button_pushed);
+                        color_picker!("Selection", self.color_pallet.selection);
+                        color_picker!("Selection Text", self.color_pallet.selection_text);
 
-                    color_picker!("Grid", self.color_pallet.grid);
-                    color_picker!("Grid Lines", self.color_pallet.grid_lines);
-                    color_picker!("Text", self.color_pallet.text);
-                    color_picker!("Base", self.color_pallet.base);
-                    color_picker!("Button", self.color_pallet.button);
-                    color_picker!("Button Hover", self.color_pallet.button_hover);
-                    color_picker!("Button Pushed", self.color_pallet.button_pushed);
-                    color_picker!("Selection", self.color_pallet.selection);
-                    color_picker!("Selection Text", self.color_pallet.selection_text);
-
-                    if changed {
-                        self.config.color_pallet = self.color_pallet.clone();
-                        self.config.save();
-                        self.color_pallet.apply_theme(ctx);
-                    }
+                        if changed {
+                            self.config.color_pallet = self.color_pallet.clone();
+                            self.config.save();
+                            self.color_pallet.apply_theme(ctx);
+                        }
+                    });
                 }
                 ui.heading("Exporting");
                 ui.separator();
@@ -617,6 +636,39 @@ impl AppState {
                         self.bp_folder = get_bp_folder();
                         self.config.bp_folder = self.bp_folder.clone();
                         self.config.save();
+                    }
+                });
+                ui.collapsing("Keybinds", |ui| {
+                    let keybinds: Vec<&str> = BASE_KEYBINDS
+                        .iter()
+                        .copied()
+                        .chain(
+                            self.config
+                                .pinned_scripts
+                                .iter()
+                                .filter_map(|p| p.file_name()?.to_str()),
+                        )
+                        .collect(); // ai told me how to do this idk how people learn this shit
+                    for bind in keybinds {
+                        ui.horizontal(|ui| {
+                            ui.label(format!("{bind}:"));
+                            if ui
+                                .button(if self.rebinding.as_deref() == Some(bind) {
+                                    "...".to_string()
+                                } else {
+                                    self.config
+                                        .keybinds
+                                        .get(bind)
+                                        .copied()
+                                        .flatten()
+                                        .map(|k| format!("{:?}", k))
+                                        .unwrap_or_else(|| "None".to_string())
+                                })
+                                .clicked()
+                            {
+                                self.rebinding = Some(bind.to_string());
+                            }
+                        });
                     }
                 });
             });
