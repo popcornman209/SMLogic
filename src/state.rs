@@ -98,6 +98,7 @@ pub struct AppState {
     pub request_rename: bool,
     pub lua_script: Option<LuaScript>,
     pub rebinding: Option<String>,
+    pub hide_connections: bool,
     // simulation info
     pub sim_snapshot: Option<Arc<Mutex<SimSnapshot>>>,
     pub sim_state_outputs_snapshot: Option<Vec<bool>>,
@@ -151,6 +152,7 @@ impl AppState {
             request_rename: false,
             lua_script: None,
             rebinding: None,
+            hide_connections: false,
             sim_snapshot: None,
             sim_state_outputs_snapshot: None,
             sim_state: None,

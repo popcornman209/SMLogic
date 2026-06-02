@@ -47,17 +47,19 @@ impl AppState {
             self.draw_grid(&painter, canvas_rect);
         }
         self.draw_parts(&painter);
-        if self.draw_connections(&painter) {
-            for i in (0..self.canvas_snapshot.connections.len()).rev() {
-                let remove = {
-                    let connection = &self.canvas_snapshot.connections[i];
-                    connection.start.pos(self).is_none() || connection.end.pos(self).is_none()
-                };
-                if remove {
-                    self.canvas_snapshot.connections.remove(i);
+        if !self.hide_connections {
+            if self.draw_connections(&painter) {
+                for i in (0..self.canvas_snapshot.connections.len()).rev() {
+                    let remove = {
+                        let connection = &self.canvas_snapshot.connections[i];
+                        connection.start.pos(self).is_none() || connection.end.pos(self).is_none()
+                    };
+                    if remove {
+                        self.canvas_snapshot.connections.remove(i);
+                    }
                 }
+                self.reload_connection_counts();
             }
-            self.reload_connection_counts();
         }
         if self.selection.len() == 1 {
             if let Some(Selection::Part(part_id)) = self.selection.get(0) {
@@ -284,6 +286,7 @@ impl AppState {
                 if ui.button("Settings").clicked() {
                     self.settings_open = !self.settings_open;
                 }
+                ui.checkbox(&mut self.hide_connections, "Hide connections");
 
                 // tool settings
                 self.draw_sidebar_tool_properties(ui);
@@ -352,6 +355,7 @@ impl AppState {
                             parts: HashMap::new(),
                             next_id: 0,
                         };
+                        self.connection_counts.clear();
                         self.current_module_path = None;
                         self.toasts.success("Cleared canvas");
                         self.end_simulation();
