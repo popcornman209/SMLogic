@@ -429,10 +429,13 @@ impl AppState {
                             } else {
                                 (connect_start.clone(), &port)
                             };
-                            if self.add_connection(Connection {
-                                start: start_port,
-                                end: *end_port,
-                            }) == false
+                            if self.add_connection(
+                                Connection {
+                                    start: start_port,
+                                    end: *end_port,
+                                },
+                                true,
+                            ) == false
                             {
                                 self.undo_stack.pop();
                             }

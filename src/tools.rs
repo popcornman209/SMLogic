@@ -595,8 +595,9 @@ impl AppState {
                 connector_data.status = String::new();
                 self.push_undo();
                 for connection in new_connections {
-                    self.add_connection(connection);
+                    self.add_connection(connection, false);
                 }
+                self.reload_connection_counts();
             }
         }
         if export {
@@ -604,9 +605,7 @@ impl AppState {
                 self.export(settings.clone());
             }
         }
-        if let (Some(before), Some(Tool::Exporter(after))) =
-            (exporter_before, &self.active_tool)
-        {
+        if let (Some(before), Some(Tool::Exporter(after))) = (exporter_before, &self.active_tool) {
             if before != *after {
                 self.config.export_settings = after.clone();
                 self.config.save();

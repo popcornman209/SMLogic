@@ -359,7 +359,7 @@ impl AppState {
                                 port_id: None,
                             },
                         };
-                        app_cell.borrow_mut().add_connection(connection);
+                        app_cell.borrow_mut().add_connection(connection, false);
                         Ok(())
                     })?,
                 )?;
@@ -441,6 +441,7 @@ impl AppState {
                 lua_script.output.push_str(&format!("[error] {}\n", e));
             }
             self.lua_script = Some(lua_script);
+            self.reload_connection_counts();
         }
     }
 
@@ -515,14 +516,16 @@ impl AppState {
                         }
                     });
                     ui.heading("Lua Script");
-                    CodeEditor::default()
-                        .id_source("code editor")
-                        .with_rows(0)
-                        .with_fontsize(14.0)
-                        .with_theme(ColorTheme::SONOKAI)
-                        .with_syntax(Syntax::lua())
-                        .with_numlines(true)
-                        .show(ui, &mut lua_script.data);
+                    ui.allocate_ui(egui::vec2(ui.available_width(), 300.0), |ui| {
+                        CodeEditor::default()
+                            .id_source("code editor")
+                            .with_rows(15)
+                            .with_fontsize(14.0)
+                            .with_theme(ColorTheme::SONOKAI)
+                            .with_syntax(Syntax::lua())
+                            .with_numlines(true)
+                            .show(ui, &mut lua_script.data);
+                    });
                     ui.horizontal(|ui| {
                     if ui.button("Run").clicked() { run = true; }
                     if ui.button("Docs").clicked() {

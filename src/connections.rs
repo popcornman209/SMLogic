@@ -135,7 +135,7 @@ impl AppState {
         repair
     }
 
-    pub fn add_connection(&mut self, connection: Connection) -> bool {
+    pub fn add_connection(&mut self, connection: Connection, reload: bool) -> bool {
         if connection.start.input != connection.end.input {
             // cant connect two inputs or outputs
             let count = self
@@ -158,8 +158,14 @@ impl AppState {
                             })) | matches!(start_part.part_data, PartData::Module(_))
                             {
                                 // two gates cannot connect in a loop
-                                self.canvas_snapshot.connections.push(connection);
-                                self.reload_connection_counts();
+                                if reload {
+                                    self.canvas_snapshot.connections.push(connection);
+                                    self.reload_connection_counts();
+                                } else {
+                                    *self.connection_counts.entry(connection.start.clone()).or_default() += 1;
+                                    *self.connection_counts.entry(connection.end.clone()).or_default() += 1;
+                                    self.canvas_snapshot.connections.push(connection);
+                                }
                                 return true;
                             } else {
                                 self.toasts
