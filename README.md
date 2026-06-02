@@ -4,7 +4,8 @@ if you find this tool useful, have issues/recommendations or have anything else 
 
 ### images
 ![img1](github_resources/img1.png)
-[Watch the demo](github_resources/bad_apple.mp4)
+
+https://github.com/user-attachments/assets/64101c28-d356-4076-ab3d-d7011c7c3c9f
 
 ## Some info
 if you want to generate modules that are very complex or annoying to make, there is lua scripting for generating complex parts and connections that would otherwise be too tedious. [documention](github_resources/lua_scripting.md)
