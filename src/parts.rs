@@ -1,6 +1,7 @@
 use crate::AppState;
 use crate::colors::DEFAULT_GATE_COLOR;
 use crate::state::{CanvasSnapshot, path_to_string};
+use crate::tools::sort_by_position;
 use egui::{Color32, Pos2, Vec2};
 use egui_notify::Toasts;
 use serde::{Deserialize, Serialize};
@@ -196,10 +197,12 @@ impl Module {
         if self.size.y <= self.min_size.y {
             self.size.y = self.min_size.y
         };
-        toasts.success(format!(
-            "Loaded module: {}",
-            path_to_string(self.path.clone(), project_path)
-        ));
+        if ancestors.is_empty() {
+            toasts.success(format!(
+                "Loaded module: {}",
+                path_to_string(self.path.clone(), project_path)
+            ));
+        }
     }
     pub fn new(path: PathBuf, app_state: &mut AppState) -> (PartData, String, Vec2) {
         let final_path = if let Some(project_folder) = &app_state.project_folder {
@@ -376,7 +379,11 @@ impl Part {
             }
             PartData::Module(module) => {
                 if let Some(port) = port_id {
-                    if let Some(index) = module.inputs.iter().position(|(id, _)| *id == port) {
+                    let mut ids: Vec<u64> = module.inputs.keys().cloned().collect();
+                    sort_by_position(&mut ids, |id| {
+                        module.canvas_snapshot.parts.get(id).map(|p| p.pos).unwrap_or_default()
+                    });
+                    if let Some(index) = ids.iter().position(|id| *id == port) {
                         return Some(Pos2::new(
                             self.pos.x,
                             GATE_SIZE.y / 2.0 + PORT_GAP * index as f32 + self.pos.y,
@@ -407,7 +414,11 @@ impl Part {
             }
             PartData::Module(module) => {
                 if let Some(port) = port_id {
-                    if let Some(index) = module.outputs.iter().position(|(id, _)| *id == port) {
+                    let mut ids: Vec<u64> = module.outputs.keys().cloned().collect();
+                    sort_by_position(&mut ids, |id| {
+                        module.canvas_snapshot.parts.get(id).map(|p| p.pos).unwrap_or_default()
+                    });
+                    if let Some(index) = ids.iter().position(|id| *id == port) {
                         return Some(Pos2::new(
                             self.pos.x + module.size.x,
                             GATE_SIZE.y / 2.0 + PORT_GAP * index as f32 + self.pos.y,
@@ -487,7 +498,11 @@ impl Part {
             )],
             PartData::Module(module) => {
                 let mut result = Vec::new();
-                for (i, id) in module.inputs.keys().enumerate() {
+                let mut input_ids: Vec<u64> = module.inputs.keys().cloned().collect();
+                sort_by_position(&mut input_ids, |id| {
+                    module.canvas_snapshot.parts.get(id).map(|p| p.pos).unwrap_or_default()
+                });
+                for (i, id) in input_ids.iter().enumerate() {
                     result.push((
                         Pos2::new(
                             self.pos.x,
@@ -497,7 +512,11 @@ impl Part {
                         Some(id.clone()),
                     ));
                 }
-                for (i, id) in module.outputs.keys().enumerate() {
+                let mut output_ids: Vec<u64> = module.outputs.keys().cloned().collect();
+                sort_by_position(&mut output_ids, |id| {
+                    module.canvas_snapshot.parts.get(id).map(|p| p.pos).unwrap_or_default()
+                });
+                for (i, id) in output_ids.iter().enumerate() {
                     result.push((
                         Pos2::new(
                             self.pos.x + module.size.x,

@@ -188,7 +188,7 @@ impl AppState {
                 .map(|e| e.path())
                 .collect();
             // sort and apply all entries
-            entries.sort_by_key(|p| !p.is_dir());
+            entries.sort_by_key(|p| (!p.is_dir(), p.file_name().map(|n| n.to_os_string())));
             self.current_folder_files = entries;
         }
     }

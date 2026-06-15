@@ -6,6 +6,8 @@ use crate::state::{AppState, Selection, path_to_string};
 use crate::tools::ConnectorData;
 use eframe::epaint::PathShape;
 use egui::{Align2, Color32, FontId, Painter, Pos2, Rect, Stroke, StrokeKind, TextEdit, Ui, Vec2};
+use egui::text::{CCursor, CCursorRange};
+use egui::text_edit::TextEditState;
 
 const ICON_HEIGHT: f32 = 20.0;
 const ICON_WIDTH: f32 = ICON_HEIGHT * 1.5;
@@ -424,7 +426,7 @@ impl Module {
         // skip rendering if off-screen
         let screen_rect = Rect::from_min_max(
             app_state.world_to_screen(part.pos),
-            app_state.world_to_screen(part.pos + GATE_SIZE),
+            app_state.world_to_screen(part.pos + self.size),
         );
         if !painter.clip_rect().intersects(screen_rect) {
             return;
@@ -604,6 +606,9 @@ impl Part {
                 );
                 if app_state.request_rename {
                     response.request_focus();
+                    let mut state = TextEditState::load(ui.ctx(), response.id).unwrap_or_default();
+                    state.cursor.set_char_range(Some(CCursorRange::one(CCursor::new(self.label.chars().count()))));
+                    state.store(ui.ctx(), response.id);
                     app_state.request_rename = false;
                 }
             } else {
@@ -611,7 +616,10 @@ impl Part {
                 let response = ui.add(TextEdit::singleline(&mut self.label).desired_width(100.0));
                 if app_state.request_rename {
                     response.request_focus();
-                    app_state.request_rename = false
+                    let mut state = TextEditState::load(ui.ctx(), response.id).unwrap_or_default();
+                    state.cursor.set_char_range(Some(CCursorRange::one(CCursor::new(self.label.chars().count()))));
+                    state.store(ui.ctx(), response.id);
+                    app_state.request_rename = false;
                 }
             }
         });

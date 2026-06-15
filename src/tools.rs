@@ -681,37 +681,27 @@ impl AppState {
     }
 }
 
-fn sort_ports_by_position(ports: &mut Vec<Port>, app: &AppState) {
+pub fn sort_by_position<T>(items: &mut Vec<T>, get_pos: impl Fn(&T) -> Pos2) {
     // this function was made by ai
     // im too stupid to figure ts out
-
-    // figure out the spread on each axis
-    let positions: Vec<Pos2> = ports.iter().filter_map(|p| p.pos(app)).collect();
-
+    let positions: Vec<Pos2> = items.iter().map(|i| get_pos(i)).collect();
     let x_spread = positions.iter().map(|p| p.x).fold(f32::MIN, f32::max)
         - positions.iter().map(|p| p.x).fold(f32::MAX, f32::min);
     let y_spread = positions.iter().map(|p| p.y).fold(f32::MIN, f32::max)
         - positions.iter().map(|p| p.y).fold(f32::MAX, f32::min);
-
-    ports.sort_by(|a, b| {
-        let a_pos = a.pos(app).unwrap_or_default();
-        let b_pos = b.pos(app).unwrap_or_default();
+    items.sort_by(|a, b| {
+        let a_pos = get_pos(a);
+        let b_pos = get_pos(b);
         if y_spread >= x_spread {
-            // primary: top to bottom, secondary: left to right
-            a_pos
-                .y
-                .partial_cmp(&b_pos.y)
-                .unwrap()
-                .then(a_pos.x.partial_cmp(&b_pos.x).unwrap())
+            a_pos.y.partial_cmp(&b_pos.y).unwrap().then(a_pos.x.partial_cmp(&b_pos.x).unwrap())
         } else {
-            // primary: left to right, secondary: top to bottom
-            a_pos
-                .x
-                .partial_cmp(&b_pos.x)
-                .unwrap()
-                .then(a_pos.y.partial_cmp(&b_pos.y).unwrap())
+            a_pos.x.partial_cmp(&b_pos.x).unwrap().then(a_pos.y.partial_cmp(&b_pos.y).unwrap())
         }
     });
+}
+
+fn sort_ports_by_position(ports: &mut Vec<Port>, app: &AppState) {
+    sort_by_position(ports, |p| p.pos(app).unwrap_or_default());
 }
 
 fn format_with_commas(n: u64) -> String {

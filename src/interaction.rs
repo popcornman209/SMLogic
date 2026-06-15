@@ -7,7 +7,7 @@ use crate::tools::{ConnectorData, Tool};
 
 fn get_input(ctx: &Context, key_opt: Option<Key>) -> bool {
     if let Some(key) = key_opt {
-        if ctx.input(|i| i.key_pressed(key)) {
+        if ctx.input(|i| i.key_pressed(key) && !i.modifiers.ctrl && !i.modifiers.alt) {
             return true;
         }
     }
@@ -224,7 +224,7 @@ impl AppState {
         if scroll.abs() > 0.5 {
             let factor = 1.0 + scroll * 0.002;
             let old_zoom = self.zoom;
-            let new_zoom = (old_zoom * factor).clamp(0.15, 6.0);
+            let new_zoom = (old_zoom * factor).clamp(0.025, 6.0);
 
             if let Some(cursor_screen) = pointer_pos {
                 // keep cursor in same real world position
@@ -280,6 +280,7 @@ impl AppState {
                     } else if let Some(part) = selected_resize {
                         // resizing
                         self.interaction_state = InteractionState::Resizing(part.id);
+                        self.push_undo();
                     } else if let Some(connection) = selected_connection
                         && self.active_tool != Some(Tool::Simulator)
                     {
