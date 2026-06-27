@@ -1,6 +1,2851 @@
 {
-  "connections": [],
-  "next_id": 13,
+  "connections": [
+    {
+      "end": {
+        "input": true,
+        "part": 9,
+        "port_id": 13
+      },
+      "start": {
+        "input": false,
+        "part": 21,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 9,
+        "port_id": 7
+      },
+      "start": {
+        "input": false,
+        "part": 20,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 9,
+        "port_id": 18
+      },
+      "start": {
+        "input": false,
+        "part": 18,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 9,
+        "port_id": 23
+      },
+      "start": {
+        "input": false,
+        "part": 13,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 9,
+        "port_id": 28
+      },
+      "start": {
+        "input": false,
+        "part": 14,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 9,
+        "port_id": 36
+      },
+      "start": {
+        "input": false,
+        "part": 15,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 9,
+        "port_id": 38
+      },
+      "start": {
+        "input": false,
+        "part": 16,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 9,
+        "port_id": 42
+      },
+      "start": {
+        "input": false,
+        "part": 17,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 9,
+        "port_id": 43
+      },
+      "start": {
+        "input": false,
+        "part": 19,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 3,
+        "port_id": 13
+      },
+      "start": {
+        "input": false,
+        "part": 26,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 3,
+        "port_id": 7
+      },
+      "start": {
+        "input": false,
+        "part": 30,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 3,
+        "port_id": 18
+      },
+      "start": {
+        "input": false,
+        "part": 28,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 3,
+        "port_id": 23
+      },
+      "start": {
+        "input": false,
+        "part": 23,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 3,
+        "port_id": 28
+      },
+      "start": {
+        "input": false,
+        "part": 29,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 3,
+        "port_id": 36
+      },
+      "start": {
+        "input": false,
+        "part": 24,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 3,
+        "port_id": 38
+      },
+      "start": {
+        "input": false,
+        "part": 27,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 3,
+        "port_id": 42
+      },
+      "start": {
+        "input": false,
+        "part": 22,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 3,
+        "port_id": 43
+      },
+      "start": {
+        "input": false,
+        "part": 25,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 4,
+        "port_id": 13
+      },
+      "start": {
+        "input": false,
+        "part": 35,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 4,
+        "port_id": 7
+      },
+      "start": {
+        "input": false,
+        "part": 39,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 4,
+        "port_id": 18
+      },
+      "start": {
+        "input": false,
+        "part": 37,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 4,
+        "port_id": 23
+      },
+      "start": {
+        "input": false,
+        "part": 32,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 4,
+        "port_id": 28
+      },
+      "start": {
+        "input": false,
+        "part": 38,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 4,
+        "port_id": 36
+      },
+      "start": {
+        "input": false,
+        "part": 33,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 4,
+        "port_id": 38
+      },
+      "start": {
+        "input": false,
+        "part": 36,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 4,
+        "port_id": 42
+      },
+      "start": {
+        "input": false,
+        "part": 31,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 4,
+        "port_id": 43
+      },
+      "start": {
+        "input": false,
+        "part": 34,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 5,
+        "port_id": 13
+      },
+      "start": {
+        "input": false,
+        "part": 44,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 5,
+        "port_id": 7
+      },
+      "start": {
+        "input": false,
+        "part": 48,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 5,
+        "port_id": 18
+      },
+      "start": {
+        "input": false,
+        "part": 46,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 5,
+        "port_id": 23
+      },
+      "start": {
+        "input": false,
+        "part": 41,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 5,
+        "port_id": 28
+      },
+      "start": {
+        "input": false,
+        "part": 47,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 5,
+        "port_id": 36
+      },
+      "start": {
+        "input": false,
+        "part": 42,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 5,
+        "port_id": 38
+      },
+      "start": {
+        "input": false,
+        "part": 45,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 5,
+        "port_id": 42
+      },
+      "start": {
+        "input": false,
+        "part": 40,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 5,
+        "port_id": 43
+      },
+      "start": {
+        "input": false,
+        "part": 43,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 10,
+        "port_id": 13
+      },
+      "start": {
+        "input": false,
+        "part": 65,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 10,
+        "port_id": 51
+      },
+      "start": {
+        "input": false,
+        "part": 49,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 10,
+        "port_id": 7
+      },
+      "start": {
+        "input": false,
+        "part": 50,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 10,
+        "port_id": 54
+      },
+      "start": {
+        "input": false,
+        "part": 51,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 10,
+        "port_id": 55
+      },
+      "start": {
+        "input": false,
+        "part": 52,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 10,
+        "port_id": 61
+      },
+      "start": {
+        "input": false,
+        "part": 53,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 10,
+        "port_id": 62
+      },
+      "start": {
+        "input": false,
+        "part": 54,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 10,
+        "port_id": 68
+      },
+      "start": {
+        "input": false,
+        "part": 55,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 10,
+        "port_id": 69
+      },
+      "start": {
+        "input": false,
+        "part": 56,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 10,
+        "port_id": 81
+      },
+      "start": {
+        "input": false,
+        "part": 58,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 10,
+        "port_id": 85
+      },
+      "start": {
+        "input": false,
+        "part": 61,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 10,
+        "port_id": 77
+      },
+      "start": {
+        "input": false,
+        "part": 57,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 10,
+        "port_id": 99
+      },
+      "start": {
+        "input": false,
+        "part": 64,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 10,
+        "port_id": 92
+      },
+      "start": {
+        "input": false,
+        "part": 59,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 10,
+        "port_id": 87
+      },
+      "start": {
+        "input": false,
+        "part": 60,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 10,
+        "port_id": 86
+      },
+      "start": {
+        "input": false,
+        "part": 63,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 10,
+        "port_id": 76
+      },
+      "start": {
+        "input": false,
+        "part": 62,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 7,
+        "port_id": 94
+      },
+      "start": {
+        "input": false,
+        "part": 75,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 7,
+        "port_id": 13
+      },
+      "start": {
+        "input": false,
+        "part": 67,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 7,
+        "port_id": 7
+      },
+      "start": {
+        "input": false,
+        "part": 69,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 7,
+        "port_id": 18
+      },
+      "start": {
+        "input": false,
+        "part": 72,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 7,
+        "port_id": 23
+      },
+      "start": {
+        "input": false,
+        "part": 66,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 7,
+        "port_id": 28
+      },
+      "start": {
+        "input": false,
+        "part": 68,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 7,
+        "port_id": 36
+      },
+      "start": {
+        "input": false,
+        "part": 71,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 7,
+        "port_id": 38
+      },
+      "start": {
+        "input": false,
+        "part": 74,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 7,
+        "port_id": 42
+      },
+      "start": {
+        "input": false,
+        "part": 70,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 7,
+        "port_id": 43
+      },
+      "start": {
+        "input": false,
+        "part": 73,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 7,
+        "port_id": 78
+      },
+      "start": {
+        "input": false,
+        "part": 76,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 7,
+        "port_id": 83
+      },
+      "start": {
+        "input": false,
+        "part": 82,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 7,
+        "port_id": 85
+      },
+      "start": {
+        "input": false,
+        "part": 81,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 7,
+        "port_id": 60
+      },
+      "start": {
+        "input": false,
+        "part": 79,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 7,
+        "port_id": 65
+      },
+      "start": {
+        "input": false,
+        "part": 84,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 7,
+        "port_id": 90
+      },
+      "start": {
+        "input": false,
+        "part": 77,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 7,
+        "port_id": 87
+      },
+      "start": {
+        "input": false,
+        "part": 78,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 7,
+        "port_id": 89
+      },
+      "start": {
+        "input": false,
+        "part": 83,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 7,
+        "port_id": 68
+      },
+      "start": {
+        "input": false,
+        "part": 80,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 85,
+        "port_id": null
+      },
+      "start": {
+        "input": false,
+        "part": 114,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 112,
+        "port_id": null
+      },
+      "start": {
+        "input": false,
+        "part": 131,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 110,
+        "port_id": null
+      },
+      "start": {
+        "input": false,
+        "part": 130,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 86,
+        "port_id": null
+      },
+      "start": {
+        "input": false,
+        "part": 115,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 87,
+        "port_id": null
+      },
+      "start": {
+        "input": false,
+        "part": 117,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 88,
+        "port_id": null
+      },
+      "start": {
+        "input": false,
+        "part": 116,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 89,
+        "port_id": null
+      },
+      "start": {
+        "input": false,
+        "part": 120,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 90,
+        "port_id": null
+      },
+      "start": {
+        "input": false,
+        "part": 118,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 91,
+        "port_id": null
+      },
+      "start": {
+        "input": false,
+        "part": 119,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 92,
+        "port_id": null
+      },
+      "start": {
+        "input": false,
+        "part": 121,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 96,
+        "port_id": null
+      },
+      "start": {
+        "input": false,
+        "part": 126,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 99,
+        "port_id": null
+      },
+      "start": {
+        "input": false,
+        "part": 124,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 94,
+        "port_id": null
+      },
+      "start": {
+        "input": false,
+        "part": 129,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 98,
+        "port_id": null
+      },
+      "start": {
+        "input": false,
+        "part": 127,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 93,
+        "port_id": null
+      },
+      "start": {
+        "input": false,
+        "part": 123,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 100,
+        "port_id": null
+      },
+      "start": {
+        "input": false,
+        "part": 122,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 97,
+        "port_id": null
+      },
+      "start": {
+        "input": false,
+        "part": 125,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 95,
+        "port_id": null
+      },
+      "start": {
+        "input": false,
+        "part": 128,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 137,
+        "port_id": 1
+      },
+      "start": {
+        "input": false,
+        "part": 132,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 131,
+        "port_id": null
+      },
+      "start": {
+        "input": false,
+        "part": 132,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 124,
+        "port_id": null
+      },
+      "start": {
+        "input": false,
+        "part": 132,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 115,
+        "port_id": null
+      },
+      "start": {
+        "input": false,
+        "part": 132,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 116,
+        "port_id": null
+      },
+      "start": {
+        "input": false,
+        "part": 132,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 123,
+        "port_id": null
+      },
+      "start": {
+        "input": false,
+        "part": 132,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 129,
+        "port_id": null
+      },
+      "start": {
+        "input": false,
+        "part": 132,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 122,
+        "port_id": null
+      },
+      "start": {
+        "input": false,
+        "part": 132,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 120,
+        "port_id": null
+      },
+      "start": {
+        "input": false,
+        "part": 132,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 121,
+        "port_id": null
+      },
+      "start": {
+        "input": false,
+        "part": 132,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 114,
+        "port_id": null
+      },
+      "start": {
+        "input": false,
+        "part": 132,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 117,
+        "port_id": null
+      },
+      "start": {
+        "input": false,
+        "part": 132,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 119,
+        "port_id": null
+      },
+      "start": {
+        "input": false,
+        "part": 132,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 118,
+        "port_id": null
+      },
+      "start": {
+        "input": false,
+        "part": 132,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 127,
+        "port_id": null
+      },
+      "start": {
+        "input": false,
+        "part": 132,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 126,
+        "port_id": null
+      },
+      "start": {
+        "input": false,
+        "part": 132,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 137,
+        "port_id": 2
+      },
+      "start": {
+        "input": false,
+        "part": 109,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 76,
+        "port_id": null
+      },
+      "start": {
+        "input": false,
+        "part": 137,
+        "port_id": 4
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 82,
+        "port_id": null
+      },
+      "start": {
+        "input": false,
+        "part": 137,
+        "port_id": 23
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 81,
+        "port_id": null
+      },
+      "start": {
+        "input": false,
+        "part": 137,
+        "port_id": 24
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 79,
+        "port_id": null
+      },
+      "start": {
+        "input": false,
+        "part": 137,
+        "port_id": 25
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 84,
+        "port_id": null
+      },
+      "start": {
+        "input": false,
+        "part": 137,
+        "port_id": 26
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 77,
+        "port_id": null
+      },
+      "start": {
+        "input": false,
+        "part": 137,
+        "port_id": 27
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 78,
+        "port_id": null
+      },
+      "start": {
+        "input": false,
+        "part": 137,
+        "port_id": 28
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 83,
+        "port_id": null
+      },
+      "start": {
+        "input": false,
+        "part": 137,
+        "port_id": 29
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 80,
+        "port_id": null
+      },
+      "start": {
+        "input": false,
+        "part": 137,
+        "port_id": 30
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 138,
+        "port_id": 1
+      },
+      "start": {
+        "input": false,
+        "part": 137,
+        "port_id": 4
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 131,
+        "port_id": null
+      },
+      "start": {
+        "input": false,
+        "part": 137,
+        "port_id": 4
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 121,
+        "port_id": null
+      },
+      "start": {
+        "input": false,
+        "part": 137,
+        "port_id": 4
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 116,
+        "port_id": null
+      },
+      "start": {
+        "input": false,
+        "part": 137,
+        "port_id": 4
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 123,
+        "port_id": null
+      },
+      "start": {
+        "input": false,
+        "part": 137,
+        "port_id": 4
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 122,
+        "port_id": null
+      },
+      "start": {
+        "input": false,
+        "part": 137,
+        "port_id": 4
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 124,
+        "port_id": null
+      },
+      "start": {
+        "input": false,
+        "part": 137,
+        "port_id": 4
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 118,
+        "port_id": null
+      },
+      "start": {
+        "input": false,
+        "part": 137,
+        "port_id": 4
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 117,
+        "port_id": null
+      },
+      "start": {
+        "input": false,
+        "part": 137,
+        "port_id": 4
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 126,
+        "port_id": null
+      },
+      "start": {
+        "input": false,
+        "part": 137,
+        "port_id": 4
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 119,
+        "port_id": null
+      },
+      "start": {
+        "input": false,
+        "part": 137,
+        "port_id": 4
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 120,
+        "port_id": null
+      },
+      "start": {
+        "input": false,
+        "part": 137,
+        "port_id": 4
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 127,
+        "port_id": null
+      },
+      "start": {
+        "input": false,
+        "part": 137,
+        "port_id": 4
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 115,
+        "port_id": null
+      },
+      "start": {
+        "input": false,
+        "part": 137,
+        "port_id": 4
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 114,
+        "port_id": null
+      },
+      "start": {
+        "input": false,
+        "part": 137,
+        "port_id": 4
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 129,
+        "port_id": null
+      },
+      "start": {
+        "input": false,
+        "part": 137,
+        "port_id": 4
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 128,
+        "port_id": null
+      },
+      "start": {
+        "input": false,
+        "part": 137,
+        "port_id": 4
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 138,
+        "port_id": 2
+      },
+      "start": {
+        "input": false,
+        "part": 109,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 67,
+        "port_id": null
+      },
+      "start": {
+        "input": false,
+        "part": 138,
+        "port_id": 4
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 69,
+        "port_id": null
+      },
+      "start": {
+        "input": false,
+        "part": 138,
+        "port_id": 23
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 72,
+        "port_id": null
+      },
+      "start": {
+        "input": false,
+        "part": 138,
+        "port_id": 24
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 66,
+        "port_id": null
+      },
+      "start": {
+        "input": false,
+        "part": 138,
+        "port_id": 25
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 68,
+        "port_id": null
+      },
+      "start": {
+        "input": false,
+        "part": 138,
+        "port_id": 26
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 71,
+        "port_id": null
+      },
+      "start": {
+        "input": false,
+        "part": 138,
+        "port_id": 27
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 74,
+        "port_id": null
+      },
+      "start": {
+        "input": false,
+        "part": 138,
+        "port_id": 28
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 70,
+        "port_id": null
+      },
+      "start": {
+        "input": false,
+        "part": 138,
+        "port_id": 29
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 73,
+        "port_id": null
+      },
+      "start": {
+        "input": false,
+        "part": 138,
+        "port_id": 30
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 26,
+        "port_id": null
+      },
+      "start": {
+        "input": false,
+        "part": 138,
+        "port_id": 4
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 35,
+        "port_id": null
+      },
+      "start": {
+        "input": false,
+        "part": 138,
+        "port_id": 4
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 44,
+        "port_id": null
+      },
+      "start": {
+        "input": false,
+        "part": 138,
+        "port_id": 4
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 64,
+        "port_id": null
+      },
+      "start": {
+        "input": false,
+        "part": 138,
+        "port_id": 4
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 57,
+        "port_id": null
+      },
+      "start": {
+        "input": false,
+        "part": 138,
+        "port_id": 4
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 54,
+        "port_id": null
+      },
+      "start": {
+        "input": false,
+        "part": 138,
+        "port_id": 4
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 53,
+        "port_id": null
+      },
+      "start": {
+        "input": false,
+        "part": 138,
+        "port_id": 4
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 21,
+        "port_id": null
+      },
+      "start": {
+        "input": false,
+        "part": 138,
+        "port_id": 4
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 18,
+        "port_id": null
+      },
+      "start": {
+        "input": false,
+        "part": 138,
+        "port_id": 4
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 16,
+        "port_id": null
+      },
+      "start": {
+        "input": false,
+        "part": 138,
+        "port_id": 4
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 13,
+        "port_id": null
+      },
+      "start": {
+        "input": false,
+        "part": 138,
+        "port_id": 4
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 20,
+        "port_id": null
+      },
+      "start": {
+        "input": false,
+        "part": 138,
+        "port_id": 4
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 14,
+        "port_id": null
+      },
+      "start": {
+        "input": false,
+        "part": 138,
+        "port_id": 4
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 15,
+        "port_id": null
+      },
+      "start": {
+        "input": false,
+        "part": 138,
+        "port_id": 4
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 19,
+        "port_id": null
+      },
+      "start": {
+        "input": false,
+        "part": 138,
+        "port_id": 4
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 132,
+        "port_id": null
+      },
+      "start": {
+        "input": false,
+        "part": 139,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 143,
+        "port_id": null
+      },
+      "start": {
+        "input": false,
+        "part": 141,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 143,
+        "port_id": null
+      },
+      "start": {
+        "input": false,
+        "part": 140,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 141,
+        "port_id": null
+      },
+      "start": {
+        "input": false,
+        "part": 140,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 132,
+        "port_id": null
+      },
+      "start": {
+        "input": false,
+        "part": 143,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 144,
+        "port_id": 8
+      },
+      "start": {
+        "input": false,
+        "part": 138,
+        "port_id": 4
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 144,
+        "port_id": 0
+      },
+      "start": {
+        "input": false,
+        "part": 7,
+        "port_id": 9
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 144,
+        "port_id": 26
+      },
+      "start": {
+        "input": false,
+        "part": 9,
+        "port_id": 9
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 144,
+        "port_id": 29
+      },
+      "start": {
+        "input": false,
+        "part": 3,
+        "port_id": 9
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 144,
+        "port_id": 32
+      },
+      "start": {
+        "input": false,
+        "part": 4,
+        "port_id": 9
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 144,
+        "port_id": 38
+      },
+      "start": {
+        "input": false,
+        "part": 5,
+        "port_id": 9
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 144,
+        "port_id": 34
+      },
+      "start": {
+        "input": false,
+        "part": 10,
+        "port_id": 9
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 137,
+        "port_id": 13
+      },
+      "start": {
+        "input": false,
+        "part": 152,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 137,
+        "port_id": 14
+      },
+      "start": {
+        "input": false,
+        "part": 153,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 137,
+        "port_id": 11
+      },
+      "start": {
+        "input": false,
+        "part": 154,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 137,
+        "port_id": 12
+      },
+      "start": {
+        "input": false,
+        "part": 155,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 137,
+        "port_id": 9
+      },
+      "start": {
+        "input": false,
+        "part": 158,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 137,
+        "port_id": 10
+      },
+      "start": {
+        "input": false,
+        "part": 156,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 137,
+        "port_id": 8
+      },
+      "start": {
+        "input": false,
+        "part": 157,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 137,
+        "port_id": 7
+      },
+      "start": {
+        "input": false,
+        "part": 159,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 138,
+        "port_id": 13
+      },
+      "start": {
+        "input": false,
+        "part": 152,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 138,
+        "port_id": 14
+      },
+      "start": {
+        "input": false,
+        "part": 153,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 138,
+        "port_id": 11
+      },
+      "start": {
+        "input": false,
+        "part": 154,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 138,
+        "port_id": 12
+      },
+      "start": {
+        "input": false,
+        "part": 155,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 138,
+        "port_id": 9
+      },
+      "start": {
+        "input": false,
+        "part": 158,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 138,
+        "port_id": 10
+      },
+      "start": {
+        "input": false,
+        "part": 156,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 138,
+        "port_id": 8
+      },
+      "start": {
+        "input": false,
+        "part": 157,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 138,
+        "port_id": 7
+      },
+      "start": {
+        "input": false,
+        "part": 159,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 168,
+        "port_id": null
+      },
+      "start": {
+        "input": false,
+        "part": 168,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 169,
+        "port_id": null
+      },
+      "start": {
+        "input": false,
+        "part": 132,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 168,
+        "port_id": null
+      },
+      "start": {
+        "input": false,
+        "part": 169,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 170,
+        "port_id": null
+      },
+      "start": {
+        "input": false,
+        "part": 168,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 169,
+        "port_id": null
+      },
+      "start": {
+        "input": false,
+        "part": 170,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 172,
+        "port_id": null
+      },
+      "start": {
+        "input": false,
+        "part": 168,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 168,
+        "port_id": null
+      },
+      "start": {
+        "input": false,
+        "part": 174,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 174,
+        "port_id": null
+      },
+      "start": {
+        "input": false,
+        "part": 172,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 175,
+        "port_id": null
+      },
+      "start": {
+        "input": false,
+        "part": 144,
+        "port_id": 9
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 174,
+        "port_id": null
+      },
+      "start": {
+        "input": false,
+        "part": 175,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 180,
+        "port_id": null
+      },
+      "start": {
+        "input": false,
+        "part": 176,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 182,
+        "port_id": null
+      },
+      "start": {
+        "input": false,
+        "part": 177,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 182,
+        "port_id": null
+      },
+      "start": {
+        "input": false,
+        "part": 180,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 178,
+        "port_id": null
+      },
+      "start": {
+        "input": false,
+        "part": 183,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 180,
+        "port_id": null
+      },
+      "start": {
+        "input": false,
+        "part": 183,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 183,
+        "port_id": null
+      },
+      "start": {
+        "input": false,
+        "part": 174,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 180,
+        "port_id": null
+      },
+      "start": {
+        "input": false,
+        "part": 168,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 188,
+        "port_id": 8
+      },
+      "start": {
+        "input": false,
+        "part": 185,
+        "port_id": null
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 131,
+        "port_id": null
+      },
+      "start": {
+        "input": false,
+        "part": 188,
+        "port_id": 18
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 188,
+        "port_id": 0
+      },
+      "start": {
+        "input": false,
+        "part": 7,
+        "port_id": 8
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 188,
+        "port_id": 1
+      },
+      "start": {
+        "input": false,
+        "part": 7,
+        "port_id": 15
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 188,
+        "port_id": 2
+      },
+      "start": {
+        "input": false,
+        "part": 7,
+        "port_id": 20
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 188,
+        "port_id": 3
+      },
+      "start": {
+        "input": false,
+        "part": 7,
+        "port_id": 25
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 188,
+        "port_id": 4
+      },
+      "start": {
+        "input": false,
+        "part": 7,
+        "port_id": 33
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 188,
+        "port_id": 5
+      },
+      "start": {
+        "input": false,
+        "part": 7,
+        "port_id": 46
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 188,
+        "port_id": 6
+      },
+      "start": {
+        "input": false,
+        "part": 7,
+        "port_id": 44
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 188,
+        "port_id": 7
+      },
+      "start": {
+        "input": false,
+        "part": 7,
+        "port_id": 34
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 188,
+        "port_id": 66
+      },
+      "start": {
+        "input": false,
+        "part": 7,
+        "port_id": 54
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 188,
+        "port_id": 60
+      },
+      "start": {
+        "input": false,
+        "part": 7,
+        "port_id": 69
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 188,
+        "port_id": 72
+      },
+      "start": {
+        "input": false,
+        "part": 7,
+        "port_id": 66
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 188,
+        "port_id": 56
+      },
+      "start": {
+        "input": false,
+        "part": 7,
+        "port_id": 55
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 188,
+        "port_id": 53
+      },
+      "start": {
+        "input": false,
+        "part": 7,
+        "port_id": 53
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 188,
+        "port_id": 64
+      },
+      "start": {
+        "input": false,
+        "part": 7,
+        "port_id": 75
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 188,
+        "port_id": 51
+      },
+      "start": {
+        "input": false,
+        "part": 7,
+        "port_id": 57
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 188,
+        "port_id": 61
+      },
+      "start": {
+        "input": false,
+        "part": 7,
+        "port_id": 58
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 114,
+        "port_id": null
+      },
+      "start": {
+        "input": false,
+        "part": 188,
+        "port_id": 19
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 115,
+        "port_id": null
+      },
+      "start": {
+        "input": false,
+        "part": 188,
+        "port_id": 20
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 117,
+        "port_id": null
+      },
+      "start": {
+        "input": false,
+        "part": 188,
+        "port_id": 21
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 116,
+        "port_id": null
+      },
+      "start": {
+        "input": false,
+        "part": 188,
+        "port_id": 22
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 120,
+        "port_id": null
+      },
+      "start": {
+        "input": false,
+        "part": 188,
+        "port_id": 26
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 118,
+        "port_id": null
+      },
+      "start": {
+        "input": false,
+        "part": 188,
+        "port_id": 25
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 119,
+        "port_id": null
+      },
+      "start": {
+        "input": false,
+        "part": 188,
+        "port_id": 23
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 121,
+        "port_id": null
+      },
+      "start": {
+        "input": false,
+        "part": 188,
+        "port_id": 24
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 126,
+        "port_id": null
+      },
+      "start": {
+        "input": false,
+        "part": 188,
+        "port_id": 74
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 124,
+        "port_id": null
+      },
+      "start": {
+        "input": false,
+        "part": 188,
+        "port_id": 70
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 129,
+        "port_id": null
+      },
+      "start": {
+        "input": false,
+        "part": 188,
+        "port_id": 65
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 127,
+        "port_id": null
+      },
+      "start": {
+        "input": false,
+        "part": 188,
+        "port_id": 69
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 123,
+        "port_id": null
+      },
+      "start": {
+        "input": false,
+        "part": 188,
+        "port_id": 68
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 122,
+        "port_id": null
+      },
+      "start": {
+        "input": false,
+        "part": 188,
+        "port_id": 73
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 125,
+        "port_id": null
+      },
+      "start": {
+        "input": false,
+        "part": 188,
+        "port_id": 71
+      }
+    },
+    {
+      "end": {
+        "input": true,
+        "part": 128,
+        "port_id": null
+      },
+      "start": {
+        "input": false,
+        "part": 188,
+        "port_id": 67
+      }
+    }
+  ],
+  "next_id": 190,
   "parts": {
     "10": {
       "color": [
@@ -2297,6 +5142,46 @@
       },
       "simulation_index": null
     },
+    "100": {
+      "color": [
+        117,
+        20,
+        237,
+        255
+      ],
+      "id": 100,
+      "label": "address 2",
+      "part_data": {
+        "IO": {
+          "input": false
+        }
+      },
+      "pos": {
+        "x": 3760.0,
+        "y": 1200.0
+      },
+      "simulation_index": null
+    },
+    "109": {
+      "color": [
+        226,
+        219,
+        19,
+        255
+      ],
+      "id": 109,
+      "label": "read clock",
+      "part_data": {
+        "IO": {
+          "input": true
+        }
+      },
+      "pos": {
+        "x": 3700.0,
+        "y": -360.0
+      },
+      "simulation_index": null
+    },
     "11": {
       "color": [
         207,
@@ -2309,14 +5194,11172 @@
       "part_data": {
         "Label": {
           "size": {
-            "x": 120.0,
+            "x": 180.0,
             "y": 120.0
           }
         }
       },
       "pos": {
-        "x": 1920.0,
+        "x": 1860.0,
         "y": 520.0
+      },
+      "simulation_index": null
+    },
+    "110": {
+      "color": [
+        226,
+        219,
+        19,
+        255
+      ],
+      "id": 110,
+      "label": "write clock",
+      "part_data": {
+        "IO": {
+          "input": false
+        }
+      },
+      "pos": {
+        "x": 3760.0,
+        "y": 360.0
+      },
+      "simulation_index": null
+    },
+    "112": {
+      "color": [
+        226,
+        219,
+        19,
+        255
+      ],
+      "id": 112,
+      "label": "read clock",
+      "part_data": {
+        "IO": {
+          "input": false
+        }
+      },
+      "pos": {
+        "x": 3760.0,
+        "y": 300.0
+      },
+      "simulation_index": null
+    },
+    "114": {
+      "color": [
+        117,
+        20,
+        237,
+        255
+      ],
+      "id": 114,
+      "label": "OR",
+      "part_data": {
+        "Gate": {
+          "gate_type": "Or",
+          "important": false
+        }
+      },
+      "pos": {
+        "x": 3640.0,
+        "y": 420.0
+      },
+      "simulation_index": null
+    },
+    "115": {
+      "color": [
+        117,
+        20,
+        237,
+        255
+      ],
+      "id": 115,
+      "label": "OR",
+      "part_data": {
+        "Gate": {
+          "gate_type": "Or",
+          "important": false
+        }
+      },
+      "pos": {
+        "x": 3640.0,
+        "y": 480.0
+      },
+      "simulation_index": null
+    },
+    "116": {
+      "color": [
+        117,
+        20,
+        237,
+        255
+      ],
+      "id": 116,
+      "label": "OR",
+      "part_data": {
+        "Gate": {
+          "gate_type": "Or",
+          "important": false
+        }
+      },
+      "pos": {
+        "x": 3640.0,
+        "y": 600.0
+      },
+      "simulation_index": null
+    },
+    "117": {
+      "color": [
+        117,
+        20,
+        237,
+        255
+      ],
+      "id": 117,
+      "label": "OR",
+      "part_data": {
+        "Gate": {
+          "gate_type": "Or",
+          "important": false
+        }
+      },
+      "pos": {
+        "x": 3640.0,
+        "y": 540.0
+      },
+      "simulation_index": null
+    },
+    "118": {
+      "color": [
+        117,
+        20,
+        237,
+        255
+      ],
+      "id": 118,
+      "label": "OR",
+      "part_data": {
+        "Gate": {
+          "gate_type": "Or",
+          "important": false
+        }
+      },
+      "pos": {
+        "x": 3640.0,
+        "y": 720.0
+      },
+      "simulation_index": null
+    },
+    "119": {
+      "color": [
+        117,
+        20,
+        237,
+        255
+      ],
+      "id": 119,
+      "label": "OR",
+      "part_data": {
+        "Gate": {
+          "gate_type": "Or",
+          "important": false
+        }
+      },
+      "pos": {
+        "x": 3640.0,
+        "y": 780.0
+      },
+      "simulation_index": null
+    },
+    "120": {
+      "color": [
+        117,
+        20,
+        237,
+        255
+      ],
+      "id": 120,
+      "label": "OR",
+      "part_data": {
+        "Gate": {
+          "gate_type": "Or",
+          "important": false
+        }
+      },
+      "pos": {
+        "x": 3640.0,
+        "y": 660.0
+      },
+      "simulation_index": null
+    },
+    "121": {
+      "color": [
+        117,
+        20,
+        237,
+        255
+      ],
+      "id": 121,
+      "label": "OR",
+      "part_data": {
+        "Gate": {
+          "gate_type": "Or",
+          "important": false
+        }
+      },
+      "pos": {
+        "x": 3640.0,
+        "y": 840.0
+      },
+      "simulation_index": null
+    },
+    "122": {
+      "color": [
+        117,
+        20,
+        237,
+        255
+      ],
+      "id": 122,
+      "label": "OR",
+      "part_data": {
+        "Gate": {
+          "gate_type": "Or",
+          "important": false
+        }
+      },
+      "pos": {
+        "x": 3640.0,
+        "y": 1200.0
+      },
+      "simulation_index": null
+    },
+    "123": {
+      "color": [
+        117,
+        20,
+        237,
+        255
+      ],
+      "id": 123,
+      "label": "OR",
+      "part_data": {
+        "Gate": {
+          "gate_type": "Or",
+          "important": false
+        }
+      },
+      "pos": {
+        "x": 3640.0,
+        "y": 1140.0
+      },
+      "simulation_index": null
+    },
+    "124": {
+      "color": [
+        117,
+        20,
+        237,
+        255
+      ],
+      "id": 124,
+      "label": "OR",
+      "part_data": {
+        "Gate": {
+          "gate_type": "Or",
+          "important": false
+        }
+      },
+      "pos": {
+        "x": 3640.0,
+        "y": 960.0
+      },
+      "simulation_index": null
+    },
+    "125": {
+      "color": [
+        117,
+        20,
+        237,
+        255
+      ],
+      "id": 125,
+      "label": "OR",
+      "part_data": {
+        "Gate": {
+          "gate_type": "Or",
+          "important": false
+        }
+      },
+      "pos": {
+        "x": 3640.0,
+        "y": 1260.0
+      },
+      "simulation_index": null
+    },
+    "126": {
+      "color": [
+        117,
+        20,
+        237,
+        255
+      ],
+      "id": 126,
+      "label": "OR",
+      "part_data": {
+        "Gate": {
+          "gate_type": "Or",
+          "important": false
+        }
+      },
+      "pos": {
+        "x": 3640.0,
+        "y": 900.0
+      },
+      "simulation_index": null
+    },
+    "127": {
+      "color": [
+        117,
+        20,
+        237,
+        255
+      ],
+      "id": 127,
+      "label": "OR",
+      "part_data": {
+        "Gate": {
+          "gate_type": "Or",
+          "important": false
+        }
+      },
+      "pos": {
+        "x": 3640.0,
+        "y": 1080.0
+      },
+      "simulation_index": null
+    },
+    "128": {
+      "color": [
+        117,
+        20,
+        237,
+        255
+      ],
+      "id": 128,
+      "label": "OR",
+      "part_data": {
+        "Gate": {
+          "gate_type": "Or",
+          "important": false
+        }
+      },
+      "pos": {
+        "x": 3640.0,
+        "y": 1320.0
+      },
+      "simulation_index": null
+    },
+    "129": {
+      "color": [
+        117,
+        20,
+        237,
+        255
+      ],
+      "id": 129,
+      "label": "OR",
+      "part_data": {
+        "Gate": {
+          "gate_type": "Or",
+          "important": false
+        }
+      },
+      "pos": {
+        "x": 3640.0,
+        "y": 1020.0
+      },
+      "simulation_index": null
+    },
+    "13": {
+      "color": [
+        10,
+        62,
+        226,
+        255
+      ],
+      "id": 13,
+      "label": "OR",
+      "part_data": {
+        "Gate": {
+          "gate_type": "Or",
+          "important": false
+        }
+      },
+      "pos": {
+        "x": 1320.0,
+        "y": 200.0
+      },
+      "simulation_index": null
+    },
+    "130": {
+      "color": [
+        226,
+        219,
+        19,
+        255
+      ],
+      "id": 130,
+      "label": "OR",
+      "part_data": {
+        "Gate": {
+          "gate_type": "Or",
+          "important": false
+        }
+      },
+      "pos": {
+        "x": 3640.0,
+        "y": 360.0
+      },
+      "simulation_index": null
+    },
+    "131": {
+      "color": [
+        226,
+        219,
+        19,
+        255
+      ],
+      "id": 131,
+      "label": "OR",
+      "part_data": {
+        "Gate": {
+          "gate_type": "Or",
+          "important": false
+        }
+      },
+      "pos": {
+        "x": 3640.0,
+        "y": 300.0
+      },
+      "simulation_index": null
+    },
+    "132": {
+      "color": [
+        25,
+        231,
+        83,
+        255
+      ],
+      "id": 132,
+      "label": "Start",
+      "part_data": {
+        "Gate": {
+          "gate_type": "Or",
+          "important": false
+        }
+      },
+      "pos": {
+        "x": 2660.0,
+        "y": -20.0
+      },
+      "simulation_index": null
+    },
+    "133": {
+      "color": [
+        238,
+        123,
+        240,
+        255
+      ],
+      "id": 133,
+      "label": "general functions",
+      "part_data": {
+        "Label": {
+          "size": {
+            "x": 800.0,
+            "y": 100.0
+          }
+        }
+      },
+      "pos": {
+        "x": 2660.0,
+        "y": -200.0
+      },
+      "simulation_index": null
+    },
+    "135": {
+      "color": [
+        238,
+        123,
+        240,
+        255
+      ],
+      "id": 135,
+      "label": "reset",
+      "part_data": {
+        "Label": {
+          "size": {
+            "x": 360.0,
+            "y": 40.0
+          }
+        }
+      },
+      "pos": {
+        "x": 2660.0,
+        "y": -80.0
+      },
+      "simulation_index": null
+    },
+    "136": {
+      "color": [
+        226,
+        219,
+        19,
+        255
+      ],
+      "id": 136,
+      "label": "write clock",
+      "part_data": {
+        "IO": {
+          "input": true
+        }
+      },
+      "pos": {
+        "x": 3700.0,
+        "y": -420.0
+      },
+      "simulation_index": null
+    },
+    "137": {
+      "color": [
+        117,
+        20,
+        237,
+        255
+      ],
+      "id": 137,
+      "label": "prgm cntr low",
+      "part_data": {
+        "Module": {
+          "canvas_snapshot": {
+            "connections": [
+              {
+                "end": {
+                  "input": true,
+                  "part": 0,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 0,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 0,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 1,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 5,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 0,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 6,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 5,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 6,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 2,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 0,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 6,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 4,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 6,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 17,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 5,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 22,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 5,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 15,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 5,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 18,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 5,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 19,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 5,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 16,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 5,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 21,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 5,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 20,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 5,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 17,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 2,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 22,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 2,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 15,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 2,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 18,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 2,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 19,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 2,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 16,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 2,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 21,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 2,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 20,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 2,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 22,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 13,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 21,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 14,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 20,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 11,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 19,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 12,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 18,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 9,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 17,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 10,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 16,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 8,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 15,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 7,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 23,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 22,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 24,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 21,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 25,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 20,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 26,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 19,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 27,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 18,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 28,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 17,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 29,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 16,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 30,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 15,
+                  "port_id": null
+                }
+              }
+            ],
+            "next_id": 31,
+            "parts": {
+              "0": {
+                "color": [
+                  44,
+                  230,
+                  230,
+                  255
+                ],
+                "id": 0,
+                "label": "XOR",
+                "part_data": {
+                  "Gate": {
+                    "gate_type": "Xor",
+                    "important": false
+                  }
+                },
+                "pos": {
+                  "x": 2160.0,
+                  "y": -620.0
+                },
+                "simulation_index": null
+              },
+              "1": {
+                "color": [
+                  226,
+                  219,
+                  19,
+                  255
+                ],
+                "id": 1,
+                "label": "start clock",
+                "part_data": {
+                  "IO": {
+                    "input": true
+                  }
+                },
+                "pos": {
+                  "x": 2040.0,
+                  "y": -620.0
+                },
+                "simulation_index": null
+              },
+              "10": {
+                "color": [
+                  10,
+                  62,
+                  226,
+                  255
+                ],
+                "id": 10,
+                "label": "data 2",
+                "part_data": {
+                  "IO": {
+                    "input": true
+                  }
+                },
+                "pos": {
+                  "x": 2280.0,
+                  "y": -160.0
+                },
+                "simulation_index": null
+              },
+              "11": {
+                "color": [
+                  10,
+                  62,
+                  226,
+                  255
+                ],
+                "id": 11,
+                "label": "data 5",
+                "part_data": {
+                  "IO": {
+                    "input": true
+                  }
+                },
+                "pos": {
+                  "x": 2280.0,
+                  "y": -340.0
+                },
+                "simulation_index": null
+              },
+              "12": {
+                "color": [
+                  10,
+                  62,
+                  226,
+                  255
+                ],
+                "id": 12,
+                "label": "data 4",
+                "part_data": {
+                  "IO": {
+                    "input": true
+                  }
+                },
+                "pos": {
+                  "x": 2280.0,
+                  "y": -280.0
+                },
+                "simulation_index": null
+              },
+              "13": {
+                "color": [
+                  10,
+                  62,
+                  226,
+                  255
+                ],
+                "id": 13,
+                "label": "data 7",
+                "part_data": {
+                  "IO": {
+                    "input": true
+                  }
+                },
+                "pos": {
+                  "x": 2280.0,
+                  "y": -460.0
+                },
+                "simulation_index": null
+              },
+              "14": {
+                "color": [
+                  10,
+                  62,
+                  226,
+                  255
+                ],
+                "id": 14,
+                "label": "data 6",
+                "part_data": {
+                  "IO": {
+                    "input": true
+                  }
+                },
+                "pos": {
+                  "x": 2280.0,
+                  "y": -400.0
+                },
+                "simulation_index": null
+              },
+              "15": {
+                "color": [
+                  25,
+                  231,
+                  83,
+                  255
+                ],
+                "id": 15,
+                "label": "AND",
+                "part_data": {
+                  "Gate": {
+                    "gate_type": "And",
+                    "important": false
+                  }
+                },
+                "pos": {
+                  "x": 2400.0,
+                  "y": -40.0
+                },
+                "simulation_index": null
+              },
+              "16": {
+                "color": [
+                  25,
+                  231,
+                  83,
+                  255
+                ],
+                "id": 16,
+                "label": "AND",
+                "part_data": {
+                  "Gate": {
+                    "gate_type": "And",
+                    "important": false
+                  }
+                },
+                "pos": {
+                  "x": 2400.0,
+                  "y": -100.0
+                },
+                "simulation_index": null
+              },
+              "17": {
+                "color": [
+                  25,
+                  231,
+                  83,
+                  255
+                ],
+                "id": 17,
+                "label": "AND",
+                "part_data": {
+                  "Gate": {
+                    "gate_type": "And",
+                    "important": false
+                  }
+                },
+                "pos": {
+                  "x": 2400.0,
+                  "y": -160.0
+                },
+                "simulation_index": null
+              },
+              "18": {
+                "color": [
+                  25,
+                  231,
+                  83,
+                  255
+                ],
+                "id": 18,
+                "label": "AND",
+                "part_data": {
+                  "Gate": {
+                    "gate_type": "And",
+                    "important": false
+                  }
+                },
+                "pos": {
+                  "x": 2400.0,
+                  "y": -220.0
+                },
+                "simulation_index": null
+              },
+              "19": {
+                "color": [
+                  25,
+                  231,
+                  83,
+                  255
+                ],
+                "id": 19,
+                "label": "AND",
+                "part_data": {
+                  "Gate": {
+                    "gate_type": "And",
+                    "important": false
+                  }
+                },
+                "pos": {
+                  "x": 2400.0,
+                  "y": -280.0
+                },
+                "simulation_index": null
+              },
+              "2": {
+                "color": [
+                  226,
+                  219,
+                  19,
+                  255
+                ],
+                "id": 2,
+                "label": "finish clock",
+                "part_data": {
+                  "IO": {
+                    "input": true
+                  }
+                },
+                "pos": {
+                  "x": 2040.0,
+                  "y": -540.0
+                },
+                "simulation_index": null
+              },
+              "20": {
+                "color": [
+                  25,
+                  231,
+                  83,
+                  255
+                ],
+                "id": 20,
+                "label": "AND",
+                "part_data": {
+                  "Gate": {
+                    "gate_type": "And",
+                    "important": false
+                  }
+                },
+                "pos": {
+                  "x": 2400.0,
+                  "y": -340.0
+                },
+                "simulation_index": null
+              },
+              "21": {
+                "color": [
+                  25,
+                  231,
+                  83,
+                  255
+                ],
+                "id": 21,
+                "label": "AND",
+                "part_data": {
+                  "Gate": {
+                    "gate_type": "And",
+                    "important": false
+                  }
+                },
+                "pos": {
+                  "x": 2400.0,
+                  "y": -400.0
+                },
+                "simulation_index": null
+              },
+              "22": {
+                "color": [
+                  25,
+                  231,
+                  83,
+                  255
+                ],
+                "id": 22,
+                "label": "AND",
+                "part_data": {
+                  "Gate": {
+                    "gate_type": "And",
+                    "important": false
+                  }
+                },
+                "pos": {
+                  "x": 2400.0,
+                  "y": -460.0
+                },
+                "simulation_index": null
+              },
+              "23": {
+                "color": [
+                  10,
+                  62,
+                  226,
+                  255
+                ],
+                "id": 23,
+                "label": "data 7",
+                "part_data": {
+                  "IO": {
+                    "input": false
+                  }
+                },
+                "pos": {
+                  "x": 2520.0,
+                  "y": -460.0
+                },
+                "simulation_index": null
+              },
+              "24": {
+                "color": [
+                  10,
+                  62,
+                  226,
+                  255
+                ],
+                "id": 24,
+                "label": "data 6",
+                "part_data": {
+                  "IO": {
+                    "input": false
+                  }
+                },
+                "pos": {
+                  "x": 2520.0,
+                  "y": -400.0
+                },
+                "simulation_index": null
+              },
+              "25": {
+                "color": [
+                  10,
+                  62,
+                  226,
+                  255
+                ],
+                "id": 25,
+                "label": "data 5",
+                "part_data": {
+                  "IO": {
+                    "input": false
+                  }
+                },
+                "pos": {
+                  "x": 2520.0,
+                  "y": -340.0
+                },
+                "simulation_index": null
+              },
+              "26": {
+                "color": [
+                  10,
+                  62,
+                  226,
+                  255
+                ],
+                "id": 26,
+                "label": "data 4",
+                "part_data": {
+                  "IO": {
+                    "input": false
+                  }
+                },
+                "pos": {
+                  "x": 2520.0,
+                  "y": -280.0
+                },
+                "simulation_index": null
+              },
+              "27": {
+                "color": [
+                  10,
+                  62,
+                  226,
+                  255
+                ],
+                "id": 27,
+                "label": "data 3",
+                "part_data": {
+                  "IO": {
+                    "input": false
+                  }
+                },
+                "pos": {
+                  "x": 2520.0,
+                  "y": -220.0
+                },
+                "simulation_index": null
+              },
+              "28": {
+                "color": [
+                  10,
+                  62,
+                  226,
+                  255
+                ],
+                "id": 28,
+                "label": "data 2",
+                "part_data": {
+                  "IO": {
+                    "input": false
+                  }
+                },
+                "pos": {
+                  "x": 2520.0,
+                  "y": -160.0
+                },
+                "simulation_index": null
+              },
+              "29": {
+                "color": [
+                  10,
+                  62,
+                  226,
+                  255
+                ],
+                "id": 29,
+                "label": "data 1",
+                "part_data": {
+                  "IO": {
+                    "input": false
+                  }
+                },
+                "pos": {
+                  "x": 2520.0,
+                  "y": -100.0
+                },
+                "simulation_index": null
+              },
+              "30": {
+                "color": [
+                  10,
+                  62,
+                  226,
+                  255
+                ],
+                "id": 30,
+                "label": "data 0",
+                "part_data": {
+                  "IO": {
+                    "input": false
+                  }
+                },
+                "pos": {
+                  "x": 2520.0,
+                  "y": -40.0
+                },
+                "simulation_index": null
+              },
+              "4": {
+                "color": [
+                  226,
+                  219,
+                  19,
+                  255
+                ],
+                "id": 4,
+                "label": "finish clock",
+                "part_data": {
+                  "IO": {
+                    "input": false
+                  }
+                },
+                "pos": {
+                  "x": 2280.0,
+                  "y": -540.0
+                },
+                "simulation_index": null
+              },
+              "5": {
+                "color": [
+                  117,
+                  20,
+                  237,
+                  255
+                ],
+                "id": 5,
+                "label": "AND",
+                "part_data": {
+                  "Gate": {
+                    "gate_type": "And",
+                    "important": false
+                  }
+                },
+                "pos": {
+                  "x": 2280.0,
+                  "y": -620.0
+                },
+                "simulation_index": null
+              },
+              "6": {
+                "color": [
+                  25,
+                  231,
+                  83,
+                  255
+                ],
+                "id": 6,
+                "label": "AND",
+                "part_data": {
+                  "Gate": {
+                    "gate_type": "And",
+                    "important": false
+                  }
+                },
+                "pos": {
+                  "x": 2160.0,
+                  "y": -540.0
+                },
+                "simulation_index": null
+              },
+              "7": {
+                "color": [
+                  10,
+                  62,
+                  226,
+                  255
+                ],
+                "id": 7,
+                "label": "data 0",
+                "part_data": {
+                  "IO": {
+                    "input": true
+                  }
+                },
+                "pos": {
+                  "x": 2280.0,
+                  "y": -40.0
+                },
+                "simulation_index": null
+              },
+              "8": {
+                "color": [
+                  10,
+                  62,
+                  226,
+                  255
+                ],
+                "id": 8,
+                "label": "data 1",
+                "part_data": {
+                  "IO": {
+                    "input": true
+                  }
+                },
+                "pos": {
+                  "x": 2280.0,
+                  "y": -100.0
+                },
+                "simulation_index": null
+              },
+              "9": {
+                "color": [
+                  10,
+                  62,
+                  226,
+                  255
+                ],
+                "id": 9,
+                "label": "data 3",
+                "part_data": {
+                  "IO": {
+                    "input": true
+                  }
+                },
+                "pos": {
+                  "x": 2280.0,
+                  "y": -220.0
+                },
+                "simulation_index": null
+              }
+            }
+          },
+          "inputs": {
+            "1": "start clock",
+            "10": "data 2",
+            "11": "data 5",
+            "12": "data 4",
+            "13": "data 7",
+            "14": "data 6",
+            "2": "finish clock",
+            "7": "data 0",
+            "8": "data 1",
+            "9": "data 3"
+          },
+          "min_size": {
+            "x": 120.0,
+            "y": 240.0
+          },
+          "outputs": {
+            "23": "data 7",
+            "24": "data 6",
+            "25": "data 5",
+            "26": "data 4",
+            "27": "data 3",
+            "28": "data 2",
+            "29": "data 1",
+            "30": "data 0",
+            "4": "finish clock"
+          },
+          "path": "random_modules/clock_check_8b.sml",
+          "size": {
+            "x": 160.0,
+            "y": 240.0
+          }
+        }
+      },
+      "pos": {
+        "x": 2660.0,
+        "y": 60.0
+      },
+      "simulation_index": null
+    },
+    "138": {
+      "color": [
+        117,
+        20,
+        237,
+        255
+      ],
+      "id": 138,
+      "label": "prgm cntr low",
+      "part_data": {
+        "Module": {
+          "canvas_snapshot": {
+            "connections": [
+              {
+                "end": {
+                  "input": true,
+                  "part": 0,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 0,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 0,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 1,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 5,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 0,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 6,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 5,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 6,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 2,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 0,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 6,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 4,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 6,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 17,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 5,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 22,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 5,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 15,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 5,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 18,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 5,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 19,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 5,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 16,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 5,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 21,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 5,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 20,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 5,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 17,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 2,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 22,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 2,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 15,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 2,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 18,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 2,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 19,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 2,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 16,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 2,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 21,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 2,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 20,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 2,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 22,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 13,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 21,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 14,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 20,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 11,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 19,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 12,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 18,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 9,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 17,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 10,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 16,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 8,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 15,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 7,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 23,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 22,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 24,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 21,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 25,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 20,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 26,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 19,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 27,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 18,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 28,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 17,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 29,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 16,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 30,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 15,
+                  "port_id": null
+                }
+              }
+            ],
+            "next_id": 31,
+            "parts": {
+              "0": {
+                "color": [
+                  44,
+                  230,
+                  230,
+                  255
+                ],
+                "id": 0,
+                "label": "XOR",
+                "part_data": {
+                  "Gate": {
+                    "gate_type": "Xor",
+                    "important": false
+                  }
+                },
+                "pos": {
+                  "x": 2160.0,
+                  "y": -620.0
+                },
+                "simulation_index": null
+              },
+              "1": {
+                "color": [
+                  226,
+                  219,
+                  19,
+                  255
+                ],
+                "id": 1,
+                "label": "start clock",
+                "part_data": {
+                  "IO": {
+                    "input": true
+                  }
+                },
+                "pos": {
+                  "x": 2040.0,
+                  "y": -620.0
+                },
+                "simulation_index": null
+              },
+              "10": {
+                "color": [
+                  10,
+                  62,
+                  226,
+                  255
+                ],
+                "id": 10,
+                "label": "data 2",
+                "part_data": {
+                  "IO": {
+                    "input": true
+                  }
+                },
+                "pos": {
+                  "x": 2280.0,
+                  "y": -160.0
+                },
+                "simulation_index": null
+              },
+              "11": {
+                "color": [
+                  10,
+                  62,
+                  226,
+                  255
+                ],
+                "id": 11,
+                "label": "data 5",
+                "part_data": {
+                  "IO": {
+                    "input": true
+                  }
+                },
+                "pos": {
+                  "x": 2280.0,
+                  "y": -340.0
+                },
+                "simulation_index": null
+              },
+              "12": {
+                "color": [
+                  10,
+                  62,
+                  226,
+                  255
+                ],
+                "id": 12,
+                "label": "data 4",
+                "part_data": {
+                  "IO": {
+                    "input": true
+                  }
+                },
+                "pos": {
+                  "x": 2280.0,
+                  "y": -280.0
+                },
+                "simulation_index": null
+              },
+              "13": {
+                "color": [
+                  10,
+                  62,
+                  226,
+                  255
+                ],
+                "id": 13,
+                "label": "data 7",
+                "part_data": {
+                  "IO": {
+                    "input": true
+                  }
+                },
+                "pos": {
+                  "x": 2280.0,
+                  "y": -460.0
+                },
+                "simulation_index": null
+              },
+              "14": {
+                "color": [
+                  10,
+                  62,
+                  226,
+                  255
+                ],
+                "id": 14,
+                "label": "data 6",
+                "part_data": {
+                  "IO": {
+                    "input": true
+                  }
+                },
+                "pos": {
+                  "x": 2280.0,
+                  "y": -400.0
+                },
+                "simulation_index": null
+              },
+              "15": {
+                "color": [
+                  25,
+                  231,
+                  83,
+                  255
+                ],
+                "id": 15,
+                "label": "AND",
+                "part_data": {
+                  "Gate": {
+                    "gate_type": "And",
+                    "important": false
+                  }
+                },
+                "pos": {
+                  "x": 2400.0,
+                  "y": -40.0
+                },
+                "simulation_index": null
+              },
+              "16": {
+                "color": [
+                  25,
+                  231,
+                  83,
+                  255
+                ],
+                "id": 16,
+                "label": "AND",
+                "part_data": {
+                  "Gate": {
+                    "gate_type": "And",
+                    "important": false
+                  }
+                },
+                "pos": {
+                  "x": 2400.0,
+                  "y": -100.0
+                },
+                "simulation_index": null
+              },
+              "17": {
+                "color": [
+                  25,
+                  231,
+                  83,
+                  255
+                ],
+                "id": 17,
+                "label": "AND",
+                "part_data": {
+                  "Gate": {
+                    "gate_type": "And",
+                    "important": false
+                  }
+                },
+                "pos": {
+                  "x": 2400.0,
+                  "y": -160.0
+                },
+                "simulation_index": null
+              },
+              "18": {
+                "color": [
+                  25,
+                  231,
+                  83,
+                  255
+                ],
+                "id": 18,
+                "label": "AND",
+                "part_data": {
+                  "Gate": {
+                    "gate_type": "And",
+                    "important": false
+                  }
+                },
+                "pos": {
+                  "x": 2400.0,
+                  "y": -220.0
+                },
+                "simulation_index": null
+              },
+              "19": {
+                "color": [
+                  25,
+                  231,
+                  83,
+                  255
+                ],
+                "id": 19,
+                "label": "AND",
+                "part_data": {
+                  "Gate": {
+                    "gate_type": "And",
+                    "important": false
+                  }
+                },
+                "pos": {
+                  "x": 2400.0,
+                  "y": -280.0
+                },
+                "simulation_index": null
+              },
+              "2": {
+                "color": [
+                  226,
+                  219,
+                  19,
+                  255
+                ],
+                "id": 2,
+                "label": "finish clock",
+                "part_data": {
+                  "IO": {
+                    "input": true
+                  }
+                },
+                "pos": {
+                  "x": 2040.0,
+                  "y": -540.0
+                },
+                "simulation_index": null
+              },
+              "20": {
+                "color": [
+                  25,
+                  231,
+                  83,
+                  255
+                ],
+                "id": 20,
+                "label": "AND",
+                "part_data": {
+                  "Gate": {
+                    "gate_type": "And",
+                    "important": false
+                  }
+                },
+                "pos": {
+                  "x": 2400.0,
+                  "y": -340.0
+                },
+                "simulation_index": null
+              },
+              "21": {
+                "color": [
+                  25,
+                  231,
+                  83,
+                  255
+                ],
+                "id": 21,
+                "label": "AND",
+                "part_data": {
+                  "Gate": {
+                    "gate_type": "And",
+                    "important": false
+                  }
+                },
+                "pos": {
+                  "x": 2400.0,
+                  "y": -400.0
+                },
+                "simulation_index": null
+              },
+              "22": {
+                "color": [
+                  25,
+                  231,
+                  83,
+                  255
+                ],
+                "id": 22,
+                "label": "AND",
+                "part_data": {
+                  "Gate": {
+                    "gate_type": "And",
+                    "important": false
+                  }
+                },
+                "pos": {
+                  "x": 2400.0,
+                  "y": -460.0
+                },
+                "simulation_index": null
+              },
+              "23": {
+                "color": [
+                  10,
+                  62,
+                  226,
+                  255
+                ],
+                "id": 23,
+                "label": "data 7",
+                "part_data": {
+                  "IO": {
+                    "input": false
+                  }
+                },
+                "pos": {
+                  "x": 2520.0,
+                  "y": -460.0
+                },
+                "simulation_index": null
+              },
+              "24": {
+                "color": [
+                  10,
+                  62,
+                  226,
+                  255
+                ],
+                "id": 24,
+                "label": "data 6",
+                "part_data": {
+                  "IO": {
+                    "input": false
+                  }
+                },
+                "pos": {
+                  "x": 2520.0,
+                  "y": -400.0
+                },
+                "simulation_index": null
+              },
+              "25": {
+                "color": [
+                  10,
+                  62,
+                  226,
+                  255
+                ],
+                "id": 25,
+                "label": "data 5",
+                "part_data": {
+                  "IO": {
+                    "input": false
+                  }
+                },
+                "pos": {
+                  "x": 2520.0,
+                  "y": -340.0
+                },
+                "simulation_index": null
+              },
+              "26": {
+                "color": [
+                  10,
+                  62,
+                  226,
+                  255
+                ],
+                "id": 26,
+                "label": "data 4",
+                "part_data": {
+                  "IO": {
+                    "input": false
+                  }
+                },
+                "pos": {
+                  "x": 2520.0,
+                  "y": -280.0
+                },
+                "simulation_index": null
+              },
+              "27": {
+                "color": [
+                  10,
+                  62,
+                  226,
+                  255
+                ],
+                "id": 27,
+                "label": "data 3",
+                "part_data": {
+                  "IO": {
+                    "input": false
+                  }
+                },
+                "pos": {
+                  "x": 2520.0,
+                  "y": -220.0
+                },
+                "simulation_index": null
+              },
+              "28": {
+                "color": [
+                  10,
+                  62,
+                  226,
+                  255
+                ],
+                "id": 28,
+                "label": "data 2",
+                "part_data": {
+                  "IO": {
+                    "input": false
+                  }
+                },
+                "pos": {
+                  "x": 2520.0,
+                  "y": -160.0
+                },
+                "simulation_index": null
+              },
+              "29": {
+                "color": [
+                  10,
+                  62,
+                  226,
+                  255
+                ],
+                "id": 29,
+                "label": "data 1",
+                "part_data": {
+                  "IO": {
+                    "input": false
+                  }
+                },
+                "pos": {
+                  "x": 2520.0,
+                  "y": -100.0
+                },
+                "simulation_index": null
+              },
+              "30": {
+                "color": [
+                  10,
+                  62,
+                  226,
+                  255
+                ],
+                "id": 30,
+                "label": "data 0",
+                "part_data": {
+                  "IO": {
+                    "input": false
+                  }
+                },
+                "pos": {
+                  "x": 2520.0,
+                  "y": -40.0
+                },
+                "simulation_index": null
+              },
+              "4": {
+                "color": [
+                  226,
+                  219,
+                  19,
+                  255
+                ],
+                "id": 4,
+                "label": "finish clock",
+                "part_data": {
+                  "IO": {
+                    "input": false
+                  }
+                },
+                "pos": {
+                  "x": 2280.0,
+                  "y": -540.0
+                },
+                "simulation_index": null
+              },
+              "5": {
+                "color": [
+                  117,
+                  20,
+                  237,
+                  255
+                ],
+                "id": 5,
+                "label": "AND",
+                "part_data": {
+                  "Gate": {
+                    "gate_type": "And",
+                    "important": false
+                  }
+                },
+                "pos": {
+                  "x": 2280.0,
+                  "y": -620.0
+                },
+                "simulation_index": null
+              },
+              "6": {
+                "color": [
+                  25,
+                  231,
+                  83,
+                  255
+                ],
+                "id": 6,
+                "label": "AND",
+                "part_data": {
+                  "Gate": {
+                    "gate_type": "And",
+                    "important": false
+                  }
+                },
+                "pos": {
+                  "x": 2160.0,
+                  "y": -540.0
+                },
+                "simulation_index": null
+              },
+              "7": {
+                "color": [
+                  10,
+                  62,
+                  226,
+                  255
+                ],
+                "id": 7,
+                "label": "data 0",
+                "part_data": {
+                  "IO": {
+                    "input": true
+                  }
+                },
+                "pos": {
+                  "x": 2280.0,
+                  "y": -40.0
+                },
+                "simulation_index": null
+              },
+              "8": {
+                "color": [
+                  10,
+                  62,
+                  226,
+                  255
+                ],
+                "id": 8,
+                "label": "data 1",
+                "part_data": {
+                  "IO": {
+                    "input": true
+                  }
+                },
+                "pos": {
+                  "x": 2280.0,
+                  "y": -100.0
+                },
+                "simulation_index": null
+              },
+              "9": {
+                "color": [
+                  10,
+                  62,
+                  226,
+                  255
+                ],
+                "id": 9,
+                "label": "data 3",
+                "part_data": {
+                  "IO": {
+                    "input": true
+                  }
+                },
+                "pos": {
+                  "x": 2280.0,
+                  "y": -220.0
+                },
+                "simulation_index": null
+              }
+            }
+          },
+          "inputs": {
+            "1": "start clock",
+            "10": "data 2",
+            "11": "data 5",
+            "12": "data 4",
+            "13": "data 7",
+            "14": "data 6",
+            "2": "finish clock",
+            "7": "data 0",
+            "8": "data 1",
+            "9": "data 3"
+          },
+          "min_size": {
+            "x": 120.0,
+            "y": 240.0
+          },
+          "outputs": {
+            "23": "data 7",
+            "24": "data 6",
+            "25": "data 5",
+            "26": "data 4",
+            "27": "data 3",
+            "28": "data 2",
+            "29": "data 1",
+            "30": "data 0",
+            "4": "finish clock"
+          },
+          "path": "random_modules/clock_check_8b.sml",
+          "size": {
+            "x": 160.0,
+            "y": 240.0
+          }
+        }
+      },
+      "pos": {
+        "x": 2660.0,
+        "y": 300.0
+      },
+      "simulation_index": null
+    },
+    "139": {
+      "color": [
+        208,
+        37,
+        37,
+        255
+      ],
+      "id": 139,
+      "label": "reset",
+      "part_data": {
+        "IO": {
+          "input": true
+        }
+      },
+      "pos": {
+        "x": 2520.0,
+        "y": 20.0
+      },
+      "simulation_index": null
+    },
+    "14": {
+      "color": [
+        10,
+        62,
+        226,
+        255
+      ],
+      "id": 14,
+      "label": "OR",
+      "part_data": {
+        "Gate": {
+          "gate_type": "Or",
+          "important": false
+        }
+      },
+      "pos": {
+        "x": 1320.0,
+        "y": 220.0
+      },
+      "simulation_index": null
+    },
+    "140": {
+      "color": [
+        117,
+        20,
+        237,
+        255
+      ],
+      "id": 140,
+      "label": "AND",
+      "part_data": {
+        "Gate": {
+          "gate_type": "And",
+          "important": false
+        }
+      },
+      "pos": {
+        "x": 2300.0,
+        "y": -20.0
+      },
+      "simulation_index": null
+    },
+    "141": {
+      "color": [
+        117,
+        20,
+        237,
+        255
+      ],
+      "id": 141,
+      "label": "NAND",
+      "part_data": {
+        "Gate": {
+          "gate_type": "Nand",
+          "important": false
+        }
+      },
+      "pos": {
+        "x": 2420.0,
+        "y": -20.0
+      },
+      "simulation_index": null
+    },
+    "143": {
+      "color": [
+        117,
+        20,
+        237,
+        255
+      ],
+      "id": 143,
+      "label": "XNOR",
+      "part_data": {
+        "Gate": {
+          "gate_type": "Xnor",
+          "important": false
+        }
+      },
+      "pos": {
+        "x": 2420.0,
+        "y": -100.0
+      },
+      "simulation_index": null
+    },
+    "144": {
+      "color": [
+        207,
+        17,
+        210,
+        255
+      ],
+      "id": 144,
+      "label": "checklist",
+      "part_data": {
+        "Module": {
+          "canvas_snapshot": {
+            "connections": [
+              {
+                "end": {
+                  "input": true,
+                  "part": 12,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 12,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 15,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 14,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 16,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 15,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 16,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 14,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 14,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 12,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 19,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 19,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 19,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 8,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 12,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 23,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 19,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 16,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 9,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 16,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 12,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 16,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 23,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 8,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 23,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 0,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 12,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 0,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 14,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 19,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 27,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 27,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 27,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 25,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 25,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 26,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 27,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 26,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 30,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 30,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 30,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 28,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 28,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 29,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 30,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 29,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 33,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 33,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 33,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 31,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 31,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 32,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 33,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 32,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 42,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 42,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 42,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 35,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 35,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 38,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 42,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 38,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 37,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 37,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 37,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 41,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 41,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 34,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 37,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 34,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 44,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 44,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 44,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 43,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 43,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 45,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 44,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 45,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 36,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 36,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 36,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 39,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 39,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 40,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 36,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 40,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 31,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 8,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 25,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 8,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 35,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 8,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 39,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 8,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 43,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 8,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 28,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 8,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 41,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 8,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 14,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 33,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 14,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 37,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 14,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 42,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 14,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 27,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 14,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 36,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 14,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 44,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 14,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 30,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 33,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 16,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 37,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 16,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 42,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 16,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 27,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 16,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 36,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 16,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 44,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 16,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 30,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 16,
+                  "port_id": null
+                }
+              }
+            ],
+            "next_id": 46,
+            "parts": {
+              "0": {
+                "color": [
+                  226,
+                  219,
+                  19,
+                  255
+                ],
+                "id": 0,
+                "label": "item",
+                "part_data": {
+                  "IO": {
+                    "input": true
+                  }
+                },
+                "pos": {
+                  "x": 1580.0,
+                  "y": 360.0
+                },
+                "simulation_index": null
+              },
+              "12": {
+                "color": [
+                  44,
+                  230,
+                  230,
+                  255
+                ],
+                "id": 12,
+                "label": "XOR",
+                "part_data": {
+                  "Gate": {
+                    "gate_type": "Xor",
+                    "important": false
+                  }
+                },
+                "pos": {
+                  "x": 1820.0,
+                  "y": 360.0
+                },
+                "simulation_index": null
+              },
+              "14": {
+                "color": [
+                  25,
+                  231,
+                  83,
+                  255
+                ],
+                "id": 14,
+                "label": "AND",
+                "part_data": {
+                  "Gate": {
+                    "gate_type": "And",
+                    "important": false
+                  }
+                },
+                "pos": {
+                  "x": 1960.0,
+                  "y": 360.0
+                },
+                "simulation_index": null
+              },
+              "15": {
+                "color": [
+                  117,
+                  20,
+                  237,
+                  255
+                ],
+                "id": 15,
+                "label": "NAND",
+                "part_data": {
+                  "Gate": {
+                    "gate_type": "Nand",
+                    "important": false
+                  }
+                },
+                "pos": {
+                  "x": 2180.0,
+                  "y": 400.0
+                },
+                "simulation_index": null
+              },
+              "16": {
+                "color": [
+                  117,
+                  20,
+                  237,
+                  255
+                ],
+                "id": 16,
+                "label": "AND",
+                "part_data": {
+                  "Gate": {
+                    "gate_type": "And",
+                    "important": false
+                  }
+                },
+                "pos": {
+                  "x": 2180.0,
+                  "y": 340.0
+                },
+                "simulation_index": null
+              },
+              "19": {
+                "color": [
+                  207,
+                  17,
+                  210,
+                  255
+                ],
+                "id": 19,
+                "label": "XOR",
+                "part_data": {
+                  "Gate": {
+                    "gate_type": "Xor",
+                    "important": false
+                  }
+                },
+                "pos": {
+                  "x": 1840.0,
+                  "y": 280.0
+                },
+                "simulation_index": null
+              },
+              "23": {
+                "color": [
+                  208,
+                  37,
+                  37,
+                  255
+                ],
+                "id": 23,
+                "label": "AND",
+                "part_data": {
+                  "Gate": {
+                    "gate_type": "And",
+                    "important": false
+                  }
+                },
+                "pos": {
+                  "x": 1700.0,
+                  "y": 340.0
+                },
+                "simulation_index": null
+              },
+              "25": {
+                "color": [
+                  208,
+                  37,
+                  37,
+                  255
+                ],
+                "id": 25,
+                "label": "AND",
+                "part_data": {
+                  "Gate": {
+                    "gate_type": "And",
+                    "important": false
+                  }
+                },
+                "pos": {
+                  "x": 1700.0,
+                  "y": 420.0
+                },
+                "simulation_index": null
+              },
+              "26": {
+                "color": [
+                  226,
+                  219,
+                  19,
+                  255
+                ],
+                "id": 26,
+                "label": "item",
+                "part_data": {
+                  "IO": {
+                    "input": true
+                  }
+                },
+                "pos": {
+                  "x": 1580.0,
+                  "y": 440.0
+                },
+                "simulation_index": null
+              },
+              "27": {
+                "color": [
+                  44,
+                  230,
+                  230,
+                  255
+                ],
+                "id": 27,
+                "label": "XOR",
+                "part_data": {
+                  "Gate": {
+                    "gate_type": "Xor",
+                    "important": false
+                  }
+                },
+                "pos": {
+                  "x": 1820.0,
+                  "y": 440.0
+                },
+                "simulation_index": null
+              },
+              "28": {
+                "color": [
+                  208,
+                  37,
+                  37,
+                  255
+                ],
+                "id": 28,
+                "label": "AND",
+                "part_data": {
+                  "Gate": {
+                    "gate_type": "And",
+                    "important": false
+                  }
+                },
+                "pos": {
+                  "x": 1700.0,
+                  "y": 500.0
+                },
+                "simulation_index": null
+              },
+              "29": {
+                "color": [
+                  226,
+                  219,
+                  19,
+                  255
+                ],
+                "id": 29,
+                "label": "item",
+                "part_data": {
+                  "IO": {
+                    "input": true
+                  }
+                },
+                "pos": {
+                  "x": 1580.0,
+                  "y": 520.0
+                },
+                "simulation_index": null
+              },
+              "30": {
+                "color": [
+                  44,
+                  230,
+                  230,
+                  255
+                ],
+                "id": 30,
+                "label": "XOR",
+                "part_data": {
+                  "Gate": {
+                    "gate_type": "Xor",
+                    "important": false
+                  }
+                },
+                "pos": {
+                  "x": 1820.0,
+                  "y": 520.0
+                },
+                "simulation_index": null
+              },
+              "31": {
+                "color": [
+                  208,
+                  37,
+                  37,
+                  255
+                ],
+                "id": 31,
+                "label": "AND",
+                "part_data": {
+                  "Gate": {
+                    "gate_type": "And",
+                    "important": false
+                  }
+                },
+                "pos": {
+                  "x": 1700.0,
+                  "y": 580.0
+                },
+                "simulation_index": null
+              },
+              "32": {
+                "color": [
+                  226,
+                  219,
+                  19,
+                  255
+                ],
+                "id": 32,
+                "label": "item",
+                "part_data": {
+                  "IO": {
+                    "input": true
+                  }
+                },
+                "pos": {
+                  "x": 1580.0,
+                  "y": 600.0
+                },
+                "simulation_index": null
+              },
+              "33": {
+                "color": [
+                  44,
+                  230,
+                  230,
+                  255
+                ],
+                "id": 33,
+                "label": "XOR",
+                "part_data": {
+                  "Gate": {
+                    "gate_type": "Xor",
+                    "important": false
+                  }
+                },
+                "pos": {
+                  "x": 1820.0,
+                  "y": 600.0
+                },
+                "simulation_index": null
+              },
+              "34": {
+                "color": [
+                  226,
+                  219,
+                  19,
+                  255
+                ],
+                "id": 34,
+                "label": "item",
+                "part_data": {
+                  "IO": {
+                    "input": true
+                  }
+                },
+                "pos": {
+                  "x": 1580.0,
+                  "y": 760.0
+                },
+                "simulation_index": null
+              },
+              "35": {
+                "color": [
+                  208,
+                  37,
+                  37,
+                  255
+                ],
+                "id": 35,
+                "label": "AND",
+                "part_data": {
+                  "Gate": {
+                    "gate_type": "And",
+                    "important": false
+                  }
+                },
+                "pos": {
+                  "x": 1700.0,
+                  "y": 660.0
+                },
+                "simulation_index": null
+              },
+              "36": {
+                "color": [
+                  44,
+                  230,
+                  230,
+                  255
+                ],
+                "id": 36,
+                "label": "XOR",
+                "part_data": {
+                  "Gate": {
+                    "gate_type": "Xor",
+                    "important": false
+                  }
+                },
+                "pos": {
+                  "x": 1820.0,
+                  "y": 920.0
+                },
+                "simulation_index": null
+              },
+              "37": {
+                "color": [
+                  44,
+                  230,
+                  230,
+                  255
+                ],
+                "id": 37,
+                "label": "XOR",
+                "part_data": {
+                  "Gate": {
+                    "gate_type": "Xor",
+                    "important": false
+                  }
+                },
+                "pos": {
+                  "x": 1820.0,
+                  "y": 760.0
+                },
+                "simulation_index": null
+              },
+              "38": {
+                "color": [
+                  226,
+                  219,
+                  19,
+                  255
+                ],
+                "id": 38,
+                "label": "item",
+                "part_data": {
+                  "IO": {
+                    "input": true
+                  }
+                },
+                "pos": {
+                  "x": 1580.0,
+                  "y": 680.0
+                },
+                "simulation_index": null
+              },
+              "39": {
+                "color": [
+                  208,
+                  37,
+                  37,
+                  255
+                ],
+                "id": 39,
+                "label": "AND",
+                "part_data": {
+                  "Gate": {
+                    "gate_type": "And",
+                    "important": false
+                  }
+                },
+                "pos": {
+                  "x": 1700.0,
+                  "y": 900.0
+                },
+                "simulation_index": null
+              },
+              "40": {
+                "color": [
+                  226,
+                  219,
+                  19,
+                  255
+                ],
+                "id": 40,
+                "label": "item",
+                "part_data": {
+                  "IO": {
+                    "input": true
+                  }
+                },
+                "pos": {
+                  "x": 1580.0,
+                  "y": 920.0
+                },
+                "simulation_index": null
+              },
+              "41": {
+                "color": [
+                  208,
+                  37,
+                  37,
+                  255
+                ],
+                "id": 41,
+                "label": "AND",
+                "part_data": {
+                  "Gate": {
+                    "gate_type": "And",
+                    "important": false
+                  }
+                },
+                "pos": {
+                  "x": 1700.0,
+                  "y": 740.0
+                },
+                "simulation_index": null
+              },
+              "42": {
+                "color": [
+                  44,
+                  230,
+                  230,
+                  255
+                ],
+                "id": 42,
+                "label": "XOR",
+                "part_data": {
+                  "Gate": {
+                    "gate_type": "Xor",
+                    "important": false
+                  }
+                },
+                "pos": {
+                  "x": 1820.0,
+                  "y": 680.0
+                },
+                "simulation_index": null
+              },
+              "43": {
+                "color": [
+                  208,
+                  37,
+                  37,
+                  255
+                ],
+                "id": 43,
+                "label": "AND",
+                "part_data": {
+                  "Gate": {
+                    "gate_type": "And",
+                    "important": false
+                  }
+                },
+                "pos": {
+                  "x": 1700.0,
+                  "y": 820.0
+                },
+                "simulation_index": null
+              },
+              "44": {
+                "color": [
+                  44,
+                  230,
+                  230,
+                  255
+                ],
+                "id": 44,
+                "label": "XOR",
+                "part_data": {
+                  "Gate": {
+                    "gate_type": "Xor",
+                    "important": false
+                  }
+                },
+                "pos": {
+                  "x": 1820.0,
+                  "y": 840.0
+                },
+                "simulation_index": null
+              },
+              "45": {
+                "color": [
+                  226,
+                  219,
+                  19,
+                  255
+                ],
+                "id": 45,
+                "label": "item",
+                "part_data": {
+                  "IO": {
+                    "input": true
+                  }
+                },
+                "pos": {
+                  "x": 1580.0,
+                  "y": 840.0
+                },
+                "simulation_index": null
+              },
+              "8": {
+                "color": [
+                  25,
+                  231,
+                  83,
+                  255
+                ],
+                "id": 8,
+                "label": "start",
+                "part_data": {
+                  "IO": {
+                    "input": true
+                  }
+                },
+                "pos": {
+                  "x": 1580.0,
+                  "y": 280.0
+                },
+                "simulation_index": null
+              },
+              "9": {
+                "color": [
+                  25,
+                  231,
+                  83,
+                  255
+                ],
+                "id": 9,
+                "label": "clock",
+                "part_data": {
+                  "IO": {
+                    "input": false
+                  }
+                },
+                "pos": {
+                  "x": 2300.0,
+                  "y": 340.0
+                },
+                "simulation_index": null
+              }
+            }
+          },
+          "inputs": {
+            "0": "item",
+            "26": "item",
+            "29": "item",
+            "32": "item",
+            "34": "item",
+            "38": "item",
+            "40": "item",
+            "45": "item",
+            "8": "start"
+          },
+          "min_size": {
+            "x": 120.0,
+            "y": 220.0
+          },
+          "outputs": {
+            "9": "clock"
+          },
+          "path": "random_modules/checklist.sml",
+          "size": {
+            "x": 160.0,
+            "y": 220.0
+          }
+        }
+      },
+      "pos": {
+        "x": 2660.0,
+        "y": 540.0
+      },
+      "simulation_index": null
+    },
+    "148": {
+      "color": [
+        207,
+        17,
+        210,
+        255
+      ],
+      "id": 148,
+      "label": "auto start",
+      "part_data": {
+        "Label": {
+          "size": {
+            "x": 140.0,
+            "y": 40.0
+          }
+        }
+      },
+      "pos": {
+        "x": 2340.0,
+        "y": -160.0
+      },
+      "simulation_index": null
+    },
+    "149": {
+      "color": [
+        238,
+        123,
+        240,
+        255
+      ],
+      "id": 149,
+      "label": "memory read/write address\nand output clocks",
+      "part_data": {
+        "Label": {
+          "size": {
+            "x": 200.0,
+            "y": 60.0
+          }
+        }
+      },
+      "pos": {
+        "x": 3640.0,
+        "y": 220.0
+      },
+      "simulation_index": null
+    },
+    "15": {
+      "color": [
+        10,
+        62,
+        226,
+        255
+      ],
+      "id": 15,
+      "label": "OR",
+      "part_data": {
+        "Gate": {
+          "gate_type": "Or",
+          "important": false
+        }
+      },
+      "pos": {
+        "x": 1320.0,
+        "y": 240.0
+      },
+      "simulation_index": null
+    },
+    "150": {
+      "color": [
+        238,
+        123,
+        240,
+        255
+      ],
+      "id": 150,
+      "label": "memory read/write data\nand input clocks",
+      "part_data": {
+        "Label": {
+          "size": {
+            "x": 200.0,
+            "y": 60.0
+          }
+        }
+      },
+      "pos": {
+        "x": 3640.0,
+        "y": -500.0
+      },
+      "simulation_index": null
+    },
+    "152": {
+      "color": [
+        10,
+        62,
+        226,
+        255
+      ],
+      "id": 152,
+      "label": "read 7",
+      "part_data": {
+        "IO": {
+          "input": true
+        }
+      },
+      "pos": {
+        "x": 3740.0,
+        "y": -300.0
+      },
+      "simulation_index": null
+    },
+    "153": {
+      "color": [
+        10,
+        62,
+        226,
+        255
+      ],
+      "id": 153,
+      "label": "read 6",
+      "part_data": {
+        "IO": {
+          "input": true
+        }
+      },
+      "pos": {
+        "x": 3740.0,
+        "y": -240.0
+      },
+      "simulation_index": null
+    },
+    "154": {
+      "color": [
+        10,
+        62,
+        226,
+        255
+      ],
+      "id": 154,
+      "label": "read 5",
+      "part_data": {
+        "IO": {
+          "input": true
+        }
+      },
+      "pos": {
+        "x": 3740.0,
+        "y": -180.0
+      },
+      "simulation_index": null
+    },
+    "155": {
+      "color": [
+        10,
+        62,
+        226,
+        255
+      ],
+      "id": 155,
+      "label": "read 4",
+      "part_data": {
+        "IO": {
+          "input": true
+        }
+      },
+      "pos": {
+        "x": 3740.0,
+        "y": -120.0
+      },
+      "simulation_index": null
+    },
+    "156": {
+      "color": [
+        10,
+        62,
+        226,
+        255
+      ],
+      "id": 156,
+      "label": "read 2",
+      "part_data": {
+        "IO": {
+          "input": true
+        }
+      },
+      "pos": {
+        "x": 3740.0,
+        "y": 0.0
+      },
+      "simulation_index": null
+    },
+    "157": {
+      "color": [
+        10,
+        62,
+        226,
+        255
+      ],
+      "id": 157,
+      "label": "read 1",
+      "part_data": {
+        "IO": {
+          "input": true
+        }
+      },
+      "pos": {
+        "x": 3740.0,
+        "y": 60.0
+      },
+      "simulation_index": null
+    },
+    "158": {
+      "color": [
+        10,
+        62,
+        226,
+        255
+      ],
+      "id": 158,
+      "label": "read 3",
+      "part_data": {
+        "IO": {
+          "input": true
+        }
+      },
+      "pos": {
+        "x": 3740.0,
+        "y": -60.0
+      },
+      "simulation_index": null
+    },
+    "159": {
+      "color": [
+        10,
+        62,
+        226,
+        255
+      ],
+      "id": 159,
+      "label": "read 0",
+      "part_data": {
+        "IO": {
+          "input": true
+        }
+      },
+      "pos": {
+        "x": 3740.0,
+        "y": 120.0
+      },
+      "simulation_index": null
+    },
+    "16": {
+      "color": [
+        10,
+        62,
+        226,
+        255
+      ],
+      "id": 16,
+      "label": "OR",
+      "part_data": {
+        "Gate": {
+          "gate_type": "Or",
+          "important": false
+        }
+      },
+      "pos": {
+        "x": 1320.0,
+        "y": 260.0
+      },
+      "simulation_index": null
+    },
+    "160": {
+      "color": [
+        10,
+        62,
+        226,
+        255
+      ],
+      "id": 160,
+      "label": "write 7",
+      "part_data": {
+        "IO": {
+          "input": false
+        }
+      },
+      "pos": {
+        "x": 3660.0,
+        "y": -300.0
+      },
+      "simulation_index": null
+    },
+    "161": {
+      "color": [
+        10,
+        62,
+        226,
+        255
+      ],
+      "id": 161,
+      "label": "write 6",
+      "part_data": {
+        "IO": {
+          "input": false
+        }
+      },
+      "pos": {
+        "x": 3660.0,
+        "y": -240.0
+      },
+      "simulation_index": null
+    },
+    "162": {
+      "color": [
+        10,
+        62,
+        226,
+        255
+      ],
+      "id": 162,
+      "label": "write 5",
+      "part_data": {
+        "IO": {
+          "input": false
+        }
+      },
+      "pos": {
+        "x": 3660.0,
+        "y": -180.0
+      },
+      "simulation_index": null
+    },
+    "163": {
+      "color": [
+        10,
+        62,
+        226,
+        255
+      ],
+      "id": 163,
+      "label": "write 4",
+      "part_data": {
+        "IO": {
+          "input": false
+        }
+      },
+      "pos": {
+        "x": 3660.0,
+        "y": -120.0
+      },
+      "simulation_index": null
+    },
+    "164": {
+      "color": [
+        10,
+        62,
+        226,
+        255
+      ],
+      "id": 164,
+      "label": "write 2",
+      "part_data": {
+        "IO": {
+          "input": false
+        }
+      },
+      "pos": {
+        "x": 3660.0,
+        "y": 0.0
+      },
+      "simulation_index": null
+    },
+    "165": {
+      "color": [
+        10,
+        62,
+        226,
+        255
+      ],
+      "id": 165,
+      "label": "write 1",
+      "part_data": {
+        "IO": {
+          "input": false
+        }
+      },
+      "pos": {
+        "x": 3660.0,
+        "y": 60.0
+      },
+      "simulation_index": null
+    },
+    "166": {
+      "color": [
+        10,
+        62,
+        226,
+        255
+      ],
+      "id": 166,
+      "label": "write 3",
+      "part_data": {
+        "IO": {
+          "input": false
+        }
+      },
+      "pos": {
+        "x": 3660.0,
+        "y": -60.0
+      },
+      "simulation_index": null
+    },
+    "167": {
+      "color": [
+        10,
+        62,
+        226,
+        255
+      ],
+      "id": 167,
+      "label": "write 0",
+      "part_data": {
+        "IO": {
+          "input": false
+        }
+      },
+      "pos": {
+        "x": 3660.0,
+        "y": 120.0
+      },
+      "simulation_index": null
+    },
+    "168": {
+      "color": [
+        44,
+        230,
+        230,
+        255
+      ],
+      "id": 168,
+      "label": "allow ticks",
+      "part_data": {
+        "Gate": {
+          "gate_type": "Xor",
+          "important": false
+        }
+      },
+      "pos": {
+        "x": 2920.0,
+        "y": 0.0
+      },
+      "simulation_index": null
+    },
+    "169": {
+      "color": [
+        208,
+        37,
+        37,
+        255
+      ],
+      "id": 169,
+      "label": "AND",
+      "part_data": {
+        "Gate": {
+          "gate_type": "And",
+          "important": false
+        }
+      },
+      "pos": {
+        "x": 2800.0,
+        "y": -0.0
+      },
+      "simulation_index": null
+    },
+    "17": {
+      "color": [
+        10,
+        62,
+        226,
+        255
+      ],
+      "id": 17,
+      "label": "OR",
+      "part_data": {
+        "Gate": {
+          "gate_type": "Or",
+          "important": false
+        }
+      },
+      "pos": {
+        "x": 1320.0,
+        "y": 280.0
+      },
+      "simulation_index": null
+    },
+    "170": {
+      "color": [
+        208,
+        37,
+        37,
+        255
+      ],
+      "id": 170,
+      "label": "AND",
+      "part_data": {
+        "Gate": {
+          "gate_type": "And",
+          "important": false
+        }
+      },
+      "pos": {
+        "x": 2880.0,
+        "y": 80.0
+      },
+      "simulation_index": null
+    },
+    "172": {
+      "color": [
+        25,
+        231,
+        83,
+        255
+      ],
+      "id": 172,
+      "label": "NAND",
+      "part_data": {
+        "Gate": {
+          "gate_type": "Nand",
+          "important": false
+        }
+      },
+      "pos": {
+        "x": 2880.0,
+        "y": 140.0
+      },
+      "simulation_index": null
+    },
+    "174": {
+      "color": [
+        25,
+        231,
+        83,
+        255
+      ],
+      "id": 174,
+      "label": "AND",
+      "part_data": {
+        "Gate": {
+          "gate_type": "And",
+          "important": false
+        }
+      },
+      "pos": {
+        "x": 2880.0,
+        "y": 200.0
+      },
+      "simulation_index": null
+    },
+    "175": {
+      "color": [
+        207,
+        17,
+        210,
+        255
+      ],
+      "id": 175,
+      "label": "Timer",
+      "part_data": {
+        "Timer": {
+          "secs": 2,
+          "ticks": 0
+        }
+      },
+      "pos": {
+        "x": 2880.0,
+        "y": 340.0
+      },
+      "simulation_index": null
+    },
+    "176": {
+      "color": [
+        25,
+        231,
+        83,
+        255
+      ],
+      "id": 176,
+      "label": "auto clock",
+      "part_data": {
+        "IO": {
+          "input": true
+        }
+      },
+      "pos": {
+        "x": 1620.0,
+        "y": -760.0
+      },
+      "simulation_index": null
+    },
+    "177": {
+      "color": [
+        226,
+        219,
+        19,
+        255
+      ],
+      "id": 177,
+      "label": "manual clock",
+      "part_data": {
+        "IO": {
+          "input": true
+        }
+      },
+      "pos": {
+        "x": 1620.0,
+        "y": -700.0
+      },
+      "simulation_index": null
+    },
+    "178": {
+      "color": [
+        226,
+        219,
+        19,
+        255
+      ],
+      "id": 178,
+      "label": "clock ready",
+      "part_data": {
+        "IO": {
+          "input": false
+        }
+      },
+      "pos": {
+        "x": 1940.0,
+        "y": -760.0
+      },
+      "simulation_index": null
+    },
+    "18": {
+      "color": [
+        10,
+        62,
+        226,
+        255
+      ],
+      "id": 18,
+      "label": "OR",
+      "part_data": {
+        "Gate": {
+          "gate_type": "Or",
+          "important": false
+        }
+      },
+      "pos": {
+        "x": 1320.0,
+        "y": 180.0
+      },
+      "simulation_index": null
+    },
+    "180": {
+      "color": [
+        25,
+        231,
+        83,
+        255
+      ],
+      "id": 180,
+      "label": "AND",
+      "part_data": {
+        "Gate": {
+          "gate_type": "And",
+          "important": false
+        }
+      },
+      "pos": {
+        "x": 1660.0,
+        "y": -560.0
+      },
+      "simulation_index": null
+    },
+    "182": {
+      "color": [
+        226,
+        219,
+        19,
+        255
+      ],
+      "id": 182,
+      "label": "OR",
+      "part_data": {
+        "Gate": {
+          "gate_type": "Or",
+          "important": false
+        }
+      },
+      "pos": {
+        "x": 1800.0,
+        "y": -580.0
+      },
+      "simulation_index": null
+    },
+    "183": {
+      "color": [
+        226,
+        219,
+        19,
+        255
+      ],
+      "id": 183,
+      "label": "OR",
+      "part_data": {
+        "Gate": {
+          "gate_type": "Or",
+          "important": false
+        }
+      },
+      "pos": {
+        "x": 1540.0,
+        "y": -480.0
+      },
+      "simulation_index": null
+    },
+    "184": {
+      "color": [
+        238,
+        123,
+        240,
+        255
+      ],
+      "id": 184,
+      "label": "fetch byte",
+      "part_data": {
+        "Label": {
+          "size": {
+            "x": 360.0,
+            "y": 40.0
+          }
+        }
+      },
+      "pos": {
+        "x": 3040.0,
+        "y": -80.0
+      },
+      "simulation_index": null
+    },
+    "185": {
+      "color": [
+        25,
+        231,
+        83,
+        255
+      ],
+      "id": 185,
+      "label": "start",
+      "part_data": {
+        "Gate": {
+          "gate_type": "Or",
+          "important": false
+        }
+      },
+      "pos": {
+        "x": 3040.0,
+        "y": -20.0
+      },
+      "simulation_index": null
+    },
+    "188": {
+      "color": [
+        223,
+        127,
+        1,
+        255
+      ],
+      "id": 188,
+      "label": "16_bit_tick_gate",
+      "part_data": {
+        "Module": {
+          "canvas_snapshot": {
+            "connections": [
+              {
+                "end": {
+                  "input": true,
+                  "part": 9,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 8,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 10,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 0,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 11,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 1,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 12,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 2,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 13,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 3,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 16,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 4,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 17,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 5,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 14,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 6,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 15,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 7,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 14,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 8,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 16,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 8,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 11,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 8,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 15,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 8,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 12,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 8,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 13,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 8,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 10,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 8,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 17,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 8,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 18,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 9,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 19,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 10,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 20,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 11,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 21,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 12,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 22,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 13,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 26,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 16,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 25,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 17,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 23,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 14,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 24,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 15,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 59,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 66,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 54,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 60,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 57,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 72,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 58,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 56,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 52,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 53,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 62,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 64,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 63,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 51,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 55,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 61,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 74,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 59,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 70,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 54,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 65,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 57,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 69,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 58,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 68,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 52,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 73,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 62,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 71,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 63,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 67,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 55,
+                  "port_id": null
+                }
+              }
+            ],
+            "next_id": 75,
+            "parts": {
+              "0": {
+                "color": [
+                  223,
+                  127,
+                  1,
+                  255
+                ],
+                "id": 0,
+                "label": "input 15",
+                "part_data": {
+                  "IO": {
+                    "input": true
+                  }
+                },
+                "pos": {
+                  "x": 2700.0,
+                  "y": 0.0
+                },
+                "simulation_index": null
+              },
+              "1": {
+                "color": [
+                  223,
+                  127,
+                  1,
+                  255
+                ],
+                "id": 1,
+                "label": "input 14",
+                "part_data": {
+                  "IO": {
+                    "input": true
+                  }
+                },
+                "pos": {
+                  "x": 2700.0,
+                  "y": 60.0
+                },
+                "simulation_index": null
+              },
+              "10": {
+                "color": [
+                  223,
+                  127,
+                  1,
+                  255
+                ],
+                "id": 10,
+                "label": "AND",
+                "part_data": {
+                  "Gate": {
+                    "gate_type": "And",
+                    "important": false
+                  }
+                },
+                "pos": {
+                  "x": 2820.0,
+                  "y": -0.0
+                },
+                "simulation_index": null
+              },
+              "11": {
+                "color": [
+                  223,
+                  127,
+                  1,
+                  255
+                ],
+                "id": 11,
+                "label": "AND",
+                "part_data": {
+                  "Gate": {
+                    "gate_type": "And",
+                    "important": false
+                  }
+                },
+                "pos": {
+                  "x": 2820.0,
+                  "y": 60.0
+                },
+                "simulation_index": null
+              },
+              "12": {
+                "color": [
+                  223,
+                  127,
+                  1,
+                  255
+                ],
+                "id": 12,
+                "label": "AND",
+                "part_data": {
+                  "Gate": {
+                    "gate_type": "And",
+                    "important": false
+                  }
+                },
+                "pos": {
+                  "x": 2820.0,
+                  "y": 120.0
+                },
+                "simulation_index": null
+              },
+              "13": {
+                "color": [
+                  223,
+                  127,
+                  1,
+                  255
+                ],
+                "id": 13,
+                "label": "AND",
+                "part_data": {
+                  "Gate": {
+                    "gate_type": "And",
+                    "important": false
+                  }
+                },
+                "pos": {
+                  "x": 2820.0,
+                  "y": 180.0
+                },
+                "simulation_index": null
+              },
+              "14": {
+                "color": [
+                  223,
+                  127,
+                  1,
+                  255
+                ],
+                "id": 14,
+                "label": "AND",
+                "part_data": {
+                  "Gate": {
+                    "gate_type": "And",
+                    "important": false
+                  }
+                },
+                "pos": {
+                  "x": 2820.0,
+                  "y": 360.0
+                },
+                "simulation_index": null
+              },
+              "15": {
+                "color": [
+                  223,
+                  127,
+                  1,
+                  255
+                ],
+                "id": 15,
+                "label": "AND",
+                "part_data": {
+                  "Gate": {
+                    "gate_type": "And",
+                    "important": false
+                  }
+                },
+                "pos": {
+                  "x": 2820.0,
+                  "y": 420.0
+                },
+                "simulation_index": null
+              },
+              "16": {
+                "color": [
+                  223,
+                  127,
+                  1,
+                  255
+                ],
+                "id": 16,
+                "label": "AND",
+                "part_data": {
+                  "Gate": {
+                    "gate_type": "And",
+                    "important": false
+                  }
+                },
+                "pos": {
+                  "x": 2820.0,
+                  "y": 240.0
+                },
+                "simulation_index": null
+              },
+              "17": {
+                "color": [
+                  223,
+                  127,
+                  1,
+                  255
+                ],
+                "id": 17,
+                "label": "AND",
+                "part_data": {
+                  "Gate": {
+                    "gate_type": "And",
+                    "important": false
+                  }
+                },
+                "pos": {
+                  "x": 2820.0,
+                  "y": 300.0
+                },
+                "simulation_index": null
+              },
+              "18": {
+                "color": [
+                  223,
+                  127,
+                  1,
+                  255
+                ],
+                "id": 18,
+                "label": "clock",
+                "part_data": {
+                  "IO": {
+                    "input": false
+                  }
+                },
+                "pos": {
+                  "x": 2940.0,
+                  "y": -80.0
+                },
+                "simulation_index": null
+              },
+              "19": {
+                "color": [
+                  223,
+                  127,
+                  1,
+                  255
+                ],
+                "id": 19,
+                "label": "output 15",
+                "part_data": {
+                  "IO": {
+                    "input": false
+                  }
+                },
+                "pos": {
+                  "x": 2940.0,
+                  "y": 0.0
+                },
+                "simulation_index": null
+              },
+              "2": {
+                "color": [
+                  223,
+                  127,
+                  1,
+                  255
+                ],
+                "id": 2,
+                "label": "input 13",
+                "part_data": {
+                  "IO": {
+                    "input": true
+                  }
+                },
+                "pos": {
+                  "x": 2700.0,
+                  "y": 120.0
+                },
+                "simulation_index": null
+              },
+              "20": {
+                "color": [
+                  223,
+                  127,
+                  1,
+                  255
+                ],
+                "id": 20,
+                "label": "output 14",
+                "part_data": {
+                  "IO": {
+                    "input": false
+                  }
+                },
+                "pos": {
+                  "x": 2940.0,
+                  "y": 60.0
+                },
+                "simulation_index": null
+              },
+              "21": {
+                "color": [
+                  223,
+                  127,
+                  1,
+                  255
+                ],
+                "id": 21,
+                "label": "output 13",
+                "part_data": {
+                  "IO": {
+                    "input": false
+                  }
+                },
+                "pos": {
+                  "x": 2940.0,
+                  "y": 120.0
+                },
+                "simulation_index": null
+              },
+              "22": {
+                "color": [
+                  223,
+                  127,
+                  1,
+                  255
+                ],
+                "id": 22,
+                "label": "output 12",
+                "part_data": {
+                  "IO": {
+                    "input": false
+                  }
+                },
+                "pos": {
+                  "x": 2940.0,
+                  "y": 180.0
+                },
+                "simulation_index": null
+              },
+              "23": {
+                "color": [
+                  223,
+                  127,
+                  1,
+                  255
+                ],
+                "id": 23,
+                "label": "output 9",
+                "part_data": {
+                  "IO": {
+                    "input": false
+                  }
+                },
+                "pos": {
+                  "x": 2940.0,
+                  "y": 360.0
+                },
+                "simulation_index": null
+              },
+              "24": {
+                "color": [
+                  223,
+                  127,
+                  1,
+                  255
+                ],
+                "id": 24,
+                "label": "output 8",
+                "part_data": {
+                  "IO": {
+                    "input": false
+                  }
+                },
+                "pos": {
+                  "x": 2940.0,
+                  "y": 420.0
+                },
+                "simulation_index": null
+              },
+              "25": {
+                "color": [
+                  223,
+                  127,
+                  1,
+                  255
+                ],
+                "id": 25,
+                "label": "output 10",
+                "part_data": {
+                  "IO": {
+                    "input": false
+                  }
+                },
+                "pos": {
+                  "x": 2940.0,
+                  "y": 300.0
+                },
+                "simulation_index": null
+              },
+              "26": {
+                "color": [
+                  223,
+                  127,
+                  1,
+                  255
+                ],
+                "id": 26,
+                "label": "output 11",
+                "part_data": {
+                  "IO": {
+                    "input": false
+                  }
+                },
+                "pos": {
+                  "x": 2940.0,
+                  "y": 240.0
+                },
+                "simulation_index": null
+              },
+              "3": {
+                "color": [
+                  223,
+                  127,
+                  1,
+                  255
+                ],
+                "id": 3,
+                "label": "input 12",
+                "part_data": {
+                  "IO": {
+                    "input": true
+                  }
+                },
+                "pos": {
+                  "x": 2700.0,
+                  "y": 180.0
+                },
+                "simulation_index": null
+              },
+              "4": {
+                "color": [
+                  223,
+                  127,
+                  1,
+                  255
+                ],
+                "id": 4,
+                "label": "input 11",
+                "part_data": {
+                  "IO": {
+                    "input": true
+                  }
+                },
+                "pos": {
+                  "x": 2700.0,
+                  "y": 240.0
+                },
+                "simulation_index": null
+              },
+              "5": {
+                "color": [
+                  223,
+                  127,
+                  1,
+                  255
+                ],
+                "id": 5,
+                "label": "input 10",
+                "part_data": {
+                  "IO": {
+                    "input": true
+                  }
+                },
+                "pos": {
+                  "x": 2700.0,
+                  "y": 300.0
+                },
+                "simulation_index": null
+              },
+              "51": {
+                "color": [
+                  223,
+                  127,
+                  1,
+                  255
+                ],
+                "id": 51,
+                "label": "input 1",
+                "part_data": {
+                  "IO": {
+                    "input": true
+                  }
+                },
+                "pos": {
+                  "x": 2700.0,
+                  "y": 840.0
+                },
+                "simulation_index": null
+              },
+              "52": {
+                "color": [
+                  223,
+                  127,
+                  1,
+                  255
+                ],
+                "id": 52,
+                "label": "AND",
+                "part_data": {
+                  "Gate": {
+                    "gate_type": "And",
+                    "important": false
+                  }
+                },
+                "pos": {
+                  "x": 2820.0,
+                  "y": 720.0
+                },
+                "simulation_index": null
+              },
+              "53": {
+                "color": [
+                  223,
+                  127,
+                  1,
+                  255
+                ],
+                "id": 53,
+                "label": "input 3",
+                "part_data": {
+                  "IO": {
+                    "input": true
+                  }
+                },
+                "pos": {
+                  "x": 2700.0,
+                  "y": 720.0
+                },
+                "simulation_index": null
+              },
+              "54": {
+                "color": [
+                  223,
+                  127,
+                  1,
+                  255
+                ],
+                "id": 54,
+                "label": "AND",
+                "part_data": {
+                  "Gate": {
+                    "gate_type": "And",
+                    "important": false
+                  }
+                },
+                "pos": {
+                  "x": 2820.0,
+                  "y": 540.0
+                },
+                "simulation_index": null
+              },
+              "55": {
+                "color": [
+                  223,
+                  127,
+                  1,
+                  255
+                ],
+                "id": 55,
+                "label": "AND",
+                "part_data": {
+                  "Gate": {
+                    "gate_type": "And",
+                    "important": false
+                  }
+                },
+                "pos": {
+                  "x": 2820.0,
+                  "y": 900.0
+                },
+                "simulation_index": null
+              },
+              "56": {
+                "color": [
+                  223,
+                  127,
+                  1,
+                  255
+                ],
+                "id": 56,
+                "label": "input 4",
+                "part_data": {
+                  "IO": {
+                    "input": true
+                  }
+                },
+                "pos": {
+                  "x": 2700.0,
+                  "y": 660.0
+                },
+                "simulation_index": null
+              },
+              "57": {
+                "color": [
+                  223,
+                  127,
+                  1,
+                  255
+                ],
+                "id": 57,
+                "label": "AND",
+                "part_data": {
+                  "Gate": {
+                    "gate_type": "And",
+                    "important": false
+                  }
+                },
+                "pos": {
+                  "x": 2820.0,
+                  "y": 600.0
+                },
+                "simulation_index": null
+              },
+              "58": {
+                "color": [
+                  223,
+                  127,
+                  1,
+                  255
+                ],
+                "id": 58,
+                "label": "AND",
+                "part_data": {
+                  "Gate": {
+                    "gate_type": "And",
+                    "important": false
+                  }
+                },
+                "pos": {
+                  "x": 2820.0,
+                  "y": 660.0
+                },
+                "simulation_index": null
+              },
+              "59": {
+                "color": [
+                  223,
+                  127,
+                  1,
+                  255
+                ],
+                "id": 59,
+                "label": "AND",
+                "part_data": {
+                  "Gate": {
+                    "gate_type": "And",
+                    "important": false
+                  }
+                },
+                "pos": {
+                  "x": 2820.0,
+                  "y": 480.0
+                },
+                "simulation_index": null
+              },
+              "6": {
+                "color": [
+                  223,
+                  127,
+                  1,
+                  255
+                ],
+                "id": 6,
+                "label": "input 9",
+                "part_data": {
+                  "IO": {
+                    "input": true
+                  }
+                },
+                "pos": {
+                  "x": 2700.0,
+                  "y": 360.0
+                },
+                "simulation_index": null
+              },
+              "60": {
+                "color": [
+                  223,
+                  127,
+                  1,
+                  255
+                ],
+                "id": 60,
+                "label": "input 6",
+                "part_data": {
+                  "IO": {
+                    "input": true
+                  }
+                },
+                "pos": {
+                  "x": 2700.0,
+                  "y": 540.0
+                },
+                "simulation_index": null
+              },
+              "61": {
+                "color": [
+                  223,
+                  127,
+                  1,
+                  255
+                ],
+                "id": 61,
+                "label": "input 0",
+                "part_data": {
+                  "IO": {
+                    "input": true
+                  }
+                },
+                "pos": {
+                  "x": 2700.0,
+                  "y": 900.0
+                },
+                "simulation_index": null
+              },
+              "62": {
+                "color": [
+                  223,
+                  127,
+                  1,
+                  255
+                ],
+                "id": 62,
+                "label": "AND",
+                "part_data": {
+                  "Gate": {
+                    "gate_type": "And",
+                    "important": false
+                  }
+                },
+                "pos": {
+                  "x": 2820.0,
+                  "y": 780.0
+                },
+                "simulation_index": null
+              },
+              "63": {
+                "color": [
+                  223,
+                  127,
+                  1,
+                  255
+                ],
+                "id": 63,
+                "label": "AND",
+                "part_data": {
+                  "Gate": {
+                    "gate_type": "And",
+                    "important": false
+                  }
+                },
+                "pos": {
+                  "x": 2820.0,
+                  "y": 840.0
+                },
+                "simulation_index": null
+              },
+              "64": {
+                "color": [
+                  223,
+                  127,
+                  1,
+                  255
+                ],
+                "id": 64,
+                "label": "input 2",
+                "part_data": {
+                  "IO": {
+                    "input": true
+                  }
+                },
+                "pos": {
+                  "x": 2700.0,
+                  "y": 780.0
+                },
+                "simulation_index": null
+              },
+              "65": {
+                "color": [
+                  223,
+                  127,
+                  1,
+                  255
+                ],
+                "id": 65,
+                "label": "output 5",
+                "part_data": {
+                  "IO": {
+                    "input": false
+                  }
+                },
+                "pos": {
+                  "x": 2940.0,
+                  "y": 600.0
+                },
+                "simulation_index": null
+              },
+              "66": {
+                "color": [
+                  223,
+                  127,
+                  1,
+                  255
+                ],
+                "id": 66,
+                "label": "input 7",
+                "part_data": {
+                  "IO": {
+                    "input": true
+                  }
+                },
+                "pos": {
+                  "x": 2700.0,
+                  "y": 480.0
+                },
+                "simulation_index": null
+              },
+              "67": {
+                "color": [
+                  223,
+                  127,
+                  1,
+                  255
+                ],
+                "id": 67,
+                "label": "output 0",
+                "part_data": {
+                  "IO": {
+                    "input": false
+                  }
+                },
+                "pos": {
+                  "x": 2940.0,
+                  "y": 900.0
+                },
+                "simulation_index": null
+              },
+              "68": {
+                "color": [
+                  223,
+                  127,
+                  1,
+                  255
+                ],
+                "id": 68,
+                "label": "output 3",
+                "part_data": {
+                  "IO": {
+                    "input": false
+                  }
+                },
+                "pos": {
+                  "x": 2940.0,
+                  "y": 720.0
+                },
+                "simulation_index": null
+              },
+              "69": {
+                "color": [
+                  223,
+                  127,
+                  1,
+                  255
+                ],
+                "id": 69,
+                "label": "output 4",
+                "part_data": {
+                  "IO": {
+                    "input": false
+                  }
+                },
+                "pos": {
+                  "x": 2940.0,
+                  "y": 660.0
+                },
+                "simulation_index": null
+              },
+              "7": {
+                "color": [
+                  223,
+                  127,
+                  1,
+                  255
+                ],
+                "id": 7,
+                "label": "input 8",
+                "part_data": {
+                  "IO": {
+                    "input": true
+                  }
+                },
+                "pos": {
+                  "x": 2700.0,
+                  "y": 420.0
+                },
+                "simulation_index": null
+              },
+              "70": {
+                "color": [
+                  223,
+                  127,
+                  1,
+                  255
+                ],
+                "id": 70,
+                "label": "output 6",
+                "part_data": {
+                  "IO": {
+                    "input": false
+                  }
+                },
+                "pos": {
+                  "x": 2940.0,
+                  "y": 540.0
+                },
+                "simulation_index": null
+              },
+              "71": {
+                "color": [
+                  223,
+                  127,
+                  1,
+                  255
+                ],
+                "id": 71,
+                "label": "output 1",
+                "part_data": {
+                  "IO": {
+                    "input": false
+                  }
+                },
+                "pos": {
+                  "x": 2940.0,
+                  "y": 840.0
+                },
+                "simulation_index": null
+              },
+              "72": {
+                "color": [
+                  223,
+                  127,
+                  1,
+                  255
+                ],
+                "id": 72,
+                "label": "input 5",
+                "part_data": {
+                  "IO": {
+                    "input": true
+                  }
+                },
+                "pos": {
+                  "x": 2700.0,
+                  "y": 600.0
+                },
+                "simulation_index": null
+              },
+              "73": {
+                "color": [
+                  223,
+                  127,
+                  1,
+                  255
+                ],
+                "id": 73,
+                "label": "output 2",
+                "part_data": {
+                  "IO": {
+                    "input": false
+                  }
+                },
+                "pos": {
+                  "x": 2940.0,
+                  "y": 780.0
+                },
+                "simulation_index": null
+              },
+              "74": {
+                "color": [
+                  223,
+                  127,
+                  1,
+                  255
+                ],
+                "id": 74,
+                "label": "output 7",
+                "part_data": {
+                  "IO": {
+                    "input": false
+                  }
+                },
+                "pos": {
+                  "x": 2940.0,
+                  "y": 480.0
+                },
+                "simulation_index": null
+              },
+              "8": {
+                "color": [
+                  223,
+                  127,
+                  1,
+                  255
+                ],
+                "id": 8,
+                "label": "clock",
+                "part_data": {
+                  "IO": {
+                    "input": true
+                  }
+                },
+                "pos": {
+                  "x": 2700.0,
+                  "y": -80.0
+                },
+                "simulation_index": null
+              },
+              "9": {
+                "color": [
+                  223,
+                  127,
+                  1,
+                  255
+                ],
+                "id": 9,
+                "label": "AND",
+                "part_data": {
+                  "Gate": {
+                    "gate_type": "And",
+                    "important": false
+                  }
+                },
+                "pos": {
+                  "x": 2820.0,
+                  "y": -80.0
+                },
+                "simulation_index": null
+              }
+            }
+          },
+          "inputs": {
+            "0": "input 15",
+            "1": "input 14",
+            "2": "input 13",
+            "3": "input 12",
+            "4": "input 11",
+            "5": "input 10",
+            "51": "input 1",
+            "53": "input 3",
+            "56": "input 4",
+            "6": "input 9",
+            "60": "input 6",
+            "61": "input 0",
+            "64": "input 2",
+            "66": "input 7",
+            "7": "input 8",
+            "72": "input 5",
+            "8": "clock"
+          },
+          "min_size": {
+            "x": 120.0,
+            "y": 380.0
+          },
+          "outputs": {
+            "18": "clock",
+            "19": "output 15",
+            "20": "output 14",
+            "21": "output 13",
+            "22": "output 12",
+            "23": "output 9",
+            "24": "output 8",
+            "25": "output 10",
+            "26": "output 11",
+            "65": "output 5",
+            "67": "output 0",
+            "68": "output 3",
+            "69": "output 4",
+            "70": "output 6",
+            "71": "output 1",
+            "73": "output 2",
+            "74": "output 7"
+          },
+          "path": "random_modules/16_bit_tick_gate.sml",
+          "size": {
+            "x": 160.0,
+            "y": 380.0
+          }
+        }
+      },
+      "pos": {
+        "x": 3160.0,
+        "y": -20.0
+      },
+      "simulation_index": null
+    },
+    "189": {
+      "color": [
+        223,
+        127,
+        1,
+        255
+      ],
+      "id": 189,
+      "label": "increment pg ctr",
+      "part_data": {
+        "Module": {
+          "canvas_snapshot": {
+            "connections": [
+              {
+                "end": {
+                  "input": true,
+                  "part": 5,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 9,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 30,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 5,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 23,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 30,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 2,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 37,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 7,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 17,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 4,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 47,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 46,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 3,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 18,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 13,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 43,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 10,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 41,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 0,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 1,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 26,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 17,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 5,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 10,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 5,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 13,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 5,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 37,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 5,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 3,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 5,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 26,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 5,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 0,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 5,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 47,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 5,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 39,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 21,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 32,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 39,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 33,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 29,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 29,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 21,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 29,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 45,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 33,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 22,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 42,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 35,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 36,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 8,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 35,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 21,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 35,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 45,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 35,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 22,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 8,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 12,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 8,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 22,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 8,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 45,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 8,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 21,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 36,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 31,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 42,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 12,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 28,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 38,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 40,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 19,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 16,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 25,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 25,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 34,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 25,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 24,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 25,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 31,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 25,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 12,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 25,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 22,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 25,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 45,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 25,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 21,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 19,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 24,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 19,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 31,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 19,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 12,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 19,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 22,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 19,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 45,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 19,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 21,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 38,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 31,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 38,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 12,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 38,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 22,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 38,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 45,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 38,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 21,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 16,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 14,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 40,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 34,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 28,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 24,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 37,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 16,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 17,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 40,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 47,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 28,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 3,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 36,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 13,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 42,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 10,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 33,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 0,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 32,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 32,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 45,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 72,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 60,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 86,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 80,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 79,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 64,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 65,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 73,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 81,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 84,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 62,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 49,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 52,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 59,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 76,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 58,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 54,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 55,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 58,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 54,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 61,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 55,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 74,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 61,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 78,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 68,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 68,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 55,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 68,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 63,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 78,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 50,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 66,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 85,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 71,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 67,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 85,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 55,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 85,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 63,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 85,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 50,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 67,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 69,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 67,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 50,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 67,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 63,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 67,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 55,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 71,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 53,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 66,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 69,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 75,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 87,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 83,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 70,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 82,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 51,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 51,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 57,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 51,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 56,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 51,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 53,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 51,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 69,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 51,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 50,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 51,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 63,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 51,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 55,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 70,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 56,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 70,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 53,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 70,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 69,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 70,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 50,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 70,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 63,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 70,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 55,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 87,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 53,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 87,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 69,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 87,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 50,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 87,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 63,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 87,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 55,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 82,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 77,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 83,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 57,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 75,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 56,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 60,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 82,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 80,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 83,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 64,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 75,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 73,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 71,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 84,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 66,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 49,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 78,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 59,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 74,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 74,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 63,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 89,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 88,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 88,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 77,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 89,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 21,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 39,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 69,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 39,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 50,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 39,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 57,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 39,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 53,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 39,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 56,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 39,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 55,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 39,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 63,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 39,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 77,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 19,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 69,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 19,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 50,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 19,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 57,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 19,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 53,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 19,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 56,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 19,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 55,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 19,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 63,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 19,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 77,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 35,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 69,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 35,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 50,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 35,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 57,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 35,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 53,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 35,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 56,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 35,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 55,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 35,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 63,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 35,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 77,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 25,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 69,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 25,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 50,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 25,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 57,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 25,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 53,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 25,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 56,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 25,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 55,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 25,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 63,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 25,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 77,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 8,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 69,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 8,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 50,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 8,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 57,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 8,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 53,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 8,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 56,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 8,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 55,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 8,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 63,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 8,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 77,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 29,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 69,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 29,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 50,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 29,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 57,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 29,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 53,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 29,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 56,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 29,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 55,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 29,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 63,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 29,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 77,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 38,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 69,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 38,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 50,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 38,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 57,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 38,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 53,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 38,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 56,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 38,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 55,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 38,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 63,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 38,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 77,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 88,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 69,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 88,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 50,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 88,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 57,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 88,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 53,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 88,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 56,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 88,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 55,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 88,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 63,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 26,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 89,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 58,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 5,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 84,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 5,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 60,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 5,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 73,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 5,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 80,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 5,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 49,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 5,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 64,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 5,
+                  "port_id": null
+                }
+              },
+              {
+                "end": {
+                  "input": true,
+                  "part": 59,
+                  "port_id": null
+                },
+                "start": {
+                  "input": false,
+                  "part": 5,
+                  "port_id": null
+                }
+              }
+            ],
+            "next_id": 90,
+            "parts": {
+              "0": {
+                "color": [
+                  160,
+                  234,
+                  0,
+                  255
+                ],
+                "id": 0,
+                "label": "AND",
+                "part_data": {
+                  "Gate": {
+                    "gate_type": "And",
+                    "important": false
+                  }
+                },
+                "pos": {
+                  "x": 960.0,
+                  "y": 660.0
+                },
+                "simulation_index": null
+              },
+              "1": {
+                "color": [
+                  208,
+                  37,
+                  37,
+                  255
+                ],
+                "id": 1,
+                "label": "output 8",
+                "part_data": {
+                  "IO": {
+                    "input": false
+                  }
+                },
+                "pos": {
+                  "x": 1080.0,
+                  "y": 740.0
+                },
+                "simulation_index": null
+              },
+              "10": {
+                "color": [
+                  160,
+                  234,
+                  0,
+                  255
+                ],
+                "id": 10,
+                "label": "AND",
+                "part_data": {
+                  "Gate": {
+                    "gate_type": "And",
+                    "important": false
+                  }
+                },
+                "pos": {
+                  "x": 960.0,
+                  "y": 580.0
+                },
+                "simulation_index": null
+              },
+              "12": {
+                "color": [
+                  44,
+                  230,
+                  230,
+                  255
+                ],
+                "id": 12,
+                "label": "input 11",
+                "part_data": {
+                  "IO": {
+                    "input": true
+                  }
+                },
+                "pos": {
+                  "x": 600.0,
+                  "y": 480.0
+                },
+                "simulation_index": null
+              },
+              "13": {
+                "color": [
+                  160,
+                  234,
+                  0,
+                  255
+                ],
+                "id": 13,
+                "label": "AND",
+                "part_data": {
+                  "Gate": {
+                    "gate_type": "And",
+                    "important": false
+                  }
+                },
+                "pos": {
+                  "x": 960.0,
+                  "y": 500.0
+                },
+                "simulation_index": null
+              },
+              "14": {
+                "color": [
+                  44,
+                  230,
+                  230,
+                  255
+                ],
+                "id": 14,
+                "label": "input 15",
+                "part_data": {
+                  "IO": {
+                    "input": true
+                  }
+                },
+                "pos": {
+                  "x": 600.0,
+                  "y": 160.0
+                },
+                "simulation_index": null
+              },
+              "16": {
+                "color": [
+                  25,
+                  231,
+                  83,
+                  255
+                ],
+                "id": 16,
+                "label": "XOR",
+                "part_data": {
+                  "Gate": {
+                    "gate_type": "Xor",
+                    "important": false
+                  }
+                },
+                "pos": {
+                  "x": 840.0,
+                  "y": 180.0
+                },
+                "simulation_index": null
+              },
+              "17": {
+                "color": [
+                  160,
+                  234,
+                  0,
+                  255
+                ],
+                "id": 17,
+                "label": "AND",
+                "part_data": {
+                  "Gate": {
+                    "gate_type": "And",
+                    "important": false
+                  }
+                },
+                "pos": {
+                  "x": 960.0,
+                  "y": 260.0
+                },
+                "simulation_index": null
+              },
+              "18": {
+                "color": [
+                  208,
+                  37,
+                  37,
+                  255
+                ],
+                "id": 18,
+                "label": "output 11",
+                "part_data": {
+                  "IO": {
+                    "input": false
+                  }
+                },
+                "pos": {
+                  "x": 1080.0,
+                  "y": 500.0
+                },
+                "simulation_index": null
+              },
+              "19": {
+                "color": [
+                  117,
+                  20,
+                  237,
+                  255
+                ],
+                "id": 19,
+                "label": "AND",
+                "part_data": {
+                  "Gate": {
+                    "gate_type": "And",
+                    "important": false
+                  }
+                },
+                "pos": {
+                  "x": 720.0,
+                  "y": 280.0
+                },
+                "simulation_index": null
+              },
+              "2": {
+                "color": [
+                  208,
+                  37,
+                  37,
+                  255
+                ],
+                "id": 2,
+                "label": "output 15",
+                "part_data": {
+                  "IO": {
+                    "input": false
+                  }
+                },
+                "pos": {
+                  "x": 1080.0,
+                  "y": 180.0
+                },
+                "simulation_index": null
+              },
+              "21": {
+                "color": [
+                  44,
+                  230,
+                  230,
+                  255
+                ],
+                "id": 21,
+                "label": "input 8",
+                "part_data": {
+                  "IO": {
+                    "input": true
+                  }
+                },
+                "pos": {
+                  "x": 600.0,
+                  "y": 720.0
+                },
+                "simulation_index": null
+              },
+              "22": {
+                "color": [
+                  44,
+                  230,
+                  230,
+                  255
+                ],
+                "id": 22,
+                "label": "input 10",
+                "part_data": {
+                  "IO": {
+                    "input": true
+                  }
+                },
+                "pos": {
+                  "x": 600.0,
+                  "y": 560.0
+                },
+                "simulation_index": null
+              },
+              "23": {
+                "color": [
+                  223,
+                  127,
+                  1,
+                  255
+                ],
+                "id": 23,
+                "label": "clock",
+                "part_data": {
+                  "IO": {
+                    "input": false
+                  }
+                },
+                "pos": {
+                  "x": 1080.0,
+                  "y": 80.0
+                },
+                "simulation_index": null
+              },
+              "24": {
+                "color": [
+                  44,
+                  230,
+                  230,
+                  255
+                ],
+                "id": 24,
+                "label": "input 13",
+                "part_data": {
+                  "IO": {
+                    "input": true
+                  }
+                },
+                "pos": {
+                  "x": 600.0,
+                  "y": 320.0
+                },
+                "simulation_index": null
+              },
+              "25": {
+                "color": [
+                  117,
+                  20,
+                  237,
+                  255
+                ],
+                "id": 25,
+                "label": "AND",
+                "part_data": {
+                  "Gate": {
+                    "gate_type": "And",
+                    "important": false
+                  }
+                },
+                "pos": {
+                  "x": 720.0,
+                  "y": 200.0
+                },
+                "simulation_index": null
+              },
+              "26": {
+                "color": [
+                  160,
+                  234,
+                  0,
+                  255
+                ],
+                "id": 26,
+                "label": "AND",
+                "part_data": {
+                  "Gate": {
+                    "gate_type": "And",
+                    "important": false
+                  }
+                },
+                "pos": {
+                  "x": 960.0,
+                  "y": 740.0
+                },
+                "simulation_index": null
+              },
+              "28": {
+                "color": [
+                  25,
+                  231,
+                  83,
+                  255
+                ],
+                "id": 28,
+                "label": "XOR",
+                "part_data": {
+                  "Gate": {
+                    "gate_type": "Xor",
+                    "important": false
+                  }
+                },
+                "pos": {
+                  "x": 840.0,
+                  "y": 340.0
+                },
+                "simulation_index": null
+              },
+              "29": {
+                "color": [
+                  117,
+                  20,
+                  237,
+                  255
+                ],
+                "id": 29,
+                "label": "AND",
+                "part_data": {
+                  "Gate": {
+                    "gate_type": "And",
+                    "important": false
+                  }
+                },
+                "pos": {
+                  "x": 720.0,
+                  "y": 600.0
+                },
+                "simulation_index": null
+              },
+              "3": {
+                "color": [
+                  160,
+                  234,
+                  0,
+                  255
+                ],
+                "id": 3,
+                "label": "AND",
+                "part_data": {
+                  "Gate": {
+                    "gate_type": "And",
+                    "important": false
+                  }
+                },
+                "pos": {
+                  "x": 960.0,
+                  "y": 420.0
+                },
+                "simulation_index": null
+              },
+              "30": {
+                "color": [
+                  223,
+                  127,
+                  0,
+                  255
+                ],
+                "id": 30,
+                "label": "AND",
+                "part_data": {
+                  "Gate": {
+                    "gate_type": "And",
+                    "important": false
+                  }
+                },
+                "pos": {
+                  "x": 960.0,
+                  "y": 80.0
+                },
+                "simulation_index": null
+              },
+              "31": {
+                "color": [
+                  44,
+                  230,
+                  230,
+                  255
+                ],
+                "id": 31,
+                "label": "input 12",
+                "part_data": {
+                  "IO": {
+                    "input": true
+                  }
+                },
+                "pos": {
+                  "x": 600.0,
+                  "y": 400.0
+                },
+                "simulation_index": null
+              },
+              "32": {
+                "color": [
+                  25,
+                  231,
+                  83,
+                  255
+                ],
+                "id": 32,
+                "label": "XOR",
+                "part_data": {
+                  "Gate": {
+                    "gate_type": "Xor",
+                    "important": false
+                  }
+                },
+                "pos": {
+                  "x": 840.0,
+                  "y": 660.0
+                },
+                "simulation_index": null
+              },
+              "33": {
+                "color": [
+                  25,
+                  231,
+                  83,
+                  255
+                ],
+                "id": 33,
+                "label": "XOR",
+                "part_data": {
+                  "Gate": {
+                    "gate_type": "Xor",
+                    "important": false
+                  }
+                },
+                "pos": {
+                  "x": 840.0,
+                  "y": 580.0
+                },
+                "simulation_index": null
+              },
+              "34": {
+                "color": [
+                  44,
+                  230,
+                  230,
+                  255
+                ],
+                "id": 34,
+                "label": "input 14",
+                "part_data": {
+                  "IO": {
+                    "input": true
+                  }
+                },
+                "pos": {
+                  "x": 600.0,
+                  "y": 240.0
+                },
+                "simulation_index": null
+              },
+              "35": {
+                "color": [
+                  117,
+                  20,
+                  237,
+                  255
+                ],
+                "id": 35,
+                "label": "AND",
+                "part_data": {
+                  "Gate": {
+                    "gate_type": "And",
+                    "important": false
+                  }
+                },
+                "pos": {
+                  "x": 720.0,
+                  "y": 520.0
+                },
+                "simulation_index": null
+              },
+              "36": {
+                "color": [
+                  25,
+                  231,
+                  83,
+                  255
+                ],
+                "id": 36,
+                "label": "XOR",
+                "part_data": {
+                  "Gate": {
+                    "gate_type": "Xor",
+                    "important": false
+                  }
+                },
+                "pos": {
+                  "x": 840.0,
+                  "y": 420.0
+                },
+                "simulation_index": null
+              },
+              "37": {
+                "color": [
+                  160,
+                  234,
+                  0,
+                  255
+                ],
+                "id": 37,
+                "label": "AND",
+                "part_data": {
+                  "Gate": {
+                    "gate_type": "And",
+                    "important": false
+                  }
+                },
+                "pos": {
+                  "x": 960.0,
+                  "y": 180.0
+                },
+                "simulation_index": null
+              },
+              "38": {
+                "color": [
+                  117,
+                  20,
+                  237,
+                  255
+                ],
+                "id": 38,
+                "label": "AND",
+                "part_data": {
+                  "Gate": {
+                    "gate_type": "And",
+                    "important": false
+                  }
+                },
+                "pos": {
+                  "x": 720.0,
+                  "y": 360.0
+                },
+                "simulation_index": null
+              },
+              "39": {
+                "color": [
+                  117,
+                  20,
+                  237,
+                  255
+                ],
+                "id": 39,
+                "label": "AND",
+                "part_data": {
+                  "Gate": {
+                    "gate_type": "And",
+                    "important": false
+                  }
+                },
+                "pos": {
+                  "x": 720.0,
+                  "y": 680.0
+                },
+                "simulation_index": null
+              },
+              "4": {
+                "color": [
+                  208,
+                  37,
+                  37,
+                  255
+                ],
+                "id": 4,
+                "label": "output 13",
+                "part_data": {
+                  "IO": {
+                    "input": false
+                  }
+                },
+                "pos": {
+                  "x": 1080.0,
+                  "y": 340.0
+                },
+                "simulation_index": null
+              },
+              "40": {
+                "color": [
+                  25,
+                  231,
+                  83,
+                  255
+                ],
+                "id": 40,
+                "label": "XOR",
+                "part_data": {
+                  "Gate": {
+                    "gate_type": "Xor",
+                    "important": false
+                  }
+                },
+                "pos": {
+                  "x": 840.0,
+                  "y": 260.0
+                },
+                "simulation_index": null
+              },
+              "41": {
+                "color": [
+                  208,
+                  37,
+                  37,
+                  255
+                ],
+                "id": 41,
+                "label": "output 9",
+                "part_data": {
+                  "IO": {
+                    "input": false
+                  }
+                },
+                "pos": {
+                  "x": 1080.0,
+                  "y": 660.0
+                },
+                "simulation_index": null
+              },
+              "42": {
+                "color": [
+                  25,
+                  231,
+                  83,
+                  255
+                ],
+                "id": 42,
+                "label": "XOR",
+                "part_data": {
+                  "Gate": {
+                    "gate_type": "Xor",
+                    "important": false
+                  }
+                },
+                "pos": {
+                  "x": 840.0,
+                  "y": 500.0
+                },
+                "simulation_index": null
+              },
+              "43": {
+                "color": [
+                  208,
+                  37,
+                  37,
+                  255
+                ],
+                "id": 43,
+                "label": "output 10",
+                "part_data": {
+                  "IO": {
+                    "input": false
+                  }
+                },
+                "pos": {
+                  "x": 1080.0,
+                  "y": 580.0
+                },
+                "simulation_index": null
+              },
+              "45": {
+                "color": [
+                  44,
+                  230,
+                  230,
+                  255
+                ],
+                "id": 45,
+                "label": "input 9",
+                "part_data": {
+                  "IO": {
+                    "input": true
+                  }
+                },
+                "pos": {
+                  "x": 600.0,
+                  "y": 640.0
+                },
+                "simulation_index": null
+              },
+              "46": {
+                "color": [
+                  208,
+                  37,
+                  37,
+                  255
+                ],
+                "id": 46,
+                "label": "output 12",
+                "part_data": {
+                  "IO": {
+                    "input": false
+                  }
+                },
+                "pos": {
+                  "x": 1080.0,
+                  "y": 420.0
+                },
+                "simulation_index": null
+              },
+              "47": {
+                "color": [
+                  160,
+                  234,
+                  0,
+                  255
+                ],
+                "id": 47,
+                "label": "AND",
+                "part_data": {
+                  "Gate": {
+                    "gate_type": "And",
+                    "important": false
+                  }
+                },
+                "pos": {
+                  "x": 960.0,
+                  "y": 340.0
+                },
+                "simulation_index": null
+              },
+              "49": {
+                "color": [
+                  160,
+                  234,
+                  0,
+                  255
+                ],
+                "id": 49,
+                "label": "AND",
+                "part_data": {
+                  "Gate": {
+                    "gate_type": "And",
+                    "important": false
+                  }
+                },
+                "pos": {
+                  "x": 960.0,
+                  "y": 1220.0
+                },
+                "simulation_index": null
+              },
+              "5": {
+                "color": [
+                  160,
+                  234,
+                  0,
+                  255
+                ],
+                "id": 5,
+                "label": "Timer",
+                "part_data": {
+                  "Timer": {
+                    "secs": 0,
+                    "ticks": 2
+                  }
+                },
+                "pos": {
+                  "x": 840.0,
+                  "y": 80.0
+                },
+                "simulation_index": null
+              },
+              "50": {
+                "color": [
+                  44,
+                  230,
+                  230,
+                  255
+                ],
+                "id": 50,
+                "label": "input 2",
+                "part_data": {
+                  "IO": {
+                    "input": true
+                  }
+                },
+                "pos": {
+                  "x": 600.0,
+                  "y": 1200.0
+                },
+                "simulation_index": null
+              },
+              "51": {
+                "color": [
+                  117,
+                  20,
+                  237,
+                  255
+                ],
+                "id": 51,
+                "label": "AND",
+                "part_data": {
+                  "Gate": {
+                    "gate_type": "And",
+                    "important": false
+                  }
+                },
+                "pos": {
+                  "x": 720.0,
+                  "y": 840.0
+                },
+                "simulation_index": null
+              },
+              "52": {
+                "color": [
+                  208,
+                  37,
+                  37,
+                  255
+                ],
+                "id": 52,
+                "label": "output 1",
+                "part_data": {
+                  "IO": {
+                    "input": false
+                  }
+                },
+                "pos": {
+                  "x": 1080.0,
+                  "y": 1300.0
+                },
+                "simulation_index": null
+              },
+              "53": {
+                "color": [
+                  44,
+                  230,
+                  230,
+                  255
+                ],
+                "id": 53,
+                "label": "input 4",
+                "part_data": {
+                  "IO": {
+                    "input": true
+                  }
+                },
+                "pos": {
+                  "x": 600.0,
+                  "y": 1040.0
+                },
+                "simulation_index": null
+              },
+              "54": {
+                "color": [
+                  25,
+                  231,
+                  83,
+                  255
+                ],
+                "id": 54,
+                "label": "NAND",
+                "part_data": {
+                  "Gate": {
+                    "gate_type": "Nand",
+                    "important": false
+                  }
+                },
+                "pos": {
+                  "x": 840.0,
+                  "y": 1360.0
+                },
+                "simulation_index": null
+              },
+              "55": {
+                "color": [
+                  44,
+                  230,
+                  230,
+                  255
+                ],
+                "id": 55,
+                "label": "input 0",
+                "part_data": {
+                  "IO": {
+                    "input": true
+                  }
+                },
+                "pos": {
+                  "x": 600.0,
+                  "y": 1360.0
+                },
+                "simulation_index": null
+              },
+              "56": {
+                "color": [
+                  44,
+                  230,
+                  230,
+                  255
+                ],
+                "id": 56,
+                "label": "input 5",
+                "part_data": {
+                  "IO": {
+                    "input": true
+                  }
+                },
+                "pos": {
+                  "x": 600.0,
+                  "y": 960.0
+                },
+                "simulation_index": null
+              },
+              "57": {
+                "color": [
+                  44,
+                  230,
+                  230,
+                  255
+                ],
+                "id": 57,
+                "label": "input 6",
+                "part_data": {
+                  "IO": {
+                    "input": true
+                  }
+                },
+                "pos": {
+                  "x": 600.0,
+                  "y": 880.0
+                },
+                "simulation_index": null
+              },
+              "58": {
+                "color": [
+                  160,
+                  234,
+                  0,
+                  255
+                ],
+                "id": 58,
+                "label": "AND",
+                "part_data": {
+                  "Gate": {
+                    "gate_type": "And",
+                    "important": false
+                  }
+                },
+                "pos": {
+                  "x": 960.0,
+                  "y": 1360.0
+                },
+                "simulation_index": null
+              },
+              "59": {
+                "color": [
+                  160,
+                  234,
+                  0,
+                  255
+                ],
+                "id": 59,
+                "label": "AND",
+                "part_data": {
+                  "Gate": {
+                    "gate_type": "And",
+                    "important": false
+                  }
+                },
+                "pos": {
+                  "x": 960.0,
+                  "y": 1300.0
+                },
+                "simulation_index": null
+              },
+              "60": {
+                "color": [
+                  160,
+                  234,
+                  0,
+                  255
+                ],
+                "id": 60,
+                "label": "AND",
+                "part_data": {
+                  "Gate": {
+                    "gate_type": "And",
+                    "important": false
+                  }
+                },
+                "pos": {
+                  "x": 960.0,
+                  "y": 820.0
+                },
+                "simulation_index": null
+              },
+              "61": {
+                "color": [
+                  117,
+                  20,
+                  237,
+                  255
+                ],
+                "id": 61,
+                "label": "AND",
+                "part_data": {
+                  "Gate": {
+                    "gate_type": "And",
+                    "important": false
+                  }
+                },
+                "pos": {
+                  "x": 720.0,
+                  "y": 1320.0
+                },
+                "simulation_index": null
+              },
+              "62": {
+                "color": [
+                  208,
+                  37,
+                  37,
+                  255
+                ],
+                "id": 62,
+                "label": "output 2",
+                "part_data": {
+                  "IO": {
+                    "input": false
+                  }
+                },
+                "pos": {
+                  "x": 1080.0,
+                  "y": 1220.0
+                },
+                "simulation_index": null
+              },
+              "63": {
+                "color": [
+                  44,
+                  230,
+                  230,
+                  255
+                ],
+                "id": 63,
+                "label": "input 1",
+                "part_data": {
+                  "IO": {
+                    "input": true
+                  }
+                },
+                "pos": {
+                  "x": 600.0,
+                  "y": 1280.0
+                },
+                "simulation_index": null
+              },
+              "64": {
+                "color": [
+                  160,
+                  234,
+                  0,
+                  255
+                ],
+                "id": 64,
+                "label": "AND",
+                "part_data": {
+                  "Gate": {
+                    "gate_type": "And",
+                    "important": false
+                  }
+                },
+                "pos": {
+                  "x": 960.0,
+                  "y": 980.0
+                },
+                "simulation_index": null
+              },
+              "65": {
+                "color": [
+                  208,
+                  37,
+                  37,
+                  255
+                ],
+                "id": 65,
+                "label": "output 4",
+                "part_data": {
+                  "IO": {
+                    "input": false
+                  }
+                },
+                "pos": {
+                  "x": 1080.0,
+                  "y": 1060.0
+                },
+                "simulation_index": null
+              },
+              "66": {
+                "color": [
+                  25,
+                  231,
+                  83,
+                  255
+                ],
+                "id": 66,
+                "label": "XOR",
+                "part_data": {
+                  "Gate": {
+                    "gate_type": "Xor",
+                    "important": false
+                  }
+                },
+                "pos": {
+                  "x": 840.0,
+                  "y": 1140.0
+                },
+                "simulation_index": null
+              },
+              "67": {
+                "color": [
+                  117,
+                  20,
+                  237,
+                  255
+                ],
+                "id": 67,
+                "label": "AND",
+                "part_data": {
+                  "Gate": {
+                    "gate_type": "And",
+                    "important": false
+                  }
+                },
+                "pos": {
+                  "x": 720.0,
+                  "y": 1080.0
+                },
+                "simulation_index": null
+              },
+              "68": {
+                "color": [
+                  117,
+                  20,
+                  237,
+                  255
+                ],
+                "id": 68,
+                "label": "AND",
+                "part_data": {
+                  "Gate": {
+                    "gate_type": "And",
+                    "important": false
+                  }
+                },
+                "pos": {
+                  "x": 720.0,
+                  "y": 1240.0
+                },
+                "simulation_index": null
+              },
+              "69": {
+                "color": [
+                  44,
+                  230,
+                  230,
+                  255
+                ],
+                "id": 69,
+                "label": "input 3",
+                "part_data": {
+                  "IO": {
+                    "input": true
+                  }
+                },
+                "pos": {
+                  "x": 600.0,
+                  "y": 1120.0
+                },
+                "simulation_index": null
+              },
+              "7": {
+                "color": [
+                  208,
+                  37,
+                  37,
+                  255
+                ],
+                "id": 7,
+                "label": "output 14",
+                "part_data": {
+                  "IO": {
+                    "input": false
+                  }
+                },
+                "pos": {
+                  "x": 1080.0,
+                  "y": 260.0
+                },
+                "simulation_index": null
+              },
+              "70": {
+                "color": [
+                  117,
+                  20,
+                  237,
+                  255
+                ],
+                "id": 70,
+                "label": "AND",
+                "part_data": {
+                  "Gate": {
+                    "gate_type": "And",
+                    "important": false
+                  }
+                },
+                "pos": {
+                  "x": 720.0,
+                  "y": 920.0
+                },
+                "simulation_index": null
+              },
+              "71": {
+                "color": [
+                  25,
+                  231,
+                  83,
+                  255
+                ],
+                "id": 71,
+                "label": "XOR",
+                "part_data": {
+                  "Gate": {
+                    "gate_type": "Xor",
+                    "important": false
+                  }
+                },
+                "pos": {
+                  "x": 840.0,
+                  "y": 1060.0
+                },
+                "simulation_index": null
+              },
+              "72": {
+                "color": [
+                  208,
+                  37,
+                  37,
+                  255
+                ],
+                "id": 72,
+                "label": "output 7",
+                "part_data": {
+                  "IO": {
+                    "input": false
+                  }
+                },
+                "pos": {
+                  "x": 1080.0,
+                  "y": 820.0
+                },
+                "simulation_index": null
+              },
+              "73": {
+                "color": [
+                  160,
+                  234,
+                  0,
+                  255
+                ],
+                "id": 73,
+                "label": "AND",
+                "part_data": {
+                  "Gate": {
+                    "gate_type": "And",
+                    "important": false
+                  }
+                },
+                "pos": {
+                  "x": 960.0,
+                  "y": 1060.0
+                },
+                "simulation_index": null
+              },
+              "74": {
+                "color": [
+                  25,
+                  231,
+                  83,
+                  255
+                ],
+                "id": 74,
+                "label": "XOR",
+                "part_data": {
+                  "Gate": {
+                    "gate_type": "Xor",
+                    "important": false
+                  }
+                },
+                "pos": {
+                  "x": 840.0,
+                  "y": 1300.0
+                },
+                "simulation_index": null
+              },
+              "75": {
+                "color": [
+                  25,
+                  231,
+                  83,
+                  255
+                ],
+                "id": 75,
+                "label": "XOR",
+                "part_data": {
+                  "Gate": {
+                    "gate_type": "Xor",
+                    "important": false
+                  }
+                },
+                "pos": {
+                  "x": 840.0,
+                  "y": 980.0
+                },
+                "simulation_index": null
+              },
+              "76": {
+                "color": [
+                  208,
+                  37,
+                  37,
+                  255
+                ],
+                "id": 76,
+                "label": "output 0",
+                "part_data": {
+                  "IO": {
+                    "input": false
+                  }
+                },
+                "pos": {
+                  "x": 1080.0,
+                  "y": 1360.0
+                },
+                "simulation_index": null
+              },
+              "77": {
+                "color": [
+                  44,
+                  230,
+                  230,
+                  255
+                ],
+                "id": 77,
+                "label": "input 7",
+                "part_data": {
+                  "IO": {
+                    "input": true
+                  }
+                },
+                "pos": {
+                  "x": 600.0,
+                  "y": 800.0
+                },
+                "simulation_index": null
+              },
+              "78": {
+                "color": [
+                  25,
+                  231,
+                  83,
+                  255
+                ],
+                "id": 78,
+                "label": "XOR",
+                "part_data": {
+                  "Gate": {
+                    "gate_type": "Xor",
+                    "important": false
+                  }
+                },
+                "pos": {
+                  "x": 840.0,
+                  "y": 1220.0
+                },
+                "simulation_index": null
+              },
+              "79": {
+                "color": [
+                  208,
+                  37,
+                  37,
+                  255
+                ],
+                "id": 79,
+                "label": "output 5",
+                "part_data": {
+                  "IO": {
+                    "input": false
+                  }
+                },
+                "pos": {
+                  "x": 1080.0,
+                  "y": 980.0
+                },
+                "simulation_index": null
+              },
+              "8": {
+                "color": [
+                  117,
+                  20,
+                  237,
+                  255
+                ],
+                "id": 8,
+                "label": "AND",
+                "part_data": {
+                  "Gate": {
+                    "gate_type": "And",
+                    "important": false
+                  }
+                },
+                "pos": {
+                  "x": 720.0,
+                  "y": 440.0
+                },
+                "simulation_index": null
+              },
+              "80": {
+                "color": [
+                  160,
+                  234,
+                  0,
+                  255
+                ],
+                "id": 80,
+                "label": "AND",
+                "part_data": {
+                  "Gate": {
+                    "gate_type": "And",
+                    "important": false
+                  }
+                },
+                "pos": {
+                  "x": 960.0,
+                  "y": 900.0
+                },
+                "simulation_index": null
+              },
+              "81": {
+                "color": [
+                  208,
+                  37,
+                  37,
+                  255
+                ],
+                "id": 81,
+                "label": "output 3",
+                "part_data": {
+                  "IO": {
+                    "input": false
+                  }
+                },
+                "pos": {
+                  "x": 1080.0,
+                  "y": 1140.0
+                },
+                "simulation_index": null
+              },
+              "82": {
+                "color": [
+                  25,
+                  231,
+                  83,
+                  255
+                ],
+                "id": 82,
+                "label": "XOR",
+                "part_data": {
+                  "Gate": {
+                    "gate_type": "Xor",
+                    "important": false
+                  }
+                },
+                "pos": {
+                  "x": 840.0,
+                  "y": 820.0
+                },
+                "simulation_index": null
+              },
+              "83": {
+                "color": [
+                  25,
+                  231,
+                  83,
+                  255
+                ],
+                "id": 83,
+                "label": "XOR",
+                "part_data": {
+                  "Gate": {
+                    "gate_type": "Xor",
+                    "important": false
+                  }
+                },
+                "pos": {
+                  "x": 840.0,
+                  "y": 900.0
+                },
+                "simulation_index": null
+              },
+              "84": {
+                "color": [
+                  160,
+                  234,
+                  0,
+                  255
+                ],
+                "id": 84,
+                "label": "AND",
+                "part_data": {
+                  "Gate": {
+                    "gate_type": "And",
+                    "important": false
+                  }
+                },
+                "pos": {
+                  "x": 960.0,
+                  "y": 1140.0
+                },
+                "simulation_index": null
+              },
+              "85": {
+                "color": [
+                  117,
+                  20,
+                  237,
+                  255
+                ],
+                "id": 85,
+                "label": "AND",
+                "part_data": {
+                  "Gate": {
+                    "gate_type": "And",
+                    "important": false
+                  }
+                },
+                "pos": {
+                  "x": 720.0,
+                  "y": 1160.0
+                },
+                "simulation_index": null
+              },
+              "86": {
+                "color": [
+                  208,
+                  37,
+                  37,
+                  255
+                ],
+                "id": 86,
+                "label": "output 6",
+                "part_data": {
+                  "IO": {
+                    "input": false
+                  }
+                },
+                "pos": {
+                  "x": 1080.0,
+                  "y": 900.0
+                },
+                "simulation_index": null
+              },
+              "87": {
+                "color": [
+                  117,
+                  20,
+                  237,
+                  255
+                ],
+                "id": 87,
+                "label": "AND",
+                "part_data": {
+                  "Gate": {
+                    "gate_type": "And",
+                    "important": false
+                  }
+                },
+                "pos": {
+                  "x": 720.0,
+                  "y": 1000.0
+                },
+                "simulation_index": null
+              },
+              "88": {
+                "color": [
+                  117,
+                  20,
+                  237,
+                  255
+                ],
+                "id": 88,
+                "label": "AND",
+                "part_data": {
+                  "Gate": {
+                    "gate_type": "And",
+                    "important": false
+                  }
+                },
+                "pos": {
+                  "x": 720.0,
+                  "y": 760.0
+                },
+                "simulation_index": null
+              },
+              "89": {
+                "color": [
+                  25,
+                  231,
+                  83,
+                  255
+                ],
+                "id": 89,
+                "label": "XOR",
+                "part_data": {
+                  "Gate": {
+                    "gate_type": "Xor",
+                    "important": false
+                  }
+                },
+                "pos": {
+                  "x": 840.0,
+                  "y": 740.0
+                },
+                "simulation_index": null
+              },
+              "9": {
+                "color": [
+                  223,
+                  127,
+                  1,
+                  255
+                ],
+                "id": 9,
+                "label": "clock",
+                "part_data": {
+                  "IO": {
+                    "input": true
+                  }
+                },
+                "pos": {
+                  "x": 720.0,
+                  "y": 80.0
+                },
+                "simulation_index": null
+              }
+            }
+          },
+          "inputs": {
+            "12": "input 11",
+            "14": "input 15",
+            "21": "input 8",
+            "22": "input 10",
+            "24": "input 13",
+            "31": "input 12",
+            "34": "input 14",
+            "45": "input 9",
+            "50": "input 2",
+            "53": "input 4",
+            "55": "input 0",
+            "56": "input 5",
+            "57": "input 6",
+            "63": "input 1",
+            "69": "input 3",
+            "77": "input 7",
+            "9": "clock"
+          },
+          "min_size": {
+            "x": 120.0,
+            "y": 380.0
+          },
+          "outputs": {
+            "1": "output 8",
+            "18": "output 11",
+            "2": "output 15",
+            "23": "clock",
+            "4": "output 13",
+            "41": "output 9",
+            "43": "output 10",
+            "46": "output 12",
+            "52": "output 1",
+            "62": "output 2",
+            "65": "output 4",
+            "7": "output 14",
+            "72": "output 7",
+            "76": "output 0",
+            "79": "output 5",
+            "81": "output 3",
+            "86": "output 6"
+          },
+          "path": "random_modules/increment_16.sml",
+          "size": {
+            "x": 160.0,
+            "y": 380.0
+          }
+        }
+      },
+      "pos": {
+        "x": 3160.0,
+        "y": 360.0
+      },
+      "simulation_index": null
+    },
+    "19": {
+      "color": [
+        10,
+        62,
+        226,
+        255
+      ],
+      "id": 19,
+      "label": "OR",
+      "part_data": {
+        "Gate": {
+          "gate_type": "Or",
+          "important": false
+        }
+      },
+      "pos": {
+        "x": 1320.0,
+        "y": 300.0
+      },
+      "simulation_index": null
+    },
+    "20": {
+      "color": [
+        10,
+        62,
+        226,
+        255
+      ],
+      "id": 20,
+      "label": "OR",
+      "part_data": {
+        "Gate": {
+          "gate_type": "Or",
+          "important": false
+        }
+      },
+      "pos": {
+        "x": 1320.0,
+        "y": 160.0
+      },
+      "simulation_index": null
+    },
+    "21": {
+      "color": [
+        226,
+        219,
+        19,
+        255
+      ],
+      "id": 21,
+      "label": "write clock",
+      "part_data": {
+        "Gate": {
+          "gate_type": "Or",
+          "important": false
+        }
+      },
+      "pos": {
+        "x": 1320.0,
+        "y": 100.0
+      },
+      "simulation_index": null
+    },
+    "22": {
+      "color": [
+        10,
+        62,
+        226,
+        255
+      ],
+      "id": 22,
+      "label": "OR",
+      "part_data": {
+        "Gate": {
+          "gate_type": "Or",
+          "important": false
+        }
+      },
+      "pos": {
+        "x": 1320.0,
+        "y": 540.0
+      },
+      "simulation_index": null
+    },
+    "23": {
+      "color": [
+        10,
+        62,
+        226,
+        255
+      ],
+      "id": 23,
+      "label": "OR",
+      "part_data": {
+        "Gate": {
+          "gate_type": "Or",
+          "important": false
+        }
+      },
+      "pos": {
+        "x": 1320.0,
+        "y": 460.0
+      },
+      "simulation_index": null
+    },
+    "24": {
+      "color": [
+        10,
+        62,
+        226,
+        255
+      ],
+      "id": 24,
+      "label": "OR",
+      "part_data": {
+        "Gate": {
+          "gate_type": "Or",
+          "important": false
+        }
+      },
+      "pos": {
+        "x": 1320.0,
+        "y": 500.0
+      },
+      "simulation_index": null
+    },
+    "25": {
+      "color": [
+        10,
+        62,
+        226,
+        255
+      ],
+      "id": 25,
+      "label": "OR",
+      "part_data": {
+        "Gate": {
+          "gate_type": "Or",
+          "important": false
+        }
+      },
+      "pos": {
+        "x": 1320.0,
+        "y": 560.0
+      },
+      "simulation_index": null
+    },
+    "26": {
+      "color": [
+        226,
+        219,
+        19,
+        255
+      ],
+      "id": 26,
+      "label": "write clock",
+      "part_data": {
+        "Gate": {
+          "gate_type": "Or",
+          "important": false
+        }
+      },
+      "pos": {
+        "x": 1320.0,
+        "y": 360.0
+      },
+      "simulation_index": null
+    },
+    "27": {
+      "color": [
+        10,
+        62,
+        226,
+        255
+      ],
+      "id": 27,
+      "label": "OR",
+      "part_data": {
+        "Gate": {
+          "gate_type": "Or",
+          "important": false
+        }
+      },
+      "pos": {
+        "x": 1320.0,
+        "y": 520.0
+      },
+      "simulation_index": null
+    },
+    "28": {
+      "color": [
+        10,
+        62,
+        226,
+        255
+      ],
+      "id": 28,
+      "label": "OR",
+      "part_data": {
+        "Gate": {
+          "gate_type": "Or",
+          "important": false
+        }
+      },
+      "pos": {
+        "x": 1320.0,
+        "y": 440.0
+      },
+      "simulation_index": null
+    },
+    "29": {
+      "color": [
+        10,
+        62,
+        226,
+        255
+      ],
+      "id": 29,
+      "label": "OR",
+      "part_data": {
+        "Gate": {
+          "gate_type": "Or",
+          "important": false
+        }
+      },
+      "pos": {
+        "x": 1320.0,
+        "y": 480.0
       },
       "simulation_index": null
     },
@@ -3987,7 +18030,217 @@
       },
       "pos": {
         "x": 1440.0,
-        "y": 380.0
+        "y": 400.0
+      },
+      "simulation_index": null
+    },
+    "30": {
+      "color": [
+        10,
+        62,
+        226,
+        255
+      ],
+      "id": 30,
+      "label": "OR",
+      "part_data": {
+        "Gate": {
+          "gate_type": "Or",
+          "important": false
+        }
+      },
+      "pos": {
+        "x": 1320.0,
+        "y": 420.0
+      },
+      "simulation_index": null
+    },
+    "31": {
+      "color": [
+        10,
+        62,
+        226,
+        255
+      ],
+      "id": 31,
+      "label": "OR",
+      "part_data": {
+        "Gate": {
+          "gate_type": "Or",
+          "important": false
+        }
+      },
+      "pos": {
+        "x": 1320.0,
+        "y": 800.0
+      },
+      "simulation_index": null
+    },
+    "32": {
+      "color": [
+        10,
+        62,
+        226,
+        255
+      ],
+      "id": 32,
+      "label": "OR",
+      "part_data": {
+        "Gate": {
+          "gate_type": "Or",
+          "important": false
+        }
+      },
+      "pos": {
+        "x": 1320.0,
+        "y": 720.0
+      },
+      "simulation_index": null
+    },
+    "33": {
+      "color": [
+        10,
+        62,
+        226,
+        255
+      ],
+      "id": 33,
+      "label": "OR",
+      "part_data": {
+        "Gate": {
+          "gate_type": "Or",
+          "important": false
+        }
+      },
+      "pos": {
+        "x": 1320.0,
+        "y": 760.0
+      },
+      "simulation_index": null
+    },
+    "34": {
+      "color": [
+        10,
+        62,
+        226,
+        255
+      ],
+      "id": 34,
+      "label": "OR",
+      "part_data": {
+        "Gate": {
+          "gate_type": "Or",
+          "important": false
+        }
+      },
+      "pos": {
+        "x": 1320.0,
+        "y": 820.0
+      },
+      "simulation_index": null
+    },
+    "35": {
+      "color": [
+        226,
+        219,
+        19,
+        255
+      ],
+      "id": 35,
+      "label": "write clock",
+      "part_data": {
+        "Gate": {
+          "gate_type": "Or",
+          "important": false
+        }
+      },
+      "pos": {
+        "x": 1320.0,
+        "y": 620.0
+      },
+      "simulation_index": null
+    },
+    "36": {
+      "color": [
+        10,
+        62,
+        226,
+        255
+      ],
+      "id": 36,
+      "label": "OR",
+      "part_data": {
+        "Gate": {
+          "gate_type": "Or",
+          "important": false
+        }
+      },
+      "pos": {
+        "x": 1320.0,
+        "y": 780.0
+      },
+      "simulation_index": null
+    },
+    "37": {
+      "color": [
+        10,
+        62,
+        226,
+        255
+      ],
+      "id": 37,
+      "label": "OR",
+      "part_data": {
+        "Gate": {
+          "gate_type": "Or",
+          "important": false
+        }
+      },
+      "pos": {
+        "x": 1320.0,
+        "y": 700.0
+      },
+      "simulation_index": null
+    },
+    "38": {
+      "color": [
+        10,
+        62,
+        226,
+        255
+      ],
+      "id": 38,
+      "label": "OR",
+      "part_data": {
+        "Gate": {
+          "gate_type": "Or",
+          "important": false
+        }
+      },
+      "pos": {
+        "x": 1320.0,
+        "y": 740.0
+      },
+      "simulation_index": null
+    },
+    "39": {
+      "color": [
+        10,
+        62,
+        226,
+        255
+      ],
+      "id": 39,
+      "label": "OR",
+      "part_data": {
+        "Gate": {
+          "gate_type": "Or",
+          "important": false
+        }
+      },
+      "pos": {
+        "x": 1320.0,
+        "y": 680.0
       },
       "simulation_index": null
     },
@@ -5658,7 +19911,217 @@
       },
       "pos": {
         "x": 1440.0,
-        "y": 620.0
+        "y": 660.0
+      },
+      "simulation_index": null
+    },
+    "40": {
+      "color": [
+        10,
+        62,
+        226,
+        255
+      ],
+      "id": 40,
+      "label": "OR",
+      "part_data": {
+        "Gate": {
+          "gate_type": "Or",
+          "important": false
+        }
+      },
+      "pos": {
+        "x": 1320.0,
+        "y": 1060.0
+      },
+      "simulation_index": null
+    },
+    "41": {
+      "color": [
+        10,
+        62,
+        226,
+        255
+      ],
+      "id": 41,
+      "label": "OR",
+      "part_data": {
+        "Gate": {
+          "gate_type": "Or",
+          "important": false
+        }
+      },
+      "pos": {
+        "x": 1320.0,
+        "y": 980.0
+      },
+      "simulation_index": null
+    },
+    "42": {
+      "color": [
+        10,
+        62,
+        226,
+        255
+      ],
+      "id": 42,
+      "label": "OR",
+      "part_data": {
+        "Gate": {
+          "gate_type": "Or",
+          "important": false
+        }
+      },
+      "pos": {
+        "x": 1320.0,
+        "y": 1020.0
+      },
+      "simulation_index": null
+    },
+    "43": {
+      "color": [
+        10,
+        62,
+        226,
+        255
+      ],
+      "id": 43,
+      "label": "OR",
+      "part_data": {
+        "Gate": {
+          "gate_type": "Or",
+          "important": false
+        }
+      },
+      "pos": {
+        "x": 1320.0,
+        "y": 1080.0
+      },
+      "simulation_index": null
+    },
+    "44": {
+      "color": [
+        226,
+        219,
+        19,
+        255
+      ],
+      "id": 44,
+      "label": "write clock",
+      "part_data": {
+        "Gate": {
+          "gate_type": "Or",
+          "important": false
+        }
+      },
+      "pos": {
+        "x": 1320.0,
+        "y": 880.0
+      },
+      "simulation_index": null
+    },
+    "45": {
+      "color": [
+        10,
+        62,
+        226,
+        255
+      ],
+      "id": 45,
+      "label": "OR",
+      "part_data": {
+        "Gate": {
+          "gate_type": "Or",
+          "important": false
+        }
+      },
+      "pos": {
+        "x": 1320.0,
+        "y": 1040.0
+      },
+      "simulation_index": null
+    },
+    "46": {
+      "color": [
+        10,
+        62,
+        226,
+        255
+      ],
+      "id": 46,
+      "label": "OR",
+      "part_data": {
+        "Gate": {
+          "gate_type": "Or",
+          "important": false
+        }
+      },
+      "pos": {
+        "x": 1320.0,
+        "y": 960.0
+      },
+      "simulation_index": null
+    },
+    "47": {
+      "color": [
+        10,
+        62,
+        226,
+        255
+      ],
+      "id": 47,
+      "label": "OR",
+      "part_data": {
+        "Gate": {
+          "gate_type": "Or",
+          "important": false
+        }
+      },
+      "pos": {
+        "x": 1320.0,
+        "y": 1000.0
+      },
+      "simulation_index": null
+    },
+    "48": {
+      "color": [
+        10,
+        62,
+        226,
+        255
+      ],
+      "id": 48,
+      "label": "OR",
+      "part_data": {
+        "Gate": {
+          "gate_type": "Or",
+          "important": false
+        }
+      },
+      "pos": {
+        "x": 1320.0,
+        "y": 940.0
+      },
+      "simulation_index": null
+    },
+    "49": {
+      "color": [
+        226,
+        219,
+        19,
+        255
+      ],
+      "id": 49,
+      "label": "negative write",
+      "part_data": {
+        "Gate": {
+          "gate_type": "Or",
+          "important": false
+        }
+      },
+      "pos": {
+        "x": 1740.0,
+        "y": -20.0
       },
       "simulation_index": null
     },
@@ -7329,7 +21792,427 @@
       },
       "pos": {
         "x": 1440.0,
-        "y": 860.0
+        "y": 920.0
+      },
+      "simulation_index": null
+    },
+    "50": {
+      "color": [
+        10,
+        62,
+        226,
+        255
+      ],
+      "id": 50,
+      "label": "negative",
+      "part_data": {
+        "Gate": {
+          "gate_type": "Or",
+          "important": false
+        }
+      },
+      "pos": {
+        "x": 1740.0,
+        "y": -0.0
+      },
+      "simulation_index": null
+    },
+    "51": {
+      "color": [
+        226,
+        219,
+        19,
+        255
+      ],
+      "id": 51,
+      "label": "overflow write",
+      "part_data": {
+        "Gate": {
+          "gate_type": "Or",
+          "important": false
+        }
+      },
+      "pos": {
+        "x": 1740.0,
+        "y": 60.0
+      },
+      "simulation_index": null
+    },
+    "52": {
+      "color": [
+        10,
+        62,
+        226,
+        255
+      ],
+      "id": 52,
+      "label": "overflow",
+      "part_data": {
+        "Gate": {
+          "gate_type": "Or",
+          "important": false
+        }
+      },
+      "pos": {
+        "x": 1740.0,
+        "y": 80.0
+      },
+      "simulation_index": null
+    },
+    "53": {
+      "color": [
+        226,
+        219,
+        19,
+        255
+      ],
+      "id": 53,
+      "label": "n/a write",
+      "part_data": {
+        "Gate": {
+          "gate_type": "Or",
+          "important": false
+        }
+      },
+      "pos": {
+        "x": 1740.0,
+        "y": 140.0
+      },
+      "simulation_index": null
+    },
+    "54": {
+      "color": [
+        10,
+        62,
+        226,
+        255
+      ],
+      "id": 54,
+      "label": "n/a",
+      "part_data": {
+        "Gate": {
+          "gate_type": "Or",
+          "important": false
+        }
+      },
+      "pos": {
+        "x": 1740.0,
+        "y": 160.0
+      },
+      "simulation_index": null
+    },
+    "55": {
+      "color": [
+        226,
+        219,
+        19,
+        255
+      ],
+      "id": 55,
+      "label": "break write",
+      "part_data": {
+        "Gate": {
+          "gate_type": "Or",
+          "important": false
+        }
+      },
+      "pos": {
+        "x": 1740.0,
+        "y": 220.0
+      },
+      "simulation_index": null
+    },
+    "56": {
+      "color": [
+        10,
+        62,
+        226,
+        255
+      ],
+      "id": 56,
+      "label": "break",
+      "part_data": {
+        "Gate": {
+          "gate_type": "Or",
+          "important": false
+        }
+      },
+      "pos": {
+        "x": 1740.0,
+        "y": 240.0
+      },
+      "simulation_index": null
+    },
+    "57": {
+      "color": [
+        226,
+        219,
+        19,
+        255
+      ],
+      "id": 57,
+      "label": "interupt write",
+      "part_data": {
+        "Gate": {
+          "gate_type": "Or",
+          "important": false
+        }
+      },
+      "pos": {
+        "x": 1740.0,
+        "y": 380.0
+      },
+      "simulation_index": null
+    },
+    "58": {
+      "color": [
+        226,
+        219,
+        19,
+        255
+      ],
+      "id": 58,
+      "label": "decimal write",
+      "part_data": {
+        "Gate": {
+          "gate_type": "Or",
+          "important": false
+        }
+      },
+      "pos": {
+        "x": 1740.0,
+        "y": 300.0
+      },
+      "simulation_index": null
+    },
+    "59": {
+      "color": [
+        226,
+        219,
+        19,
+        255
+      ],
+      "id": 59,
+      "label": "zero write",
+      "part_data": {
+        "Gate": {
+          "gate_type": "Or",
+          "important": false
+        }
+      },
+      "pos": {
+        "x": 1740.0,
+        "y": 460.0
+      },
+      "simulation_index": null
+    },
+    "60": {
+      "color": [
+        10,
+        62,
+        226,
+        255
+      ],
+      "id": 60,
+      "label": "zero",
+      "part_data": {
+        "Gate": {
+          "gate_type": "Or",
+          "important": false
+        }
+      },
+      "pos": {
+        "x": 1740.0,
+        "y": 480.0
+      },
+      "simulation_index": null
+    },
+    "61": {
+      "color": [
+        10,
+        62,
+        226,
+        255
+      ],
+      "id": 61,
+      "label": "decimal",
+      "part_data": {
+        "Gate": {
+          "gate_type": "Or",
+          "important": false
+        }
+      },
+      "pos": {
+        "x": 1740.0,
+        "y": 320.0
+      },
+      "simulation_index": null
+    },
+    "62": {
+      "color": [
+        10,
+        62,
+        226,
+        255
+      ],
+      "id": 62,
+      "label": "carry",
+      "part_data": {
+        "Gate": {
+          "gate_type": "Or",
+          "important": false
+        }
+      },
+      "pos": {
+        "x": 1740.0,
+        "y": 560.0
+      },
+      "simulation_index": null
+    },
+    "63": {
+      "color": [
+        226,
+        219,
+        19,
+        255
+      ],
+      "id": 63,
+      "label": "write carry",
+      "part_data": {
+        "Gate": {
+          "gate_type": "Or",
+          "important": false
+        }
+      },
+      "pos": {
+        "x": 1740.0,
+        "y": 540.0
+      },
+      "simulation_index": null
+    },
+    "64": {
+      "color": [
+        10,
+        62,
+        226,
+        255
+      ],
+      "id": 64,
+      "label": "interupt",
+      "part_data": {
+        "Gate": {
+          "gate_type": "Or",
+          "important": false
+        }
+      },
+      "pos": {
+        "x": 1740.0,
+        "y": 400.0
+      },
+      "simulation_index": null
+    },
+    "65": {
+      "color": [
+        245,
+        240,
+        113,
+        255
+      ],
+      "id": 65,
+      "label": "write all",
+      "part_data": {
+        "Gate": {
+          "gate_type": "Or",
+          "important": false
+        }
+      },
+      "pos": {
+        "x": 1740.0,
+        "y": -80.0
+      },
+      "simulation_index": null
+    },
+    "66": {
+      "color": [
+        10,
+        62,
+        226,
+        255
+      ],
+      "id": 66,
+      "label": "OR",
+      "part_data": {
+        "Gate": {
+          "gate_type": "Or",
+          "important": false
+        }
+      },
+      "pos": {
+        "x": 1740.0,
+        "y": 800.0
+      },
+      "simulation_index": null
+    },
+    "67": {
+      "color": [
+        226,
+        219,
+        19,
+        255
+      ],
+      "id": 67,
+      "label": "write clock",
+      "part_data": {
+        "Gate": {
+          "gate_type": "Or",
+          "important": false
+        }
+      },
+      "pos": {
+        "x": 1740.0,
+        "y": 700.0
+      },
+      "simulation_index": null
+    },
+    "68": {
+      "color": [
+        10,
+        62,
+        226,
+        255
+      ],
+      "id": 68,
+      "label": "OR",
+      "part_data": {
+        "Gate": {
+          "gate_type": "Or",
+          "important": false
+        }
+      },
+      "pos": {
+        "x": 1740.0,
+        "y": 820.0
+      },
+      "simulation_index": null
+    },
+    "69": {
+      "color": [
+        10,
+        62,
+        226,
+        255
+      ],
+      "id": 69,
+      "label": "OR",
+      "part_data": {
+        "Gate": {
+          "gate_type": "Or",
+          "important": false
+        }
+      },
+      "pos": {
+        "x": 1740.0,
+        "y": 760.0
       },
       "simulation_index": null
     },
@@ -10677,6 +25560,421 @@
       },
       "pos": {
         "x": 1860.0,
+        "y": 720.0
+      },
+      "simulation_index": null
+    },
+    "70": {
+      "color": [
+        10,
+        62,
+        226,
+        255
+      ],
+      "id": 70,
+      "label": "OR",
+      "part_data": {
+        "Gate": {
+          "gate_type": "Or",
+          "important": false
+        }
+      },
+      "pos": {
+        "x": 1740.0,
+        "y": 880.0
+      },
+      "simulation_index": null
+    },
+    "71": {
+      "color": [
+        10,
+        62,
+        226,
+        255
+      ],
+      "id": 71,
+      "label": "OR",
+      "part_data": {
+        "Gate": {
+          "gate_type": "Or",
+          "important": false
+        }
+      },
+      "pos": {
+        "x": 1740.0,
+        "y": 840.0
+      },
+      "simulation_index": null
+    },
+    "72": {
+      "color": [
+        10,
+        62,
+        226,
+        255
+      ],
+      "id": 72,
+      "label": "OR",
+      "part_data": {
+        "Gate": {
+          "gate_type": "Or",
+          "important": false
+        }
+      },
+      "pos": {
+        "x": 1740.0,
+        "y": 780.0
+      },
+      "simulation_index": null
+    },
+    "73": {
+      "color": [
+        10,
+        62,
+        226,
+        255
+      ],
+      "id": 73,
+      "label": "OR",
+      "part_data": {
+        "Gate": {
+          "gate_type": "Or",
+          "important": false
+        }
+      },
+      "pos": {
+        "x": 1740.0,
+        "y": 900.0
+      },
+      "simulation_index": null
+    },
+    "74": {
+      "color": [
+        10,
+        62,
+        226,
+        255
+      ],
+      "id": 74,
+      "label": "OR",
+      "part_data": {
+        "Gate": {
+          "gate_type": "Or",
+          "important": false
+        }
+      },
+      "pos": {
+        "x": 1740.0,
+        "y": 860.0
+      },
+      "simulation_index": null
+    },
+    "75": {
+      "color": [
+        226,
+        219,
+        19,
+        255
+      ],
+      "id": 75,
+      "label": "write both",
+      "part_data": {
+        "Gate": {
+          "gate_type": "Or",
+          "important": false
+        }
+      },
+      "pos": {
+        "x": 1740.0,
+        "y": 640.0
+      },
+      "simulation_index": null
+    },
+    "76": {
+      "color": [
+        226,
+        219,
+        19,
+        255
+      ],
+      "id": 76,
+      "label": "write clock",
+      "part_data": {
+        "Gate": {
+          "gate_type": "Or",
+          "important": false
+        }
+      },
+      "pos": {
+        "x": 1740.0,
+        "y": 960.0
+      },
+      "simulation_index": null
+    },
+    "77": {
+      "color": [
+        10,
+        62,
+        226,
+        255
+      ],
+      "id": 77,
+      "label": "OR",
+      "part_data": {
+        "Gate": {
+          "gate_type": "Or",
+          "important": false
+        }
+      },
+      "pos": {
+        "x": 1740.0,
+        "y": 1100.0
+      },
+      "simulation_index": null
+    },
+    "78": {
+      "color": [
+        10,
+        62,
+        226,
+        255
+      ],
+      "id": 78,
+      "label": "OR",
+      "part_data": {
+        "Gate": {
+          "gate_type": "Or",
+          "important": false
+        }
+      },
+      "pos": {
+        "x": 1740.0,
+        "y": 1120.0
+      },
+      "simulation_index": null
+    },
+    "79": {
+      "color": [
+        10,
+        62,
+        226,
+        255
+      ],
+      "id": 79,
+      "label": "OR",
+      "part_data": {
+        "Gate": {
+          "gate_type": "Or",
+          "important": false
+        }
+      },
+      "pos": {
+        "x": 1740.0,
+        "y": 1060.0
+      },
+      "simulation_index": null
+    },
+    "80": {
+      "color": [
+        10,
+        62,
+        226,
+        255
+      ],
+      "id": 80,
+      "label": "OR",
+      "part_data": {
+        "Gate": {
+          "gate_type": "Or",
+          "important": false
+        }
+      },
+      "pos": {
+        "x": 1740.0,
+        "y": 1160.0
+      },
+      "simulation_index": null
+    },
+    "81": {
+      "color": [
+        10,
+        62,
+        226,
+        255
+      ],
+      "id": 81,
+      "label": "OR",
+      "part_data": {
+        "Gate": {
+          "gate_type": "Or",
+          "important": false
+        }
+      },
+      "pos": {
+        "x": 1740.0,
+        "y": 1040.0
+      },
+      "simulation_index": null
+    },
+    "82": {
+      "color": [
+        10,
+        62,
+        226,
+        255
+      ],
+      "id": 82,
+      "label": "OR",
+      "part_data": {
+        "Gate": {
+          "gate_type": "Or",
+          "important": false
+        }
+      },
+      "pos": {
+        "x": 1740.0,
+        "y": 1020.0
+      },
+      "simulation_index": null
+    },
+    "83": {
+      "color": [
+        10,
+        62,
+        226,
+        255
+      ],
+      "id": 83,
+      "label": "OR",
+      "part_data": {
+        "Gate": {
+          "gate_type": "Or",
+          "important": false
+        }
+      },
+      "pos": {
+        "x": 1740.0,
+        "y": 1140.0
+      },
+      "simulation_index": null
+    },
+    "84": {
+      "color": [
+        10,
+        62,
+        226,
+        255
+      ],
+      "id": 84,
+      "label": "OR",
+      "part_data": {
+        "Gate": {
+          "gate_type": "Or",
+          "important": false
+        }
+      },
+      "pos": {
+        "x": 1740.0,
+        "y": 1080.0
+      },
+      "simulation_index": null
+    },
+    "85": {
+      "color": [
+        117,
+        20,
+        237,
+        255
+      ],
+      "id": 85,
+      "label": "address 15",
+      "part_data": {
+        "IO": {
+          "input": false
+        }
+      },
+      "pos": {
+        "x": 3760.0,
+        "y": 420.0
+      },
+      "simulation_index": null
+    },
+    "86": {
+      "color": [
+        117,
+        20,
+        237,
+        255
+      ],
+      "id": 86,
+      "label": "address 14",
+      "part_data": {
+        "IO": {
+          "input": false
+        }
+      },
+      "pos": {
+        "x": 3760.0,
+        "y": 480.0
+      },
+      "simulation_index": null
+    },
+    "87": {
+      "color": [
+        117,
+        20,
+        237,
+        255
+      ],
+      "id": 87,
+      "label": "address 13",
+      "part_data": {
+        "IO": {
+          "input": false
+        }
+      },
+      "pos": {
+        "x": 3760.0,
+        "y": 540.0
+      },
+      "simulation_index": null
+    },
+    "88": {
+      "color": [
+        117,
+        20,
+        237,
+        255
+      ],
+      "id": 88,
+      "label": "address 12",
+      "part_data": {
+        "IO": {
+          "input": false
+        }
+      },
+      "pos": {
+        "x": 3760.0,
+        "y": 600.0
+      },
+      "simulation_index": null
+    },
+    "89": {
+      "color": [
+        117,
+        20,
+        237,
+        255
+      ],
+      "id": 89,
+      "label": "address 11",
+      "part_data": {
+        "IO": {
+          "input": false
+        }
+      },
+      "pos": {
+        "x": 3760.0,
         "y": 660.0
       },
       "simulation_index": null
@@ -12349,6 +27647,206 @@
       "pos": {
         "x": 1440.0,
         "y": 140.0
+      },
+      "simulation_index": null
+    },
+    "90": {
+      "color": [
+        117,
+        20,
+        237,
+        255
+      ],
+      "id": 90,
+      "label": "address 10",
+      "part_data": {
+        "IO": {
+          "input": false
+        }
+      },
+      "pos": {
+        "x": 3760.0,
+        "y": 720.0
+      },
+      "simulation_index": null
+    },
+    "91": {
+      "color": [
+        117,
+        20,
+        237,
+        255
+      ],
+      "id": 91,
+      "label": "address 9",
+      "part_data": {
+        "IO": {
+          "input": false
+        }
+      },
+      "pos": {
+        "x": 3760.0,
+        "y": 780.0
+      },
+      "simulation_index": null
+    },
+    "92": {
+      "color": [
+        117,
+        20,
+        237,
+        255
+      ],
+      "id": 92,
+      "label": "address 8",
+      "part_data": {
+        "IO": {
+          "input": false
+        }
+      },
+      "pos": {
+        "x": 3760.0,
+        "y": 840.0
+      },
+      "simulation_index": null
+    },
+    "93": {
+      "color": [
+        117,
+        20,
+        237,
+        255
+      ],
+      "id": 93,
+      "label": "address 3",
+      "part_data": {
+        "IO": {
+          "input": false
+        }
+      },
+      "pos": {
+        "x": 3760.0,
+        "y": 1140.0
+      },
+      "simulation_index": null
+    },
+    "94": {
+      "color": [
+        117,
+        20,
+        237,
+        255
+      ],
+      "id": 94,
+      "label": "address 5",
+      "part_data": {
+        "IO": {
+          "input": false
+        }
+      },
+      "pos": {
+        "x": 3760.0,
+        "y": 1020.0
+      },
+      "simulation_index": null
+    },
+    "95": {
+      "color": [
+        117,
+        20,
+        237,
+        255
+      ],
+      "id": 95,
+      "label": "address 0",
+      "part_data": {
+        "IO": {
+          "input": false
+        }
+      },
+      "pos": {
+        "x": 3760.0,
+        "y": 1320.0
+      },
+      "simulation_index": null
+    },
+    "96": {
+      "color": [
+        117,
+        20,
+        237,
+        255
+      ],
+      "id": 96,
+      "label": "address 7",
+      "part_data": {
+        "IO": {
+          "input": false
+        }
+      },
+      "pos": {
+        "x": 3760.0,
+        "y": 900.0
+      },
+      "simulation_index": null
+    },
+    "97": {
+      "color": [
+        117,
+        20,
+        237,
+        255
+      ],
+      "id": 97,
+      "label": "address 1",
+      "part_data": {
+        "IO": {
+          "input": false
+        }
+      },
+      "pos": {
+        "x": 3760.0,
+        "y": 1260.0
+      },
+      "simulation_index": null
+    },
+    "98": {
+      "color": [
+        117,
+        20,
+        237,
+        255
+      ],
+      "id": 98,
+      "label": "address 4",
+      "part_data": {
+        "IO": {
+          "input": false
+        }
+      },
+      "pos": {
+        "x": 3760.0,
+        "y": 1080.0
+      },
+      "simulation_index": null
+    },
+    "99": {
+      "color": [
+        117,
+        20,
+        237,
+        255
+      ],
+      "id": 99,
+      "label": "address 6",
+      "part_data": {
+        "IO": {
+          "input": false
+        }
+      },
+      "pos": {
+        "x": 3760.0,
+        "y": 960.0
       },
       "simulation_index": null
     }

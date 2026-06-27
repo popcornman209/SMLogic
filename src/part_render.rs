@@ -562,7 +562,7 @@ impl Label {
         // skip rendering if off-screen
         let screen_rect = Rect::from_min_max(
             app_state.world_to_screen(part.pos),
-            app_state.world_to_screen(part.pos + GATE_SIZE),
+            app_state.world_to_screen(part.pos + self.size),
         );
         if !painter.clip_rect().intersects(screen_rect) {
             return;

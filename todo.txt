@@ -1,19 +1,22 @@
+"are you sure you dont want to save" thing
+
 more lua functions
 	select, lets the user select stuff based off things.
+	module support!
+
+be able to visualize important parts in the simulation
+
+change multiple part properties at once
 
 you can type in lua editor and use keybinds at same time
 
-keybind customizer
+space and tab keybinds are kinda broken with the ui
 
 tooltips on buttons and settings
-
-tab key for renaming or tick step doesnt get blocked
 
 windows has no icon on the file itself
 
 export circuit as png
-
-more fast connect tool modes
 
 dragable connections to sperate them out
 
