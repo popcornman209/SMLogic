@@ -5,6 +5,15 @@ use crate::parts::PartType;
 use crate::state::{AppState, InteractionState, Selection};
 use crate::tools::{ConnectorData, Tool};
 
+const FOCUS_KEYS: &[egui::Key] = &[
+    egui::Key::Tab,
+    egui::Key::Escape,
+    egui::Key::ArrowUp,
+    egui::Key::ArrowDown,
+    egui::Key::ArrowLeft,
+    egui::Key::ArrowRight,
+];
+
 fn get_input(ctx: &Context, key_opt: Option<Key>) -> bool {
     if let Some(key) = key_opt {
         if ctx.input(|i| i.key_pressed(key) && !i.modifiers.ctrl && !i.modifiers.alt) {
@@ -97,34 +106,10 @@ impl AppState {
             }
         }
 
-        if self.active_tool == Some(Tool::Simulator) {
-            if get_input(
-                ctx,
-                self.config
-                    .keybinds
-                    .get("simulator pause")
-                    .copied()
-                    .flatten(),
-            ) {
-                if let Some(sim_state) = &self.sim_state {
-                    let mut state = sim_state.lock();
-                    state.running = !state.running;
-                }
-            } else if get_input(
-                ctx,
-                self.config
-                    .keybinds
-                    .get("simulator tick")
-                    .copied()
-                    .flatten(),
-            ) {
-                if let Some(sim_state) = &self.sim_state {
-                    let mut state = sim_state.lock();
-                    state.step = true;
-                }
-            }
-        } else if (!matches!(self.active_tool, Some(Tool::Exporter(_))))
-            && get_input(ctx, self.config.keybinds.get("rename").copied().flatten())
+        if (!matches!(
+            self.active_tool,
+            Some(Tool::Simulator) | Some(Tool::Exporter(_))
+        )) && get_input(ctx, self.config.keybinds.get("rename").copied().flatten())
         {
             if self.selection.len() == 1 {
                 self.request_rename = true;
@@ -458,5 +443,56 @@ impl AppState {
         }
         self.active_tool = tool;
         self.interaction_state = InteractionState::Idle;
+    }
+
+    // spent ages trying to figure this out, eventually gave up and claude took 20 years to get this
+    // working :/
+    pub fn catch_ui_keys(&mut self, ctx: &Context) {
+        if self.active_tool == Some(crate::tools::Tool::Simulator) && !ctx.wants_keyboard_input() {
+            let pause_key = self
+                .config
+                .keybinds
+                .get("simulator pause")
+                .copied()
+                .flatten();
+            let tick_key = self
+                .config
+                .keybinds
+                .get("simulator tick")
+                .copied()
+                .flatten();
+
+            let mut do_pause = false;
+            let mut do_tick = false;
+
+            ctx.input_mut(|i| {
+                if pause_key.is_some_and(|k| i.consume_key(egui::Modifiers::NONE, k)) {
+                    do_pause = true;
+                }
+                if tick_key.is_some_and(|k| i.consume_key(egui::Modifiers::NONE, k)) {
+                    do_tick = true;
+                }
+            });
+
+            let consumed_a_focus_key = FOCUS_KEYS
+                .iter()
+                .any(|k| (do_pause && pause_key == Some(*k)) || (do_tick && tick_key == Some(*k)));
+            if consumed_a_focus_key {
+                ctx.memory_mut(|mem| mem.move_focus(egui::FocusDirection::None));
+            }
+
+            if do_pause {
+                if let Some(sim_state) = &self.sim_state {
+                    let mut state = sim_state.lock();
+                    state.running = !state.running;
+                }
+            }
+            if do_tick {
+                if let Some(sim_state) = &self.sim_state {
+                    let mut state = sim_state.lock();
+                    state.step = true;
+                }
+            }
+        }
     }
 }

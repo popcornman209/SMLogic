@@ -1,5 +1,3 @@
-tabs to allow opening multiple modules at once?
-
 more lua functions
 	select, lets the user select stuff based off things.
 	module support!
@@ -10,10 +8,6 @@ make connections light up in simulator
 
 change multiple part properties at once
 
-you can type in lua editor and use keybinds at same time
-
-space and tab keybinds are kinda broken with the ui
-
 export circuit as png
 
 dragable connections to sperate them out
@@ -23,3 +17,5 @@ dragable connections to sperate them out
 windows has no icon on the file itself
 
 better explanations for things, ie tooltips
+
+tabs to allow opening multiple modules at once?

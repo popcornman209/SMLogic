@@ -66,6 +66,8 @@ impl eframe::App for AppState {
             }
         }
 
+        self.catch_ui_keys(ctx);
+
         self.draw_sidebar(ctx);
         self.draw_settings(ctx);
         self.draw_lua_script(ctx);
