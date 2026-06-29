@@ -350,19 +350,22 @@ impl AppState {
 
                     ui.separator();
                     if ui.button("Clear Canvas").clicked() {
-                        self.canvas_snapshot = CanvasSnapshot {
-                            connections: Vec::new(),
-                            parts: HashMap::new(),
-                            next_id: 0,
-                        };
-                        self.connection_counts.clear();
-                        self.current_module_path = None;
-                        self.toasts.success("Cleared canvas");
-                        self.end_simulation();
+                        if self.are_you_sure() {
+                            self.canvas_snapshot = CanvasSnapshot {
+                                connections: Vec::new(),
+                                parts: HashMap::new(),
+                                next_id: 0,
+                            };
+                            self.connection_counts.clear();
+                            self.current_module_path = None;
+                            self.toasts.success("Cleared canvas");
+                            self.end_simulation();
+                        }
                     }
                     if let Some(path) = self.current_module_path.clone() {
                         if ui.button("Save").clicked() {
                             self.canvas_snapshot.save(path.clone());
+                            self.has_unsaved_changes = false;
                             self.toasts.success(format!(
                                 "Saved: {}",
                                 path_to_string(path, self.project_folder.clone())
@@ -379,6 +382,7 @@ impl AppState {
                         let file = dialog.save_file();
                         if let Some(path) = file {
                             self.canvas_snapshot.save(path.clone());
+                            self.has_unsaved_changes = false;
                             self.current_module_path = Some(path.clone());
                             self.toasts.success(format!(
                                 "Saved: {}",
@@ -394,7 +398,7 @@ impl AppState {
                             self.active_tool = Some(Tool::PlacePart(PartType::Module(path)));
                         }
                     }
-                    if ui.button("Open").clicked() {
+                    if ui.button("Open").clicked() && self.are_you_sure() {
                         let file = rfd::FileDialog::new()
                             .add_filter("SM Logic", &["sml"])
                             .pick_file();
@@ -462,7 +466,7 @@ impl AppState {
                                             self.reload_project_folder();
                                         } else if path.is_file() {
                                             if path.extension().is_some_and(|ext| ext == "sml") {
-                                                if active {
+                                                if active && self.are_you_sure() {
                                                     self.open_file(path);
                                                     self.active_tool = None;
                                                     self.end_simulation();
@@ -677,5 +681,17 @@ impl AppState {
                 });
             });
         self.settings_open = open;
+    }
+
+    pub fn are_you_sure(&self) -> bool {
+        if !self.has_unsaved_changes {
+            return true;
+        }
+        rfd::MessageDialog::new()
+            .set_title("Unsaved Changes")
+            .set_description("You have unsaved changes. Continue anyway?")
+            .set_buttons(rfd::MessageButtons::YesNo)
+            .show()
+            == rfd::MessageDialogResult::Yes
     }
 }

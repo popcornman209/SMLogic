@@ -89,6 +89,7 @@ pub struct AppState {
     pub redo_stack: Vec<CanvasSnapshot>,
     pub connection_counts: HashMap<Port, u64>,
     pub current_paint_color: Color32,
+    pub has_unsaved_changes: bool,
     // other live info
     pub pan_offset: Vec2,
     pub zoom: f32,
@@ -147,6 +148,7 @@ impl AppState {
             redo_stack: Vec::new(),
             connection_counts: HashMap::new(),
             current_paint_color: DEFAULT_GATE_COLOR,
+            has_unsaved_changes: false,
             selection: Vec::new(),
             last_project_reload: Instant::now(),
             request_rename: false,
@@ -328,11 +330,13 @@ impl AppState {
     }
 
     pub fn push_undo(&mut self) {
+        self.has_unsaved_changes = true;
         self.redo_stack.clear();
         self.undo_stack.push(self.canvas_snapshot.clone());
     }
     pub fn undo(&mut self) {
         if let Some(snapshot) = self.undo_stack.pop() {
+            self.has_unsaved_changes = true;
             self.redo_stack.push(self.canvas_snapshot.clone());
             self.canvas_snapshot = snapshot;
             self.selection.clear();
@@ -341,6 +345,7 @@ impl AppState {
     }
     pub fn redo(&mut self) {
         if let Some(snapshot) = self.redo_stack.pop() {
+            self.has_unsaved_changes = true;
             self.undo_stack.push(self.canvas_snapshot.clone());
             self.canvas_snapshot = snapshot;
             self.selection.clear();
@@ -376,6 +381,7 @@ impl AppState {
         match new_snapshot {
             Ok(snapshot) => {
                 self.canvas_snapshot = snapshot;
+                self.has_unsaved_changes = false;
                 self.current_module_path = Some(path.clone());
                 self.reload_connection_counts();
                 self.toasts.success(format!(

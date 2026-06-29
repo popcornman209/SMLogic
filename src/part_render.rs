@@ -5,9 +5,9 @@ use crate::parts::{
 use crate::state::{AppState, Selection, path_to_string};
 use crate::tools::ConnectorData;
 use eframe::epaint::PathShape;
-use egui::{Align2, Color32, FontId, Painter, Pos2, Rect, Stroke, StrokeKind, TextEdit, Ui, Vec2};
 use egui::text::{CCursor, CCursorRange};
 use egui::text_edit::TextEditState;
+use egui::{Align2, Color32, FontId, Painter, Pos2, Rect, Stroke, StrokeKind, TextEdit, Ui, Vec2};
 
 const ICON_HEIGHT: f32 = 20.0;
 const ICON_WIDTH: f32 = ICON_HEIGHT * 1.5;
@@ -190,6 +190,8 @@ impl Gate {
             app_state,
         );
 
+        // the below icon code was mostly made by ai, im fine using it for tedious shit like that.
+
         let stroke = Stroke::new(1.5 * app_state.zoom, Color32::WHITE);
         let mut center: Pos2 =
             app_state.world_to_screen(part.pos - Vec2::new(0.0, ICON_Y_SHIFT) + GATE_SIZE / 2.0);
@@ -366,6 +368,8 @@ impl Timer {
             app_state,
         );
 
+        // i think the below icon was made by ai? tbh cant remember it was too long ago.
+
         let stroke = Stroke::new(1.5 * app_state.zoom, Color32::WHITE);
         let center: Pos2 =
             app_state.world_to_screen(part.pos - Vec2::new(0.0, ICON_Y_SHIFT) + GATE_SIZE / 2.0);
@@ -504,8 +508,8 @@ impl Module {
                 Vec::new(),
             );
         }
-        app_state.push_undo();
         if ui.button("Reload File").clicked() {
+            app_state.push_undo();
             self.reload(
                 app_state.project_folder.clone(),
                 &mut app_state.toasts,
@@ -548,12 +552,69 @@ impl IO {
                 part.color
             },
             part.label.clone(),
-            0.0,
+            13.0,
             powered,
             false,
             part.get_ports(),
             app_state,
         );
+
+        // the below icon code was MADE BY AI, im too lazy to do that shit manaully lmao
+
+        let stroke = Stroke::new(1.5 * app_state.zoom, Color32::WHITE);
+        let center =
+            app_state.world_to_screen(part.pos - Vec2::new(0.0, ICON_Y_SHIFT) + GATE_SIZE / 2.0);
+
+        let bw = 6.0 * app_state.zoom;
+        let bh = 9.0 * app_state.zoom;
+        let head = bh * 0.55;
+
+        let top = center.y - bh;
+        let bottom = center.y + bh;
+        let box_left = center.x - bw;
+        let box_right = center.x + bw;
+
+        if self.input {
+            // three-sided box: top, right, bottom (left open)
+            painter.line_segment(
+                [Pos2::new(box_left, top), Pos2::new(box_right, top)],
+                stroke,
+            );
+            painter.line_segment(
+                [Pos2::new(box_right, top), Pos2::new(box_right, bottom)],
+                stroke,
+            );
+            painter.line_segment(
+                [Pos2::new(box_right, bottom), Pos2::new(box_left, bottom)],
+                stroke,
+            );
+            // arrow pointing right, centered at the left opening
+            let tail = Pos2::new(box_left - bw, center.y);
+            let tip = Pos2::new(center.x, center.y);
+            painter.line_segment([tail, tip], stroke);
+            painter.line_segment([tip, Pos2::new(tip.x - head, center.y - head)], stroke);
+            painter.line_segment([tip, Pos2::new(tip.x - head, center.y + head)], stroke);
+        } else {
+            // three-sided box: top, left, bottom (right open)
+            painter.line_segment(
+                [Pos2::new(box_left, top), Pos2::new(box_right, top)],
+                stroke,
+            );
+            painter.line_segment(
+                [Pos2::new(box_left, top), Pos2::new(box_left, bottom)],
+                stroke,
+            );
+            painter.line_segment(
+                [Pos2::new(box_left, bottom), Pos2::new(box_right, bottom)],
+                stroke,
+            );
+            // arrow pointing right, centered at the right opening
+            let tail = Pos2::new(center.x, center.y);
+            let tip = Pos2::new(box_right + bw, center.y);
+            painter.line_segment([tail, tip], stroke);
+            painter.line_segment([tip, Pos2::new(tip.x - head, center.y - head)], stroke);
+            painter.line_segment([tip, Pos2::new(tip.x - head, center.y + head)], stroke);
+        }
     }
 }
 
@@ -607,7 +668,11 @@ impl Part {
                 if app_state.request_rename {
                     response.request_focus();
                     let mut state = TextEditState::load(ui.ctx(), response.id).unwrap_or_default();
-                    state.cursor.set_char_range(Some(CCursorRange::one(CCursor::new(self.label.chars().count()))));
+                    state
+                        .cursor
+                        .set_char_range(Some(CCursorRange::one(CCursor::new(
+                            self.label.chars().count(),
+                        ))));
                     state.store(ui.ctx(), response.id);
                     app_state.request_rename = false;
                 }
@@ -617,7 +682,11 @@ impl Part {
                 if app_state.request_rename {
                     response.request_focus();
                     let mut state = TextEditState::load(ui.ctx(), response.id).unwrap_or_default();
-                    state.cursor.set_char_range(Some(CCursorRange::one(CCursor::new(self.label.chars().count()))));
+                    state
+                        .cursor
+                        .set_char_range(Some(CCursorRange::one(CCursor::new(
+                            self.label.chars().count(),
+                        ))));
                     state.store(ui.ctx(), response.id);
                     app_state.request_rename = false;
                 }

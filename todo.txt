@@ -1,4 +1,4 @@
-"are you sure you dont want to save" thing
+tabs to allow opening multiple modules at once?
 
 more lua functions
 	select, lets the user select stuff based off things.
@@ -6,18 +6,20 @@ more lua functions
 
 be able to visualize important parts in the simulation
 
+make connections light up in simulator
+
 change multiple part properties at once
 
 you can type in lua editor and use keybinds at same time
 
 space and tab keybinds are kinda broken with the ui
 
-tooltips on buttons and settings
-
-windows has no icon on the file itself
-
 export circuit as png
 
 dragable connections to sperate them out
 
 "dead end" detection, ability to remove gates that dont contribute to the output in any way
+
+windows has no icon on the file itself
+
+better explanations for things, ie tooltips

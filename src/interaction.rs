@@ -185,6 +185,7 @@ impl AppState {
                 let file = dialog.save_file();
                 if let Some(path) = file {
                     self.canvas_snapshot.save(path.clone());
+                    self.has_unsaved_changes = false;
                     self.current_module_path = Some(path.clone());
                     self.toasts.success(format!(
                         "Saved: {}",
@@ -200,6 +201,7 @@ impl AppState {
             } else {
                 if let Some(path) = self.current_module_path.clone() {
                     self.canvas_snapshot.save(path.clone());
+                    self.has_unsaved_changes = false;
                     self.toasts.success(format!(
                         "Saved: {}",
                         if let Some(folder) = &self.project_folder {
