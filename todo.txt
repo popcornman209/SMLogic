@@ -1,6 +1,4 @@
-more lua functions
-	select, lets the user select stuff based off things.
-	module support!
+middle click delete/pan setting
 
 be able to visualize important parts in the simulation
 
@@ -11,6 +9,10 @@ change multiple part properties at once
 export circuit as png
 
 dragable connections to sperate them out
+
+more lua functions
+	select, lets the user select stuff based off things.
+	module support!
 
 "dead end" detection, ability to remove gates that dont contribute to the output in any way
 
