@@ -4,8 +4,6 @@ make connections light up in simulator
 
 change multiple part properties at once
 
-export circuit as png
-
 dragable connections to sperate them out
 
 more lua functions
@@ -14,8 +12,6 @@ more lua functions
 
 "dead end" detection, ability to remove gates that dont contribute to the output in any way
 
-windows has no icon on the file itself
-
-better explanations for things, ie tooltips
+windows has no icon on the file itself ?
 
 tabs to allow opening multiple modules at once?
