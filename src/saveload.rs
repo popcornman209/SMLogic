@@ -127,11 +127,11 @@ impl Default for Config {
 
 // saving/loading modules
 impl CanvasSnapshot {
-    pub fn save(&self, path: PathBuf) {
-        if let Ok(json) = serde_json::to_value(self) {
-            let pretty = serde_json::to_string_pretty(&json).unwrap();
-            std::fs::write(path, pretty).expect("failed to save json");
-        }
+    pub fn save(&self, path: PathBuf) -> Result<(), Box<dyn std::error::Error>> {
+        let json = serde_json::to_value(self)?;
+        let pretty = serde_json::to_string_pretty(&json)?;
+        std::fs::write(path, pretty)?;
+        Ok(())
     }
 
     pub fn load(

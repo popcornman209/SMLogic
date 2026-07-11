@@ -214,8 +214,8 @@ impl Module {
     pub fn new(path: PathBuf, app_state: &mut AppState) -> (PartData, String, Vec2) {
         let final_path = if let Some(project_folder) = &app_state.project_folder {
             path.strip_prefix(project_folder)
-                .expect("error :(")
-                .to_path_buf()
+                .map(|p| p.to_path_buf())
+                .unwrap_or(path)
         } else {
             path
         };

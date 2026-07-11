@@ -362,14 +362,29 @@ impl AppState {
                             self.end_simulation();
                         }
                     }
-                    if let Some(path) = self.current_module_path.clone() {
-                        if ui.button("Save").clicked() {
-                            self.canvas_snapshot.save(path.clone());
-                            self.has_unsaved_changes = false;
-                            self.toasts.success(format!(
-                                "Saved: {}",
-                                path_to_string(path, self.project_folder.clone())
-                            ));
+                    if ui.button("Save").clicked() {
+                        let file = if self.current_module_path.is_none() {
+                            let mut dialog = rfd::FileDialog::new()
+                                .add_filter("SM Logic", &["sml"])
+                                .set_file_name("module.sml");
+                            if let Some(project_folder) = &self.project_folder {
+                                dialog = dialog.set_directory(project_folder);
+                            }
+                            dialog.save_file()
+                        } else {
+                            self.current_module_path.clone()
+                        };
+                        if let Some(path) = file {
+                            if let Err(e) = self.canvas_snapshot.save(path.clone()) {
+                                self.toasts.error(format!("Failed to save: {}", e));
+                            } else {
+                                self.has_unsaved_changes = false;
+                                self.current_module_path = Some(path.clone());
+                                self.toasts.success(format!(
+                                    "Saved: {}",
+                                    path_to_string(path, self.project_folder.clone())
+                                ));
+                            }
                         }
                     }
                     if ui.button("Save As").clicked() {
@@ -379,15 +394,17 @@ impl AppState {
                         if let Some(project_folder) = &self.project_folder {
                             dialog = dialog.set_directory(project_folder);
                         }
-                        let file = dialog.save_file();
-                        if let Some(path) = file {
-                            self.canvas_snapshot.save(path.clone());
-                            self.has_unsaved_changes = false;
-                            self.current_module_path = Some(path.clone());
-                            self.toasts.success(format!(
-                                "Saved: {}",
-                                path_to_string(path, self.project_folder.clone())
-                            ));
+                        if let Some(path) = dialog.save_file() {
+                            if let Err(e) = self.canvas_snapshot.save(path.clone()) {
+                                self.toasts.error(format!("Failed to save: {}", e));
+                            } else {
+                                self.has_unsaved_changes = false;
+                                self.current_module_path = Some(path.clone());
+                                self.toasts.success(format!(
+                                    "Saved: {}",
+                                    path_to_string(path, self.project_folder.clone())
+                                ));
+                            }
                         }
                     }
                     if ui.button("Import").clicked() {
@@ -449,7 +466,6 @@ impl AppState {
                                         .file_name()
                                         .map(|n| n.to_string_lossy().to_string())
                                         .unwrap_or_else(|| path.to_string_lossy().to_string());
-
                                     if path.is_dir() {
                                         label.push('/');
                                     }
