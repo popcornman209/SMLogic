@@ -444,7 +444,12 @@ impl Module {
             if app_state.selection.contains(&Selection::Part(part.id)) {
                 app_state.color_pallet.selection
             } else if self.problematic {
-                Color32::RED
+                painter.ctx().request_repaint();
+                if (painter.ctx().input(|i| i.time) * 3.0) as u64 % 2 == 0 {
+                    Color32::RED
+                } else {
+                    part.color
+                }
             } else {
                 part.color
             },
@@ -495,7 +500,8 @@ impl Module {
         ui.label(format!(
             "File Path: {}",
             path_to_string(self.path.clone(), app_state.project_folder.clone())
-        ));
+        ))
+        .on_hover_text(self.path.to_string_lossy());
         if ui.button("Change File").clicked() {
             app_state.push_undo();
             let file = rfd::FileDialog::new()

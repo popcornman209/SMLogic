@@ -1,7 +1,3 @@
-more information on failed to load notifications
-
-highlight problematic modules blink
-
 be able to visualize important parts in the simulation
 
 make connections light up in simulator

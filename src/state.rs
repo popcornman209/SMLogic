@@ -26,14 +26,16 @@ pub fn path_to_string(path: PathBuf, project_folder: Option<PathBuf>) -> String 
         path.to_string_lossy().to_string()
     };
 
-    if out.chars().count() <= MAX_PATH_LEN {
+    let file_name_len = path.file_name().map(|n| n.to_string_lossy().chars().count()).unwrap_or(0);
+    let max_len = MAX_PATH_LEN.max(file_name_len);
+    if out.chars().count() <= max_len {
         out
     } else {
         format!(
             "...{}",
             out.chars()
                 .rev()
-                .take(MAX_PATH_LEN)
+                .take(max_len)
                 .collect::<String>()
                 .chars()
                 .rev()

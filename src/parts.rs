@@ -142,9 +142,9 @@ impl Timer {
 #[derive(Clone, Deserialize, Serialize, PartialEq)]
 pub struct Module {
     pub path: PathBuf,
-    #[serde(skip)]
+    #[serde(default)]
     pub inputs: BTreeMap<u64, String>,
-    #[serde(skip)]
+    #[serde(default)]
     pub outputs: BTreeMap<u64, String>,
     pub canvas_snapshot: CanvasSnapshot,
     #[serde(skip)]
@@ -174,11 +174,37 @@ impl Module {
         } else {
             let mut new_ancestors = ancestors.clone();
             new_ancestors.push(full_path.clone());
-            match CanvasSnapshot::load(full_path, project_path.clone(), toasts, new_ancestors) {
+            match CanvasSnapshot::load(
+                full_path.clone(),
+                project_path.clone(),
+                toasts,
+                new_ancestors,
+            ) {
                 Ok(snapshot) => self.canvas_snapshot = snapshot,
                 Err(e) => {
                     self.problematic = true;
-                    toasts.error(format!("Failed to load file: {}", e));
+                    // used ai to make it find the parent file for me. basically same thing just was
+                    // alot of complicated logic i didnt feel like figuring out atm.
+                    let msg = if ancestors.is_empty() {
+                        format!(
+                            "Failed to load module {}: {}",
+                            path_to_string(self.path.clone(), project_path.clone()),
+                            e
+                        )
+                    } else {
+                        let chain = ancestors
+                            .iter()
+                            .map(|p| path_to_string(p.clone(), project_path.clone()))
+                            .collect::<Vec<_>>()
+                            .join(" > ");
+                        format!(
+                            "Failed to load module {} (in {}): {}",
+                            path_to_string(self.path.clone(), project_path.clone()),
+                            chain,
+                            e
+                        )
+                    };
+                    toasts.error(msg);
                     return;
                 }
             }
