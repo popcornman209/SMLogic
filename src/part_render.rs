@@ -443,6 +443,8 @@ impl Module {
             self.size,
             if app_state.selection.contains(&Selection::Part(part.id)) {
                 app_state.color_pallet.selection
+            } else if self.problematic {
+                Color32::RED
             } else {
                 part.color
             },
@@ -500,7 +502,13 @@ impl Module {
                 .add_filter("SM Logic", &["sml"])
                 .pick_file();
             if let Some(path) = file {
-                self.path = path;
+                self.path = if let Some(project_folder) = &app_state.project_folder {
+                    path.strip_prefix(project_folder)
+                        .map(|p| p.to_path_buf())
+                        .unwrap_or(path)
+                } else {
+                    path
+                };
             }
             self.reload(
                 app_state.project_folder.clone(),

@@ -525,6 +525,15 @@ impl AppState {
                 //self.color_pallet.ui_apply(ui);
                 ui.heading("General");
                 ui.separator();
+                if ui
+                    .checkbox(
+                        &mut self.config.middle_click_deletes,
+                        "Middle click deletes",
+                    )
+                    .changed()
+                {
+                    self.config.save();
+                }
                 if ui.checkbox(&mut self.show_grid, "Grid").changed() {
                     self.config.show_grid = self.show_grid;
                     self.config.save();

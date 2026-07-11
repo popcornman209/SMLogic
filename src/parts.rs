@@ -142,11 +142,16 @@ impl Timer {
 #[derive(Clone, Deserialize, Serialize, PartialEq)]
 pub struct Module {
     pub path: PathBuf,
+    #[serde(skip)]
     pub inputs: BTreeMap<u64, String>,
+    #[serde(skip)]
     pub outputs: BTreeMap<u64, String>,
     pub canvas_snapshot: CanvasSnapshot,
+    #[serde(skip)]
     pub min_size: Vec2,
     pub size: Vec2,
+    #[serde(skip)]
+    pub problematic: bool,
 }
 impl Module {
     pub fn reload(
@@ -172,6 +177,7 @@ impl Module {
             match CanvasSnapshot::load(full_path, project_path.clone(), toasts, new_ancestors) {
                 Ok(snapshot) => self.canvas_snapshot = snapshot,
                 Err(e) => {
+                    self.problematic = true;
                     toasts.error(format!("Failed to load file: {}", e));
                     return;
                 }
@@ -203,6 +209,7 @@ impl Module {
                 path_to_string(self.path.clone(), project_path)
             ));
         }
+        self.problematic = false;
     }
     pub fn new(path: PathBuf, app_state: &mut AppState) -> (PartData, String, Vec2) {
         let final_path = if let Some(project_folder) = &app_state.project_folder {
@@ -223,6 +230,7 @@ impl Module {
             },
             min_size: Vec2::new(MIN_MODULE_WIDTH, 0.0),
             size: Vec2::new(120.0, 0.0),
+            problematic: false,
         };
         module.reload(
             app_state.project_folder.clone(),
@@ -329,6 +337,7 @@ pub struct Part {
     pub pos: Pos2,
     pub label: String,
     pub color: Color32,
+    #[serde(skip)]
     pub simulation_index: Option<usize>,
 }
 impl Part {
@@ -381,7 +390,12 @@ impl Part {
                 if let Some(port) = port_id {
                     let mut ids: Vec<u64> = module.inputs.keys().cloned().collect();
                     sort_by_position(&mut ids, |id| {
-                        module.canvas_snapshot.parts.get(id).map(|p| p.pos).unwrap_or_default()
+                        module
+                            .canvas_snapshot
+                            .parts
+                            .get(id)
+                            .map(|p| p.pos)
+                            .unwrap_or_default()
                     });
                     if let Some(index) = ids.iter().position(|id| *id == port) {
                         return Some(Pos2::new(
@@ -416,7 +430,12 @@ impl Part {
                 if let Some(port) = port_id {
                     let mut ids: Vec<u64> = module.outputs.keys().cloned().collect();
                     sort_by_position(&mut ids, |id| {
-                        module.canvas_snapshot.parts.get(id).map(|p| p.pos).unwrap_or_default()
+                        module
+                            .canvas_snapshot
+                            .parts
+                            .get(id)
+                            .map(|p| p.pos)
+                            .unwrap_or_default()
                     });
                     if let Some(index) = ids.iter().position(|id| *id == port) {
                         return Some(Pos2::new(
@@ -500,7 +519,12 @@ impl Part {
                 let mut result = Vec::new();
                 let mut input_ids: Vec<u64> = module.inputs.keys().cloned().collect();
                 sort_by_position(&mut input_ids, |id| {
-                    module.canvas_snapshot.parts.get(id).map(|p| p.pos).unwrap_or_default()
+                    module
+                        .canvas_snapshot
+                        .parts
+                        .get(id)
+                        .map(|p| p.pos)
+                        .unwrap_or_default()
                 });
                 for (i, id) in input_ids.iter().enumerate() {
                     result.push((
@@ -514,7 +538,12 @@ impl Part {
                 }
                 let mut output_ids: Vec<u64> = module.outputs.keys().cloned().collect();
                 sort_by_position(&mut output_ids, |id| {
-                    module.canvas_snapshot.parts.get(id).map(|p| p.pos).unwrap_or_default()
+                    module
+                        .canvas_snapshot
+                        .parts
+                        .get(id)
+                        .map(|p| p.pos)
+                        .unwrap_or_default()
                 });
                 for (i, id) in output_ids.iter().enumerate() {
                     result.push((

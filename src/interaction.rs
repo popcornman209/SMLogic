@@ -233,11 +233,16 @@ impl AppState {
 
         match &self.interaction_state {
             InteractionState::Idle => {
-                if ctx.input(|i| i.pointer.button_pressed(PointerButton::Secondary)) {
+                if ctx.input(|i| i.pointer.button_pressed(PointerButton::Secondary))
+                    || (!self.config.middle_click_deletes
+                        && ctx.input(|i| i.pointer.button_pressed(PointerButton::Middle)))
+                {
                     self.interaction_state = InteractionState::Panning;
                     return;
                 }
-                if ctx.input(|i| i.pointer.button_pressed(PointerButton::Middle)) {
+                if ctx.input(|i| i.pointer.button_pressed(PointerButton::Middle))
+                    && self.config.middle_click_deletes
+                {
                     if let Some(part_id) = self.part_at_pos(world_pos).map(|p| p.id) {
                         self.push_undo();
                         self.canvas_snapshot.parts.remove(&part_id);

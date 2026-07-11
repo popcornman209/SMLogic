@@ -1,4 +1,6 @@
-middle click delete/pan setting
+more information on failed to load notifications
+
+highlight problematic modules blink
 
 be able to visualize important parts in the simulation
 

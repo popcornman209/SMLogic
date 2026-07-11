@@ -16,6 +16,8 @@ use std::path::PathBuf;
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct Config {
     #[serde(default = "default_true")]
+    pub middle_click_deletes: bool,
+    #[serde(default = "default_true")]
     pub show_grid: bool,
     #[serde(default = "default_true")]
     pub show_connection_count: bool,
@@ -89,6 +91,7 @@ impl Config {
 impl Default for Config {
     fn default() -> Self {
         Self {
+            middle_click_deletes: true,
             show_grid: true,
             show_connection_count: true,
             round_connections: true,
@@ -182,14 +185,16 @@ impl AppState {
                 project_folder.clone()
             };
             //load all entries
-            let mut entries: Vec<PathBuf> = fs::read_dir(folder_to_read)
-                .expect("failed to load folder")
-                .filter_map(|e| e.ok())
-                .map(|e| e.path())
-                .collect();
             // sort and apply all entries
-            entries.sort_by_key(|p| (!p.is_dir(), p.file_name().map(|n| n.to_os_string())));
-            self.current_folder_files = entries;
+            if let Ok(entries) = fs::read_dir(folder_to_read) {
+                let mut entries: Vec<PathBuf> =
+                    entries.filter_map(|e| e.ok()).map(|e| e.path()).collect();
+                entries.sort_by_key(|p| (!p.is_dir(), p.file_name().map(|n| n.to_os_string())));
+                self.current_folder_files = entries;
+            } else {
+                self.current_folder_files = Vec::new();
+                self.project_folder = None;
+            }
         }
     }
 

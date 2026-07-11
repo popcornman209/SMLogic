@@ -6481,8 +6481,7 @@
                 "pos": {
                   "x": 680.0,
                   "y": 340.0
-                },
-                "simulation_index": null
+                }
               },
               "100": {
                 "color": [
@@ -6502,8 +6501,7 @@
                 "pos": {
                   "x": 440.0,
                   "y": 1300.0
-                },
-                "simulation_index": null
+                }
               },
               "12": {
                 "color": [
@@ -6523,8 +6521,7 @@
                 "pos": {
                   "x": 620.0,
                   "y": 180.0
-                },
-                "simulation_index": null
+                }
               },
               "13": {
                 "color": [
@@ -6543,8 +6540,7 @@
                 "pos": {
                   "x": 320.0,
                   "y": 180.0
-                },
-                "simulation_index": null
+                }
               },
               "2": {
                 "color": [
@@ -6564,8 +6560,7 @@
                 "pos": {
                   "x": 560.0,
                   "y": 340.0
-                },
-                "simulation_index": null
+                }
               },
               "4": {
                 "color": [
@@ -6585,8 +6580,7 @@
                 "pos": {
                   "x": 440.0,
                   "y": 340.0
-                },
-                "simulation_index": null
+                }
               },
               "5": {
                 "color": [
@@ -6606,8 +6600,7 @@
                 "pos": {
                   "x": 440.0,
                   "y": 180.0
-                },
-                "simulation_index": null
+                }
               },
               "50": {
                 "color": [
@@ -6627,8 +6620,7 @@
                 "pos": {
                   "x": 440.0,
                   "y": 260.0
-                },
-                "simulation_index": null
+                }
               },
               "51": {
                 "color": [
@@ -6647,8 +6639,7 @@
                 "pos": {
                   "x": 320.0,
                   "y": 260.0
-                },
-                "simulation_index": null
+                }
               },
               "52": {
                 "color": [
@@ -6667,8 +6658,7 @@
                 "pos": {
                   "x": 800.0,
                   "y": 500.0
-                },
-                "simulation_index": null
+                }
               },
               "53": {
                 "color": [
@@ -6688,8 +6678,7 @@
                 "pos": {
                   "x": 680.0,
                   "y": 500.0
-                },
-                "simulation_index": null
+                }
               },
               "54": {
                 "color": [
@@ -6708,8 +6697,7 @@
                 "pos": {
                   "x": 320.0,
                   "y": 420.0
-                },
-                "simulation_index": null
+                }
               },
               "55": {
                 "color": [
@@ -6728,8 +6716,7 @@
                 "pos": {
                   "x": 320.0,
                   "y": 500.0
-                },
-                "simulation_index": null
+                }
               },
               "56": {
                 "color": [
@@ -6749,8 +6736,7 @@
                 "pos": {
                   "x": 440.0,
                   "y": 500.0
-                },
-                "simulation_index": null
+                }
               },
               "57": {
                 "color": [
@@ -6770,8 +6756,7 @@
                 "pos": {
                   "x": 440.0,
                   "y": 420.0
-                },
-                "simulation_index": null
+                }
               },
               "58": {
                 "color": [
@@ -6791,8 +6776,7 @@
                 "pos": {
                   "x": 560.0,
                   "y": 500.0
-                },
-                "simulation_index": null
+                }
               },
               "59": {
                 "color": [
@@ -6811,8 +6795,7 @@
                 "pos": {
                   "x": 800.0,
                   "y": 660.0
-                },
-                "simulation_index": null
+                }
               },
               "60": {
                 "color": [
@@ -6832,8 +6815,7 @@
                 "pos": {
                   "x": 680.0,
                   "y": 660.0
-                },
-                "simulation_index": null
+                }
               },
               "61": {
                 "color": [
@@ -6852,8 +6834,7 @@
                 "pos": {
                   "x": 320.0,
                   "y": 580.0
-                },
-                "simulation_index": null
+                }
               },
               "62": {
                 "color": [
@@ -6872,8 +6853,7 @@
                 "pos": {
                   "x": 320.0,
                   "y": 660.0
-                },
-                "simulation_index": null
+                }
               },
               "63": {
                 "color": [
@@ -6893,8 +6873,7 @@
                 "pos": {
                   "x": 440.0,
                   "y": 660.0
-                },
-                "simulation_index": null
+                }
               },
               "64": {
                 "color": [
@@ -6914,8 +6893,7 @@
                 "pos": {
                   "x": 440.0,
                   "y": 580.0
-                },
-                "simulation_index": null
+                }
               },
               "65": {
                 "color": [
@@ -6935,8 +6913,7 @@
                 "pos": {
                   "x": 560.0,
                   "y": 660.0
-                },
-                "simulation_index": null
+                }
               },
               "66": {
                 "color": [
@@ -6955,8 +6932,7 @@
                 "pos": {
                   "x": 800.0,
                   "y": 820.0
-                },
-                "simulation_index": null
+                }
               },
               "67": {
                 "color": [
@@ -6976,8 +6952,7 @@
                 "pos": {
                   "x": 680.0,
                   "y": 820.0
-                },
-                "simulation_index": null
+                }
               },
               "68": {
                 "color": [
@@ -6996,8 +6971,7 @@
                 "pos": {
                   "x": 320.0,
                   "y": 740.0
-                },
-                "simulation_index": null
+                }
               },
               "69": {
                 "color": [
@@ -7016,8 +6990,7 @@
                 "pos": {
                   "x": 320.0,
                   "y": 820.0
-                },
-                "simulation_index": null
+                }
               },
               "7": {
                 "color": [
@@ -7036,8 +7009,7 @@
                 "pos": {
                   "x": 320.0,
                   "y": 340.0
-                },
-                "simulation_index": null
+                }
               },
               "70": {
                 "color": [
@@ -7057,8 +7029,7 @@
                 "pos": {
                   "x": 440.0,
                   "y": 820.0
-                },
-                "simulation_index": null
+                }
               },
               "71": {
                 "color": [
@@ -7078,8 +7049,7 @@
                 "pos": {
                   "x": 440.0,
                   "y": 740.0
-                },
-                "simulation_index": null
+                }
               },
               "72": {
                 "color": [
@@ -7099,8 +7069,7 @@
                 "pos": {
                   "x": 560.0,
                   "y": 820.0
-                },
-                "simulation_index": null
+                }
               },
               "73": {
                 "color": [
@@ -7120,8 +7089,7 @@
                 "pos": {
                   "x": 560.0,
                   "y": 1140.0
-                },
-                "simulation_index": null
+                }
               },
               "74": {
                 "color": [
@@ -7140,8 +7108,7 @@
                 "pos": {
                   "x": 800.0,
                   "y": 980.0
-                },
-                "simulation_index": null
+                }
               },
               "75": {
                 "color": [
@@ -7161,8 +7128,7 @@
                 "pos": {
                   "x": 440.0,
                   "y": 1060.0
-                },
-                "simulation_index": null
+                }
               },
               "76": {
                 "color": [
@@ -7181,8 +7147,7 @@
                 "pos": {
                   "x": 320.0,
                   "y": 1460.0
-                },
-                "simulation_index": null
+                }
               },
               "77": {
                 "color": [
@@ -7201,8 +7166,7 @@
                 "pos": {
                   "x": 320.0,
                   "y": 1060.0
-                },
-                "simulation_index": null
+                }
               },
               "78": {
                 "color": [
@@ -7222,8 +7186,7 @@
                 "pos": {
                   "x": 440.0,
                   "y": 1140.0
-                },
-                "simulation_index": null
+                }
               },
               "79": {
                 "color": [
@@ -7243,8 +7206,7 @@
                 "pos": {
                   "x": 680.0,
                   "y": 980.0
-                },
-                "simulation_index": null
+                }
               },
               "8": {
                 "color": [
@@ -7263,8 +7225,7 @@
                 "pos": {
                   "x": 800.0,
                   "y": 340.0
-                },
-                "simulation_index": null
+                }
               },
               "80": {
                 "color": [
@@ -7283,8 +7244,7 @@
                 "pos": {
                   "x": 800.0,
                   "y": 1460.0
-                },
-                "simulation_index": null
+                }
               },
               "81": {
                 "color": [
@@ -7303,8 +7263,7 @@
                 "pos": {
                   "x": 320.0,
                   "y": 900.0
-                },
-                "simulation_index": null
+                }
               },
               "82": {
                 "color": [
@@ -7324,8 +7283,7 @@
                 "pos": {
                   "x": 440.0,
                   "y": 1220.0
-                },
-                "simulation_index": null
+                }
               },
               "83": {
                 "color": [
@@ -7345,8 +7303,7 @@
                 "pos": {
                   "x": 440.0,
                   "y": 1380.0
-                },
-                "simulation_index": null
+                }
               },
               "84": {
                 "color": [
@@ -7365,8 +7322,7 @@
                 "pos": {
                   "x": 800.0,
                   "y": 1140.0
-                },
-                "simulation_index": null
+                }
               },
               "85": {
                 "color": [
@@ -7385,8 +7341,7 @@
                 "pos": {
                   "x": 320.0,
                   "y": 980.0
-                },
-                "simulation_index": null
+                }
               },
               "86": {
                 "color": [
@@ -7405,8 +7360,7 @@
                 "pos": {
                   "x": 320.0,
                   "y": 1380.0
-                },
-                "simulation_index": null
+                }
               },
               "87": {
                 "color": [
@@ -7425,8 +7379,7 @@
                 "pos": {
                   "x": 320.0,
                   "y": 1300.0
-                },
-                "simulation_index": null
+                }
               },
               "88": {
                 "color": [
@@ -7446,8 +7399,7 @@
                 "pos": {
                   "x": 560.0,
                   "y": 1300.0
-                },
-                "simulation_index": null
+                }
               },
               "89": {
                 "color": [
@@ -7467,8 +7419,7 @@
                 "pos": {
                   "x": 560.0,
                   "y": 1460.0
-                },
-                "simulation_index": null
+                }
               },
               "9": {
                 "color": [
@@ -7487,8 +7438,7 @@
                 "pos": {
                   "x": 800.0,
                   "y": 180.0
-                },
-                "simulation_index": null
+                }
               },
               "90": {
                 "color": [
@@ -7508,8 +7458,7 @@
                 "pos": {
                   "x": 680.0,
                   "y": 1460.0
-                },
-                "simulation_index": null
+                }
               },
               "91": {
                 "color": [
@@ -7529,8 +7478,7 @@
                 "pos": {
                   "x": 440.0,
                   "y": 980.0
-                },
-                "simulation_index": null
+                }
               },
               "92": {
                 "color": [
@@ -7549,8 +7497,7 @@
                 "pos": {
                   "x": 320.0,
                   "y": 1220.0
-                },
-                "simulation_index": null
+                }
               },
               "93": {
                 "color": [
@@ -7570,8 +7517,7 @@
                 "pos": {
                   "x": 680.0,
                   "y": 1140.0
-                },
-                "simulation_index": null
+                }
               },
               "94": {
                 "color": [
@@ -7590,8 +7536,7 @@
                 "pos": {
                   "x": 800.0,
                   "y": 1300.0
-                },
-                "simulation_index": null
+                }
               },
               "95": {
                 "color": [
@@ -7611,8 +7556,7 @@
                 "pos": {
                   "x": 680.0,
                   "y": 1300.0
-                },
-                "simulation_index": null
+                }
               },
               "96": {
                 "color": [
@@ -7632,8 +7576,7 @@
                 "pos": {
                   "x": 440.0,
                   "y": 1460.0
-                },
-                "simulation_index": null
+                }
               },
               "97": {
                 "color": [
@@ -7653,8 +7596,7 @@
                 "pos": {
                   "x": 440.0,
                   "y": 900.0
-                },
-                "simulation_index": null
+                }
               },
               "98": {
                 "color": [
@@ -7674,8 +7616,7 @@
                 "pos": {
                   "x": 560.0,
                   "y": 980.0
-                },
-                "simulation_index": null
+                }
               },
               "99": {
                 "color": [
@@ -7694,44 +7635,9 @@
                 "pos": {
                   "x": 320.0,
                   "y": 1140.0
-                },
-                "simulation_index": null
+                }
               }
             }
-          },
-          "inputs": {
-            "13": "Write all",
-            "51": "write 7",
-            "54": "write 6",
-            "55": "data 6",
-            "61": "write 5",
-            "62": "data 5",
-            "68": "write 4",
-            "69": "data 4",
-            "7": "data 7",
-            "76": "data 0",
-            "77": "write 2",
-            "81": "write 3",
-            "85": "data 3",
-            "86": "write 0",
-            "87": "data 1",
-            "92": "write 1",
-            "99": "data 2"
-          },
-          "min_size": {
-            "x": 120.0,
-            "y": 380.0
-          },
-          "outputs": {
-            "52": "read 6",
-            "59": "read 5",
-            "66": "read 4",
-            "74": "read 3",
-            "8": "read 7",
-            "80": "read 0",
-            "84": "read 2",
-            "9": "wrote clock",
-            "94": "read 1"
           },
           "path": "random_modules/8_individual_bit_register.sml",
           "size": {
@@ -7743,8 +7649,7 @@
       "pos": {
         "x": 1860.0,
         "y": 140.0
-      },
-      "simulation_index": null
+      }
     },
     "100": {
       "color": [
@@ -7763,8 +7668,7 @@
       "pos": {
         "x": 3760.0,
         "y": 1200.0
-      },
-      "simulation_index": null
+      }
     },
     "109": {
       "color": [
@@ -7783,8 +7687,7 @@
       "pos": {
         "x": 3700.0,
         "y": -360.0
-      },
-      "simulation_index": null
+      }
     },
     "11": {
       "color": [
@@ -7806,8 +7709,7 @@
       "pos": {
         "x": 1860.0,
         "y": 520.0
-      },
-      "simulation_index": null
+      }
     },
     "110": {
       "color": [
@@ -7826,8 +7728,7 @@
       "pos": {
         "x": 3760.0,
         "y": 360.0
-      },
-      "simulation_index": null
+      }
     },
     "112": {
       "color": [
@@ -7846,8 +7747,7 @@
       "pos": {
         "x": 3760.0,
         "y": 300.0
-      },
-      "simulation_index": null
+      }
     },
     "114": {
       "color": [
@@ -7867,8 +7767,7 @@
       "pos": {
         "x": 3640.0,
         "y": 420.0
-      },
-      "simulation_index": null
+      }
     },
     "115": {
       "color": [
@@ -7888,8 +7787,7 @@
       "pos": {
         "x": 3640.0,
         "y": 480.0
-      },
-      "simulation_index": null
+      }
     },
     "116": {
       "color": [
@@ -7909,8 +7807,7 @@
       "pos": {
         "x": 3640.0,
         "y": 600.0
-      },
-      "simulation_index": null
+      }
     },
     "117": {
       "color": [
@@ -7930,8 +7827,7 @@
       "pos": {
         "x": 3640.0,
         "y": 540.0
-      },
-      "simulation_index": null
+      }
     },
     "118": {
       "color": [
@@ -7951,8 +7847,7 @@
       "pos": {
         "x": 3640.0,
         "y": 720.0
-      },
-      "simulation_index": null
+      }
     },
     "119": {
       "color": [
@@ -7972,8 +7867,7 @@
       "pos": {
         "x": 3640.0,
         "y": 780.0
-      },
-      "simulation_index": null
+      }
     },
     "120": {
       "color": [
@@ -7993,8 +7887,7 @@
       "pos": {
         "x": 3640.0,
         "y": 660.0
-      },
-      "simulation_index": null
+      }
     },
     "121": {
       "color": [
@@ -8014,8 +7907,7 @@
       "pos": {
         "x": 3640.0,
         "y": 840.0
-      },
-      "simulation_index": null
+      }
     },
     "122": {
       "color": [
@@ -8035,8 +7927,7 @@
       "pos": {
         "x": 3640.0,
         "y": 1200.0
-      },
-      "simulation_index": null
+      }
     },
     "123": {
       "color": [
@@ -8056,8 +7947,7 @@
       "pos": {
         "x": 3640.0,
         "y": 1140.0
-      },
-      "simulation_index": null
+      }
     },
     "124": {
       "color": [
@@ -8077,8 +7967,7 @@
       "pos": {
         "x": 3640.0,
         "y": 960.0
-      },
-      "simulation_index": null
+      }
     },
     "125": {
       "color": [
@@ -8098,8 +7987,7 @@
       "pos": {
         "x": 3640.0,
         "y": 1260.0
-      },
-      "simulation_index": null
+      }
     },
     "126": {
       "color": [
@@ -8119,8 +8007,7 @@
       "pos": {
         "x": 3640.0,
         "y": 900.0
-      },
-      "simulation_index": null
+      }
     },
     "127": {
       "color": [
@@ -8140,8 +8027,7 @@
       "pos": {
         "x": 3640.0,
         "y": 1080.0
-      },
-      "simulation_index": null
+      }
     },
     "128": {
       "color": [
@@ -8161,8 +8047,7 @@
       "pos": {
         "x": 3640.0,
         "y": 1320.0
-      },
-      "simulation_index": null
+      }
     },
     "129": {
       "color": [
@@ -8182,8 +8067,7 @@
       "pos": {
         "x": 3640.0,
         "y": 1020.0
-      },
-      "simulation_index": null
+      }
     },
     "13": {
       "color": [
@@ -8203,8 +8087,7 @@
       "pos": {
         "x": 1320.0,
         "y": 200.0
-      },
-      "simulation_index": null
+      }
     },
     "130": {
       "color": [
@@ -8224,8 +8107,7 @@
       "pos": {
         "x": 3640.0,
         "y": 360.0
-      },
-      "simulation_index": null
+      }
     },
     "131": {
       "color": [
@@ -8245,8 +8127,7 @@
       "pos": {
         "x": 3640.0,
         "y": 300.0
-      },
-      "simulation_index": null
+      }
     },
     "132": {
       "color": [
@@ -8266,8 +8147,7 @@
       "pos": {
         "x": 2660.0,
         "y": -20.0
-      },
-      "simulation_index": null
+      }
     },
     "133": {
       "color": [
@@ -8289,8 +8169,7 @@
       "pos": {
         "x": 2660.0,
         "y": -200.0
-      },
-      "simulation_index": null
+      }
     },
     "135": {
       "color": [
@@ -8312,8 +8191,7 @@
       "pos": {
         "x": 2660.0,
         "y": -80.0
-      },
-      "simulation_index": null
+      }
     },
     "136": {
       "color": [
@@ -8332,8 +8210,7 @@
       "pos": {
         "x": 3700.0,
         "y": -420.0
-      },
-      "simulation_index": null
+      }
     },
     "137": {
       "color": [
@@ -8837,8 +8714,7 @@
                 "pos": {
                   "x": 2160.0,
                   "y": -620.0
-                },
-                "simulation_index": null
+                }
               },
               "1": {
                 "color": [
@@ -8857,8 +8733,7 @@
                 "pos": {
                   "x": 2040.0,
                   "y": -620.0
-                },
-                "simulation_index": null
+                }
               },
               "10": {
                 "color": [
@@ -8877,8 +8752,7 @@
                 "pos": {
                   "x": 2280.0,
                   "y": -160.0
-                },
-                "simulation_index": null
+                }
               },
               "11": {
                 "color": [
@@ -8897,8 +8771,7 @@
                 "pos": {
                   "x": 2280.0,
                   "y": -340.0
-                },
-                "simulation_index": null
+                }
               },
               "12": {
                 "color": [
@@ -8917,8 +8790,7 @@
                 "pos": {
                   "x": 2280.0,
                   "y": -280.0
-                },
-                "simulation_index": null
+                }
               },
               "13": {
                 "color": [
@@ -8937,8 +8809,7 @@
                 "pos": {
                   "x": 2280.0,
                   "y": -460.0
-                },
-                "simulation_index": null
+                }
               },
               "14": {
                 "color": [
@@ -8957,8 +8828,7 @@
                 "pos": {
                   "x": 2280.0,
                   "y": -400.0
-                },
-                "simulation_index": null
+                }
               },
               "15": {
                 "color": [
@@ -8978,8 +8848,7 @@
                 "pos": {
                   "x": 2400.0,
                   "y": -40.0
-                },
-                "simulation_index": null
+                }
               },
               "16": {
                 "color": [
@@ -8999,8 +8868,7 @@
                 "pos": {
                   "x": 2400.0,
                   "y": -100.0
-                },
-                "simulation_index": null
+                }
               },
               "17": {
                 "color": [
@@ -9020,8 +8888,7 @@
                 "pos": {
                   "x": 2400.0,
                   "y": -160.0
-                },
-                "simulation_index": null
+                }
               },
               "18": {
                 "color": [
@@ -9041,8 +8908,7 @@
                 "pos": {
                   "x": 2400.0,
                   "y": -220.0
-                },
-                "simulation_index": null
+                }
               },
               "19": {
                 "color": [
@@ -9062,8 +8928,7 @@
                 "pos": {
                   "x": 2400.0,
                   "y": -280.0
-                },
-                "simulation_index": null
+                }
               },
               "2": {
                 "color": [
@@ -9082,8 +8947,7 @@
                 "pos": {
                   "x": 2040.0,
                   "y": -540.0
-                },
-                "simulation_index": null
+                }
               },
               "20": {
                 "color": [
@@ -9103,8 +8967,7 @@
                 "pos": {
                   "x": 2400.0,
                   "y": -340.0
-                },
-                "simulation_index": null
+                }
               },
               "21": {
                 "color": [
@@ -9124,8 +8987,7 @@
                 "pos": {
                   "x": 2400.0,
                   "y": -400.0
-                },
-                "simulation_index": null
+                }
               },
               "22": {
                 "color": [
@@ -9145,8 +9007,7 @@
                 "pos": {
                   "x": 2400.0,
                   "y": -460.0
-                },
-                "simulation_index": null
+                }
               },
               "23": {
                 "color": [
@@ -9165,8 +9026,7 @@
                 "pos": {
                   "x": 2520.0,
                   "y": -460.0
-                },
-                "simulation_index": null
+                }
               },
               "24": {
                 "color": [
@@ -9185,8 +9045,7 @@
                 "pos": {
                   "x": 2520.0,
                   "y": -400.0
-                },
-                "simulation_index": null
+                }
               },
               "25": {
                 "color": [
@@ -9205,8 +9064,7 @@
                 "pos": {
                   "x": 2520.0,
                   "y": -340.0
-                },
-                "simulation_index": null
+                }
               },
               "26": {
                 "color": [
@@ -9225,8 +9083,7 @@
                 "pos": {
                   "x": 2520.0,
                   "y": -280.0
-                },
-                "simulation_index": null
+                }
               },
               "27": {
                 "color": [
@@ -9245,8 +9102,7 @@
                 "pos": {
                   "x": 2520.0,
                   "y": -220.0
-                },
-                "simulation_index": null
+                }
               },
               "28": {
                 "color": [
@@ -9265,8 +9121,7 @@
                 "pos": {
                   "x": 2520.0,
                   "y": -160.0
-                },
-                "simulation_index": null
+                }
               },
               "29": {
                 "color": [
@@ -9285,8 +9140,7 @@
                 "pos": {
                   "x": 2520.0,
                   "y": -100.0
-                },
-                "simulation_index": null
+                }
               },
               "30": {
                 "color": [
@@ -9305,8 +9159,7 @@
                 "pos": {
                   "x": 2520.0,
                   "y": -40.0
-                },
-                "simulation_index": null
+                }
               },
               "4": {
                 "color": [
@@ -9325,8 +9178,7 @@
                 "pos": {
                   "x": 2280.0,
                   "y": -540.0
-                },
-                "simulation_index": null
+                }
               },
               "5": {
                 "color": [
@@ -9346,8 +9198,7 @@
                 "pos": {
                   "x": 2280.0,
                   "y": -620.0
-                },
-                "simulation_index": null
+                }
               },
               "6": {
                 "color": [
@@ -9367,8 +9218,7 @@
                 "pos": {
                   "x": 2160.0,
                   "y": -540.0
-                },
-                "simulation_index": null
+                }
               },
               "7": {
                 "color": [
@@ -9387,8 +9237,7 @@
                 "pos": {
                   "x": 2280.0,
                   "y": -40.0
-                },
-                "simulation_index": null
+                }
               },
               "8": {
                 "color": [
@@ -9407,8 +9256,7 @@
                 "pos": {
                   "x": 2280.0,
                   "y": -100.0
-                },
-                "simulation_index": null
+                }
               },
               "9": {
                 "color": [
@@ -9427,37 +9275,9 @@
                 "pos": {
                   "x": 2280.0,
                   "y": -220.0
-                },
-                "simulation_index": null
+                }
               }
             }
-          },
-          "inputs": {
-            "1": "start clock",
-            "10": "data 2",
-            "11": "data 5",
-            "12": "data 4",
-            "13": "data 7",
-            "14": "data 6",
-            "2": "finish clock",
-            "7": "data 0",
-            "8": "data 1",
-            "9": "data 3"
-          },
-          "min_size": {
-            "x": 120.0,
-            "y": 240.0
-          },
-          "outputs": {
-            "23": "data 7",
-            "24": "data 6",
-            "25": "data 5",
-            "26": "data 4",
-            "27": "data 3",
-            "28": "data 2",
-            "29": "data 1",
-            "30": "data 0",
-            "4": "finish clock"
           },
           "path": "random_modules/clock_check_8b.sml",
           "size": {
@@ -9469,8 +9289,7 @@
       "pos": {
         "x": 2660.0,
         "y": 60.0
-      },
-      "simulation_index": null
+      }
     },
     "138": {
       "color": [
@@ -9974,8 +9793,7 @@
                 "pos": {
                   "x": 2160.0,
                   "y": -620.0
-                },
-                "simulation_index": null
+                }
               },
               "1": {
                 "color": [
@@ -9994,8 +9812,7 @@
                 "pos": {
                   "x": 2040.0,
                   "y": -620.0
-                },
-                "simulation_index": null
+                }
               },
               "10": {
                 "color": [
@@ -10014,8 +9831,7 @@
                 "pos": {
                   "x": 2280.0,
                   "y": -160.0
-                },
-                "simulation_index": null
+                }
               },
               "11": {
                 "color": [
@@ -10034,8 +9850,7 @@
                 "pos": {
                   "x": 2280.0,
                   "y": -340.0
-                },
-                "simulation_index": null
+                }
               },
               "12": {
                 "color": [
@@ -10054,8 +9869,7 @@
                 "pos": {
                   "x": 2280.0,
                   "y": -280.0
-                },
-                "simulation_index": null
+                }
               },
               "13": {
                 "color": [
@@ -10074,8 +9888,7 @@
                 "pos": {
                   "x": 2280.0,
                   "y": -460.0
-                },
-                "simulation_index": null
+                }
               },
               "14": {
                 "color": [
@@ -10094,8 +9907,7 @@
                 "pos": {
                   "x": 2280.0,
                   "y": -400.0
-                },
-                "simulation_index": null
+                }
               },
               "15": {
                 "color": [
@@ -10115,8 +9927,7 @@
                 "pos": {
                   "x": 2400.0,
                   "y": -40.0
-                },
-                "simulation_index": null
+                }
               },
               "16": {
                 "color": [
@@ -10136,8 +9947,7 @@
                 "pos": {
                   "x": 2400.0,
                   "y": -100.0
-                },
-                "simulation_index": null
+                }
               },
               "17": {
                 "color": [
@@ -10157,8 +9967,7 @@
                 "pos": {
                   "x": 2400.0,
                   "y": -160.0
-                },
-                "simulation_index": null
+                }
               },
               "18": {
                 "color": [
@@ -10178,8 +9987,7 @@
                 "pos": {
                   "x": 2400.0,
                   "y": -220.0
-                },
-                "simulation_index": null
+                }
               },
               "19": {
                 "color": [
@@ -10199,8 +10007,7 @@
                 "pos": {
                   "x": 2400.0,
                   "y": -280.0
-                },
-                "simulation_index": null
+                }
               },
               "2": {
                 "color": [
@@ -10219,8 +10026,7 @@
                 "pos": {
                   "x": 2040.0,
                   "y": -540.0
-                },
-                "simulation_index": null
+                }
               },
               "20": {
                 "color": [
@@ -10240,8 +10046,7 @@
                 "pos": {
                   "x": 2400.0,
                   "y": -340.0
-                },
-                "simulation_index": null
+                }
               },
               "21": {
                 "color": [
@@ -10261,8 +10066,7 @@
                 "pos": {
                   "x": 2400.0,
                   "y": -400.0
-                },
-                "simulation_index": null
+                }
               },
               "22": {
                 "color": [
@@ -10282,8 +10086,7 @@
                 "pos": {
                   "x": 2400.0,
                   "y": -460.0
-                },
-                "simulation_index": null
+                }
               },
               "23": {
                 "color": [
@@ -10302,8 +10105,7 @@
                 "pos": {
                   "x": 2520.0,
                   "y": -460.0
-                },
-                "simulation_index": null
+                }
               },
               "24": {
                 "color": [
@@ -10322,8 +10124,7 @@
                 "pos": {
                   "x": 2520.0,
                   "y": -400.0
-                },
-                "simulation_index": null
+                }
               },
               "25": {
                 "color": [
@@ -10342,8 +10143,7 @@
                 "pos": {
                   "x": 2520.0,
                   "y": -340.0
-                },
-                "simulation_index": null
+                }
               },
               "26": {
                 "color": [
@@ -10362,8 +10162,7 @@
                 "pos": {
                   "x": 2520.0,
                   "y": -280.0
-                },
-                "simulation_index": null
+                }
               },
               "27": {
                 "color": [
@@ -10382,8 +10181,7 @@
                 "pos": {
                   "x": 2520.0,
                   "y": -220.0
-                },
-                "simulation_index": null
+                }
               },
               "28": {
                 "color": [
@@ -10402,8 +10200,7 @@
                 "pos": {
                   "x": 2520.0,
                   "y": -160.0
-                },
-                "simulation_index": null
+                }
               },
               "29": {
                 "color": [
@@ -10422,8 +10219,7 @@
                 "pos": {
                   "x": 2520.0,
                   "y": -100.0
-                },
-                "simulation_index": null
+                }
               },
               "30": {
                 "color": [
@@ -10442,8 +10238,7 @@
                 "pos": {
                   "x": 2520.0,
                   "y": -40.0
-                },
-                "simulation_index": null
+                }
               },
               "4": {
                 "color": [
@@ -10462,8 +10257,7 @@
                 "pos": {
                   "x": 2280.0,
                   "y": -540.0
-                },
-                "simulation_index": null
+                }
               },
               "5": {
                 "color": [
@@ -10483,8 +10277,7 @@
                 "pos": {
                   "x": 2280.0,
                   "y": -620.0
-                },
-                "simulation_index": null
+                }
               },
               "6": {
                 "color": [
@@ -10504,8 +10297,7 @@
                 "pos": {
                   "x": 2160.0,
                   "y": -540.0
-                },
-                "simulation_index": null
+                }
               },
               "7": {
                 "color": [
@@ -10524,8 +10316,7 @@
                 "pos": {
                   "x": 2280.0,
                   "y": -40.0
-                },
-                "simulation_index": null
+                }
               },
               "8": {
                 "color": [
@@ -10544,8 +10335,7 @@
                 "pos": {
                   "x": 2280.0,
                   "y": -100.0
-                },
-                "simulation_index": null
+                }
               },
               "9": {
                 "color": [
@@ -10564,37 +10354,9 @@
                 "pos": {
                   "x": 2280.0,
                   "y": -220.0
-                },
-                "simulation_index": null
+                }
               }
             }
-          },
-          "inputs": {
-            "1": "start clock",
-            "10": "data 2",
-            "11": "data 5",
-            "12": "data 4",
-            "13": "data 7",
-            "14": "data 6",
-            "2": "finish clock",
-            "7": "data 0",
-            "8": "data 1",
-            "9": "data 3"
-          },
-          "min_size": {
-            "x": 120.0,
-            "y": 240.0
-          },
-          "outputs": {
-            "23": "data 7",
-            "24": "data 6",
-            "25": "data 5",
-            "26": "data 4",
-            "27": "data 3",
-            "28": "data 2",
-            "29": "data 1",
-            "30": "data 0",
-            "4": "finish clock"
           },
           "path": "random_modules/clock_check_8b.sml",
           "size": {
@@ -10606,8 +10368,7 @@
       "pos": {
         "x": 2660.0,
         "y": 300.0
-      },
-      "simulation_index": null
+      }
     },
     "139": {
       "color": [
@@ -10626,8 +10387,7 @@
       "pos": {
         "x": 2520.0,
         "y": 20.0
-      },
-      "simulation_index": null
+      }
     },
     "14": {
       "color": [
@@ -10647,8 +10407,7 @@
       "pos": {
         "x": 1320.0,
         "y": 220.0
-      },
-      "simulation_index": null
+      }
     },
     "140": {
       "color": [
@@ -10668,8 +10427,7 @@
       "pos": {
         "x": 2300.0,
         "y": -20.0
-      },
-      "simulation_index": null
+      }
     },
     "141": {
       "color": [
@@ -10689,8 +10447,7 @@
       "pos": {
         "x": 2420.0,
         "y": -20.0
-      },
-      "simulation_index": null
+      }
     },
     "143": {
       "color": [
@@ -10710,8 +10467,7 @@
       "pos": {
         "x": 2420.0,
         "y": -100.0
-      },
-      "simulation_index": null
+      }
     },
     "144": {
       "color": [
@@ -11514,8 +11270,7 @@
                 "pos": {
                   "x": 1580.0,
                   "y": 360.0
-                },
-                "simulation_index": null
+                }
               },
               "12": {
                 "color": [
@@ -11535,8 +11290,7 @@
                 "pos": {
                   "x": 1820.0,
                   "y": 360.0
-                },
-                "simulation_index": null
+                }
               },
               "14": {
                 "color": [
@@ -11556,8 +11310,7 @@
                 "pos": {
                   "x": 1960.0,
                   "y": 360.0
-                },
-                "simulation_index": null
+                }
               },
               "15": {
                 "color": [
@@ -11577,8 +11330,7 @@
                 "pos": {
                   "x": 2180.0,
                   "y": 400.0
-                },
-                "simulation_index": null
+                }
               },
               "16": {
                 "color": [
@@ -11598,8 +11350,7 @@
                 "pos": {
                   "x": 2180.0,
                   "y": 340.0
-                },
-                "simulation_index": null
+                }
               },
               "19": {
                 "color": [
@@ -11619,8 +11370,7 @@
                 "pos": {
                   "x": 1840.0,
                   "y": 280.0
-                },
-                "simulation_index": null
+                }
               },
               "23": {
                 "color": [
@@ -11640,8 +11390,7 @@
                 "pos": {
                   "x": 1700.0,
                   "y": 340.0
-                },
-                "simulation_index": null
+                }
               },
               "25": {
                 "color": [
@@ -11661,8 +11410,7 @@
                 "pos": {
                   "x": 1700.0,
                   "y": 420.0
-                },
-                "simulation_index": null
+                }
               },
               "26": {
                 "color": [
@@ -11681,8 +11429,7 @@
                 "pos": {
                   "x": 1580.0,
                   "y": 440.0
-                },
-                "simulation_index": null
+                }
               },
               "27": {
                 "color": [
@@ -11702,8 +11449,7 @@
                 "pos": {
                   "x": 1820.0,
                   "y": 440.0
-                },
-                "simulation_index": null
+                }
               },
               "28": {
                 "color": [
@@ -11723,8 +11469,7 @@
                 "pos": {
                   "x": 1700.0,
                   "y": 500.0
-                },
-                "simulation_index": null
+                }
               },
               "29": {
                 "color": [
@@ -11743,8 +11488,7 @@
                 "pos": {
                   "x": 1580.0,
                   "y": 520.0
-                },
-                "simulation_index": null
+                }
               },
               "30": {
                 "color": [
@@ -11764,8 +11508,7 @@
                 "pos": {
                   "x": 1820.0,
                   "y": 520.0
-                },
-                "simulation_index": null
+                }
               },
               "31": {
                 "color": [
@@ -11785,8 +11528,7 @@
                 "pos": {
                   "x": 1700.0,
                   "y": 580.0
-                },
-                "simulation_index": null
+                }
               },
               "32": {
                 "color": [
@@ -11805,8 +11547,7 @@
                 "pos": {
                   "x": 1580.0,
                   "y": 600.0
-                },
-                "simulation_index": null
+                }
               },
               "33": {
                 "color": [
@@ -11826,8 +11567,7 @@
                 "pos": {
                   "x": 1820.0,
                   "y": 600.0
-                },
-                "simulation_index": null
+                }
               },
               "34": {
                 "color": [
@@ -11846,8 +11586,7 @@
                 "pos": {
                   "x": 1580.0,
                   "y": 760.0
-                },
-                "simulation_index": null
+                }
               },
               "35": {
                 "color": [
@@ -11867,8 +11606,7 @@
                 "pos": {
                   "x": 1700.0,
                   "y": 660.0
-                },
-                "simulation_index": null
+                }
               },
               "36": {
                 "color": [
@@ -11888,8 +11626,7 @@
                 "pos": {
                   "x": 1820.0,
                   "y": 920.0
-                },
-                "simulation_index": null
+                }
               },
               "37": {
                 "color": [
@@ -11909,8 +11646,7 @@
                 "pos": {
                   "x": 1820.0,
                   "y": 760.0
-                },
-                "simulation_index": null
+                }
               },
               "38": {
                 "color": [
@@ -11929,8 +11665,7 @@
                 "pos": {
                   "x": 1580.0,
                   "y": 680.0
-                },
-                "simulation_index": null
+                }
               },
               "39": {
                 "color": [
@@ -11950,8 +11685,7 @@
                 "pos": {
                   "x": 1700.0,
                   "y": 900.0
-                },
-                "simulation_index": null
+                }
               },
               "40": {
                 "color": [
@@ -11970,8 +11704,7 @@
                 "pos": {
                   "x": 1580.0,
                   "y": 920.0
-                },
-                "simulation_index": null
+                }
               },
               "41": {
                 "color": [
@@ -11991,8 +11724,7 @@
                 "pos": {
                   "x": 1700.0,
                   "y": 740.0
-                },
-                "simulation_index": null
+                }
               },
               "42": {
                 "color": [
@@ -12012,8 +11744,7 @@
                 "pos": {
                   "x": 1820.0,
                   "y": 680.0
-                },
-                "simulation_index": null
+                }
               },
               "43": {
                 "color": [
@@ -12033,8 +11764,7 @@
                 "pos": {
                   "x": 1700.0,
                   "y": 820.0
-                },
-                "simulation_index": null
+                }
               },
               "44": {
                 "color": [
@@ -12054,8 +11784,7 @@
                 "pos": {
                   "x": 1820.0,
                   "y": 840.0
-                },
-                "simulation_index": null
+                }
               },
               "45": {
                 "color": [
@@ -12074,8 +11803,7 @@
                 "pos": {
                   "x": 1580.0,
                   "y": 840.0
-                },
-                "simulation_index": null
+                }
               },
               "8": {
                 "color": [
@@ -12094,8 +11822,7 @@
                 "pos": {
                   "x": 1580.0,
                   "y": 280.0
-                },
-                "simulation_index": null
+                }
               },
               "9": {
                 "color": [
@@ -12114,28 +11841,9 @@
                 "pos": {
                   "x": 2300.0,
                   "y": 340.0
-                },
-                "simulation_index": null
+                }
               }
             }
-          },
-          "inputs": {
-            "0": "item",
-            "26": "item",
-            "29": "item",
-            "32": "item",
-            "34": "item",
-            "38": "item",
-            "40": "item",
-            "45": "item",
-            "8": "start"
-          },
-          "min_size": {
-            "x": 120.0,
-            "y": 220.0
-          },
-          "outputs": {
-            "9": "clock"
           },
           "path": "random_modules/checklist.sml",
           "size": {
@@ -12147,8 +11855,7 @@
       "pos": {
         "x": 2660.0,
         "y": 540.0
-      },
-      "simulation_index": null
+      }
     },
     "148": {
       "color": [
@@ -12170,8 +11877,7 @@
       "pos": {
         "x": 2320.0,
         "y": -160.0
-      },
-      "simulation_index": null
+      }
     },
     "149": {
       "color": [
@@ -12193,8 +11899,7 @@
       "pos": {
         "x": 3640.0,
         "y": 220.0
-      },
-      "simulation_index": null
+      }
     },
     "15": {
       "color": [
@@ -12214,8 +11919,7 @@
       "pos": {
         "x": 1320.0,
         "y": 240.0
-      },
-      "simulation_index": null
+      }
     },
     "150": {
       "color": [
@@ -12237,8 +11941,7 @@
       "pos": {
         "x": 3640.0,
         "y": -500.0
-      },
-      "simulation_index": null
+      }
     },
     "152": {
       "color": [
@@ -12257,8 +11960,7 @@
       "pos": {
         "x": 3740.0,
         "y": -300.0
-      },
-      "simulation_index": null
+      }
     },
     "153": {
       "color": [
@@ -12277,8 +11979,7 @@
       "pos": {
         "x": 3740.0,
         "y": -240.0
-      },
-      "simulation_index": null
+      }
     },
     "154": {
       "color": [
@@ -12297,8 +11998,7 @@
       "pos": {
         "x": 3740.0,
         "y": -180.0
-      },
-      "simulation_index": null
+      }
     },
     "155": {
       "color": [
@@ -12317,8 +12017,7 @@
       "pos": {
         "x": 3740.0,
         "y": -120.0
-      },
-      "simulation_index": null
+      }
     },
     "156": {
       "color": [
@@ -12337,8 +12036,7 @@
       "pos": {
         "x": 3740.0,
         "y": 0.0
-      },
-      "simulation_index": null
+      }
     },
     "157": {
       "color": [
@@ -12357,8 +12055,7 @@
       "pos": {
         "x": 3740.0,
         "y": 60.0
-      },
-      "simulation_index": null
+      }
     },
     "158": {
       "color": [
@@ -12377,8 +12074,7 @@
       "pos": {
         "x": 3740.0,
         "y": -60.0
-      },
-      "simulation_index": null
+      }
     },
     "159": {
       "color": [
@@ -12397,8 +12093,7 @@
       "pos": {
         "x": 3740.0,
         "y": 120.0
-      },
-      "simulation_index": null
+      }
     },
     "16": {
       "color": [
@@ -12418,8 +12113,7 @@
       "pos": {
         "x": 1320.0,
         "y": 260.0
-      },
-      "simulation_index": null
+      }
     },
     "160": {
       "color": [
@@ -12438,8 +12132,7 @@
       "pos": {
         "x": 3660.0,
         "y": -300.0
-      },
-      "simulation_index": null
+      }
     },
     "161": {
       "color": [
@@ -12458,8 +12151,7 @@
       "pos": {
         "x": 3660.0,
         "y": -240.0
-      },
-      "simulation_index": null
+      }
     },
     "162": {
       "color": [
@@ -12478,8 +12170,7 @@
       "pos": {
         "x": 3660.0,
         "y": -180.0
-      },
-      "simulation_index": null
+      }
     },
     "163": {
       "color": [
@@ -12498,8 +12189,7 @@
       "pos": {
         "x": 3660.0,
         "y": -120.0
-      },
-      "simulation_index": null
+      }
     },
     "164": {
       "color": [
@@ -12518,8 +12208,7 @@
       "pos": {
         "x": 3660.0,
         "y": 0.0
-      },
-      "simulation_index": null
+      }
     },
     "165": {
       "color": [
@@ -12538,8 +12227,7 @@
       "pos": {
         "x": 3660.0,
         "y": 60.0
-      },
-      "simulation_index": null
+      }
     },
     "166": {
       "color": [
@@ -12558,8 +12246,7 @@
       "pos": {
         "x": 3660.0,
         "y": -60.0
-      },
-      "simulation_index": null
+      }
     },
     "167": {
       "color": [
@@ -12578,8 +12265,7 @@
       "pos": {
         "x": 3660.0,
         "y": 120.0
-      },
-      "simulation_index": null
+      }
     },
     "168": {
       "color": [
@@ -12599,8 +12285,7 @@
       "pos": {
         "x": 2920.0,
         "y": 0.0
-      },
-      "simulation_index": null
+      }
     },
     "169": {
       "color": [
@@ -12620,8 +12305,7 @@
       "pos": {
         "x": 2800.0,
         "y": -0.0
-      },
-      "simulation_index": null
+      }
     },
     "17": {
       "color": [
@@ -12641,8 +12325,7 @@
       "pos": {
         "x": 1320.0,
         "y": 280.0
-      },
-      "simulation_index": null
+      }
     },
     "170": {
       "color": [
@@ -12662,8 +12345,7 @@
       "pos": {
         "x": 2880.0,
         "y": 80.0
-      },
-      "simulation_index": null
+      }
     },
     "172": {
       "color": [
@@ -12683,8 +12365,7 @@
       "pos": {
         "x": 2880.0,
         "y": 140.0
-      },
-      "simulation_index": null
+      }
     },
     "174": {
       "color": [
@@ -12704,8 +12385,7 @@
       "pos": {
         "x": 2880.0,
         "y": 200.0
-      },
-      "simulation_index": null
+      }
     },
     "175": {
       "color": [
@@ -12725,8 +12405,7 @@
       "pos": {
         "x": 2880.0,
         "y": 340.0
-      },
-      "simulation_index": null
+      }
     },
     "176": {
       "color": [
@@ -12745,8 +12424,7 @@
       "pos": {
         "x": 1620.0,
         "y": -760.0
-      },
-      "simulation_index": null
+      }
     },
     "177": {
       "color": [
@@ -12765,8 +12443,7 @@
       "pos": {
         "x": 1620.0,
         "y": -700.0
-      },
-      "simulation_index": null
+      }
     },
     "178": {
       "color": [
@@ -12785,8 +12462,7 @@
       "pos": {
         "x": 1940.0,
         "y": -760.0
-      },
-      "simulation_index": null
+      }
     },
     "18": {
       "color": [
@@ -12806,8 +12482,7 @@
       "pos": {
         "x": 1320.0,
         "y": 180.0
-      },
-      "simulation_index": null
+      }
     },
     "180": {
       "color": [
@@ -12827,8 +12502,7 @@
       "pos": {
         "x": 1660.0,
         "y": -560.0
-      },
-      "simulation_index": null
+      }
     },
     "182": {
       "color": [
@@ -12848,8 +12522,7 @@
       "pos": {
         "x": 1800.0,
         "y": -580.0
-      },
-      "simulation_index": null
+      }
     },
     "183": {
       "color": [
@@ -12869,8 +12542,7 @@
       "pos": {
         "x": 1520.0,
         "y": -620.0
-      },
-      "simulation_index": null
+      }
     },
     "184": {
       "color": [
@@ -12892,8 +12564,7 @@
       "pos": {
         "x": 3040.0,
         "y": -80.0
-      },
-      "simulation_index": null
+      }
     },
     "185": {
       "color": [
@@ -12913,8 +12584,7 @@
       "pos": {
         "x": 3040.0,
         "y": -20.0
-      },
-      "simulation_index": null
+      }
     },
     "188": {
       "color": [
@@ -13549,8 +13219,7 @@
                 "pos": {
                   "x": 2700.0,
                   "y": 0.0
-                },
-                "simulation_index": null
+                }
               },
               "1": {
                 "color": [
@@ -13569,8 +13238,7 @@
                 "pos": {
                   "x": 2700.0,
                   "y": 60.0
-                },
-                "simulation_index": null
+                }
               },
               "10": {
                 "color": [
@@ -13590,8 +13258,7 @@
                 "pos": {
                   "x": 2820.0,
                   "y": -0.0
-                },
-                "simulation_index": null
+                }
               },
               "11": {
                 "color": [
@@ -13611,8 +13278,7 @@
                 "pos": {
                   "x": 2820.0,
                   "y": 60.0
-                },
-                "simulation_index": null
+                }
               },
               "12": {
                 "color": [
@@ -13632,8 +13298,7 @@
                 "pos": {
                   "x": 2820.0,
                   "y": 120.0
-                },
-                "simulation_index": null
+                }
               },
               "13": {
                 "color": [
@@ -13653,8 +13318,7 @@
                 "pos": {
                   "x": 2820.0,
                   "y": 180.0
-                },
-                "simulation_index": null
+                }
               },
               "14": {
                 "color": [
@@ -13674,8 +13338,7 @@
                 "pos": {
                   "x": 2820.0,
                   "y": 360.0
-                },
-                "simulation_index": null
+                }
               },
               "15": {
                 "color": [
@@ -13695,8 +13358,7 @@
                 "pos": {
                   "x": 2820.0,
                   "y": 420.0
-                },
-                "simulation_index": null
+                }
               },
               "16": {
                 "color": [
@@ -13716,8 +13378,7 @@
                 "pos": {
                   "x": 2820.0,
                   "y": 240.0
-                },
-                "simulation_index": null
+                }
               },
               "17": {
                 "color": [
@@ -13737,8 +13398,7 @@
                 "pos": {
                   "x": 2820.0,
                   "y": 300.0
-                },
-                "simulation_index": null
+                }
               },
               "18": {
                 "color": [
@@ -13757,8 +13417,7 @@
                 "pos": {
                   "x": 2940.0,
                   "y": -80.0
-                },
-                "simulation_index": null
+                }
               },
               "19": {
                 "color": [
@@ -13777,8 +13436,7 @@
                 "pos": {
                   "x": 2940.0,
                   "y": 0.0
-                },
-                "simulation_index": null
+                }
               },
               "2": {
                 "color": [
@@ -13797,8 +13455,7 @@
                 "pos": {
                   "x": 2700.0,
                   "y": 120.0
-                },
-                "simulation_index": null
+                }
               },
               "20": {
                 "color": [
@@ -13817,8 +13474,7 @@
                 "pos": {
                   "x": 2940.0,
                   "y": 60.0
-                },
-                "simulation_index": null
+                }
               },
               "21": {
                 "color": [
@@ -13837,8 +13493,7 @@
                 "pos": {
                   "x": 2940.0,
                   "y": 120.0
-                },
-                "simulation_index": null
+                }
               },
               "22": {
                 "color": [
@@ -13857,8 +13512,7 @@
                 "pos": {
                   "x": 2940.0,
                   "y": 180.0
-                },
-                "simulation_index": null
+                }
               },
               "23": {
                 "color": [
@@ -13877,8 +13531,7 @@
                 "pos": {
                   "x": 2940.0,
                   "y": 360.0
-                },
-                "simulation_index": null
+                }
               },
               "24": {
                 "color": [
@@ -13897,8 +13550,7 @@
                 "pos": {
                   "x": 2940.0,
                   "y": 420.0
-                },
-                "simulation_index": null
+                }
               },
               "25": {
                 "color": [
@@ -13917,8 +13569,7 @@
                 "pos": {
                   "x": 2940.0,
                   "y": 300.0
-                },
-                "simulation_index": null
+                }
               },
               "26": {
                 "color": [
@@ -13937,8 +13588,7 @@
                 "pos": {
                   "x": 2940.0,
                   "y": 240.0
-                },
-                "simulation_index": null
+                }
               },
               "3": {
                 "color": [
@@ -13957,8 +13607,7 @@
                 "pos": {
                   "x": 2700.0,
                   "y": 180.0
-                },
-                "simulation_index": null
+                }
               },
               "4": {
                 "color": [
@@ -13977,8 +13626,7 @@
                 "pos": {
                   "x": 2700.0,
                   "y": 240.0
-                },
-                "simulation_index": null
+                }
               },
               "5": {
                 "color": [
@@ -13997,8 +13645,7 @@
                 "pos": {
                   "x": 2700.0,
                   "y": 300.0
-                },
-                "simulation_index": null
+                }
               },
               "51": {
                 "color": [
@@ -14017,8 +13664,7 @@
                 "pos": {
                   "x": 2700.0,
                   "y": 840.0
-                },
-                "simulation_index": null
+                }
               },
               "52": {
                 "color": [
@@ -14038,8 +13684,7 @@
                 "pos": {
                   "x": 2820.0,
                   "y": 720.0
-                },
-                "simulation_index": null
+                }
               },
               "53": {
                 "color": [
@@ -14058,8 +13703,7 @@
                 "pos": {
                   "x": 2700.0,
                   "y": 720.0
-                },
-                "simulation_index": null
+                }
               },
               "54": {
                 "color": [
@@ -14079,8 +13723,7 @@
                 "pos": {
                   "x": 2820.0,
                   "y": 540.0
-                },
-                "simulation_index": null
+                }
               },
               "55": {
                 "color": [
@@ -14100,8 +13743,7 @@
                 "pos": {
                   "x": 2820.0,
                   "y": 900.0
-                },
-                "simulation_index": null
+                }
               },
               "56": {
                 "color": [
@@ -14120,8 +13762,7 @@
                 "pos": {
                   "x": 2700.0,
                   "y": 660.0
-                },
-                "simulation_index": null
+                }
               },
               "57": {
                 "color": [
@@ -14141,8 +13782,7 @@
                 "pos": {
                   "x": 2820.0,
                   "y": 600.0
-                },
-                "simulation_index": null
+                }
               },
               "58": {
                 "color": [
@@ -14162,8 +13802,7 @@
                 "pos": {
                   "x": 2820.0,
                   "y": 660.0
-                },
-                "simulation_index": null
+                }
               },
               "59": {
                 "color": [
@@ -14183,8 +13822,7 @@
                 "pos": {
                   "x": 2820.0,
                   "y": 480.0
-                },
-                "simulation_index": null
+                }
               },
               "6": {
                 "color": [
@@ -14203,8 +13841,7 @@
                 "pos": {
                   "x": 2700.0,
                   "y": 360.0
-                },
-                "simulation_index": null
+                }
               },
               "60": {
                 "color": [
@@ -14223,8 +13860,7 @@
                 "pos": {
                   "x": 2700.0,
                   "y": 540.0
-                },
-                "simulation_index": null
+                }
               },
               "61": {
                 "color": [
@@ -14243,8 +13879,7 @@
                 "pos": {
                   "x": 2700.0,
                   "y": 900.0
-                },
-                "simulation_index": null
+                }
               },
               "62": {
                 "color": [
@@ -14264,8 +13899,7 @@
                 "pos": {
                   "x": 2820.0,
                   "y": 780.0
-                },
-                "simulation_index": null
+                }
               },
               "63": {
                 "color": [
@@ -14285,8 +13919,7 @@
                 "pos": {
                   "x": 2820.0,
                   "y": 840.0
-                },
-                "simulation_index": null
+                }
               },
               "64": {
                 "color": [
@@ -14305,8 +13938,7 @@
                 "pos": {
                   "x": 2700.0,
                   "y": 780.0
-                },
-                "simulation_index": null
+                }
               },
               "65": {
                 "color": [
@@ -14325,8 +13957,7 @@
                 "pos": {
                   "x": 2940.0,
                   "y": 600.0
-                },
-                "simulation_index": null
+                }
               },
               "66": {
                 "color": [
@@ -14345,8 +13976,7 @@
                 "pos": {
                   "x": 2700.0,
                   "y": 480.0
-                },
-                "simulation_index": null
+                }
               },
               "67": {
                 "color": [
@@ -14365,8 +13995,7 @@
                 "pos": {
                   "x": 2940.0,
                   "y": 900.0
-                },
-                "simulation_index": null
+                }
               },
               "68": {
                 "color": [
@@ -14385,8 +14014,7 @@
                 "pos": {
                   "x": 2940.0,
                   "y": 720.0
-                },
-                "simulation_index": null
+                }
               },
               "69": {
                 "color": [
@@ -14405,8 +14033,7 @@
                 "pos": {
                   "x": 2940.0,
                   "y": 660.0
-                },
-                "simulation_index": null
+                }
               },
               "7": {
                 "color": [
@@ -14425,8 +14052,7 @@
                 "pos": {
                   "x": 2700.0,
                   "y": 420.0
-                },
-                "simulation_index": null
+                }
               },
               "70": {
                 "color": [
@@ -14445,8 +14071,7 @@
                 "pos": {
                   "x": 2940.0,
                   "y": 540.0
-                },
-                "simulation_index": null
+                }
               },
               "71": {
                 "color": [
@@ -14465,8 +14090,7 @@
                 "pos": {
                   "x": 2940.0,
                   "y": 840.0
-                },
-                "simulation_index": null
+                }
               },
               "72": {
                 "color": [
@@ -14485,8 +14109,7 @@
                 "pos": {
                   "x": 2700.0,
                   "y": 600.0
-                },
-                "simulation_index": null
+                }
               },
               "73": {
                 "color": [
@@ -14505,8 +14128,7 @@
                 "pos": {
                   "x": 2940.0,
                   "y": 780.0
-                },
-                "simulation_index": null
+                }
               },
               "74": {
                 "color": [
@@ -14525,8 +14147,7 @@
                 "pos": {
                   "x": 2940.0,
                   "y": 480.0
-                },
-                "simulation_index": null
+                }
               },
               "8": {
                 "color": [
@@ -14545,8 +14166,7 @@
                 "pos": {
                   "x": 2700.0,
                   "y": -80.0
-                },
-                "simulation_index": null
+                }
               },
               "9": {
                 "color": [
@@ -14566,52 +14186,9 @@
                 "pos": {
                   "x": 2820.0,
                   "y": -80.0
-                },
-                "simulation_index": null
+                }
               }
             }
-          },
-          "inputs": {
-            "0": "input 15",
-            "1": "input 14",
-            "2": "input 13",
-            "3": "input 12",
-            "4": "input 11",
-            "5": "input 10",
-            "51": "input 1",
-            "53": "input 3",
-            "56": "input 4",
-            "6": "input 9",
-            "60": "input 6",
-            "61": "input 0",
-            "64": "input 2",
-            "66": "input 7",
-            "7": "input 8",
-            "72": "input 5",
-            "8": "clock"
-          },
-          "min_size": {
-            "x": 120.0,
-            "y": 380.0
-          },
-          "outputs": {
-            "18": "clock",
-            "19": "output 15",
-            "20": "output 14",
-            "21": "output 13",
-            "22": "output 12",
-            "23": "output 9",
-            "24": "output 8",
-            "25": "output 10",
-            "26": "output 11",
-            "65": "output 5",
-            "67": "output 0",
-            "68": "output 3",
-            "69": "output 4",
-            "70": "output 6",
-            "71": "output 1",
-            "73": "output 2",
-            "74": "output 7"
           },
           "path": "random_modules/16_bit_tick_gate.sml",
           "size": {
@@ -14623,8 +14200,7 @@
       "pos": {
         "x": 3160.0,
         "y": -20.0
-      },
-      "simulation_index": null
+      }
     },
     "189": {
       "color": [
@@ -17084,8 +16660,7 @@
                 "pos": {
                   "x": 960.0,
                   "y": 660.0
-                },
-                "simulation_index": null
+                }
               },
               "1": {
                 "color": [
@@ -17104,8 +16679,7 @@
                 "pos": {
                   "x": 1080.0,
                   "y": 740.0
-                },
-                "simulation_index": null
+                }
               },
               "10": {
                 "color": [
@@ -17125,8 +16699,7 @@
                 "pos": {
                   "x": 960.0,
                   "y": 580.0
-                },
-                "simulation_index": null
+                }
               },
               "12": {
                 "color": [
@@ -17145,8 +16718,7 @@
                 "pos": {
                   "x": 600.0,
                   "y": 480.0
-                },
-                "simulation_index": null
+                }
               },
               "13": {
                 "color": [
@@ -17166,8 +16738,7 @@
                 "pos": {
                   "x": 960.0,
                   "y": 500.0
-                },
-                "simulation_index": null
+                }
               },
               "14": {
                 "color": [
@@ -17186,8 +16757,7 @@
                 "pos": {
                   "x": 600.0,
                   "y": 160.0
-                },
-                "simulation_index": null
+                }
               },
               "16": {
                 "color": [
@@ -17207,8 +16777,7 @@
                 "pos": {
                   "x": 840.0,
                   "y": 180.0
-                },
-                "simulation_index": null
+                }
               },
               "17": {
                 "color": [
@@ -17228,8 +16797,7 @@
                 "pos": {
                   "x": 960.0,
                   "y": 260.0
-                },
-                "simulation_index": null
+                }
               },
               "18": {
                 "color": [
@@ -17248,8 +16816,7 @@
                 "pos": {
                   "x": 1080.0,
                   "y": 500.0
-                },
-                "simulation_index": null
+                }
               },
               "19": {
                 "color": [
@@ -17269,8 +16836,7 @@
                 "pos": {
                   "x": 720.0,
                   "y": 280.0
-                },
-                "simulation_index": null
+                }
               },
               "2": {
                 "color": [
@@ -17289,8 +16855,7 @@
                 "pos": {
                   "x": 1080.0,
                   "y": 180.0
-                },
-                "simulation_index": null
+                }
               },
               "21": {
                 "color": [
@@ -17309,8 +16874,7 @@
                 "pos": {
                   "x": 600.0,
                   "y": 720.0
-                },
-                "simulation_index": null
+                }
               },
               "22": {
                 "color": [
@@ -17329,8 +16893,7 @@
                 "pos": {
                   "x": 600.0,
                   "y": 560.0
-                },
-                "simulation_index": null
+                }
               },
               "23": {
                 "color": [
@@ -17349,8 +16912,7 @@
                 "pos": {
                   "x": 1080.0,
                   "y": 80.0
-                },
-                "simulation_index": null
+                }
               },
               "24": {
                 "color": [
@@ -17369,8 +16931,7 @@
                 "pos": {
                   "x": 600.0,
                   "y": 320.0
-                },
-                "simulation_index": null
+                }
               },
               "25": {
                 "color": [
@@ -17390,8 +16951,7 @@
                 "pos": {
                   "x": 720.0,
                   "y": 200.0
-                },
-                "simulation_index": null
+                }
               },
               "26": {
                 "color": [
@@ -17411,8 +16971,7 @@
                 "pos": {
                   "x": 960.0,
                   "y": 740.0
-                },
-                "simulation_index": null
+                }
               },
               "28": {
                 "color": [
@@ -17432,8 +16991,7 @@
                 "pos": {
                   "x": 840.0,
                   "y": 340.0
-                },
-                "simulation_index": null
+                }
               },
               "29": {
                 "color": [
@@ -17453,8 +17011,7 @@
                 "pos": {
                   "x": 720.0,
                   "y": 600.0
-                },
-                "simulation_index": null
+                }
               },
               "3": {
                 "color": [
@@ -17474,8 +17031,7 @@
                 "pos": {
                   "x": 960.0,
                   "y": 420.0
-                },
-                "simulation_index": null
+                }
               },
               "30": {
                 "color": [
@@ -17495,8 +17051,7 @@
                 "pos": {
                   "x": 960.0,
                   "y": 80.0
-                },
-                "simulation_index": null
+                }
               },
               "31": {
                 "color": [
@@ -17515,8 +17070,7 @@
                 "pos": {
                   "x": 600.0,
                   "y": 400.0
-                },
-                "simulation_index": null
+                }
               },
               "32": {
                 "color": [
@@ -17536,8 +17090,7 @@
                 "pos": {
                   "x": 840.0,
                   "y": 660.0
-                },
-                "simulation_index": null
+                }
               },
               "33": {
                 "color": [
@@ -17557,8 +17110,7 @@
                 "pos": {
                   "x": 840.0,
                   "y": 580.0
-                },
-                "simulation_index": null
+                }
               },
               "34": {
                 "color": [
@@ -17577,8 +17129,7 @@
                 "pos": {
                   "x": 600.0,
                   "y": 240.0
-                },
-                "simulation_index": null
+                }
               },
               "35": {
                 "color": [
@@ -17598,8 +17149,7 @@
                 "pos": {
                   "x": 720.0,
                   "y": 520.0
-                },
-                "simulation_index": null
+                }
               },
               "36": {
                 "color": [
@@ -17619,8 +17169,7 @@
                 "pos": {
                   "x": 840.0,
                   "y": 420.0
-                },
-                "simulation_index": null
+                }
               },
               "37": {
                 "color": [
@@ -17640,8 +17189,7 @@
                 "pos": {
                   "x": 960.0,
                   "y": 180.0
-                },
-                "simulation_index": null
+                }
               },
               "38": {
                 "color": [
@@ -17661,8 +17209,7 @@
                 "pos": {
                   "x": 720.0,
                   "y": 360.0
-                },
-                "simulation_index": null
+                }
               },
               "39": {
                 "color": [
@@ -17682,8 +17229,7 @@
                 "pos": {
                   "x": 720.0,
                   "y": 680.0
-                },
-                "simulation_index": null
+                }
               },
               "4": {
                 "color": [
@@ -17702,8 +17248,7 @@
                 "pos": {
                   "x": 1080.0,
                   "y": 340.0
-                },
-                "simulation_index": null
+                }
               },
               "40": {
                 "color": [
@@ -17723,8 +17268,7 @@
                 "pos": {
                   "x": 840.0,
                   "y": 260.0
-                },
-                "simulation_index": null
+                }
               },
               "41": {
                 "color": [
@@ -17743,8 +17287,7 @@
                 "pos": {
                   "x": 1080.0,
                   "y": 660.0
-                },
-                "simulation_index": null
+                }
               },
               "42": {
                 "color": [
@@ -17764,8 +17307,7 @@
                 "pos": {
                   "x": 840.0,
                   "y": 500.0
-                },
-                "simulation_index": null
+                }
               },
               "43": {
                 "color": [
@@ -17784,8 +17326,7 @@
                 "pos": {
                   "x": 1080.0,
                   "y": 580.0
-                },
-                "simulation_index": null
+                }
               },
               "45": {
                 "color": [
@@ -17804,8 +17345,7 @@
                 "pos": {
                   "x": 600.0,
                   "y": 640.0
-                },
-                "simulation_index": null
+                }
               },
               "46": {
                 "color": [
@@ -17824,8 +17364,7 @@
                 "pos": {
                   "x": 1080.0,
                   "y": 420.0
-                },
-                "simulation_index": null
+                }
               },
               "47": {
                 "color": [
@@ -17845,8 +17384,7 @@
                 "pos": {
                   "x": 960.0,
                   "y": 340.0
-                },
-                "simulation_index": null
+                }
               },
               "49": {
                 "color": [
@@ -17866,8 +17404,7 @@
                 "pos": {
                   "x": 960.0,
                   "y": 1220.0
-                },
-                "simulation_index": null
+                }
               },
               "5": {
                 "color": [
@@ -17887,8 +17424,7 @@
                 "pos": {
                   "x": 840.0,
                   "y": 80.0
-                },
-                "simulation_index": null
+                }
               },
               "50": {
                 "color": [
@@ -17907,8 +17443,7 @@
                 "pos": {
                   "x": 600.0,
                   "y": 1200.0
-                },
-                "simulation_index": null
+                }
               },
               "51": {
                 "color": [
@@ -17928,8 +17463,7 @@
                 "pos": {
                   "x": 720.0,
                   "y": 840.0
-                },
-                "simulation_index": null
+                }
               },
               "52": {
                 "color": [
@@ -17948,8 +17482,7 @@
                 "pos": {
                   "x": 1080.0,
                   "y": 1300.0
-                },
-                "simulation_index": null
+                }
               },
               "53": {
                 "color": [
@@ -17968,8 +17501,7 @@
                 "pos": {
                   "x": 600.0,
                   "y": 1040.0
-                },
-                "simulation_index": null
+                }
               },
               "54": {
                 "color": [
@@ -17989,8 +17521,7 @@
                 "pos": {
                   "x": 840.0,
                   "y": 1360.0
-                },
-                "simulation_index": null
+                }
               },
               "55": {
                 "color": [
@@ -18009,8 +17540,7 @@
                 "pos": {
                   "x": 600.0,
                   "y": 1360.0
-                },
-                "simulation_index": null
+                }
               },
               "56": {
                 "color": [
@@ -18029,8 +17559,7 @@
                 "pos": {
                   "x": 600.0,
                   "y": 960.0
-                },
-                "simulation_index": null
+                }
               },
               "57": {
                 "color": [
@@ -18049,8 +17578,7 @@
                 "pos": {
                   "x": 600.0,
                   "y": 880.0
-                },
-                "simulation_index": null
+                }
               },
               "58": {
                 "color": [
@@ -18070,8 +17598,7 @@
                 "pos": {
                   "x": 960.0,
                   "y": 1360.0
-                },
-                "simulation_index": null
+                }
               },
               "59": {
                 "color": [
@@ -18091,8 +17618,7 @@
                 "pos": {
                   "x": 960.0,
                   "y": 1300.0
-                },
-                "simulation_index": null
+                }
               },
               "60": {
                 "color": [
@@ -18112,8 +17638,7 @@
                 "pos": {
                   "x": 960.0,
                   "y": 820.0
-                },
-                "simulation_index": null
+                }
               },
               "61": {
                 "color": [
@@ -18133,8 +17658,7 @@
                 "pos": {
                   "x": 720.0,
                   "y": 1320.0
-                },
-                "simulation_index": null
+                }
               },
               "62": {
                 "color": [
@@ -18153,8 +17677,7 @@
                 "pos": {
                   "x": 1080.0,
                   "y": 1220.0
-                },
-                "simulation_index": null
+                }
               },
               "63": {
                 "color": [
@@ -18173,8 +17696,7 @@
                 "pos": {
                   "x": 600.0,
                   "y": 1280.0
-                },
-                "simulation_index": null
+                }
               },
               "64": {
                 "color": [
@@ -18194,8 +17716,7 @@
                 "pos": {
                   "x": 960.0,
                   "y": 980.0
-                },
-                "simulation_index": null
+                }
               },
               "65": {
                 "color": [
@@ -18214,8 +17735,7 @@
                 "pos": {
                   "x": 1080.0,
                   "y": 1060.0
-                },
-                "simulation_index": null
+                }
               },
               "66": {
                 "color": [
@@ -18235,8 +17755,7 @@
                 "pos": {
                   "x": 840.0,
                   "y": 1140.0
-                },
-                "simulation_index": null
+                }
               },
               "67": {
                 "color": [
@@ -18256,8 +17775,7 @@
                 "pos": {
                   "x": 720.0,
                   "y": 1080.0
-                },
-                "simulation_index": null
+                }
               },
               "68": {
                 "color": [
@@ -18277,8 +17795,7 @@
                 "pos": {
                   "x": 720.0,
                   "y": 1240.0
-                },
-                "simulation_index": null
+                }
               },
               "69": {
                 "color": [
@@ -18297,8 +17814,7 @@
                 "pos": {
                   "x": 600.0,
                   "y": 1120.0
-                },
-                "simulation_index": null
+                }
               },
               "7": {
                 "color": [
@@ -18317,8 +17833,7 @@
                 "pos": {
                   "x": 1080.0,
                   "y": 260.0
-                },
-                "simulation_index": null
+                }
               },
               "70": {
                 "color": [
@@ -18338,8 +17853,7 @@
                 "pos": {
                   "x": 720.0,
                   "y": 920.0
-                },
-                "simulation_index": null
+                }
               },
               "71": {
                 "color": [
@@ -18359,8 +17873,7 @@
                 "pos": {
                   "x": 840.0,
                   "y": 1060.0
-                },
-                "simulation_index": null
+                }
               },
               "72": {
                 "color": [
@@ -18379,8 +17892,7 @@
                 "pos": {
                   "x": 1080.0,
                   "y": 820.0
-                },
-                "simulation_index": null
+                }
               },
               "73": {
                 "color": [
@@ -18400,8 +17912,7 @@
                 "pos": {
                   "x": 960.0,
                   "y": 1060.0
-                },
-                "simulation_index": null
+                }
               },
               "74": {
                 "color": [
@@ -18421,8 +17932,7 @@
                 "pos": {
                   "x": 840.0,
                   "y": 1300.0
-                },
-                "simulation_index": null
+                }
               },
               "75": {
                 "color": [
@@ -18442,8 +17952,7 @@
                 "pos": {
                   "x": 840.0,
                   "y": 980.0
-                },
-                "simulation_index": null
+                }
               },
               "76": {
                 "color": [
@@ -18462,8 +17971,7 @@
                 "pos": {
                   "x": 1080.0,
                   "y": 1360.0
-                },
-                "simulation_index": null
+                }
               },
               "77": {
                 "color": [
@@ -18482,8 +17990,7 @@
                 "pos": {
                   "x": 600.0,
                   "y": 800.0
-                },
-                "simulation_index": null
+                }
               },
               "78": {
                 "color": [
@@ -18503,8 +18010,7 @@
                 "pos": {
                   "x": 840.0,
                   "y": 1220.0
-                },
-                "simulation_index": null
+                }
               },
               "79": {
                 "color": [
@@ -18523,8 +18029,7 @@
                 "pos": {
                   "x": 1080.0,
                   "y": 980.0
-                },
-                "simulation_index": null
+                }
               },
               "8": {
                 "color": [
@@ -18544,8 +18049,7 @@
                 "pos": {
                   "x": 720.0,
                   "y": 440.0
-                },
-                "simulation_index": null
+                }
               },
               "80": {
                 "color": [
@@ -18565,8 +18069,7 @@
                 "pos": {
                   "x": 960.0,
                   "y": 900.0
-                },
-                "simulation_index": null
+                }
               },
               "81": {
                 "color": [
@@ -18585,8 +18088,7 @@
                 "pos": {
                   "x": 1080.0,
                   "y": 1140.0
-                },
-                "simulation_index": null
+                }
               },
               "82": {
                 "color": [
@@ -18606,8 +18108,7 @@
                 "pos": {
                   "x": 840.0,
                   "y": 820.0
-                },
-                "simulation_index": null
+                }
               },
               "83": {
                 "color": [
@@ -18627,8 +18128,7 @@
                 "pos": {
                   "x": 840.0,
                   "y": 900.0
-                },
-                "simulation_index": null
+                }
               },
               "84": {
                 "color": [
@@ -18648,8 +18148,7 @@
                 "pos": {
                   "x": 960.0,
                   "y": 1140.0
-                },
-                "simulation_index": null
+                }
               },
               "85": {
                 "color": [
@@ -18669,8 +18168,7 @@
                 "pos": {
                   "x": 720.0,
                   "y": 1160.0
-                },
-                "simulation_index": null
+                }
               },
               "86": {
                 "color": [
@@ -18689,8 +18187,7 @@
                 "pos": {
                   "x": 1080.0,
                   "y": 900.0
-                },
-                "simulation_index": null
+                }
               },
               "87": {
                 "color": [
@@ -18710,8 +18207,7 @@
                 "pos": {
                   "x": 720.0,
                   "y": 1000.0
-                },
-                "simulation_index": null
+                }
               },
               "88": {
                 "color": [
@@ -18731,8 +18227,7 @@
                 "pos": {
                   "x": 720.0,
                   "y": 760.0
-                },
-                "simulation_index": null
+                }
               },
               "89": {
                 "color": [
@@ -18752,8 +18247,7 @@
                 "pos": {
                   "x": 840.0,
                   "y": 740.0
-                },
-                "simulation_index": null
+                }
               },
               "9": {
                 "color": [
@@ -18772,52 +18266,9 @@
                 "pos": {
                   "x": 720.0,
                   "y": 80.0
-                },
-                "simulation_index": null
+                }
               }
             }
-          },
-          "inputs": {
-            "12": "input 11",
-            "14": "input 15",
-            "21": "input 8",
-            "22": "input 10",
-            "24": "input 13",
-            "31": "input 12",
-            "34": "input 14",
-            "45": "input 9",
-            "50": "input 2",
-            "53": "input 4",
-            "55": "input 0",
-            "56": "input 5",
-            "57": "input 6",
-            "63": "input 1",
-            "69": "input 3",
-            "77": "input 7",
-            "9": "clock"
-          },
-          "min_size": {
-            "x": 120.0,
-            "y": 380.0
-          },
-          "outputs": {
-            "1": "output 8",
-            "18": "output 11",
-            "2": "output 15",
-            "23": "clock",
-            "4": "output 13",
-            "41": "output 9",
-            "43": "output 10",
-            "46": "output 12",
-            "52": "output 1",
-            "62": "output 2",
-            "65": "output 4",
-            "7": "output 14",
-            "72": "output 7",
-            "76": "output 0",
-            "79": "output 5",
-            "81": "output 3",
-            "86": "output 6"
           },
           "path": "random_modules/increment_16.sml",
           "size": {
@@ -18829,8 +18280,7 @@
       "pos": {
         "x": 3160.0,
         "y": 360.0
-      },
-      "simulation_index": null
+      }
     },
     "19": {
       "color": [
@@ -18850,8 +18300,7 @@
       "pos": {
         "x": 1320.0,
         "y": 300.0
-      },
-      "simulation_index": null
+      }
     },
     "190": {
       "color": [
@@ -19318,8 +18767,7 @@
                 "pos": {
                   "x": 2660.0,
                   "y": 40.0
-                },
-                "simulation_index": null
+                }
               },
               "1": {
                 "color": [
@@ -19338,8 +18786,7 @@
                 "pos": {
                   "x": 2660.0,
                   "y": 240.0
-                },
-                "simulation_index": null
+                }
               },
               "10": {
                 "color": [
@@ -19358,8 +18805,7 @@
                 "pos": {
                   "x": 2660.0,
                   "y": -380.0
-                },
-                "simulation_index": null
+                }
               },
               "11": {
                 "color": [
@@ -19378,8 +18824,7 @@
                 "pos": {
                   "x": 2660.0,
                   "y": -320.0
-                },
-                "simulation_index": null
+                }
               },
               "12": {
                 "color": [
@@ -19398,8 +18843,7 @@
                 "pos": {
                   "x": 2660.0,
                   "y": -260.0
-                },
-                "simulation_index": null
+                }
               },
               "13": {
                 "color": [
@@ -19418,8 +18862,7 @@
                 "pos": {
                   "x": 2660.0,
                   "y": -200.0
-                },
-                "simulation_index": null
+                }
               },
               "14": {
                 "color": [
@@ -19438,8 +18881,7 @@
                 "pos": {
                   "x": 2660.0,
                   "y": -140.0
-                },
-                "simulation_index": null
+                }
               },
               "15": {
                 "color": [
@@ -19458,8 +18900,7 @@
                 "pos": {
                   "x": 2660.0,
                   "y": -80.0
-                },
-                "simulation_index": null
+                }
               },
               "19": {
                 "color": [
@@ -19478,8 +18919,7 @@
                 "pos": {
                   "x": 2660.0,
                   "y": 600.0
-                },
-                "simulation_index": null
+                }
               },
               "20": {
                 "color": [
@@ -19498,8 +18938,7 @@
                 "pos": {
                   "x": 2660.0,
                   "y": 660.0
-                },
-                "simulation_index": null
+                }
               },
               "21": {
                 "color": [
@@ -19518,8 +18957,7 @@
                 "pos": {
                   "x": 2660.0,
                   "y": 180.0
-                },
-                "simulation_index": null
+                }
               },
               "22": {
                 "color": [
@@ -20263,8 +19701,7 @@
                           "pos": {
                             "x": 680.0,
                             "y": 280.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "12": {
                           "color": [
@@ -20284,8 +19721,7 @@
                           "pos": {
                             "x": 620.0,
                             "y": 200.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "13": {
                           "color": [
@@ -20304,8 +19740,7 @@
                           "pos": {
                             "x": 320.0,
                             "y": 200.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "14": {
                           "color": [
@@ -20325,8 +19760,7 @@
                           "pos": {
                             "x": 560.0,
                             "y": 360.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "15": {
                           "color": [
@@ -20345,8 +19779,7 @@
                           "pos": {
                             "x": 800.0,
                             "y": 360.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "16": {
                           "color": [
@@ -20366,8 +19799,7 @@
                           "pos": {
                             "x": 680.0,
                             "y": 360.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "17": {
                           "color": [
@@ -20387,8 +19819,7 @@
                           "pos": {
                             "x": 440.0,
                             "y": 360.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "18": {
                           "color": [
@@ -20407,8 +19838,7 @@
                           "pos": {
                             "x": 320.0,
                             "y": 360.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "19": {
                           "color": [
@@ -20428,8 +19858,7 @@
                           "pos": {
                             "x": 560.0,
                             "y": 440.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "2": {
                           "color": [
@@ -20449,8 +19878,7 @@
                           "pos": {
                             "x": 560.0,
                             "y": 280.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "20": {
                           "color": [
@@ -20469,8 +19897,7 @@
                           "pos": {
                             "x": 800.0,
                             "y": 440.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "21": {
                           "color": [
@@ -20490,8 +19917,7 @@
                           "pos": {
                             "x": 680.0,
                             "y": 440.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "22": {
                           "color": [
@@ -20511,8 +19937,7 @@
                           "pos": {
                             "x": 440.0,
                             "y": 440.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "23": {
                           "color": [
@@ -20531,8 +19956,7 @@
                           "pos": {
                             "x": 320.0,
                             "y": 440.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "24": {
                           "color": [
@@ -20552,8 +19976,7 @@
                           "pos": {
                             "x": 560.0,
                             "y": 520.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "25": {
                           "color": [
@@ -20572,8 +19995,7 @@
                           "pos": {
                             "x": 800.0,
                             "y": 520.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "26": {
                           "color": [
@@ -20593,8 +20015,7 @@
                           "pos": {
                             "x": 680.0,
                             "y": 520.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "27": {
                           "color": [
@@ -20614,8 +20035,7 @@
                           "pos": {
                             "x": 440.0,
                             "y": 520.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "28": {
                           "color": [
@@ -20634,8 +20054,7 @@
                           "pos": {
                             "x": 320.0,
                             "y": 520.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "30": {
                           "color": [
@@ -20655,8 +20074,7 @@
                           "pos": {
                             "x": 440.0,
                             "y": 680.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "31": {
                           "color": [
@@ -20676,8 +20094,7 @@
                           "pos": {
                             "x": 440.0,
                             "y": 760.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "32": {
                           "color": [
@@ -20697,8 +20114,7 @@
                           "pos": {
                             "x": 560.0,
                             "y": 840.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "33": {
                           "color": [
@@ -20717,8 +20133,7 @@
                           "pos": {
                             "x": 800.0,
                             "y": 600.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "34": {
                           "color": [
@@ -20737,8 +20152,7 @@
                           "pos": {
                             "x": 800.0,
                             "y": 840.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "35": {
                           "color": [
@@ -20758,8 +20172,7 @@
                           "pos": {
                             "x": 440.0,
                             "y": 840.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "36": {
                           "color": [
@@ -20778,8 +20191,7 @@
                           "pos": {
                             "x": 320.0,
                             "y": 600.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "37": {
                           "color": [
@@ -20799,8 +20211,7 @@
                           "pos": {
                             "x": 560.0,
                             "y": 760.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "38": {
                           "color": [
@@ -20819,8 +20230,7 @@
                           "pos": {
                             "x": 320.0,
                             "y": 680.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "39": {
                           "color": [
@@ -20840,8 +20250,7 @@
                           "pos": {
                             "x": 560.0,
                             "y": 680.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "4": {
                           "color": [
@@ -20861,8 +20270,7 @@
                           "pos": {
                             "x": 440.0,
                             "y": 280.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "40": {
                           "color": [
@@ -20882,8 +20290,7 @@
                           "pos": {
                             "x": 680.0,
                             "y": 760.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "41": {
                           "color": [
@@ -20903,8 +20310,7 @@
                           "pos": {
                             "x": 560.0,
                             "y": 600.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "42": {
                           "color": [
@@ -20923,8 +20329,7 @@
                           "pos": {
                             "x": 320.0,
                             "y": 760.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "43": {
                           "color": [
@@ -20943,8 +20348,7 @@
                           "pos": {
                             "x": 320.0,
                             "y": 840.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "44": {
                           "color": [
@@ -20963,8 +20367,7 @@
                           "pos": {
                             "x": 800.0,
                             "y": 760.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "45": {
                           "color": [
@@ -20984,8 +20387,7 @@
                           "pos": {
                             "x": 680.0,
                             "y": 840.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "46": {
                           "color": [
@@ -21004,8 +20406,7 @@
                           "pos": {
                             "x": 800.0,
                             "y": 680.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "47": {
                           "color": [
@@ -21025,8 +20426,7 @@
                           "pos": {
                             "x": 680.0,
                             "y": 680.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "48": {
                           "color": [
@@ -21046,8 +20446,7 @@
                           "pos": {
                             "x": 680.0,
                             "y": 600.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "49": {
                           "color": [
@@ -21067,8 +20466,7 @@
                           "pos": {
                             "x": 440.0,
                             "y": 600.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "5": {
                           "color": [
@@ -21088,8 +20486,7 @@
                           "pos": {
                             "x": 440.0,
                             "y": 200.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "7": {
                           "color": [
@@ -21108,8 +20505,7 @@
                           "pos": {
                             "x": 320.0,
                             "y": 280.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "8": {
                           "color": [
@@ -21128,8 +20524,7 @@
                           "pos": {
                             "x": 800.0,
                             "y": 280.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "9": {
                           "color": [
@@ -21148,36 +20543,9 @@
                           "pos": {
                             "x": 800.0,
                             "y": 200.0
-                          },
-                          "simulation_index": null
+                          }
                         }
                       }
-                    },
-                    "inputs": {
-                      "13": "write clock",
-                      "18": "write 6",
-                      "23": "write 5",
-                      "28": "write 4",
-                      "36": "write 3",
-                      "38": "write 2",
-                      "42": "write 1",
-                      "43": "write 0",
-                      "7": "write 7"
-                    },
-                    "min_size": {
-                      "x": 120.0,
-                      "y": 220.0
-                    },
-                    "outputs": {
-                      "15": "read 6",
-                      "20": "read 5",
-                      "25": "read 4",
-                      "33": "read 3",
-                      "34": "read 0",
-                      "44": "read 1",
-                      "46": "read 2",
-                      "8": "read 7",
-                      "9": "wrote clock"
                     },
                     "path": "random_modules/8_ bit_register.sml",
                     "size": {
@@ -21189,8 +20557,7 @@
                 "pos": {
                   "x": 2800.0,
                   "y": 180.0
-                },
-                "simulation_index": null
+                }
               },
               "24": {
                 "color": [
@@ -21537,8 +20904,7 @@
                           "pos": {
                             "x": 2700.0,
                             "y": 0.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "1": {
                           "color": [
@@ -21557,8 +20923,7 @@
                           "pos": {
                             "x": 2700.0,
                             "y": 60.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "10": {
                           "color": [
@@ -21578,8 +20943,7 @@
                           "pos": {
                             "x": 2820.0,
                             "y": -0.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "11": {
                           "color": [
@@ -21599,8 +20963,7 @@
                           "pos": {
                             "x": 2820.0,
                             "y": 60.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "12": {
                           "color": [
@@ -21620,8 +20983,7 @@
                           "pos": {
                             "x": 2820.0,
                             "y": 120.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "13": {
                           "color": [
@@ -21641,8 +21003,7 @@
                           "pos": {
                             "x": 2820.0,
                             "y": 180.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "14": {
                           "color": [
@@ -21662,8 +21023,7 @@
                           "pos": {
                             "x": 2820.0,
                             "y": 360.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "15": {
                           "color": [
@@ -21683,8 +21043,7 @@
                           "pos": {
                             "x": 2820.0,
                             "y": 420.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "16": {
                           "color": [
@@ -21704,8 +21063,7 @@
                           "pos": {
                             "x": 2820.0,
                             "y": 240.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "17": {
                           "color": [
@@ -21725,8 +21083,7 @@
                           "pos": {
                             "x": 2820.0,
                             "y": 300.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "18": {
                           "color": [
@@ -21745,8 +21102,7 @@
                           "pos": {
                             "x": 2940.0,
                             "y": -80.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "19": {
                           "color": [
@@ -21765,8 +21121,7 @@
                           "pos": {
                             "x": 2940.0,
                             "y": 0.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "2": {
                           "color": [
@@ -21785,8 +21140,7 @@
                           "pos": {
                             "x": 2700.0,
                             "y": 120.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "20": {
                           "color": [
@@ -21805,8 +21159,7 @@
                           "pos": {
                             "x": 2940.0,
                             "y": 60.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "21": {
                           "color": [
@@ -21825,8 +21178,7 @@
                           "pos": {
                             "x": 2940.0,
                             "y": 120.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "22": {
                           "color": [
@@ -21845,8 +21197,7 @@
                           "pos": {
                             "x": 2940.0,
                             "y": 180.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "23": {
                           "color": [
@@ -21865,8 +21216,7 @@
                           "pos": {
                             "x": 2940.0,
                             "y": 360.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "24": {
                           "color": [
@@ -21885,8 +21235,7 @@
                           "pos": {
                             "x": 2940.0,
                             "y": 420.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "25": {
                           "color": [
@@ -21905,8 +21254,7 @@
                           "pos": {
                             "x": 2940.0,
                             "y": 300.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "26": {
                           "color": [
@@ -21925,8 +21273,7 @@
                           "pos": {
                             "x": 2940.0,
                             "y": 240.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "3": {
                           "color": [
@@ -21945,8 +21292,7 @@
                           "pos": {
                             "x": 2700.0,
                             "y": 180.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "4": {
                           "color": [
@@ -21965,8 +21311,7 @@
                           "pos": {
                             "x": 2700.0,
                             "y": 240.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "5": {
                           "color": [
@@ -21985,8 +21330,7 @@
                           "pos": {
                             "x": 2700.0,
                             "y": 300.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "6": {
                           "color": [
@@ -22005,8 +21349,7 @@
                           "pos": {
                             "x": 2700.0,
                             "y": 360.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "7": {
                           "color": [
@@ -22025,8 +21368,7 @@
                           "pos": {
                             "x": 2700.0,
                             "y": 420.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "8": {
                           "color": [
@@ -22045,8 +21387,7 @@
                           "pos": {
                             "x": 2700.0,
                             "y": -80.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "9": {
                           "color": [
@@ -22066,36 +21407,9 @@
                           "pos": {
                             "x": 2820.0,
                             "y": -80.0
-                          },
-                          "simulation_index": null
+                          }
                         }
                       }
-                    },
-                    "inputs": {
-                      "0": "input 7",
-                      "1": "input 6",
-                      "2": "input 5",
-                      "3": "input 4",
-                      "4": "input 3",
-                      "5": "input 2",
-                      "6": "input 1",
-                      "7": "input 0",
-                      "8": "clock"
-                    },
-                    "min_size": {
-                      "x": 120.0,
-                      "y": 220.0
-                    },
-                    "outputs": {
-                      "18": "clock",
-                      "19": "output 7",
-                      "20": "output 6",
-                      "21": "output 5",
-                      "22": "output 4",
-                      "23": "output 1",
-                      "24": "output 0",
-                      "25": "output 2",
-                      "26": "output 3"
                     },
                     "path": "random_modules/8_bit_tick_gate.sml",
                     "size": {
@@ -22107,8 +21421,7 @@
                 "pos": {
                   "x": 2980.0,
                   "y": 180.0
-                },
-                "simulation_index": null
+                }
               },
               "25": {
                 "color": [
@@ -22127,8 +21440,7 @@
                 "pos": {
                   "x": 3280.0,
                   "y": 40.0
-                },
-                "simulation_index": null
+                }
               },
               "26": {
                 "color": [
@@ -22147,8 +21459,7 @@
                 "pos": {
                   "x": 3280.0,
                   "y": 100.0
-                },
-                "simulation_index": null
+                }
               },
               "27": {
                 "color": [
@@ -22167,8 +21478,7 @@
                 "pos": {
                   "x": 3280.0,
                   "y": 160.0
-                },
-                "simulation_index": null
+                }
               },
               "28": {
                 "color": [
@@ -22187,8 +21497,7 @@
                 "pos": {
                   "x": 3280.0,
                   "y": 220.0
-                },
-                "simulation_index": null
+                }
               },
               "29": {
                 "color": [
@@ -22207,8 +21516,7 @@
                 "pos": {
                   "x": 3280.0,
                   "y": 280.0
-                },
-                "simulation_index": null
+                }
               },
               "3": {
                 "color": [
@@ -22227,8 +21535,7 @@
                 "pos": {
                   "x": 2660.0,
                   "y": 300.0
-                },
-                "simulation_index": null
+                }
               },
               "30": {
                 "color": [
@@ -22247,8 +21554,7 @@
                 "pos": {
                   "x": 3280.0,
                   "y": 340.0
-                },
-                "simulation_index": null
+                }
               },
               "31": {
                 "color": [
@@ -22267,8 +21573,7 @@
                 "pos": {
                   "x": 3280.0,
                   "y": 400.0
-                },
-                "simulation_index": null
+                }
               },
               "32": {
                 "color": [
@@ -22287,8 +21592,7 @@
                 "pos": {
                   "x": 3280.0,
                   "y": 460.0
-                },
-                "simulation_index": null
+                }
               },
               "33": {
                 "color": [
@@ -22307,8 +21611,7 @@
                 "pos": {
                   "x": 3280.0,
                   "y": -20.0
-                },
-                "simulation_index": null
+                }
               },
               "4": {
                 "color": [
@@ -22327,8 +21630,7 @@
                 "pos": {
                   "x": 2660.0,
                   "y": 360.0
-                },
-                "simulation_index": null
+                }
               },
               "5": {
                 "color": [
@@ -22347,8 +21649,7 @@
                 "pos": {
                   "x": 2660.0,
                   "y": 420.0
-                },
-                "simulation_index": null
+                }
               },
               "6": {
                 "color": [
@@ -22367,8 +21668,7 @@
                 "pos": {
                   "x": 2660.0,
                   "y": 480.0
-                },
-                "simulation_index": null
+                }
               },
               "7": {
                 "color": [
@@ -22387,8 +21687,7 @@
                 "pos": {
                   "x": 2660.0,
                   "y": 540.0
-                },
-                "simulation_index": null
+                }
               },
               "8": {
                 "color": [
@@ -22407,8 +21706,7 @@
                 "pos": {
                   "x": 2660.0,
                   "y": -20.0
-                },
-                "simulation_index": null
+                }
               },
               "9": {
                 "color": [
@@ -23211,8 +22509,7 @@
                           "pos": {
                             "x": 1580.0,
                             "y": 360.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "12": {
                           "color": [
@@ -23232,8 +22529,7 @@
                           "pos": {
                             "x": 1820.0,
                             "y": 360.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "14": {
                           "color": [
@@ -23253,8 +22549,7 @@
                           "pos": {
                             "x": 1960.0,
                             "y": 360.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "15": {
                           "color": [
@@ -23274,8 +22569,7 @@
                           "pos": {
                             "x": 2180.0,
                             "y": 400.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "16": {
                           "color": [
@@ -23295,8 +22589,7 @@
                           "pos": {
                             "x": 2180.0,
                             "y": 340.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "19": {
                           "color": [
@@ -23316,8 +22609,7 @@
                           "pos": {
                             "x": 1840.0,
                             "y": 280.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "23": {
                           "color": [
@@ -23337,8 +22629,7 @@
                           "pos": {
                             "x": 1700.0,
                             "y": 340.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "25": {
                           "color": [
@@ -23358,8 +22649,7 @@
                           "pos": {
                             "x": 1700.0,
                             "y": 420.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "26": {
                           "color": [
@@ -23378,8 +22668,7 @@
                           "pos": {
                             "x": 1580.0,
                             "y": 440.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "27": {
                           "color": [
@@ -23399,8 +22688,7 @@
                           "pos": {
                             "x": 1820.0,
                             "y": 440.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "28": {
                           "color": [
@@ -23420,8 +22708,7 @@
                           "pos": {
                             "x": 1700.0,
                             "y": 500.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "29": {
                           "color": [
@@ -23440,8 +22727,7 @@
                           "pos": {
                             "x": 1580.0,
                             "y": 520.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "30": {
                           "color": [
@@ -23461,8 +22747,7 @@
                           "pos": {
                             "x": 1820.0,
                             "y": 520.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "31": {
                           "color": [
@@ -23482,8 +22767,7 @@
                           "pos": {
                             "x": 1700.0,
                             "y": 580.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "32": {
                           "color": [
@@ -23502,8 +22786,7 @@
                           "pos": {
                             "x": 1580.0,
                             "y": 600.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "33": {
                           "color": [
@@ -23523,8 +22806,7 @@
                           "pos": {
                             "x": 1820.0,
                             "y": 600.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "34": {
                           "color": [
@@ -23543,8 +22825,7 @@
                           "pos": {
                             "x": 1580.0,
                             "y": 760.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "35": {
                           "color": [
@@ -23564,8 +22845,7 @@
                           "pos": {
                             "x": 1700.0,
                             "y": 660.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "36": {
                           "color": [
@@ -23585,8 +22865,7 @@
                           "pos": {
                             "x": 1820.0,
                             "y": 920.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "37": {
                           "color": [
@@ -23606,8 +22885,7 @@
                           "pos": {
                             "x": 1820.0,
                             "y": 760.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "38": {
                           "color": [
@@ -23626,8 +22904,7 @@
                           "pos": {
                             "x": 1580.0,
                             "y": 680.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "39": {
                           "color": [
@@ -23647,8 +22924,7 @@
                           "pos": {
                             "x": 1700.0,
                             "y": 900.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "40": {
                           "color": [
@@ -23667,8 +22943,7 @@
                           "pos": {
                             "x": 1580.0,
                             "y": 920.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "41": {
                           "color": [
@@ -23688,8 +22963,7 @@
                           "pos": {
                             "x": 1700.0,
                             "y": 740.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "42": {
                           "color": [
@@ -23709,8 +22983,7 @@
                           "pos": {
                             "x": 1820.0,
                             "y": 680.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "43": {
                           "color": [
@@ -23730,8 +23003,7 @@
                           "pos": {
                             "x": 1700.0,
                             "y": 820.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "44": {
                           "color": [
@@ -23751,8 +23023,7 @@
                           "pos": {
                             "x": 1820.0,
                             "y": 840.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "45": {
                           "color": [
@@ -23771,8 +23042,7 @@
                           "pos": {
                             "x": 1580.0,
                             "y": 840.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "8": {
                           "color": [
@@ -23791,8 +23061,7 @@
                           "pos": {
                             "x": 1580.0,
                             "y": 280.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "9": {
                           "color": [
@@ -23811,28 +23080,9 @@
                           "pos": {
                             "x": 2300.0,
                             "y": 340.0
-                          },
-                          "simulation_index": null
+                          }
                         }
                       }
-                    },
-                    "inputs": {
-                      "0": "item",
-                      "26": "item",
-                      "29": "item",
-                      "32": "item",
-                      "34": "item",
-                      "38": "item",
-                      "40": "item",
-                      "45": "item",
-                      "8": "start"
-                    },
-                    "min_size": {
-                      "x": 120.0,
-                      "y": 220.0
-                    },
-                    "outputs": {
-                      "9": "clock"
                     },
                     "path": "random_modules/checklist.sml",
                     "size": {
@@ -23844,44 +23094,9 @@
                 "pos": {
                   "x": 2800.0,
                   "y": -100.0
-                },
-                "simulation_index": null
+                }
               }
             }
-          },
-          "inputs": {
-            "0": "checklist 1",
-            "1": "data 7",
-            "10": "start",
-            "11": "checklist 7",
-            "12": "checklist 6",
-            "13": "checklist 5",
-            "14": "checklist 4",
-            "15": "checklist 3",
-            "19": "data 1",
-            "20": "data 0",
-            "21": "write data",
-            "3": "data 6",
-            "4": "data 5",
-            "5": "data 4",
-            "6": "data 3",
-            "7": "data 2",
-            "8": "checklist 2"
-          },
-          "min_size": {
-            "x": 120.0,
-            "y": 380.0
-          },
-          "outputs": {
-            "25": "data 7",
-            "26": "data 6",
-            "27": "data 5",
-            "28": "data 4",
-            "29": "data 3",
-            "30": "data 2",
-            "31": "data 1",
-            "32": "data 0",
-            "33": "clock"
           },
           "path": "random_modules/8_bit_data_checklist.sml",
           "size": {
@@ -23893,8 +23108,7 @@
       "pos": {
         "x": 3380.0,
         "y": -20.0
-      },
-      "simulation_index": null
+      }
     },
     "192": {
       "color": [
@@ -23916,8 +23130,7 @@
       "pos": {
         "x": 2660.0,
         "y": 780.0
-      },
-      "simulation_index": null
+      }
     },
     "193": {
       "color": [
@@ -24552,8 +23765,7 @@
                 "pos": {
                   "x": 2700.0,
                   "y": 0.0
-                },
-                "simulation_index": null
+                }
               },
               "1": {
                 "color": [
@@ -24572,8 +23784,7 @@
                 "pos": {
                   "x": 2700.0,
                   "y": 60.0
-                },
-                "simulation_index": null
+                }
               },
               "10": {
                 "color": [
@@ -24593,8 +23804,7 @@
                 "pos": {
                   "x": 2820.0,
                   "y": -0.0
-                },
-                "simulation_index": null
+                }
               },
               "11": {
                 "color": [
@@ -24614,8 +23824,7 @@
                 "pos": {
                   "x": 2820.0,
                   "y": 60.0
-                },
-                "simulation_index": null
+                }
               },
               "12": {
                 "color": [
@@ -24635,8 +23844,7 @@
                 "pos": {
                   "x": 2820.0,
                   "y": 120.0
-                },
-                "simulation_index": null
+                }
               },
               "13": {
                 "color": [
@@ -24656,8 +23864,7 @@
                 "pos": {
                   "x": 2820.0,
                   "y": 180.0
-                },
-                "simulation_index": null
+                }
               },
               "14": {
                 "color": [
@@ -24677,8 +23884,7 @@
                 "pos": {
                   "x": 2820.0,
                   "y": 360.0
-                },
-                "simulation_index": null
+                }
               },
               "15": {
                 "color": [
@@ -24698,8 +23904,7 @@
                 "pos": {
                   "x": 2820.0,
                   "y": 420.0
-                },
-                "simulation_index": null
+                }
               },
               "16": {
                 "color": [
@@ -24719,8 +23924,7 @@
                 "pos": {
                   "x": 2820.0,
                   "y": 240.0
-                },
-                "simulation_index": null
+                }
               },
               "17": {
                 "color": [
@@ -24740,8 +23944,7 @@
                 "pos": {
                   "x": 2820.0,
                   "y": 300.0
-                },
-                "simulation_index": null
+                }
               },
               "18": {
                 "color": [
@@ -24760,8 +23963,7 @@
                 "pos": {
                   "x": 2940.0,
                   "y": -80.0
-                },
-                "simulation_index": null
+                }
               },
               "19": {
                 "color": [
@@ -24780,8 +23982,7 @@
                 "pos": {
                   "x": 2940.0,
                   "y": 0.0
-                },
-                "simulation_index": null
+                }
               },
               "2": {
                 "color": [
@@ -24800,8 +24001,7 @@
                 "pos": {
                   "x": 2700.0,
                   "y": 120.0
-                },
-                "simulation_index": null
+                }
               },
               "20": {
                 "color": [
@@ -24820,8 +24020,7 @@
                 "pos": {
                   "x": 2940.0,
                   "y": 60.0
-                },
-                "simulation_index": null
+                }
               },
               "21": {
                 "color": [
@@ -24840,8 +24039,7 @@
                 "pos": {
                   "x": 2940.0,
                   "y": 120.0
-                },
-                "simulation_index": null
+                }
               },
               "22": {
                 "color": [
@@ -24860,8 +24058,7 @@
                 "pos": {
                   "x": 2940.0,
                   "y": 180.0
-                },
-                "simulation_index": null
+                }
               },
               "23": {
                 "color": [
@@ -24880,8 +24077,7 @@
                 "pos": {
                   "x": 2940.0,
                   "y": 360.0
-                },
-                "simulation_index": null
+                }
               },
               "24": {
                 "color": [
@@ -24900,8 +24096,7 @@
                 "pos": {
                   "x": 2940.0,
                   "y": 420.0
-                },
-                "simulation_index": null
+                }
               },
               "25": {
                 "color": [
@@ -24920,8 +24115,7 @@
                 "pos": {
                   "x": 2940.0,
                   "y": 300.0
-                },
-                "simulation_index": null
+                }
               },
               "26": {
                 "color": [
@@ -24940,8 +24134,7 @@
                 "pos": {
                   "x": 2940.0,
                   "y": 240.0
-                },
-                "simulation_index": null
+                }
               },
               "3": {
                 "color": [
@@ -24960,8 +24153,7 @@
                 "pos": {
                   "x": 2700.0,
                   "y": 180.0
-                },
-                "simulation_index": null
+                }
               },
               "4": {
                 "color": [
@@ -24980,8 +24172,7 @@
                 "pos": {
                   "x": 2700.0,
                   "y": 240.0
-                },
-                "simulation_index": null
+                }
               },
               "5": {
                 "color": [
@@ -25000,8 +24191,7 @@
                 "pos": {
                   "x": 2700.0,
                   "y": 300.0
-                },
-                "simulation_index": null
+                }
               },
               "51": {
                 "color": [
@@ -25020,8 +24210,7 @@
                 "pos": {
                   "x": 2700.0,
                   "y": 840.0
-                },
-                "simulation_index": null
+                }
               },
               "52": {
                 "color": [
@@ -25041,8 +24230,7 @@
                 "pos": {
                   "x": 2820.0,
                   "y": 720.0
-                },
-                "simulation_index": null
+                }
               },
               "53": {
                 "color": [
@@ -25061,8 +24249,7 @@
                 "pos": {
                   "x": 2700.0,
                   "y": 720.0
-                },
-                "simulation_index": null
+                }
               },
               "54": {
                 "color": [
@@ -25082,8 +24269,7 @@
                 "pos": {
                   "x": 2820.0,
                   "y": 540.0
-                },
-                "simulation_index": null
+                }
               },
               "55": {
                 "color": [
@@ -25103,8 +24289,7 @@
                 "pos": {
                   "x": 2820.0,
                   "y": 900.0
-                },
-                "simulation_index": null
+                }
               },
               "56": {
                 "color": [
@@ -25123,8 +24308,7 @@
                 "pos": {
                   "x": 2700.0,
                   "y": 660.0
-                },
-                "simulation_index": null
+                }
               },
               "57": {
                 "color": [
@@ -25144,8 +24328,7 @@
                 "pos": {
                   "x": 2820.0,
                   "y": 600.0
-                },
-                "simulation_index": null
+                }
               },
               "58": {
                 "color": [
@@ -25165,8 +24348,7 @@
                 "pos": {
                   "x": 2820.0,
                   "y": 660.0
-                },
-                "simulation_index": null
+                }
               },
               "59": {
                 "color": [
@@ -25186,8 +24368,7 @@
                 "pos": {
                   "x": 2820.0,
                   "y": 480.0
-                },
-                "simulation_index": null
+                }
               },
               "6": {
                 "color": [
@@ -25206,8 +24387,7 @@
                 "pos": {
                   "x": 2700.0,
                   "y": 360.0
-                },
-                "simulation_index": null
+                }
               },
               "60": {
                 "color": [
@@ -25226,8 +24406,7 @@
                 "pos": {
                   "x": 2700.0,
                   "y": 540.0
-                },
-                "simulation_index": null
+                }
               },
               "61": {
                 "color": [
@@ -25246,8 +24425,7 @@
                 "pos": {
                   "x": 2700.0,
                   "y": 900.0
-                },
-                "simulation_index": null
+                }
               },
               "62": {
                 "color": [
@@ -25267,8 +24445,7 @@
                 "pos": {
                   "x": 2820.0,
                   "y": 780.0
-                },
-                "simulation_index": null
+                }
               },
               "63": {
                 "color": [
@@ -25288,8 +24465,7 @@
                 "pos": {
                   "x": 2820.0,
                   "y": 840.0
-                },
-                "simulation_index": null
+                }
               },
               "64": {
                 "color": [
@@ -25308,8 +24484,7 @@
                 "pos": {
                   "x": 2700.0,
                   "y": 780.0
-                },
-                "simulation_index": null
+                }
               },
               "65": {
                 "color": [
@@ -25328,8 +24503,7 @@
                 "pos": {
                   "x": 2940.0,
                   "y": 600.0
-                },
-                "simulation_index": null
+                }
               },
               "66": {
                 "color": [
@@ -25348,8 +24522,7 @@
                 "pos": {
                   "x": 2700.0,
                   "y": 480.0
-                },
-                "simulation_index": null
+                }
               },
               "67": {
                 "color": [
@@ -25368,8 +24541,7 @@
                 "pos": {
                   "x": 2940.0,
                   "y": 900.0
-                },
-                "simulation_index": null
+                }
               },
               "68": {
                 "color": [
@@ -25388,8 +24560,7 @@
                 "pos": {
                   "x": 2940.0,
                   "y": 720.0
-                },
-                "simulation_index": null
+                }
               },
               "69": {
                 "color": [
@@ -25408,8 +24579,7 @@
                 "pos": {
                   "x": 2940.0,
                   "y": 660.0
-                },
-                "simulation_index": null
+                }
               },
               "7": {
                 "color": [
@@ -25428,8 +24598,7 @@
                 "pos": {
                   "x": 2700.0,
                   "y": 420.0
-                },
-                "simulation_index": null
+                }
               },
               "70": {
                 "color": [
@@ -25448,8 +24617,7 @@
                 "pos": {
                   "x": 2940.0,
                   "y": 540.0
-                },
-                "simulation_index": null
+                }
               },
               "71": {
                 "color": [
@@ -25468,8 +24636,7 @@
                 "pos": {
                   "x": 2940.0,
                   "y": 840.0
-                },
-                "simulation_index": null
+                }
               },
               "72": {
                 "color": [
@@ -25488,8 +24655,7 @@
                 "pos": {
                   "x": 2700.0,
                   "y": 600.0
-                },
-                "simulation_index": null
+                }
               },
               "73": {
                 "color": [
@@ -25508,8 +24674,7 @@
                 "pos": {
                   "x": 2940.0,
                   "y": 780.0
-                },
-                "simulation_index": null
+                }
               },
               "74": {
                 "color": [
@@ -25528,8 +24693,7 @@
                 "pos": {
                   "x": 2940.0,
                   "y": 480.0
-                },
-                "simulation_index": null
+                }
               },
               "8": {
                 "color": [
@@ -25548,8 +24712,7 @@
                 "pos": {
                   "x": 2700.0,
                   "y": -80.0
-                },
-                "simulation_index": null
+                }
               },
               "9": {
                 "color": [
@@ -25569,52 +24732,9 @@
                 "pos": {
                   "x": 2820.0,
                   "y": -80.0
-                },
-                "simulation_index": null
+                }
               }
             }
-          },
-          "inputs": {
-            "0": "input 15",
-            "1": "input 14",
-            "2": "input 13",
-            "3": "input 12",
-            "4": "input 11",
-            "5": "input 10",
-            "51": "input 1",
-            "53": "input 3",
-            "56": "input 4",
-            "6": "input 9",
-            "60": "input 6",
-            "61": "input 0",
-            "64": "input 2",
-            "66": "input 7",
-            "7": "input 8",
-            "72": "input 5",
-            "8": "clock"
-          },
-          "min_size": {
-            "x": 120.0,
-            "y": 380.0
-          },
-          "outputs": {
-            "18": "clock",
-            "19": "output 15",
-            "20": "output 14",
-            "21": "output 13",
-            "22": "output 12",
-            "23": "output 9",
-            "24": "output 8",
-            "25": "output 10",
-            "26": "output 11",
-            "65": "output 5",
-            "67": "output 0",
-            "68": "output 3",
-            "69": "output 4",
-            "70": "output 6",
-            "71": "output 1",
-            "73": "output 2",
-            "74": "output 7"
           },
           "path": "random_modules/16_bit_tick_gate.sml",
           "size": {
@@ -25626,8 +24746,7 @@
       "pos": {
         "x": 2780.0,
         "y": 840.0
-      },
-      "simulation_index": null
+      }
     },
     "194": {
       "color": [
@@ -25647,8 +24766,7 @@
       "pos": {
         "x": 2660.0,
         "y": 840.0
-      },
-      "simulation_index": null
+      }
     },
     "196": {
       "color": [
@@ -28108,8 +27226,7 @@
                 "pos": {
                   "x": 960.0,
                   "y": 660.0
-                },
-                "simulation_index": null
+                }
               },
               "1": {
                 "color": [
@@ -28128,8 +27245,7 @@
                 "pos": {
                   "x": 1080.0,
                   "y": 740.0
-                },
-                "simulation_index": null
+                }
               },
               "10": {
                 "color": [
@@ -28149,8 +27265,7 @@
                 "pos": {
                   "x": 960.0,
                   "y": 580.0
-                },
-                "simulation_index": null
+                }
               },
               "12": {
                 "color": [
@@ -28169,8 +27284,7 @@
                 "pos": {
                   "x": 600.0,
                   "y": 480.0
-                },
-                "simulation_index": null
+                }
               },
               "13": {
                 "color": [
@@ -28190,8 +27304,7 @@
                 "pos": {
                   "x": 960.0,
                   "y": 500.0
-                },
-                "simulation_index": null
+                }
               },
               "14": {
                 "color": [
@@ -28210,8 +27323,7 @@
                 "pos": {
                   "x": 600.0,
                   "y": 160.0
-                },
-                "simulation_index": null
+                }
               },
               "16": {
                 "color": [
@@ -28231,8 +27343,7 @@
                 "pos": {
                   "x": 840.0,
                   "y": 180.0
-                },
-                "simulation_index": null
+                }
               },
               "17": {
                 "color": [
@@ -28252,8 +27363,7 @@
                 "pos": {
                   "x": 960.0,
                   "y": 260.0
-                },
-                "simulation_index": null
+                }
               },
               "18": {
                 "color": [
@@ -28272,8 +27382,7 @@
                 "pos": {
                   "x": 1080.0,
                   "y": 500.0
-                },
-                "simulation_index": null
+                }
               },
               "19": {
                 "color": [
@@ -28293,8 +27402,7 @@
                 "pos": {
                   "x": 720.0,
                   "y": 280.0
-                },
-                "simulation_index": null
+                }
               },
               "2": {
                 "color": [
@@ -28313,8 +27421,7 @@
                 "pos": {
                   "x": 1080.0,
                   "y": 180.0
-                },
-                "simulation_index": null
+                }
               },
               "21": {
                 "color": [
@@ -28333,8 +27440,7 @@
                 "pos": {
                   "x": 600.0,
                   "y": 720.0
-                },
-                "simulation_index": null
+                }
               },
               "22": {
                 "color": [
@@ -28353,8 +27459,7 @@
                 "pos": {
                   "x": 600.0,
                   "y": 560.0
-                },
-                "simulation_index": null
+                }
               },
               "23": {
                 "color": [
@@ -28373,8 +27478,7 @@
                 "pos": {
                   "x": 1080.0,
                   "y": 80.0
-                },
-                "simulation_index": null
+                }
               },
               "24": {
                 "color": [
@@ -28393,8 +27497,7 @@
                 "pos": {
                   "x": 600.0,
                   "y": 320.0
-                },
-                "simulation_index": null
+                }
               },
               "25": {
                 "color": [
@@ -28414,8 +27517,7 @@
                 "pos": {
                   "x": 720.0,
                   "y": 200.0
-                },
-                "simulation_index": null
+                }
               },
               "26": {
                 "color": [
@@ -28435,8 +27537,7 @@
                 "pos": {
                   "x": 960.0,
                   "y": 740.0
-                },
-                "simulation_index": null
+                }
               },
               "28": {
                 "color": [
@@ -28456,8 +27557,7 @@
                 "pos": {
                   "x": 840.0,
                   "y": 340.0
-                },
-                "simulation_index": null
+                }
               },
               "29": {
                 "color": [
@@ -28477,8 +27577,7 @@
                 "pos": {
                   "x": 720.0,
                   "y": 600.0
-                },
-                "simulation_index": null
+                }
               },
               "3": {
                 "color": [
@@ -28498,8 +27597,7 @@
                 "pos": {
                   "x": 960.0,
                   "y": 420.0
-                },
-                "simulation_index": null
+                }
               },
               "30": {
                 "color": [
@@ -28519,8 +27617,7 @@
                 "pos": {
                   "x": 960.0,
                   "y": 80.0
-                },
-                "simulation_index": null
+                }
               },
               "31": {
                 "color": [
@@ -28539,8 +27636,7 @@
                 "pos": {
                   "x": 600.0,
                   "y": 400.0
-                },
-                "simulation_index": null
+                }
               },
               "32": {
                 "color": [
@@ -28560,8 +27656,7 @@
                 "pos": {
                   "x": 840.0,
                   "y": 660.0
-                },
-                "simulation_index": null
+                }
               },
               "33": {
                 "color": [
@@ -28581,8 +27676,7 @@
                 "pos": {
                   "x": 840.0,
                   "y": 580.0
-                },
-                "simulation_index": null
+                }
               },
               "34": {
                 "color": [
@@ -28601,8 +27695,7 @@
                 "pos": {
                   "x": 600.0,
                   "y": 240.0
-                },
-                "simulation_index": null
+                }
               },
               "35": {
                 "color": [
@@ -28622,8 +27715,7 @@
                 "pos": {
                   "x": 720.0,
                   "y": 520.0
-                },
-                "simulation_index": null
+                }
               },
               "36": {
                 "color": [
@@ -28643,8 +27735,7 @@
                 "pos": {
                   "x": 840.0,
                   "y": 420.0
-                },
-                "simulation_index": null
+                }
               },
               "37": {
                 "color": [
@@ -28664,8 +27755,7 @@
                 "pos": {
                   "x": 960.0,
                   "y": 180.0
-                },
-                "simulation_index": null
+                }
               },
               "38": {
                 "color": [
@@ -28685,8 +27775,7 @@
                 "pos": {
                   "x": 720.0,
                   "y": 360.0
-                },
-                "simulation_index": null
+                }
               },
               "39": {
                 "color": [
@@ -28706,8 +27795,7 @@
                 "pos": {
                   "x": 720.0,
                   "y": 680.0
-                },
-                "simulation_index": null
+                }
               },
               "4": {
                 "color": [
@@ -28726,8 +27814,7 @@
                 "pos": {
                   "x": 1080.0,
                   "y": 340.0
-                },
-                "simulation_index": null
+                }
               },
               "40": {
                 "color": [
@@ -28747,8 +27834,7 @@
                 "pos": {
                   "x": 840.0,
                   "y": 260.0
-                },
-                "simulation_index": null
+                }
               },
               "41": {
                 "color": [
@@ -28767,8 +27853,7 @@
                 "pos": {
                   "x": 1080.0,
                   "y": 660.0
-                },
-                "simulation_index": null
+                }
               },
               "42": {
                 "color": [
@@ -28788,8 +27873,7 @@
                 "pos": {
                   "x": 840.0,
                   "y": 500.0
-                },
-                "simulation_index": null
+                }
               },
               "43": {
                 "color": [
@@ -28808,8 +27892,7 @@
                 "pos": {
                   "x": 1080.0,
                   "y": 580.0
-                },
-                "simulation_index": null
+                }
               },
               "45": {
                 "color": [
@@ -28828,8 +27911,7 @@
                 "pos": {
                   "x": 600.0,
                   "y": 640.0
-                },
-                "simulation_index": null
+                }
               },
               "46": {
                 "color": [
@@ -28848,8 +27930,7 @@
                 "pos": {
                   "x": 1080.0,
                   "y": 420.0
-                },
-                "simulation_index": null
+                }
               },
               "47": {
                 "color": [
@@ -28869,8 +27950,7 @@
                 "pos": {
                   "x": 960.0,
                   "y": 340.0
-                },
-                "simulation_index": null
+                }
               },
               "49": {
                 "color": [
@@ -28890,8 +27970,7 @@
                 "pos": {
                   "x": 960.0,
                   "y": 1220.0
-                },
-                "simulation_index": null
+                }
               },
               "5": {
                 "color": [
@@ -28911,8 +27990,7 @@
                 "pos": {
                   "x": 840.0,
                   "y": 80.0
-                },
-                "simulation_index": null
+                }
               },
               "50": {
                 "color": [
@@ -28931,8 +28009,7 @@
                 "pos": {
                   "x": 600.0,
                   "y": 1200.0
-                },
-                "simulation_index": null
+                }
               },
               "51": {
                 "color": [
@@ -28952,8 +28029,7 @@
                 "pos": {
                   "x": 720.0,
                   "y": 840.0
-                },
-                "simulation_index": null
+                }
               },
               "52": {
                 "color": [
@@ -28972,8 +28048,7 @@
                 "pos": {
                   "x": 1080.0,
                   "y": 1300.0
-                },
-                "simulation_index": null
+                }
               },
               "53": {
                 "color": [
@@ -28992,8 +28067,7 @@
                 "pos": {
                   "x": 600.0,
                   "y": 1040.0
-                },
-                "simulation_index": null
+                }
               },
               "54": {
                 "color": [
@@ -29013,8 +28087,7 @@
                 "pos": {
                   "x": 840.0,
                   "y": 1360.0
-                },
-                "simulation_index": null
+                }
               },
               "55": {
                 "color": [
@@ -29033,8 +28106,7 @@
                 "pos": {
                   "x": 600.0,
                   "y": 1360.0
-                },
-                "simulation_index": null
+                }
               },
               "56": {
                 "color": [
@@ -29053,8 +28125,7 @@
                 "pos": {
                   "x": 600.0,
                   "y": 960.0
-                },
-                "simulation_index": null
+                }
               },
               "57": {
                 "color": [
@@ -29073,8 +28144,7 @@
                 "pos": {
                   "x": 600.0,
                   "y": 880.0
-                },
-                "simulation_index": null
+                }
               },
               "58": {
                 "color": [
@@ -29094,8 +28164,7 @@
                 "pos": {
                   "x": 960.0,
                   "y": 1360.0
-                },
-                "simulation_index": null
+                }
               },
               "59": {
                 "color": [
@@ -29115,8 +28184,7 @@
                 "pos": {
                   "x": 960.0,
                   "y": 1300.0
-                },
-                "simulation_index": null
+                }
               },
               "60": {
                 "color": [
@@ -29136,8 +28204,7 @@
                 "pos": {
                   "x": 960.0,
                   "y": 820.0
-                },
-                "simulation_index": null
+                }
               },
               "61": {
                 "color": [
@@ -29157,8 +28224,7 @@
                 "pos": {
                   "x": 720.0,
                   "y": 1320.0
-                },
-                "simulation_index": null
+                }
               },
               "62": {
                 "color": [
@@ -29177,8 +28243,7 @@
                 "pos": {
                   "x": 1080.0,
                   "y": 1220.0
-                },
-                "simulation_index": null
+                }
               },
               "63": {
                 "color": [
@@ -29197,8 +28262,7 @@
                 "pos": {
                   "x": 600.0,
                   "y": 1280.0
-                },
-                "simulation_index": null
+                }
               },
               "64": {
                 "color": [
@@ -29218,8 +28282,7 @@
                 "pos": {
                   "x": 960.0,
                   "y": 980.0
-                },
-                "simulation_index": null
+                }
               },
               "65": {
                 "color": [
@@ -29238,8 +28301,7 @@
                 "pos": {
                   "x": 1080.0,
                   "y": 1060.0
-                },
-                "simulation_index": null
+                }
               },
               "66": {
                 "color": [
@@ -29259,8 +28321,7 @@
                 "pos": {
                   "x": 840.0,
                   "y": 1140.0
-                },
-                "simulation_index": null
+                }
               },
               "67": {
                 "color": [
@@ -29280,8 +28341,7 @@
                 "pos": {
                   "x": 720.0,
                   "y": 1080.0
-                },
-                "simulation_index": null
+                }
               },
               "68": {
                 "color": [
@@ -29301,8 +28361,7 @@
                 "pos": {
                   "x": 720.0,
                   "y": 1240.0
-                },
-                "simulation_index": null
+                }
               },
               "69": {
                 "color": [
@@ -29321,8 +28380,7 @@
                 "pos": {
                   "x": 600.0,
                   "y": 1120.0
-                },
-                "simulation_index": null
+                }
               },
               "7": {
                 "color": [
@@ -29341,8 +28399,7 @@
                 "pos": {
                   "x": 1080.0,
                   "y": 260.0
-                },
-                "simulation_index": null
+                }
               },
               "70": {
                 "color": [
@@ -29362,8 +28419,7 @@
                 "pos": {
                   "x": 720.0,
                   "y": 920.0
-                },
-                "simulation_index": null
+                }
               },
               "71": {
                 "color": [
@@ -29383,8 +28439,7 @@
                 "pos": {
                   "x": 840.0,
                   "y": 1060.0
-                },
-                "simulation_index": null
+                }
               },
               "72": {
                 "color": [
@@ -29403,8 +28458,7 @@
                 "pos": {
                   "x": 1080.0,
                   "y": 820.0
-                },
-                "simulation_index": null
+                }
               },
               "73": {
                 "color": [
@@ -29424,8 +28478,7 @@
                 "pos": {
                   "x": 960.0,
                   "y": 1060.0
-                },
-                "simulation_index": null
+                }
               },
               "74": {
                 "color": [
@@ -29445,8 +28498,7 @@
                 "pos": {
                   "x": 840.0,
                   "y": 1300.0
-                },
-                "simulation_index": null
+                }
               },
               "75": {
                 "color": [
@@ -29466,8 +28518,7 @@
                 "pos": {
                   "x": 840.0,
                   "y": 980.0
-                },
-                "simulation_index": null
+                }
               },
               "76": {
                 "color": [
@@ -29486,8 +28537,7 @@
                 "pos": {
                   "x": 1080.0,
                   "y": 1360.0
-                },
-                "simulation_index": null
+                }
               },
               "77": {
                 "color": [
@@ -29506,8 +28556,7 @@
                 "pos": {
                   "x": 600.0,
                   "y": 800.0
-                },
-                "simulation_index": null
+                }
               },
               "78": {
                 "color": [
@@ -29527,8 +28576,7 @@
                 "pos": {
                   "x": 840.0,
                   "y": 1220.0
-                },
-                "simulation_index": null
+                }
               },
               "79": {
                 "color": [
@@ -29547,8 +28595,7 @@
                 "pos": {
                   "x": 1080.0,
                   "y": 980.0
-                },
-                "simulation_index": null
+                }
               },
               "8": {
                 "color": [
@@ -29568,8 +28615,7 @@
                 "pos": {
                   "x": 720.0,
                   "y": 440.0
-                },
-                "simulation_index": null
+                }
               },
               "80": {
                 "color": [
@@ -29589,8 +28635,7 @@
                 "pos": {
                   "x": 960.0,
                   "y": 900.0
-                },
-                "simulation_index": null
+                }
               },
               "81": {
                 "color": [
@@ -29609,8 +28654,7 @@
                 "pos": {
                   "x": 1080.0,
                   "y": 1140.0
-                },
-                "simulation_index": null
+                }
               },
               "82": {
                 "color": [
@@ -29630,8 +28674,7 @@
                 "pos": {
                   "x": 840.0,
                   "y": 820.0
-                },
-                "simulation_index": null
+                }
               },
               "83": {
                 "color": [
@@ -29651,8 +28694,7 @@
                 "pos": {
                   "x": 840.0,
                   "y": 900.0
-                },
-                "simulation_index": null
+                }
               },
               "84": {
                 "color": [
@@ -29672,8 +28714,7 @@
                 "pos": {
                   "x": 960.0,
                   "y": 1140.0
-                },
-                "simulation_index": null
+                }
               },
               "85": {
                 "color": [
@@ -29693,8 +28734,7 @@
                 "pos": {
                   "x": 720.0,
                   "y": 1160.0
-                },
-                "simulation_index": null
+                }
               },
               "86": {
                 "color": [
@@ -29713,8 +28753,7 @@
                 "pos": {
                   "x": 1080.0,
                   "y": 900.0
-                },
-                "simulation_index": null
+                }
               },
               "87": {
                 "color": [
@@ -29734,8 +28773,7 @@
                 "pos": {
                   "x": 720.0,
                   "y": 1000.0
-                },
-                "simulation_index": null
+                }
               },
               "88": {
                 "color": [
@@ -29755,8 +28793,7 @@
                 "pos": {
                   "x": 720.0,
                   "y": 760.0
-                },
-                "simulation_index": null
+                }
               },
               "89": {
                 "color": [
@@ -29776,8 +28813,7 @@
                 "pos": {
                   "x": 840.0,
                   "y": 740.0
-                },
-                "simulation_index": null
+                }
               },
               "9": {
                 "color": [
@@ -29796,52 +28832,9 @@
                 "pos": {
                   "x": 720.0,
                   "y": 80.0
-                },
-                "simulation_index": null
+                }
               }
             }
-          },
-          "inputs": {
-            "12": "input 11",
-            "14": "input 15",
-            "21": "input 8",
-            "22": "input 10",
-            "24": "input 13",
-            "31": "input 12",
-            "34": "input 14",
-            "45": "input 9",
-            "50": "input 2",
-            "53": "input 4",
-            "55": "input 0",
-            "56": "input 5",
-            "57": "input 6",
-            "63": "input 1",
-            "69": "input 3",
-            "77": "input 7",
-            "9": "clock"
-          },
-          "min_size": {
-            "x": 120.0,
-            "y": 380.0
-          },
-          "outputs": {
-            "1": "output 8",
-            "18": "output 11",
-            "2": "output 15",
-            "23": "clock",
-            "4": "output 13",
-            "41": "output 9",
-            "43": "output 10",
-            "46": "output 12",
-            "52": "output 1",
-            "62": "output 2",
-            "65": "output 4",
-            "7": "output 14",
-            "72": "output 7",
-            "76": "output 0",
-            "79": "output 5",
-            "81": "output 3",
-            "86": "output 6"
           },
           "path": "random_modules/increment_16.sml",
           "size": {
@@ -29853,8 +28846,7 @@
       "pos": {
         "x": 2780.0,
         "y": 1220.0
-      },
-      "simulation_index": null
+      }
     },
     "198": {
       "color": [
@@ -30633,8 +29625,7 @@
                 "pos": {
                   "x": 2660.0,
                   "y": 240.0
-                },
-                "simulation_index": null
+                }
               },
               "10": {
                 "color": [
@@ -30653,8 +29644,7 @@
                 "pos": {
                   "x": 2660.0,
                   "y": -380.0
-                },
-                "simulation_index": null
+                }
               },
               "11": {
                 "color": [
@@ -30673,8 +29663,7 @@
                 "pos": {
                   "x": 2660.0,
                   "y": -320.0
-                },
-                "simulation_index": null
+                }
               },
               "12": {
                 "color": [
@@ -30693,8 +29682,7 @@
                 "pos": {
                   "x": 2660.0,
                   "y": -260.0
-                },
-                "simulation_index": null
+                }
               },
               "13": {
                 "color": [
@@ -30713,8 +29701,7 @@
                 "pos": {
                   "x": 2660.0,
                   "y": -200.0
-                },
-                "simulation_index": null
+                }
               },
               "14": {
                 "color": [
@@ -30733,8 +29720,7 @@
                 "pos": {
                   "x": 2660.0,
                   "y": -140.0
-                },
-                "simulation_index": null
+                }
               },
               "15": {
                 "color": [
@@ -30753,8 +29739,7 @@
                 "pos": {
                   "x": 2660.0,
                   "y": -80.0
-                },
-                "simulation_index": null
+                }
               },
               "19": {
                 "color": [
@@ -30773,8 +29758,7 @@
                 "pos": {
                   "x": 2660.0,
                   "y": 600.0
-                },
-                "simulation_index": null
+                }
               },
               "20": {
                 "color": [
@@ -30793,8 +29777,7 @@
                 "pos": {
                   "x": 2660.0,
                   "y": 660.0
-                },
-                "simulation_index": null
+                }
               },
               "21": {
                 "color": [
@@ -30813,8 +29796,7 @@
                 "pos": {
                   "x": 2660.0,
                   "y": 180.0
-                },
-                "simulation_index": null
+                }
               },
               "22": {
                 "color": [
@@ -32290,8 +31272,7 @@
                           "pos": {
                             "x": 680.0,
                             "y": 280.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "12": {
                           "color": [
@@ -32311,8 +31292,7 @@
                           "pos": {
                             "x": 620.0,
                             "y": 200.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "13": {
                           "color": [
@@ -32331,8 +31311,7 @@
                           "pos": {
                             "x": 320.0,
                             "y": 200.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "14": {
                           "color": [
@@ -32352,8 +31331,7 @@
                           "pos": {
                             "x": 560.0,
                             "y": 360.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "15": {
                           "color": [
@@ -32372,8 +31350,7 @@
                           "pos": {
                             "x": 800.0,
                             "y": 360.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "16": {
                           "color": [
@@ -32393,8 +31370,7 @@
                           "pos": {
                             "x": 680.0,
                             "y": 360.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "17": {
                           "color": [
@@ -32414,8 +31390,7 @@
                           "pos": {
                             "x": 440.0,
                             "y": 360.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "18": {
                           "color": [
@@ -32434,8 +31409,7 @@
                           "pos": {
                             "x": 320.0,
                             "y": 360.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "19": {
                           "color": [
@@ -32455,8 +31429,7 @@
                           "pos": {
                             "x": 560.0,
                             "y": 440.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "2": {
                           "color": [
@@ -32476,8 +31449,7 @@
                           "pos": {
                             "x": 560.0,
                             "y": 280.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "20": {
                           "color": [
@@ -32496,8 +31468,7 @@
                           "pos": {
                             "x": 800.0,
                             "y": 440.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "21": {
                           "color": [
@@ -32517,8 +31488,7 @@
                           "pos": {
                             "x": 680.0,
                             "y": 440.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "22": {
                           "color": [
@@ -32538,8 +31508,7 @@
                           "pos": {
                             "x": 440.0,
                             "y": 440.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "23": {
                           "color": [
@@ -32558,8 +31527,7 @@
                           "pos": {
                             "x": 320.0,
                             "y": 440.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "24": {
                           "color": [
@@ -32579,8 +31547,7 @@
                           "pos": {
                             "x": 560.0,
                             "y": 520.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "25": {
                           "color": [
@@ -32599,8 +31566,7 @@
                           "pos": {
                             "x": 800.0,
                             "y": 520.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "26": {
                           "color": [
@@ -32620,8 +31586,7 @@
                           "pos": {
                             "x": 680.0,
                             "y": 520.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "27": {
                           "color": [
@@ -32641,8 +31606,7 @@
                           "pos": {
                             "x": 440.0,
                             "y": 520.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "28": {
                           "color": [
@@ -32661,8 +31625,7 @@
                           "pos": {
                             "x": 320.0,
                             "y": 520.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "30": {
                           "color": [
@@ -32682,8 +31645,7 @@
                           "pos": {
                             "x": 440.0,
                             "y": 680.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "31": {
                           "color": [
@@ -32703,8 +31665,7 @@
                           "pos": {
                             "x": 440.0,
                             "y": 760.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "32": {
                           "color": [
@@ -32724,8 +31685,7 @@
                           "pos": {
                             "x": 560.0,
                             "y": 840.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "33": {
                           "color": [
@@ -32744,8 +31704,7 @@
                           "pos": {
                             "x": 800.0,
                             "y": 600.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "34": {
                           "color": [
@@ -32764,8 +31723,7 @@
                           "pos": {
                             "x": 800.0,
                             "y": 840.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "35": {
                           "color": [
@@ -32785,8 +31743,7 @@
                           "pos": {
                             "x": 440.0,
                             "y": 840.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "36": {
                           "color": [
@@ -32805,8 +31762,7 @@
                           "pos": {
                             "x": 320.0,
                             "y": 600.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "37": {
                           "color": [
@@ -32826,8 +31782,7 @@
                           "pos": {
                             "x": 560.0,
                             "y": 760.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "38": {
                           "color": [
@@ -32846,8 +31801,7 @@
                           "pos": {
                             "x": 320.0,
                             "y": 680.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "39": {
                           "color": [
@@ -32867,8 +31821,7 @@
                           "pos": {
                             "x": 560.0,
                             "y": 680.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "4": {
                           "color": [
@@ -32888,8 +31841,7 @@
                           "pos": {
                             "x": 440.0,
                             "y": 280.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "40": {
                           "color": [
@@ -32909,8 +31861,7 @@
                           "pos": {
                             "x": 680.0,
                             "y": 760.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "41": {
                           "color": [
@@ -32930,8 +31881,7 @@
                           "pos": {
                             "x": 560.0,
                             "y": 600.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "42": {
                           "color": [
@@ -32950,8 +31900,7 @@
                           "pos": {
                             "x": 320.0,
                             "y": 760.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "43": {
                           "color": [
@@ -32970,8 +31919,7 @@
                           "pos": {
                             "x": 320.0,
                             "y": 840.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "44": {
                           "color": [
@@ -32990,8 +31938,7 @@
                           "pos": {
                             "x": 800.0,
                             "y": 760.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "45": {
                           "color": [
@@ -33011,8 +31958,7 @@
                           "pos": {
                             "x": 680.0,
                             "y": 840.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "46": {
                           "color": [
@@ -33031,8 +31977,7 @@
                           "pos": {
                             "x": 800.0,
                             "y": 680.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "47": {
                           "color": [
@@ -33052,8 +31997,7 @@
                           "pos": {
                             "x": 680.0,
                             "y": 680.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "48": {
                           "color": [
@@ -33073,8 +32017,7 @@
                           "pos": {
                             "x": 680.0,
                             "y": 600.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "49": {
                           "color": [
@@ -33094,8 +32037,7 @@
                           "pos": {
                             "x": 440.0,
                             "y": 600.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "5": {
                           "color": [
@@ -33115,8 +32057,7 @@
                           "pos": {
                             "x": 440.0,
                             "y": 200.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "50": {
                           "color": [
@@ -33136,8 +32077,7 @@
                           "pos": {
                             "x": 560.0,
                             "y": 1560.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "51": {
                           "color": [
@@ -33157,8 +32097,7 @@
                           "pos": {
                             "x": 560.0,
                             "y": 1320.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "52": {
                           "color": [
@@ -33178,8 +32117,7 @@
                           "pos": {
                             "x": 560.0,
                             "y": 1480.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "53": {
                           "color": [
@@ -33198,8 +32136,7 @@
                           "pos": {
                             "x": 800.0,
                             "y": 1320.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "54": {
                           "color": [
@@ -33218,8 +32155,7 @@
                           "pos": {
                             "x": 800.0,
                             "y": 1000.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "55": {
                           "color": [
@@ -33238,8 +32174,7 @@
                           "pos": {
                             "x": 800.0,
                             "y": 1240.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "56": {
                           "color": [
@@ -33259,8 +32194,7 @@
                           "pos": {
                             "x": 440.0,
                             "y": 1240.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "57": {
                           "color": [
@@ -33279,8 +32213,7 @@
                           "pos": {
                             "x": 800.0,
                             "y": 1480.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "58": {
                           "color": [
@@ -33299,8 +32232,7 @@
                           "pos": {
                             "x": 800.0,
                             "y": 1560.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "59": {
                           "color": [
@@ -33320,8 +32252,7 @@
                           "pos": {
                             "x": 680.0,
                             "y": 1560.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "60": {
                           "color": [
@@ -33340,8 +32271,7 @@
                           "pos": {
                             "x": 320.0,
                             "y": 1160.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "61": {
                           "color": [
@@ -33361,8 +32291,7 @@
                           "pos": {
                             "x": 560.0,
                             "y": 1080.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "62": {
                           "color": [
@@ -33382,8 +32311,7 @@
                           "pos": {
                             "x": 680.0,
                             "y": 1160.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "63": {
                           "color": [
@@ -33403,8 +32331,7 @@
                           "pos": {
                             "x": 560.0,
                             "y": 1000.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "64": {
                           "color": [
@@ -33424,8 +32351,7 @@
                           "pos": {
                             "x": 680.0,
                             "y": 1480.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "65": {
                           "color": [
@@ -33444,8 +32370,7 @@
                           "pos": {
                             "x": 320.0,
                             "y": 1240.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "66": {
                           "color": [
@@ -33464,8 +32389,7 @@
                           "pos": {
                             "x": 800.0,
                             "y": 1160.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "67": {
                           "color": [
@@ -33485,8 +32409,7 @@
                           "pos": {
                             "x": 680.0,
                             "y": 1240.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "68": {
                           "color": [
@@ -33505,8 +32428,7 @@
                           "pos": {
                             "x": 320.0,
                             "y": 1560.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "69": {
                           "color": [
@@ -33525,8 +32447,7 @@
                           "pos": {
                             "x": 800.0,
                             "y": 1080.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "7": {
                           "color": [
@@ -33545,8 +32466,7 @@
                           "pos": {
                             "x": 320.0,
                             "y": 280.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "70": {
                           "color": [
@@ -33566,8 +32486,7 @@
                           "pos": {
                             "x": 680.0,
                             "y": 1080.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "71": {
                           "color": [
@@ -33587,8 +32506,7 @@
                           "pos": {
                             "x": 440.0,
                             "y": 1000.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "72": {
                           "color": [
@@ -33608,8 +32526,7 @@
                           "pos": {
                             "x": 440.0,
                             "y": 1400.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "73": {
                           "color": [
@@ -33629,8 +32546,7 @@
                           "pos": {
                             "x": 680.0,
                             "y": 1400.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "74": {
                           "color": [
@@ -33650,8 +32566,7 @@
                           "pos": {
                             "x": 440.0,
                             "y": 1320.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "75": {
                           "color": [
@@ -33670,8 +32585,7 @@
                           "pos": {
                             "x": 800.0,
                             "y": 1400.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "76": {
                           "color": [
@@ -33691,8 +32605,7 @@
                           "pos": {
                             "x": 440.0,
                             "y": 1080.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "77": {
                           "color": [
@@ -33712,8 +32625,7 @@
                           "pos": {
                             "x": 440.0,
                             "y": 1160.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "78": {
                           "color": [
@@ -33732,8 +32644,7 @@
                           "pos": {
                             "x": 320.0,
                             "y": 920.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "79": {
                           "color": [
@@ -33753,8 +32664,7 @@
                           "pos": {
                             "x": 560.0,
                             "y": 1240.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "8": {
                           "color": [
@@ -33773,8 +32683,7 @@
                           "pos": {
                             "x": 800.0,
                             "y": 280.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "80": {
                           "color": [
@@ -33794,8 +32703,7 @@
                           "pos": {
                             "x": 440.0,
                             "y": 920.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "81": {
                           "color": [
@@ -33814,8 +32722,7 @@
                           "pos": {
                             "x": 800.0,
                             "y": 920.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "82": {
                           "color": [
@@ -33835,8 +32742,7 @@
                           "pos": {
                             "x": 620.0,
                             "y": 920.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "83": {
                           "color": [
@@ -33855,8 +32761,7 @@
                           "pos": {
                             "x": 320.0,
                             "y": 1000.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "84": {
                           "color": [
@@ -33876,8 +32781,7 @@
                           "pos": {
                             "x": 560.0,
                             "y": 1160.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "85": {
                           "color": [
@@ -33896,8 +32800,7 @@
                           "pos": {
                             "x": 320.0,
                             "y": 1080.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "86": {
                           "color": [
@@ -33917,8 +32820,7 @@
                           "pos": {
                             "x": 440.0,
                             "y": 1480.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "87": {
                           "color": [
@@ -33937,8 +32839,7 @@
                           "pos": {
                             "x": 320.0,
                             "y": 1400.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "88": {
                           "color": [
@@ -33958,8 +32859,7 @@
                           "pos": {
                             "x": 560.0,
                             "y": 1400.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "89": {
                           "color": [
@@ -33978,8 +32878,7 @@
                           "pos": {
                             "x": 320.0,
                             "y": 1480.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "9": {
                           "color": [
@@ -33998,8 +32897,7 @@
                           "pos": {
                             "x": 800.0,
                             "y": 200.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "90": {
                           "color": [
@@ -34018,8 +32916,7 @@
                           "pos": {
                             "x": 320.0,
                             "y": 1320.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "91": {
                           "color": [
@@ -34039,8 +32936,7 @@
                           "pos": {
                             "x": 680.0,
                             "y": 1320.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "92": {
                           "color": [
@@ -34060,8 +32956,7 @@
                           "pos": {
                             "x": 680.0,
                             "y": 1000.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "93": {
                           "color": [
@@ -34081,8 +32976,7 @@
                           "pos": {
                             "x": 440.0,
                             "y": 1560.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "94": {
                           "color": [
@@ -34101,55 +32995,9 @@
                           "pos": {
                             "x": 320.0,
                             "y": 120.0
-                          },
-                          "simulation_index": null
+                          }
                         }
                       }
-                    },
-                    "inputs": {
-                      "13": "write high",
-                      "18": "write 14",
-                      "23": "write 13",
-                      "28": "write 12",
-                      "36": "write 11",
-                      "38": "write 10",
-                      "42": "write 9",
-                      "43": "write 8",
-                      "60": "write 5",
-                      "65": "write 4",
-                      "68": "write 0",
-                      "7": "write 15",
-                      "78": "write low",
-                      "83": "write 7",
-                      "85": "write 6",
-                      "87": "write 2",
-                      "89": "write 1",
-                      "90": "write 3",
-                      "94": "write both"
-                    },
-                    "min_size": {
-                      "x": 120.0,
-                      "y": 420.0
-                    },
-                    "outputs": {
-                      "15": "read 14",
-                      "20": "read 13",
-                      "25": "read 12",
-                      "33": "read 11",
-                      "34": "read 8",
-                      "44": "read 9",
-                      "46": "read 10",
-                      "53": "read 3",
-                      "54": "read 7",
-                      "55": "read 4",
-                      "57": "read 1",
-                      "58": "read 0",
-                      "66": "read 5",
-                      "69": "read 6",
-                      "75": "read 2",
-                      "8": "read 15",
-                      "81": "wrote clock",
-                      "9": "wrote clock"
                     },
                     "path": "/home/leo/Documents/projects/game-related/SMLogic/sample_projects/6502/random_modules/16_bit_register.sml",
                     "size": {
@@ -34161,8 +33009,7 @@
                 "pos": {
                   "x": 2800.0,
                   "y": 180.0
-                },
-                "simulation_index": null
+                }
               },
               "24": {
                 "color": [
@@ -34680,102 +33527,6 @@
                             "part": 55,
                             "port_id": null
                           }
-                        },
-                        {
-                          "end": {
-                            "input": true,
-                            "part": 57,
-                            "port_id": null
-                          },
-                          "start": {
-                            "input": false,
-                            "part": 8,
-                            "port_id": null
-                          }
-                        },
-                        {
-                          "end": {
-                            "input": true,
-                            "part": 55,
-                            "port_id": null
-                          },
-                          "start": {
-                            "input": false,
-                            "part": 8,
-                            "port_id": null
-                          }
-                        },
-                        {
-                          "end": {
-                            "input": true,
-                            "part": 63,
-                            "port_id": null
-                          },
-                          "start": {
-                            "input": false,
-                            "part": 8,
-                            "port_id": null
-                          }
-                        },
-                        {
-                          "end": {
-                            "input": true,
-                            "part": 52,
-                            "port_id": null
-                          },
-                          "start": {
-                            "input": false,
-                            "part": 8,
-                            "port_id": null
-                          }
-                        },
-                        {
-                          "end": {
-                            "input": true,
-                            "part": 58,
-                            "port_id": null
-                          },
-                          "start": {
-                            "input": false,
-                            "part": 8,
-                            "port_id": null
-                          }
-                        },
-                        {
-                          "end": {
-                            "input": true,
-                            "part": 54,
-                            "port_id": null
-                          },
-                          "start": {
-                            "input": false,
-                            "part": 8,
-                            "port_id": null
-                          }
-                        },
-                        {
-                          "end": {
-                            "input": true,
-                            "part": 62,
-                            "port_id": null
-                          },
-                          "start": {
-                            "input": false,
-                            "part": 8,
-                            "port_id": null
-                          }
-                        },
-                        {
-                          "end": {
-                            "input": true,
-                            "part": 59,
-                            "port_id": null
-                          },
-                          "start": {
-                            "input": false,
-                            "part": 8,
-                            "port_id": null
-                          }
                         }
                       ],
                       "next_id": 75,
@@ -34797,8 +33548,7 @@
                           "pos": {
                             "x": 2700.0,
                             "y": 0.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "1": {
                           "color": [
@@ -34817,8 +33567,7 @@
                           "pos": {
                             "x": 2700.0,
                             "y": 60.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "10": {
                           "color": [
@@ -34838,8 +33587,7 @@
                           "pos": {
                             "x": 2820.0,
                             "y": -0.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "11": {
                           "color": [
@@ -34859,8 +33607,7 @@
                           "pos": {
                             "x": 2820.0,
                             "y": 60.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "12": {
                           "color": [
@@ -34880,8 +33627,7 @@
                           "pos": {
                             "x": 2820.0,
                             "y": 120.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "13": {
                           "color": [
@@ -34901,8 +33647,7 @@
                           "pos": {
                             "x": 2820.0,
                             "y": 180.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "14": {
                           "color": [
@@ -34922,8 +33667,7 @@
                           "pos": {
                             "x": 2820.0,
                             "y": 360.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "15": {
                           "color": [
@@ -34943,8 +33687,7 @@
                           "pos": {
                             "x": 2820.0,
                             "y": 420.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "16": {
                           "color": [
@@ -34964,8 +33707,7 @@
                           "pos": {
                             "x": 2820.0,
                             "y": 240.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "17": {
                           "color": [
@@ -34985,8 +33727,7 @@
                           "pos": {
                             "x": 2820.0,
                             "y": 300.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "18": {
                           "color": [
@@ -35005,8 +33746,7 @@
                           "pos": {
                             "x": 2940.0,
                             "y": -80.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "19": {
                           "color": [
@@ -35025,8 +33765,7 @@
                           "pos": {
                             "x": 2940.0,
                             "y": 0.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "2": {
                           "color": [
@@ -35045,8 +33784,7 @@
                           "pos": {
                             "x": 2700.0,
                             "y": 120.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "20": {
                           "color": [
@@ -35065,8 +33803,7 @@
                           "pos": {
                             "x": 2940.0,
                             "y": 60.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "21": {
                           "color": [
@@ -35085,8 +33822,7 @@
                           "pos": {
                             "x": 2940.0,
                             "y": 120.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "22": {
                           "color": [
@@ -35105,8 +33841,7 @@
                           "pos": {
                             "x": 2940.0,
                             "y": 180.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "23": {
                           "color": [
@@ -35125,8 +33860,7 @@
                           "pos": {
                             "x": 2940.0,
                             "y": 360.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "24": {
                           "color": [
@@ -35145,8 +33879,7 @@
                           "pos": {
                             "x": 2940.0,
                             "y": 420.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "25": {
                           "color": [
@@ -35165,8 +33898,7 @@
                           "pos": {
                             "x": 2940.0,
                             "y": 300.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "26": {
                           "color": [
@@ -35185,8 +33917,7 @@
                           "pos": {
                             "x": 2940.0,
                             "y": 240.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "3": {
                           "color": [
@@ -35205,8 +33936,7 @@
                           "pos": {
                             "x": 2700.0,
                             "y": 180.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "4": {
                           "color": [
@@ -35225,8 +33955,7 @@
                           "pos": {
                             "x": 2700.0,
                             "y": 240.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "5": {
                           "color": [
@@ -35245,8 +33974,7 @@
                           "pos": {
                             "x": 2700.0,
                             "y": 300.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "51": {
                           "color": [
@@ -35265,8 +33993,7 @@
                           "pos": {
                             "x": 2700.0,
                             "y": 840.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "52": {
                           "color": [
@@ -35286,8 +34013,7 @@
                           "pos": {
                             "x": 2820.0,
                             "y": 720.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "53": {
                           "color": [
@@ -35306,8 +34032,7 @@
                           "pos": {
                             "x": 2700.0,
                             "y": 720.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "54": {
                           "color": [
@@ -35327,8 +34052,7 @@
                           "pos": {
                             "x": 2820.0,
                             "y": 540.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "55": {
                           "color": [
@@ -35348,8 +34072,7 @@
                           "pos": {
                             "x": 2820.0,
                             "y": 900.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "56": {
                           "color": [
@@ -35368,8 +34091,7 @@
                           "pos": {
                             "x": 2700.0,
                             "y": 660.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "57": {
                           "color": [
@@ -35389,8 +34111,7 @@
                           "pos": {
                             "x": 2820.0,
                             "y": 600.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "58": {
                           "color": [
@@ -35410,8 +34131,7 @@
                           "pos": {
                             "x": 2820.0,
                             "y": 660.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "59": {
                           "color": [
@@ -35431,8 +34151,7 @@
                           "pos": {
                             "x": 2820.0,
                             "y": 480.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "6": {
                           "color": [
@@ -35451,8 +34170,7 @@
                           "pos": {
                             "x": 2700.0,
                             "y": 360.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "60": {
                           "color": [
@@ -35471,8 +34189,7 @@
                           "pos": {
                             "x": 2700.0,
                             "y": 540.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "61": {
                           "color": [
@@ -35491,8 +34208,7 @@
                           "pos": {
                             "x": 2700.0,
                             "y": 900.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "62": {
                           "color": [
@@ -35512,8 +34228,7 @@
                           "pos": {
                             "x": 2820.0,
                             "y": 780.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "63": {
                           "color": [
@@ -35533,8 +34248,7 @@
                           "pos": {
                             "x": 2820.0,
                             "y": 840.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "64": {
                           "color": [
@@ -35553,8 +34267,7 @@
                           "pos": {
                             "x": 2700.0,
                             "y": 780.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "65": {
                           "color": [
@@ -35573,8 +34286,7 @@
                           "pos": {
                             "x": 2940.0,
                             "y": 600.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "66": {
                           "color": [
@@ -35593,8 +34305,7 @@
                           "pos": {
                             "x": 2700.0,
                             "y": 480.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "67": {
                           "color": [
@@ -35613,8 +34324,7 @@
                           "pos": {
                             "x": 2940.0,
                             "y": 900.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "68": {
                           "color": [
@@ -35633,8 +34343,7 @@
                           "pos": {
                             "x": 2940.0,
                             "y": 720.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "69": {
                           "color": [
@@ -35653,8 +34362,7 @@
                           "pos": {
                             "x": 2940.0,
                             "y": 660.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "7": {
                           "color": [
@@ -35673,8 +34381,7 @@
                           "pos": {
                             "x": 2700.0,
                             "y": 420.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "70": {
                           "color": [
@@ -35693,8 +34400,7 @@
                           "pos": {
                             "x": 2940.0,
                             "y": 540.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "71": {
                           "color": [
@@ -35713,8 +34419,7 @@
                           "pos": {
                             "x": 2940.0,
                             "y": 840.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "72": {
                           "color": [
@@ -35733,8 +34438,7 @@
                           "pos": {
                             "x": 2700.0,
                             "y": 600.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "73": {
                           "color": [
@@ -35753,8 +34457,7 @@
                           "pos": {
                             "x": 2940.0,
                             "y": 780.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "74": {
                           "color": [
@@ -35773,8 +34476,7 @@
                           "pos": {
                             "x": 2940.0,
                             "y": 480.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "8": {
                           "color": [
@@ -35793,8 +34495,7 @@
                           "pos": {
                             "x": 2700.0,
                             "y": -80.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "9": {
                           "color": [
@@ -35814,52 +34515,9 @@
                           "pos": {
                             "x": 2820.0,
                             "y": -80.0
-                          },
-                          "simulation_index": null
+                          }
                         }
                       }
-                    },
-                    "inputs": {
-                      "0": "input 15",
-                      "1": "input 14",
-                      "2": "input 13",
-                      "3": "input 12",
-                      "4": "input 11",
-                      "5": "input 10",
-                      "51": "input 1",
-                      "53": "input 3",
-                      "56": "input 4",
-                      "6": "input 9",
-                      "60": "input 6",
-                      "61": "input 0",
-                      "64": "input 2",
-                      "66": "input 7",
-                      "7": "input 8",
-                      "72": "input 5",
-                      "8": "clock"
-                    },
-                    "min_size": {
-                      "x": 120.0,
-                      "y": 380.0
-                    },
-                    "outputs": {
-                      "18": "clock",
-                      "19": "output 15",
-                      "20": "output 14",
-                      "21": "output 13",
-                      "22": "output 12",
-                      "23": "output 9",
-                      "24": "output 8",
-                      "25": "output 10",
-                      "26": "output 11",
-                      "65": "output 5",
-                      "67": "output 0",
-                      "68": "output 3",
-                      "69": "output 4",
-                      "70": "output 6",
-                      "71": "output 1",
-                      "73": "output 2",
-                      "74": "output 7"
                     },
                     "path": "/home/leo/Documents/projects/game-related/SMLogic/sample_projects/6502/random_modules/16_bit_tick_gate.sml",
                     "size": {
@@ -35871,8 +34529,7 @@
                 "pos": {
                   "x": 2980.0,
                   "y": 180.0
-                },
-                "simulation_index": null
+                }
               },
               "25": {
                 "color": [
@@ -35891,8 +34548,7 @@
                 "pos": {
                   "x": 3280.0,
                   "y": 40.0
-                },
-                "simulation_index": null
+                }
               },
               "26": {
                 "color": [
@@ -35911,8 +34567,7 @@
                 "pos": {
                   "x": 3280.0,
                   "y": 100.0
-                },
-                "simulation_index": null
+                }
               },
               "27": {
                 "color": [
@@ -35931,8 +34586,7 @@
                 "pos": {
                   "x": 3280.0,
                   "y": 160.0
-                },
-                "simulation_index": null
+                }
               },
               "28": {
                 "color": [
@@ -35951,8 +34605,7 @@
                 "pos": {
                   "x": 3280.0,
                   "y": 220.0
-                },
-                "simulation_index": null
+                }
               },
               "29": {
                 "color": [
@@ -35971,8 +34624,7 @@
                 "pos": {
                   "x": 3280.0,
                   "y": 280.0
-                },
-                "simulation_index": null
+                }
               },
               "3": {
                 "color": [
@@ -35991,8 +34643,7 @@
                 "pos": {
                   "x": 2660.0,
                   "y": 300.0
-                },
-                "simulation_index": null
+                }
               },
               "30": {
                 "color": [
@@ -36011,8 +34662,7 @@
                 "pos": {
                   "x": 3280.0,
                   "y": 340.0
-                },
-                "simulation_index": null
+                }
               },
               "31": {
                 "color": [
@@ -36031,8 +34681,7 @@
                 "pos": {
                   "x": 3280.0,
                   "y": 400.0
-                },
-                "simulation_index": null
+                }
               },
               "32": {
                 "color": [
@@ -36051,8 +34700,7 @@
                 "pos": {
                   "x": 3280.0,
                   "y": 460.0
-                },
-                "simulation_index": null
+                }
               },
               "33": {
                 "color": [
@@ -36071,8 +34719,7 @@
                 "pos": {
                   "x": 3280.0,
                   "y": -20.0
-                },
-                "simulation_index": null
+                }
               },
               "34": {
                 "color": [
@@ -36091,8 +34738,7 @@
                 "pos": {
                   "x": 2660.0,
                   "y": 780.0
-                },
-                "simulation_index": null
+                }
               },
               "35": {
                 "color": [
@@ -36111,8 +34757,7 @@
                 "pos": {
                   "x": 2660.0,
                   "y": 1020.0
-                },
-                "simulation_index": null
+                }
               },
               "36": {
                 "color": [
@@ -36131,8 +34776,7 @@
                 "pos": {
                   "x": 2660.0,
                   "y": 960.0
-                },
-                "simulation_index": null
+                }
               },
               "37": {
                 "color": [
@@ -36151,8 +34795,7 @@
                 "pos": {
                   "x": 2660.0,
                   "y": 1140.0
-                },
-                "simulation_index": null
+                }
               },
               "38": {
                 "color": [
@@ -36171,8 +34814,7 @@
                 "pos": {
                   "x": 2660.0,
                   "y": 1200.0
-                },
-                "simulation_index": null
+                }
               },
               "39": {
                 "color": [
@@ -36191,8 +34833,7 @@
                 "pos": {
                   "x": 2660.0,
                   "y": 840.0
-                },
-                "simulation_index": null
+                }
               },
               "4": {
                 "color": [
@@ -36211,8 +34852,7 @@
                 "pos": {
                   "x": 2660.0,
                   "y": 360.0
-                },
-                "simulation_index": null
+                }
               },
               "40": {
                 "color": [
@@ -36231,8 +34871,7 @@
                 "pos": {
                   "x": 2660.0,
                   "y": 900.0
-                },
-                "simulation_index": null
+                }
               },
               "41": {
                 "color": [
@@ -36251,8 +34890,7 @@
                 "pos": {
                   "x": 2660.0,
                   "y": 720.0
-                },
-                "simulation_index": null
+                }
               },
               "42": {
                 "color": [
@@ -36271,8 +34909,7 @@
                 "pos": {
                   "x": 2660.0,
                   "y": 1080.0
-                },
-                "simulation_index": null
+                }
               },
               "43": {
                 "color": [
@@ -36291,8 +34928,7 @@
                 "pos": {
                   "x": 2660.0,
                   "y": 120.0
-                },
-                "simulation_index": null
+                }
               },
               "46": {
                 "color": [
@@ -36311,8 +34947,7 @@
                 "pos": {
                   "x": 3280.0,
                   "y": 820.0
-                },
-                "simulation_index": null
+                }
               },
               "47": {
                 "color": [
@@ -36331,8 +34966,7 @@
                 "pos": {
                   "x": 3280.0,
                   "y": 580.0
-                },
-                "simulation_index": null
+                }
               },
               "48": {
                 "color": [
@@ -36351,8 +34985,7 @@
                 "pos": {
                   "x": 3280.0,
                   "y": 640.0
-                },
-                "simulation_index": null
+                }
               },
               "49": {
                 "color": [
@@ -36371,8 +35004,7 @@
                 "pos": {
                   "x": 3280.0,
                   "y": 880.0
-                },
-                "simulation_index": null
+                }
               },
               "5": {
                 "color": [
@@ -36391,8 +35023,7 @@
                 "pos": {
                   "x": 2660.0,
                   "y": 420.0
-                },
-                "simulation_index": null
+                }
               },
               "50": {
                 "color": [
@@ -36411,8 +35042,7 @@
                 "pos": {
                   "x": 3280.0,
                   "y": 700.0
-                },
-                "simulation_index": null
+                }
               },
               "51": {
                 "color": [
@@ -36431,8 +35061,7 @@
                 "pos": {
                   "x": 3280.0,
                   "y": 520.0
-                },
-                "simulation_index": null
+                }
               },
               "52": {
                 "color": [
@@ -36451,8 +35080,7 @@
                 "pos": {
                   "x": 3280.0,
                   "y": 940.0
-                },
-                "simulation_index": null
+                }
               },
               "53": {
                 "color": [
@@ -36471,8 +35099,7 @@
                 "pos": {
                   "x": 3280.0,
                   "y": 760.0
-                },
-                "simulation_index": null
+                }
               },
               "6": {
                 "color": [
@@ -36491,8 +35118,7 @@
                 "pos": {
                   "x": 2660.0,
                   "y": 480.0
-                },
-                "simulation_index": null
+                }
               },
               "7": {
                 "color": [
@@ -36511,8 +35137,7 @@
                 "pos": {
                   "x": 2660.0,
                   "y": 540.0
-                },
-                "simulation_index": null
+                }
               },
               "8": {
                 "color": [
@@ -36531,8 +35156,7 @@
                 "pos": {
                   "x": 2660.0,
                   "y": -20.0
-                },
-                "simulation_index": null
+                }
               },
               "9": {
                 "color": [
@@ -37335,8 +35959,7 @@
                           "pos": {
                             "x": 1580.0,
                             "y": 360.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "12": {
                           "color": [
@@ -37356,8 +35979,7 @@
                           "pos": {
                             "x": 1820.0,
                             "y": 360.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "14": {
                           "color": [
@@ -37377,8 +35999,7 @@
                           "pos": {
                             "x": 1960.0,
                             "y": 360.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "15": {
                           "color": [
@@ -37398,8 +36019,7 @@
                           "pos": {
                             "x": 2180.0,
                             "y": 400.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "16": {
                           "color": [
@@ -37419,8 +36039,7 @@
                           "pos": {
                             "x": 2180.0,
                             "y": 340.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "19": {
                           "color": [
@@ -37440,8 +36059,7 @@
                           "pos": {
                             "x": 1840.0,
                             "y": 280.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "23": {
                           "color": [
@@ -37461,8 +36079,7 @@
                           "pos": {
                             "x": 1700.0,
                             "y": 340.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "25": {
                           "color": [
@@ -37482,8 +36099,7 @@
                           "pos": {
                             "x": 1700.0,
                             "y": 420.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "26": {
                           "color": [
@@ -37502,8 +36118,7 @@
                           "pos": {
                             "x": 1580.0,
                             "y": 440.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "27": {
                           "color": [
@@ -37523,8 +36138,7 @@
                           "pos": {
                             "x": 1820.0,
                             "y": 440.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "28": {
                           "color": [
@@ -37544,8 +36158,7 @@
                           "pos": {
                             "x": 1700.0,
                             "y": 500.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "29": {
                           "color": [
@@ -37564,8 +36177,7 @@
                           "pos": {
                             "x": 1580.0,
                             "y": 520.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "30": {
                           "color": [
@@ -37585,8 +36197,7 @@
                           "pos": {
                             "x": 1820.0,
                             "y": 520.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "31": {
                           "color": [
@@ -37606,8 +36217,7 @@
                           "pos": {
                             "x": 1700.0,
                             "y": 580.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "32": {
                           "color": [
@@ -37626,8 +36236,7 @@
                           "pos": {
                             "x": 1580.0,
                             "y": 600.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "33": {
                           "color": [
@@ -37647,8 +36256,7 @@
                           "pos": {
                             "x": 1820.0,
                             "y": 600.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "34": {
                           "color": [
@@ -37667,8 +36275,7 @@
                           "pos": {
                             "x": 1580.0,
                             "y": 760.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "35": {
                           "color": [
@@ -37688,8 +36295,7 @@
                           "pos": {
                             "x": 1700.0,
                             "y": 660.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "36": {
                           "color": [
@@ -37709,8 +36315,7 @@
                           "pos": {
                             "x": 1820.0,
                             "y": 920.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "37": {
                           "color": [
@@ -37730,8 +36335,7 @@
                           "pos": {
                             "x": 1820.0,
                             "y": 760.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "38": {
                           "color": [
@@ -37750,8 +36354,7 @@
                           "pos": {
                             "x": 1580.0,
                             "y": 680.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "39": {
                           "color": [
@@ -37771,8 +36374,7 @@
                           "pos": {
                             "x": 1700.0,
                             "y": 900.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "40": {
                           "color": [
@@ -37791,8 +36393,7 @@
                           "pos": {
                             "x": 1580.0,
                             "y": 920.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "41": {
                           "color": [
@@ -37812,8 +36413,7 @@
                           "pos": {
                             "x": 1700.0,
                             "y": 740.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "42": {
                           "color": [
@@ -37833,8 +36433,7 @@
                           "pos": {
                             "x": 1820.0,
                             "y": 680.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "43": {
                           "color": [
@@ -37854,8 +36453,7 @@
                           "pos": {
                             "x": 1700.0,
                             "y": 820.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "44": {
                           "color": [
@@ -37875,8 +36473,7 @@
                           "pos": {
                             "x": 1820.0,
                             "y": 840.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "45": {
                           "color": [
@@ -37895,8 +36492,7 @@
                           "pos": {
                             "x": 1580.0,
                             "y": 840.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "8": {
                           "color": [
@@ -37915,8 +36511,7 @@
                           "pos": {
                             "x": 1580.0,
                             "y": 280.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "9": {
                           "color": [
@@ -37935,28 +36530,9 @@
                           "pos": {
                             "x": 2300.0,
                             "y": 340.0
-                          },
-                          "simulation_index": null
+                          }
                         }
                       }
-                    },
-                    "inputs": {
-                      "0": "item",
-                      "26": "item",
-                      "29": "item",
-                      "32": "item",
-                      "34": "item",
-                      "38": "item",
-                      "40": "item",
-                      "45": "item",
-                      "8": "start"
-                    },
-                    "min_size": {
-                      "x": 120.0,
-                      "y": 220.0
-                    },
-                    "outputs": {
-                      "9": "clock"
                     },
                     "path": "random_modules/checklist.sml",
                     "size": {
@@ -37968,61 +36544,9 @@
                 "pos": {
                   "x": 2820.0,
                   "y": -140.0
-                },
-                "simulation_index": null
+                }
               }
             }
-          },
-          "inputs": {
-            "1": "data 15",
-            "10": "start",
-            "11": "checklist 7",
-            "12": "checklist 6",
-            "13": "checklist 5",
-            "14": "checklist 4",
-            "15": "checklist 3",
-            "19": "data 9",
-            "20": "data 8",
-            "21": "write high",
-            "3": "data 14",
-            "34": "data 7",
-            "35": "data 3",
-            "36": "data 4",
-            "37": "data 1",
-            "38": "data 0",
-            "39": "data 6",
-            "4": "data 13",
-            "40": "data 5",
-            "41": "write low",
-            "42": "data 2",
-            "43": "write both",
-            "5": "data 12",
-            "6": "data 11",
-            "7": "data 10",
-            "8": "checklist 2"
-          },
-          "min_size": {
-            "x": 120.0,
-            "y": 560.0
-          },
-          "outputs": {
-            "25": "data 15",
-            "26": "data 14",
-            "27": "data 13",
-            "28": "data 12",
-            "29": "data 11",
-            "30": "data 10",
-            "31": "data 9",
-            "32": "data 8",
-            "33": "clock",
-            "46": "data 2",
-            "47": "data 6",
-            "48": "data 5",
-            "49": "data 1",
-            "50": "data 4",
-            "51": "data 7",
-            "52": "data 0",
-            "53": "data 3"
           },
           "path": "random_modules/16_bit_data_checklist.sml",
           "size": {
@@ -38034,8 +36558,7 @@
       "pos": {
         "x": 3360.0,
         "y": 840.0
-      },
-      "simulation_index": null
+      }
     },
     "20": {
       "color": [
@@ -38055,8 +36578,7 @@
       "pos": {
         "x": 1320.0,
         "y": 160.0
-      },
-      "simulation_index": null
+      }
     },
     "200": {
       "color": [
@@ -38835,8 +37357,7 @@
                 "pos": {
                   "x": 2660.0,
                   "y": 240.0
-                },
-                "simulation_index": null
+                }
               },
               "10": {
                 "color": [
@@ -38855,8 +37376,7 @@
                 "pos": {
                   "x": 2660.0,
                   "y": -380.0
-                },
-                "simulation_index": null
+                }
               },
               "11": {
                 "color": [
@@ -38875,8 +37395,7 @@
                 "pos": {
                   "x": 2660.0,
                   "y": -320.0
-                },
-                "simulation_index": null
+                }
               },
               "12": {
                 "color": [
@@ -38895,8 +37414,7 @@
                 "pos": {
                   "x": 2660.0,
                   "y": -260.0
-                },
-                "simulation_index": null
+                }
               },
               "13": {
                 "color": [
@@ -38915,8 +37433,7 @@
                 "pos": {
                   "x": 2660.0,
                   "y": -200.0
-                },
-                "simulation_index": null
+                }
               },
               "14": {
                 "color": [
@@ -38935,8 +37452,7 @@
                 "pos": {
                   "x": 2660.0,
                   "y": -140.0
-                },
-                "simulation_index": null
+                }
               },
               "15": {
                 "color": [
@@ -38955,8 +37471,7 @@
                 "pos": {
                   "x": 2660.0,
                   "y": -80.0
-                },
-                "simulation_index": null
+                }
               },
               "19": {
                 "color": [
@@ -38975,8 +37490,7 @@
                 "pos": {
                   "x": 2660.0,
                   "y": 600.0
-                },
-                "simulation_index": null
+                }
               },
               "20": {
                 "color": [
@@ -38995,8 +37509,7 @@
                 "pos": {
                   "x": 2660.0,
                   "y": 660.0
-                },
-                "simulation_index": null
+                }
               },
               "21": {
                 "color": [
@@ -39015,8 +37528,7 @@
                 "pos": {
                   "x": 2660.0,
                   "y": 180.0
-                },
-                "simulation_index": null
+                }
               },
               "22": {
                 "color": [
@@ -40492,8 +39004,7 @@
                           "pos": {
                             "x": 680.0,
                             "y": 280.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "12": {
                           "color": [
@@ -40513,8 +39024,7 @@
                           "pos": {
                             "x": 620.0,
                             "y": 200.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "13": {
                           "color": [
@@ -40533,8 +39043,7 @@
                           "pos": {
                             "x": 320.0,
                             "y": 200.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "14": {
                           "color": [
@@ -40554,8 +39063,7 @@
                           "pos": {
                             "x": 560.0,
                             "y": 360.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "15": {
                           "color": [
@@ -40574,8 +39082,7 @@
                           "pos": {
                             "x": 800.0,
                             "y": 360.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "16": {
                           "color": [
@@ -40595,8 +39102,7 @@
                           "pos": {
                             "x": 680.0,
                             "y": 360.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "17": {
                           "color": [
@@ -40616,8 +39122,7 @@
                           "pos": {
                             "x": 440.0,
                             "y": 360.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "18": {
                           "color": [
@@ -40636,8 +39141,7 @@
                           "pos": {
                             "x": 320.0,
                             "y": 360.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "19": {
                           "color": [
@@ -40657,8 +39161,7 @@
                           "pos": {
                             "x": 560.0,
                             "y": 440.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "2": {
                           "color": [
@@ -40678,8 +39181,7 @@
                           "pos": {
                             "x": 560.0,
                             "y": 280.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "20": {
                           "color": [
@@ -40698,8 +39200,7 @@
                           "pos": {
                             "x": 800.0,
                             "y": 440.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "21": {
                           "color": [
@@ -40719,8 +39220,7 @@
                           "pos": {
                             "x": 680.0,
                             "y": 440.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "22": {
                           "color": [
@@ -40740,8 +39240,7 @@
                           "pos": {
                             "x": 440.0,
                             "y": 440.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "23": {
                           "color": [
@@ -40760,8 +39259,7 @@
                           "pos": {
                             "x": 320.0,
                             "y": 440.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "24": {
                           "color": [
@@ -40781,8 +39279,7 @@
                           "pos": {
                             "x": 560.0,
                             "y": 520.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "25": {
                           "color": [
@@ -40801,8 +39298,7 @@
                           "pos": {
                             "x": 800.0,
                             "y": 520.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "26": {
                           "color": [
@@ -40822,8 +39318,7 @@
                           "pos": {
                             "x": 680.0,
                             "y": 520.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "27": {
                           "color": [
@@ -40843,8 +39338,7 @@
                           "pos": {
                             "x": 440.0,
                             "y": 520.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "28": {
                           "color": [
@@ -40863,8 +39357,7 @@
                           "pos": {
                             "x": 320.0,
                             "y": 520.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "30": {
                           "color": [
@@ -40884,8 +39377,7 @@
                           "pos": {
                             "x": 440.0,
                             "y": 680.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "31": {
                           "color": [
@@ -40905,8 +39397,7 @@
                           "pos": {
                             "x": 440.0,
                             "y": 760.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "32": {
                           "color": [
@@ -40926,8 +39417,7 @@
                           "pos": {
                             "x": 560.0,
                             "y": 840.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "33": {
                           "color": [
@@ -40946,8 +39436,7 @@
                           "pos": {
                             "x": 800.0,
                             "y": 600.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "34": {
                           "color": [
@@ -40966,8 +39455,7 @@
                           "pos": {
                             "x": 800.0,
                             "y": 840.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "35": {
                           "color": [
@@ -40987,8 +39475,7 @@
                           "pos": {
                             "x": 440.0,
                             "y": 840.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "36": {
                           "color": [
@@ -41007,8 +39494,7 @@
                           "pos": {
                             "x": 320.0,
                             "y": 600.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "37": {
                           "color": [
@@ -41028,8 +39514,7 @@
                           "pos": {
                             "x": 560.0,
                             "y": 760.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "38": {
                           "color": [
@@ -41048,8 +39533,7 @@
                           "pos": {
                             "x": 320.0,
                             "y": 680.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "39": {
                           "color": [
@@ -41069,8 +39553,7 @@
                           "pos": {
                             "x": 560.0,
                             "y": 680.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "4": {
                           "color": [
@@ -41090,8 +39573,7 @@
                           "pos": {
                             "x": 440.0,
                             "y": 280.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "40": {
                           "color": [
@@ -41111,8 +39593,7 @@
                           "pos": {
                             "x": 680.0,
                             "y": 760.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "41": {
                           "color": [
@@ -41132,8 +39613,7 @@
                           "pos": {
                             "x": 560.0,
                             "y": 600.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "42": {
                           "color": [
@@ -41152,8 +39632,7 @@
                           "pos": {
                             "x": 320.0,
                             "y": 760.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "43": {
                           "color": [
@@ -41172,8 +39651,7 @@
                           "pos": {
                             "x": 320.0,
                             "y": 840.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "44": {
                           "color": [
@@ -41192,8 +39670,7 @@
                           "pos": {
                             "x": 800.0,
                             "y": 760.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "45": {
                           "color": [
@@ -41213,8 +39690,7 @@
                           "pos": {
                             "x": 680.0,
                             "y": 840.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "46": {
                           "color": [
@@ -41233,8 +39709,7 @@
                           "pos": {
                             "x": 800.0,
                             "y": 680.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "47": {
                           "color": [
@@ -41254,8 +39729,7 @@
                           "pos": {
                             "x": 680.0,
                             "y": 680.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "48": {
                           "color": [
@@ -41275,8 +39749,7 @@
                           "pos": {
                             "x": 680.0,
                             "y": 600.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "49": {
                           "color": [
@@ -41296,8 +39769,7 @@
                           "pos": {
                             "x": 440.0,
                             "y": 600.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "5": {
                           "color": [
@@ -41317,8 +39789,7 @@
                           "pos": {
                             "x": 440.0,
                             "y": 200.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "50": {
                           "color": [
@@ -41338,8 +39809,7 @@
                           "pos": {
                             "x": 560.0,
                             "y": 1560.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "51": {
                           "color": [
@@ -41359,8 +39829,7 @@
                           "pos": {
                             "x": 560.0,
                             "y": 1320.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "52": {
                           "color": [
@@ -41380,8 +39849,7 @@
                           "pos": {
                             "x": 560.0,
                             "y": 1480.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "53": {
                           "color": [
@@ -41400,8 +39868,7 @@
                           "pos": {
                             "x": 800.0,
                             "y": 1320.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "54": {
                           "color": [
@@ -41420,8 +39887,7 @@
                           "pos": {
                             "x": 800.0,
                             "y": 1000.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "55": {
                           "color": [
@@ -41440,8 +39906,7 @@
                           "pos": {
                             "x": 800.0,
                             "y": 1240.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "56": {
                           "color": [
@@ -41461,8 +39926,7 @@
                           "pos": {
                             "x": 440.0,
                             "y": 1240.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "57": {
                           "color": [
@@ -41481,8 +39945,7 @@
                           "pos": {
                             "x": 800.0,
                             "y": 1480.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "58": {
                           "color": [
@@ -41501,8 +39964,7 @@
                           "pos": {
                             "x": 800.0,
                             "y": 1560.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "59": {
                           "color": [
@@ -41522,8 +39984,7 @@
                           "pos": {
                             "x": 680.0,
                             "y": 1560.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "60": {
                           "color": [
@@ -41542,8 +40003,7 @@
                           "pos": {
                             "x": 320.0,
                             "y": 1160.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "61": {
                           "color": [
@@ -41563,8 +40023,7 @@
                           "pos": {
                             "x": 560.0,
                             "y": 1080.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "62": {
                           "color": [
@@ -41584,8 +40043,7 @@
                           "pos": {
                             "x": 680.0,
                             "y": 1160.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "63": {
                           "color": [
@@ -41605,8 +40063,7 @@
                           "pos": {
                             "x": 560.0,
                             "y": 1000.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "64": {
                           "color": [
@@ -41626,8 +40083,7 @@
                           "pos": {
                             "x": 680.0,
                             "y": 1480.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "65": {
                           "color": [
@@ -41646,8 +40102,7 @@
                           "pos": {
                             "x": 320.0,
                             "y": 1240.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "66": {
                           "color": [
@@ -41666,8 +40121,7 @@
                           "pos": {
                             "x": 800.0,
                             "y": 1160.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "67": {
                           "color": [
@@ -41687,8 +40141,7 @@
                           "pos": {
                             "x": 680.0,
                             "y": 1240.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "68": {
                           "color": [
@@ -41707,8 +40160,7 @@
                           "pos": {
                             "x": 320.0,
                             "y": 1560.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "69": {
                           "color": [
@@ -41727,8 +40179,7 @@
                           "pos": {
                             "x": 800.0,
                             "y": 1080.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "7": {
                           "color": [
@@ -41747,8 +40198,7 @@
                           "pos": {
                             "x": 320.0,
                             "y": 280.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "70": {
                           "color": [
@@ -41768,8 +40218,7 @@
                           "pos": {
                             "x": 680.0,
                             "y": 1080.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "71": {
                           "color": [
@@ -41789,8 +40238,7 @@
                           "pos": {
                             "x": 440.0,
                             "y": 1000.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "72": {
                           "color": [
@@ -41810,8 +40258,7 @@
                           "pos": {
                             "x": 440.0,
                             "y": 1400.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "73": {
                           "color": [
@@ -41831,8 +40278,7 @@
                           "pos": {
                             "x": 680.0,
                             "y": 1400.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "74": {
                           "color": [
@@ -41852,8 +40298,7 @@
                           "pos": {
                             "x": 440.0,
                             "y": 1320.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "75": {
                           "color": [
@@ -41872,8 +40317,7 @@
                           "pos": {
                             "x": 800.0,
                             "y": 1400.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "76": {
                           "color": [
@@ -41893,8 +40337,7 @@
                           "pos": {
                             "x": 440.0,
                             "y": 1080.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "77": {
                           "color": [
@@ -41914,8 +40357,7 @@
                           "pos": {
                             "x": 440.0,
                             "y": 1160.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "78": {
                           "color": [
@@ -41934,8 +40376,7 @@
                           "pos": {
                             "x": 320.0,
                             "y": 920.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "79": {
                           "color": [
@@ -41955,8 +40396,7 @@
                           "pos": {
                             "x": 560.0,
                             "y": 1240.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "8": {
                           "color": [
@@ -41975,8 +40415,7 @@
                           "pos": {
                             "x": 800.0,
                             "y": 280.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "80": {
                           "color": [
@@ -41996,8 +40435,7 @@
                           "pos": {
                             "x": 440.0,
                             "y": 920.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "81": {
                           "color": [
@@ -42016,8 +40454,7 @@
                           "pos": {
                             "x": 800.0,
                             "y": 920.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "82": {
                           "color": [
@@ -42037,8 +40474,7 @@
                           "pos": {
                             "x": 620.0,
                             "y": 920.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "83": {
                           "color": [
@@ -42057,8 +40493,7 @@
                           "pos": {
                             "x": 320.0,
                             "y": 1000.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "84": {
                           "color": [
@@ -42078,8 +40513,7 @@
                           "pos": {
                             "x": 560.0,
                             "y": 1160.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "85": {
                           "color": [
@@ -42098,8 +40532,7 @@
                           "pos": {
                             "x": 320.0,
                             "y": 1080.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "86": {
                           "color": [
@@ -42119,8 +40552,7 @@
                           "pos": {
                             "x": 440.0,
                             "y": 1480.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "87": {
                           "color": [
@@ -42139,8 +40571,7 @@
                           "pos": {
                             "x": 320.0,
                             "y": 1400.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "88": {
                           "color": [
@@ -42160,8 +40591,7 @@
                           "pos": {
                             "x": 560.0,
                             "y": 1400.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "89": {
                           "color": [
@@ -42180,8 +40610,7 @@
                           "pos": {
                             "x": 320.0,
                             "y": 1480.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "9": {
                           "color": [
@@ -42200,8 +40629,7 @@
                           "pos": {
                             "x": 800.0,
                             "y": 200.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "90": {
                           "color": [
@@ -42220,8 +40648,7 @@
                           "pos": {
                             "x": 320.0,
                             "y": 1320.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "91": {
                           "color": [
@@ -42241,8 +40668,7 @@
                           "pos": {
                             "x": 680.0,
                             "y": 1320.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "92": {
                           "color": [
@@ -42262,8 +40688,7 @@
                           "pos": {
                             "x": 680.0,
                             "y": 1000.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "93": {
                           "color": [
@@ -42283,8 +40708,7 @@
                           "pos": {
                             "x": 440.0,
                             "y": 1560.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "94": {
                           "color": [
@@ -42303,55 +40727,9 @@
                           "pos": {
                             "x": 320.0,
                             "y": 120.0
-                          },
-                          "simulation_index": null
+                          }
                         }
                       }
-                    },
-                    "inputs": {
-                      "13": "write high",
-                      "18": "write 14",
-                      "23": "write 13",
-                      "28": "write 12",
-                      "36": "write 11",
-                      "38": "write 10",
-                      "42": "write 9",
-                      "43": "write 8",
-                      "60": "write 5",
-                      "65": "write 4",
-                      "68": "write 0",
-                      "7": "write 15",
-                      "78": "write low",
-                      "83": "write 7",
-                      "85": "write 6",
-                      "87": "write 2",
-                      "89": "write 1",
-                      "90": "write 3",
-                      "94": "write both"
-                    },
-                    "min_size": {
-                      "x": 120.0,
-                      "y": 420.0
-                    },
-                    "outputs": {
-                      "15": "read 14",
-                      "20": "read 13",
-                      "25": "read 12",
-                      "33": "read 11",
-                      "34": "read 8",
-                      "44": "read 9",
-                      "46": "read 10",
-                      "53": "read 3",
-                      "54": "read 7",
-                      "55": "read 4",
-                      "57": "read 1",
-                      "58": "read 0",
-                      "66": "read 5",
-                      "69": "read 6",
-                      "75": "read 2",
-                      "8": "read 15",
-                      "81": "wrote clock",
-                      "9": "wrote clock"
                     },
                     "path": "/home/leo/Documents/projects/game-related/SMLogic/sample_projects/6502/random_modules/16_bit_register.sml",
                     "size": {
@@ -42363,8 +40741,7 @@
                 "pos": {
                   "x": 2800.0,
                   "y": 180.0
-                },
-                "simulation_index": null
+                }
               },
               "24": {
                 "color": [
@@ -42882,102 +41259,6 @@
                             "part": 55,
                             "port_id": null
                           }
-                        },
-                        {
-                          "end": {
-                            "input": true,
-                            "part": 57,
-                            "port_id": null
-                          },
-                          "start": {
-                            "input": false,
-                            "part": 8,
-                            "port_id": null
-                          }
-                        },
-                        {
-                          "end": {
-                            "input": true,
-                            "part": 55,
-                            "port_id": null
-                          },
-                          "start": {
-                            "input": false,
-                            "part": 8,
-                            "port_id": null
-                          }
-                        },
-                        {
-                          "end": {
-                            "input": true,
-                            "part": 63,
-                            "port_id": null
-                          },
-                          "start": {
-                            "input": false,
-                            "part": 8,
-                            "port_id": null
-                          }
-                        },
-                        {
-                          "end": {
-                            "input": true,
-                            "part": 52,
-                            "port_id": null
-                          },
-                          "start": {
-                            "input": false,
-                            "part": 8,
-                            "port_id": null
-                          }
-                        },
-                        {
-                          "end": {
-                            "input": true,
-                            "part": 58,
-                            "port_id": null
-                          },
-                          "start": {
-                            "input": false,
-                            "part": 8,
-                            "port_id": null
-                          }
-                        },
-                        {
-                          "end": {
-                            "input": true,
-                            "part": 54,
-                            "port_id": null
-                          },
-                          "start": {
-                            "input": false,
-                            "part": 8,
-                            "port_id": null
-                          }
-                        },
-                        {
-                          "end": {
-                            "input": true,
-                            "part": 62,
-                            "port_id": null
-                          },
-                          "start": {
-                            "input": false,
-                            "part": 8,
-                            "port_id": null
-                          }
-                        },
-                        {
-                          "end": {
-                            "input": true,
-                            "part": 59,
-                            "port_id": null
-                          },
-                          "start": {
-                            "input": false,
-                            "part": 8,
-                            "port_id": null
-                          }
                         }
                       ],
                       "next_id": 75,
@@ -42999,8 +41280,7 @@
                           "pos": {
                             "x": 2700.0,
                             "y": 0.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "1": {
                           "color": [
@@ -43019,8 +41299,7 @@
                           "pos": {
                             "x": 2700.0,
                             "y": 60.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "10": {
                           "color": [
@@ -43040,8 +41319,7 @@
                           "pos": {
                             "x": 2820.0,
                             "y": -0.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "11": {
                           "color": [
@@ -43061,8 +41339,7 @@
                           "pos": {
                             "x": 2820.0,
                             "y": 60.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "12": {
                           "color": [
@@ -43082,8 +41359,7 @@
                           "pos": {
                             "x": 2820.0,
                             "y": 120.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "13": {
                           "color": [
@@ -43103,8 +41379,7 @@
                           "pos": {
                             "x": 2820.0,
                             "y": 180.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "14": {
                           "color": [
@@ -43124,8 +41399,7 @@
                           "pos": {
                             "x": 2820.0,
                             "y": 360.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "15": {
                           "color": [
@@ -43145,8 +41419,7 @@
                           "pos": {
                             "x": 2820.0,
                             "y": 420.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "16": {
                           "color": [
@@ -43166,8 +41439,7 @@
                           "pos": {
                             "x": 2820.0,
                             "y": 240.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "17": {
                           "color": [
@@ -43187,8 +41459,7 @@
                           "pos": {
                             "x": 2820.0,
                             "y": 300.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "18": {
                           "color": [
@@ -43207,8 +41478,7 @@
                           "pos": {
                             "x": 2940.0,
                             "y": -80.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "19": {
                           "color": [
@@ -43227,8 +41497,7 @@
                           "pos": {
                             "x": 2940.0,
                             "y": 0.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "2": {
                           "color": [
@@ -43247,8 +41516,7 @@
                           "pos": {
                             "x": 2700.0,
                             "y": 120.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "20": {
                           "color": [
@@ -43267,8 +41535,7 @@
                           "pos": {
                             "x": 2940.0,
                             "y": 60.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "21": {
                           "color": [
@@ -43287,8 +41554,7 @@
                           "pos": {
                             "x": 2940.0,
                             "y": 120.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "22": {
                           "color": [
@@ -43307,8 +41573,7 @@
                           "pos": {
                             "x": 2940.0,
                             "y": 180.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "23": {
                           "color": [
@@ -43327,8 +41592,7 @@
                           "pos": {
                             "x": 2940.0,
                             "y": 360.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "24": {
                           "color": [
@@ -43347,8 +41611,7 @@
                           "pos": {
                             "x": 2940.0,
                             "y": 420.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "25": {
                           "color": [
@@ -43367,8 +41630,7 @@
                           "pos": {
                             "x": 2940.0,
                             "y": 300.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "26": {
                           "color": [
@@ -43387,8 +41649,7 @@
                           "pos": {
                             "x": 2940.0,
                             "y": 240.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "3": {
                           "color": [
@@ -43407,8 +41668,7 @@
                           "pos": {
                             "x": 2700.0,
                             "y": 180.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "4": {
                           "color": [
@@ -43427,8 +41687,7 @@
                           "pos": {
                             "x": 2700.0,
                             "y": 240.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "5": {
                           "color": [
@@ -43447,8 +41706,7 @@
                           "pos": {
                             "x": 2700.0,
                             "y": 300.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "51": {
                           "color": [
@@ -43467,8 +41725,7 @@
                           "pos": {
                             "x": 2700.0,
                             "y": 840.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "52": {
                           "color": [
@@ -43488,8 +41745,7 @@
                           "pos": {
                             "x": 2820.0,
                             "y": 720.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "53": {
                           "color": [
@@ -43508,8 +41764,7 @@
                           "pos": {
                             "x": 2700.0,
                             "y": 720.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "54": {
                           "color": [
@@ -43529,8 +41784,7 @@
                           "pos": {
                             "x": 2820.0,
                             "y": 540.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "55": {
                           "color": [
@@ -43550,8 +41804,7 @@
                           "pos": {
                             "x": 2820.0,
                             "y": 900.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "56": {
                           "color": [
@@ -43570,8 +41823,7 @@
                           "pos": {
                             "x": 2700.0,
                             "y": 660.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "57": {
                           "color": [
@@ -43591,8 +41843,7 @@
                           "pos": {
                             "x": 2820.0,
                             "y": 600.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "58": {
                           "color": [
@@ -43612,8 +41863,7 @@
                           "pos": {
                             "x": 2820.0,
                             "y": 660.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "59": {
                           "color": [
@@ -43633,8 +41883,7 @@
                           "pos": {
                             "x": 2820.0,
                             "y": 480.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "6": {
                           "color": [
@@ -43653,8 +41902,7 @@
                           "pos": {
                             "x": 2700.0,
                             "y": 360.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "60": {
                           "color": [
@@ -43673,8 +41921,7 @@
                           "pos": {
                             "x": 2700.0,
                             "y": 540.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "61": {
                           "color": [
@@ -43693,8 +41940,7 @@
                           "pos": {
                             "x": 2700.0,
                             "y": 900.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "62": {
                           "color": [
@@ -43714,8 +41960,7 @@
                           "pos": {
                             "x": 2820.0,
                             "y": 780.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "63": {
                           "color": [
@@ -43735,8 +41980,7 @@
                           "pos": {
                             "x": 2820.0,
                             "y": 840.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "64": {
                           "color": [
@@ -43755,8 +41999,7 @@
                           "pos": {
                             "x": 2700.0,
                             "y": 780.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "65": {
                           "color": [
@@ -43775,8 +42018,7 @@
                           "pos": {
                             "x": 2940.0,
                             "y": 600.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "66": {
                           "color": [
@@ -43795,8 +42037,7 @@
                           "pos": {
                             "x": 2700.0,
                             "y": 480.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "67": {
                           "color": [
@@ -43815,8 +42056,7 @@
                           "pos": {
                             "x": 2940.0,
                             "y": 900.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "68": {
                           "color": [
@@ -43835,8 +42075,7 @@
                           "pos": {
                             "x": 2940.0,
                             "y": 720.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "69": {
                           "color": [
@@ -43855,8 +42094,7 @@
                           "pos": {
                             "x": 2940.0,
                             "y": 660.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "7": {
                           "color": [
@@ -43875,8 +42113,7 @@
                           "pos": {
                             "x": 2700.0,
                             "y": 420.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "70": {
                           "color": [
@@ -43895,8 +42132,7 @@
                           "pos": {
                             "x": 2940.0,
                             "y": 540.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "71": {
                           "color": [
@@ -43915,8 +42151,7 @@
                           "pos": {
                             "x": 2940.0,
                             "y": 840.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "72": {
                           "color": [
@@ -43935,8 +42170,7 @@
                           "pos": {
                             "x": 2700.0,
                             "y": 600.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "73": {
                           "color": [
@@ -43955,8 +42189,7 @@
                           "pos": {
                             "x": 2940.0,
                             "y": 780.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "74": {
                           "color": [
@@ -43975,8 +42208,7 @@
                           "pos": {
                             "x": 2940.0,
                             "y": 480.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "8": {
                           "color": [
@@ -43995,8 +42227,7 @@
                           "pos": {
                             "x": 2700.0,
                             "y": -80.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "9": {
                           "color": [
@@ -44016,52 +42247,9 @@
                           "pos": {
                             "x": 2820.0,
                             "y": -80.0
-                          },
-                          "simulation_index": null
+                          }
                         }
                       }
-                    },
-                    "inputs": {
-                      "0": "input 15",
-                      "1": "input 14",
-                      "2": "input 13",
-                      "3": "input 12",
-                      "4": "input 11",
-                      "5": "input 10",
-                      "51": "input 1",
-                      "53": "input 3",
-                      "56": "input 4",
-                      "6": "input 9",
-                      "60": "input 6",
-                      "61": "input 0",
-                      "64": "input 2",
-                      "66": "input 7",
-                      "7": "input 8",
-                      "72": "input 5",
-                      "8": "clock"
-                    },
-                    "min_size": {
-                      "x": 120.0,
-                      "y": 380.0
-                    },
-                    "outputs": {
-                      "18": "clock",
-                      "19": "output 15",
-                      "20": "output 14",
-                      "21": "output 13",
-                      "22": "output 12",
-                      "23": "output 9",
-                      "24": "output 8",
-                      "25": "output 10",
-                      "26": "output 11",
-                      "65": "output 5",
-                      "67": "output 0",
-                      "68": "output 3",
-                      "69": "output 4",
-                      "70": "output 6",
-                      "71": "output 1",
-                      "73": "output 2",
-                      "74": "output 7"
                     },
                     "path": "/home/leo/Documents/projects/game-related/SMLogic/sample_projects/6502/random_modules/16_bit_tick_gate.sml",
                     "size": {
@@ -44073,8 +42261,7 @@
                 "pos": {
                   "x": 2980.0,
                   "y": 180.0
-                },
-                "simulation_index": null
+                }
               },
               "25": {
                 "color": [
@@ -44093,8 +42280,7 @@
                 "pos": {
                   "x": 3280.0,
                   "y": 40.0
-                },
-                "simulation_index": null
+                }
               },
               "26": {
                 "color": [
@@ -44113,8 +42299,7 @@
                 "pos": {
                   "x": 3280.0,
                   "y": 100.0
-                },
-                "simulation_index": null
+                }
               },
               "27": {
                 "color": [
@@ -44133,8 +42318,7 @@
                 "pos": {
                   "x": 3280.0,
                   "y": 160.0
-                },
-                "simulation_index": null
+                }
               },
               "28": {
                 "color": [
@@ -44153,8 +42337,7 @@
                 "pos": {
                   "x": 3280.0,
                   "y": 220.0
-                },
-                "simulation_index": null
+                }
               },
               "29": {
                 "color": [
@@ -44173,8 +42356,7 @@
                 "pos": {
                   "x": 3280.0,
                   "y": 280.0
-                },
-                "simulation_index": null
+                }
               },
               "3": {
                 "color": [
@@ -44193,8 +42375,7 @@
                 "pos": {
                   "x": 2660.0,
                   "y": 300.0
-                },
-                "simulation_index": null
+                }
               },
               "30": {
                 "color": [
@@ -44213,8 +42394,7 @@
                 "pos": {
                   "x": 3280.0,
                   "y": 340.0
-                },
-                "simulation_index": null
+                }
               },
               "31": {
                 "color": [
@@ -44233,8 +42413,7 @@
                 "pos": {
                   "x": 3280.0,
                   "y": 400.0
-                },
-                "simulation_index": null
+                }
               },
               "32": {
                 "color": [
@@ -44253,8 +42432,7 @@
                 "pos": {
                   "x": 3280.0,
                   "y": 460.0
-                },
-                "simulation_index": null
+                }
               },
               "33": {
                 "color": [
@@ -44273,8 +42451,7 @@
                 "pos": {
                   "x": 3280.0,
                   "y": -20.0
-                },
-                "simulation_index": null
+                }
               },
               "34": {
                 "color": [
@@ -44293,8 +42470,7 @@
                 "pos": {
                   "x": 2660.0,
                   "y": 780.0
-                },
-                "simulation_index": null
+                }
               },
               "35": {
                 "color": [
@@ -44313,8 +42489,7 @@
                 "pos": {
                   "x": 2660.0,
                   "y": 1020.0
-                },
-                "simulation_index": null
+                }
               },
               "36": {
                 "color": [
@@ -44333,8 +42508,7 @@
                 "pos": {
                   "x": 2660.0,
                   "y": 960.0
-                },
-                "simulation_index": null
+                }
               },
               "37": {
                 "color": [
@@ -44353,8 +42527,7 @@
                 "pos": {
                   "x": 2660.0,
                   "y": 1140.0
-                },
-                "simulation_index": null
+                }
               },
               "38": {
                 "color": [
@@ -44373,8 +42546,7 @@
                 "pos": {
                   "x": 2660.0,
                   "y": 1200.0
-                },
-                "simulation_index": null
+                }
               },
               "39": {
                 "color": [
@@ -44393,8 +42565,7 @@
                 "pos": {
                   "x": 2660.0,
                   "y": 840.0
-                },
-                "simulation_index": null
+                }
               },
               "4": {
                 "color": [
@@ -44413,8 +42584,7 @@
                 "pos": {
                   "x": 2660.0,
                   "y": 360.0
-                },
-                "simulation_index": null
+                }
               },
               "40": {
                 "color": [
@@ -44433,8 +42603,7 @@
                 "pos": {
                   "x": 2660.0,
                   "y": 900.0
-                },
-                "simulation_index": null
+                }
               },
               "41": {
                 "color": [
@@ -44453,8 +42622,7 @@
                 "pos": {
                   "x": 2660.0,
                   "y": 720.0
-                },
-                "simulation_index": null
+                }
               },
               "42": {
                 "color": [
@@ -44473,8 +42641,7 @@
                 "pos": {
                   "x": 2660.0,
                   "y": 1080.0
-                },
-                "simulation_index": null
+                }
               },
               "43": {
                 "color": [
@@ -44493,8 +42660,7 @@
                 "pos": {
                   "x": 2660.0,
                   "y": 120.0
-                },
-                "simulation_index": null
+                }
               },
               "46": {
                 "color": [
@@ -44513,8 +42679,7 @@
                 "pos": {
                   "x": 3280.0,
                   "y": 820.0
-                },
-                "simulation_index": null
+                }
               },
               "47": {
                 "color": [
@@ -44533,8 +42698,7 @@
                 "pos": {
                   "x": 3280.0,
                   "y": 580.0
-                },
-                "simulation_index": null
+                }
               },
               "48": {
                 "color": [
@@ -44553,8 +42717,7 @@
                 "pos": {
                   "x": 3280.0,
                   "y": 640.0
-                },
-                "simulation_index": null
+                }
               },
               "49": {
                 "color": [
@@ -44573,8 +42736,7 @@
                 "pos": {
                   "x": 3280.0,
                   "y": 880.0
-                },
-                "simulation_index": null
+                }
               },
               "5": {
                 "color": [
@@ -44593,8 +42755,7 @@
                 "pos": {
                   "x": 2660.0,
                   "y": 420.0
-                },
-                "simulation_index": null
+                }
               },
               "50": {
                 "color": [
@@ -44613,8 +42774,7 @@
                 "pos": {
                   "x": 3280.0,
                   "y": 700.0
-                },
-                "simulation_index": null
+                }
               },
               "51": {
                 "color": [
@@ -44633,8 +42793,7 @@
                 "pos": {
                   "x": 3280.0,
                   "y": 520.0
-                },
-                "simulation_index": null
+                }
               },
               "52": {
                 "color": [
@@ -44653,8 +42812,7 @@
                 "pos": {
                   "x": 3280.0,
                   "y": 940.0
-                },
-                "simulation_index": null
+                }
               },
               "53": {
                 "color": [
@@ -44673,8 +42831,7 @@
                 "pos": {
                   "x": 3280.0,
                   "y": 760.0
-                },
-                "simulation_index": null
+                }
               },
               "6": {
                 "color": [
@@ -44693,8 +42850,7 @@
                 "pos": {
                   "x": 2660.0,
                   "y": 480.0
-                },
-                "simulation_index": null
+                }
               },
               "7": {
                 "color": [
@@ -44713,8 +42869,7 @@
                 "pos": {
                   "x": 2660.0,
                   "y": 540.0
-                },
-                "simulation_index": null
+                }
               },
               "8": {
                 "color": [
@@ -44733,8 +42888,7 @@
                 "pos": {
                   "x": 2660.0,
                   "y": -20.0
-                },
-                "simulation_index": null
+                }
               },
               "9": {
                 "color": [
@@ -45537,8 +43691,7 @@
                           "pos": {
                             "x": 1580.0,
                             "y": 360.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "12": {
                           "color": [
@@ -45558,8 +43711,7 @@
                           "pos": {
                             "x": 1820.0,
                             "y": 360.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "14": {
                           "color": [
@@ -45579,8 +43731,7 @@
                           "pos": {
                             "x": 1960.0,
                             "y": 360.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "15": {
                           "color": [
@@ -45600,8 +43751,7 @@
                           "pos": {
                             "x": 2180.0,
                             "y": 400.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "16": {
                           "color": [
@@ -45621,8 +43771,7 @@
                           "pos": {
                             "x": 2180.0,
                             "y": 340.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "19": {
                           "color": [
@@ -45642,8 +43791,7 @@
                           "pos": {
                             "x": 1840.0,
                             "y": 280.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "23": {
                           "color": [
@@ -45663,8 +43811,7 @@
                           "pos": {
                             "x": 1700.0,
                             "y": 340.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "25": {
                           "color": [
@@ -45684,8 +43831,7 @@
                           "pos": {
                             "x": 1700.0,
                             "y": 420.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "26": {
                           "color": [
@@ -45704,8 +43850,7 @@
                           "pos": {
                             "x": 1580.0,
                             "y": 440.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "27": {
                           "color": [
@@ -45725,8 +43870,7 @@
                           "pos": {
                             "x": 1820.0,
                             "y": 440.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "28": {
                           "color": [
@@ -45746,8 +43890,7 @@
                           "pos": {
                             "x": 1700.0,
                             "y": 500.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "29": {
                           "color": [
@@ -45766,8 +43909,7 @@
                           "pos": {
                             "x": 1580.0,
                             "y": 520.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "30": {
                           "color": [
@@ -45787,8 +43929,7 @@
                           "pos": {
                             "x": 1820.0,
                             "y": 520.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "31": {
                           "color": [
@@ -45808,8 +43949,7 @@
                           "pos": {
                             "x": 1700.0,
                             "y": 580.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "32": {
                           "color": [
@@ -45828,8 +43968,7 @@
                           "pos": {
                             "x": 1580.0,
                             "y": 600.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "33": {
                           "color": [
@@ -45849,8 +43988,7 @@
                           "pos": {
                             "x": 1820.0,
                             "y": 600.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "34": {
                           "color": [
@@ -45869,8 +44007,7 @@
                           "pos": {
                             "x": 1580.0,
                             "y": 760.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "35": {
                           "color": [
@@ -45890,8 +44027,7 @@
                           "pos": {
                             "x": 1700.0,
                             "y": 660.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "36": {
                           "color": [
@@ -45911,8 +44047,7 @@
                           "pos": {
                             "x": 1820.0,
                             "y": 920.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "37": {
                           "color": [
@@ -45932,8 +44067,7 @@
                           "pos": {
                             "x": 1820.0,
                             "y": 760.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "38": {
                           "color": [
@@ -45952,8 +44086,7 @@
                           "pos": {
                             "x": 1580.0,
                             "y": 680.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "39": {
                           "color": [
@@ -45973,8 +44106,7 @@
                           "pos": {
                             "x": 1700.0,
                             "y": 900.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "40": {
                           "color": [
@@ -45993,8 +44125,7 @@
                           "pos": {
                             "x": 1580.0,
                             "y": 920.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "41": {
                           "color": [
@@ -46014,8 +44145,7 @@
                           "pos": {
                             "x": 1700.0,
                             "y": 740.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "42": {
                           "color": [
@@ -46035,8 +44165,7 @@
                           "pos": {
                             "x": 1820.0,
                             "y": 680.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "43": {
                           "color": [
@@ -46056,8 +44185,7 @@
                           "pos": {
                             "x": 1700.0,
                             "y": 820.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "44": {
                           "color": [
@@ -46077,8 +44205,7 @@
                           "pos": {
                             "x": 1820.0,
                             "y": 840.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "45": {
                           "color": [
@@ -46097,8 +44224,7 @@
                           "pos": {
                             "x": 1580.0,
                             "y": 840.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "8": {
                           "color": [
@@ -46117,8 +44243,7 @@
                           "pos": {
                             "x": 1580.0,
                             "y": 280.0
-                          },
-                          "simulation_index": null
+                          }
                         },
                         "9": {
                           "color": [
@@ -46137,28 +44262,9 @@
                           "pos": {
                             "x": 2300.0,
                             "y": 340.0
-                          },
-                          "simulation_index": null
+                          }
                         }
                       }
-                    },
-                    "inputs": {
-                      "0": "item",
-                      "26": "item",
-                      "29": "item",
-                      "32": "item",
-                      "34": "item",
-                      "38": "item",
-                      "40": "item",
-                      "45": "item",
-                      "8": "start"
-                    },
-                    "min_size": {
-                      "x": 120.0,
-                      "y": 220.0
-                    },
-                    "outputs": {
-                      "9": "clock"
                     },
                     "path": "random_modules/checklist.sml",
                     "size": {
@@ -46170,61 +44276,9 @@
                 "pos": {
                   "x": 2820.0,
                   "y": -140.0
-                },
-                "simulation_index": null
+                }
               }
             }
-          },
-          "inputs": {
-            "1": "data 15",
-            "10": "start",
-            "11": "checklist 7",
-            "12": "checklist 6",
-            "13": "checklist 5",
-            "14": "checklist 4",
-            "15": "checklist 3",
-            "19": "data 9",
-            "20": "data 8",
-            "21": "write high",
-            "3": "data 14",
-            "34": "data 7",
-            "35": "data 3",
-            "36": "data 4",
-            "37": "data 1",
-            "38": "data 0",
-            "39": "data 6",
-            "4": "data 13",
-            "40": "data 5",
-            "41": "write low",
-            "42": "data 2",
-            "43": "write both",
-            "5": "data 12",
-            "6": "data 11",
-            "7": "data 10",
-            "8": "checklist 2"
-          },
-          "min_size": {
-            "x": 120.0,
-            "y": 560.0
-          },
-          "outputs": {
-            "25": "data 15",
-            "26": "data 14",
-            "27": "data 13",
-            "28": "data 12",
-            "29": "data 11",
-            "30": "data 10",
-            "31": "data 9",
-            "32": "data 8",
-            "33": "clock",
-            "46": "data 2",
-            "47": "data 6",
-            "48": "data 5",
-            "49": "data 1",
-            "50": "data 4",
-            "51": "data 7",
-            "52": "data 0",
-            "53": "data 3"
           },
           "path": "random_modules/16_bit_data_checklist.sml",
           "size": {
@@ -46236,8 +44290,7 @@
       "pos": {
         "x": 3000.0,
         "y": 1100.0
-      },
-      "simulation_index": null
+      }
     },
     "202": {
       "color": [
@@ -46741,8 +44794,7 @@
                 "pos": {
                   "x": 2160.0,
                   "y": -620.0
-                },
-                "simulation_index": null
+                }
               },
               "1": {
                 "color": [
@@ -46761,8 +44813,7 @@
                 "pos": {
                   "x": 2040.0,
                   "y": -620.0
-                },
-                "simulation_index": null
+                }
               },
               "10": {
                 "color": [
@@ -46781,8 +44832,7 @@
                 "pos": {
                   "x": 2280.0,
                   "y": -160.0
-                },
-                "simulation_index": null
+                }
               },
               "11": {
                 "color": [
@@ -46801,8 +44851,7 @@
                 "pos": {
                   "x": 2280.0,
                   "y": -340.0
-                },
-                "simulation_index": null
+                }
               },
               "12": {
                 "color": [
@@ -46821,8 +44870,7 @@
                 "pos": {
                   "x": 2280.0,
                   "y": -280.0
-                },
-                "simulation_index": null
+                }
               },
               "13": {
                 "color": [
@@ -46841,8 +44889,7 @@
                 "pos": {
                   "x": 2280.0,
                   "y": -460.0
-                },
-                "simulation_index": null
+                }
               },
               "14": {
                 "color": [
@@ -46861,8 +44908,7 @@
                 "pos": {
                   "x": 2280.0,
                   "y": -400.0
-                },
-                "simulation_index": null
+                }
               },
               "15": {
                 "color": [
@@ -46882,8 +44928,7 @@
                 "pos": {
                   "x": 2400.0,
                   "y": -40.0
-                },
-                "simulation_index": null
+                }
               },
               "16": {
                 "color": [
@@ -46903,8 +44948,7 @@
                 "pos": {
                   "x": 2400.0,
                   "y": -100.0
-                },
-                "simulation_index": null
+                }
               },
               "17": {
                 "color": [
@@ -46924,8 +44968,7 @@
                 "pos": {
                   "x": 2400.0,
                   "y": -160.0
-                },
-                "simulation_index": null
+                }
               },
               "18": {
                 "color": [
@@ -46945,8 +44988,7 @@
                 "pos": {
                   "x": 2400.0,
                   "y": -220.0
-                },
-                "simulation_index": null
+                }
               },
               "19": {
                 "color": [
@@ -46966,8 +45008,7 @@
                 "pos": {
                   "x": 2400.0,
                   "y": -280.0
-                },
-                "simulation_index": null
+                }
               },
               "2": {
                 "color": [
@@ -46986,8 +45027,7 @@
                 "pos": {
                   "x": 2040.0,
                   "y": -540.0
-                },
-                "simulation_index": null
+                }
               },
               "20": {
                 "color": [
@@ -47007,8 +45047,7 @@
                 "pos": {
                   "x": 2400.0,
                   "y": -340.0
-                },
-                "simulation_index": null
+                }
               },
               "21": {
                 "color": [
@@ -47028,8 +45067,7 @@
                 "pos": {
                   "x": 2400.0,
                   "y": -400.0
-                },
-                "simulation_index": null
+                }
               },
               "22": {
                 "color": [
@@ -47049,8 +45087,7 @@
                 "pos": {
                   "x": 2400.0,
                   "y": -460.0
-                },
-                "simulation_index": null
+                }
               },
               "23": {
                 "color": [
@@ -47069,8 +45106,7 @@
                 "pos": {
                   "x": 2520.0,
                   "y": -460.0
-                },
-                "simulation_index": null
+                }
               },
               "24": {
                 "color": [
@@ -47089,8 +45125,7 @@
                 "pos": {
                   "x": 2520.0,
                   "y": -400.0
-                },
-                "simulation_index": null
+                }
               },
               "25": {
                 "color": [
@@ -47109,8 +45144,7 @@
                 "pos": {
                   "x": 2520.0,
                   "y": -340.0
-                },
-                "simulation_index": null
+                }
               },
               "26": {
                 "color": [
@@ -47129,8 +45163,7 @@
                 "pos": {
                   "x": 2520.0,
                   "y": -280.0
-                },
-                "simulation_index": null
+                }
               },
               "27": {
                 "color": [
@@ -47149,8 +45182,7 @@
                 "pos": {
                   "x": 2520.0,
                   "y": -220.0
-                },
-                "simulation_index": null
+                }
               },
               "28": {
                 "color": [
@@ -47169,8 +45201,7 @@
                 "pos": {
                   "x": 2520.0,
                   "y": -160.0
-                },
-                "simulation_index": null
+                }
               },
               "29": {
                 "color": [
@@ -47189,8 +45220,7 @@
                 "pos": {
                   "x": 2520.0,
                   "y": -100.0
-                },
-                "simulation_index": null
+                }
               },
               "30": {
                 "color": [
@@ -47209,8 +45239,7 @@
                 "pos": {
                   "x": 2520.0,
                   "y": -40.0
-                },
-                "simulation_index": null
+                }
               },
               "4": {
                 "color": [
@@ -47229,8 +45258,7 @@
                 "pos": {
                   "x": 2280.0,
                   "y": -540.0
-                },
-                "simulation_index": null
+                }
               },
               "5": {
                 "color": [
@@ -47250,8 +45278,7 @@
                 "pos": {
                   "x": 2280.0,
                   "y": -620.0
-                },
-                "simulation_index": null
+                }
               },
               "6": {
                 "color": [
@@ -47271,8 +45298,7 @@
                 "pos": {
                   "x": 2160.0,
                   "y": -540.0
-                },
-                "simulation_index": null
+                }
               },
               "7": {
                 "color": [
@@ -47291,8 +45317,7 @@
                 "pos": {
                   "x": 2280.0,
                   "y": -40.0
-                },
-                "simulation_index": null
+                }
               },
               "8": {
                 "color": [
@@ -47311,8 +45336,7 @@
                 "pos": {
                   "x": 2280.0,
                   "y": -100.0
-                },
-                "simulation_index": null
+                }
               },
               "9": {
                 "color": [
@@ -47331,37 +45355,9 @@
                 "pos": {
                   "x": 2280.0,
                   "y": -220.0
-                },
-                "simulation_index": null
+                }
               }
             }
-          },
-          "inputs": {
-            "1": "start clock",
-            "10": "data 2",
-            "11": "data 5",
-            "12": "data 4",
-            "13": "data 7",
-            "14": "data 6",
-            "2": "finish clock",
-            "7": "data 0",
-            "8": "data 1",
-            "9": "data 3"
-          },
-          "min_size": {
-            "x": 120.0,
-            "y": 240.0
-          },
-          "outputs": {
-            "23": "data 7",
-            "24": "data 6",
-            "25": "data 5",
-            "26": "data 4",
-            "27": "data 3",
-            "28": "data 2",
-            "29": "data 1",
-            "30": "data 0",
-            "4": "finish clock"
           },
           "path": "random_modules/clock_check_8b.sml",
           "size": {
@@ -47373,8 +45369,7 @@
       "pos": {
         "x": 3000.0,
         "y": 840.0
-      },
-      "simulation_index": null
+      }
     },
     "203": {
       "color": [
@@ -49834,8 +47829,7 @@
                 "pos": {
                   "x": 960.0,
                   "y": 660.0
-                },
-                "simulation_index": null
+                }
               },
               "1": {
                 "color": [
@@ -49854,8 +47848,7 @@
                 "pos": {
                   "x": 1080.0,
                   "y": 740.0
-                },
-                "simulation_index": null
+                }
               },
               "10": {
                 "color": [
@@ -49875,8 +47868,7 @@
                 "pos": {
                   "x": 960.0,
                   "y": 580.0
-                },
-                "simulation_index": null
+                }
               },
               "12": {
                 "color": [
@@ -49895,8 +47887,7 @@
                 "pos": {
                   "x": 600.0,
                   "y": 480.0
-                },
-                "simulation_index": null
+                }
               },
               "13": {
                 "color": [
@@ -49916,8 +47907,7 @@
                 "pos": {
                   "x": 960.0,
                   "y": 500.0
-                },
-                "simulation_index": null
+                }
               },
               "14": {
                 "color": [
@@ -49936,8 +47926,7 @@
                 "pos": {
                   "x": 600.0,
                   "y": 160.0
-                },
-                "simulation_index": null
+                }
               },
               "16": {
                 "color": [
@@ -49957,8 +47946,7 @@
                 "pos": {
                   "x": 840.0,
                   "y": 180.0
-                },
-                "simulation_index": null
+                }
               },
               "17": {
                 "color": [
@@ -49978,8 +47966,7 @@
                 "pos": {
                   "x": 960.0,
                   "y": 260.0
-                },
-                "simulation_index": null
+                }
               },
               "18": {
                 "color": [
@@ -49998,8 +47985,7 @@
                 "pos": {
                   "x": 1080.0,
                   "y": 500.0
-                },
-                "simulation_index": null
+                }
               },
               "19": {
                 "color": [
@@ -50019,8 +48005,7 @@
                 "pos": {
                   "x": 720.0,
                   "y": 280.0
-                },
-                "simulation_index": null
+                }
               },
               "2": {
                 "color": [
@@ -50039,8 +48024,7 @@
                 "pos": {
                   "x": 1080.0,
                   "y": 180.0
-                },
-                "simulation_index": null
+                }
               },
               "21": {
                 "color": [
@@ -50059,8 +48043,7 @@
                 "pos": {
                   "x": 600.0,
                   "y": 720.0
-                },
-                "simulation_index": null
+                }
               },
               "22": {
                 "color": [
@@ -50079,8 +48062,7 @@
                 "pos": {
                   "x": 600.0,
                   "y": 560.0
-                },
-                "simulation_index": null
+                }
               },
               "23": {
                 "color": [
@@ -50099,8 +48081,7 @@
                 "pos": {
                   "x": 1080.0,
                   "y": 80.0
-                },
-                "simulation_index": null
+                }
               },
               "24": {
                 "color": [
@@ -50119,8 +48100,7 @@
                 "pos": {
                   "x": 600.0,
                   "y": 320.0
-                },
-                "simulation_index": null
+                }
               },
               "25": {
                 "color": [
@@ -50140,8 +48120,7 @@
                 "pos": {
                   "x": 720.0,
                   "y": 200.0
-                },
-                "simulation_index": null
+                }
               },
               "26": {
                 "color": [
@@ -50161,8 +48140,7 @@
                 "pos": {
                   "x": 960.0,
                   "y": 740.0
-                },
-                "simulation_index": null
+                }
               },
               "28": {
                 "color": [
@@ -50182,8 +48160,7 @@
                 "pos": {
                   "x": 840.0,
                   "y": 340.0
-                },
-                "simulation_index": null
+                }
               },
               "29": {
                 "color": [
@@ -50203,8 +48180,7 @@
                 "pos": {
                   "x": 720.0,
                   "y": 600.0
-                },
-                "simulation_index": null
+                }
               },
               "3": {
                 "color": [
@@ -50224,8 +48200,7 @@
                 "pos": {
                   "x": 960.0,
                   "y": 420.0
-                },
-                "simulation_index": null
+                }
               },
               "30": {
                 "color": [
@@ -50245,8 +48220,7 @@
                 "pos": {
                   "x": 960.0,
                   "y": 80.0
-                },
-                "simulation_index": null
+                }
               },
               "31": {
                 "color": [
@@ -50265,8 +48239,7 @@
                 "pos": {
                   "x": 600.0,
                   "y": 400.0
-                },
-                "simulation_index": null
+                }
               },
               "32": {
                 "color": [
@@ -50286,8 +48259,7 @@
                 "pos": {
                   "x": 840.0,
                   "y": 660.0
-                },
-                "simulation_index": null
+                }
               },
               "33": {
                 "color": [
@@ -50307,8 +48279,7 @@
                 "pos": {
                   "x": 840.0,
                   "y": 580.0
-                },
-                "simulation_index": null
+                }
               },
               "34": {
                 "color": [
@@ -50327,8 +48298,7 @@
                 "pos": {
                   "x": 600.0,
                   "y": 240.0
-                },
-                "simulation_index": null
+                }
               },
               "35": {
                 "color": [
@@ -50348,8 +48318,7 @@
                 "pos": {
                   "x": 720.0,
                   "y": 520.0
-                },
-                "simulation_index": null
+                }
               },
               "36": {
                 "color": [
@@ -50369,8 +48338,7 @@
                 "pos": {
                   "x": 840.0,
                   "y": 420.0
-                },
-                "simulation_index": null
+                }
               },
               "37": {
                 "color": [
@@ -50390,8 +48358,7 @@
                 "pos": {
                   "x": 960.0,
                   "y": 180.0
-                },
-                "simulation_index": null
+                }
               },
               "38": {
                 "color": [
@@ -50411,8 +48378,7 @@
                 "pos": {
                   "x": 720.0,
                   "y": 360.0
-                },
-                "simulation_index": null
+                }
               },
               "39": {
                 "color": [
@@ -50432,8 +48398,7 @@
                 "pos": {
                   "x": 720.0,
                   "y": 680.0
-                },
-                "simulation_index": null
+                }
               },
               "4": {
                 "color": [
@@ -50452,8 +48417,7 @@
                 "pos": {
                   "x": 1080.0,
                   "y": 340.0
-                },
-                "simulation_index": null
+                }
               },
               "40": {
                 "color": [
@@ -50473,8 +48437,7 @@
                 "pos": {
                   "x": 840.0,
                   "y": 260.0
-                },
-                "simulation_index": null
+                }
               },
               "41": {
                 "color": [
@@ -50493,8 +48456,7 @@
                 "pos": {
                   "x": 1080.0,
                   "y": 660.0
-                },
-                "simulation_index": null
+                }
               },
               "42": {
                 "color": [
@@ -50514,8 +48476,7 @@
                 "pos": {
                   "x": 840.0,
                   "y": 500.0
-                },
-                "simulation_index": null
+                }
               },
               "43": {
                 "color": [
@@ -50534,8 +48495,7 @@
                 "pos": {
                   "x": 1080.0,
                   "y": 580.0
-                },
-                "simulation_index": null
+                }
               },
               "45": {
                 "color": [
@@ -50554,8 +48514,7 @@
                 "pos": {
                   "x": 600.0,
                   "y": 640.0
-                },
-                "simulation_index": null
+                }
               },
               "46": {
                 "color": [
@@ -50574,8 +48533,7 @@
                 "pos": {
                   "x": 1080.0,
                   "y": 420.0
-                },
-                "simulation_index": null
+                }
               },
               "47": {
                 "color": [
@@ -50595,8 +48553,7 @@
                 "pos": {
                   "x": 960.0,
                   "y": 340.0
-                },
-                "simulation_index": null
+                }
               },
               "49": {
                 "color": [
@@ -50616,8 +48573,7 @@
                 "pos": {
                   "x": 960.0,
                   "y": 1220.0
-                },
-                "simulation_index": null
+                }
               },
               "5": {
                 "color": [
@@ -50637,8 +48593,7 @@
                 "pos": {
                   "x": 840.0,
                   "y": 80.0
-                },
-                "simulation_index": null
+                }
               },
               "50": {
                 "color": [
@@ -50657,8 +48612,7 @@
                 "pos": {
                   "x": 600.0,
                   "y": 1200.0
-                },
-                "simulation_index": null
+                }
               },
               "51": {
                 "color": [
@@ -50678,8 +48632,7 @@
                 "pos": {
                   "x": 720.0,
                   "y": 840.0
-                },
-                "simulation_index": null
+                }
               },
               "52": {
                 "color": [
@@ -50698,8 +48651,7 @@
                 "pos": {
                   "x": 1080.0,
                   "y": 1300.0
-                },
-                "simulation_index": null
+                }
               },
               "53": {
                 "color": [
@@ -50718,8 +48670,7 @@
                 "pos": {
                   "x": 600.0,
                   "y": 1040.0
-                },
-                "simulation_index": null
+                }
               },
               "54": {
                 "color": [
@@ -50739,8 +48690,7 @@
                 "pos": {
                   "x": 840.0,
                   "y": 1360.0
-                },
-                "simulation_index": null
+                }
               },
               "55": {
                 "color": [
@@ -50759,8 +48709,7 @@
                 "pos": {
                   "x": 600.0,
                   "y": 1360.0
-                },
-                "simulation_index": null
+                }
               },
               "56": {
                 "color": [
@@ -50779,8 +48728,7 @@
                 "pos": {
                   "x": 600.0,
                   "y": 960.0
-                },
-                "simulation_index": null
+                }
               },
               "57": {
                 "color": [
@@ -50799,8 +48747,7 @@
                 "pos": {
                   "x": 600.0,
                   "y": 880.0
-                },
-                "simulation_index": null
+                }
               },
               "58": {
                 "color": [
@@ -50820,8 +48767,7 @@
                 "pos": {
                   "x": 960.0,
                   "y": 1360.0
-                },
-                "simulation_index": null
+                }
               },
               "59": {
                 "color": [
@@ -50841,8 +48787,7 @@
                 "pos": {
                   "x": 960.0,
                   "y": 1300.0
-                },
-                "simulation_index": null
+                }
               },
               "60": {
                 "color": [
@@ -50862,8 +48807,7 @@
                 "pos": {
                   "x": 960.0,
                   "y": 820.0
-                },
-                "simulation_index": null
+                }
               },
               "61": {
                 "color": [
@@ -50883,8 +48827,7 @@
                 "pos": {
                   "x": 720.0,
                   "y": 1320.0
-                },
-                "simulation_index": null
+                }
               },
               "62": {
                 "color": [
@@ -50903,8 +48846,7 @@
                 "pos": {
                   "x": 1080.0,
                   "y": 1220.0
-                },
-                "simulation_index": null
+                }
               },
               "63": {
                 "color": [
@@ -50923,8 +48865,7 @@
                 "pos": {
                   "x": 600.0,
                   "y": 1280.0
-                },
-                "simulation_index": null
+                }
               },
               "64": {
                 "color": [
@@ -50944,8 +48885,7 @@
                 "pos": {
                   "x": 960.0,
                   "y": 980.0
-                },
-                "simulation_index": null
+                }
               },
               "65": {
                 "color": [
@@ -50964,8 +48904,7 @@
                 "pos": {
                   "x": 1080.0,
                   "y": 1060.0
-                },
-                "simulation_index": null
+                }
               },
               "66": {
                 "color": [
@@ -50985,8 +48924,7 @@
                 "pos": {
                   "x": 840.0,
                   "y": 1140.0
-                },
-                "simulation_index": null
+                }
               },
               "67": {
                 "color": [
@@ -51006,8 +48944,7 @@
                 "pos": {
                   "x": 720.0,
                   "y": 1080.0
-                },
-                "simulation_index": null
+                }
               },
               "68": {
                 "color": [
@@ -51027,8 +48964,7 @@
                 "pos": {
                   "x": 720.0,
                   "y": 1240.0
-                },
-                "simulation_index": null
+                }
               },
               "69": {
                 "color": [
@@ -51047,8 +48983,7 @@
                 "pos": {
                   "x": 600.0,
                   "y": 1120.0
-                },
-                "simulation_index": null
+                }
               },
               "7": {
                 "color": [
@@ -51067,8 +49002,7 @@
                 "pos": {
                   "x": 1080.0,
                   "y": 260.0
-                },
-                "simulation_index": null
+                }
               },
               "70": {
                 "color": [
@@ -51088,8 +49022,7 @@
                 "pos": {
                   "x": 720.0,
                   "y": 920.0
-                },
-                "simulation_index": null
+                }
               },
               "71": {
                 "color": [
@@ -51109,8 +49042,7 @@
                 "pos": {
                   "x": 840.0,
                   "y": 1060.0
-                },
-                "simulation_index": null
+                }
               },
               "72": {
                 "color": [
@@ -51129,8 +49061,7 @@
                 "pos": {
                   "x": 1080.0,
                   "y": 820.0
-                },
-                "simulation_index": null
+                }
               },
               "73": {
                 "color": [
@@ -51150,8 +49081,7 @@
                 "pos": {
                   "x": 960.0,
                   "y": 1060.0
-                },
-                "simulation_index": null
+                }
               },
               "74": {
                 "color": [
@@ -51171,8 +49101,7 @@
                 "pos": {
                   "x": 840.0,
                   "y": 1300.0
-                },
-                "simulation_index": null
+                }
               },
               "75": {
                 "color": [
@@ -51192,8 +49121,7 @@
                 "pos": {
                   "x": 840.0,
                   "y": 980.0
-                },
-                "simulation_index": null
+                }
               },
               "76": {
                 "color": [
@@ -51212,8 +49140,7 @@
                 "pos": {
                   "x": 1080.0,
                   "y": 1360.0
-                },
-                "simulation_index": null
+                }
               },
               "77": {
                 "color": [
@@ -51232,8 +49159,7 @@
                 "pos": {
                   "x": 600.0,
                   "y": 800.0
-                },
-                "simulation_index": null
+                }
               },
               "78": {
                 "color": [
@@ -51253,8 +49179,7 @@
                 "pos": {
                   "x": 840.0,
                   "y": 1220.0
-                },
-                "simulation_index": null
+                }
               },
               "79": {
                 "color": [
@@ -51273,8 +49198,7 @@
                 "pos": {
                   "x": 1080.0,
                   "y": 980.0
-                },
-                "simulation_index": null
+                }
               },
               "8": {
                 "color": [
@@ -51294,8 +49218,7 @@
                 "pos": {
                   "x": 720.0,
                   "y": 440.0
-                },
-                "simulation_index": null
+                }
               },
               "80": {
                 "color": [
@@ -51315,8 +49238,7 @@
                 "pos": {
                   "x": 960.0,
                   "y": 900.0
-                },
-                "simulation_index": null
+                }
               },
               "81": {
                 "color": [
@@ -51335,8 +49257,7 @@
                 "pos": {
                   "x": 1080.0,
                   "y": 1140.0
-                },
-                "simulation_index": null
+                }
               },
               "82": {
                 "color": [
@@ -51356,8 +49277,7 @@
                 "pos": {
                   "x": 840.0,
                   "y": 820.0
-                },
-                "simulation_index": null
+                }
               },
               "83": {
                 "color": [
@@ -51377,8 +49297,7 @@
                 "pos": {
                   "x": 840.0,
                   "y": 900.0
-                },
-                "simulation_index": null
+                }
               },
               "84": {
                 "color": [
@@ -51398,8 +49317,7 @@
                 "pos": {
                   "x": 960.0,
                   "y": 1140.0
-                },
-                "simulation_index": null
+                }
               },
               "85": {
                 "color": [
@@ -51419,8 +49337,7 @@
                 "pos": {
                   "x": 720.0,
                   "y": 1160.0
-                },
-                "simulation_index": null
+                }
               },
               "86": {
                 "color": [
@@ -51439,8 +49356,7 @@
                 "pos": {
                   "x": 1080.0,
                   "y": 900.0
-                },
-                "simulation_index": null
+                }
               },
               "87": {
                 "color": [
@@ -51460,8 +49376,7 @@
                 "pos": {
                   "x": 720.0,
                   "y": 1000.0
-                },
-                "simulation_index": null
+                }
               },
               "88": {
                 "color": [
@@ -51481,8 +49396,7 @@
                 "pos": {
                   "x": 720.0,
                   "y": 760.0
-                },
-                "simulation_index": null
+                }
               },
               "89": {
                 "color": [
@@ -51502,8 +49416,7 @@
                 "pos": {
                   "x": 840.0,
                   "y": 740.0
-                },
-                "simulation_index": null
+                }
               },
               "9": {
                 "color": [
@@ -51522,52 +49435,9 @@
                 "pos": {
                   "x": 720.0,
                   "y": 80.0
-                },
-                "simulation_index": null
+                }
               }
             }
-          },
-          "inputs": {
-            "12": "input 11",
-            "14": "input 15",
-            "21": "input 8",
-            "22": "input 10",
-            "24": "input 13",
-            "31": "input 12",
-            "34": "input 14",
-            "45": "input 9",
-            "50": "input 2",
-            "53": "input 4",
-            "55": "input 0",
-            "56": "input 5",
-            "57": "input 6",
-            "63": "input 1",
-            "69": "input 3",
-            "77": "input 7",
-            "9": "clock"
-          },
-          "min_size": {
-            "x": 120.0,
-            "y": 380.0
-          },
-          "outputs": {
-            "1": "output 8",
-            "18": "output 11",
-            "2": "output 15",
-            "23": "clock",
-            "4": "output 13",
-            "41": "output 9",
-            "43": "output 10",
-            "46": "output 12",
-            "52": "output 1",
-            "62": "output 2",
-            "65": "output 4",
-            "7": "output 14",
-            "72": "output 7",
-            "76": "output 0",
-            "79": "output 5",
-            "81": "output 3",
-            "86": "output 6"
           },
           "path": "random_modules/increment_16.sml",
           "size": {
@@ -51579,8 +49449,7 @@
       "pos": {
         "x": 3160.0,
         "y": 1280.0
-      },
-      "simulation_index": null
+      }
     },
     "204": {
       "color": [
@@ -52084,8 +49953,7 @@
                 "pos": {
                   "x": 2160.0,
                   "y": -620.0
-                },
-                "simulation_index": null
+                }
               },
               "1": {
                 "color": [
@@ -52104,8 +49972,7 @@
                 "pos": {
                   "x": 2040.0,
                   "y": -620.0
-                },
-                "simulation_index": null
+                }
               },
               "10": {
                 "color": [
@@ -52124,8 +49991,7 @@
                 "pos": {
                   "x": 2280.0,
                   "y": -160.0
-                },
-                "simulation_index": null
+                }
               },
               "11": {
                 "color": [
@@ -52144,8 +50010,7 @@
                 "pos": {
                   "x": 2280.0,
                   "y": -340.0
-                },
-                "simulation_index": null
+                }
               },
               "12": {
                 "color": [
@@ -52164,8 +50029,7 @@
                 "pos": {
                   "x": 2280.0,
                   "y": -280.0
-                },
-                "simulation_index": null
+                }
               },
               "13": {
                 "color": [
@@ -52184,8 +50048,7 @@
                 "pos": {
                   "x": 2280.0,
                   "y": -460.0
-                },
-                "simulation_index": null
+                }
               },
               "14": {
                 "color": [
@@ -52204,8 +50067,7 @@
                 "pos": {
                   "x": 2280.0,
                   "y": -400.0
-                },
-                "simulation_index": null
+                }
               },
               "15": {
                 "color": [
@@ -52225,8 +50087,7 @@
                 "pos": {
                   "x": 2400.0,
                   "y": -40.0
-                },
-                "simulation_index": null
+                }
               },
               "16": {
                 "color": [
@@ -52246,8 +50107,7 @@
                 "pos": {
                   "x": 2400.0,
                   "y": -100.0
-                },
-                "simulation_index": null
+                }
               },
               "17": {
                 "color": [
@@ -52267,8 +50127,7 @@
                 "pos": {
                   "x": 2400.0,
                   "y": -160.0
-                },
-                "simulation_index": null
+                }
               },
               "18": {
                 "color": [
@@ -52288,8 +50147,7 @@
                 "pos": {
                   "x": 2400.0,
                   "y": -220.0
-                },
-                "simulation_index": null
+                }
               },
               "19": {
                 "color": [
@@ -52309,8 +50167,7 @@
                 "pos": {
                   "x": 2400.0,
                   "y": -280.0
-                },
-                "simulation_index": null
+                }
               },
               "2": {
                 "color": [
@@ -52329,8 +50186,7 @@
                 "pos": {
                   "x": 2040.0,
                   "y": -540.0
-                },
-                "simulation_index": null
+                }
               },
               "20": {
                 "color": [
@@ -52350,8 +50206,7 @@
                 "pos": {
                   "x": 2400.0,
                   "y": -340.0
-                },
-                "simulation_index": null
+                }
               },
               "21": {
                 "color": [
@@ -52371,8 +50226,7 @@
                 "pos": {
                   "x": 2400.0,
                   "y": -400.0
-                },
-                "simulation_index": null
+                }
               },
               "22": {
                 "color": [
@@ -52392,8 +50246,7 @@
                 "pos": {
                   "x": 2400.0,
                   "y": -460.0
-                },
-                "simulation_index": null
+                }
               },
               "23": {
                 "color": [
@@ -52412,8 +50265,7 @@
                 "pos": {
                   "x": 2520.0,
                   "y": -460.0
-                },
-                "simulation_index": null
+                }
               },
               "24": {
                 "color": [
@@ -52432,8 +50284,7 @@
                 "pos": {
                   "x": 2520.0,
                   "y": -400.0
-                },
-                "simulation_index": null
+                }
               },
               "25": {
                 "color": [
@@ -52452,8 +50303,7 @@
                 "pos": {
                   "x": 2520.0,
                   "y": -340.0
-                },
-                "simulation_index": null
+                }
               },
               "26": {
                 "color": [
@@ -52472,8 +50322,7 @@
                 "pos": {
                   "x": 2520.0,
                   "y": -280.0
-                },
-                "simulation_index": null
+                }
               },
               "27": {
                 "color": [
@@ -52492,8 +50341,7 @@
                 "pos": {
                   "x": 2520.0,
                   "y": -220.0
-                },
-                "simulation_index": null
+                }
               },
               "28": {
                 "color": [
@@ -52512,8 +50360,7 @@
                 "pos": {
                   "x": 2520.0,
                   "y": -160.0
-                },
-                "simulation_index": null
+                }
               },
               "29": {
                 "color": [
@@ -52532,8 +50379,7 @@
                 "pos": {
                   "x": 2520.0,
                   "y": -100.0
-                },
-                "simulation_index": null
+                }
               },
               "30": {
                 "color": [
@@ -52552,8 +50398,7 @@
                 "pos": {
                   "x": 2520.0,
                   "y": -40.0
-                },
-                "simulation_index": null
+                }
               },
               "4": {
                 "color": [
@@ -52572,8 +50417,7 @@
                 "pos": {
                   "x": 2280.0,
                   "y": -540.0
-                },
-                "simulation_index": null
+                }
               },
               "5": {
                 "color": [
@@ -52593,8 +50437,7 @@
                 "pos": {
                   "x": 2280.0,
                   "y": -620.0
-                },
-                "simulation_index": null
+                }
               },
               "6": {
                 "color": [
@@ -52614,8 +50457,7 @@
                 "pos": {
                   "x": 2160.0,
                   "y": -540.0
-                },
-                "simulation_index": null
+                }
               },
               "7": {
                 "color": [
@@ -52634,8 +50476,7 @@
                 "pos": {
                   "x": 2280.0,
                   "y": -40.0
-                },
-                "simulation_index": null
+                }
               },
               "8": {
                 "color": [
@@ -52654,8 +50495,7 @@
                 "pos": {
                   "x": 2280.0,
                   "y": -100.0
-                },
-                "simulation_index": null
+                }
               },
               "9": {
                 "color": [
@@ -52674,37 +50514,9 @@
                 "pos": {
                   "x": 2280.0,
                   "y": -220.0
-                },
-                "simulation_index": null
+                }
               }
             }
-          },
-          "inputs": {
-            "1": "start clock",
-            "10": "data 2",
-            "11": "data 5",
-            "12": "data 4",
-            "13": "data 7",
-            "14": "data 6",
-            "2": "finish clock",
-            "7": "data 0",
-            "8": "data 1",
-            "9": "data 3"
-          },
-          "min_size": {
-            "x": 120.0,
-            "y": 240.0
-          },
-          "outputs": {
-            "23": "data 7",
-            "24": "data 6",
-            "25": "data 5",
-            "26": "data 4",
-            "27": "data 3",
-            "28": "data 2",
-            "29": "data 1",
-            "30": "data 0",
-            "4": "finish clock"
           },
           "path": "random_modules/clock_check_8b.sml",
           "size": {
@@ -52716,8 +50528,7 @@
       "pos": {
         "x": 3180.0,
         "y": 1020.0
-      },
-      "simulation_index": null
+      }
     },
     "21": {
       "color": [
@@ -52737,8 +50548,7 @@
       "pos": {
         "x": 1320.0,
         "y": 100.0
-      },
-      "simulation_index": null
+      }
     },
     "22": {
       "color": [
@@ -52758,8 +50568,7 @@
       "pos": {
         "x": 1320.0,
         "y": 540.0
-      },
-      "simulation_index": null
+      }
     },
     "229": {
       "color": [
@@ -52781,8 +50590,7 @@
       "pos": {
         "x": 1300.0,
         "y": -60.0
-      },
-      "simulation_index": null
+      }
     },
     "23": {
       "color": [
@@ -52802,8 +50610,7 @@
       "pos": {
         "x": 1320.0,
         "y": 460.0
-      },
-      "simulation_index": null
+      }
     },
     "230": {
       "color": [
@@ -52825,8 +50632,7 @@
       "pos": {
         "x": 1540.0,
         "y": -840.0
-      },
-      "simulation_index": null
+      }
     },
     "235": {
       "color": [
@@ -53330,8 +51136,7 @@
                 "pos": {
                   "x": 2160.0,
                   "y": -620.0
-                },
-                "simulation_index": null
+                }
               },
               "1": {
                 "color": [
@@ -53350,8 +51155,7 @@
                 "pos": {
                   "x": 2040.0,
                   "y": -620.0
-                },
-                "simulation_index": null
+                }
               },
               "10": {
                 "color": [
@@ -53370,8 +51174,7 @@
                 "pos": {
                   "x": 2280.0,
                   "y": -160.0
-                },
-                "simulation_index": null
+                }
               },
               "11": {
                 "color": [
@@ -53390,8 +51193,7 @@
                 "pos": {
                   "x": 2280.0,
                   "y": -340.0
-                },
-                "simulation_index": null
+                }
               },
               "12": {
                 "color": [
@@ -53410,8 +51212,7 @@
                 "pos": {
                   "x": 2280.0,
                   "y": -280.0
-                },
-                "simulation_index": null
+                }
               },
               "13": {
                 "color": [
@@ -53430,8 +51231,7 @@
                 "pos": {
                   "x": 2280.0,
                   "y": -460.0
-                },
-                "simulation_index": null
+                }
               },
               "14": {
                 "color": [
@@ -53450,8 +51250,7 @@
                 "pos": {
                   "x": 2280.0,
                   "y": -400.0
-                },
-                "simulation_index": null
+                }
               },
               "15": {
                 "color": [
@@ -53471,8 +51270,7 @@
                 "pos": {
                   "x": 2400.0,
                   "y": -40.0
-                },
-                "simulation_index": null
+                }
               },
               "16": {
                 "color": [
@@ -53492,8 +51290,7 @@
                 "pos": {
                   "x": 2400.0,
                   "y": -100.0
-                },
-                "simulation_index": null
+                }
               },
               "17": {
                 "color": [
@@ -53513,8 +51310,7 @@
                 "pos": {
                   "x": 2400.0,
                   "y": -160.0
-                },
-                "simulation_index": null
+                }
               },
               "18": {
                 "color": [
@@ -53534,8 +51330,7 @@
                 "pos": {
                   "x": 2400.0,
                   "y": -220.0
-                },
-                "simulation_index": null
+                }
               },
               "19": {
                 "color": [
@@ -53555,8 +51350,7 @@
                 "pos": {
                   "x": 2400.0,
                   "y": -280.0
-                },
-                "simulation_index": null
+                }
               },
               "2": {
                 "color": [
@@ -53575,8 +51369,7 @@
                 "pos": {
                   "x": 2040.0,
                   "y": -540.0
-                },
-                "simulation_index": null
+                }
               },
               "20": {
                 "color": [
@@ -53596,8 +51389,7 @@
                 "pos": {
                   "x": 2400.0,
                   "y": -340.0
-                },
-                "simulation_index": null
+                }
               },
               "21": {
                 "color": [
@@ -53617,8 +51409,7 @@
                 "pos": {
                   "x": 2400.0,
                   "y": -400.0
-                },
-                "simulation_index": null
+                }
               },
               "22": {
                 "color": [
@@ -53638,8 +51429,7 @@
                 "pos": {
                   "x": 2400.0,
                   "y": -460.0
-                },
-                "simulation_index": null
+                }
               },
               "23": {
                 "color": [
@@ -53658,8 +51448,7 @@
                 "pos": {
                   "x": 2520.0,
                   "y": -460.0
-                },
-                "simulation_index": null
+                }
               },
               "24": {
                 "color": [
@@ -53678,8 +51467,7 @@
                 "pos": {
                   "x": 2520.0,
                   "y": -400.0
-                },
-                "simulation_index": null
+                }
               },
               "25": {
                 "color": [
@@ -53698,8 +51486,7 @@
                 "pos": {
                   "x": 2520.0,
                   "y": -340.0
-                },
-                "simulation_index": null
+                }
               },
               "26": {
                 "color": [
@@ -53718,8 +51505,7 @@
                 "pos": {
                   "x": 2520.0,
                   "y": -280.0
-                },
-                "simulation_index": null
+                }
               },
               "27": {
                 "color": [
@@ -53738,8 +51524,7 @@
                 "pos": {
                   "x": 2520.0,
                   "y": -220.0
-                },
-                "simulation_index": null
+                }
               },
               "28": {
                 "color": [
@@ -53758,8 +51543,7 @@
                 "pos": {
                   "x": 2520.0,
                   "y": -160.0
-                },
-                "simulation_index": null
+                }
               },
               "29": {
                 "color": [
@@ -53778,8 +51562,7 @@
                 "pos": {
                   "x": 2520.0,
                   "y": -100.0
-                },
-                "simulation_index": null
+                }
               },
               "30": {
                 "color": [
@@ -53798,8 +51581,7 @@
                 "pos": {
                   "x": 2520.0,
                   "y": -40.0
-                },
-                "simulation_index": null
+                }
               },
               "4": {
                 "color": [
@@ -53818,8 +51600,7 @@
                 "pos": {
                   "x": 2280.0,
                   "y": -540.0
-                },
-                "simulation_index": null
+                }
               },
               "5": {
                 "color": [
@@ -53839,8 +51620,7 @@
                 "pos": {
                   "x": 2280.0,
                   "y": -620.0
-                },
-                "simulation_index": null
+                }
               },
               "6": {
                 "color": [
@@ -53860,8 +51640,7 @@
                 "pos": {
                   "x": 2160.0,
                   "y": -540.0
-                },
-                "simulation_index": null
+                }
               },
               "7": {
                 "color": [
@@ -53880,8 +51659,7 @@
                 "pos": {
                   "x": 2280.0,
                   "y": -40.0
-                },
-                "simulation_index": null
+                }
               },
               "8": {
                 "color": [
@@ -53900,8 +51678,7 @@
                 "pos": {
                   "x": 2280.0,
                   "y": -100.0
-                },
-                "simulation_index": null
+                }
               },
               "9": {
                 "color": [
@@ -53920,37 +51697,9 @@
                 "pos": {
                   "x": 2280.0,
                   "y": -220.0
-                },
-                "simulation_index": null
+                }
               }
             }
-          },
-          "inputs": {
-            "1": "start clock",
-            "10": "data 2",
-            "11": "data 5",
-            "12": "data 4",
-            "13": "data 7",
-            "14": "data 6",
-            "2": "finish clock",
-            "7": "data 0",
-            "8": "data 1",
-            "9": "data 3"
-          },
-          "min_size": {
-            "x": 120.0,
-            "y": 240.0
-          },
-          "outputs": {
-            "23": "data 7",
-            "24": "data 6",
-            "25": "data 5",
-            "26": "data 4",
-            "27": "data 3",
-            "28": "data 2",
-            "29": "data 1",
-            "30": "data 0",
-            "4": "finish clock"
           },
           "path": "random_modules/clock_check_8b.sml",
           "size": {
@@ -53962,8 +51711,7 @@
       "pos": {
         "x": 2180.0,
         "y": -800.0
-      },
-      "simulation_index": null
+      }
     },
     "24": {
       "color": [
@@ -53983,8 +51731,7 @@
       "pos": {
         "x": 1320.0,
         "y": 500.0
-      },
-      "simulation_index": null
+      }
     },
     "25": {
       "color": [
@@ -54004,8 +51751,7 @@
       "pos": {
         "x": 1320.0,
         "y": 560.0
-      },
-      "simulation_index": null
+      }
     },
     "26": {
       "color": [
@@ -54025,8 +51771,7 @@
       "pos": {
         "x": 1320.0,
         "y": 360.0
-      },
-      "simulation_index": null
+      }
     },
     "27": {
       "color": [
@@ -54046,8 +51791,7 @@
       "pos": {
         "x": 1320.0,
         "y": 520.0
-      },
-      "simulation_index": null
+      }
     },
     "28": {
       "color": [
@@ -54067,8 +51811,7 @@
       "pos": {
         "x": 1320.0,
         "y": 440.0
-      },
-      "simulation_index": null
+      }
     },
     "29": {
       "color": [
@@ -54088,8 +51831,7 @@
       "pos": {
         "x": 1320.0,
         "y": 480.0
-      },
-      "simulation_index": null
+      }
     },
     "3": {
       "color": [
@@ -54833,8 +52575,7 @@
                 "pos": {
                   "x": 680.0,
                   "y": 280.0
-                },
-                "simulation_index": null
+                }
               },
               "12": {
                 "color": [
@@ -54854,8 +52595,7 @@
                 "pos": {
                   "x": 620.0,
                   "y": 200.0
-                },
-                "simulation_index": null
+                }
               },
               "13": {
                 "color": [
@@ -54874,8 +52614,7 @@
                 "pos": {
                   "x": 320.0,
                   "y": 200.0
-                },
-                "simulation_index": null
+                }
               },
               "14": {
                 "color": [
@@ -54895,8 +52634,7 @@
                 "pos": {
                   "x": 560.0,
                   "y": 360.0
-                },
-                "simulation_index": null
+                }
               },
               "15": {
                 "color": [
@@ -54915,8 +52653,7 @@
                 "pos": {
                   "x": 800.0,
                   "y": 360.0
-                },
-                "simulation_index": null
+                }
               },
               "16": {
                 "color": [
@@ -54936,8 +52673,7 @@
                 "pos": {
                   "x": 680.0,
                   "y": 360.0
-                },
-                "simulation_index": null
+                }
               },
               "17": {
                 "color": [
@@ -54957,8 +52693,7 @@
                 "pos": {
                   "x": 440.0,
                   "y": 360.0
-                },
-                "simulation_index": null
+                }
               },
               "18": {
                 "color": [
@@ -54977,8 +52712,7 @@
                 "pos": {
                   "x": 320.0,
                   "y": 360.0
-                },
-                "simulation_index": null
+                }
               },
               "19": {
                 "color": [
@@ -54998,8 +52732,7 @@
                 "pos": {
                   "x": 560.0,
                   "y": 440.0
-                },
-                "simulation_index": null
+                }
               },
               "2": {
                 "color": [
@@ -55019,8 +52752,7 @@
                 "pos": {
                   "x": 560.0,
                   "y": 280.0
-                },
-                "simulation_index": null
+                }
               },
               "20": {
                 "color": [
@@ -55039,8 +52771,7 @@
                 "pos": {
                   "x": 800.0,
                   "y": 440.0
-                },
-                "simulation_index": null
+                }
               },
               "21": {
                 "color": [
@@ -55060,8 +52791,7 @@
                 "pos": {
                   "x": 680.0,
                   "y": 440.0
-                },
-                "simulation_index": null
+                }
               },
               "22": {
                 "color": [
@@ -55081,8 +52811,7 @@
                 "pos": {
                   "x": 440.0,
                   "y": 440.0
-                },
-                "simulation_index": null
+                }
               },
               "23": {
                 "color": [
@@ -55101,8 +52830,7 @@
                 "pos": {
                   "x": 320.0,
                   "y": 440.0
-                },
-                "simulation_index": null
+                }
               },
               "24": {
                 "color": [
@@ -55122,8 +52850,7 @@
                 "pos": {
                   "x": 560.0,
                   "y": 520.0
-                },
-                "simulation_index": null
+                }
               },
               "25": {
                 "color": [
@@ -55142,8 +52869,7 @@
                 "pos": {
                   "x": 800.0,
                   "y": 520.0
-                },
-                "simulation_index": null
+                }
               },
               "26": {
                 "color": [
@@ -55163,8 +52889,7 @@
                 "pos": {
                   "x": 680.0,
                   "y": 520.0
-                },
-                "simulation_index": null
+                }
               },
               "27": {
                 "color": [
@@ -55184,8 +52909,7 @@
                 "pos": {
                   "x": 440.0,
                   "y": 520.0
-                },
-                "simulation_index": null
+                }
               },
               "28": {
                 "color": [
@@ -55204,8 +52928,7 @@
                 "pos": {
                   "x": 320.0,
                   "y": 520.0
-                },
-                "simulation_index": null
+                }
               },
               "30": {
                 "color": [
@@ -55225,8 +52948,7 @@
                 "pos": {
                   "x": 440.0,
                   "y": 680.0
-                },
-                "simulation_index": null
+                }
               },
               "31": {
                 "color": [
@@ -55246,8 +52968,7 @@
                 "pos": {
                   "x": 440.0,
                   "y": 760.0
-                },
-                "simulation_index": null
+                }
               },
               "32": {
                 "color": [
@@ -55267,8 +52988,7 @@
                 "pos": {
                   "x": 560.0,
                   "y": 840.0
-                },
-                "simulation_index": null
+                }
               },
               "33": {
                 "color": [
@@ -55287,8 +53007,7 @@
                 "pos": {
                   "x": 800.0,
                   "y": 600.0
-                },
-                "simulation_index": null
+                }
               },
               "34": {
                 "color": [
@@ -55307,8 +53026,7 @@
                 "pos": {
                   "x": 800.0,
                   "y": 840.0
-                },
-                "simulation_index": null
+                }
               },
               "35": {
                 "color": [
@@ -55328,8 +53046,7 @@
                 "pos": {
                   "x": 440.0,
                   "y": 840.0
-                },
-                "simulation_index": null
+                }
               },
               "36": {
                 "color": [
@@ -55348,8 +53065,7 @@
                 "pos": {
                   "x": 320.0,
                   "y": 600.0
-                },
-                "simulation_index": null
+                }
               },
               "37": {
                 "color": [
@@ -55369,8 +53085,7 @@
                 "pos": {
                   "x": 560.0,
                   "y": 760.0
-                },
-                "simulation_index": null
+                }
               },
               "38": {
                 "color": [
@@ -55389,8 +53104,7 @@
                 "pos": {
                   "x": 320.0,
                   "y": 680.0
-                },
-                "simulation_index": null
+                }
               },
               "39": {
                 "color": [
@@ -55410,8 +53124,7 @@
                 "pos": {
                   "x": 560.0,
                   "y": 680.0
-                },
-                "simulation_index": null
+                }
               },
               "4": {
                 "color": [
@@ -55431,8 +53144,7 @@
                 "pos": {
                   "x": 440.0,
                   "y": 280.0
-                },
-                "simulation_index": null
+                }
               },
               "40": {
                 "color": [
@@ -55452,8 +53164,7 @@
                 "pos": {
                   "x": 680.0,
                   "y": 760.0
-                },
-                "simulation_index": null
+                }
               },
               "41": {
                 "color": [
@@ -55473,8 +53184,7 @@
                 "pos": {
                   "x": 560.0,
                   "y": 600.0
-                },
-                "simulation_index": null
+                }
               },
               "42": {
                 "color": [
@@ -55493,8 +53203,7 @@
                 "pos": {
                   "x": 320.0,
                   "y": 760.0
-                },
-                "simulation_index": null
+                }
               },
               "43": {
                 "color": [
@@ -55513,8 +53222,7 @@
                 "pos": {
                   "x": 320.0,
                   "y": 840.0
-                },
-                "simulation_index": null
+                }
               },
               "44": {
                 "color": [
@@ -55533,8 +53241,7 @@
                 "pos": {
                   "x": 800.0,
                   "y": 760.0
-                },
-                "simulation_index": null
+                }
               },
               "45": {
                 "color": [
@@ -55554,8 +53261,7 @@
                 "pos": {
                   "x": 680.0,
                   "y": 840.0
-                },
-                "simulation_index": null
+                }
               },
               "46": {
                 "color": [
@@ -55574,8 +53280,7 @@
                 "pos": {
                   "x": 800.0,
                   "y": 680.0
-                },
-                "simulation_index": null
+                }
               },
               "47": {
                 "color": [
@@ -55595,8 +53300,7 @@
                 "pos": {
                   "x": 680.0,
                   "y": 680.0
-                },
-                "simulation_index": null
+                }
               },
               "48": {
                 "color": [
@@ -55616,8 +53320,7 @@
                 "pos": {
                   "x": 680.0,
                   "y": 600.0
-                },
-                "simulation_index": null
+                }
               },
               "49": {
                 "color": [
@@ -55637,8 +53340,7 @@
                 "pos": {
                   "x": 440.0,
                   "y": 600.0
-                },
-                "simulation_index": null
+                }
               },
               "5": {
                 "color": [
@@ -55658,8 +53360,7 @@
                 "pos": {
                   "x": 440.0,
                   "y": 200.0
-                },
-                "simulation_index": null
+                }
               },
               "7": {
                 "color": [
@@ -55678,8 +53379,7 @@
                 "pos": {
                   "x": 320.0,
                   "y": 280.0
-                },
-                "simulation_index": null
+                }
               },
               "8": {
                 "color": [
@@ -55698,8 +53398,7 @@
                 "pos": {
                   "x": 800.0,
                   "y": 280.0
-                },
-                "simulation_index": null
+                }
               },
               "9": {
                 "color": [
@@ -55718,36 +53417,9 @@
                 "pos": {
                   "x": 800.0,
                   "y": 200.0
-                },
-                "simulation_index": null
+                }
               }
             }
-          },
-          "inputs": {
-            "13": "write clock",
-            "18": "write 6",
-            "23": "write 5",
-            "28": "write 4",
-            "36": "write 3",
-            "38": "write 2",
-            "42": "write 1",
-            "43": "write 0",
-            "7": "write 7"
-          },
-          "min_size": {
-            "x": 120.0,
-            "y": 220.0
-          },
-          "outputs": {
-            "15": "read 6",
-            "20": "read 5",
-            "25": "read 4",
-            "33": "read 3",
-            "34": "read 0",
-            "44": "read 1",
-            "46": "read 2",
-            "8": "read 7",
-            "9": "wrote clock"
           },
           "path": "random_modules/8_ bit_register.sml",
           "size": {
@@ -55759,8 +53431,7 @@
       "pos": {
         "x": 1440.0,
         "y": 400.0
-      },
-      "simulation_index": null
+      }
     },
     "30": {
       "color": [
@@ -55780,8 +53451,7 @@
       "pos": {
         "x": 1320.0,
         "y": 420.0
-      },
-      "simulation_index": null
+      }
     },
     "31": {
       "color": [
@@ -55801,8 +53471,7 @@
       "pos": {
         "x": 1320.0,
         "y": 800.0
-      },
-      "simulation_index": null
+      }
     },
     "32": {
       "color": [
@@ -55822,8 +53491,7 @@
       "pos": {
         "x": 1320.0,
         "y": 720.0
-      },
-      "simulation_index": null
+      }
     },
     "33": {
       "color": [
@@ -55843,8 +53511,7 @@
       "pos": {
         "x": 1320.0,
         "y": 760.0
-      },
-      "simulation_index": null
+      }
     },
     "34": {
       "color": [
@@ -55864,8 +53531,7 @@
       "pos": {
         "x": 1320.0,
         "y": 820.0
-      },
-      "simulation_index": null
+      }
     },
     "35": {
       "color": [
@@ -55885,8 +53551,7 @@
       "pos": {
         "x": 1320.0,
         "y": 620.0
-      },
-      "simulation_index": null
+      }
     },
     "36": {
       "color": [
@@ -55906,8 +53571,7 @@
       "pos": {
         "x": 1320.0,
         "y": 780.0
-      },
-      "simulation_index": null
+      }
     },
     "37": {
       "color": [
@@ -55927,8 +53591,7 @@
       "pos": {
         "x": 1320.0,
         "y": 700.0
-      },
-      "simulation_index": null
+      }
     },
     "38": {
       "color": [
@@ -55948,8 +53611,7 @@
       "pos": {
         "x": 1320.0,
         "y": 740.0
-      },
-      "simulation_index": null
+      }
     },
     "39": {
       "color": [
@@ -55969,8 +53631,7 @@
       "pos": {
         "x": 1320.0,
         "y": 680.0
-      },
-      "simulation_index": null
+      }
     },
     "4": {
       "color": [
@@ -56714,8 +54375,7 @@
                 "pos": {
                   "x": 680.0,
                   "y": 280.0
-                },
-                "simulation_index": null
+                }
               },
               "12": {
                 "color": [
@@ -56735,8 +54395,7 @@
                 "pos": {
                   "x": 620.0,
                   "y": 200.0
-                },
-                "simulation_index": null
+                }
               },
               "13": {
                 "color": [
@@ -56755,8 +54414,7 @@
                 "pos": {
                   "x": 320.0,
                   "y": 200.0
-                },
-                "simulation_index": null
+                }
               },
               "14": {
                 "color": [
@@ -56776,8 +54434,7 @@
                 "pos": {
                   "x": 560.0,
                   "y": 360.0
-                },
-                "simulation_index": null
+                }
               },
               "15": {
                 "color": [
@@ -56796,8 +54453,7 @@
                 "pos": {
                   "x": 800.0,
                   "y": 360.0
-                },
-                "simulation_index": null
+                }
               },
               "16": {
                 "color": [
@@ -56817,8 +54473,7 @@
                 "pos": {
                   "x": 680.0,
                   "y": 360.0
-                },
-                "simulation_index": null
+                }
               },
               "17": {
                 "color": [
@@ -56838,8 +54493,7 @@
                 "pos": {
                   "x": 440.0,
                   "y": 360.0
-                },
-                "simulation_index": null
+                }
               },
               "18": {
                 "color": [
@@ -56858,8 +54512,7 @@
                 "pos": {
                   "x": 320.0,
                   "y": 360.0
-                },
-                "simulation_index": null
+                }
               },
               "19": {
                 "color": [
@@ -56879,8 +54532,7 @@
                 "pos": {
                   "x": 560.0,
                   "y": 440.0
-                },
-                "simulation_index": null
+                }
               },
               "2": {
                 "color": [
@@ -56900,8 +54552,7 @@
                 "pos": {
                   "x": 560.0,
                   "y": 280.0
-                },
-                "simulation_index": null
+                }
               },
               "20": {
                 "color": [
@@ -56920,8 +54571,7 @@
                 "pos": {
                   "x": 800.0,
                   "y": 440.0
-                },
-                "simulation_index": null
+                }
               },
               "21": {
                 "color": [
@@ -56941,8 +54591,7 @@
                 "pos": {
                   "x": 680.0,
                   "y": 440.0
-                },
-                "simulation_index": null
+                }
               },
               "22": {
                 "color": [
@@ -56962,8 +54611,7 @@
                 "pos": {
                   "x": 440.0,
                   "y": 440.0
-                },
-                "simulation_index": null
+                }
               },
               "23": {
                 "color": [
@@ -56982,8 +54630,7 @@
                 "pos": {
                   "x": 320.0,
                   "y": 440.0
-                },
-                "simulation_index": null
+                }
               },
               "24": {
                 "color": [
@@ -57003,8 +54650,7 @@
                 "pos": {
                   "x": 560.0,
                   "y": 520.0
-                },
-                "simulation_index": null
+                }
               },
               "25": {
                 "color": [
@@ -57023,8 +54669,7 @@
                 "pos": {
                   "x": 800.0,
                   "y": 520.0
-                },
-                "simulation_index": null
+                }
               },
               "26": {
                 "color": [
@@ -57044,8 +54689,7 @@
                 "pos": {
                   "x": 680.0,
                   "y": 520.0
-                },
-                "simulation_index": null
+                }
               },
               "27": {
                 "color": [
@@ -57065,8 +54709,7 @@
                 "pos": {
                   "x": 440.0,
                   "y": 520.0
-                },
-                "simulation_index": null
+                }
               },
               "28": {
                 "color": [
@@ -57085,8 +54728,7 @@
                 "pos": {
                   "x": 320.0,
                   "y": 520.0
-                },
-                "simulation_index": null
+                }
               },
               "30": {
                 "color": [
@@ -57106,8 +54748,7 @@
                 "pos": {
                   "x": 440.0,
                   "y": 680.0
-                },
-                "simulation_index": null
+                }
               },
               "31": {
                 "color": [
@@ -57127,8 +54768,7 @@
                 "pos": {
                   "x": 440.0,
                   "y": 760.0
-                },
-                "simulation_index": null
+                }
               },
               "32": {
                 "color": [
@@ -57148,8 +54788,7 @@
                 "pos": {
                   "x": 560.0,
                   "y": 840.0
-                },
-                "simulation_index": null
+                }
               },
               "33": {
                 "color": [
@@ -57168,8 +54807,7 @@
                 "pos": {
                   "x": 800.0,
                   "y": 600.0
-                },
-                "simulation_index": null
+                }
               },
               "34": {
                 "color": [
@@ -57188,8 +54826,7 @@
                 "pos": {
                   "x": 800.0,
                   "y": 840.0
-                },
-                "simulation_index": null
+                }
               },
               "35": {
                 "color": [
@@ -57209,8 +54846,7 @@
                 "pos": {
                   "x": 440.0,
                   "y": 840.0
-                },
-                "simulation_index": null
+                }
               },
               "36": {
                 "color": [
@@ -57229,8 +54865,7 @@
                 "pos": {
                   "x": 320.0,
                   "y": 600.0
-                },
-                "simulation_index": null
+                }
               },
               "37": {
                 "color": [
@@ -57250,8 +54885,7 @@
                 "pos": {
                   "x": 560.0,
                   "y": 760.0
-                },
-                "simulation_index": null
+                }
               },
               "38": {
                 "color": [
@@ -57270,8 +54904,7 @@
                 "pos": {
                   "x": 320.0,
                   "y": 680.0
-                },
-                "simulation_index": null
+                }
               },
               "39": {
                 "color": [
@@ -57291,8 +54924,7 @@
                 "pos": {
                   "x": 560.0,
                   "y": 680.0
-                },
-                "simulation_index": null
+                }
               },
               "4": {
                 "color": [
@@ -57312,8 +54944,7 @@
                 "pos": {
                   "x": 440.0,
                   "y": 280.0
-                },
-                "simulation_index": null
+                }
               },
               "40": {
                 "color": [
@@ -57333,8 +54964,7 @@
                 "pos": {
                   "x": 680.0,
                   "y": 760.0
-                },
-                "simulation_index": null
+                }
               },
               "41": {
                 "color": [
@@ -57354,8 +54984,7 @@
                 "pos": {
                   "x": 560.0,
                   "y": 600.0
-                },
-                "simulation_index": null
+                }
               },
               "42": {
                 "color": [
@@ -57374,8 +55003,7 @@
                 "pos": {
                   "x": 320.0,
                   "y": 760.0
-                },
-                "simulation_index": null
+                }
               },
               "43": {
                 "color": [
@@ -57394,8 +55022,7 @@
                 "pos": {
                   "x": 320.0,
                   "y": 840.0
-                },
-                "simulation_index": null
+                }
               },
               "44": {
                 "color": [
@@ -57414,8 +55041,7 @@
                 "pos": {
                   "x": 800.0,
                   "y": 760.0
-                },
-                "simulation_index": null
+                }
               },
               "45": {
                 "color": [
@@ -57435,8 +55061,7 @@
                 "pos": {
                   "x": 680.0,
                   "y": 840.0
-                },
-                "simulation_index": null
+                }
               },
               "46": {
                 "color": [
@@ -57455,8 +55080,7 @@
                 "pos": {
                   "x": 800.0,
                   "y": 680.0
-                },
-                "simulation_index": null
+                }
               },
               "47": {
                 "color": [
@@ -57476,8 +55100,7 @@
                 "pos": {
                   "x": 680.0,
                   "y": 680.0
-                },
-                "simulation_index": null
+                }
               },
               "48": {
                 "color": [
@@ -57497,8 +55120,7 @@
                 "pos": {
                   "x": 680.0,
                   "y": 600.0
-                },
-                "simulation_index": null
+                }
               },
               "49": {
                 "color": [
@@ -57518,8 +55140,7 @@
                 "pos": {
                   "x": 440.0,
                   "y": 600.0
-                },
-                "simulation_index": null
+                }
               },
               "5": {
                 "color": [
@@ -57539,8 +55160,7 @@
                 "pos": {
                   "x": 440.0,
                   "y": 200.0
-                },
-                "simulation_index": null
+                }
               },
               "7": {
                 "color": [
@@ -57559,8 +55179,7 @@
                 "pos": {
                   "x": 320.0,
                   "y": 280.0
-                },
-                "simulation_index": null
+                }
               },
               "8": {
                 "color": [
@@ -57579,8 +55198,7 @@
                 "pos": {
                   "x": 800.0,
                   "y": 280.0
-                },
-                "simulation_index": null
+                }
               },
               "9": {
                 "color": [
@@ -57599,36 +55217,9 @@
                 "pos": {
                   "x": 800.0,
                   "y": 200.0
-                },
-                "simulation_index": null
+                }
               }
             }
-          },
-          "inputs": {
-            "13": "write clock",
-            "18": "write 6",
-            "23": "write 5",
-            "28": "write 4",
-            "36": "write 3",
-            "38": "write 2",
-            "42": "write 1",
-            "43": "write 0",
-            "7": "write 7"
-          },
-          "min_size": {
-            "x": 120.0,
-            "y": 220.0
-          },
-          "outputs": {
-            "15": "read 6",
-            "20": "read 5",
-            "25": "read 4",
-            "33": "read 3",
-            "34": "read 0",
-            "44": "read 1",
-            "46": "read 2",
-            "8": "read 7",
-            "9": "wrote clock"
           },
           "path": "random_modules/8_ bit_register.sml",
           "size": {
@@ -57640,8 +55231,7 @@
       "pos": {
         "x": 1440.0,
         "y": 660.0
-      },
-      "simulation_index": null
+      }
     },
     "40": {
       "color": [
@@ -57661,8 +55251,7 @@
       "pos": {
         "x": 1320.0,
         "y": 1060.0
-      },
-      "simulation_index": null
+      }
     },
     "41": {
       "color": [
@@ -57682,8 +55271,7 @@
       "pos": {
         "x": 1320.0,
         "y": 980.0
-      },
-      "simulation_index": null
+      }
     },
     "42": {
       "color": [
@@ -57703,8 +55291,7 @@
       "pos": {
         "x": 1320.0,
         "y": 1020.0
-      },
-      "simulation_index": null
+      }
     },
     "43": {
       "color": [
@@ -57724,8 +55311,7 @@
       "pos": {
         "x": 1320.0,
         "y": 1080.0
-      },
-      "simulation_index": null
+      }
     },
     "44": {
       "color": [
@@ -57745,8 +55331,7 @@
       "pos": {
         "x": 1320.0,
         "y": 880.0
-      },
-      "simulation_index": null
+      }
     },
     "45": {
       "color": [
@@ -57766,8 +55351,7 @@
       "pos": {
         "x": 1320.0,
         "y": 1040.0
-      },
-      "simulation_index": null
+      }
     },
     "46": {
       "color": [
@@ -57787,8 +55371,7 @@
       "pos": {
         "x": 1320.0,
         "y": 960.0
-      },
-      "simulation_index": null
+      }
     },
     "47": {
       "color": [
@@ -57808,8 +55391,7 @@
       "pos": {
         "x": 1320.0,
         "y": 1000.0
-      },
-      "simulation_index": null
+      }
     },
     "48": {
       "color": [
@@ -57829,8 +55411,7 @@
       "pos": {
         "x": 1320.0,
         "y": 940.0
-      },
-      "simulation_index": null
+      }
     },
     "49": {
       "color": [
@@ -57850,8 +55431,7 @@
       "pos": {
         "x": 1740.0,
         "y": 120.0
-      },
-      "simulation_index": null
+      }
     },
     "5": {
       "color": [
@@ -58595,8 +56175,7 @@
                 "pos": {
                   "x": 680.0,
                   "y": 280.0
-                },
-                "simulation_index": null
+                }
               },
               "12": {
                 "color": [
@@ -58616,8 +56195,7 @@
                 "pos": {
                   "x": 620.0,
                   "y": 200.0
-                },
-                "simulation_index": null
+                }
               },
               "13": {
                 "color": [
@@ -58636,8 +56214,7 @@
                 "pos": {
                   "x": 320.0,
                   "y": 200.0
-                },
-                "simulation_index": null
+                }
               },
               "14": {
                 "color": [
@@ -58657,8 +56234,7 @@
                 "pos": {
                   "x": 560.0,
                   "y": 360.0
-                },
-                "simulation_index": null
+                }
               },
               "15": {
                 "color": [
@@ -58677,8 +56253,7 @@
                 "pos": {
                   "x": 800.0,
                   "y": 360.0
-                },
-                "simulation_index": null
+                }
               },
               "16": {
                 "color": [
@@ -58698,8 +56273,7 @@
                 "pos": {
                   "x": 680.0,
                   "y": 360.0
-                },
-                "simulation_index": null
+                }
               },
               "17": {
                 "color": [
@@ -58719,8 +56293,7 @@
                 "pos": {
                   "x": 440.0,
                   "y": 360.0
-                },
-                "simulation_index": null
+                }
               },
               "18": {
                 "color": [
@@ -58739,8 +56312,7 @@
                 "pos": {
                   "x": 320.0,
                   "y": 360.0
-                },
-                "simulation_index": null
+                }
               },
               "19": {
                 "color": [
@@ -58760,8 +56332,7 @@
                 "pos": {
                   "x": 560.0,
                   "y": 440.0
-                },
-                "simulation_index": null
+                }
               },
               "2": {
                 "color": [
@@ -58781,8 +56352,7 @@
                 "pos": {
                   "x": 560.0,
                   "y": 280.0
-                },
-                "simulation_index": null
+                }
               },
               "20": {
                 "color": [
@@ -58801,8 +56371,7 @@
                 "pos": {
                   "x": 800.0,
                   "y": 440.0
-                },
-                "simulation_index": null
+                }
               },
               "21": {
                 "color": [
@@ -58822,8 +56391,7 @@
                 "pos": {
                   "x": 680.0,
                   "y": 440.0
-                },
-                "simulation_index": null
+                }
               },
               "22": {
                 "color": [
@@ -58843,8 +56411,7 @@
                 "pos": {
                   "x": 440.0,
                   "y": 440.0
-                },
-                "simulation_index": null
+                }
               },
               "23": {
                 "color": [
@@ -58863,8 +56430,7 @@
                 "pos": {
                   "x": 320.0,
                   "y": 440.0
-                },
-                "simulation_index": null
+                }
               },
               "24": {
                 "color": [
@@ -58884,8 +56450,7 @@
                 "pos": {
                   "x": 560.0,
                   "y": 520.0
-                },
-                "simulation_index": null
+                }
               },
               "25": {
                 "color": [
@@ -58904,8 +56469,7 @@
                 "pos": {
                   "x": 800.0,
                   "y": 520.0
-                },
-                "simulation_index": null
+                }
               },
               "26": {
                 "color": [
@@ -58925,8 +56489,7 @@
                 "pos": {
                   "x": 680.0,
                   "y": 520.0
-                },
-                "simulation_index": null
+                }
               },
               "27": {
                 "color": [
@@ -58946,8 +56509,7 @@
                 "pos": {
                   "x": 440.0,
                   "y": 520.0
-                },
-                "simulation_index": null
+                }
               },
               "28": {
                 "color": [
@@ -58966,8 +56528,7 @@
                 "pos": {
                   "x": 320.0,
                   "y": 520.0
-                },
-                "simulation_index": null
+                }
               },
               "30": {
                 "color": [
@@ -58987,8 +56548,7 @@
                 "pos": {
                   "x": 440.0,
                   "y": 680.0
-                },
-                "simulation_index": null
+                }
               },
               "31": {
                 "color": [
@@ -59008,8 +56568,7 @@
                 "pos": {
                   "x": 440.0,
                   "y": 760.0
-                },
-                "simulation_index": null
+                }
               },
               "32": {
                 "color": [
@@ -59029,8 +56588,7 @@
                 "pos": {
                   "x": 560.0,
                   "y": 840.0
-                },
-                "simulation_index": null
+                }
               },
               "33": {
                 "color": [
@@ -59049,8 +56607,7 @@
                 "pos": {
                   "x": 800.0,
                   "y": 600.0
-                },
-                "simulation_index": null
+                }
               },
               "34": {
                 "color": [
@@ -59069,8 +56626,7 @@
                 "pos": {
                   "x": 800.0,
                   "y": 840.0
-                },
-                "simulation_index": null
+                }
               },
               "35": {
                 "color": [
@@ -59090,8 +56646,7 @@
                 "pos": {
                   "x": 440.0,
                   "y": 840.0
-                },
-                "simulation_index": null
+                }
               },
               "36": {
                 "color": [
@@ -59110,8 +56665,7 @@
                 "pos": {
                   "x": 320.0,
                   "y": 600.0
-                },
-                "simulation_index": null
+                }
               },
               "37": {
                 "color": [
@@ -59131,8 +56685,7 @@
                 "pos": {
                   "x": 560.0,
                   "y": 760.0
-                },
-                "simulation_index": null
+                }
               },
               "38": {
                 "color": [
@@ -59151,8 +56704,7 @@
                 "pos": {
                   "x": 320.0,
                   "y": 680.0
-                },
-                "simulation_index": null
+                }
               },
               "39": {
                 "color": [
@@ -59172,8 +56724,7 @@
                 "pos": {
                   "x": 560.0,
                   "y": 680.0
-                },
-                "simulation_index": null
+                }
               },
               "4": {
                 "color": [
@@ -59193,8 +56744,7 @@
                 "pos": {
                   "x": 440.0,
                   "y": 280.0
-                },
-                "simulation_index": null
+                }
               },
               "40": {
                 "color": [
@@ -59214,8 +56764,7 @@
                 "pos": {
                   "x": 680.0,
                   "y": 760.0
-                },
-                "simulation_index": null
+                }
               },
               "41": {
                 "color": [
@@ -59235,8 +56784,7 @@
                 "pos": {
                   "x": 560.0,
                   "y": 600.0
-                },
-                "simulation_index": null
+                }
               },
               "42": {
                 "color": [
@@ -59255,8 +56803,7 @@
                 "pos": {
                   "x": 320.0,
                   "y": 760.0
-                },
-                "simulation_index": null
+                }
               },
               "43": {
                 "color": [
@@ -59275,8 +56822,7 @@
                 "pos": {
                   "x": 320.0,
                   "y": 840.0
-                },
-                "simulation_index": null
+                }
               },
               "44": {
                 "color": [
@@ -59295,8 +56841,7 @@
                 "pos": {
                   "x": 800.0,
                   "y": 760.0
-                },
-                "simulation_index": null
+                }
               },
               "45": {
                 "color": [
@@ -59316,8 +56861,7 @@
                 "pos": {
                   "x": 680.0,
                   "y": 840.0
-                },
-                "simulation_index": null
+                }
               },
               "46": {
                 "color": [
@@ -59336,8 +56880,7 @@
                 "pos": {
                   "x": 800.0,
                   "y": 680.0
-                },
-                "simulation_index": null
+                }
               },
               "47": {
                 "color": [
@@ -59357,8 +56900,7 @@
                 "pos": {
                   "x": 680.0,
                   "y": 680.0
-                },
-                "simulation_index": null
+                }
               },
               "48": {
                 "color": [
@@ -59378,8 +56920,7 @@
                 "pos": {
                   "x": 680.0,
                   "y": 600.0
-                },
-                "simulation_index": null
+                }
               },
               "49": {
                 "color": [
@@ -59399,8 +56940,7 @@
                 "pos": {
                   "x": 440.0,
                   "y": 600.0
-                },
-                "simulation_index": null
+                }
               },
               "5": {
                 "color": [
@@ -59420,8 +56960,7 @@
                 "pos": {
                   "x": 440.0,
                   "y": 200.0
-                },
-                "simulation_index": null
+                }
               },
               "7": {
                 "color": [
@@ -59440,8 +56979,7 @@
                 "pos": {
                   "x": 320.0,
                   "y": 280.0
-                },
-                "simulation_index": null
+                }
               },
               "8": {
                 "color": [
@@ -59460,8 +56998,7 @@
                 "pos": {
                   "x": 800.0,
                   "y": 280.0
-                },
-                "simulation_index": null
+                }
               },
               "9": {
                 "color": [
@@ -59480,36 +57017,9 @@
                 "pos": {
                   "x": 800.0,
                   "y": 200.0
-                },
-                "simulation_index": null
+                }
               }
             }
-          },
-          "inputs": {
-            "13": "write clock",
-            "18": "write 6",
-            "23": "write 5",
-            "28": "write 4",
-            "36": "write 3",
-            "38": "write 2",
-            "42": "write 1",
-            "43": "write 0",
-            "7": "write 7"
-          },
-          "min_size": {
-            "x": 120.0,
-            "y": 220.0
-          },
-          "outputs": {
-            "15": "read 6",
-            "20": "read 5",
-            "25": "read 4",
-            "33": "read 3",
-            "34": "read 0",
-            "44": "read 1",
-            "46": "read 2",
-            "8": "read 7",
-            "9": "wrote clock"
           },
           "path": "random_modules/8_ bit_register.sml",
           "size": {
@@ -59521,8 +57031,7 @@
       "pos": {
         "x": 1440.0,
         "y": 920.0
-      },
-      "simulation_index": null
+      }
     },
     "50": {
       "color": [
@@ -59542,8 +57051,7 @@
       "pos": {
         "x": 1740.0,
         "y": 140.0
-      },
-      "simulation_index": null
+      }
     },
     "51": {
       "color": [
@@ -59563,8 +57071,7 @@
       "pos": {
         "x": 1740.0,
         "y": 180.0
-      },
-      "simulation_index": null
+      }
     },
     "52": {
       "color": [
@@ -59584,8 +57091,7 @@
       "pos": {
         "x": 1740.0,
         "y": 200.0
-      },
-      "simulation_index": null
+      }
     },
     "53": {
       "color": [
@@ -59605,8 +57111,7 @@
       "pos": {
         "x": 1740.0,
         "y": 240.0
-      },
-      "simulation_index": null
+      }
     },
     "54": {
       "color": [
@@ -59626,8 +57131,7 @@
       "pos": {
         "x": 1740.0,
         "y": 260.0
-      },
-      "simulation_index": null
+      }
     },
     "55": {
       "color": [
@@ -59647,8 +57151,7 @@
       "pos": {
         "x": 1740.0,
         "y": 300.0
-      },
-      "simulation_index": null
+      }
     },
     "56": {
       "color": [
@@ -59668,8 +57171,7 @@
       "pos": {
         "x": 1740.0,
         "y": 320.0
-      },
-      "simulation_index": null
+      }
     },
     "57": {
       "color": [
@@ -59689,8 +57191,7 @@
       "pos": {
         "x": 1740.0,
         "y": 420.0
-      },
-      "simulation_index": null
+      }
     },
     "58": {
       "color": [
@@ -59710,8 +57211,7 @@
       "pos": {
         "x": 1740.0,
         "y": 360.0
-      },
-      "simulation_index": null
+      }
     },
     "59": {
       "color": [
@@ -59731,8 +57231,7 @@
       "pos": {
         "x": 1740.0,
         "y": 480.0
-      },
-      "simulation_index": null
+      }
     },
     "60": {
       "color": [
@@ -59752,8 +57251,7 @@
       "pos": {
         "x": 1740.0,
         "y": 500.0
-      },
-      "simulation_index": null
+      }
     },
     "61": {
       "color": [
@@ -59773,8 +57271,7 @@
       "pos": {
         "x": 1740.0,
         "y": 380.0
-      },
-      "simulation_index": null
+      }
     },
     "62": {
       "color": [
@@ -59794,8 +57291,7 @@
       "pos": {
         "x": 1740.0,
         "y": 560.0
-      },
-      "simulation_index": null
+      }
     },
     "63": {
       "color": [
@@ -59815,8 +57311,7 @@
       "pos": {
         "x": 1740.0,
         "y": 540.0
-      },
-      "simulation_index": null
+      }
     },
     "64": {
       "color": [
@@ -59836,8 +57331,7 @@
       "pos": {
         "x": 1740.0,
         "y": 440.0
-      },
-      "simulation_index": null
+      }
     },
     "65": {
       "color": [
@@ -59857,8 +57351,7 @@
       "pos": {
         "x": 1740.0,
         "y": 60.0
-      },
-      "simulation_index": null
+      }
     },
     "66": {
       "color": [
@@ -59878,8 +57371,7 @@
       "pos": {
         "x": 1740.0,
         "y": 800.0
-      },
-      "simulation_index": null
+      }
     },
     "67": {
       "color": [
@@ -59899,8 +57391,7 @@
       "pos": {
         "x": 1740.0,
         "y": 700.0
-      },
-      "simulation_index": null
+      }
     },
     "68": {
       "color": [
@@ -59920,8 +57411,7 @@
       "pos": {
         "x": 1740.0,
         "y": 820.0
-      },
-      "simulation_index": null
+      }
     },
     "69": {
       "color": [
@@ -59941,8 +57431,7 @@
       "pos": {
         "x": 1740.0,
         "y": 760.0
-      },
-      "simulation_index": null
+      }
     },
     "7": {
       "color": [
@@ -61418,8 +58907,7 @@
                 "pos": {
                   "x": 680.0,
                   "y": 280.0
-                },
-                "simulation_index": null
+                }
               },
               "12": {
                 "color": [
@@ -61439,8 +58927,7 @@
                 "pos": {
                   "x": 620.0,
                   "y": 200.0
-                },
-                "simulation_index": null
+                }
               },
               "13": {
                 "color": [
@@ -61459,8 +58946,7 @@
                 "pos": {
                   "x": 320.0,
                   "y": 200.0
-                },
-                "simulation_index": null
+                }
               },
               "14": {
                 "color": [
@@ -61480,8 +58966,7 @@
                 "pos": {
                   "x": 560.0,
                   "y": 360.0
-                },
-                "simulation_index": null
+                }
               },
               "15": {
                 "color": [
@@ -61500,8 +58985,7 @@
                 "pos": {
                   "x": 800.0,
                   "y": 360.0
-                },
-                "simulation_index": null
+                }
               },
               "16": {
                 "color": [
@@ -61521,8 +59005,7 @@
                 "pos": {
                   "x": 680.0,
                   "y": 360.0
-                },
-                "simulation_index": null
+                }
               },
               "17": {
                 "color": [
@@ -61542,8 +59025,7 @@
                 "pos": {
                   "x": 440.0,
                   "y": 360.0
-                },
-                "simulation_index": null
+                }
               },
               "18": {
                 "color": [
@@ -61562,8 +59044,7 @@
                 "pos": {
                   "x": 320.0,
                   "y": 360.0
-                },
-                "simulation_index": null
+                }
               },
               "19": {
                 "color": [
@@ -61583,8 +59064,7 @@
                 "pos": {
                   "x": 560.0,
                   "y": 440.0
-                },
-                "simulation_index": null
+                }
               },
               "2": {
                 "color": [
@@ -61604,8 +59084,7 @@
                 "pos": {
                   "x": 560.0,
                   "y": 280.0
-                },
-                "simulation_index": null
+                }
               },
               "20": {
                 "color": [
@@ -61624,8 +59103,7 @@
                 "pos": {
                   "x": 800.0,
                   "y": 440.0
-                },
-                "simulation_index": null
+                }
               },
               "21": {
                 "color": [
@@ -61645,8 +59123,7 @@
                 "pos": {
                   "x": 680.0,
                   "y": 440.0
-                },
-                "simulation_index": null
+                }
               },
               "22": {
                 "color": [
@@ -61666,8 +59143,7 @@
                 "pos": {
                   "x": 440.0,
                   "y": 440.0
-                },
-                "simulation_index": null
+                }
               },
               "23": {
                 "color": [
@@ -61686,8 +59162,7 @@
                 "pos": {
                   "x": 320.0,
                   "y": 440.0
-                },
-                "simulation_index": null
+                }
               },
               "24": {
                 "color": [
@@ -61707,8 +59182,7 @@
                 "pos": {
                   "x": 560.0,
                   "y": 520.0
-                },
-                "simulation_index": null
+                }
               },
               "25": {
                 "color": [
@@ -61727,8 +59201,7 @@
                 "pos": {
                   "x": 800.0,
                   "y": 520.0
-                },
-                "simulation_index": null
+                }
               },
               "26": {
                 "color": [
@@ -61748,8 +59221,7 @@
                 "pos": {
                   "x": 680.0,
                   "y": 520.0
-                },
-                "simulation_index": null
+                }
               },
               "27": {
                 "color": [
@@ -61769,8 +59241,7 @@
                 "pos": {
                   "x": 440.0,
                   "y": 520.0
-                },
-                "simulation_index": null
+                }
               },
               "28": {
                 "color": [
@@ -61789,8 +59260,7 @@
                 "pos": {
                   "x": 320.0,
                   "y": 520.0
-                },
-                "simulation_index": null
+                }
               },
               "30": {
                 "color": [
@@ -61810,8 +59280,7 @@
                 "pos": {
                   "x": 440.0,
                   "y": 680.0
-                },
-                "simulation_index": null
+                }
               },
               "31": {
                 "color": [
@@ -61831,8 +59300,7 @@
                 "pos": {
                   "x": 440.0,
                   "y": 760.0
-                },
-                "simulation_index": null
+                }
               },
               "32": {
                 "color": [
@@ -61852,8 +59320,7 @@
                 "pos": {
                   "x": 560.0,
                   "y": 840.0
-                },
-                "simulation_index": null
+                }
               },
               "33": {
                 "color": [
@@ -61872,8 +59339,7 @@
                 "pos": {
                   "x": 800.0,
                   "y": 600.0
-                },
-                "simulation_index": null
+                }
               },
               "34": {
                 "color": [
@@ -61892,8 +59358,7 @@
                 "pos": {
                   "x": 800.0,
                   "y": 840.0
-                },
-                "simulation_index": null
+                }
               },
               "35": {
                 "color": [
@@ -61913,8 +59378,7 @@
                 "pos": {
                   "x": 440.0,
                   "y": 840.0
-                },
-                "simulation_index": null
+                }
               },
               "36": {
                 "color": [
@@ -61933,8 +59397,7 @@
                 "pos": {
                   "x": 320.0,
                   "y": 600.0
-                },
-                "simulation_index": null
+                }
               },
               "37": {
                 "color": [
@@ -61954,8 +59417,7 @@
                 "pos": {
                   "x": 560.0,
                   "y": 760.0
-                },
-                "simulation_index": null
+                }
               },
               "38": {
                 "color": [
@@ -61974,8 +59436,7 @@
                 "pos": {
                   "x": 320.0,
                   "y": 680.0
-                },
-                "simulation_index": null
+                }
               },
               "39": {
                 "color": [
@@ -61995,8 +59456,7 @@
                 "pos": {
                   "x": 560.0,
                   "y": 680.0
-                },
-                "simulation_index": null
+                }
               },
               "4": {
                 "color": [
@@ -62016,8 +59476,7 @@
                 "pos": {
                   "x": 440.0,
                   "y": 280.0
-                },
-                "simulation_index": null
+                }
               },
               "40": {
                 "color": [
@@ -62037,8 +59496,7 @@
                 "pos": {
                   "x": 680.0,
                   "y": 760.0
-                },
-                "simulation_index": null
+                }
               },
               "41": {
                 "color": [
@@ -62058,8 +59516,7 @@
                 "pos": {
                   "x": 560.0,
                   "y": 600.0
-                },
-                "simulation_index": null
+                }
               },
               "42": {
                 "color": [
@@ -62078,8 +59535,7 @@
                 "pos": {
                   "x": 320.0,
                   "y": 760.0
-                },
-                "simulation_index": null
+                }
               },
               "43": {
                 "color": [
@@ -62098,8 +59554,7 @@
                 "pos": {
                   "x": 320.0,
                   "y": 840.0
-                },
-                "simulation_index": null
+                }
               },
               "44": {
                 "color": [
@@ -62118,8 +59573,7 @@
                 "pos": {
                   "x": 800.0,
                   "y": 760.0
-                },
-                "simulation_index": null
+                }
               },
               "45": {
                 "color": [
@@ -62139,8 +59593,7 @@
                 "pos": {
                   "x": 680.0,
                   "y": 840.0
-                },
-                "simulation_index": null
+                }
               },
               "46": {
                 "color": [
@@ -62159,8 +59612,7 @@
                 "pos": {
                   "x": 800.0,
                   "y": 680.0
-                },
-                "simulation_index": null
+                }
               },
               "47": {
                 "color": [
@@ -62180,8 +59632,7 @@
                 "pos": {
                   "x": 680.0,
                   "y": 680.0
-                },
-                "simulation_index": null
+                }
               },
               "48": {
                 "color": [
@@ -62201,8 +59652,7 @@
                 "pos": {
                   "x": 680.0,
                   "y": 600.0
-                },
-                "simulation_index": null
+                }
               },
               "49": {
                 "color": [
@@ -62222,8 +59672,7 @@
                 "pos": {
                   "x": 440.0,
                   "y": 600.0
-                },
-                "simulation_index": null
+                }
               },
               "5": {
                 "color": [
@@ -62243,8 +59692,7 @@
                 "pos": {
                   "x": 440.0,
                   "y": 200.0
-                },
-                "simulation_index": null
+                }
               },
               "50": {
                 "color": [
@@ -62264,8 +59712,7 @@
                 "pos": {
                   "x": 560.0,
                   "y": 1560.0
-                },
-                "simulation_index": null
+                }
               },
               "51": {
                 "color": [
@@ -62285,8 +59732,7 @@
                 "pos": {
                   "x": 560.0,
                   "y": 1320.0
-                },
-                "simulation_index": null
+                }
               },
               "52": {
                 "color": [
@@ -62306,8 +59752,7 @@
                 "pos": {
                   "x": 560.0,
                   "y": 1480.0
-                },
-                "simulation_index": null
+                }
               },
               "53": {
                 "color": [
@@ -62326,8 +59771,7 @@
                 "pos": {
                   "x": 800.0,
                   "y": 1320.0
-                },
-                "simulation_index": null
+                }
               },
               "54": {
                 "color": [
@@ -62346,8 +59790,7 @@
                 "pos": {
                   "x": 800.0,
                   "y": 1000.0
-                },
-                "simulation_index": null
+                }
               },
               "55": {
                 "color": [
@@ -62366,8 +59809,7 @@
                 "pos": {
                   "x": 800.0,
                   "y": 1240.0
-                },
-                "simulation_index": null
+                }
               },
               "56": {
                 "color": [
@@ -62387,8 +59829,7 @@
                 "pos": {
                   "x": 440.0,
                   "y": 1240.0
-                },
-                "simulation_index": null
+                }
               },
               "57": {
                 "color": [
@@ -62407,8 +59848,7 @@
                 "pos": {
                   "x": 800.0,
                   "y": 1480.0
-                },
-                "simulation_index": null
+                }
               },
               "58": {
                 "color": [
@@ -62427,8 +59867,7 @@
                 "pos": {
                   "x": 800.0,
                   "y": 1560.0
-                },
-                "simulation_index": null
+                }
               },
               "59": {
                 "color": [
@@ -62448,8 +59887,7 @@
                 "pos": {
                   "x": 680.0,
                   "y": 1560.0
-                },
-                "simulation_index": null
+                }
               },
               "60": {
                 "color": [
@@ -62468,8 +59906,7 @@
                 "pos": {
                   "x": 320.0,
                   "y": 1160.0
-                },
-                "simulation_index": null
+                }
               },
               "61": {
                 "color": [
@@ -62489,8 +59926,7 @@
                 "pos": {
                   "x": 560.0,
                   "y": 1080.0
-                },
-                "simulation_index": null
+                }
               },
               "62": {
                 "color": [
@@ -62510,8 +59946,7 @@
                 "pos": {
                   "x": 680.0,
                   "y": 1160.0
-                },
-                "simulation_index": null
+                }
               },
               "63": {
                 "color": [
@@ -62531,8 +59966,7 @@
                 "pos": {
                   "x": 560.0,
                   "y": 1000.0
-                },
-                "simulation_index": null
+                }
               },
               "64": {
                 "color": [
@@ -62552,8 +59986,7 @@
                 "pos": {
                   "x": 680.0,
                   "y": 1480.0
-                },
-                "simulation_index": null
+                }
               },
               "65": {
                 "color": [
@@ -62572,8 +60005,7 @@
                 "pos": {
                   "x": 320.0,
                   "y": 1240.0
-                },
-                "simulation_index": null
+                }
               },
               "66": {
                 "color": [
@@ -62592,8 +60024,7 @@
                 "pos": {
                   "x": 800.0,
                   "y": 1160.0
-                },
-                "simulation_index": null
+                }
               },
               "67": {
                 "color": [
@@ -62613,8 +60044,7 @@
                 "pos": {
                   "x": 680.0,
                   "y": 1240.0
-                },
-                "simulation_index": null
+                }
               },
               "68": {
                 "color": [
@@ -62633,8 +60063,7 @@
                 "pos": {
                   "x": 320.0,
                   "y": 1560.0
-                },
-                "simulation_index": null
+                }
               },
               "69": {
                 "color": [
@@ -62653,8 +60082,7 @@
                 "pos": {
                   "x": 800.0,
                   "y": 1080.0
-                },
-                "simulation_index": null
+                }
               },
               "7": {
                 "color": [
@@ -62673,8 +60101,7 @@
                 "pos": {
                   "x": 320.0,
                   "y": 280.0
-                },
-                "simulation_index": null
+                }
               },
               "70": {
                 "color": [
@@ -62694,8 +60121,7 @@
                 "pos": {
                   "x": 680.0,
                   "y": 1080.0
-                },
-                "simulation_index": null
+                }
               },
               "71": {
                 "color": [
@@ -62715,8 +60141,7 @@
                 "pos": {
                   "x": 440.0,
                   "y": 1000.0
-                },
-                "simulation_index": null
+                }
               },
               "72": {
                 "color": [
@@ -62736,8 +60161,7 @@
                 "pos": {
                   "x": 440.0,
                   "y": 1400.0
-                },
-                "simulation_index": null
+                }
               },
               "73": {
                 "color": [
@@ -62757,8 +60181,7 @@
                 "pos": {
                   "x": 680.0,
                   "y": 1400.0
-                },
-                "simulation_index": null
+                }
               },
               "74": {
                 "color": [
@@ -62778,8 +60201,7 @@
                 "pos": {
                   "x": 440.0,
                   "y": 1320.0
-                },
-                "simulation_index": null
+                }
               },
               "75": {
                 "color": [
@@ -62798,8 +60220,7 @@
                 "pos": {
                   "x": 800.0,
                   "y": 1400.0
-                },
-                "simulation_index": null
+                }
               },
               "76": {
                 "color": [
@@ -62819,8 +60240,7 @@
                 "pos": {
                   "x": 440.0,
                   "y": 1080.0
-                },
-                "simulation_index": null
+                }
               },
               "77": {
                 "color": [
@@ -62840,8 +60260,7 @@
                 "pos": {
                   "x": 440.0,
                   "y": 1160.0
-                },
-                "simulation_index": null
+                }
               },
               "78": {
                 "color": [
@@ -62860,8 +60279,7 @@
                 "pos": {
                   "x": 320.0,
                   "y": 920.0
-                },
-                "simulation_index": null
+                }
               },
               "79": {
                 "color": [
@@ -62881,8 +60299,7 @@
                 "pos": {
                   "x": 560.0,
                   "y": 1240.0
-                },
-                "simulation_index": null
+                }
               },
               "8": {
                 "color": [
@@ -62901,8 +60318,7 @@
                 "pos": {
                   "x": 800.0,
                   "y": 280.0
-                },
-                "simulation_index": null
+                }
               },
               "80": {
                 "color": [
@@ -62922,8 +60338,7 @@
                 "pos": {
                   "x": 440.0,
                   "y": 920.0
-                },
-                "simulation_index": null
+                }
               },
               "81": {
                 "color": [
@@ -62942,8 +60357,7 @@
                 "pos": {
                   "x": 800.0,
                   "y": 920.0
-                },
-                "simulation_index": null
+                }
               },
               "82": {
                 "color": [
@@ -62963,8 +60377,7 @@
                 "pos": {
                   "x": 620.0,
                   "y": 920.0
-                },
-                "simulation_index": null
+                }
               },
               "83": {
                 "color": [
@@ -62983,8 +60396,7 @@
                 "pos": {
                   "x": 320.0,
                   "y": 1000.0
-                },
-                "simulation_index": null
+                }
               },
               "84": {
                 "color": [
@@ -63004,8 +60416,7 @@
                 "pos": {
                   "x": 560.0,
                   "y": 1160.0
-                },
-                "simulation_index": null
+                }
               },
               "85": {
                 "color": [
@@ -63024,8 +60435,7 @@
                 "pos": {
                   "x": 320.0,
                   "y": 1080.0
-                },
-                "simulation_index": null
+                }
               },
               "86": {
                 "color": [
@@ -63045,8 +60455,7 @@
                 "pos": {
                   "x": 440.0,
                   "y": 1480.0
-                },
-                "simulation_index": null
+                }
               },
               "87": {
                 "color": [
@@ -63065,8 +60474,7 @@
                 "pos": {
                   "x": 320.0,
                   "y": 1400.0
-                },
-                "simulation_index": null
+                }
               },
               "88": {
                 "color": [
@@ -63086,8 +60494,7 @@
                 "pos": {
                   "x": 560.0,
                   "y": 1400.0
-                },
-                "simulation_index": null
+                }
               },
               "89": {
                 "color": [
@@ -63106,8 +60513,7 @@
                 "pos": {
                   "x": 320.0,
                   "y": 1480.0
-                },
-                "simulation_index": null
+                }
               },
               "9": {
                 "color": [
@@ -63126,8 +60532,7 @@
                 "pos": {
                   "x": 800.0,
                   "y": 200.0
-                },
-                "simulation_index": null
+                }
               },
               "90": {
                 "color": [
@@ -63146,8 +60551,7 @@
                 "pos": {
                   "x": 320.0,
                   "y": 1320.0
-                },
-                "simulation_index": null
+                }
               },
               "91": {
                 "color": [
@@ -63167,8 +60571,7 @@
                 "pos": {
                   "x": 680.0,
                   "y": 1320.0
-                },
-                "simulation_index": null
+                }
               },
               "92": {
                 "color": [
@@ -63188,8 +60591,7 @@
                 "pos": {
                   "x": 680.0,
                   "y": 1000.0
-                },
-                "simulation_index": null
+                }
               },
               "93": {
                 "color": [
@@ -63209,8 +60611,7 @@
                 "pos": {
                   "x": 440.0,
                   "y": 1560.0
-                },
-                "simulation_index": null
+                }
               },
               "94": {
                 "color": [
@@ -63229,55 +60630,9 @@
                 "pos": {
                   "x": 320.0,
                   "y": 120.0
-                },
-                "simulation_index": null
+                }
               }
             }
-          },
-          "inputs": {
-            "13": "write high",
-            "18": "write 14",
-            "23": "write 13",
-            "28": "write 12",
-            "36": "write 11",
-            "38": "write 10",
-            "42": "write 9",
-            "43": "write 8",
-            "60": "write 5",
-            "65": "write 4",
-            "68": "write 0",
-            "7": "write 15",
-            "78": "write low",
-            "83": "write 7",
-            "85": "write 6",
-            "87": "write 2",
-            "89": "write 1",
-            "90": "write 3",
-            "94": "write both"
-          },
-          "min_size": {
-            "x": 120.0,
-            "y": 420.0
-          },
-          "outputs": {
-            "15": "read 14",
-            "20": "read 13",
-            "25": "read 12",
-            "33": "read 11",
-            "34": "read 8",
-            "44": "read 9",
-            "46": "read 10",
-            "53": "read 3",
-            "54": "read 7",
-            "55": "read 4",
-            "57": "read 1",
-            "58": "read 0",
-            "66": "read 5",
-            "69": "read 6",
-            "75": "read 2",
-            "8": "read 15",
-            "81": "wrote clock",
-            "9": "wrote clock"
           },
           "path": "random_modules/16_bit_register.sml",
           "size": {
@@ -63289,8 +60644,7 @@
       "pos": {
         "x": 1860.0,
         "y": 720.0
-      },
-      "simulation_index": null
+      }
     },
     "70": {
       "color": [
@@ -63310,8 +60664,7 @@
       "pos": {
         "x": 1740.0,
         "y": 880.0
-      },
-      "simulation_index": null
+      }
     },
     "71": {
       "color": [
@@ -63331,8 +60684,7 @@
       "pos": {
         "x": 1740.0,
         "y": 840.0
-      },
-      "simulation_index": null
+      }
     },
     "72": {
       "color": [
@@ -63352,8 +60704,7 @@
       "pos": {
         "x": 1740.0,
         "y": 780.0
-      },
-      "simulation_index": null
+      }
     },
     "73": {
       "color": [
@@ -63373,8 +60724,7 @@
       "pos": {
         "x": 1740.0,
         "y": 900.0
-      },
-      "simulation_index": null
+      }
     },
     "74": {
       "color": [
@@ -63394,8 +60744,7 @@
       "pos": {
         "x": 1740.0,
         "y": 860.0
-      },
-      "simulation_index": null
+      }
     },
     "75": {
       "color": [
@@ -63415,8 +60764,7 @@
       "pos": {
         "x": 1740.0,
         "y": 640.0
-      },
-      "simulation_index": null
+      }
     },
     "76": {
       "color": [
@@ -63436,8 +60784,7 @@
       "pos": {
         "x": 1740.0,
         "y": 960.0
-      },
-      "simulation_index": null
+      }
     },
     "77": {
       "color": [
@@ -63457,8 +60804,7 @@
       "pos": {
         "x": 1740.0,
         "y": 1100.0
-      },
-      "simulation_index": null
+      }
     },
     "78": {
       "color": [
@@ -63478,8 +60824,7 @@
       "pos": {
         "x": 1740.0,
         "y": 1120.0
-      },
-      "simulation_index": null
+      }
     },
     "79": {
       "color": [
@@ -63499,8 +60844,7 @@
       "pos": {
         "x": 1740.0,
         "y": 1060.0
-      },
-      "simulation_index": null
+      }
     },
     "80": {
       "color": [
@@ -63520,8 +60864,7 @@
       "pos": {
         "x": 1740.0,
         "y": 1160.0
-      },
-      "simulation_index": null
+      }
     },
     "81": {
       "color": [
@@ -63541,8 +60884,7 @@
       "pos": {
         "x": 1740.0,
         "y": 1040.0
-      },
-      "simulation_index": null
+      }
     },
     "82": {
       "color": [
@@ -63562,8 +60904,7 @@
       "pos": {
         "x": 1740.0,
         "y": 1020.0
-      },
-      "simulation_index": null
+      }
     },
     "83": {
       "color": [
@@ -63583,8 +60924,7 @@
       "pos": {
         "x": 1740.0,
         "y": 1140.0
-      },
-      "simulation_index": null
+      }
     },
     "84": {
       "color": [
@@ -63604,8 +60944,7 @@
       "pos": {
         "x": 1740.0,
         "y": 1080.0
-      },
-      "simulation_index": null
+      }
     },
     "85": {
       "color": [
@@ -63624,8 +60963,7 @@
       "pos": {
         "x": 3760.0,
         "y": 420.0
-      },
-      "simulation_index": null
+      }
     },
     "86": {
       "color": [
@@ -63644,8 +60982,7 @@
       "pos": {
         "x": 3760.0,
         "y": 480.0
-      },
-      "simulation_index": null
+      }
     },
     "87": {
       "color": [
@@ -63664,8 +61001,7 @@
       "pos": {
         "x": 3760.0,
         "y": 540.0
-      },
-      "simulation_index": null
+      }
     },
     "88": {
       "color": [
@@ -63684,8 +61020,7 @@
       "pos": {
         "x": 3760.0,
         "y": 600.0
-      },
-      "simulation_index": null
+      }
     },
     "89": {
       "color": [
@@ -63704,8 +61039,7 @@
       "pos": {
         "x": 3760.0,
         "y": 660.0
-      },
-      "simulation_index": null
+      }
     },
     "9": {
       "color": [
@@ -64449,8 +61783,7 @@
                 "pos": {
                   "x": 680.0,
                   "y": 280.0
-                },
-                "simulation_index": null
+                }
               },
               "12": {
                 "color": [
@@ -64470,8 +61803,7 @@
                 "pos": {
                   "x": 620.0,
                   "y": 200.0
-                },
-                "simulation_index": null
+                }
               },
               "13": {
                 "color": [
@@ -64490,8 +61822,7 @@
                 "pos": {
                   "x": 320.0,
                   "y": 200.0
-                },
-                "simulation_index": null
+                }
               },
               "14": {
                 "color": [
@@ -64511,8 +61842,7 @@
                 "pos": {
                   "x": 560.0,
                   "y": 360.0
-                },
-                "simulation_index": null
+                }
               },
               "15": {
                 "color": [
@@ -64531,8 +61861,7 @@
                 "pos": {
                   "x": 800.0,
                   "y": 360.0
-                },
-                "simulation_index": null
+                }
               },
               "16": {
                 "color": [
@@ -64552,8 +61881,7 @@
                 "pos": {
                   "x": 680.0,
                   "y": 360.0
-                },
-                "simulation_index": null
+                }
               },
               "17": {
                 "color": [
@@ -64573,8 +61901,7 @@
                 "pos": {
                   "x": 440.0,
                   "y": 360.0
-                },
-                "simulation_index": null
+                }
               },
               "18": {
                 "color": [
@@ -64593,8 +61920,7 @@
                 "pos": {
                   "x": 320.0,
                   "y": 360.0
-                },
-                "simulation_index": null
+                }
               },
               "19": {
                 "color": [
@@ -64614,8 +61940,7 @@
                 "pos": {
                   "x": 560.0,
                   "y": 440.0
-                },
-                "simulation_index": null
+                }
               },
               "2": {
                 "color": [
@@ -64635,8 +61960,7 @@
                 "pos": {
                   "x": 560.0,
                   "y": 280.0
-                },
-                "simulation_index": null
+                }
               },
               "20": {
                 "color": [
@@ -64655,8 +61979,7 @@
                 "pos": {
                   "x": 800.0,
                   "y": 440.0
-                },
-                "simulation_index": null
+                }
               },
               "21": {
                 "color": [
@@ -64676,8 +61999,7 @@
                 "pos": {
                   "x": 680.0,
                   "y": 440.0
-                },
-                "simulation_index": null
+                }
               },
               "22": {
                 "color": [
@@ -64697,8 +62019,7 @@
                 "pos": {
                   "x": 440.0,
                   "y": 440.0
-                },
-                "simulation_index": null
+                }
               },
               "23": {
                 "color": [
@@ -64717,8 +62038,7 @@
                 "pos": {
                   "x": 320.0,
                   "y": 440.0
-                },
-                "simulation_index": null
+                }
               },
               "24": {
                 "color": [
@@ -64738,8 +62058,7 @@
                 "pos": {
                   "x": 560.0,
                   "y": 520.0
-                },
-                "simulation_index": null
+                }
               },
               "25": {
                 "color": [
@@ -64758,8 +62077,7 @@
                 "pos": {
                   "x": 800.0,
                   "y": 520.0
-                },
-                "simulation_index": null
+                }
               },
               "26": {
                 "color": [
@@ -64779,8 +62097,7 @@
                 "pos": {
                   "x": 680.0,
                   "y": 520.0
-                },
-                "simulation_index": null
+                }
               },
               "27": {
                 "color": [
@@ -64800,8 +62117,7 @@
                 "pos": {
                   "x": 440.0,
                   "y": 520.0
-                },
-                "simulation_index": null
+                }
               },
               "28": {
                 "color": [
@@ -64820,8 +62136,7 @@
                 "pos": {
                   "x": 320.0,
                   "y": 520.0
-                },
-                "simulation_index": null
+                }
               },
               "30": {
                 "color": [
@@ -64841,8 +62156,7 @@
                 "pos": {
                   "x": 440.0,
                   "y": 680.0
-                },
-                "simulation_index": null
+                }
               },
               "31": {
                 "color": [
@@ -64862,8 +62176,7 @@
                 "pos": {
                   "x": 440.0,
                   "y": 760.0
-                },
-                "simulation_index": null
+                }
               },
               "32": {
                 "color": [
@@ -64883,8 +62196,7 @@
                 "pos": {
                   "x": 560.0,
                   "y": 840.0
-                },
-                "simulation_index": null
+                }
               },
               "33": {
                 "color": [
@@ -64903,8 +62215,7 @@
                 "pos": {
                   "x": 800.0,
                   "y": 600.0
-                },
-                "simulation_index": null
+                }
               },
               "34": {
                 "color": [
@@ -64923,8 +62234,7 @@
                 "pos": {
                   "x": 800.0,
                   "y": 840.0
-                },
-                "simulation_index": null
+                }
               },
               "35": {
                 "color": [
@@ -64944,8 +62254,7 @@
                 "pos": {
                   "x": 440.0,
                   "y": 840.0
-                },
-                "simulation_index": null
+                }
               },
               "36": {
                 "color": [
@@ -64964,8 +62273,7 @@
                 "pos": {
                   "x": 320.0,
                   "y": 600.0
-                },
-                "simulation_index": null
+                }
               },
               "37": {
                 "color": [
@@ -64985,8 +62293,7 @@
                 "pos": {
                   "x": 560.0,
                   "y": 760.0
-                },
-                "simulation_index": null
+                }
               },
               "38": {
                 "color": [
@@ -65005,8 +62312,7 @@
                 "pos": {
                   "x": 320.0,
                   "y": 680.0
-                },
-                "simulation_index": null
+                }
               },
               "39": {
                 "color": [
@@ -65026,8 +62332,7 @@
                 "pos": {
                   "x": 560.0,
                   "y": 680.0
-                },
-                "simulation_index": null
+                }
               },
               "4": {
                 "color": [
@@ -65047,8 +62352,7 @@
                 "pos": {
                   "x": 440.0,
                   "y": 280.0
-                },
-                "simulation_index": null
+                }
               },
               "40": {
                 "color": [
@@ -65068,8 +62372,7 @@
                 "pos": {
                   "x": 680.0,
                   "y": 760.0
-                },
-                "simulation_index": null
+                }
               },
               "41": {
                 "color": [
@@ -65089,8 +62392,7 @@
                 "pos": {
                   "x": 560.0,
                   "y": 600.0
-                },
-                "simulation_index": null
+                }
               },
               "42": {
                 "color": [
@@ -65109,8 +62411,7 @@
                 "pos": {
                   "x": 320.0,
                   "y": 760.0
-                },
-                "simulation_index": null
+                }
               },
               "43": {
                 "color": [
@@ -65129,8 +62430,7 @@
                 "pos": {
                   "x": 320.0,
                   "y": 840.0
-                },
-                "simulation_index": null
+                }
               },
               "44": {
                 "color": [
@@ -65149,8 +62449,7 @@
                 "pos": {
                   "x": 800.0,
                   "y": 760.0
-                },
-                "simulation_index": null
+                }
               },
               "45": {
                 "color": [
@@ -65170,8 +62469,7 @@
                 "pos": {
                   "x": 680.0,
                   "y": 840.0
-                },
-                "simulation_index": null
+                }
               },
               "46": {
                 "color": [
@@ -65190,8 +62488,7 @@
                 "pos": {
                   "x": 800.0,
                   "y": 680.0
-                },
-                "simulation_index": null
+                }
               },
               "47": {
                 "color": [
@@ -65211,8 +62508,7 @@
                 "pos": {
                   "x": 680.0,
                   "y": 680.0
-                },
-                "simulation_index": null
+                }
               },
               "48": {
                 "color": [
@@ -65232,8 +62528,7 @@
                 "pos": {
                   "x": 680.0,
                   "y": 600.0
-                },
-                "simulation_index": null
+                }
               },
               "49": {
                 "color": [
@@ -65253,8 +62548,7 @@
                 "pos": {
                   "x": 440.0,
                   "y": 600.0
-                },
-                "simulation_index": null
+                }
               },
               "5": {
                 "color": [
@@ -65274,8 +62568,7 @@
                 "pos": {
                   "x": 440.0,
                   "y": 200.0
-                },
-                "simulation_index": null
+                }
               },
               "7": {
                 "color": [
@@ -65294,8 +62587,7 @@
                 "pos": {
                   "x": 320.0,
                   "y": 280.0
-                },
-                "simulation_index": null
+                }
               },
               "8": {
                 "color": [
@@ -65314,8 +62606,7 @@
                 "pos": {
                   "x": 800.0,
                   "y": 280.0
-                },
-                "simulation_index": null
+                }
               },
               "9": {
                 "color": [
@@ -65334,36 +62625,9 @@
                 "pos": {
                   "x": 800.0,
                   "y": 200.0
-                },
-                "simulation_index": null
+                }
               }
             }
-          },
-          "inputs": {
-            "13": "write clock",
-            "18": "write 6",
-            "23": "write 5",
-            "28": "write 4",
-            "36": "write 3",
-            "38": "write 2",
-            "42": "write 1",
-            "43": "write 0",
-            "7": "write 7"
-          },
-          "min_size": {
-            "x": 120.0,
-            "y": 220.0
-          },
-          "outputs": {
-            "15": "read 6",
-            "20": "read 5",
-            "25": "read 4",
-            "33": "read 3",
-            "34": "read 0",
-            "44": "read 1",
-            "46": "read 2",
-            "8": "read 7",
-            "9": "wrote clock"
           },
           "path": "random_modules/8_ bit_register.sml",
           "size": {
@@ -65375,8 +62639,7 @@
       "pos": {
         "x": 1440.0,
         "y": 140.0
-      },
-      "simulation_index": null
+      }
     },
     "90": {
       "color": [
@@ -65395,8 +62658,7 @@
       "pos": {
         "x": 3760.0,
         "y": 720.0
-      },
-      "simulation_index": null
+      }
     },
     "91": {
       "color": [
@@ -65415,8 +62677,7 @@
       "pos": {
         "x": 3760.0,
         "y": 780.0
-      },
-      "simulation_index": null
+      }
     },
     "92": {
       "color": [
@@ -65435,8 +62696,7 @@
       "pos": {
         "x": 3760.0,
         "y": 840.0
-      },
-      "simulation_index": null
+      }
     },
     "93": {
       "color": [
@@ -65455,8 +62715,7 @@
       "pos": {
         "x": 3760.0,
         "y": 1140.0
-      },
-      "simulation_index": null
+      }
     },
     "94": {
       "color": [
@@ -65475,8 +62734,7 @@
       "pos": {
         "x": 3760.0,
         "y": 1020.0
-      },
-      "simulation_index": null
+      }
     },
     "95": {
       "color": [
@@ -65495,8 +62753,7 @@
       "pos": {
         "x": 3760.0,
         "y": 1320.0
-      },
-      "simulation_index": null
+      }
     },
     "96": {
       "color": [
@@ -65515,8 +62772,7 @@
       "pos": {
         "x": 3760.0,
         "y": 900.0
-      },
-      "simulation_index": null
+      }
     },
     "97": {
       "color": [
@@ -65535,8 +62791,7 @@
       "pos": {
         "x": 3760.0,
         "y": 1260.0
-      },
-      "simulation_index": null
+      }
     },
     "98": {
       "color": [
@@ -65555,8 +62810,7 @@
       "pos": {
         "x": 3760.0,
         "y": 1080.0
-      },
-      "simulation_index": null
+      }
     },
     "99": {
       "color": [
@@ -65575,8 +62829,7 @@
       "pos": {
         "x": 3760.0,
         "y": 960.0
-      },
-      "simulation_index": null
+      }
     }
   }
 }
