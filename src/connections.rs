@@ -1,3 +1,4 @@
+use crate::colors::POWERED_COLOR;
 use crate::parts::{PartData, Port};
 use crate::state::{AppState, Selection};
 use eframe::epaint::PathShape;
@@ -10,6 +11,8 @@ pub const WIRE_WIDTH: f32 = 2.0;
 pub struct Connection {
     pub start: Port,
     pub end: Port,
+    #[serde(skip)]
+    pub simulation_from_id: Option<usize>,
 }
 
 pub fn dist_point_to_segment(p: Pos2, a: Pos2, b: Pos2) -> f32 {
@@ -97,9 +100,12 @@ pub fn draw_connection(
     end_pos: Pos2,
     painter: &Painter,
     selected: bool,
+    powered: bool,
 ) {
     let color: Color32 = if selected {
         app_state.color_pallet.selection
+    } else if powered {
+        POWERED_COLOR
     } else {
         Color32::from_rgb(180, 180, 220)
     };
@@ -118,18 +124,29 @@ impl AppState {
     pub fn draw_connections(&self, painter: &Painter) -> bool {
         let mut repair = false;
         for (i, connection) in self.canvas_snapshot.connections.iter().enumerate() {
+            let powered = connection
+                .simulation_from_id
+                .and_then(|idx| self.sim_state_outputs_snapshot.as_ref()?.get(idx).copied())
+                .unwrap_or(false);
+            if powered { continue; }
             let start_pos = connection.start.pos(self);
             let end_pos = connection.end.pos(self);
             if let (Some(start), Some(end)) = (start_pos, end_pos) {
-                draw_connection(
-                    self,
-                    start,
-                    end,
-                    painter,
-                    self.selection.contains(&Selection::Connection(i)),
-                );
+                draw_connection(self, start, end, painter, self.selection.contains(&Selection::Connection(i)), false);
             } else {
                 repair = true
+            }
+        }
+        for (i, connection) in self.canvas_snapshot.connections.iter().enumerate() {
+            let powered = connection
+                .simulation_from_id
+                .and_then(|idx| self.sim_state_outputs_snapshot.as_ref()?.get(idx).copied())
+                .unwrap_or(false);
+            if !powered { continue; }
+            let start_pos = connection.start.pos(self);
+            let end_pos = connection.end.pos(self);
+            if let (Some(start), Some(end)) = (start_pos, end_pos) {
+                draw_connection(self, start, end, painter, self.selection.contains(&Selection::Connection(i)), true);
             }
         }
         repair
@@ -162,8 +179,14 @@ impl AppState {
                                     self.canvas_snapshot.connections.push(connection);
                                     self.reload_connection_counts();
                                 } else {
-                                    *self.connection_counts.entry(connection.start.clone()).or_default() += 1;
-                                    *self.connection_counts.entry(connection.end.clone()).or_default() += 1;
+                                    *self
+                                        .connection_counts
+                                        .entry(connection.start.clone())
+                                        .or_default() += 1;
+                                    *self
+                                        .connection_counts
+                                        .entry(connection.end.clone())
+                                        .or_default() += 1;
                                     self.canvas_snapshot.connections.push(connection);
                                 }
                                 return true;

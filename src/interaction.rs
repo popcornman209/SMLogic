@@ -402,9 +402,9 @@ impl AppState {
             InteractionState::Connecting(connect_start) => {
                 if let Some(start_pos) = connect_start.pos(self) {
                     if connect_start.input {
-                        draw_connection(self, world_pos, start_pos, painter, false);
+                        draw_connection(self, world_pos, start_pos, painter, false, false);
                     } else {
-                        draw_connection(self, start_pos, world_pos, painter, false);
+                        draw_connection(self, start_pos, world_pos, painter, false, false);
                     }
                     if ctx.input(|i| i.pointer.button_released(PointerButton::Primary)) {
                         if let Some(port) = self.port_at_pos(world_pos) {
@@ -417,6 +417,7 @@ impl AppState {
                                 Connection {
                                     start: start_port,
                                     end: *end_port,
+                                    simulation_from_id: None,
                                 },
                                 true,
                             ) == false

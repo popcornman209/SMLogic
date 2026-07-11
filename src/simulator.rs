@@ -107,11 +107,17 @@ impl SimState {
             _tunnel_connections,
             _io_parts,
             _important_parts,
+            port_sim_map,
         ) = get_canvas_raw_data(canvas.clone(), true);
         for (original_id, new_i) in id_remap {
             if let Some(part) = canvas.parts.get_mut(&original_id) {
                 part.simulation_index = Some(new_i);
             }
+        }
+        for connection in canvas.connections.iter_mut() {
+            connection.simulation_from_id = port_sim_map
+                .get(&(connection.start.part, connection.start.port_id))
+                .copied();
         }
 
         let mut part_inputs: Vec<Vec<usize>> = vec![Vec::new(); part_types.len()];
@@ -139,14 +145,15 @@ pub fn get_canvas_raw_data(
     canvas: CanvasSnapshot,
     top_level: bool, // wether it is the main canvas or not (not sub modules)
 ) -> (
-    Vec<PartType>,            // part_output
-    Vec<Color32>,             // color_output
-    Vec<Pos2>,                // pos_output
-    Vec<(usize, usize)>,      // connection_output
-    HashMap<u64, usize>,      // id remap
-    HashMap<u64, Vec<usize>>, // tunnel connections
-    Vec<usize>,               // io parts (only should have stuff in it if top level)
-    Vec<usize>,               // important parts
+    Vec<PartType>,                      // part_output
+    Vec<Color32>,                       // color_output
+    Vec<Pos2>,                          // pos_output
+    Vec<(usize, usize)>,                // connection_output
+    HashMap<u64, usize>,                // id remap
+    HashMap<u64, Vec<usize>>,           // tunnel connections
+    Vec<usize>,                         // io parts (only should have stuff in it if top level)
+    Vec<usize>,                         // important parts
+    HashMap<(u64, Option<u64>), usize>, // port sim map: (part_id, port_id) -> sim index
 ) {
     let mut id_remap: HashMap<u64, usize> = HashMap::new();
     let mut part_output: Vec<PartType> = Vec::new();
@@ -198,6 +205,7 @@ pub fn get_canvas_raw_data(
                     module_tunnel_connections,
                     _io_parts, // should be empty anyway
                     important,
+                    _module_port_sim_map,
                 ) = get_canvas_raw_data(module.canvas_snapshot, false);
                 let offset = part_output.len();
                 part_output.extend(module_parts);
@@ -282,6 +290,18 @@ pub fn get_canvas_raw_data(
         }
     }
 
+    let mut port_sim_map: HashMap<(u64, Option<u64>), usize> = HashMap::new();
+    for (&part_id, &idx) in &id_remap {
+        port_sim_map.insert((part_id, None), idx);
+    }
+    for (&module_id, inner_map) in &sub_tunnel_connections {
+        for (&inner_io_id, indices) in inner_map {
+            if let Some(&idx) = indices.first() {
+                port_sim_map.insert((module_id, Some(inner_io_id)), idx);
+            }
+        }
+    }
+
     (
         part_output,
         color_output,
@@ -291,6 +311,7 @@ pub fn get_canvas_raw_data(
         tunnel_connections,
         io_parts,
         important_parts,
+        port_sim_map,
     )
 }
 
@@ -378,6 +399,9 @@ impl AppState {
         self.sim_snapshot = None;
         for part in self.canvas_snapshot.parts.values_mut() {
             part.simulation_index = None;
+        }
+        for connection in self.canvas_snapshot.connections.iter_mut() {
+            connection.simulation_from_id = None;
         }
     }
 }

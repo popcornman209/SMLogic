@@ -68,7 +68,7 @@ impl AppState {
                         let start_pos = connection.start.pos(self);
                         let end_pos = connection.end.pos(self);
                         if let (Some(start), Some(end)) = (start_pos, end_pos) {
-                            draw_connection(self, start, end, &painter, true);
+                            draw_connection(self, start, end, &painter, true, false);
                         }
                     }
                 }
@@ -88,7 +88,7 @@ impl AppState {
                     let start_pos = connection.start.pos(self);
                     let end_pos = connection.end.pos(self);
                     if let (Some(start), Some(end)) = (start_pos, end_pos) {
-                        draw_connection(self, start, end, &painter, true);
+                        draw_connection(self, start, end, &painter, true, false);
                     }
                 }
             }

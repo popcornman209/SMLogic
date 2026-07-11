@@ -1,3 +1,4 @@
 fixed crash cases
 made components which failed to reload highlighted a blinking red
 more descriptive error notifs
+powered connections show as blue and above others

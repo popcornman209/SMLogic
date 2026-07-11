@@ -117,6 +117,7 @@ impl ConnectorData {
                         output.push(Connection {
                             start: *output_port,
                             end: *input_port,
+                            simulation_from_id: None,
                         })
                     }
                 }
@@ -127,6 +128,7 @@ impl ConnectorData {
                         output.push(Connection {
                             start: *output_port,
                             end: *input_port,
+                            simulation_from_id: None,
                         })
                     }
                 } else {
@@ -143,6 +145,7 @@ impl ConnectorData {
                         output.push(Connection {
                             start: *output_port,
                             end: *input_port,
+                            simulation_from_id: None,
                         })
                     }
                 } else {
@@ -693,9 +696,17 @@ pub fn sort_by_position<T>(items: &mut Vec<T>, get_pos: impl Fn(&T) -> Pos2) {
         let a_pos = get_pos(a);
         let b_pos = get_pos(b);
         if y_spread >= x_spread {
-            a_pos.y.partial_cmp(&b_pos.y).unwrap().then(a_pos.x.partial_cmp(&b_pos.x).unwrap())
+            a_pos
+                .y
+                .partial_cmp(&b_pos.y)
+                .unwrap()
+                .then(a_pos.x.partial_cmp(&b_pos.x).unwrap())
         } else {
-            a_pos.x.partial_cmp(&b_pos.x).unwrap().then(a_pos.y.partial_cmp(&b_pos.y).unwrap())
+            a_pos
+                .x
+                .partial_cmp(&b_pos.x)
+                .unwrap()
+                .then(a_pos.y.partial_cmp(&b_pos.y).unwrap())
         }
     });
 }

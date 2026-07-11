@@ -358,6 +358,7 @@ impl AppState {
                                 input: true,
                                 port_id: None,
                             },
+                            simulation_from_id: None,
                         };
                         app_cell.borrow_mut().add_connection(connection, false);
                         Ok(())
