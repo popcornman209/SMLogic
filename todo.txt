@@ -1,7 +1,5 @@
 be able to visualize important parts in the simulation
 
-make connections light up in simulator
-
 change multiple part properties at once
 
 dragable connections to sperate them out
