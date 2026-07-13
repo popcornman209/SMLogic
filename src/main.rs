@@ -72,6 +72,9 @@ impl eframe::App for AppState {
         self.draw_settings(ctx);
         self.draw_lua_script(ctx);
         self.draw_footer(ctx);
+        if !self.important_gates.is_empty() {
+            self.draw_important_sidebar(ctx);
+        }
         egui::CentralPanel::default().show(ctx, |ui| {
             let (response, painter) = self.draw_canvas(ui, ctx);
             self.handle_input(ctx, &painter, &response);

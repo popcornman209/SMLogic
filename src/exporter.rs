@@ -412,7 +412,8 @@ impl BluePrint {
             mut io_parts,
             important_parts,
             _port_sim_map,
-        ) = get_canvas_raw_data(canvas, true);
+            _important_trees,
+        ) = get_canvas_raw_data(canvas, true, &Vec::new());
 
         io_parts.extend(important_parts); // treat important parts as IO
 

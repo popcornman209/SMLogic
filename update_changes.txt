@@ -1,4 +1,6 @@
 fixed crash cases
 made components which failed to reload highlighted a blinking red
 more descriptive error notifs
-powered connections show as blue and above others
+powered connections light above and show above others
+clicking on connections in simulator toggles them
+important gates now have a sidebar while simulating to view or change their values

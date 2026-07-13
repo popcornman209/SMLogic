@@ -4,7 +4,7 @@ use crate::egui::{Color32, Pos2, Rect, Vec2};
 use crate::lua_scripting::LuaScript;
 use crate::parts::{PORT_SIZE, Part, Port};
 use crate::saveload::{ClipboardData, Config};
-use crate::simulator::{SimSnapshot, SimState};
+use crate::simulator::{ImportantGate, SimSnapshot, SimState};
 use crate::tools::Tool;
 use egui_notify::Toasts;
 use parking_lot::Mutex;
@@ -26,7 +26,10 @@ pub fn path_to_string(path: PathBuf, project_folder: Option<PathBuf>) -> String 
         path.to_string_lossy().to_string()
     };
 
-    let file_name_len = path.file_name().map(|n| n.to_string_lossy().chars().count()).unwrap_or(0);
+    let file_name_len = path
+        .file_name()
+        .map(|n| n.to_string_lossy().chars().count())
+        .unwrap_or(0);
     let max_len = MAX_PATH_LEN.max(file_name_len);
     if out.chars().count() <= max_len {
         out
@@ -106,6 +109,7 @@ pub struct AppState {
     pub sim_snapshot: Option<Arc<Mutex<SimSnapshot>>>,
     pub sim_state_outputs_snapshot: Option<Vec<bool>>,
     pub sim_state: Option<Arc<Mutex<SimState>>>,
+    pub important_gates: Vec<ImportantGate>,
     pub last_tick_count: u64,
     pub last_tps_check: Instant,
     pub current_tps: f64,
@@ -160,6 +164,7 @@ impl AppState {
             sim_snapshot: None,
             sim_state_outputs_snapshot: None,
             sim_state: None,
+            important_gates: Vec::new(),
             last_tick_count: 0,
             last_tps_check: Instant::now(),
             current_tps: 0.0,

@@ -12,7 +12,7 @@ pub struct Connection {
     pub start: Port,
     pub end: Port,
     #[serde(skip)]
-    pub simulation_from_id: Option<usize>,
+    pub simulation_index: Option<usize>,
 }
 
 pub fn dist_point_to_segment(p: Pos2, a: Pos2, b: Pos2) -> f32 {
@@ -125,28 +125,46 @@ impl AppState {
         let mut repair = false;
         for (i, connection) in self.canvas_snapshot.connections.iter().enumerate() {
             let powered = connection
-                .simulation_from_id
+                .simulation_index
                 .and_then(|idx| self.sim_state_outputs_snapshot.as_ref()?.get(idx).copied())
                 .unwrap_or(false);
-            if powered { continue; }
+            if powered {
+                continue;
+            }
             let start_pos = connection.start.pos(self);
             let end_pos = connection.end.pos(self);
             if let (Some(start), Some(end)) = (start_pos, end_pos) {
-                draw_connection(self, start, end, painter, self.selection.contains(&Selection::Connection(i)), false);
+                draw_connection(
+                    self,
+                    start,
+                    end,
+                    painter,
+                    self.selection.contains(&Selection::Connection(i)),
+                    false,
+                );
             } else {
                 repair = true
             }
         }
         for (i, connection) in self.canvas_snapshot.connections.iter().enumerate() {
             let powered = connection
-                .simulation_from_id
+                .simulation_index
                 .and_then(|idx| self.sim_state_outputs_snapshot.as_ref()?.get(idx).copied())
                 .unwrap_or(false);
-            if !powered { continue; }
+            if !powered {
+                continue;
+            }
             let start_pos = connection.start.pos(self);
             let end_pos = connection.end.pos(self);
             if let (Some(start), Some(end)) = (start_pos, end_pos) {
-                draw_connection(self, start, end, painter, self.selection.contains(&Selection::Connection(i)), true);
+                draw_connection(
+                    self,
+                    start,
+                    end,
+                    painter,
+                    self.selection.contains(&Selection::Connection(i)),
+                    true,
+                );
             }
         }
         repair

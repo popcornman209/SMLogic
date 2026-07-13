@@ -255,7 +255,7 @@ impl AppState {
                                         port_id: connection.end.port_id,
                                         input: connection.end.input,
                                     },
-                                    simulation_from_id: None,
+                                    simulation_index: None,
                                 });
                             }
                         }

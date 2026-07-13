@@ -117,7 +117,7 @@ impl ConnectorData {
                         output.push(Connection {
                             start: *output_port,
                             end: *input_port,
-                            simulation_from_id: None,
+                            simulation_index: None,
                         })
                     }
                 }
@@ -128,7 +128,7 @@ impl ConnectorData {
                         output.push(Connection {
                             start: *output_port,
                             end: *input_port,
-                            simulation_from_id: None,
+                            simulation_index: None,
                         })
                     }
                 } else {
@@ -145,7 +145,7 @@ impl ConnectorData {
                         output.push(Connection {
                             start: *output_port,
                             end: *input_port,
-                            simulation_from_id: None,
+                            simulation_index: None,
                         })
                     }
                 } else {
@@ -648,7 +648,19 @@ impl AppState {
                 self.selection.clear();
             }
             Some(Tool::Simulator) => {
-                if let Some(part) = self.part_at_pos(world_pos) {
+                if let Some(connection_index) = self.connection_at_pos(world_pos) {
+                    if let Some(connection) = self.canvas_snapshot.connections.get(connection_index)
+                    {
+                        if let Some(new_i) = connection.simulation_index {
+                            if let Some(sim_state) = &self.sim_state {
+                                let mut state = sim_state.lock();
+                                let new_val = !state.part_outputs[new_i];
+                                state.part_outputs[new_i] = new_val;
+                                state.prev_outputs[new_i] = new_val;
+                            }
+                        }
+                    }
+                } else if let Some(part) = self.part_at_pos(world_pos) {
                     if let Some(new_i) = part.simulation_index {
                         if let Some(sim_state) = &self.sim_state {
                             let mut state = sim_state.lock();

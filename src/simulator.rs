@@ -21,6 +21,14 @@ pub enum PartType {
     Timer(VecDeque<bool>),
 }
 
+pub struct ImportantGate {
+    pub label: String,
+    pub color: Color32,
+    pub tree: String,
+    pub simulation_index: usize,
+    pub gate_type_label: String,
+}
+
 pub struct SimSnapshot {
     pub outputs: Vec<bool>,
     pub tick: u64,
@@ -97,7 +105,10 @@ impl SimState {
         }
     }
 
-    pub fn from_canvas_snapshot(canvas: &mut CanvasSnapshot) -> Self {
+    pub fn from_canvas_snapshot(
+        canvas: &mut CanvasSnapshot,
+        important_gates: &mut Vec<ImportantGate>,
+    ) -> Self {
         let (
             part_types,
             _colors,
@@ -108,16 +119,26 @@ impl SimState {
             _io_parts,
             _important_parts,
             port_sim_map,
-        ) = get_canvas_raw_data(canvas.clone(), true);
-        for (original_id, new_i) in id_remap {
+            important_trees,
+        ) = get_canvas_raw_data(canvas.clone(), true, &Vec::new());
+        for (original_id, new_i) in &id_remap {
             if let Some(part) = canvas.parts.get_mut(&original_id) {
-                part.simulation_index = Some(new_i);
+                part.simulation_index = Some(new_i.clone());
             }
         }
         for connection in canvas.connections.iter_mut() {
-            connection.simulation_from_id = port_sim_map
+            connection.simulation_index = port_sim_map
                 .get(&(connection.start.part, connection.start.port_id))
                 .copied();
+        }
+        for (simulation_index, tree, label, color, gate_type_label) in important_trees {
+            important_gates.push(ImportantGate {
+                label,
+                color,
+                tree,
+                simulation_index,
+                gate_type_label,
+            });
         }
 
         let mut part_inputs: Vec<Vec<usize>> = vec![Vec::new(); part_types.len()];
@@ -143,17 +164,19 @@ impl SimState {
 // also had alot of issues so i js made claude fix them (this function was too much for me lmao)
 pub fn get_canvas_raw_data(
     canvas: CanvasSnapshot,
-    top_level: bool, // wether it is the main canvas or not (not sub modules)
+    top_level: bool,         // wether it is the main canvas or not (not sub modules)
+    ancestors: &Vec<String>, // labels of the modules we're nested inside of, outermost first
 ) -> (
-    Vec<PartType>,                      // part_output
-    Vec<Color32>,                       // color_output
-    Vec<Pos2>,                          // pos_output
-    Vec<(usize, usize)>,                // connection_output
-    HashMap<u64, usize>,                // id remap
-    HashMap<u64, Vec<usize>>,           // tunnel connections
-    Vec<usize>,                         // io parts (only should have stuff in it if top level)
-    Vec<usize>,                         // important parts
-    HashMap<(u64, Option<u64>), usize>, // port sim map: (part_id, port_id) -> sim index
+    Vec<PartType>,                         // part_output
+    Vec<Color32>,                          // color_output
+    Vec<Pos2>,                             // pos_output
+    Vec<(usize, usize)>,                   // connection_output
+    HashMap<u64, usize>,                   // id remap
+    HashMap<u64, Vec<usize>>,              // tunnel connections
+    Vec<usize>,                            // io parts (only should have stuff in it if top level)
+    Vec<usize>,                            // important parts
+    HashMap<(u64, Option<u64>), usize>,    // port sim map: (part_id, port_id) -> sim index
+    Vec<(usize, String, String, Color32, String)>, // important gates: (index, tree, label, color, gate_type_label)
 ) {
     let mut id_remap: HashMap<u64, usize> = HashMap::new();
     let mut part_output: Vec<PartType> = Vec::new();
@@ -165,6 +188,7 @@ pub fn get_canvas_raw_data(
     let mut io_parts: Vec<usize> = Vec::new();
 
     let mut important_parts: Vec<usize> = Vec::new();
+    let mut important_trees: Vec<(usize, String, String, Color32, String)> = Vec::new();
     let mut tunnel_connections: HashMap<u64, Vec<usize>> = HashMap::new();
     let mut sub_tunnel_connections: HashMap<u64, HashMap<u64, Vec<usize>>> = HashMap::new();
 
@@ -185,6 +209,13 @@ pub fn get_canvas_raw_data(
                 id_remap.insert(*part_id, new_i);
                 if gate.important {
                     important_parts.push(new_i);
+                    important_trees.push((
+                        new_i,
+                        ancestors.join(" > "),
+                        part.label.clone(),
+                        part.color,
+                        gate.gate_type.to_label(),
+                    ));
                 }
             }
             PartData::Timer(timer) => {
@@ -196,6 +227,8 @@ pub fn get_canvas_raw_data(
                 id_remap.insert(*part_id, new_i);
             }
             PartData::Module(module) => {
+                let mut sub_ancestors = ancestors.clone();
+                sub_ancestors.push(part.label.clone());
                 let (
                     module_parts,
                     colors,
@@ -206,12 +239,18 @@ pub fn get_canvas_raw_data(
                     _io_parts, // should be empty anyway
                     important,
                     _module_port_sim_map,
-                ) = get_canvas_raw_data(module.canvas_snapshot, false);
+                    important_trees_sub,
+                ) = get_canvas_raw_data(module.canvas_snapshot, false, &sub_ancestors);
                 let offset = part_output.len();
                 part_output.extend(module_parts);
                 color_output.extend(colors);
                 pos_output.extend(positions);
                 important_parts.extend(important.iter().map(|a| a + offset));
+                important_trees.extend(important_trees_sub.into_iter().map(
+                    |(a, tree, label, color, gate_type_label)| {
+                        (a + offset, tree, label, color, gate_type_label)
+                    },
+                ));
 
                 connection_output.extend(
                     module_connections
@@ -312,6 +351,7 @@ pub fn get_canvas_raw_data(
         io_parts,
         important_parts,
         port_sim_map,
+        important_trees,
     )
 }
 
@@ -367,8 +407,12 @@ pub fn main_loop(sim_state: Arc<Mutex<SimState>>, sim_snapshot: Arc<Mutex<SimSna
 
 pub fn start_thread(
     canvas: &mut CanvasSnapshot,
+    important_gates: &mut Vec<ImportantGate>,
 ) -> (Arc<Mutex<SimState>>, Arc<Mutex<SimSnapshot>>) {
-    let sim_state = Arc::new(Mutex::new(SimState::from_canvas_snapshot(canvas)));
+    let sim_state = Arc::new(Mutex::new(SimState::from_canvas_snapshot(
+        canvas,
+        important_gates,
+    )));
     let sim_state_thread = Arc::clone(&sim_state);
     let sim_snapshot = Arc::new(Mutex::new(SimSnapshot {
         outputs: Vec::new(),
@@ -383,7 +427,8 @@ pub fn start_thread(
 
 impl AppState {
     pub fn start_simulation(&mut self) {
-        let (sim_state, sim_snapshot) = start_thread(&mut self.canvas_snapshot);
+        let (sim_state, sim_snapshot) =
+            start_thread(&mut self.canvas_snapshot, &mut self.important_gates);
         self.sim_state = Some(sim_state);
         self.sim_snapshot = Some(sim_snapshot);
         self.last_tick_count = 0;
@@ -397,11 +442,12 @@ impl AppState {
         }
         self.sim_state = None;
         self.sim_snapshot = None;
+        self.important_gates.clear();
         for part in self.canvas_snapshot.parts.values_mut() {
             part.simulation_index = None;
         }
         for connection in self.canvas_snapshot.connections.iter_mut() {
-            connection.simulation_from_id = None;
+            connection.simulation_index = None;
         }
     }
 }

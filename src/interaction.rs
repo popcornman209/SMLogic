@@ -417,7 +417,7 @@ impl AppState {
                                 Connection {
                                     start: start_port,
                                     end: *end_port,
-                                    simulation_from_id: None,
+                                    simulation_index: None,
                                 },
                                 true,
                             ) == false

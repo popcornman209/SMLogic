@@ -1,6 +1,6 @@
-be able to visualize important parts in the simulation
-
 change multiple part properties at once
+
+box select toggle parts in simulation
 
 dragable connections to sperate them out
 

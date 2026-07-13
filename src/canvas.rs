@@ -2,11 +2,11 @@ use eframe::egui::{self, Color32, Painter, Pos2, Rect, Sense, Stroke, Ui};
 use std::borrow::Cow;
 use std::collections::HashMap;
 
-use crate::colors::ColorPallet;
+use crate::colors::{ColorPallet, POWERED_COLOR, UNPOWERED_COLOR};
 use crate::connections::draw_connection;
 use crate::exporter::get_bp_folder;
 use crate::lua_scripting::LuaScript;
-use crate::parts::PartType;
+use crate::parts::{GATE_SIZE, PartType};
 use crate::state::{AppState, CanvasSnapshot, InteractionState, Selection, path_to_string};
 use crate::tools::{Tool, tool_label};
 
@@ -302,6 +302,82 @@ impl AppState {
                         }
                     }
                 }
+            });
+    }
+
+    pub fn draw_important_sidebar(&self, ctx: &egui::Context) {
+        egui::SidePanel::right("important")
+            .resizable(false)
+            .exact_width(160.0)
+            .frame(
+                egui::Frame::new()
+                    .fill(self.color_pallet.base)
+                    .inner_margin(8.0),
+            )
+            .show(ctx, |ui| {
+                ui.heading("Important Gates");
+                ui.vertical_centered(|ui| {
+                    for gate in &self.important_gates {
+                        let powered = self
+                            .sim_state_outputs_snapshot
+                            .as_ref()
+                            .and_then(|o| o.get(gate.simulation_index))
+                            .copied()
+                            .unwrap_or(false);
+
+                        let width = 120.0;
+                        let height = width * (GATE_SIZE.y / GATE_SIZE.x);
+
+                        ui.separator();
+                        if !gate.tree.is_empty() {
+                            ui.small(gate.tree.clone());
+                        }
+
+                        // ai helped find this
+                        let (rect, response) =
+                            ui.allocate_exact_size(egui::vec2(width, height), egui::Sense::click());
+                        let painter = ui.painter();
+
+                        painter.rect_filled(
+                            rect,
+                            0.0,
+                            if powered {
+                                POWERED_COLOR
+                            } else {
+                                UNPOWERED_COLOR
+                            },
+                        );
+                        painter.rect_stroke(
+                            rect,
+                            0.0,
+                            Stroke::new(2.5, gate.color),
+                            egui::StrokeKind::Inside,
+                        );
+                        painter.text(
+                            rect.center() - egui::vec2(0.0, 16.0),
+                            egui::Align2::CENTER_CENTER,
+                            &gate.gate_type_label,
+                            egui::FontId::proportional(20.0),
+                            Color32::WHITE,
+                        );
+                        painter.text(
+                            rect.center() + egui::vec2(0.0, 16.0),
+                            egui::Align2::CENTER_CENTER,
+                            gate.label.clone(),
+                            egui::FontId::proportional(20.0),
+                            Color32::WHITE,
+                        );
+
+                        if response.clicked() {
+                            if let Some(sim_state) = &self.sim_state {
+                                let mut state = sim_state.lock();
+                                let new_val = !state.part_outputs[gate.simulation_index];
+                                state.part_outputs[gate.simulation_index] = new_val;
+                                state.prev_outputs[gate.simulation_index] = new_val;
+                            }
+                        }
+                    }
+                })
             });
     }
 
