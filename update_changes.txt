@@ -1,5 +1,5 @@
 fixed crash cases
-made components which failed to reload highlighted a blinking red
+made module which failed to reload highlighted a blinking red
 more descriptive error notifs
 powered connections light above and show above others
 clicking on connections in simulator toggles them

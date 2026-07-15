@@ -329,9 +329,8 @@ impl AppState {
                         let height = width * (GATE_SIZE.y / GATE_SIZE.x);
 
                         ui.separator();
-                        if !gate.tree.is_empty() {
-                            ui.small(gate.tree.clone());
-                        }
+
+                        ui.small(gate.tree.clone());
 
                         // ai helped find this
                         let (rect, response) =

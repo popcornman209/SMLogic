@@ -132,13 +132,15 @@ impl SimState {
                 .copied();
         }
         for (simulation_index, tree, label, color, gate_type_label) in important_trees {
-            important_gates.push(ImportantGate {
-                label,
-                color,
-                tree,
-                simulation_index,
-                gate_type_label,
-            });
+            if !tree.is_empty() {
+                important_gates.push(ImportantGate {
+                    label,
+                    color,
+                    tree,
+                    simulation_index,
+                    gate_type_label,
+                });
+            }
         }
 
         let mut part_inputs: Vec<Vec<usize>> = vec![Vec::new(); part_types.len()];
@@ -167,15 +169,15 @@ pub fn get_canvas_raw_data(
     top_level: bool,         // wether it is the main canvas or not (not sub modules)
     ancestors: &Vec<String>, // labels of the modules we're nested inside of, outermost first
 ) -> (
-    Vec<PartType>,                         // part_output
-    Vec<Color32>,                          // color_output
-    Vec<Pos2>,                             // pos_output
-    Vec<(usize, usize)>,                   // connection_output
-    HashMap<u64, usize>,                   // id remap
-    HashMap<u64, Vec<usize>>,              // tunnel connections
-    Vec<usize>,                            // io parts (only should have stuff in it if top level)
-    Vec<usize>,                            // important parts
-    HashMap<(u64, Option<u64>), usize>,    // port sim map: (part_id, port_id) -> sim index
+    Vec<PartType>,                                 // part_output
+    Vec<Color32>,                                  // color_output
+    Vec<Pos2>,                                     // pos_output
+    Vec<(usize, usize)>,                           // connection_output
+    HashMap<u64, usize>,                           // id remap
+    HashMap<u64, Vec<usize>>,                      // tunnel connections
+    Vec<usize>, // io parts (only should have stuff in it if top level)
+    Vec<usize>, // important parts
+    HashMap<(u64, Option<u64>), usize>, // port sim map: (part_id, port_id) -> sim index
     Vec<(usize, String, String, Color32, String)>, // important gates: (index, tree, label, color, gate_type_label)
 ) {
     let mut id_remap: HashMap<u64, usize> = HashMap::new();

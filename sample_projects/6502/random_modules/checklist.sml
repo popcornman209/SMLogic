@@ -882,7 +882,7 @@
       "part_data": {
         "Gate": {
           "gate_type": "Xor",
-          "important": true
+          "important": false
         }
       },
       "pos": {
