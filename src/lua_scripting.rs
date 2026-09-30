@@ -3,9 +3,11 @@ use crate::{
     connections::Connection,
     parts::{GATE_SIZE, GateType, Part, PartData, PartType, Port},
     state::{AppState, Selection},
+    tools::Tool,
 };
 use egui::{Color32, Pos2};
 use egui_code_editor::{CodeEditor, ColorTheme, Syntax};
+use egui_extras::{Size, StripBuilder};
 use mlua::Lua;
 use std::cell::RefCell;
 use std::path::PathBuf;
@@ -116,6 +118,9 @@ fn get_part(part: &Part, lua: &Lua) -> mlua::Result<mlua::Table> {
 impl AppState {
     fn run_script(&mut self) {
         if let Some(mut lua_script) = self.lua_script.take() {
+            if self.active_tool == Some(Tool::Simulator) {
+                self.active_tool = None;
+            }
             lua_script.output.clear();
             let script_data = lua_script.data.clone();
             let project_folder = self.project_folder.clone();
@@ -517,32 +522,45 @@ impl AppState {
                         }
                     });
                     ui.heading("Lua Script");
-                    ui.allocate_ui(egui::vec2(ui.available_width(), 300.0), |ui| {
-                        CodeEditor::default()
-                            .id_source("code editor")
-                            .with_rows(15)
-                            .with_fontsize(14.0)
-                            .with_theme(ColorTheme::SONOKAI)
-                            .with_syntax(Syntax::lua())
-                            .with_numlines(true)
-                            .show(ui, &mut lua_script.data);
-                    });
-                    ui.horizontal(|ui| {
-                    if ui.button("Run").clicked() { run = true; }
-                    if ui.button("Docs").clicked() {
-                        let _ = open::that("https://github.com/popcornman209/SMLogic/blob/main/github_resources/lua_scripting.md");
-                    }});
-                    egui::ScrollArea::vertical()
-                        .stick_to_bottom(true)
-                        .max_height(150.0)
-                        .show(ui, |ui| {
-                            for line in lua_script.output.lines() {
-                                if line.starts_with("[error]") {
-                                    ui.colored_label(egui::Color32::RED, line);
-                                } else {
-                                    ui.monospace(line);
-                                }
-                            }
+                    let output_size = if lua_script.output.is_empty() { 0.0 } else { 150.0 };
+                    StripBuilder::new(ui)
+                        .size(Size::remainder().at_least(300.0))
+                        .size(Size::exact(24.0))
+                        .size(Size::exact(output_size))
+                        .vertical(|mut strip| {
+                            strip.cell(|ui| {
+                                ui.allocate_ui(egui::vec2(ui.available_width(), ui.available_height()), |ui| {
+                                    CodeEditor::default()
+                                        .id_source("code editor")
+                                        .with_rows(15)
+                                        .with_fontsize(14.0)
+                                        .with_theme(ColorTheme::SONOKAI)
+                                        .with_syntax(Syntax::lua())
+                                        .with_numlines(true)
+                                        .show(ui, &mut lua_script.data);
+                                });
+                            });
+                            strip.cell(|ui| {
+                                ui.horizontal(|ui| {
+                                if ui.button("Run").clicked() { run = true; }
+                                if ui.button("Docs").clicked() {
+                                    let _ = open::that("https://github.com/popcornman209/SMLogic/blob/main/github_resources/lua_scripting.md");
+                                }});
+                            });
+                            strip.cell(|ui| {
+                                egui::ScrollArea::vertical()
+                                    .stick_to_bottom(true)
+                                    .max_height(150.0)
+                                    .show(ui, |ui| {
+                                        for line in lua_script.output.lines() {
+                                            if line.starts_with("[error]") {
+                                                ui.colored_label(egui::Color32::RED, line);
+                                            } else {
+                                                ui.monospace(line);
+                                            }
+                                        }
+                                    });
+                            });
                         });
                     self.lua_script = Some(lua_script);
                 }

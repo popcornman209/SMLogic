@@ -654,6 +654,12 @@ impl AppState {
                     self.config.show_fps = self.show_fps;
                     self.config.save();
                 }
+                if ui
+                    .checkbox(&mut self.config.vsync, "VSync (requires restart)")
+                    .changed()
+                {
+                    self.config.save();
+                }
 
                 //color scheme
                 let current_colorpallet = self.color_pallet.label.clone();

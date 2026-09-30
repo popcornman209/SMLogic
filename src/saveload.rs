@@ -28,6 +28,8 @@ pub struct Config {
     #[serde(default)]
     pub show_fps: bool,
     #[serde(default)]
+    pub vsync: bool,
+    #[serde(default)]
     pub last_project: Option<PathBuf>,
     #[serde(default)]
     pub color_pallet: ColorPallet,
@@ -97,6 +99,7 @@ impl Default for Config {
             round_connections: true,
             snap_to_grid: true,
             show_fps: false,
+            vsync: false,
             last_project: None,
             color_pallet: ColorPallet::DEFAULT_PALLET,
             bp_folder: get_bp_folder(),

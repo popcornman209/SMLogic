@@ -1,3 +1,9 @@
+export stats
+
+display currently open file in lua editor
+
+lua os.exit() closes whole program
+
 change multiple part properties at once
 
 box select toggle parts in simulation
@@ -9,6 +15,10 @@ more lua functions
 	module support!
 
 "dead end" detection, ability to remove gates that dont contribute to the output in any way
+
+make timers export as the correct size
+
+3d viewer for exporting shape/size
 
 windows has no icon on the file itself ?
 

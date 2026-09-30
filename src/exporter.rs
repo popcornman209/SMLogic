@@ -1,6 +1,7 @@
 use crate::{
     simulator::{PartType, get_canvas_raw_data},
     state::{AppState, CanvasSnapshot},
+    tools::Tool,
 };
 
 use egui::Pos2;
@@ -39,11 +40,21 @@ pub struct ExporterSettings {
     pub max_x: Option<usize>,
     pub max_y: Option<usize>,
     pub max_z: Option<usize>,
+    #[serde(default)]
+    pub offset_logic: bool,
+    #[serde(default)]
+    pub offset_x: i32,
+    #[serde(default)]
+    pub offset_y: i32,
+    #[serde(default)]
+    pub offset_z: i32,
     pub export_type: ExportType,
     pub identifier: Option<String>,
     pub new_name: Option<String>,
     pub new_desc: Option<String>,
     pub new_icon: Option<std::path::PathBuf>,
+    #[serde(skip)]
+    pub stats: String,
 }
 
 impl ExporterSettings {
@@ -54,11 +65,16 @@ impl ExporterSettings {
         max_x: None,
         max_y: None,
         max_z: None,
+        offset_logic: false,
+        offset_x: 0,
+        offset_y: 0,
+        offset_z: 0,
         export_type: ExportType::FromName,
         identifier: None,
         new_name: None,
         new_desc: None,
         new_icon: None,
+        stats: String::new(),
     };
 }
 
@@ -69,7 +85,7 @@ impl Default for ExporterSettings {
 }
 
 impl AppState {
-    pub fn export(&mut self, exporter_settings: ExporterSettings) {
+    pub fn export(&mut self, mut exporter_settings: ExporterSettings) {
         if (exporter_settings.max_x.unwrap_or(1) <= 0)
             | (exporter_settings.max_y.unwrap_or(1) <= 0)
             | (exporter_settings.max_z.unwrap_or(1) <= 0)
@@ -169,10 +185,14 @@ impl AppState {
                 bp.export(
                     self.canvas_snapshot.clone(),
                     &mut self.toasts,
-                    &exporter_settings,
+                    &mut exporter_settings,
                 );
+
+                if let Some(Tool::Exporter(settings)) = &mut self.active_tool {
+                    settings.stats = exporter_settings.stats.clone();
+                }
             } else {
-                return;
+                self.toasts.error("Unknown failure in exporting?");
             }
         } else {
             self.toasts
@@ -243,9 +263,14 @@ fn compute_positions(
             io_counter += 1;
             pos
         } else {
-            let x = (gate_counter % eff_x) as i32;
-            let y = ((gate_counter / eff_x) % eff_y) as i32;
-            let z = ((gate_counter / (eff_x * eff_y)) % eff_z) as i32;
+            let (x_off, y_off, z_off) = if settings.offset_logic {
+                (settings.offset_x, settings.offset_y, settings.offset_z)
+            } else {
+                (0, 0, 0)
+            };
+            let x = (gate_counter % eff_x) as i32 + x_off;
+            let y = ((gate_counter / eff_x) % eff_y) as i32 + y_off;
+            let z = ((gate_counter / (eff_x * eff_y)) % eff_z) as i32 + z_off;
             gate_counter += 1;
             (x, y, z)
         };
@@ -400,7 +425,7 @@ impl BluePrint {
         &mut self,
         canvas: CanvasSnapshot,
         toasts: &mut Toasts,
-        exporter_settings: &ExporterSettings,
+        exporter_settings: &mut ExporterSettings,
     ) {
         let (
             parts,
@@ -525,10 +550,12 @@ impl BluePrint {
 
         _ = fs::create_dir_all(&self.path);
 
+        let mut blueprint_size = 0usize;
         if let Ok(output) = serde_json::to_string(&blueprint) {
+            blueprint_size = output.len();
             if fs::write(self.path.join("blueprint.json"), output).is_err() {
                 toasts.error("Failed to write to blueprint.json!");
-                return;
+                exporter_settings.stats = "Failed to write to blueprint.json!".to_string();
             }
         }
 
@@ -542,7 +569,7 @@ impl BluePrint {
                     Ok(true) | Err(_)
                 ) {
                     _ = fs::remove_dir_all(&self.path);
-                    return;
+                    exporter_settings.stats = "Failed to write description.json".to_string();
                 }
             }
         }
@@ -552,5 +579,20 @@ impl BluePrint {
             }
         }
         toasts.success("Exported blueprint!");
+        let gate_count = parts
+            .iter()
+            .filter(|p| !matches!(p, PartType::Timer(_)))
+            .count();
+        let timer_count = parts.len() - gate_count;
+        exporter_settings.stats = format!(
+            "Parts: {}\nGates: {}\nTimers: {}\nConnections: {}\nIO count: {}\nFile size: {}\nUUID: {}",
+            parts.len(),
+            gate_count,
+            timer_count,
+            connections.len(),
+            io_parts.len(),
+            humansize::format_size(blueprint_size, humansize::DECIMAL),
+            self.uuid
+        );
     }
 }

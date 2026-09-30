@@ -14,6 +14,7 @@ mod tools;
 use eframe::egui::{self};
 use std::time::Instant;
 
+use saveload::Config;
 use state::AppState;
 
 fn main() -> eframe::Result<()> {
@@ -25,6 +26,7 @@ fn main() -> eframe::Result<()> {
             .with_inner_size([1280.0, 800.0])
             .with_title("Scrap Mechanic Logic Creator")
             .with_icon(icon),
+        vsync: Config::load().vsync,
         ..Default::default()
     };
     eframe::run_native(

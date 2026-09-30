@@ -461,6 +461,31 @@ impl AppState {
                     });
                 }
 
+                ui.checkbox(&mut settings.offset_logic, "Offset logic");
+                if settings.offset_logic {
+                    ui.horizontal(|ui| {
+                        let size = egui::vec2(40.0, ui.spacing().interact_size.y);
+                        ui.add_sized(
+                            size,
+                            egui::DragValue::new(&mut settings.offset_x)
+                                .prefix("X: ")
+                                .fixed_decimals(0),
+                        );
+                        ui.add_sized(
+                            size,
+                            egui::DragValue::new(&mut settings.offset_y)
+                                .prefix("Y: ")
+                                .fixed_decimals(0),
+                        );
+                        ui.add_sized(
+                            size,
+                            egui::DragValue::new(&mut settings.offset_z)
+                                .prefix("Z: ")
+                                .fixed_decimals(0),
+                        );
+                    });
+                }
+
                 // so many settings ugh....
                 ui.horizontal(|ui| {
                     ui.label("Type: ");
@@ -583,6 +608,12 @@ impl AppState {
                 if ui.button("Export!").clicked() {
                     export = true;
                 }
+
+                if !settings.stats.is_empty() {
+                    ui.separator();
+                    ui.heading("Export stats");
+                    ui.add(egui::Label::new(&settings.stats).wrap());
+                }
             }
             _ => {}
         }
@@ -608,9 +639,12 @@ impl AppState {
                 self.export(settings.clone());
             }
         }
-        if let (Some(before), Some(Tool::Exporter(after))) = (exporter_before, &self.active_tool) {
-            if before != *after {
-                self.config.export_settings = after.clone();
+        if let (Some(mut before), Some(Tool::Exporter(after))) = (exporter_before, &self.active_tool) {
+            let mut after = after.clone();
+            before.stats = String::new();
+            after.stats = String::new();
+            if before != after {
+                self.config.export_settings = after;
                 self.config.save();
             }
         }

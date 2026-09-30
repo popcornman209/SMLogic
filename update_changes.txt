@@ -4,3 +4,7 @@ more descriptive error notifs
 powered connections light above and show above others
 clicking on connections in simulator toggles them
 important gates now have a sidebar while simulating to view or change their values
+fixed resizing code editor window
+added position offsets to exporter
+running lua script disables simulator tool
+added vsync option (vsync caused "Application not responding" warning on hyprland)
