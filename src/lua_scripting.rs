@@ -2,7 +2,7 @@ use crate::{
     colors::DEFAULT_GATE_COLOR,
     connections::Connection,
     parts::{GATE_SIZE, GateType, Part, PartData, PartType, Port},
-    state::{AppState, Selection},
+    state::{AppState, Selection, path_to_string},
     tools::Tool,
 };
 use egui::{Color32, Pos2};
@@ -521,7 +521,14 @@ impl AppState {
                             }
                         }
                     });
-                    ui.heading("Lua Script");
+                    ui.horizontal(|ui| {
+                        ui.heading("Lua Script");
+                        if let Some(path) = lua_script.path.clone() {
+                            ui.label(path_to_string(path, self.project_folder.clone()))
+                        } else {
+                            ui.label("unsaved")
+                        }
+                    });
                     let output_size = if lua_script.output.is_empty() { 0.0 } else { 150.0 };
                     StripBuilder::new(ui)
                         .size(Size::remainder().at_least(300.0))

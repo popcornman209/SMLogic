@@ -1,7 +1,3 @@
-export stats
-
-display currently open file in lua editor
-
 lua os.exit() closes whole program
 
 change multiple part properties at once

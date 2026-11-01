@@ -7,4 +7,5 @@ important gates now have a sidebar while simulating to view or change their valu
 fixed resizing code editor window
 added position offsets to exporter
 running lua script disables simulator tool
-added vsync option (vsync caused "Application not responding" warning on hyprland)
+added vsync option (I thought it was causing some issue, it wasn't)
+lua editor displays file name

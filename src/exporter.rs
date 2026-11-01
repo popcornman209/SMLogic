@@ -307,7 +307,7 @@ fn get_user_folder() -> Option<PathBuf> {
     #[cfg(not(target_os = "windows"))]
     let base = dirs::home_dir()?.join(
         ".steam/steam/steamapps/compatdata/387990/pfx/drive_c/users/steamuser/Application Data",
-    ); // untested :P
+    );
 
     let folder = base.join("Axolot Games/Scrap Mechanic/User/");
     folder.is_dir().then_some(folder)
