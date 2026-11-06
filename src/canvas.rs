@@ -111,7 +111,7 @@ impl AppState {
 
     pub fn draw_grid(&self, painter: &Painter, canvas_rect: Rect) {
         let grid_spacing = 20.0_f32;
-        let grid_stroke = Stroke::new(0.5, self.color_pallet.grid_lines);
+        let grid_stroke = Stroke::new(0.5_f32, self.color_pallet.grid_lines);
 
         let world_min = self.screen_to_world(canvas_rect.min);
         let world_max = self.screen_to_world(canvas_rect.max);
@@ -349,7 +349,7 @@ impl AppState {
                         painter.rect_stroke(
                             rect,
                             0.0,
-                            Stroke::new(2.5, gate.color),
+                            Stroke::new(2.5_f32, gate.color),
                             egui::StrokeKind::Inside,
                         );
                         painter.text(
@@ -419,7 +419,7 @@ impl AppState {
                             .on_hover_text("Opens folder in file explorer")
                             .clicked()
                         {
-                            let _ = open::that(&active_folder);
+                            let _ = open::that_detached(&active_folder);
                         }
                     }
 
@@ -435,6 +435,26 @@ impl AppState {
                             self.current_module_path = None;
                             self.toasts.success("Cleared canvas");
                             self.end_simulation();
+                        }
+                    }
+                    if ui.button("Save As").clicked() {
+                        let mut dialog = rfd::FileDialog::new()
+                            .add_filter("SM Logic", &["sml"])
+                            .set_file_name("module.sml");
+                        if let Some(project_folder) = &self.project_folder {
+                            dialog = dialog.set_directory(project_folder);
+                        }
+                        if let Some(path) = dialog.save_file() {
+                            if let Err(e) = self.canvas_snapshot.save(path.clone()) {
+                                self.toasts.error(format!("Failed to save: {}", e));
+                            } else {
+                                self.has_unsaved_changes = false;
+                                self.current_module_path = Some(path.clone());
+                                self.toasts.success(format!(
+                                    "Saved: {}",
+                                    path_to_string(path, self.project_folder.clone())
+                                ));
+                            }
                         }
                     }
                     if ui.button("Save").clicked() {
@@ -462,23 +482,30 @@ impl AppState {
                             }
                         }
                     }
-                    if ui.button("Save As").clicked() {
-                        let mut dialog = rfd::FileDialog::new()
-                            .add_filter("SM Logic", &["sml"])
-                            .set_file_name("module.sml");
-                        if let Some(project_folder) = &self.project_folder {
-                            dialog = dialog.set_directory(project_folder);
-                        }
-                        if let Some(path) = dialog.save_file() {
-                            if let Err(e) = self.canvas_snapshot.save(path.clone()) {
-                                self.toasts.error(format!("Failed to save: {}", e));
+                    if self.config.show_save_pretty {
+                        if ui.button("Save pretty").clicked() {
+                            let file = if self.current_module_path.is_none() {
+                                let mut dialog = rfd::FileDialog::new()
+                                    .add_filter("SM Logic", &["sml"])
+                                    .set_file_name("module.sml");
+                                if let Some(project_folder) = &self.project_folder {
+                                    dialog = dialog.set_directory(project_folder);
+                                }
+                                dialog.save_file()
                             } else {
-                                self.has_unsaved_changes = false;
-                                self.current_module_path = Some(path.clone());
-                                self.toasts.success(format!(
-                                    "Saved: {}",
-                                    path_to_string(path, self.project_folder.clone())
-                                ));
+                                self.current_module_path.clone()
+                            };
+                            if let Some(path) = file {
+                                if let Err(e) = self.canvas_snapshot.save_pretty(path.clone()) {
+                                    self.toasts.error(format!("Failed to save: {}", e));
+                                } else {
+                                    self.has_unsaved_changes = false;
+                                    self.current_module_path = Some(path.clone());
+                                    self.toasts.success(format!(
+                                        "Saved: {}",
+                                        path_to_string(path, self.project_folder.clone())
+                                    ));
+                                }
                             }
                         }
                     }
@@ -655,6 +682,12 @@ impl AppState {
                     self.config.save();
                 }
                 if ui
+                    .checkbox(&mut self.config.show_save_pretty, "Show save pretty")
+                    .changed()
+                {
+                    self.config.save();
+                }
+                if ui
                     .checkbox(&mut self.config.vsync, "VSync (requires restart)")
                     .changed()
                 {
@@ -762,7 +795,7 @@ impl AppState {
                                 .iter()
                                 .filter_map(|p| p.file_name()?.to_str()),
                         )
-                        .collect(); // ai told me how to do this idk how people learn this shit
+                        .collect(); // ai told me how to do this like actaully wtf is this lmao
                     for bind in keybinds {
                         ui.horizontal(|ui| {
                             ui.label(format!("{bind}:"));

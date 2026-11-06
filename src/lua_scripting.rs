@@ -551,7 +551,7 @@ impl AppState {
                                 ui.horizontal(|ui| {
                                 if ui.button("Run").clicked() { run = true; }
                                 if ui.button("Docs").clicked() {
-                                    let _ = open::that("https://github.com/popcornman209/SMLogic/blob/main/github_resources/lua_scripting.md");
+                                    let _ = open::that_detached("https://github.com/popcornman209/SMLogic/blob/main/github_resources/lua_scripting.md");
                                 }});
                             });
                             strip.cell(|ui| {

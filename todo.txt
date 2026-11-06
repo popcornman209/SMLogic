@@ -1,4 +1,23 @@
+cant unpin a script that dont exist
+
+cant copy paste in label editor
+
+clear canvas and opening files is super weird with the undo/redo system
+
+sort module inputs by x position as well
+
+text scale when zooming messed up
+
 lua os.exit() closes whole program
+
+quit no longer asks to save first
+
+remember connection tool settings
+
+more label settings (font size)
+label text box can go off screen
+
+close connections do weird loop instead of straight line
 
 change multiple part properties at once
 

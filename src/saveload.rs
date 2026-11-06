@@ -6,9 +6,13 @@ use crate::parts::{Part, PartData, Port};
 use crate::state::{CanvasSnapshot, Selection};
 use egui::{Key, Pos2};
 use egui_notify::Toasts;
+use flate2::Compression;
+use flate2::read::GzDecoder;
+use flate2::write::GzEncoder;
 use serde::{Deserialize, Serialize};
 use std::collections::HashMap;
 use std::fs;
+use std::io::{Read, Write};
 use std::path::PathBuf;
 
 // config file
@@ -27,6 +31,8 @@ pub struct Config {
     pub snap_to_grid: bool,
     #[serde(default)]
     pub show_fps: bool,
+    #[serde(default)]
+    pub show_save_pretty: bool,
     #[serde(default)]
     pub vsync: bool,
     #[serde(default)]
@@ -99,6 +105,7 @@ impl Default for Config {
             round_connections: true,
             snap_to_grid: true,
             show_fps: false,
+            show_save_pretty: false,
             vsync: false,
             last_project: None,
             color_pallet: ColorPallet::DEFAULT_PALLET,
@@ -131,6 +138,18 @@ impl Default for Config {
 // saving/loading modules
 impl CanvasSnapshot {
     pub fn save(&self, path: PathBuf) -> Result<(), Box<dyn std::error::Error>> {
+        let json = serde_json::to_string(&self)?;
+        // compress it with flate2
+        let mut compressor = GzEncoder::new(Vec::new(), Compression::default());
+        compressor.write_all(json.as_bytes())?;
+        let compressed_data = compressor.finish()?;
+
+        std::fs::write(path, compressed_data)?;
+        Ok(())
+    }
+
+    // old save function
+    pub fn save_pretty(&self, path: PathBuf) -> Result<(), Box<dyn std::error::Error>> {
         let json = serde_json::to_value(self)?;
         let pretty = serde_json::to_string_pretty(&json)?;
         std::fs::write(path, pretty)?;
@@ -143,10 +162,21 @@ impl CanvasSnapshot {
         toasts: &mut Toasts,
         ancestors: Vec<PathBuf>,
     ) -> Result<Self, Box<dyn std::error::Error>> {
-        let contents = std::fs::read_to_string(path)?;
-        let json: serde_json::Value = serde_json::from_str(&contents)?;
+        let data = std::fs::read(path)?;
 
-        let mut canvas_snapshot: Self = serde_json::from_value(json)?;
+        // ai told me this line:
+        let is_compressed = data.starts_with(&[0x1f, 0x8b]);
+
+        let json_str: String = if is_compressed {
+            let mut decompressor = GzDecoder::new(data.as_slice());
+            let mut json = String::new();
+            decompressor.read_to_string(&mut json)?;
+            json
+        } else {
+            String::from_utf8(data)?
+        };
+
+        let mut canvas_snapshot: Self = serde_json::from_str(&json_str)?;
         canvas_snapshot.reload_modules(project_path, toasts, ancestors);
         Ok(canvas_snapshot)
     }

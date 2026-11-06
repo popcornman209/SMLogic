@@ -718,7 +718,7 @@ impl AppState {
                     self.world_to_screen(pos),
                     10.0 * self.zoom,
                     Stroke::new(
-                        2.0,
+                        2.0_f32,
                         if port.input {
                             INPUT_COLOR
                         } else {

@@ -205,7 +205,7 @@ impl AppState {
                                     ui.painter().rect_stroke(
                                         rect,
                                         2.0,
-                                        Stroke::new(2.0, egui::Color32::WHITE),
+                                        Stroke::new(2.0_f32, egui::Color32::WHITE),
                                         egui::StrokeKind::Outside,
                                     );
                                 }

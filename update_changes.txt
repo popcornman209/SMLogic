@@ -7,5 +7,8 @@ important gates now have a sidebar while simulating to view or change their valu
 fixed resizing code editor window
 added position offsets to exporter
 running lua script disables simulator tool
-added vsync option (I thought it was causing some issue, it wasn't)
+added vsync option (I thought it was causing some issue, it wasn't, but hey more options ig)
 lua editor displays file name
+.sml file compression, roughly 60x smaller
+added save_pretty option for old save file type
+opening broser and file explorer no longer freezed app
